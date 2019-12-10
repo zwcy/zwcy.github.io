@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.1.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('http://yoursite.com').hostname,
+    root: '/',
+    scheme: 'Mist',
+    version: '7.6.0',
+    exturl: false,
+    sidebar: {"position":"right","display":"hide","padding":18,"offset":12,"onmobile":true},
+    copycode: {"enable":true,"show_result":true,"style":"mac"},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":true,"color":"#222","save":"manual"},
+    fancybox: true,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="阿里p7笔试116题  junit用法，before,beforeClass,after, afterClass的执行顺序  分布式锁  nginx的请求转发算法，如何配置根据权重转发  用hashmap实现redis有什么问题（死锁，死循环，可用ConcurrentHashmap）  线程的状态  线程的阻塞的方式  sleep和wait的区别  hashmap的底层实现  一万个人抢100个红">
+<meta property="og:type" content="article">
+<meta property="og:title" content="阿里p7笔试116题">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;06&#x2F;md&#x2F;interview&#x2F;ali-p7&#x2F;index.html">
+<meta property="og:site_name" content="小灰灰的博客">
+<meta property="og:description" content="阿里p7笔试116题  junit用法，before,beforeClass,after, afterClass的执行顺序  分布式锁  nginx的请求转发算法，如何配置根据权重转发  用hashmap实现redis有什么问题（死锁，死循环，可用ConcurrentHashmap）  线程的状态  线程的阻塞的方式  sleep和wait的区别  hashmap的底层实现  一万个人抢100个红">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-11-06T05:29:25.000Z">
+<meta property="article:modified_time" content="2019-11-06T05:30:05.684Z">
+<meta property="article:author" content="mqiy">
+<meta property="article:tag" content="interview">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/2019/11/06/md/interview/ali-p7/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>阿里p7笔试116题 | 小灰灰的博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">小灰灰的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">54</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类<span class="badge">5</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">171</span></a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/06/md/interview/ali-p7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="mqiy">
+      <meta itemprop="description" content="永远为下个月离职做好准备">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小灰灰的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          阿里p7笔试116题
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-11-06 13:29 13:29:25" itemprop="dateCreated datePublished" datetime="2019-11-06T13:29:25+08:00">2019-11-06 13:29</time>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><strong>阿里p7笔试116题</strong></p>
+<ol>
+<li><p>junit用法，before,beforeClass,after, afterClass的执行顺序</p>
+</li>
+<li><p>分布式锁</p>
+</li>
+<li><p>nginx的请求转发算法，如何配置根据权重转发</p>
+</li>
+<li><p>用hashmap实现redis有什么问题（死锁，死循环，可用ConcurrentHashmap）</p>
+</li>
+<li><p>线程的状态</p>
+</li>
+<li><p>线程的阻塞的方式</p>
+</li>
+<li><p>sleep和wait的区别</p>
+</li>
+<li><p>hashmap的底层实现</p>
+</li>
+<li><p>一万个人抢100个红包，如何实现（不用队列），如何保证2个人不能抢到同一个红包，可用分布式锁</p>
+</li>
+<li><p>java内存模型，垃圾回收机制，不可达算法</p>
+</li>
+<li><p>两个Integer的引用对象传给一个swap方法在方法内部交换引用，返回后，两个引用的值是否会发现变化</p>
+</li>
+<li><p>aop的底层实现，动态代理是如何动态，假如有100个对象，如何动态的为这100个对象代理</p>
+</li>
+<li><p>是否用过maven install。 maven test。git（make install是安装本地jar包）</p>
+</li>
+<li><p>tomcat的各种配置，如何配置docBase</p>
+</li>
+<li><p>spring的bean配置的几种方式</p>
+</li>
+<li><p>web.xml的配置</p>
+</li>
+<li><p>spring的监听器。</p>
+</li>
+<li><p>zookeeper的实现机制，有缓存，如何存储注册服务的</p>
+</li>
+<li><p>IO会阻塞吗？readLine是不是阻塞的</p>
+</li>
+<li><p>用过spring的线程池还是java的线程池？</p>
+</li>
+<li><p>字符串的格式化方法 （20，21这两个问题问的太低级了）</p>
+</li>
+<li><p>时间的格式化方法</p>
+</li>
+<li><p>定时器用什么做的</p>
+</li>
+<li><p>线程如何退出结束</p>
+</li>
+<li><p>java有哪些锁？乐观锁 悲观锁 synchronized 可重入锁 读写锁,用过reentrantlock吗？reentrantlock与synmchronized的区别</p>
+</li>
+<li><p>ThreadLocal的使用场景</p>
+</li>
+<li><p>java的内存模型，垃圾回收机制</p>
+</li>
+<li><p>为什么线程执行要调用start而不是直接run（直接run，跟普通方法没什么区别，先调start，run才会作为一个线程方法运行）</p>
+</li>
+<li><p>qmq消息的实现机制(qmq是去哪儿网自己封装的消息队列)</p>
+</li>
+<li><p>遍历hashmap的三种方式</p>
+</li>
+<li><p>jvm的一些命令</p>
+</li>
+<li><p>memcache和redis的区别</p>
+</li>
+<li><p>mysql的行级锁加在哪个位置</p>
+</li>
+<li><p>ConcurrentHashmap的锁是如何加的？是不是分段越多越好</p>
+</li>
+<li><p>myisam和innodb的区别（innodb是行级锁，myisam是表级锁）</p>
+</li>
+<li><p>mysql其他的性能优化方式</p>
+</li>
+<li><p>linux系统日志在哪里看</p>
+</li>
+<li><p>如何查看网络进程</p>
+</li>
+<li><p>统计一个整数的二进制表示中bit为1的个数</p>
+</li>
+<li><p>jvm内存模型，java内存模型</p>
+</li>
+<li><p>如何把java内存的数据全部dump出来</p>
+</li>
+<li><p>如何手动触发全量回收垃圾，如何立即触发垃圾回收</p>
+</li>
+<li><p>hashmap如果只有一个写其他全读会出什么问题</p>
+</li>
+<li><p>git rebase</p>
+</li>
+<li><p>mongodb和hbase的区别</p>
+</li>
+<li><p>如何解决并发问题</p>
+</li>
+<li><p>volatile的用途</p>
+</li>
+<li><p>java线程池（好像之前我的理解有问题）</p>
+</li>
+<li><p>mysql的binlog</p>
+</li>
+<li><p>代理模式</p>
+</li>
+<li><p>mysql是如何实现事务的</p>
+</li>
+<li><p>读写分离何时强制要读主库，读哪个从库是通过什么方式决定的，从库的同步mysql用的什么方式</p>
+</li>
+<li><p>mysql的存储引擎</p>
+</li>
+<li><p>mysql的默认隔离级别，其他隔离级别</p>
+</li>
+<li><p>将一个链表反转（用三个指针，但是每次只发转一个）</p>
+</li>
+<li><p>spring Aop的实现原理，具体说说</p>
+</li>
+<li><p>何时会内存泄漏，内存泄漏会抛哪些异常</p>
+</li>
+<li><p>是否用过Autowire注解</p>
+</li>
+<li><p>spring的注入bean的方式</p>
+</li>
+<li><p>sql语句各种条件的执行顺序，如select， where， order by， group by</p>
+</li>
+<li><p>select xx from xx where xx and xx order by xx limit xx； 如何优化这个（看explain）</p>
+</li>
+<li><p>四则元算写代码</p>
+</li>
+<li><p>统计100G的ip文件中出现ip次数最多的100个ip</p>
+</li>
+<li><p>zookeeper的事物，结点，服务提供方挂了如何告知消费方</p>
+</li>
+<li><p>5台服务器如何选出leader(选举算法)</p>
+</li>
+<li><p>适配器和代理模式的区别</p>
+</li>
+<li><p>读写锁</p>
+</li>
+<li><p>static加锁</p>
+</li>
+<li><p>事务隔离级别</p>
+</li>
+<li><p>门面模式，类图(外观模式)</p>
+</li>
+<li><p>mybatis如何映射表结构</p>
+</li>
+<li><p>二叉树遍历</p>
+</li>
+<li><p>主从复制</p>
+</li>
+<li><p>mysql引擎区别</p>
+</li>
+<li><p>静态内部类加载到了哪个区？方法区</p>
+</li>
+<li><p>class文件编译后加载到了哪</p>
+</li>
+<li><p>web的http请求如何整体响应时间变长导致处理的请求数变少，该如何处理？用队列，当处理不了那么多http请求时将请求放到队列</p>
+</li>
+</ol>
+<p>中慢慢处理，web如何实现队列</p>
+<ol start="77">
+<li><p>线程安全的单例模式</p>
+</li>
+<li><p>快速排序性能考虑</p>
+</li>
+<li><p>volatile关键字用法</p>
+</li>
+<li><p>求表的size，或做数据统计可用什么存储引擎</p>
+</li>
+<li><p>读多写少可用什么引擎</p>
+</li>
+<li><p>假如要统计多个表应该用什么引擎</p>
+</li>
+<li><p>concurrenhashmap求size是如何加锁的，如果刚求完一段后这段发生了变化该如何处理</p>
+</li>
+<li><p>1000个苹果放10个篮子，怎么放，能让我拿到所有可能的个数</p>
+</li>
+<li><p>可重入的读写锁，可重入是如何实现的？</p>
+</li>
+<li><p>是否用过NIO</p>
+</li>
+<li><p>java的concurrent包用过没</p>
+</li>
+<li><p>sting s=new string(“abc”)分别在堆栈上新建了哪些对象</p>
+</li>
+<li><p>java虚拟机的区域分配，各区分别存什么</p>
+</li>
+<li><p>分布式事务（JTA）</p>
+</li>
+<li><p>threadlocal使用时注意的问题（ThreadLocal和Synchonized都用于解决多线程并发访问。但是ThreadLocal与synchronized有本质的区别。synchronized是利用锁的机制，使变量或代码块在某一时该只能被一个线程访问。而ThreadLocal为每一个线程都提供了变量的副本，使得每个线程在某一时间访问到的并不是同一个对象，这样就隔离了多个线程对数据的数据共享。而Synchronized却正好相反，它用于在多个线程间通信时能够获得数据共享）</p>
+</li>
+<li><p>java有哪些容器(集合，tomcat也是一种容器)</p>
+</li>
+<li><p>二分查找算法</p>
+</li>
+<li><p>myisam的优点，和innodb的区别</p>
+</li>
+<li><p>redis能存哪些类型</p>
+</li>
+<li><p>http协议格式，get和post的区别</p>
+</li>
+<li><p>可重入锁中对应的wait和notify</p>
+</li>
+<li><p>redis能把内存空间交换进磁盘中吗(这个应该是可以的，但是那个面试官非跟我说不可以)</p>
+</li>
+<li><p>java线程池中基于缓存和基于定长的两种线程池，当请求太多时分别是如何处理的？定长的事用的队列，如果队列也满了呢？交换进磁盘？基于缓存的线程池解决方法呢？</p>
+</li>
+<li><p>synchronized加在方法上用的什么锁</p>
+</li>
+<li><p>可重入锁中的lock和trylock的区别</p>
+</li>
+<li><p>innodb对一行数据的读会枷锁吗？不枷锁，读实际读的是副本</p>
+</li>
+<li><p>redis做缓存是分布式存的？不同的服务器上存的数据是否重复？guava cache呢？是否重复？不同的机器存的数据不同</p>
+</li>
+<li><p>用awk统计一个ip文件中top10</p>
+</li>
+<li><p>对表做统计时可直接看schema info信息，即查看表的系统信息</p>
+</li>
+<li><p>mysql目前用的版本</p>
+</li>
+<li><p>公司经验丰富的人给了什么帮助？(一般boss面会问这些)</p>
+</li>
+<li><p>自己相对于一样的应届生有什么优势</p>
+</li>
+<li><p>自己的好的总结习惯给自己今后的工作带了什么帮助，举例为证</p>
+</li>
+<li><p>原子类，线程安全的对象，异常的处理方式</p>
+</li>
+<li><p>4亿个int数，如何找出重复的数（用hash方法，建一个2的32次方个bit的hash数组，每取一个int数，可hash下2的32次方找到它在hash数组中的位置，然后将bit置1表示已存在）</p>
+</li>
+<li><p>4亿个url，找出其中重复的（考虑内存不够，通过hash算法，将url分配到1000个文件中，不同的文件间肯定就不会重复了，再分别找出重复的）</p>
+</li>
+</ol>
+<p>有1万个数组，每个数组有1000个整数，每个数组都是降序的，从中找出最大的N个数，N&lt;1000</p>
+<ol start="113">
+<li><p>LinkedHashmap的底层实现</p>
+</li>
+<li><p>类序列化时类的版本号的用途，如果没有指定一个版本号，系统是怎么处理的？如果加了字段会怎么样？</p>
+</li>
+<li><p>Override和Overload的区别，分别用在什么场景</p>
+</li>
+<li><p>java的反射是如何实现的</p>
+</li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/interview/" rel="tag"><i class="fa fa-tag"></i> interview</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2019/11/06/md/interview/distributed-high-use/" rel="prev" title="百度高级java工程师面试实拍59题：高并发+中间件+分布式架构">
+      <i class="fa fa-chevron-left"></i> 百度高级java工程师面试实拍59题：高并发+中间件+分布式架构
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2019/11/06/md/interview/ali-ant-interview/" rel="next" title="蚂蚁金服的一次面试经历分享">
+      蚂蚁金服的一次面试经历分享 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">mqiy</p>
+  <div class="site-description" itemprop="description">永远为下个月离职做好准备</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">171</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">54</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">mqiy</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

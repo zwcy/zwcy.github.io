@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.1.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('http://yoursite.com').hostname,
+    root: '/',
+    scheme: 'Mist',
+    version: '7.6.0',
+    exturl: false,
+    sidebar: {"position":"right","display":"hide","padding":18,"offset":12,"onmobile":true},
+    copycode: {"enable":true,"show_result":true,"style":"mac"},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":true,"color":"#222","save":"manual"},
+    fancybox: true,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="整个面试过程中跟面试官聊得特别嗨 面试结束前的最后一个问题，“你还有什么问题问我吗？” “没有。” 结果就bye了,不再见啦………… 巧解面试最后一问：“你还有什么问题要问我吗？” 面试达人 ####考察目的  面试官让你提问，是在考察你的情商，你是否知道面对什么人要问什么问题？  对这个公司或者行业、岗位了解程度。要问出一个好问题，背后需要做很多的准备工作，要对这个行业有足够深入的了解，才能问出">
+<meta property="og:type" content="article">
+<meta property="og:title" content="你还有什么问题要问我吗">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;06&#x2F;md&#x2F;interview&#x2F;ask&#x2F;index.html">
+<meta property="og:site_name" content="小灰灰的博客">
+<meta property="og:description" content="整个面试过程中跟面试官聊得特别嗨 面试结束前的最后一个问题，“你还有什么问题问我吗？” “没有。” 结果就bye了,不再见啦………… 巧解面试最后一问：“你还有什么问题要问我吗？” 面试达人 ####考察目的  面试官让你提问，是在考察你的情商，你是否知道面对什么人要问什么问题？  对这个公司或者行业、岗位了解程度。要问出一个好问题，背后需要做很多的准备工作，要对这个行业有足够深入的了解，才能问出">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-11-06T05:19:13.000Z">
+<meta property="article:modified_time" content="2019-11-06T05:23:42.139Z">
+<meta property="article:author" content="mqiy">
+<meta property="article:tag" content="interview">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/2019/11/06/md/interview/ask/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>你还有什么问题要问我吗 | 小灰灰的博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">小灰灰的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">54</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类<span class="badge">5</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">171</span></a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/06/md/interview/ask/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="mqiy">
+      <meta itemprop="description" content="永远为下个月离职做好准备">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小灰灰的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          你还有什么问题要问我吗
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-11-06 13:19 13:19:13" itemprop="dateCreated datePublished" datetime="2019-11-06T13:19:13+08:00">2019-11-06 13:19</time>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>整个面试过程中跟面试官聊得特别嗨</p>
+<p>面试结束前的最后一个问题，“你还有什么问题问我吗？”</p>
+<p>“没有。”</p>
+<p>结果就bye了,不再见啦…………</p>
+<p>巧解面试最后一问：“你还有什么问题要问我吗？”</p>
+<p>面试达人</p>
+<p>####考察目的</p>
+<ul>
+<li><p>面试官让你提问，是在考察你的情商，你是否知道面对什么人要问什么问题？</p>
+</li>
+<li><p>对这个公司或者行业、岗位了解程度。要问出一个好问题，背后需要做很多的准备工作，要对这个行业有足够深入的了解，才能问出“洞见”。</p>
+</li>
+</ul>
+<h4 id="回答思路："><a href="#回答思路：" class="headerlink" title="回答思路："></a>回答思路：</h4><ul>
+<li>要问好问题，一个问题要好，它需要符合以下三个要求：不是难题可以回答，对象合适，双方互动。</li>
+</ul>
+<blockquote>
+<p>向面试官提问不是一场角力，不是在比拼谁的智商更高。而是一次交流，希望通过问与答来达到一个最好的面试结束效果。</p>
+</blockquote>
+<h5 id="向对的人问对的问题。"><a href="#向对的人问对的问题。" class="headerlink" title="向对的人问对的问题。"></a>向对的人问对的问题。</h5><ul>
+<li>HR</li>
+</ul>
+<p>HR最擅长并且最关心的问题肯定是公司的架构，文化，价值观，岗位设置等问题。</p>
+<p>所以当你向HR提问的时候，最好是关于岗位情况：</p>
+<p>例如:这个岗位为什么会开放出来？这个部门的人员设置是怎样的，我应该向谁汇报，有多少个子部门？</p>
+<ul>
+<li>部门经理</li>
+</ul>
+<p>部门经理很可能是你以后的直属上司，他最擅长和最关心的是工作内容。</p>
+<p>你的问题应该紧扣这个意向岗位的工作内容，问题可以涉及：</p>
+<p>这份工作最大的挑战是什么？</p>
+<p>你觉得能胜任这份工作的人最关键的能力是什么？</p>
+<p>你现在最急需你的下属帮你解决的困难是？</p>
+<ul>
+<li>大Boss</li>
+</ul>
+<p>当你通过HR面，部门经理面，证明你和岗位、公司文化、薪酬比较匹配了。大Boss在终面的时不会再着重考察你的能力，更多地是想和你讨论对于整个行业的问题。</p>
+<p>所以你问的问题应该紧扣这个行业的态势，例如：</p>
+<p>你对这个行业未来的发展持什么态度？</p>
+<p>贵公司与xxx竞争对手在未来的发展策略上会有什么不同？</p>
+<h5 id="你问问题不是为了问而问，而是为了互动而问。"><a href="#你问问题不是为了问而问，而是为了互动而问。" class="headerlink" title="你问问题不是为了问而问，而是为了互动而问。"></a>你问问题不是为了问而问，而是为了互动而问。</h5><p>即你问得问题其实自己心目中也要有一个答案，以便在面试官回答完以后你再表达一下自己的见解，然后和面试官讨论。</p>
+<h4 id="提问的雷区："><a href="#提问的雷区：" class="headerlink" title="提问的雷区："></a>提问的雷区：</h4><p>提问环节中假如表现不好，就很有可能给面试官留下坏印象，因为人的记忆最容易记得的是开头和结尾。所以提问环节假如你表现糟糕，那么面试官印象就会特别深刻，比中间环节的面试题目更加深刻，那么你就很有可能因为这个问题就被翻盘，所以有些雷区一定不要踩。</p>
+<ul>
+<li>不要问薪资</li>
+</ul>
+<p>薪资永远不要自己提出来，要等面试官问你了才去讨论。 假如你主动问，这会是很不礼貌的一个举动。面试直接pass</p>
+<p>而且在大公司，决定你薪资的不是部门经理，不是大boss，而是一面的HR，但是一面一般都不会问你薪资要求，所以一般是终面以后，公司决定应聘你了才开始谈薪资的。试想一下，假如对你都不满意，那么快谈薪资有什么用？</p>
+<ul>
+<li>不要问隐私问题</li>
+</ul>
+<p>面试是职场中很正规的一件事，不是私人交流，所以不要问面试官比较隐私的问题以免引起尴尬。</p>
+<ul>
+<li>不要问让人误会你的问题</li>
+</ul>
+<p>有些问题问出来以后会让别人质疑你的求职动机，这些敏感问题尽量不要问。</p>
+<p>例：贵公司加班多吗？面试官会马上认为你不是一个努力工作的人。</p>
+<ul>
+<li>没有价值的问题</li>
+</ul>
+<p>这么重要的一个环节，你就不要拿来去问一些无关紧要的，平常都能解答的问题。</p>
+<ul>
+<li>问的问题不要超过三个</li>
+</ul>
+<p>两个是最合适的，三个就让面试官觉得你啰嗦了。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/interview/" rel="tag"><i class="fa fa-tag"></i> interview</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2019/11/06/md/interview/ali-ant-interview/" rel="prev" title="蚂蚁金服的一次面试经历分享">
+      <i class="fa fa-chevron-left"></i> 蚂蚁金服的一次面试经历分享
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2019/11/06/md/life/well-habbit/" rel="next" title="一些值得长期坚持下去的好习惯！">
+      一些值得长期坚持下去的好习惯！ <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#回答思路："><span class="nav-number">1.</span> <span class="nav-text">回答思路：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#向对的人问对的问题。"><span class="nav-number">1.1.</span> <span class="nav-text">向对的人问对的问题。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#你问问题不是为了问而问，而是为了互动而问。"><span class="nav-number">1.2.</span> <span class="nav-text">你问问题不是为了问而问，而是为了互动而问。</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#提问的雷区："><span class="nav-number">2.</span> <span class="nav-text">提问的雷区：</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">mqiy</p>
+  <div class="site-description" itemprop="description">永远为下个月离职做好准备</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">171</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">54</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">mqiy</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.1.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('http://yoursite.com').hostname,
+    root: '/',
+    scheme: 'Mist',
+    version: '7.6.0',
+    exturl: false,
+    sidebar: {"position":"right","display":"hide","padding":18,"offset":12,"onmobile":true},
+    copycode: {"enable":true,"show_result":true,"style":"mac"},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":true,"color":"#222","save":"manual"},
+    fancybox: true,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="阿里毕玄：推荐给Java程序员的7本好书Java相关的。《Java并发编程实战》并发是高级语言里都需要掌握的稍微高级一些的技巧，这本书尽管是2012年的书了，但我觉得仍然是无比经典，绝对是必读书。《Netty实战》Netty是Java中通信框架实现的典范，非常值得通过这个来学习好语言中IO相关的知识，以及优秀的通信框架的写法。《深入理解Java虚拟机（第2版）》这本书我自己没看过，但听很多读过的同">
+<meta property="og:type" content="article">
+<meta property="og:title" content="推荐书籍">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;06&#x2F;md&#x2F;tool&#x2F;recommon-book&#x2F;index.html">
+<meta property="og:site_name" content="小灰灰的博客">
+<meta property="og:description" content="阿里毕玄：推荐给Java程序员的7本好书Java相关的。《Java并发编程实战》并发是高级语言里都需要掌握的稍微高级一些的技巧，这本书尽管是2012年的书了，但我觉得仍然是无比经典，绝对是必读书。《Netty实战》Netty是Java中通信框架实现的典范，非常值得通过这个来学习好语言中IO相关的知识，以及优秀的通信框架的写法。《深入理解Java虚拟机（第2版）》这本书我自己没看过，但听很多读过的同">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-11-06T07:26:44.000Z">
+<meta property="article:modified_time" content="2019-11-06T07:28:46.238Z">
+<meta property="article:author" content="mqiy">
+<meta property="article:tag" content="tool">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/2019/11/06/md/tool/recommon-book/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>推荐书籍 | 小灰灰的博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">小灰灰的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">54</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类<span class="badge">5</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">171</span></a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/06/md/tool/recommon-book/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="mqiy">
+      <meta itemprop="description" content="永远为下个月离职做好准备">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小灰灰的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          推荐书籍
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-11-06 15:26 15:26:44" itemprop="dateCreated datePublished" datetime="2019-11-06T15:26:44+08:00">2019-11-06 15:26</time>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h3 id="阿里毕玄：推荐给Java程序员的7本好书"><a href="#阿里毕玄：推荐给Java程序员的7本好书" class="headerlink" title="阿里毕玄：推荐给Java程序员的7本好书"></a>阿里毕玄：推荐给Java程序员的7本好书</h3><h4 id="Java相关的。"><a href="#Java相关的。" class="headerlink" title="Java相关的。"></a>Java相关的。</h4><p>《Java并发编程实战》<br>并发是高级语言里都需要掌握的稍微高级一些的技巧，这本书尽管是2012年的书了，但我觉得仍然是无比经典，绝对是必读书。<br>《Netty实战》<br>Netty是Java中通信框架实现的典范，非常值得通过这个来学习好语言中IO相关的知识，以及优秀的通信框架的写法。<br>《深入理解Java虚拟机（第2版）》<br>这本书我自己没看过，但听很多读过的同学的评价都是不错的，要真正的理解Java语言，就必须真正的去了解Java虚拟机，这样才能知道它的运行机制，例如Java编译、Java线程机制、Java内存管理等。<br>《Java性能优化权威指南》<br>这书是大神级人物写的，绝对值得一看，对排查问题、性能优化都有不小的帮助。<br>《Oracle JRockit: The Definitive Guide》<br>这书也是一本老书了，2010年写的，同样也是大神级人物写的，只有英文版，当年读这书对我学习JVM起到了很大的帮助，尽管Java同学主要用的是OpenJDK，而不是JRockit，而正因为有了对比，会对Java语言的实现有更深的理解。<br>《垃圾回收算法手册：自动内存管理的艺术》<br>中文版是2016年的，英文版是2011年的，这书对深刻的理解自动内存管理会有很大的帮助，毕竟其实自动内存管理这个领域的实现原理很多年是没有太大改变的，但实现的细节上有了很多的优化。<br>《性能之巅：洞悉系统、企业与云计算》<br>这书放在自己的想读列表里很久了，看评价应该是不错的，之前也说过，对于编程进阶的能力而言，查问题的能力是非常重要的一方面，这书应该有帮助，看过的同学也欢迎回复评价下。<br>还有很多书，先就推荐这些了，不过发现如果是论编程进阶相关的书，看起来还真有点缺，大部分书都是多年前写的。</p>
+<h4 id="系统设计相关"><a href="#系统设计相关" class="headerlink" title="系统设计相关"></a>系统设计相关</h4><p>《架构即未来：现代企业可扩展的Web架构、流程和组织(原书第2版)》<br>这书没看过，不过英文版我记得有点印象，评价好像不错的，欢迎看过的同学来说说。<br>《大型网站系统与Java中间件开发实践》<br>老伙伴华黎几年前写的书，对于开发大型的Web系统的同学而言是很值得学习的。<br>《SRE：Google运维解密》<br>理论上这不算系统设计的书，但运维其实是系统设计中很重要的要考虑的环节，我以前见过有些架构师设计的系统到上线的时候才发现少考虑了东西，导致上线没法上，我自己其实也干过这样的书，所以对于架构师而言，通过读这些书来扩充视野是非常重要的。<br>系统设计相关的书写的好的还真是有点少，当然也有原因是我看这方面的书很少。</p>
+<h4 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h4><p>《智能时代》吴军<br>很值得推荐，看这书能更充分的感受到智能时代带来的冲击，例如智能+工业可能会发生什么。<br>看这些类型的书对自己在技术方向的判断上是能有不错的帮助的。</p>
+<p>《人类简史》<br>很多地方都在推荐，对我来说是看了后才更加明白了人类发展，例如人类的协同演进。<br>《大学之路》 吴军<br>可能很多人都觉得这书是在讲怎么选美国的大学，以及怎么考，但看了后我觉得最值得推荐的是看这书才明白了高等教育的两个主流理念，以及美国、英国这些大学是怎么建设的，为什么和国内的高等教育会不同，强烈推荐。<br>《鞋狗》<br>看Nike的创始人是怎么把Nike做起来的，挺有意思的，可能是也很对胃口吧，兴趣和专业，是能做起来的关键。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/tool/" rel="tag"><i class="fa fa-tag"></i> tool</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2019/11/06/md/life/failure/" rel="prev" title="失败者的十大特点">
+      <i class="fa fa-chevron-left"></i> 失败者的十大特点
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2019/11/06/md/life/sevel-lift-advice/" rel="next" title="几条也许有用的生活建议">
+      几条也许有用的生活建议 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#阿里毕玄：推荐给Java程序员的7本好书"><span class="nav-number">1.</span> <span class="nav-text">阿里毕玄：推荐给Java程序员的7本好书</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Java相关的。"><span class="nav-number">1.1.</span> <span class="nav-text">Java相关的。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#系统设计相关"><span class="nav-number">1.2.</span> <span class="nav-text">系统设计相关</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#其他"><span class="nav-number">1.3.</span> <span class="nav-text">其他</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">mqiy</p>
+  <div class="site-description" itemprop="description">永远为下个月离职做好准备</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">171</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">54</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">mqiy</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
