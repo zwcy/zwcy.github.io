@@ -211,6 +211,94 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/10/md/problem/work/19-12/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="mqiy">
+      <meta itemprop="description" content="永远为下个月离职做好准备">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小灰灰的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/12/10/md/problem/work/19-12/" class="post-title-link" itemprop="url">2019年12月日志</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-12-10 19:16 19:16:20" itemprop="dateCreated datePublished" datetime="2019-12-10T19:16:20+08:00">2019-12-10 19:16</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>572</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="战网第三方登录时，请求的参数误写成json格式，当作body传入"><a href="#战网第三方登录时，请求的参数误写成json格式，当作body传入" class="headerlink" title="战网第三方登录时，请求的参数误写成json格式，当作body传入"></a>战网第三方登录时，请求的参数误写成json格式，当作body传入</h3><blockquote>
+<p> 应该拼接到url后面</p>
+</blockquote>
+<h3 id="战网第三方登录时，提示“无效的grant-type或无效的回调地址“"><a href="#战网第三方登录时，提示“无效的grant-type或无效的回调地址“" class="headerlink" title="战网第三方登录时，提示“无效的grant_type或无效的回调地址“"></a>战网第三方登录时，提示“无效的grant_type或无效的回调地址“</h3><blockquote>
+<p>在战网管理平台把回调地址与授权地址配置反了</p>
+</blockquote>
+<h4 id="restTemplate有并发问题-200ms内，连接返回错乱"><a href="#restTemplate有并发问题-200ms内，连接返回错乱" class="headerlink" title="restTemplate有并发问题  200ms内，连接返回错乱"></a>restTemplate有并发问题  200ms内，连接返回错乱</h4><h4 id="支付宝支付成功后，redirect出错"><a href="#支付宝支付成功后，redirect出错" class="headerlink" title="支付宝支付成功后，redirect出错"></a>支付宝支付成功后，redirect出错</h4><p>显示最终回调地址为<code>http://casaba-commerce-mall-sandbox.cloud.bz/casaba-mall/trade/sendRedirectUrl/philips-lighting-uat.baozun.com/pay.html?orderNo=119120518391148212</code><br>而真正服务器地址为: <code>casaba-commerce-mall-sandbox.cloud.bz</code></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">response.redirect(<span class="string">'philips-lighting-uat.baozun.com/pay.html?orderNo=119120518391148212'</span>);</span></pre></td></tr></table></figure>
+<blockquote>
+<p>重定向地址没有带协议，导致默认把当前mapper url拼接在前面</p>
+</blockquote>
+<p><code>反思</code></p>
+<ul>
+<li>为何当前mapping url的域名是错误的，是一个不存在的域名，导致排查困难</li>
+<li>有其他正常的项目，没有去对比数据</li>
+<li>redirect 没有搞清楚使用</li>
+</ul>
+<h3 id="网页微信第三方登录-回调路径的域名必须与微信商户后台授权域名一致"><a href="#网页微信第三方登录-回调路径的域名必须与微信商户后台授权域名一致" class="headerlink" title="网页微信第三方登录  回调路径的域名必须与微信商户后台授权域名一致"></a>网页微信第三方登录  回调路径的域名必须与微信商户后台授权域名一致</h3>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/09/md/README/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -238,7 +326,21 @@
               <time title="创建时间：2019-12-09 14:36 14:36:23" itemprop="dateCreated datePublished" datetime="2019-12-09T14:36:23+08:00">2019-12-09 14:36</time>
             </span>
 
-          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>448</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
 
         </div>
       </header>
@@ -304,7 +406,21 @@
               <time title="创建时间：2019-12-06 11:24 11:24:13" itemprop="dateCreated datePublished" datetime="2019-12-06T11:24:13+08:00">2019-12-06 11:24</time>
             </span>
 
-          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>3.2k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>3 分钟</span>
+            </span>
 
         </div>
       </header>
@@ -409,7 +525,21 @@
               <time title="创建时间：2019-12-06 10:26 10:26:39" itemprop="dateCreated datePublished" datetime="2019-12-06T10:26:39+08:00">2019-12-06 10:26</time>
             </span>
 
-          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>52</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
 
         </div>
       </header>
@@ -421,80 +551,6 @@
 
       
           <p>拜占庭将军问题（Byzantine failures）的本质：如何让众多完全<code>平等的节点针对某一状态达成共识</code></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/05/md/problem/work/19-12/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="mqiy">
-      <meta itemprop="description" content="永远为下个月离职做好准备">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小灰灰的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/12/05/md/problem/work/19-12/" class="post-title-link" itemprop="url">2019年12月日志</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-12-05 20:32 20:32:55" itemprop="dateCreated datePublished" datetime="2019-12-05T20:32:55+08:00">2019-12-05 20:32</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="战网第三方登录时，请求的参数误写成json格式，当作body传入"><a href="#战网第三方登录时，请求的参数误写成json格式，当作body传入" class="headerlink" title="战网第三方登录时，请求的参数误写成json格式，当作body传入"></a>战网第三方登录时，请求的参数误写成json格式，当作body传入</h3><blockquote>
-<p> 应该拼接到url后面</p>
-</blockquote>
-<h3 id="战网第三方登录时，提示“无效的grant-type或无效的回调地址“"><a href="#战网第三方登录时，提示“无效的grant-type或无效的回调地址“" class="headerlink" title="战网第三方登录时，提示“无效的grant_type或无效的回调地址“"></a>战网第三方登录时，提示“无效的grant_type或无效的回调地址“</h3><blockquote>
-<p>在战网管理平台把回调地址与授权地址配置反了</p>
-</blockquote>
-<h4 id="restTemplate有并发问题-200ms内，连接返回错乱"><a href="#restTemplate有并发问题-200ms内，连接返回错乱" class="headerlink" title="restTemplate有并发问题  200ms内，连接返回错乱"></a>restTemplate有并发问题  200ms内，连接返回错乱</h4><h4 id="支付宝支付成功后，redirect出错"><a href="#支付宝支付成功后，redirect出错" class="headerlink" title="支付宝支付成功后，redirect出错"></a>支付宝支付成功后，redirect出错</h4><p>显示最终回调地址为<code>http://casaba-commerce-mall-sandbox.cloud.bz/casaba-mall/trade/sendRedirectUrl/philips-lighting-uat.baozun.com/pay.html?orderNo=119120518391148212</code><br>而真正服务器地址为: <code>casaba-commerce-mall-sandbox.cloud.bz</code></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">response.redirect(<span class="string">'philips-lighting-uat.baozun.com/pay.html?orderNo=119120518391148212'</span>);</span></pre></td></tr></table></figure>
-<blockquote>
-<p>重定向地址没有带协议，导致默认把当前mapper url拼接在前面</p>
-</blockquote>
-<p><code>反思</code></p>
-<ul>
-<li>为何当前mapping url的域名是错误的，是一个不存在的域名，导致排查困难</li>
-<li>有其他正常的项目，没有去对比数据</li>
-<li>redirect 没有搞清楚使用</li>
-</ul>
 
       
     </div>
@@ -541,7 +597,21 @@
               <time title="创建时间：2019-12-03 13:48 13:48:46" itemprop="dateCreated datePublished" datetime="2019-12-03T13:48:46+08:00">2019-12-03 13:48</time>
             </span>
 
-          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>18k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>16 分钟</span>
+            </span>
 
         </div>
       </header>
@@ -557,7 +627,7 @@
 <p>唐宋八大家之一欧阳修在《卖油翁》中写道：<br>翁取一葫芦置于地，以钱覆其口，徐以杓酌油沥之，自钱孔入，而钱不湿。因曰：“我亦无他，唯手熟尔。”<br>编写代码的”老司机”也是如此，”老司机”之所以被称为”老司机”，原因也是”无他，唯手熟尔”。编码过程中踩过的坑多了，获得的编码经验也就多了，总结的编码技巧也就更多了。总结的编码技巧多了，凡事又能够举一反三，编码的速度自然就上来了。笔者从数据结构的角度，整理了一些 Java 编程技巧，以供大家学习参考。</p>
 <h4 id="使用HashSet判断主键是否存在"><a href="#使用HashSet判断主键是否存在" class="headerlink" title="使用HashSet判断主键是否存在"></a>使用HashSet判断主键是否存在</h4><p>HashSet 实现 Set 接口，由哈希表（实际上是 HashMap ）实现，但不保证 set  的迭代顺序，并允许使用 null 元素。HashSet 的时间复杂度跟 HashMap 一致，如果没有哈希冲突则时间复杂度为 O(1) ，如果存在哈希冲突则时间复杂度不超过 O(n) 。所以，在日常编码中，可以使用 HashSet 判断主键是否存在。</p>
 <p>案例：给定一个字符串(不一定全为字母)，请返回第一个重复出现的字符。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment">/** 查找第一个重复字符 */</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">char</span> <span class="title">findFirstRepeatedChar</span><span class="params">(String string)</span> </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">   <span class="comment">// 检查空字符串</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">   <span class="keyword">if</span> (Objects.isNull(string) || string.isEmpty()) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">       <span class="keyword">return</span> <span class="keyword">null</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">  &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">   <span class="comment">// 查找重复字符</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">   <span class="keyword">char</span>[] charArray = string.toCharArray();</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">   Set charSet = <span class="keyword">new</span> HashSet&lt;&gt;(charArray.length);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">   <span class="keyword">for</span> (<span class="keyword">char</span> ch : charArray) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">       <span class="keyword">if</span> (charSet.contains(ch)) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">           <span class="keyword">return</span> ch;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">      &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">       charSet.add(ch);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">  &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line">   <span class="comment">// 默认返回为空</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line">   <span class="keyword">return</span> <span class="keyword">null</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">20</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment">/** 查找第一个重复字符 */</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">char</span> <span class="title">findFirstRepeatedChar</span><span class="params">(String string)</span> </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">   <span class="comment">// 检查空字符串</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">   <span class="keyword">if</span> (Objects.isNull(string) || string.isEmpty()) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">       <span class="keyword">return</span> <span class="keyword">null</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">  &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">   <span class="comment">// 查找重复字符</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">   <span class="keyword">char</span>[] charArray = string.toCharArray();</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">   Set charSet = <span class="keyword">new</span> HashSet&lt;&gt;(charArray.length);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">   <span class="keyword">for</span> (<span class="keyword">char</span> ch : charArray) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">       <span class="keyword">if</span> (charSet.contains(ch)) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">           <span class="keyword">return</span> ch;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">      &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">       charSet.add(ch);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">  &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line">   <span class="comment">// 默认返回为空</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line">   <span class="keyword">return</span> <span class="keyword">null</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">20</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
 
 <p>其中，由于 Set 的 add 函数有个特性——如果添加的元素已经再集合中存在，则会返回 false 。可以简化代码为：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (!charSet.add(ch)) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">   <span class="keyword">return</span> ch;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
@@ -708,7 +778,21 @@
               <time title="创建时间：2019-12-03 13:01 13:01:07" itemprop="dateCreated datePublished" datetime="2019-12-03T13:01:07+08:00">2019-12-03 13:01</time>
             </span>
 
-          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>2.8k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>3 分钟</span>
+            </span>
 
         </div>
       </header>
@@ -806,7 +890,21 @@
               <time title="创建时间：2019-11-28 14:30 14:30:04" itemprop="dateCreated datePublished" datetime="2019-11-28T14:30:04+08:00">2019-11-28 14:30</time>
             </span>
 
-          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>301</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
 
         </div>
       </header>
@@ -872,7 +970,21 @@
               <time title="创建时间：2019-11-28 14:02 14:02:40" itemprop="dateCreated datePublished" datetime="2019-11-28T14:02:40+08:00">2019-11-28 14:02</time>
             </span>
 
-          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.9k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
 
         </div>
       </header>
@@ -947,7 +1059,21 @@
               <time title="创建时间：2019-11-22 10:43 10:43:36" itemprop="dateCreated datePublished" datetime="2019-11-22T10:43:36+08:00">2019-11-22 10:43</time>
             </span>
 
-          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>46</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
 
         </div>
       </header>
@@ -1015,7 +1141,21 @@
                 </span>
             </span>
 
-          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>183</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
 
         </div>
       </header>
@@ -1170,6 +1310,16 @@
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">mqiy</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="站点总字数">218k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">3:18</span>
 </div>
 
         
@@ -1252,4 +1402,7 @@
   
 
 </body>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/clicklove.js"></script>
+
 </html>
