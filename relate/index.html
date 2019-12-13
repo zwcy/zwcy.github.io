@@ -47,22 +47,20 @@
   };
 </script>
 
-  <meta name="description" content="无论什么级别的Java从业者，JVM都是进阶时必须迈过的坎。不管是工作还是面试中，JVM都是必考题。如果不懂JVM的话，薪酬会非常吃亏（近70%的面试者挂在JVM上了）。 掌握了JVM机制，就等于学会了深层次解决问题的方法。对于Java开发者而言，只有熟悉底层虚拟机的运行机制，才能通过JVM日志深入到字节码的层次去分析排查问题，发现隐性的系统缺陷，进而提升系统性能。 一些技术人员开发工具用得很熟练">
-<meta property="og:type" content="article">
-<meta property="og:title" content="面试又载在jvm上了">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;10&#x2F;24&#x2F;md&#x2F;jdk&#x2F;%E9%9D%A2%E8%AF%95%E5%8F%88%E8%BD%BD%E5%9C%A8jvm%E4%B8%8A%E4%BA%86&#x2F;index.html">
+  <meta name="description" content="记录各种学习笔记(算法、Java、数据库、并发……)https:&#x2F;&#x2F;github.com&#x2F;ZXZxin&#x2F;ZXBlog   java成神之路https:&#x2F;&#x2F;www.hollischuang.com&#x2F;archives&#x2F;3280 本系列知识出自中华石杉，可以作为互联网 Java 工程师进阶知识完全扫盲advanced-java 这是一份Java学习指南，涵盖大部分Java程序员所需要掌握的核心知识Jav">
+<meta property="og:type" content="website">
+<meta property="og:title" content="相关链接">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;relate&#x2F;index.html">
 <meta property="og:site_name" content="小灰灰的博客">
-<meta property="og:description" content="无论什么级别的Java从业者，JVM都是进阶时必须迈过的坎。不管是工作还是面试中，JVM都是必考题。如果不懂JVM的话，薪酬会非常吃亏（近70%的面试者挂在JVM上了）。 掌握了JVM机制，就等于学会了深层次解决问题的方法。对于Java开发者而言，只有熟悉底层虚拟机的运行机制，才能通过JVM日志深入到字节码的层次去分析排查问题，发现隐性的系统缺陷，进而提升系统性能。 一些技术人员开发工具用得很熟练">
+<meta property="og:description" content="记录各种学习笔记(算法、Java、数据库、并发……)https:&#x2F;&#x2F;github.com&#x2F;ZXZxin&#x2F;ZXBlog   java成神之路https:&#x2F;&#x2F;www.hollischuang.com&#x2F;archives&#x2F;3280 本系列知识出自中华石杉，可以作为互联网 Java 工程师进阶知识完全扫盲advanced-java 这是一份Java学习指南，涵盖大部分Java程序员所需要掌握的核心知识Jav">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https:&#x2F;&#x2F;www.mqiy.xyz&#x2F;image&#x2F;jvm&#x2F;jvm_outline.png">
-<meta property="article:published_time" content="2019-10-24T06:13:10.000Z">
-<meta property="article:modified_time" content="2019-11-21T03:15:44.120Z">
+<meta property="article:published_time" content="2019-12-12T02:47:33.000Z">
+<meta property="article:modified_time" content="2019-12-12T02:51:11.807Z">
 <meta property="article:author" content="mqiy">
-<meta property="article:tag" content="jvm">
+<meta property="article:tag" content="生存，生活">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https:&#x2F;&#x2F;www.mqiy.xyz&#x2F;image&#x2F;jvm&#x2F;jvm_outline.png">
 
-<link rel="canonical" href="http://yoursite.com/2019/10/24/md/jdk/%E9%9D%A2%E8%AF%95%E5%8F%88%E8%BD%BD%E5%9C%A8jvm%E4%B8%8A%E4%BA%86/">
+<link rel="canonical" href="http://yoursite.com/relate/">
 
 
 <script id="page-configurations">
@@ -70,11 +68,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome: false,
-    isPost: true
+    isPost: false
   };
 </script>
 
-  <title>面试又载在jvm上了 | 小灰灰的博客</title>
+  <title>相关链接 | 小灰灰的博客
+  </title>
   
 
 
@@ -137,11 +136,6 @@
 <nav class="site-nav">
   
   <ul id="menu" class="menu">
-        <li class="menu-item menu-item-home">
-
-    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
-
-  </li>
         <li class="menu-item menu-item-about">
 
     <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
@@ -149,7 +143,7 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">54</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">55</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
@@ -159,7 +153,12 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">171</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">178</span></a>
+
+  </li>
+        <li class="menu-item menu-item-relate">
+
+    <a href="/relate" rel="section"><i class="fa fa-fw fa-star"></i>relate</a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -206,112 +205,51 @@
       <div class="main-inner">
         <div class="content-wrap">
           
+  
+  
 
           <div class="content">
             
 
   <div class="posts-expand">
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/24/md/jdk/%E9%9D%A2%E8%AF%95%E5%8F%88%E8%BD%BD%E5%9C%A8jvm%E4%B8%8A%E4%BA%86/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="mqiy">
-      <meta itemprop="description" content="永远为下个月离职做好准备">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小灰灰的博客">
-    </span>
+    
+    
+    
+    <div class="post-block" lang="zh-CN">
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          面试又载在jvm上了
-        </h1>
 
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
+<h1 class="post-title" itemprop="name headline">相关链接
+</h1>
 
-              <time title="创建时间：2019-10-24 14:13 14:13:10" itemprop="dateCreated datePublished" datetime="2019-10-24T14:13:10+08:00">2019-10-24 14:13</time>
-            </span>
+<div class="post-meta">
+  
 
-          
-            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span id="busuanzi_value_page_pv"></span>
-            </span><br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>348</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
+</div>
 
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
+</header>
 
       
-        <p>无论什么级别的Java从业者，JVM都是进阶时必须迈过的坎。不管是工作还是面试中，JVM都是必考题。如果不懂JVM的话，薪酬会非常吃亏（近70%的面试者挂在JVM上了）。</p>
-<p>掌握了JVM机制，就等于学会了深层次解决问题的方法。对于Java开发者而言，只有熟悉底层虚拟机的运行机制，才能通过JVM日志深入到字节码的层次去分析排查问题，发现隐性的系统缺陷，进而提升系统性能。</p>
-<p>一些技术人员开发工具用得很熟练，触及JVM问题时却是模棱两可，甚至连内存模型和内存区域，HotSpot和JVM规范，都混淆不清。工作很长时间，在生产时还在用缺省参数来直接启动，以致系统运行时出现性能、稳定性等问题时束手无措，不知该如何追踪排查。久而久之，这对自己的职业成长是极为不利的。</p>
-<p>掌握JVM，是深入Java技术栈的必经之路。</p>
-<p><img src="https://www.mqiy.xyz/image/jvm/jvm_outline.png" alt="jv.png"></p>
+      
+      
+      <div class="post-body">
+          <p>记录各种学习笔记(算法、Java、数据库、并发……)<br><a href="https://github.com/ZXZxin/ZXBlog" target="_blank" rel="noopener">https://github.com/ZXZxin/ZXBlog</a>  </p>
+<p><code>java成神之路</code><br><a href="https://www.hollischuang.com/archives/3280" target="_blank" rel="noopener">https://www.hollischuang.com/archives/3280</a></p>
+<p>本系列知识出自中华石杉，可以作为互联网 <code>Java 工程师进阶</code>知识完全扫盲<br><a href="https://github.com/doocs/advanced-java" target="_blank" rel="noopener">advanced-java</a></p>
+<p>这是一份Java学习指南，涵盖大部分Java程序员所需要掌握的核心知识<br><a href="https://github.com/Snailclimb/JavaGuide" target="_blank" rel="noopener">JavaGuide</a> </p>
+<p>本项目将LeetCode 上所有的题目都用动画的形式演示出来<br><a href="https://github.com/MisterBooo/LeetCodeAnimation" target="_blank" rel="noopener">LeetCodeAnimation</a>   </p>
+<p>这是一个关于准备面试的项目，该项目包含了九大模块，从算法到操作系统、网络、面向对象以及数据库、Java、分布式、工具、编码实践。<br><a href="https://github.com/CyC2018/CS-Notes" target="_blank" rel="noopener">https://github.com/CyC2018/CS-Notes</a>  </p>
+<p>【Java学习+面试指南】 一份涵盖大部分Java程序员所需要掌握的核心知识。<br><a href="https://github.com/Snailclimb/JavaGuide" target="_blank" rel="noopener">https://github.com/Snailclimb/JavaGuide</a></p>
 
+      </div>
+      
+      
+      
     </div>
+    
 
     
     
     
-
-      <footer class="post-footer">
-          
-          <div class="post-tags">
-              <a href="/tags/jvm/" rel="tag"><i class="fa fa-tag"></i> jvm</a>
-          </div>
-
-        
-
-
-        
-    <div class="post-nav">
-      <div class="post-nav-item">
-    <a href="/2019/10/25/md/other/input/commonWord/" rel="prev" title="五笔输入常用500字">
-      <i class="fa fa-chevron-left"></i> 五笔输入常用500字
-    </a></div>
-      <div class="post-nav-item">
-    <a href="/2019/10/22/md/part/mid/zookeeper/zk-run/" rel="next" title="zookeeper环境搭建">
-      zookeeper环境搭建 <i class="fa fa-chevron-right"></i>
-    </a></div>
-    </div>
-      </footer>
-    
-  </article>
-  
-  
-  
-
   </div>
 
 
@@ -376,7 +314,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">171</span>
+          <span class="site-state-item-count">178</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -389,7 +327,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">54</span>
+        <span class="site-state-item-count">55</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -423,12 +361,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">218k</span>
+    <span title="站点总字数">223k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">3:18</span>
+    <span title="站点阅读时长">3:23</span>
 </div>
 
         
