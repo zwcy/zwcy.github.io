@@ -150,7 +150,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">178</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">179</span></a>
 
   </li>
         <li class="menu-item menu-item-relate">
@@ -207,6 +207,90 @@
             
 
   <div class="posts-expand">
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/part/docker/docker%E7%9B%AE%E5%BD%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="mqiy">
+      <meta itemprop="description" content="永远为下个月离职做好准备">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小灰灰的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/06/18/md/part/docker/docker%E7%9B%AE%E5%BD%95/" class="post-title-link" itemprop="url">docker挂载目录</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-06-18 14:27 14:27:10" itemprop="dateCreated datePublished" datetime="2019-06-18T14:27:10+08:00">2019-06-18 14:27</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>236</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h4 id="关于Docker目录挂载的总结"><a href="#关于Docker目录挂载的总结" class="headerlink" title="关于Docker目录挂载的总结"></a>关于Docker目录挂载的总结</h4><ul>
+<li><p>容器目录不可以为相对路径</p>
+</li>
+<li><p>宿主机目录如果不存在，则会自动生成</p>
+</li>
+<li><p>宿主机的目录如果为相对路径(实际上对路径指的是/var/lib/docker/volumes/，与宿主机的当前目录无关)</p>
+</li>
+<li><p>在容器内修改了目录的属主和属组，那么对应的挂载点会修改，容器销毁了，新建的挂载目录不会消失</p>
+</li>
+</ul>
+<p>挂载宿主机已存在目录后，在容器内对其进行操作，报“Permission denied”。</p>
+<p>1&gt; 关闭selinux。</p>
+<p>2&gt; 以特权方式启动容器  指定–privileged参数</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
         
   
   
@@ -375,7 +459,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/part/docker/docker%E7%9B%AE%E5%BD%95/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/part/docker/mariadb/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -389,7 +473,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2019/06/18/md/part/docker/docker%E7%9B%AE%E5%BD%95/" class="post-title-link" itemprop="url">docker挂载目录</a>
+            <a href="/2019/06/18/md/part/docker/mariadb/" class="post-title-link" itemprop="url">docker运行mariadb</a>
         </h1>
 
         <div class="post-meta">
@@ -408,7 +492,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>236</span>
+              <span>1k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -427,20 +511,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h4 id="关于Docker目录挂载的总结"><a href="#关于Docker目录挂载的总结" class="headerlink" title="关于Docker目录挂载的总结"></a>关于Docker目录挂载的总结</h4><ul>
-<li><p>容器目录不可以为相对路径</p>
-</li>
-<li><p>宿主机目录如果不存在，则会自动生成</p>
-</li>
-<li><p>宿主机的目录如果为相对路径(实际上对路径指的是/var/lib/docker/volumes/，与宿主机的当前目录无关)</p>
-</li>
-<li><p>在容器内修改了目录的属主和属组，那么对应的挂载点会修改，容器销毁了，新建的挂载目录不会消失</p>
-</li>
-</ul>
-<p>挂载宿主机已存在目录后，在容器内对其进行操作，报“Permission denied”。</p>
-<p>1&gt; 关闭selinux。</p>
-<p>2&gt; 以特权方式启动容器  指定–privileged参数</p>
+          <h4 id="运行容器"><a href="#运行容器" class="headerlink" title="运行容器"></a>运行容器</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">docker run  --privileged --name mariadb   -d --restart=always -e TIMEZONE=Asis/Shanghai -e MYSQL_ROOT_PASSWORD=Admin123# -e SERVER_ID=1 -v /docker/mariadb/dbdata:/var/lib/mysql  -p 3306:3306  mariadb:10.4.5 --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">参数说明:</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">--privileged 赋予容器扩展权限(root)</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">设置--restart=always 参数的时候， 设置了此参数容器退出了会自动重启， 宿主机重启了容器也能自动重启           </span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">-d后台运行 </span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">TIMEZONE 设置时区</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">MYSQL_ROOT_PASSWORD 设置root密码</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">-v  /opt/data/mariadb/dbdata:/var/lib/mysql:/var/lib/mysql  将mariadb里面的目录（/var/lib/mysql）挂载到宿主机里面</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci 设置 utf-8字符集和排序规则</span></span></pre></td></tr></table></figure>
 
+
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment">--创建用户</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">USER</span> sonar <span class="keyword">IDENTIFIED</span> <span class="keyword">BY</span> <span class="string">'sonar'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="comment">--授权</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">GRANT</span> <span class="keyword">ALL</span> <span class="keyword">ON</span> *.* <span class="keyword">TO</span> <span class="string">'sonar@localhost'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">GRANT</span> <span class="keyword">ALL</span> <span class="keyword">PRIVILEGES</span> <span class="keyword">ON</span> *.* <span class="keyword">TO</span> <span class="string">'root'</span>@<span class="string">'%'</span><span class="keyword">IDENTIFIED</span> <span class="keyword">BY</span> <span class="string">'Admin123#'</span> <span class="keyword">WITH</span> <span class="keyword">GRANT</span> <span class="keyword">OPTION</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">grant</span> <span class="keyword">all</span> <span class="keyword">privileges</span> <span class="keyword">on</span> *.* <span class="keyword">to</span> sonar <span class="keyword">identified</span> <span class="keyword">by</span> <span class="string">'sonar'</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">FLUSH</span> <span class="keyword">PRIVILEGES</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line"><span class="comment">-- mariadb 开启远程连接权限</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">grant</span> <span class="keyword">all</span> <span class="keyword">privileges</span> <span class="keyword">on</span> *.* <span class="keyword">to</span> root@<span class="string">"%"</span> <span class="keyword">identified</span> <span class="keyword">by</span> <span class="string">"Admin123#"</span>;  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">FLUSH</span> <span class="keyword">PRIVILEGES</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line"><span class="comment">--指定编码创建db</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">DATABASE</span> <span class="keyword">IF</span> <span class="keyword">NOT</span> <span class="keyword">EXISTS</span> sonar <span class="keyword">DEFAULT</span> <span class="keyword">CHARSET</span> utf8mb4 <span class="keyword">COLLATE</span> utf8mb4_general_ci;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line"><span class="comment">--备份数据</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line">mysqldump -uroot -p <span class="comment">--all-database &gt; bk.sql</span></span></pre></td></tr></table></figure>
       
     </div>
 
@@ -631,7 +705,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/part/docker/redis/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/%E9%AB%98%E5%8F%AF%E7%94%A8/Netty/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -645,7 +719,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2019/06/18/md/part/docker/redis/" class="post-title-link" itemprop="url">docker运行redis</a>
+            <a href="/2019/06/18/md/%E9%AB%98%E5%8F%AF%E7%94%A8/Netty/" class="post-title-link" itemprop="url">netty介绍</a>
         </h1>
 
         <div class="post-meta">
@@ -664,7 +738,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>162</span>
+              <span>410</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -683,14 +757,19 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h4 id="运行容器"><a href="#运行容器" class="headerlink" title="运行容器"></a>运行容器</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">docker run  --privileged  --name redis -v /docker/redis/data:/data  -p  6379:6379 -d redis:5.0.5  redis-server --appendonly yes</span></pre></td></tr></table></figure>
-
-
-
-
-
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="comment">#客户端连 redis</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">redis-cli.exe -h <span class="number">192.168</span>.<span class="number">85.135</span> -p <span class="number">6379</span></span></pre></td></tr></table></figure>
-
+          <p>netty是由JBOSS提供的一个java开源框架。<br>netty提供异步的、事件驱动的网络应用程序框架和工具，用以快速开发高性能、高可靠性的网络服务器和客户端程序。</p>
+<p>netty：异步非阻塞开源框架<br>bio：同步阻塞<br>nio：同步非阻塞<br>bio：异步非阻塞</p>
+<p>一个IO操作其实分成了两个步骤：发起IO请求和实际的IO操作。<br>同步IO和异步IO的区别就在于第二个步骤是否阻塞，如果实际的IO读写阻塞请求进程，那么就是同步IO。<br>阻塞IO和非阻塞IO的区别在于第一步，发起IO请求是否会被阻塞，如果阻塞直到完成那么就是传统的阻塞IO，如果不阻塞，那么就是非阻塞IO。 </p>
+<ul>
+<li><p>同步阻塞：你到饭馆点餐，然后在那等着，还要一边喊：好了没啊！ </p>
+</li>
+<li><p>同步非阻塞：在饭馆点完餐，就去遛狗了。不过溜一会儿，就回饭馆喊一声：好了没啊！ </p>
+</li>
+<li><p>异步阻塞：遛狗的时候，接到饭馆电话，说饭做好了，让您亲自去拿。 </p>
+</li>
+<li><p>异步非阻塞：饭馆打电话说，我们知道您的位置，一会给你送过来，安心遛狗就可以了。 </p>
+</li>
+</ul>
 
       
     </div>
@@ -710,7 +789,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/other/Reactive%20Programming/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/develop/base/pattern/pattern/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -724,7 +803,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2019/06/18/md/other/Reactive%20Programming/" class="post-title-link" itemprop="url">响应式编程</a>
+            <a href="/2019/06/18/md/develop/base/pattern/pattern/" class="post-title-link" itemprop="url">代理模式与装饰模式区别</a>
         </h1>
 
         <div class="post-meta">
@@ -736,6 +815,17 @@
 
               <time title="创建时间：2019-06-18 14:13 14:13:10" itemprop="dateCreated datePublished" datetime="2019-06-18T14:13:10+08:00">2019-06-18 14:13</time>
             </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" itemprop="url" rel="index">
+                    <span itemprop="name">设计模式</span>
+                  </a>
+                </span>
+            </span>
 
           <br>
             <span class="post-meta-item" title="本文字数">
@@ -743,7 +833,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>160</span>
+              <span>149</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -762,23 +852,90 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h4 id="响应式编程核心特征"><a href="#响应式编程核心特征" class="headerlink" title="响应式编程核心特征"></a>响应式编程核心特征</h4><ul>
-<li>变化传递(propagation of change)</li>
-<li>基于数据流(data stream)</li>
-<li>声明式(declarative)</li>
+          <p>代理模式主要是<code>控制对某个特定对象访问</code>，而装饰模式主要是为了<code>给对象添加行为</code></p>
+<p>代理模式和装饰模式非常类似，甚至代码都类似。二者最主要的区别是：</p>
+<ul>
+<li>代理模式中，代理类对被代理的对象有控制权，决定其执行或者不执行。</li>
+<li>而装饰模式中，装饰类对代理对象<code>没有控制权</code>，只能为其增加一层装饰，以加强被装饰对象的功能，仅此而已。</li>
 </ul>
-<h4 id="响应式流"><a href="#响应式流" class="headerlink" title="响应式流"></a>响应式流</h4><ul>
-<li>异步非阻塞</li>
-<li>流量控制</li>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/part/microServices/consul/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="mqiy">
+      <meta itemprop="description" content="永远为下个月离职做好准备">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小灰灰的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/06/18/md/part/microServices/consul/" class="post-title-link" itemprop="url">consul介绍</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-06-18 14:13 14:13:10" itemprop="dateCreated datePublished" datetime="2019-06-18T14:13:10+08:00">2019-06-18 14:13</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>275</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>consul是分布式的、高可用、横向扩展的（CP）。consul提供的一些关键特性：</p>
+<ul>
+<li>service discovery：consul通过DNS或者HTTP接口使服务注册和服务发现变的很容易，一些外部服务，例如saas提供的也可以一样注册。</li>
+<li>health checking：健康检测使consul可以快速的告警在集群中的操作。和服务发现的集成，可以防止服务转发到故障的服务上面。</li>
+<li>key/value storage：一个用来存储动态配置的系统。提供简单的HTTP接口，可以在任何地方操作。</li>
+<li>multi-datacenter：无需复杂的配置，即可支持任意数量的区域。</li>
 </ul>
-<blockquote>
-<p>(ps Java Stream是一种同步API)</p>
-</blockquote>
-<p>阻塞造成的性能损失，我们通常有两种思路来解决</p>
-<ol>
-<li>并行化：使用更多的线程和硬件资源；</li>
-<li>异步化：基于现有的资源来提高执行效率。</li>
-</ol>
 
       
     </div>
@@ -866,174 +1023,6 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/other/encrypt/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="mqiy">
-      <meta itemprop="description" content="永远为下个月离职做好准备">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小灰灰的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/06/18/md/other/encrypt/" class="post-title-link" itemprop="url">公钥与私钥</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-06-18 14:13 14:13:10" itemprop="dateCreated datePublished" datetime="2019-06-18T14:13:10+08:00">2019-06-18 14:13</time>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>44</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>公钥与私钥使用，在大部分情况下</p>
-<ul>
-<li>我们使用公钥加密、私钥解密，</li>
-<li><code>签名</code>却是使用私钥加密，公钥解密</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/interview/interview/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="mqiy">
-      <meta itemprop="description" content="永远为下个月离职做好准备">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小灰灰的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/06/18/md/interview/interview/" class="post-title-link" itemprop="url">面试</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-06-18 14:13 14:13:10" itemprop="dateCreated datePublished" datetime="2019-06-18T14:13:10+08:00">2019-06-18 14:13</time>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>546</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="如何提高求职时的谈判能力？"><a href="#如何提高求职时的谈判能力？" class="headerlink" title="如何提高求职时的谈判能力？"></a>如何提高求职时的谈判能力？</h3><ol>
-<li><p>记住你不是在展示编程技巧或者漂亮的脸蛋，而是在推销某种商业需求（增加收入或降低成本）的解决方案。</p>
-</li>
-<li><p>面试时，要有自信，要平等的对话。你的对手可能也在做同样的事情。你要的是一个互利的录用合同，不要每次对方提出要求，你都说 Yes。</p>
-</li>
-<li><p>雇主可能会问”你的上一份工资是多少”，他们其实在说”给我一个理由，压低你的报酬”。你要想好如何适当地回答这个问题。</p>
-</li>
-<li><p>要讨价还价。这里不仅仅指钱，还指其它你关心的方面。如果你无法要求更高的薪水，那就试着要求更多的假期。</p>
-</li>
-<li><p>在对方决定录用你以后，才开始讨论薪水。因为那时，他们已经在你身上，投入了大量的时间和金钱。这个时候他们说“不行，我们不能成交”会浪费很大的成本，他们会觉得一些小问题已经不值得再纠缠了，比如每年的工资增加几千元。</p>
-</li>
-<li><p>多读书吧。很多人写过谈判方面的书。我喜欢《Getting To Yes | 谈判力》这本书。有一点令人不解的是，就整个职业生涯而言，谈判技巧值得每年花费数千美元，但工程师们却认为针对这学习方面很疯狂，他们宁愿去学习感兴趣技术的细枝末节。</p>
-</li>
-</ol>
-<h3 id="面试时一定要问清楚这4点"><a href="#面试时一定要问清楚这4点" class="headerlink" title="面试时一定要问清楚这4点"></a>面试时一定要问清楚这4点</h3><ul>
-<li>试用期的工资及时间</li>
-<li>考核的转正方式及薪资范围</li>
-<li>工作时间和加班时间计算</li>
-<li>培训和晋升机制</li>
-</ul>
-<p>spring的事务传播机制<br>springmvc参数绑定原理<br>mybatis的分页原理 limit</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
@@ -1104,7 +1093,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">178</span>
+          <span class="site-state-item-count">179</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
