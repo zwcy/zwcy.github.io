@@ -150,7 +150,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">179</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">180</span></a>
 
   </li>
         <li class="menu-item menu-item-relate">
@@ -207,6 +207,135 @@
             
 
   <div class="posts-expand">
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/06/md/interview/baidu-db-interview/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="mqiy">
+      <meta itemprop="description" content="永远为下个月离职做好准备">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小灰灰的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/11/06/md/interview/baidu-db-interview/" class="post-title-link" itemprop="url">最全BAT数据库面试89题</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-11-06 14:56 14:56:27" itemprop="dateCreated datePublished" datetime="2019-11-06T14:56:27+08:00">2019-11-06 14:56</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>4.8k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>4 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h4 id="数据库-mysql面试题目："><a href="#数据库-mysql面试题目：" class="headerlink" title="数据库 mysql面试题目："></a>数据库 mysql面试题目：</h4><p>MySQL InnoDB、Mysaim的特点？<br>乐观锁和悲观锁的区别？？<br>行锁和表锁的区别？<br>数据库隔离级别是什么？有什么作用？<br>MySQL主备同步的基本原理。<br>如何优化数据库性能（索引、分库分表、批量操作、分页算法、升级硬盘SSD、业务优化、主从部署）<br>SQL什么情况下不会使用索引（不包含，不等于，函数）<br>一般在什么字段上建索引（过滤数据最多的字段）<br>MySQL，B+索引实现，行锁实现，SQL优化<br>如何解决高并发减库存问题<br>数据库事务的几种粒度</p>
+<h4 id="数据库-题目："><a href="#数据库-题目：" class="headerlink" title="数据库 题目："></a>数据库 题目：</h4><p>事务四大特性（ACID）<br>数据库隔离级别，每个级别会引发什么问题，mysql默认是哪个级别<br>MYSQL的两种存储引擎区别（事务、锁级别等等），各自的适用场景<br>数据库的优化（从sql语句优化和索引两个部分回答）<br>索引有B+索引和hash索引，各自的区别<br>B+索引数据结构，和B树的区别<br>索引的分类（主键索引、唯一索引），最左前缀原则，哪些情况索引会失效<br>聚集索引和非聚集索引区别。<br>有哪些锁（乐观锁悲观锁），select时怎么加排它锁<br>关系型数据库和非关系型数据库区别<br>MVCC机制</p>
+<h4 id="数据库实战"><a href="#数据库实战" class="headerlink" title="数据库实战"></a>数据库实战</h4><p>数据库三范式，根据秒杀场景设计数据表<br>数据库的主从复制<br>死锁怎么解决<br>mysql并发情况下怎么解决（通过事务、隔离级别、锁）</p>
+<h4 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h4><p>redis数据结构有哪些<br>redis队列应用场景<br>redis和Memcached（支持数据持久化）<br>Redis，RDB和AOF，如何做高可用、集群</p>
+<h4 id="大数据："><a href="#大数据：" class="headerlink" title="大数据："></a>大数据：</h4><p>mapreduce过程<br>hbase和传统数据库的区别<br>hbase读数据过程<br>hbase master和regionserver的交互<br>hbase的ha，zookeeper在其中的作用，master宕机的时候，哪些能正常工作，读写数据？region分裂？<br>数据倾斜<br>mysql索引，哪些索引？实现原理？哪些存储引擎支持B树索引，哪些支持hash索引？<br>为啥mysql索引要用B+树而MongoDB用B树？<br>Mysql查询优化？<br>主键和唯一索引的区别<br>事务的隔离机制，mysql默认是哪一级<br>MyISAM和InnoDB存储引擎的区别<br>mysql查询优化，慢查询怎么去定位？<br>mysql中的各种锁，乐观锁，悲观锁（排他锁，共享锁）；行锁，表锁是怎么实现的？<br>mapreduce支持哪些join，map端？reduce端？semi join？semi join你可以通过什么算法去优化？<br>mapreduce实现二次排序<br>用mapreduce实现两表join<br>用mapreduce实现一个存储kv数据的文件，对里面的v进行全量排序<br>zookeeper实现原理，zab协议以及原子广播协议<br>paxos协议，multi-paxos，zab，raft各种分布式协议内容，使用场景<br>hadoop namenode的ha，主备切换实现原理，日志同步原理，QJM中用到的分布式一致性算法（就是paxos算法）<br>spark运行架构<br>spark运行原理，从提交一个jar到最后返回结果，整个过程<br>spark的stage划分是怎么实现的？拓扑排序？怎么实现？还有什么算法实现？<br>spark rpc，spark2.0为啥舍弃了akka，而用netty?<br>spark的各种shuffle，与mapreduce的对比<br>spark的各种ha，master的ha，worker的ha，executor的ha，driver的ha,task的ha,在容错的时候对集群或是task有什么影响？<br>spark的内存管理机制，spark1.6前后对比分析<br>spark2.0做出了哪些优化？tungsten引擎？cpu与内存两个方面分别说明<br>spark rdd、dataframe、dataset区别<br>callable runnable 区别<br>synchronized与lock区别<br>类加载机制<br>gc算法<br>spark数据倾斜<br>spark shuffle<br>spark 内存管理<br>各种排序算法，时间复杂度，空间复杂度，spark和hadoop中shuffle中各个阶段用到的排序算法把这几种排序算法的使用场景表现得淋漓尽致啊。</p>
+<h4 id="常见数据库面试题目和答案："><a href="#常见数据库面试题目和答案：" class="headerlink" title="常见数据库面试题目和答案："></a>常见数据库面试题目和答案：</h4><p>1、触发器的作用？</p>
+<blockquote>
+<p>触发器是一中特殊的存储过程，主要是通过事件来触发而被执行的。它可以强化约束，来维护数据的完整性和一致性，可以跟踪数据库内的操作从而不允许未经许可的更新和变化。可以联级运算。如，某表上的触发器上包含对另一个表的数据操作，而该操作又会导致该表触发器被触发。</p>
+</blockquote>
+<p>2、什么是存储过程？用什么来调用？</p>
+<blockquote>
+<p>存储过程是一个预编译的SQL语句，优点是允许模块化的设计，就是说只需创建一次，以后在该程序中就可以调用多次。如果某次操作需要执行多次SQL，使用存储过程比单纯SQL语句执行要快。 调用： 1）可以用一个命令对象来调用存储过程。 2）可以供外部程序调用，比如：java程序。</p>
+</blockquote>
+<p>3、存储过程的优缺点？</p>
+<p>优点： 1）存储过程是预编译过的，执行效率高。 2）存储过程的代码直接存放于数据库中，通过存储过程名直接调用，减少网络通讯。 3）安全性高，执行存储过程需要有一定权限的用户。 4）存储过程可以重复使用，可减少数据库开发人员的工作量。 缺点：移植性差</p>
+<p>4、存储过程与函数的区别</p>
+<p>存储过程函数用于在数据库中完成特定的操作或者任务（如插入、删除等）用于特定的数据（如选择）程序头部声明用procedure程序头部声明用function程序头部声明时不需描述返回类型程序头部声明时要描述返回类型，而且PL/SQL块中至少要包括一个有效的return语句可以使用in/out/in out 三种模式的参数可以使用in/out/in out 三种模式的参数可作为一个独立的PL/SQL语句来执行不能独立执行，必须作为表达式的一部分调用可以通过out/in out 返回零个或多个值通过return语句返回一个值，且改值要与声明部分一致，也可以是通过out类型的参数带出的变量SQL语句(DML 或SELECT)中不可调用存储过程SQL语句(DML 或SELECT)中可以调用函数</p>
+<p>5、索引的作用？和它的优点缺点是什么？</p>
+<p>索引就一种特殊的查询表，数据库的搜索可以利用它加速对数据的检索。它很类似与现实生活中书的目录，不需要查询整本书内容就可以找到想要的数据。索引可以是唯一的，创建索引允许指定单个列或者是多个列。缺点是它减慢了数据录入的速度，同时也增加了数据库的尺寸大小。</p>
+<p>6、什么样的字段适合建索引</p>
+<p>唯一、不为空、经常被查询的字段</p>
+<p>7、索引类型有哪些？</p>
+<p>逻辑上：</p>
+<p>Single column 单行索引</p>
+<p>Concatenated 多行索引</p>
+<p>Unique 唯一索引</p>
+<p>NonUnique 非唯一索引</p>
+<p>Function-based 函数索引</p>
+<p>Domain 域索引 物理上：</p>
+<p>Partitioned 分区索引</p>
+<p>NonPartitioned 非分区索引</p>
+<p>B-tree ：</p>
+<p>Normal 正常型B树</p>
+<p>Rever Key 反转型B树 Bitmap 位图索引</p>
+<p>8、什么是事务？什么是锁？</p>
+<p>事务就是被绑定在一起作为一个逻辑工作单元的SQL语句分组，如果任何一个语句操作失败那么整个操作就被失败，以后操作就会回滚到操作前状态，或者是上有个节点。为了确保要么执行，要么不执行，就可以使用事务。要将有组语句作为事务考虑，就需要通过ACID测试，即原子性，一致性，隔离性和持久性。 锁：在所以的DBMS中，锁是实现事务的关键，锁可以保证事务的完整性和并发性。与现实生活中锁一样，它可以使某些数据的拥有者，在某段时间内不能使用某些数据或数据结构。当然锁还分级别的。</p>
+<p>9、什么叫视图？游标是什么？</p>
+<p>视图：是一种虚拟的表，具有和物理表相同的功能。可以对视图进行增，改，查，操作，试图通常是有一个表或者多个表的行或列的子集。对视图的修改会影响基本表。它使得我们获取数据更容易，相比多表查询。 游标：是对查询出来的结果集作为一个单元来有效的处理。游标可以定在该单元中的特定行，从结果集的当前行检索一行或多行。可以对结果集当前行做修改。一般不使用游标，但是需要逐条处理数据的时候，游标显得十分重要。</p>
+<p>10、视图的优缺点</p>
+<p>优点： 1）对数据库的访问，因为视图可以有选择性的选取数据库里的一部分。 2 ）用户通过简单的查询可以从复杂查询中得到结果。 3 ）维护数据的独立性，试图可从多个表检索数据。 4 ）对于相同的数据可产生不同的视图。 缺点： 性能：查询视图时，必须把视图的查询转化成对基本表的查询，如果这个视图是由一个复杂的多表查询所定义，那么，那么就无法更改数据</p>
+<p>11、列举几种表连接方式,有什么区别？</p>
+<p>内连接、自连接、外连接（左、右、全）、交叉连接 内连接：只有两个元素表相匹配的才能在结果集中显示。 外连接： 左外连接:左边为驱动表，驱动表的数据全部显示，匹配表的不匹配的不会显示。 右外连接:右边为驱动表，驱动表的数据全部显示，匹配表的不匹配的不会显示。 全外连接：连接的表中不匹配的数据全部会显示出来。 交叉连接： 笛卡尔效应，显示的结果是链接表数的乘积。</p>
+<p>12、主键和外键的区别？</p>
+<p>主键在本表中是唯一的、不可唯空的，外键可以重复可以唯空；外键和另一张表的主键关联，不能创建对应表中不存在的外键。</p>
+<p>13、在数据库中查询语句速度很慢，如何优化？</p>
+<p>1.建索引 2.减少表之间的关联 3.优化sql，尽量让sql很快定位数据，不要让sql做全表查询，应该走索引,把数据 量大的表排在前面 4.简化查询字段，没用的字段不要，已经对返回结果的控制，尽量返回少量数据 5.尽量用PreparedStatement来查询，不要用Statement</p>
+<p>14、数据库三范式是什么?</p>
+<p>第一范式：列不可再分 第二范式：行可以唯一区分，主键约束 第三范式：表的非主属性不能依赖与其他表的非主属性 外键约束 且三大范式是一级一级依赖的，第二范式建立在第一范式上，第三范式建立第一第二范式上</p>
+<p>15、union和union all有什么不同?</p>
+<p>UNION在进行表链接后会筛选掉重复的记录，所以在表链接后会对所产生的结果集进行排序运算，删除重复的记录再返回结果。实际大部分应用中是不会产生重复的记录，最常见的是过程表与历史表UNION。 UNION ALL只是简单的将两个结果合并后就返回。这样，如果返回的两个结果集中有重复的数据，那么返回的结果集就会包含重复的数据了。 从效率上说，UNION ALL 要比UNION快很多，所以，如果可以确认合并的两个结果集中不包含重复的数据的话，那么就使用UNION ALL。</p>
+<p>16、Varchar2和varchar有什么区别？</p>
+<p>Char的长度是固定的，而varchar2的长度是可以变化的，比如，存储字符串“abc”对于char(20)，表示你存储的字符将占20个字节，包含17个空，而同样的varchar2（20）只占了3个字节，20只是最大值，当你存储的字符小于20时，按实际长度存储。 char的效率要被varchar2的效率高。 目前varchar是varchar2的同义词，工业标准的varchar类型可以存储空字符串，但是oracle不能这样做，尽管它保留以后这样做的权利。Oracle自己开发了一个数据类型varchar2,这个类型不是一个标准的varchar，他将在数据库中varchar列可以存储空字符串的特性改为存储null值，如果你想有向后兼容的能力，oracle建议使用varchar2而不是varchar</p>
+<p>17、Oracle和Mysql的区别？</p>
+<p>1）库函数不同。 2）Oracle是用表空间来管理的，Mysql不是。 3）显示当前所有的表、用户、改变连接用户、显示当前连接用户、执行外部脚本的语句的不同。 4）分页查询时候时候，mysql用limit oracle用rownum</p>
+<p>21、order by与group by的区别</p>
+<blockquote>
+<p>order by 排序查询、asc升序、desc降序 group by 分组查询、having 只能用于group by子句、作用于组内，having条件子句可以直接跟函数表达式。使用group by 子句的查询语句需要使用聚合函数。</p>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
         
   
   
@@ -1437,114 +1566,6 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/05/md/develop/base/pattern/adaptor/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="mqiy">
-      <meta itemprop="description" content="永远为下个月离职做好准备">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小灰灰的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/11/05/md/develop/base/pattern/adaptor/" class="post-title-link" itemprop="url">适配器模式</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-11-05 16:21 16:21:41" itemprop="dateCreated datePublished" datetime="2019-11-05T16:21:41+08:00">2019-11-05 16:21</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" itemprop="url" rel="index">
-                    <span itemprop="name">设计模式</span>
-                  </a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>3.4k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>3 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="适配器模式"><a href="#适配器模式" class="headerlink" title="适配器模式"></a>适配器模式</h3><p>适配器模式（Adapter Pattern）是作为两个不兼容的接口之间的桥梁。这种类型的设计模式属于结构型模式，它结合了两个独立接口的功能。</p>
-<p>这种模式涉及到一个单一的类，该类负责加入独立的或不兼容的接口功能。举个真实的例子，读卡器是作为内存卡和笔记本之间的适配器。您将内存卡插入读卡器，再将读卡器插入笔记本，这样就可以通过笔记本来读取内存卡。</p>
-<p>我们通过下面的实例来演示适配器模式的使用。其中，音频播放器设备只能播放 mp3 文件，通过使用一个更高级的音频播放器来播放 vlc 和 mp4 文件。</p>
-<h4 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h4><p><strong>意图</strong>：将一个类的接口转换成客户希望的另外一个接口。适配器模式使得原本由于接口不兼容而不能一起工作的那些类可以一起工作。</p>
-<p><strong>主要解决</strong>：主要解决在软件系统中，常常要将一些”现存的对象”放到新的环境中，而新环境要求的接口是现对象不能满足的。</p>
-<p><strong>何时使用</strong>： 1、系统需要使用现有的类，而此类的接口不符合系统的需要。 2、想要建立一个可以重复使用的类，用于与一些彼此之间没有太大关联的一些类，包括一些可能在将来引进的类一起工作，这些源类不一定有一致的接口。 3、通过接口转换，将一个类插入另一个类系中。（比如老虎和飞禽，现在多了一个飞虎，在不增加实体的需求下，增加一个适配器，在里面包容一个虎对象，实现飞的接口。）</p>
-<p><strong>如何解决</strong>：继承或依赖（推荐）。</p>
-<p><strong>关键代码</strong>：适配器继承或依赖已有的对象，实现想要的目标接口。</p>
-<p><strong>应用实例</strong>： 1、美国电器 110V，中国 220V，就要有一个适配器将 110V 转化为 220V。 2、JAVA JDK 1.1 提供了 Enumeration 接口，而在 1.2 中提供了 Iterator 接口，想要使用 1.2 的 JDK，则要将以前系统的 Enumeration 接口转化为 Iterator 接口，这时就需要适配器模式。 3、在 LINUX 上运行 WINDOWS 程序。 4、JAVA 中的 jdbc。</p>
-<p><strong>优点</strong>： 1、可以让任何两个没有关联的类一起运行。 2、提高了类的复用。 3、增加了类的透明度。 4、灵活性好。</p>
-<p><strong>缺点</strong>： 1、过多地使用适配器，会让系统非常零乱，不易整体进行把握。比如，明明看到调用的是 A 接口，其实内部被适配成了 B 接口的实现，一个系统如果太多出现这种情况，无异于一场灾难。因此如果不是很有必要，可以不使用适配器，而是直接对系统进行重构。 2.由于 JAVA 至多继承一个类，所以至多只能适配一个适配者类，而且目标类必须是抽象类。</p>
-<p><strong>使用场景</strong>：有动机地修改一个正常运行的系统的接口，这时应该考虑使用适配器模式。</p>
-<p><strong>注意事项</strong>：适配器不是在详细设计时添加的，而是解决正在服役的项目的问题。</p>
-<p>分享一个例子：笔记本通过读卡去读取TF卡；</p>
-<h3 id="一、先模拟计算机读取SD卡："><a href="#一、先模拟计算机读取SD卡：" class="headerlink" title="一、先模拟计算机读取SD卡："></a>一、先模拟计算机读取SD卡：</h3><h4 id="1、先创建一个SD卡的接口："><a href="#1、先创建一个SD卡的接口：" class="headerlink" title="1、先创建一个SD卡的接口："></a>1、先创建一个SD卡的接口：</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">SDCard</span> </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    <span class="comment">//读取SD卡方法</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    <span class="function">String <span class="title">readSD</span><span class="params">()</span></span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    <span class="comment">//写入SD卡功能</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">writeSD</span><span class="params">(String msg)</span></span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
-
-<h4 id="2、创建SD卡接口的实现类，模拟SD卡的功能："><a href="#2、创建SD卡接口的实现类，模拟SD卡的功能：" class="headerlink" title="2、创建SD卡接口的实现类，模拟SD卡的功能："></a>2、创建SD卡接口的实现类，模拟SD卡的功能：</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SDCardImpl</span> <span class="keyword">implements</span> <span class="title">SDCard</span> </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    <span class="meta">@Override</span>    </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">readSD</span><span class="params">()</span> </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">        String msg = <span class="string">"sdcard read a msg :hello word SD"</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">return</span> msg;  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">    <span class="meta">@Override</span>  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">writeSD</span><span class="params">(String msg)</span> </span>&#123;      </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">        System.out.println(<span class="string">"sd card write msg : "</span> + msg);    </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;   </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
-<h4 id="3、创建计算机接口，计算机提供读取SD卡方法："><a href="#3、创建计算机接口，计算机提供读取SD卡方法：" class="headerlink" title="3、创建计算机接口，计算机提供读取SD卡方法："></a>3、创建计算机接口，计算机提供读取SD卡方法：</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Computer</span> </span>&#123;    </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    <span class="function">String <span class="title">readSD</span><span class="params">(SDCard sdCard)</span></span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
-<h4 id="4、创建一个计算机实例，实现计算机接口，并实现其读取SD卡方法："><a href="#4、创建一个计算机实例，实现计算机接口，并实现其读取SD卡方法：" class="headerlink" title="4、创建一个计算机实例，实现计算机接口，并实现其读取SD卡方法："></a>4、创建一个计算机实例，实现计算机接口，并实现其读取SD卡方法：</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ThinkpadComputer</span> <span class="keyword">implements</span> <span class="title">Computer</span> </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    <span class="meta">@Override</span>    </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">readSD</span><span class="params">(SDCard sdCard)</span> </span>&#123;        </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">if</span>(sdCard == <span class="keyword">null</span>)<span class="keyword">throw</span> <span class="keyword">new</span> NullPointerException(<span class="string">"sd card null"</span>);        </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">return</span> sdCard.readSD();    </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
-<h4 id="5、这时候就可以模拟计算机读取SD卡功能："><a href="#5、这时候就可以模拟计算机读取SD卡功能：" class="headerlink" title="5、这时候就可以模拟计算机读取SD卡功能："></a>5、这时候就可以模拟计算机读取SD卡功能：</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ComputerReadDemo</span> </span>&#123;    </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;        </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">        Computer computer = <span class="keyword">new</span> ThinkpadComputer();        </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">        SDCard sdCard = <span class="keyword">new</span> SDCardImpl();       </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">        System.out.println(computer.readSD(sdCard));    </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
-<h3 id="二、接下来在不改变计算机读取SD卡接口的情况下，通过适配器模式读取TF卡："><a href="#二、接下来在不改变计算机读取SD卡接口的情况下，通过适配器模式读取TF卡：" class="headerlink" title="二、接下来在不改变计算机读取SD卡接口的情况下，通过适配器模式读取TF卡："></a>二、接下来在不改变计算机读取SD卡接口的情况下，通过适配器模式读取TF卡：</h3><h4 id="1、创建TF卡接口："><a href="#1、创建TF卡接口：" class="headerlink" title="1、创建TF卡接口："></a>1、创建TF卡接口：</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">TFCard</span> </span>&#123;    </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    <span class="function">String <span class="title">readTF</span><span class="params">()</span></span>;    </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">writeTF</span><span class="params">(String msg)</span></span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
-<h4 id="2、创建TF卡实例："><a href="#2、创建TF卡实例：" class="headerlink" title="2、创建TF卡实例："></a>2、创建TF卡实例：</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TFCardImpl</span> <span class="keyword">implements</span> <span class="title">TFCard</span> </span>&#123;    </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    <span class="meta">@Override</span>    </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">readTF</span><span class="params">()</span> </span>&#123;        </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">        String msg =<span class="string">"tf card reade msg : hello word tf card"</span>;        </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">return</span> msg;    </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    &#125;    </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">    <span class="meta">@Override</span>    </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">writeTF</span><span class="params">(String msg)</span> </span>&#123;        </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">        System.out.println(<span class="string">"tf card write a msg : "</span> + msg);        </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;    </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
-<h4 id="3、创建SD适配TF-（也可以说是SD兼容TF，相当于读卡器）："><a href="#3、创建SD适配TF-（也可以说是SD兼容TF，相当于读卡器）：" class="headerlink" title="3、创建SD适配TF （也可以说是SD兼容TF，相当于读卡器）："></a>3、创建SD适配TF （也可以说是SD兼容TF，相当于读卡器）：</h4><p>实现SDCard接口，并将要适配的对象作为适配器的属性引入。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SDAdapterTF</span> <span class="keyword">implements</span> <span class="title">SDCard</span> </span>&#123;    </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">private</span> TFCard tfCard;    </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">SDAdapterTF</span><span class="params">(TFCard tfCard)</span> </span>&#123;        </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">this</span>.tfCard = tfCard;    </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">    &#125;    </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    <span class="meta">@Override</span>    </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">readSD</span><span class="params">()</span> </span>&#123;        </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">        System.out.println(<span class="string">"adapter read tf card "</span>);        </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">return</span> tfCard.readTF();    </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">    &#125;    </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">    <span class="meta">@Override</span>    </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">writeSD</span><span class="params">(String msg)</span> </span>&#123;        </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">        System.out.println(<span class="string">"adapter write tf card"</span>);        </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">return</span> tfCard.writeTF(msg);    </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
-<h4 id="4、通过上面的例子测试计算机通过SD读卡器读取TF卡："><a href="#4、通过上面的例子测试计算机通过SD读卡器读取TF卡：" class="headerlink" title="4、通过上面的例子测试计算机通过SD读卡器读取TF卡："></a>4、通过上面的例子测试计算机通过SD读卡器读取TF卡：</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ComputerReadDemo</span> </span>&#123;    </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;        </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">        Computer computer = <span class="keyword">new</span> ThinkpadComputer();        </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">        SDCard sdCard = <span class="keyword">new</span> SDCardImpl();        </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">        System.out.println(computer.readSD(sdCard));        </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">        System.out.println(<span class="string">"===================================="</span>);        </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">        TFCard tfCard = <span class="keyword">new</span> TFCardImpl();        </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">        SDCard tfCardAdapterSD = <span class="keyword">new</span> SDAdapterTF(tfCard);        </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">        System.out.println(computer.readSD(tfCardAdapterSD));    </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">输出：</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">sdcard read a msg :hello word SD</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">====================================</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">adapter read tf card </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">tf card reade msg : hello word tf card</span></pre></td></tr></table></figure>
-<p>在这种模式下，计算机并不需要知道具体是什么卡，只需要负责操作接口即可，具体操作的什么类，由适配器决定。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
@@ -1615,7 +1636,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">179</span>
+          <span class="site-state-item-count">180</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1662,12 +1683,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">223k</span>
+    <span title="站点总字数">226k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">3:23</span>
+    <span title="站点阅读时长">3:26</span>
 </div>
 
         

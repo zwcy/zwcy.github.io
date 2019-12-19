@@ -1,6 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>java中锁的优化 -- JVM对synchronized的优化</title>
+    <url>/2019/12/19/md/jdk/mulThread/syn-opti/</url>
+    <content><![CDATA[<h3 id="1）锁消除"><a href="#1）锁消除" class="headerlink" title="1）锁消除"></a>1）锁消除</h3><p>概念：JVM在JIT编译(即时编译)时，通过对运行上下文的扫描，去除掉那些不可能发生共享资源竞争的锁，从而节省了线程请求这些锁的时间。</p>
+<p><strong>举例</strong>：<br>        StringBuffer的append方法是一个同步方法，如果StringBuffer类型的变量是一个局部变量，则该变量就不会被其它线程所使用，即对局部变量的操作是不会发生线程不安全的问题。<br>        在这种情景下，JVM会在JIT编译时自动将append方法上的锁去掉。</p>
+<h3 id="2）锁粗化"><a href="#2）锁粗化" class="headerlink" title="2）锁粗化"></a>2）锁粗化</h3><p>概念：将多个连续的加锁、解锁操作连接在一起，扩展成一个范围更大的锁，即将加锁的粒度放大。</p>
+<p><strong>举例</strong>：在for循环里的加锁/解锁操作，一般需要放到for循环外。</p>
+<h3 id="3）使用偏向锁和轻量级锁"><a href="#3）使用偏向锁和轻量级锁" class="headerlink" title="3）使用偏向锁和轻量级锁"></a>3）使用偏向锁和轻量级锁</h3><p>说明：</p>
+<ul>
+<li>1)java6为了减少获取锁和释放锁带来的性能消耗，引入了偏向锁和轻量级锁。</li>
+<li>2)锁一共有4种状态，级别从低到高依次是：无锁状态、偏向锁、轻量级锁、重量级锁。</li>
+<li>3)锁的状态会随着竞争情况逐渐升级，并且只可以升级而不能降级。</li>
+</ul>
+<h4 id="【偏向锁】"><a href="#【偏向锁】" class="headerlink" title="【偏向锁】"></a>【偏向锁】</h4><ul>
+<li><p>1)背景：大多数情况下，锁不仅不存在多线程竞争，而且总是由同一线程多次获得，为了让线程获得锁的代价更低而引入了偏向锁。</p>
+</li>
+<li><p>2)概念：核心思想就是锁会偏向第一个获取它的线程，如果在接下来的执行过程中没有其它的线程获取该锁，则持有偏向锁的线程永远不需要同步。</p>
+</li>
+<li><p>3)目的：偏向锁实际上是一种优化锁，其目的是为了减少数据在无竞争情况下的性能损耗。</p>
+</li>
+<li><p>4)原理：<br>1&gt;当一个线程访问同步块并获取锁时，会在对象头和栈帧中的锁记录里存储锁偏向的线程ID。<br>2&gt;以后该线程在进入和退出同步块时就不需要进行CAS操作来加锁和解锁，只需简单地判断一下对象头的Mark Word里是否存储着指向当前线程的偏向锁。</p>
+</li>
+<li><p>5)偏向锁的获取：<br>1&gt;访问Mark Word中偏向锁的标识位是否为1，如果是1，则确定为偏向锁。<br>说明：<br>  [1]如果偏向锁的标识位为0，说明此时是处于无锁状态，则当前线程通过CAS操作尝试获取偏向锁，如果获取锁成功，则将Mark Word中的偏向线程ID设置为当前线程ID；并且将偏向标识位设为1。<br>  [2]如果偏向锁的标识位不为1，也不为0(此时偏向锁的标识位没有值)，说明发生了竞争，偏向锁已经膨胀为轻量级锁，这时使用CAS操作尝试获得锁。</p>
+<p>2&gt;如果是偏向锁，则判断Mark Word中的偏向线程ID是否指向当前线程，如果偏向线程ID指向当前线程，则表明当前线程已经获取到了锁；</p>
+<p>3&gt;如果偏向线程ID并未指向当前线程，则通过CAS操作尝试获取偏向锁，如果获取锁成功，则将Mark Word中的偏向线程ID设置为当前线程ID；</p>
+<p>4&gt;如果CAS获取偏向锁失败，则表示有竞争。当到达全局安全点时(在这个时间点上没有正在执行的字节码)，获得偏向锁的线程被挂起，偏向锁升级为轻量级锁，然后被阻塞在安全点的线程继续往下执行同步代码。</p>
+</li>
+<li><p>6)偏向锁的释放：<br>1&gt;当其它的线程尝试获取偏向锁时，持有偏向锁的线程才会释放偏向锁。<br>2&gt;释放偏向锁需要等待全局安全点(在这个时间点上没有正在执行的字节码)。<br>3&gt;过程：</p>
+<pre><code>首先暂停拥有偏向锁的线程，然后检查持有偏向锁的线程是否活着，如果线程不处于活动状态，则将对象头设置成无锁状态，
+如果线程还活着，说明此时发生了竞争，则偏向锁升级为轻量级锁，然后刚刚被暂停的线程会继续往下执行同步代码。</code></pre></li>
+<li><p>7)优点：加锁和解锁不需要额外的消耗，和执行非同步方法相比仅存在纳秒级的差距</p>
+</li>
+<li><p>8)缺点：如果线程间存在锁竞争，锁撤销会带来额外的消耗。</p>
+</li>
+<li><p>9)说明：<br>1&gt;偏向锁默认在应用程序启动几秒钟之后才激活。<br>2&gt;可以通过设置 -XX:BiasedLockingStartupDelay=0 来关闭延迟。<br>3&gt;可以通过设置 -XX:-UseBiasedLocking=false 来关闭偏向锁，程序默认会进入轻量级锁状态。(如果应用程序里的锁大多情况下处于竞争状态，则应该将偏向锁关闭)</p>
+</li>
+</ul>
+<h4 id="【轻量级锁】"><a href="#【轻量级锁】" class="headerlink" title="【轻量级锁】"></a>【轻量级锁】</h4><p>1)原理：<br> 1&gt;当使用轻量级锁(锁标识位为00)时，线程在执行同步块之前，JVM会先在当前线程的栈桢中创建用于存储锁记录的空间，并将对象头中的Mark Word复制到锁记录中(注:锁记录中的标识字段称为Displaced Mark Word)。</p>
+<p> 2&gt;将对象头中的MarkWord复制到栈桢中的锁记录中之后，虚拟机将尝试使用CAS将对象头中Mark Word替换为指向该线程虚拟机栈中锁记录的指针，此时如果没有线程占有锁或者没有线程竞争锁，则当前线程成功获取到锁，然后执行同步块中的代码。</p>
+<p> 3&gt;如果在获取到锁的线程执行同步代码的过程中，另一个线程也完成了栈桢中锁记录的创建，并且已经将对象头中的MarkWord复制到了自己的锁记录中，然后尝试使用CAS将对象头中的MarkWord修改为指向自己的锁记录的指针，但是由于之前获取到锁的线程已经将对象头中的MarkWord修改过了(并且现在还在执行同步体中的代码,即仍然持有着锁)，所以此时对象头中的MarkWord与当前线程锁记录中MarkWord的值不同，导致CAS操作失败，然后该线程就会不停地循环使用CAS操作试图将对象头中的MarkWord替换为自己锁记录中MarkWord的值，(当循环次数或循环时间达到上限时停止循环)如果在循环结束之前CAS操作成功，那么该线程就可以成功获取到锁，如果循环结束之后依然获取不到锁，则锁获取失败，对象头中的MarkWord会被修改为指向重量级锁的指针，然后这个获取锁失败的线程就会被挂起，阻塞了。</p>
+<p> 4&gt;当持有锁的那个线程执行完同步体之后，使用CAS操作将对象头中的MarkWord还原为最初的状态时(将对象头中指向锁记录的指针替换为Displaced Mark Word )，发现MarkWord已被修改为指向重量级锁的指针，因此CAS操作失败，该线程会释放锁并唤起阻塞等待的线程，开始新一轮夺锁之争，而此时，轻量级锁已经膨胀为重量级锁，所有竞争失败的线程都会阻塞，而不是自旋。</p>
+<p> 自旋锁：<br>     1)所谓自旋锁，就是让没有获得锁的进程自己运行一段时间自循环(默认开启)，但是不挂起线程。<br>     2)自旋的代价就是该线程会一直占用处理器如果锁占用的时间很短，自旋等待的效果很好，反之，自旋锁会消耗大量处理器资源。<br>     3)因此，自旋的等待时间必须有一定限度，超过限度还没有获得锁，就要挂起线程。  </p>
+<p> 优点：在没有多线程竞争的前提下，减少传统的重量级锁带来的性能损耗。<br> 缺点：竞争的线程如果始终得不到锁，自旋会消耗cpu。<br> 应用：追求响应时间，同步块执行速度非常快。  </p>
+<h4 id="【重量级锁】"><a href="#【重量级锁】" class="headerlink" title="【重量级锁】"></a>【重量级锁】</h4><ul>
+<li>说明：<br>  1)java6之前的synchronized属于重量级锁，效率低下，因为monitor是依赖操作系统的Mutex Lock(互斥量)来实现的。<br>  2)多线程竞争锁时，会引起线程的上下文切换(即在cpu分配的时间片还没有用完的情况下进行了上下文切换)。<br>  3)操作系统实现线程的上下文切换需要从用户态转换到核心态，这个状态之间的转换需要相对较长的时间，时间成本相对较高。<br>  4)在互斥状态下，没有得到锁的线程会被挂起阻塞，而挂起线程和恢复线程的操作都需要从用户态转入内核态中完成。</li>
+<li>优点：线程竞争不使用自旋，不会消耗cpu。</li>
+<li>缺点：线程阻塞，响应时间缓慢。</li>
+<li>应用：追求吞吐量，同步块执行速度较长</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>多线程</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>驾驶相关</title>
     <url>/2019/12/13/md/other/driver-itec/</url>
     <content><![CDATA[<h3 id="车开关"><a href="#车开关" class="headerlink" title="车开关"></a>车开关</h3><p><img src="https://www.mqiy.xyz/image/other/car-lock-info.jpg" alt=""></p>
@@ -3778,6 +3832,18 @@
       </tags>
   </entry>
   <entry>
+    <title>Springboot</title>
+    <url>/2019/07/11/md/problem/spring-boot/</url>
+    <content><![CDATA[<h3 id="Springboot-Filter中注入bean-无效为null"><a href="#Springboot-Filter中注入bean-无效为null" class="headerlink" title="Springboot Filter中注入bean 无效为null"></a>Springboot Filter中注入bean 无效为null</h3><p>问题原因：</p>
+<p>Web应用的启动顺序是：Lisenter-&gt;Fliter-&gt;Servlet,  应用程序上下文， 初始化 Fliter的时候，还没有初始化Servlert，所有没有进入DispacterServlet的初始化，故在Fliter中使用注解注入bean为空；</p>
+<p>解决办法：</p>
+<p>添加初始化bean配置，手动创建对象new</p>
+]]></content>
+      <tags>
+        <tag>problem</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>mybatis</title>
     <url>/2019/07/11/md/problem/mybatis/</url>
     <content><![CDATA[<h3 id="mybatis报错-Specified-class-is-an-interface"><a href="#mybatis报错-Specified-class-is-an-interface" class="headerlink" title="mybatis报错 Specified class is an interface"></a>mybatis报错 Specified class is an interface</h3><h4 id="1-错误原因"><a href="#1-错误原因" class="headerlink" title="1.错误原因"></a>1.错误原因</h4><p>Caused by: org.springframework.beans.factory.BeanCreationException: </p>
@@ -3787,18 +3853,6 @@
 <blockquote>
 <p>Mapper报错的名称可能不对,如上文AdmUserMapper,可能其他Mapper重复导致</p>
 </blockquote>
-]]></content>
-      <tags>
-        <tag>problem</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Springboot</title>
-    <url>/2019/07/11/md/problem/spring-boot/</url>
-    <content><![CDATA[<h3 id="Springboot-Filter中注入bean-无效为null"><a href="#Springboot-Filter中注入bean-无效为null" class="headerlink" title="Springboot Filter中注入bean 无效为null"></a>Springboot Filter中注入bean 无效为null</h3><p>问题原因：</p>
-<p>Web应用的启动顺序是：Lisenter-&gt;Fliter-&gt;Servlet,  应用程序上下文， 初始化 Fliter的时候，还没有初始化Servlert，所有没有进入DispacterServlet的初始化，故在Fliter中使用注解注入bean为空；</p>
-<p>解决办法：</p>
-<p>添加初始化bean配置，手动创建对象new</p>
 ]]></content>
       <tags>
         <tag>problem</tag>
@@ -3877,68 +3931,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Nacos配置的加载规则详解</title>
-    <url>/2019/06/21/md/part/microServices/Nacos%E9%85%8D%E7%BD%AE%E7%9A%84%E5%8A%A0%E8%BD%BD%E8%A7%84%E5%88%99%E8%AF%A6%E8%A7%A3/</url>
-    <content><![CDATA[<h3 id="配置管理"><a href="#配置管理" class="headerlink" title="配置管理"></a>配置管理</h3><ul>
-<li>Data ID中的<code>alibaba-nacos-config-client</code>：对应客户端的配置<code>spring.cloud.nacos.config.prefix</code>，默认值为<code>${spring.application.name}</code>，即：服务名</li>
-<li>Data ID中的<code>properties</code>：对应客户端的配置<code>spring.cloud.nacos.config.file-extension</code>，默认值为<code>properties</code></li>
-<li>Group的值<code>DEFAULT_GROUP</code>：对应客户端的配置<code>spring.cloud.nacos.config.group</code>，默认值为<code>DEFAULT_GROUP</code></li>
-</ul>
-<p>在采用默认值的应用要加载的配置规则就是：<code>Data ID=${spring.application.name}.properties</code>，<code>Group=DEFAULT_GROUP</code></p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">server:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">  <span class="attr">port:</span> <span class="number">9000</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="attr">spring:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">  <span class="attr">application:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="attr">name:</span> <span class="string">alibaba-nacos-discovery-client</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">  <span class="comment"># server discovery</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">  <span class="attr">cloud:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="attr">nacos:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">      <span class="attr">discovery:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="attr">server-addr:</span> <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span><span class="string">:8848</span></span></pre></td></tr></table></figure>]]></content>
-      <tags>
-        <tag>微服务</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>linux压缩与解压</title>
-    <url>/2019/06/21/md/linux/linux%E5%8E%8B%E7%BC%A9%E4%B8%8E%E8%A7%A3%E5%8E%8B/</url>
-    <content><![CDATA[<h4 id="unzip解压"><a href="#unzip解压" class="headerlink" title="unzip解压"></a>unzip解压</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 解压window中压缩的文件，不会文件名包含中文乱码</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">unzip -O CP936 xxx.zip</span></pre></td></tr></table></figure>
-
-
-<h4 id="tar-命令"><a href="#tar-命令" class="headerlink" title="tar 命令"></a>tar 命令</h4><p>-c: 建立压缩档案<br>-x：解压<br>-t：查看内容<br>-r：向压缩归档文件末尾追加文件<br>-u：更新原压缩包中的文件</p>
-<p>这五个是独立的命令，压缩解压都要用到其中一个，可以和别的命令连用但只能用其中一个。下面的参数是根据需要在压缩或解压档案时可选的。</p>
-<p>-z：有gzip属性的<br>-j：有bz2属性的<br>-Z：有compress属性的<br>-v：显示所有过程<br>-O：将文件解开到标准输出</p>
-<p>下面的参数-f是必须的</p>
-<p>-f: 使用档案名字，切记，这个参数是最后一个参数，后面只能接档案名。</p>
-<h4 id="tar-示例"><a href="#tar-示例" class="headerlink" title="tar 示例"></a>tar 示例</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">#### 压缩</span></span></span></pre></td></tr><tr><td class="code"><pre><span class="line">tar –cvf jpg.tar *.jpg      // 将目录里所有jpg文件打包成tar.jpg</span></pre></td></tr><tr><td class="code"><pre><span class="line">tar –czf jpg.tar.gz *.jpg   // 将目录里所有jpg文件打包成jpg.tar后，生成gzip压缩过的包，命名为jpg.tar.gz</span></pre></td></tr><tr><td class="code"><pre><span class="line">tar –cjf jpg.tar.bz2 *.jpg  // 将目录里所有jpg文件打包成jpg.tar后，生成bzip2压缩过的包，命名为jpg.tar.bz2</span></pre></td></tr><tr><td class="code"><pre><span class="line">tar –cZf jpg.tar.Z *.jpg    // 将目录里所有jpg文件打包成jpg.tar后，生成umcompress压缩过的包，命名为jpg.tar.Z</span></pre></td></tr><tr><td class="code"><pre><span class="line">rar a jpg.rar *.jpg         // rar格式的压缩，需要先下载rar for Linux</span></pre></td></tr><tr><td class="code"><pre><span class="line">zip -r  jpg.zip  *.jpg      // zip格式的压缩  -r 递归压缩</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">####  解压</span></span></span></pre></td></tr><tr><td class="code"><pre><span class="line">tar –xvf file.tar           //解压 tar包</span></pre></td></tr><tr><td class="code"><pre><span class="line">tar -xzvf file.tar.gz       //解压tar.gz</span></pre></td></tr><tr><td class="code"><pre><span class="line">tar -xjvf file.tar.bz2      //解压 tar.bz2</span></pre></td></tr><tr><td class="code"><pre><span class="line">tar –xZvf file.tar.Z -C /opt/dev      //解压tar.Z</span></pre></td></tr><tr><td class="code"><pre><span class="line">unrar e file.rar            //解压rar</span></pre></td></tr><tr><td class="code"><pre><span class="line">unzip file.zip -d /opt/dev             //解压zip</span></pre></td></tr></table></figure>]]></content>
-      <tags>
-        <tag>linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>情商50则</title>
-    <url>/2019/06/21/md/life/%E6%83%85%E5%95%8650%E5%88%99/</url>
-    <content><![CDATA[<p>1，话别说太满，人别熟太快。<br>3，不要把别人想得太坏，也不要把别人想得太好，都是凡人。<br>2，别人自嘲可以，但你千万别附和<br>4，可以嘲笑你的朋友，但不能嘲笑他喜欢的东西。  </p>
-<h2 id="34，自嘲是最高境界，而不是嘲笑别人。"><a href="#34，自嘲是最高境界，而不是嘲笑别人。" class="headerlink" title="34，自嘲是最高境界，而不是嘲笑别人。  "></a>34，自嘲是最高境界，而不是嘲笑别人。  </h2><p>6，刚开始和对方不熟悉的时候，聊到晚上十点多对方发来消息就别回复了，第二天早晨再回复，这样又可以聊一天。<br>7，把“随便”改成“听你的”。<br>23，把“听明白了吗”换成“我说明白了吗”。<br>5，把每一句“我不会”都改成“我可以学”<br>把“谢谢”改成“谢谢你” 并微笑看着对方的眼睛    </p>
-<hr>
-<p>8，别人骂你你要听，别人夸你你别信。<br>9，请道歉而不是取笑别人开不起玩笑，你以为谁没有底线只不过还没到底而已。<br>10，聊天时别人发微笑，你不知道怎么回的话，就回，你笑得真好看。<br>11，能用表情包解决的就不要说脏话！<br>12，恰到好处的装逼，适可而止的套路。  </p>
-<h2 id="13，如果一个人不理你，有可能是对方的问题；如果大家都不理你，那你就要考虑自身问题了。"><a href="#13，如果一个人不理你，有可能是对方的问题；如果大家都不理你，那你就要考虑自身问题了。" class="headerlink" title="13，如果一个人不理你，有可能是对方的问题；如果大家都不理你，那你就要考虑自身问题了。  "></a>13，如果一个人不理你，有可能是对方的问题；如果大家都不理你，那你就要考虑自身问题了。  </h2><p>14，人前不应该说的话，背后也别说。<br>27，不要在公众场合揭别人的短处，让别人难堪。<br>35，请不要随意出卖一个朋友的隐私来取悦另一个不熟的朋友。<br>46，不要人后捅刀子嘴别贱。  </p>
-<hr>
-<p>15，在最愤怒时忍住最伤人对方的那句话。<br>17，不要把负能量带给身边的人。<br>18，不要吝啬你的赞美和表达爱意的语言。<br>40，越是亲近的人越要用心对待，一句随意的话会伤害她。<br>42，千万不要为了恋爱而淡了身边所有人。<br>21，真的不必把太多人请进生命里，太多热情总是不被珍惜。  </p>
-<hr>
-<p>16，如果没有十足的把握和必要，就不要轻易说假话。<br>19，女孩子永远抗拒不了陪她通宵聊天的人。<br>20，刻薄嘴欠和幽默是两回事；口无遮拦和坦率是两回事；没有教养和随性是两回事；轻重不分和耿直是两回事。  </p>
-<hr>
-<p>22，如果遇到了傻Ⅹ，不要与他争论，而且要同意他的一切观点，把他培养成大傻Ⅹ。<br>24，不能侮辱别人的idol，谨记！<br>47，践踏别人的梦想等同于谋杀。  </p>
-<hr>
-<p>25，在拒绝这件事上，越简单越好，明明是别人需求自己帮忙，解释半天变成自己亏欠了别人的感觉，帮得上，想帮就帮，帮不上，就拒绝。人际交往，简单明了有时最恰当，懂得拒绝，才可以洒脱不纠结。<br>33，学会拒绝，没人会感激你的善良，他们只会得寸进尺。  </p>
-<hr>
-<p>26，逢人只说三分话，未可全抛一片心。<br>29，看透不说透，还是好朋友。<br>39，最印象的一句话，“交友不必言尽，言尽则无友”  </p>
-<hr>
-<p>28，社交没那么容易，每个人都有他的手机。<br>30，当你往上爬的时候对别人好一点，因为你走下坡路的时候会遇到他们。</p>
-<hr>
-<p>31，颜值要高，脾气要好，原则要有。<br>36，有分寸的信任，有理由的怀疑。<br>37，把身材练好，把妆化好。<br>41，修得豆腐嘴，藏得刀子心。<br>43，清醒时做事，糊涂时读书，大怒时睡觉，独处时思考。  </p>
-<hr>
-<p>32，该叫阿姨的叫姐，该叫姐的叫美女该叫美女的叫妹子。<br>38，不会讲话时别瞎说沉默微笑更好。<br>44，永远不要听信别人口中的他。<br>45，女生之间的嫉妒心太可怕，不要公开说这个女生比那个好看。<br>48，常与同好争高下，不共傻瓜论短长。——出自《欢乐颂》  </p>
-]]></content>
-      <categories>
-        <category>人生感悟</category>
-      </categories>
-      <tags>
-        <tag>人生</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>这就是人生</title>
     <url>/2019/06/21/md/life/%E8%BF%99%E5%B0%B1%E6%98%AF%E4%BA%BA%E7%94%9F/</url>
     <content><![CDATA[<p>孤独是人生的常态，一定要拥有真正喜欢的兴趣爱好，这样才能支持你渡过无数个漫漫长夜和无数个孤独的时候，读书则是成本最低的兴趣爱好。很多人看起来什么都感兴趣，啥都能参与一定点但都不深入，这种人是最孤独的，因为他根本不知道自己想要什么，喜欢什么。</p>
@@ -4006,6 +3998,68 @@
       </tags>
   </entry>
   <entry>
+    <title>情商50则</title>
+    <url>/2019/06/21/md/life/%E6%83%85%E5%95%8650%E5%88%99/</url>
+    <content><![CDATA[<p>1，话别说太满，人别熟太快。<br>3，不要把别人想得太坏，也不要把别人想得太好，都是凡人。<br>2，别人自嘲可以，但你千万别附和<br>4，可以嘲笑你的朋友，但不能嘲笑他喜欢的东西。  </p>
+<h2 id="34，自嘲是最高境界，而不是嘲笑别人。"><a href="#34，自嘲是最高境界，而不是嘲笑别人。" class="headerlink" title="34，自嘲是最高境界，而不是嘲笑别人。  "></a>34，自嘲是最高境界，而不是嘲笑别人。  </h2><p>6，刚开始和对方不熟悉的时候，聊到晚上十点多对方发来消息就别回复了，第二天早晨再回复，这样又可以聊一天。<br>7，把“随便”改成“听你的”。<br>23，把“听明白了吗”换成“我说明白了吗”。<br>5，把每一句“我不会”都改成“我可以学”<br>把“谢谢”改成“谢谢你” 并微笑看着对方的眼睛    </p>
+<hr>
+<p>8，别人骂你你要听，别人夸你你别信。<br>9，请道歉而不是取笑别人开不起玩笑，你以为谁没有底线只不过还没到底而已。<br>10，聊天时别人发微笑，你不知道怎么回的话，就回，你笑得真好看。<br>11，能用表情包解决的就不要说脏话！<br>12，恰到好处的装逼，适可而止的套路。  </p>
+<h2 id="13，如果一个人不理你，有可能是对方的问题；如果大家都不理你，那你就要考虑自身问题了。"><a href="#13，如果一个人不理你，有可能是对方的问题；如果大家都不理你，那你就要考虑自身问题了。" class="headerlink" title="13，如果一个人不理你，有可能是对方的问题；如果大家都不理你，那你就要考虑自身问题了。  "></a>13，如果一个人不理你，有可能是对方的问题；如果大家都不理你，那你就要考虑自身问题了。  </h2><p>14，人前不应该说的话，背后也别说。<br>27，不要在公众场合揭别人的短处，让别人难堪。<br>35，请不要随意出卖一个朋友的隐私来取悦另一个不熟的朋友。<br>46，不要人后捅刀子嘴别贱。  </p>
+<hr>
+<p>15，在最愤怒时忍住最伤人对方的那句话。<br>17，不要把负能量带给身边的人。<br>18，不要吝啬你的赞美和表达爱意的语言。<br>40，越是亲近的人越要用心对待，一句随意的话会伤害她。<br>42，千万不要为了恋爱而淡了身边所有人。<br>21，真的不必把太多人请进生命里，太多热情总是不被珍惜。  </p>
+<hr>
+<p>16，如果没有十足的把握和必要，就不要轻易说假话。<br>19，女孩子永远抗拒不了陪她通宵聊天的人。<br>20，刻薄嘴欠和幽默是两回事；口无遮拦和坦率是两回事；没有教养和随性是两回事；轻重不分和耿直是两回事。  </p>
+<hr>
+<p>22，如果遇到了傻Ⅹ，不要与他争论，而且要同意他的一切观点，把他培养成大傻Ⅹ。<br>24，不能侮辱别人的idol，谨记！<br>47，践踏别人的梦想等同于谋杀。  </p>
+<hr>
+<p>25，在拒绝这件事上，越简单越好，明明是别人需求自己帮忙，解释半天变成自己亏欠了别人的感觉，帮得上，想帮就帮，帮不上，就拒绝。人际交往，简单明了有时最恰当，懂得拒绝，才可以洒脱不纠结。<br>33，学会拒绝，没人会感激你的善良，他们只会得寸进尺。  </p>
+<hr>
+<p>26，逢人只说三分话，未可全抛一片心。<br>29，看透不说透，还是好朋友。<br>39，最印象的一句话，“交友不必言尽，言尽则无友”  </p>
+<hr>
+<p>28，社交没那么容易，每个人都有他的手机。<br>30，当你往上爬的时候对别人好一点，因为你走下坡路的时候会遇到他们。</p>
+<hr>
+<p>31，颜值要高，脾气要好，原则要有。<br>36，有分寸的信任，有理由的怀疑。<br>37，把身材练好，把妆化好。<br>41，修得豆腐嘴，藏得刀子心。<br>43，清醒时做事，糊涂时读书，大怒时睡觉，独处时思考。  </p>
+<hr>
+<p>32，该叫阿姨的叫姐，该叫姐的叫美女该叫美女的叫妹子。<br>38，不会讲话时别瞎说沉默微笑更好。<br>44，永远不要听信别人口中的他。<br>45，女生之间的嫉妒心太可怕，不要公开说这个女生比那个好看。<br>48，常与同好争高下，不共傻瓜论短长。——出自《欢乐颂》  </p>
+]]></content>
+      <categories>
+        <category>人生感悟</category>
+      </categories>
+      <tags>
+        <tag>人生</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Nacos配置的加载规则详解</title>
+    <url>/2019/06/21/md/part/microServices/Nacos%E9%85%8D%E7%BD%AE%E7%9A%84%E5%8A%A0%E8%BD%BD%E8%A7%84%E5%88%99%E8%AF%A6%E8%A7%A3/</url>
+    <content><![CDATA[<h3 id="配置管理"><a href="#配置管理" class="headerlink" title="配置管理"></a>配置管理</h3><ul>
+<li>Data ID中的<code>alibaba-nacos-config-client</code>：对应客户端的配置<code>spring.cloud.nacos.config.prefix</code>，默认值为<code>${spring.application.name}</code>，即：服务名</li>
+<li>Data ID中的<code>properties</code>：对应客户端的配置<code>spring.cloud.nacos.config.file-extension</code>，默认值为<code>properties</code></li>
+<li>Group的值<code>DEFAULT_GROUP</code>：对应客户端的配置<code>spring.cloud.nacos.config.group</code>，默认值为<code>DEFAULT_GROUP</code></li>
+</ul>
+<p>在采用默认值的应用要加载的配置规则就是：<code>Data ID=${spring.application.name}.properties</code>，<code>Group=DEFAULT_GROUP</code></p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">server:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">  <span class="attr">port:</span> <span class="number">9000</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="attr">spring:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">  <span class="attr">application:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="attr">name:</span> <span class="string">alibaba-nacos-discovery-client</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">  <span class="comment"># server discovery</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">  <span class="attr">cloud:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="attr">nacos:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">      <span class="attr">discovery:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="attr">server-addr:</span> <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span><span class="string">:8848</span></span></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>微服务</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>linux压缩与解压</title>
+    <url>/2019/06/21/md/linux/linux%E5%8E%8B%E7%BC%A9%E4%B8%8E%E8%A7%A3%E5%8E%8B/</url>
+    <content><![CDATA[<h4 id="unzip解压"><a href="#unzip解压" class="headerlink" title="unzip解压"></a>unzip解压</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 解压window中压缩的文件，不会文件名包含中文乱码</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">unzip -O CP936 xxx.zip</span></pre></td></tr></table></figure>
+
+
+<h4 id="tar-命令"><a href="#tar-命令" class="headerlink" title="tar 命令"></a>tar 命令</h4><p>-c: 建立压缩档案<br>-x：解压<br>-t：查看内容<br>-r：向压缩归档文件末尾追加文件<br>-u：更新原压缩包中的文件</p>
+<p>这五个是独立的命令，压缩解压都要用到其中一个，可以和别的命令连用但只能用其中一个。下面的参数是根据需要在压缩或解压档案时可选的。</p>
+<p>-z：有gzip属性的<br>-j：有bz2属性的<br>-Z：有compress属性的<br>-v：显示所有过程<br>-O：将文件解开到标准输出</p>
+<p>下面的参数-f是必须的</p>
+<p>-f: 使用档案名字，切记，这个参数是最后一个参数，后面只能接档案名。</p>
+<h4 id="tar-示例"><a href="#tar-示例" class="headerlink" title="tar 示例"></a>tar 示例</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">#### 压缩</span></span></span></pre></td></tr><tr><td class="code"><pre><span class="line">tar –cvf jpg.tar *.jpg      // 将目录里所有jpg文件打包成tar.jpg</span></pre></td></tr><tr><td class="code"><pre><span class="line">tar –czf jpg.tar.gz *.jpg   // 将目录里所有jpg文件打包成jpg.tar后，生成gzip压缩过的包，命名为jpg.tar.gz</span></pre></td></tr><tr><td class="code"><pre><span class="line">tar –cjf jpg.tar.bz2 *.jpg  // 将目录里所有jpg文件打包成jpg.tar后，生成bzip2压缩过的包，命名为jpg.tar.bz2</span></pre></td></tr><tr><td class="code"><pre><span class="line">tar –cZf jpg.tar.Z *.jpg    // 将目录里所有jpg文件打包成jpg.tar后，生成umcompress压缩过的包，命名为jpg.tar.Z</span></pre></td></tr><tr><td class="code"><pre><span class="line">rar a jpg.rar *.jpg         // rar格式的压缩，需要先下载rar for Linux</span></pre></td></tr><tr><td class="code"><pre><span class="line">zip -r  jpg.zip  *.jpg      // zip格式的压缩  -r 递归压缩</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">####  解压</span></span></span></pre></td></tr><tr><td class="code"><pre><span class="line">tar –xvf file.tar           //解压 tar包</span></pre></td></tr><tr><td class="code"><pre><span class="line">tar -xzvf file.tar.gz       //解压tar.gz</span></pre></td></tr><tr><td class="code"><pre><span class="line">tar -xjvf file.tar.bz2      //解压 tar.bz2</span></pre></td></tr><tr><td class="code"><pre><span class="line">tar –xZvf file.tar.Z -C /opt/dev      //解压tar.Z</span></pre></td></tr><tr><td class="code"><pre><span class="line">unrar e file.rar            //解压rar</span></pre></td></tr><tr><td class="code"><pre><span class="line">unzip file.zip -d /opt/dev             //解压zip</span></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>uml</title>
     <url>/2019/06/21/md/tool/uml/</url>
     <content><![CDATA[<h3 id="口决"><a href="#口决" class="headerlink" title="口决"></a>口决</h3><ul>
@@ -4028,6 +4082,21 @@
       </tags>
   </entry>
   <entry>
+    <title>微服务健康检查</title>
+    <url>/2019/06/21/md/part/microServices/spring%20cloud/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E5%81%A5%E5%BA%B7%E6%A3%80%E6%9F%A5/</url>
+    <content><![CDATA[<h4 id="健康检查"><a href="#健康检查" class="headerlink" title="健康检查"></a>健康检查</h4><figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="comment">#开启健康检查（需要spring-boot-starter-actuator依赖）</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">eureka.client.healthcheck.enabled</span>=<span class="string">true</span></span></pre></td></tr></table></figure>
+
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment">#应用信息 /actuator/info</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="attr">info:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">  <span class="attr">app:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="attr">name:</span> <span class="string">@project.name@</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="attr">description:</span> <span class="string">@project.description@</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="attr">version:</span> <span class="string">@project.version@</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="attr">encoding:</span> <span class="string">@project.build.sourceEncoding@</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="attr">java:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">      <span class="attr">version:</span> <span class="string">@java.version@</span></span></pre></td></tr></table></figure>
+
+
+
+
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-actuator<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>spring cloud</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>spring cloud gateway 入门</title>
     <url>/2019/06/21/md/part/microServices/spring%20cloud/spring%20cloud%20gateway%20%E5%85%A5%E9%97%A8/</url>
     <content><![CDATA[<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.cloud<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-cloud-starter-gateway<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="comment">&lt;!-- 集成eureka --&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="comment">&lt;!--&lt;dependency&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">        &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">        &lt;artifactId&gt;spring-cloud-starter-netflix-eureka-client&lt;/artifactId&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">    &lt;/dependency&gt;--&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span></pre></td></tr></table></figure>
@@ -4045,21 +4114,6 @@
 <li>StripPrefix 去掉转发根据路径web</li>
 </ul>
 ]]></content>
-      <tags>
-        <tag>spring cloud</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>微服务健康检查</title>
-    <url>/2019/06/21/md/part/microServices/spring%20cloud/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E5%81%A5%E5%BA%B7%E6%A3%80%E6%9F%A5/</url>
-    <content><![CDATA[<h4 id="健康检查"><a href="#健康检查" class="headerlink" title="健康检查"></a>健康检查</h4><figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="comment">#开启健康检查（需要spring-boot-starter-actuator依赖）</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">eureka.client.healthcheck.enabled</span>=<span class="string">true</span></span></pre></td></tr></table></figure>
-
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment">#应用信息 /actuator/info</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="attr">info:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">  <span class="attr">app:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="attr">name:</span> <span class="string">@project.name@</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="attr">description:</span> <span class="string">@project.description@</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="attr">version:</span> <span class="string">@project.version@</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="attr">encoding:</span> <span class="string">@project.build.sourceEncoding@</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="attr">java:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">      <span class="attr">version:</span> <span class="string">@java.version@</span></span></pre></td></tr></table></figure>
-
-
-
-
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-actuator<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span></pre></td></tr></table></figure>]]></content>
       <tags>
         <tag>spring cloud</tag>
       </tags>
@@ -4227,6 +4281,82 @@
       </tags>
   </entry>
   <entry>
+    <title>Hystrix Turbine</title>
+    <url>/2019/06/18/md/part/microServices/spring%20cloud/Hystrix%20Turbine/</url>
+    <content><![CDATA[<h3 id="Hystrix-Turbine简介"><a href="#Hystrix-Turbine简介" class="headerlink" title="Hystrix Turbine简介"></a>Hystrix Turbine简介</h3><p>看单个的Hystrix Dashboard的数据并没有什么多大的价值，要想看这个系统的Hystrix Dashboard数据就需要用到Hystrix Turbine。Hystrix Turbine将每个服务Hystrix Dashboard数据进行了整合。Hystrix Turbine的使用非常简单，只需要引入相应的依赖和加上注解和配置就可以了。</p>
+<h3 id="引入相应的依赖"><a href="#引入相应的依赖" class="headerlink" title="引入相应的依赖"></a>引入相应的依赖</h3><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.cloud<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-cloud-starter-turbine<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.cloud<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-cloud-netflix-turbine<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-actuator<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span></pre></td></tr></table></figure>
+
+<hr>
+<p>在其入口类ServiceTurbineApplication加上注解@EnableTurbine，开启turbine，@EnableTurbine注解包含了@EnableDiscoveryClient注解，即开启了注册服务。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@SpringBootApplication</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">@EnableTurbine</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ServiceTurbineApplication</span> </span>&#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">new</span> SpringApplicationBuilder(ServiceTurbineApplication<span class="class">.<span class="keyword">class</span>).<span class="title">web</span>(<span class="title">true</span>).<span class="title">run</span>(<span class="title">args</span>)</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
+<hr>
+<p>配置文件application.yml</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">spring:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">  <span class="attr">application.name:</span> <span class="string">service-turbine</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="attr">server:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">  <span class="attr">port:</span> <span class="number">8769</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="attr">security.basic.enabled:</span> <span class="literal">false</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="attr">turbine:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">  <span class="attr">aggregator:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="attr">clusterConfig:</span> <span class="string">default</span>   <span class="comment"># 指定聚合哪些集群，多个使用","分割，默认为default。可使用http://.../turbine.stream?cluster=&#123;clusterConfig之一&#125;访问</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">  <span class="attr">appConfig:</span> <span class="string">service-hi,service-lucy</span>  <span class="comment">### 配置Eureka中的serviceId列表，表明监控哪些服务</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">  <span class="attr">clusterNameExpression:</span> <span class="string">new</span> <span class="string">String("default")</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">  <span class="comment"># 1. clusterNameExpression指定集群名称，默认表达式appName；此时：turbine.aggregator.clusterConfig需要配置想要监控的应用名称</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">  <span class="comment"># 2. 当clusterNameExpression: default时，turbine.aggregator.clusterConfig可以不写，因为默认就是default</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">  <span class="comment"># 3. 当clusterNameExpression: metadata['cluster']时，假设想要监控的应用配置了eureka.instance.metadata-map.cluster: ABC，则需要配置，同时turbine.aggregator.clusterConfig: ABC</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="attr">eureka:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">  <span class="attr">client:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="attr">serviceUrl:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">      <span class="attr">defaultZone:</span> <span class="string">http://localhost:8761/eureka/</span></span></pre></td></tr></table></figure>
+
+
+
+<p>输入监控流<a href="http://localhost:8769/turbine.stream" target="_blank" rel="noopener">http://localhost:8769/turbine.stream</a></p>
+]]></content>
+      <tags>
+        <tag>spring cloud</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Sidecar模式：下一代微服务架构的关键</title>
+    <url>/2019/06/18/md/part/microServices/Sidecar/</url>
+    <content><![CDATA[<h1 id="Sidecar模式：下一代微服务架构的关键"><a href="#Sidecar模式：下一代微服务架构的关键" class="headerlink" title="Sidecar模式：下一代微服务架构的关键"></a>Sidecar模式：下一代微服务架构的关键</h1><h2 id="什么是Sidecar模式？"><a href="#什么是Sidecar模式？" class="headerlink" title="什么是Sidecar模式？"></a>什么是Sidecar模式？</h2><p>Sidecar模式是一种将应用功能从应用本身剥离出来作为单独进程的方式。该模式允许我们向应用无侵入添加多种功能，避免了为满足第三方组件需求而向应用添加额外的配置代码。</p>
+<p>就像边车加装在摩托车上一样，在软件架构中，sidecar附加到主应用，或者叫父应用上，以扩展/增强功能特性，同时Sidecar与主应用是松耦合的。</p>
+<p>举个例子，假设现在有6个相互通信的微服务，每个微服务都需要具有可观察性、监控、日志记录、配置、断路器等功能，而所有这些功能都是在微服务中使用一些第三方库实现的。</p>
+<p>这样一组服务的实际情况可能会非常复杂，增加了应用的整体复杂性，尤其是当每个微服务用不同的语言编写、使用不同的基于.net、Java、Python等语言的第三方库</p>
+]]></content>
+      <tags>
+        <tag>微服务</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>多线程概要</title>
+    <url>/2019/06/18/md/jdk/mulThread/%E5%A4%9A%E7%BA%BF%E7%A8%8B/</url>
+    <content><![CDATA[<p>多线程只有一个目的：更好的利用cpu的资源</p>
+<ul>
+<li><p>并行：多个cpu实例或者多台机器同时执行一段处理逻辑，是真正的同时。</p>
+</li>
+<li><p>并发：通过cpu调度算法，让用户看上去同时执行，实际上从cpu操作层面不是真正的同时。</p>
+</li>
+<li><p>线程安全：经常用来描绘一段代码。指在并发的情况之下，该代码经过多线程使用，线程的调度顺序不影响任何结果。</p>
+</li>
+<li><p>同步：Java中的同步指的是通过人为的控制和调度，保证共享资源的多线程访问成为线程安全，来保证结果的准确。如简单加入@synchronized关键字。</p>
+</li>
+</ul>
+<p><strong>阻塞(Blocked)</strong>：</p>
+<ol>
+<li>调用join()和sleep()方法，sleep()时间结束或被打断，join()中断,IO完成都会回到Runnable状态，等待JVM的调度。</li>
+<li>调用wait()，使该线程处于等待池(wait blocked pool),直到notify()/notifyAll()，线程被唤醒被放到锁定池(lock blocked pool )，释放同步锁使线程回到可运行状态（Runnable）</li>
+<li>对Running状态的线程加同步锁(Synchronized)使其进入(lock blocked pool ),同步锁被释放进入可运行状态(Runnable)。</li>
+</ol>
+<p>Thread类中的yield方法可以让一个running状态的线程转入runnable。</p>
+<ul>
+<li>yield()应该做的是让当前运行线程回到可运行状态，以允许具有相同优先级的其他线程获得运行机会，可能无效，又选择了让步的线程。</li>
+<li>join()在一个线程中调用other.join(),将等待other执行完后才继续本线程。</li>
+<li>interrupted方法其本质只是设置该线程的中断标志，真正实现线程的中断原理是：开发人员根据中断标志的具体值，来决定如何退出线程。</li>
+<li>stop方法会中断一个正在运行的线程</li>
+</ul>
+<p>synchronized, wait, notify 是任何对象都具有的同步工具<br>monitor 在synchronized 范围内，监视器发挥作用<br>wait/notify必须存在于synchronized块，这三个关键字针对的是同一个监视器，意味着wait之后，其他线程可以进入同步块执行。</p>
+<p><code>volatile 多线程的内存模型</code>：<br>main memory（主存）、working memory（线程栈）<br>在处理数据时，线程会把值从主存load到本地栈，完成操作后再save回去(volatile关键词的作用：每次针对该变量的操作都激发一次load and save)。</p>
+<h3 id="多线程包-java-util-concurrent"><a href="#多线程包-java-util-concurrent" class="headerlink" title="多线程包:java.util.concurrent"></a>多线程包:java.util.concurrent</h3><p><code>ThreadLocal类</code>，每个使用该变量的线程提供独立的变量副本，常用于用户登录控制，如记录session信息<br>每个Thread都持有一个TreadLocalMap类型的变量</p>
+<p><code>原子类</code>（AtomicInteger、AtomicBoolean……）等同于synchronized，AtomicInteger.compareAndSet(int expect,int update)可实现乐观锁   </p>
+<h4 id="Lock类"><a href="#Lock类" class="headerlink" title="Lock类"></a>Lock类</h4><p>ReentrantLock<br>ReentrantReadWriteLock.ReadLock<br>ReentrantReadWriteLock.WriteLock<br>lock 阻塞式, trylock 无阻塞式, lockInterruptily 可打断式， 还有trylock的带超时时间版本<br>r.lock()或r.lockInterruptibly()<br>r.unlock()<br>ReentrantReadWriteLock，写写，写读互斥；读读不互斥。可以实现并发读的高效线程安全代码</p>
+<h4 id="容器类"><a href="#容器类" class="headerlink" title="容器类"></a>容器类</h4><p>BlockingQueue 这个queue是单向队列，特别适用于先进先出策略的一些应用场景，BlockingQueue在队列的基础上添加了多线程协作的功能，提供了阻塞接口put和take，带超时功能的阻塞接口offer和poll。put会在队列满的时候阻塞，直到有空间时被唤醒；take在队列空的时候阻塞，直到有东西拿的时候才被唤醒。用于生产者-消费者模型尤其好用，堪称神器<br>常见的阻塞队列有：<br><code>ArrayListBlockingQueue</code><br><code>LinkedListBlockingQueue</code><br><code>DelayQueue</code><br><code>SynchronousQueue</code><br><code>ConcurrentHashMap</code>  </p>
+<p>高效的线程安全哈希map。请对比hashTable , concurrentHashMap, HashMap</p>
+<p><strong>HashMap</strong><br>put(key, value)存储对象到HashMap中，使用get(key)从HashMap中获取对象<br>put()方法传递键和值时，我们先对键调用hashCode()方法，返回的hashCode用于找到bucket位置来储存Entry对象<br>HashMap是在bucket中储存键对象和值对象</p>
+<h4 id="线程池管理类ThreadPoolExecutor"><a href="#线程池管理类ThreadPoolExecutor" class="headerlink" title="线程池管理类ThreadPoolExecutor"></a>线程池管理类ThreadPoolExecutor</h4><p>corePoolSize:池内线程初始值与最小值，就算是空闲状态，也会保持该数量线程。<br>maximumPoolSize:线程最大值，线程的增长始终不会超过该值。<br>keepAliveTime：当池内线程数高于corePoolSize时，经过多少时间多余的空闲线程才会被回收。回收前处于wait状态<br>unit：时间单位，可以使用TimeUnit的实例，如TimeUnit.MILLISECONDS。<br>workQueue:待入任务（Runnable）的等待场所，该参数主要影响调度策略，如公平与否，是否产生饿(starving)  。<br>threadFactory:线程工厂类，有默认实现，如果有自定义的需要则需要自己实现ThreadFactory接口并作为参数传入。   </p>
+<p>有一个内存区域是jvm虚拟机栈，每一个线程运行时都有一个线程栈，线程栈保存了线程运行时候变量值信息。当线程访问某一个对象时候值的时候，首先通过对象的引用找到对应在堆内存的变量的值，然后把堆内存变量的具体值load到线程本地内存中，建立一个变量副本，之后线程就不再和对象在堆内存变量值有任何关系，而是直接修改副本变量的值，在修改完之后的某一个时刻（线程退出之前），自动把线程变量副本的值回写到对象在堆中变量。这样在堆中的对象的值就产生变化了。</p>
+]]></content>
+      <tags>
+        <tag>多线程</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>面试知识点确认</title>
     <url>/2019/06/18/md/interview/%E9%9D%A2%E8%AF%95%E7%9F%A5%E8%AF%86%E7%82%B9%E7%A1%AE%E8%AE%A4/</url>
     <content><![CDATA[<p>socket多线程                     ok<br>netty底层nio，aio                ok<br>高并发                           ok<br>分布式事务                       ok<br>事务控制多库多表操作             ok<br>spring cloud<br>soa                              ignore<br>jvm调优                          ok<br>类加载机制                       ok<br>gc机制                           ok<br>支付流程和注意点<br>spring的加载机制                 ok<br>tomcat加载机制                   ignore<br>做过的项目                       important</p>
@@ -4246,15 +4376,34 @@
       </tags>
   </entry>
   <entry>
-    <title>Sidecar模式：下一代微服务架构的关键</title>
-    <url>/2019/06/18/md/part/microServices/Sidecar/</url>
-    <content><![CDATA[<h1 id="Sidecar模式：下一代微服务架构的关键"><a href="#Sidecar模式：下一代微服务架构的关键" class="headerlink" title="Sidecar模式：下一代微服务架构的关键"></a>Sidecar模式：下一代微服务架构的关键</h1><h2 id="什么是Sidecar模式？"><a href="#什么是Sidecar模式？" class="headerlink" title="什么是Sidecar模式？"></a>什么是Sidecar模式？</h2><p>Sidecar模式是一种将应用功能从应用本身剥离出来作为单独进程的方式。该模式允许我们向应用无侵入添加多种功能，避免了为满足第三方组件需求而向应用添加额外的配置代码。</p>
-<p>就像边车加装在摩托车上一样，在软件架构中，sidecar附加到主应用，或者叫父应用上，以扩展/增强功能特性，同时Sidecar与主应用是松耦合的。</p>
-<p>举个例子，假设现在有6个相互通信的微服务，每个微服务都需要具有可观察性、监控、日志记录、配置、断路器等功能，而所有这些功能都是在微服务中使用一些第三方库实现的。</p>
-<p>这样一组服务的实际情况可能会非常复杂，增加了应用的整体复杂性，尤其是当每个微服务用不同的语言编写、使用不同的基于.net、Java、Python等语言的第三方库</p>
+    <title>拦截器与Filter的区别</title>
+    <url>/2019/06/18/md/other/Filter%E4%B8%8EHandle/</url>
+    <content><![CDATA[<h3 id="拦截器与Filter的区别"><a href="#拦截器与Filter的区别" class="headerlink" title="拦截器与Filter的区别"></a>拦截器与Filter的区别</h3><ul>
+<li><p>相似之处：都是AOP编程思想的体现，都能实现权限检查与日志记录等</p>
+</li>
+<li><p>不同之处：</p>
+</li>
+</ul>
+<ol>
+<li><p>使用范围不同</p>
+<p>​    Filter是Servlet规范规定的，只能用于Web程序中</p>
+<p>​    拦截器既可用于Web程序，与可用于Application,Swing程序中</p>
+</li>
+<li><p>规范不同</p>
+<p>​    Filter是在Servlet规范定义的，是Servlet容器支持的.</p>
+<p>​    而拦截器是在Spring容器内，是Spring框架支持的</p>
+</li>
+<li><p>使用资源不同</p>
+<p>​    拦截器是Spring的一个组件，可以使用spring相关服务，如对象，事务，数据源</p>
+<p>​    而Filter不能</p>
+</li>
+<li><p>深度不同</p>
+<p>​    Filter在Servlet前后启作用，拦截器则可以在方法前后，异常抛出前后</p>
+</li>
+</ol>
 ]]></content>
       <tags>
-        <tag>微服务</tag>
+        <tag>other</tag>
       </tags>
   </entry>
   <entry>
@@ -4329,48 +4478,6 @@
       </tags>
   </entry>
   <entry>
-    <title>多线程概要</title>
-    <url>/2019/06/18/md/jdk/mulThread/%E5%A4%9A%E7%BA%BF%E7%A8%8B/</url>
-    <content><![CDATA[<p>多线程只有一个目的：更好的利用cpu的资源</p>
-<ul>
-<li><p>并行：多个cpu实例或者多台机器同时执行一段处理逻辑，是真正的同时。</p>
-</li>
-<li><p>并发：通过cpu调度算法，让用户看上去同时执行，实际上从cpu操作层面不是真正的同时。</p>
-</li>
-<li><p>线程安全：经常用来描绘一段代码。指在并发的情况之下，该代码经过多线程使用，线程的调度顺序不影响任何结果。</p>
-</li>
-<li><p>同步：Java中的同步指的是通过人为的控制和调度，保证共享资源的多线程访问成为线程安全，来保证结果的准确。如简单加入@synchronized关键字。</p>
-</li>
-</ul>
-<p><strong>阻塞(Blocked)</strong>：</p>
-<ol>
-<li>调用join()和sleep()方法，sleep()时间结束或被打断，join()中断,IO完成都会回到Runnable状态，等待JVM的调度。</li>
-<li>调用wait()，使该线程处于等待池(wait blocked pool),直到notify()/notifyAll()，线程被唤醒被放到锁定池(lock blocked pool )，释放同步锁使线程回到可运行状态（Runnable）</li>
-<li>对Running状态的线程加同步锁(Synchronized)使其进入(lock blocked pool ),同步锁被释放进入可运行状态(Runnable)。</li>
-</ol>
-<p>Thread类中的yield方法可以让一个running状态的线程转入runnable。</p>
-<ul>
-<li>yield()应该做的是让当前运行线程回到可运行状态，以允许具有相同优先级的其他线程获得运行机会，可能无效，又选择了让步的线程。</li>
-<li>join()在一个线程中调用other.join(),将等待other执行完后才继续本线程。</li>
-<li>interrupted方法其本质只是设置该线程的中断标志，真正实现线程的中断原理是：开发人员根据中断标志的具体值，来决定如何退出线程。</li>
-<li>stop方法会中断一个正在运行的线程</li>
-</ul>
-<p>synchronized, wait, notify 是任何对象都具有的同步工具<br>monitor 在synchronized 范围内，监视器发挥作用<br>wait/notify必须存在于synchronized块，这三个关键字针对的是同一个监视器，意味着wait之后，其他线程可以进入同步块执行。</p>
-<p><code>volatile 多线程的内存模型</code>：<br>main memory（主存）、working memory（线程栈）<br>在处理数据时，线程会把值从主存load到本地栈，完成操作后再save回去(volatile关键词的作用：每次针对该变量的操作都激发一次load and save)。</p>
-<h3 id="多线程包-java-util-concurrent"><a href="#多线程包-java-util-concurrent" class="headerlink" title="多线程包:java.util.concurrent"></a>多线程包:java.util.concurrent</h3><p><code>ThreadLocal类</code>，每个使用该变量的线程提供独立的变量副本，常用于用户登录控制，如记录session信息<br>每个Thread都持有一个TreadLocalMap类型的变量</p>
-<p><code>原子类</code>（AtomicInteger、AtomicBoolean……）等同于synchronized，AtomicInteger.compareAndSet(int expect,int update)可实现乐观锁   </p>
-<h4 id="Lock类"><a href="#Lock类" class="headerlink" title="Lock类"></a>Lock类</h4><p>ReentrantLock<br>ReentrantReadWriteLock.ReadLock<br>ReentrantReadWriteLock.WriteLock<br>lock 阻塞式, trylock 无阻塞式, lockInterruptily 可打断式， 还有trylock的带超时时间版本<br>r.lock()或r.lockInterruptibly()<br>r.unlock()<br>ReentrantReadWriteLock，写写，写读互斥；读读不互斥。可以实现并发读的高效线程安全代码</p>
-<h4 id="容器类"><a href="#容器类" class="headerlink" title="容器类"></a>容器类</h4><p>BlockingQueue 这个queue是单向队列，特别适用于先进先出策略的一些应用场景，BlockingQueue在队列的基础上添加了多线程协作的功能，提供了阻塞接口put和take，带超时功能的阻塞接口offer和poll。put会在队列满的时候阻塞，直到有空间时被唤醒；take在队列空的时候阻塞，直到有东西拿的时候才被唤醒。用于生产者-消费者模型尤其好用，堪称神器<br>常见的阻塞队列有：<br><code>ArrayListBlockingQueue</code><br><code>LinkedListBlockingQueue</code><br><code>DelayQueue</code><br><code>SynchronousQueue</code><br><code>ConcurrentHashMap</code>  </p>
-<p>高效的线程安全哈希map。请对比hashTable , concurrentHashMap, HashMap</p>
-<p><strong>HashMap</strong><br>put(key, value)存储对象到HashMap中，使用get(key)从HashMap中获取对象<br>put()方法传递键和值时，我们先对键调用hashCode()方法，返回的hashCode用于找到bucket位置来储存Entry对象<br>HashMap是在bucket中储存键对象和值对象</p>
-<h4 id="线程池管理类ThreadPoolExecutor"><a href="#线程池管理类ThreadPoolExecutor" class="headerlink" title="线程池管理类ThreadPoolExecutor"></a>线程池管理类ThreadPoolExecutor</h4><p>corePoolSize:池内线程初始值与最小值，就算是空闲状态，也会保持该数量线程。<br>maximumPoolSize:线程最大值，线程的增长始终不会超过该值。<br>keepAliveTime：当池内线程数高于corePoolSize时，经过多少时间多余的空闲线程才会被回收。回收前处于wait状态<br>unit：时间单位，可以使用TimeUnit的实例，如TimeUnit.MILLISECONDS。<br>workQueue:待入任务（Runnable）的等待场所，该参数主要影响调度策略，如公平与否，是否产生饿(starving)  。<br>threadFactory:线程工厂类，有默认实现，如果有自定义的需要则需要自己实现ThreadFactory接口并作为参数传入。   </p>
-<p>有一个内存区域是jvm虚拟机栈，每一个线程运行时都有一个线程栈，线程栈保存了线程运行时候变量值信息。当线程访问某一个对象时候值的时候，首先通过对象的引用找到对应在堆内存的变量的值，然后把堆内存变量的具体值load到线程本地内存中，建立一个变量副本，之后线程就不再和对象在堆内存变量值有任何关系，而是直接修改副本变量的值，在修改完之后的某一个时刻（线程退出之前），自动把线程变量副本的值回写到对象在堆中变量。这样在堆中的对象的值就产生变化了。</p>
-]]></content>
-      <tags>
-        <tag>多线程</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>jvm编译类加载和执行</title>
     <url>/2019/06/18/md/jdk/jvm/jvm%E7%BC%96%E8%AF%91%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%92%8C%E6%89%A7%E8%A1%8C/</url>
     <content><![CDATA[<p>JVM是Java Virtual Machine（Java虚拟机），Java虚拟机是实现跨平台这一特点的关键。</p>
@@ -4413,56 +4520,31 @@
       </tags>
   </entry>
   <entry>
-    <title>拦截器与Filter的区别</title>
-    <url>/2019/06/18/md/other/Filter%E4%B8%8EHandle/</url>
-    <content><![CDATA[<h3 id="拦截器与Filter的区别"><a href="#拦截器与Filter的区别" class="headerlink" title="拦截器与Filter的区别"></a>拦截器与Filter的区别</h3><ul>
-<li><p>相似之处：都是AOP编程思想的体现，都能实现权限检查与日志记录等</p>
-</li>
-<li><p>不同之处：</p>
-</li>
-</ul>
-<ol>
-<li><p>使用范围不同</p>
-<p>​    Filter是Servlet规范规定的，只能用于Web程序中</p>
-<p>​    拦截器既可用于Web程序，与可用于Application,Swing程序中</p>
-</li>
-<li><p>规范不同</p>
-<p>​    Filter是在Servlet规范定义的，是Servlet容器支持的.</p>
-<p>​    而拦截器是在Spring容器内，是Spring框架支持的</p>
-</li>
-<li><p>使用资源不同</p>
-<p>​    拦截器是Spring的一个组件，可以使用spring相关服务，如对象，事务，数据源</p>
-<p>​    而Filter不能</p>
-</li>
-<li><p>深度不同</p>
-<p>​    Filter在Servlet前后启作用，拦截器则可以在方法前后，异常抛出前后</p>
-</li>
-</ol>
+    <title>常用sql</title>
+    <url>/2019/06/18/md/part/db/sql/</url>
+    <content><![CDATA[<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 备份数据库 mayday</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">mysqldump -uroot -pAdmin123# mayday  &gt; bk.sql</span></pre></td></tr></table></figure>
+
 ]]></content>
       <tags>
-        <tag>other</tag>
+        <tag>db</tag>
       </tags>
   </entry>
   <entry>
-    <title>Hystrix Turbine</title>
-    <url>/2019/06/18/md/part/microServices/spring%20cloud/Hystrix%20Turbine/</url>
-    <content><![CDATA[<h3 id="Hystrix-Turbine简介"><a href="#Hystrix-Turbine简介" class="headerlink" title="Hystrix Turbine简介"></a>Hystrix Turbine简介</h3><p>看单个的Hystrix Dashboard的数据并没有什么多大的价值，要想看这个系统的Hystrix Dashboard数据就需要用到Hystrix Turbine。Hystrix Turbine将每个服务Hystrix Dashboard数据进行了整合。Hystrix Turbine的使用非常简单，只需要引入相应的依赖和加上注解和配置就可以了。</p>
-<h3 id="引入相应的依赖"><a href="#引入相应的依赖" class="headerlink" title="引入相应的依赖"></a>引入相应的依赖</h3><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.cloud<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-cloud-starter-turbine<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.cloud<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-cloud-netflix-turbine<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-actuator<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span></pre></td></tr></table></figure>
-
-<hr>
-<p>在其入口类ServiceTurbineApplication加上注解@EnableTurbine，开启turbine，@EnableTurbine注解包含了@EnableDiscoveryClient注解，即开启了注册服务。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@SpringBootApplication</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">@EnableTurbine</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ServiceTurbineApplication</span> </span>&#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">new</span> SpringApplicationBuilder(ServiceTurbineApplication<span class="class">.<span class="keyword">class</span>).<span class="title">web</span>(<span class="title">true</span>).<span class="title">run</span>(<span class="title">args</span>)</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
-
-<hr>
-<p>配置文件application.yml</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">spring:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">  <span class="attr">application.name:</span> <span class="string">service-turbine</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="attr">server:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">  <span class="attr">port:</span> <span class="number">8769</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="attr">security.basic.enabled:</span> <span class="literal">false</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="attr">turbine:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">  <span class="attr">aggregator:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="attr">clusterConfig:</span> <span class="string">default</span>   <span class="comment"># 指定聚合哪些集群，多个使用","分割，默认为default。可使用http://.../turbine.stream?cluster=&#123;clusterConfig之一&#125;访问</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">  <span class="attr">appConfig:</span> <span class="string">service-hi,service-lucy</span>  <span class="comment">### 配置Eureka中的serviceId列表，表明监控哪些服务</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">  <span class="attr">clusterNameExpression:</span> <span class="string">new</span> <span class="string">String("default")</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">  <span class="comment"># 1. clusterNameExpression指定集群名称，默认表达式appName；此时：turbine.aggregator.clusterConfig需要配置想要监控的应用名称</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">  <span class="comment"># 2. 当clusterNameExpression: default时，turbine.aggregator.clusterConfig可以不写，因为默认就是default</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">  <span class="comment"># 3. 当clusterNameExpression: metadata['cluster']时，假设想要监控的应用配置了eureka.instance.metadata-map.cluster: ABC，则需要配置，同时turbine.aggregator.clusterConfig: ABC</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="attr">eureka:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">  <span class="attr">client:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="attr">serviceUrl:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">      <span class="attr">defaultZone:</span> <span class="string">http://localhost:8761/eureka/</span></span></pre></td></tr></table></figure>
-
-
-
-<p>输入监控流<a href="http://localhost:8769/turbine.stream" target="_blank" rel="noopener">http://localhost:8769/turbine.stream</a></p>
+    <title>db</title>
+    <url>/2019/06/18/md/part/db/db/</url>
+    <content><![CDATA[<h3 id="为什么数据库可以没有外键？"><a href="#为什么数据库可以没有外键？" class="headerlink" title="为什么数据库可以没有外键？"></a>为什么数据库可以没有外键？</h3><ul>
+<li>性能，影响插入、更新和删除操作的性能。数据库需要检查它是否违反数据完整性</li>
+<li>传统数据，许多数据库在设计时需要存储来自旧数据库和遗留数据，这些数据可能对数据质量和完整性没有那么严格</li>
+<li>全表重新加载</li>
+</ul>
+<h3 id="规范"><a href="#规范" class="headerlink" title="规范"></a>规范</h3><p>【强制】业务上具有唯一特性的字段，即使是组合字段，也必须建成唯一索引。</p>
+<p>【强制】超过三个表禁止 join。需要 join 的字段，数据类型保持绝对一致；多表关联查询时，<br>保证被关联的字段需要有索引。</p>
+<p>【强制】不要使用 count(列名)或 count(常量)来替代 count(<em>)，count(</em>)就是 SQL92 定义的<br>标准统计行数的语法，跟数据库无关，跟 NULL 和非 NULL 无关。<br>说明：count(*)会统计值为 NULL 的行，而 count(列名)不会统计此列为 NULL 值的行。</p>
+<p>使用 IS NULL()来判断是否为 NULL 值。注意：NULL 与任何值的直接比较都为 NULL。</p>
+<p>单表行数超过 500 万行或者单表容量超过 2GB，才推荐进行分库分表。</p>
 ]]></content>
       <tags>
-        <tag>spring cloud</tag>
+        <tag>db</tag>
       </tags>
   </entry>
   <entry>
@@ -4495,34 +4577,6 @@
 ]]></content>
       <tags>
         <tag>mariadb</tag>
-        <tag>db</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>db</title>
-    <url>/2019/06/18/md/part/db/db/</url>
-    <content><![CDATA[<h3 id="为什么数据库可以没有外键？"><a href="#为什么数据库可以没有外键？" class="headerlink" title="为什么数据库可以没有外键？"></a>为什么数据库可以没有外键？</h3><ul>
-<li>性能，影响插入、更新和删除操作的性能。数据库需要检查它是否违反数据完整性</li>
-<li>传统数据，许多数据库在设计时需要存储来自旧数据库和遗留数据，这些数据可能对数据质量和完整性没有那么严格</li>
-<li>全表重新加载</li>
-</ul>
-<h3 id="规范"><a href="#规范" class="headerlink" title="规范"></a>规范</h3><p>【强制】业务上具有唯一特性的字段，即使是组合字段，也必须建成唯一索引。</p>
-<p>【强制】超过三个表禁止 join。需要 join 的字段，数据类型保持绝对一致；多表关联查询时，<br>保证被关联的字段需要有索引。</p>
-<p>【强制】不要使用 count(列名)或 count(常量)来替代 count(<em>)，count(</em>)就是 SQL92 定义的<br>标准统计行数的语法，跟数据库无关，跟 NULL 和非 NULL 无关。<br>说明：count(*)会统计值为 NULL 的行，而 count(列名)不会统计此列为 NULL 值的行。</p>
-<p>使用 IS NULL()来判断是否为 NULL 值。注意：NULL 与任何值的直接比较都为 NULL。</p>
-<p>单表行数超过 500 万行或者单表容量超过 2GB，才推荐进行分库分表。</p>
-]]></content>
-      <tags>
-        <tag>db</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>常用sql</title>
-    <url>/2019/06/18/md/part/db/sql/</url>
-    <content><![CDATA[<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 备份数据库 mayday</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">mysqldump -uroot -pAdmin123# mayday  &gt; bk.sql</span></pre></td></tr></table></figure>
-
-]]></content>
-      <tags>
         <tag>db</tag>
       </tags>
   </entry>
@@ -4703,6 +4757,18 @@
       </tags>
   </entry>
   <entry>
+    <title>spring</title>
+    <url>/2019/06/18/md/part/spring/spring/</url>
+    <content><![CDATA[<h1 id="Bean注解修饰带参数方法时，参数取值"><a href="#Bean注解修饰带参数方法时，参数取值" class="headerlink" title="@Bean注解修饰带参数方法时，参数取值"></a>@Bean注解修饰带参数方法时，参数取值</h1><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Bean</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">	<span class="function"><span class="keyword">public</span> RabbitAdmin <span class="title">rabbitAdmin</span><span class="params">(ConnectionFactory connectionFactory)</span></span>&#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">		System.out.println(String.format(<span class="string">"-----------getRabbitAdmin:%s"</span>, connectionFactory.hashCode()));</span></pre></td></tr><tr><td class="code"><pre><span class="line">		<span class="keyword">return</span> <span class="keyword">new</span> RabbitAdmin(connectionFactory);</span></pre></td></tr><tr><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
+<p>如上，有参数connectFactory，若spring容器中只有一个ConnectionFactory 类型的bean，则不论参数取名为何都是按类型取bean ConnectionFactory 为参数，若有多个则参数取名必须为多个bean中的一个，否则报错。</p>
+<p>spring：容器<br>核心：依赖注入和控制反转<br>Spring有两个核心接口：BeanFactory和ApplicationContext<br>bean之间不用new object，解耦。由spring容易管理。在需要时，注入<br>@autowire @component @controller @service等注解，通过scan标签扫描。<br>管理bean和bean，模块和模块之间的关系。</p>
+]]></content>
+      <tags>
+        <tag>spring</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>spring boot 运行方式</title>
     <url>/2019/06/18/md/part/spring/springBoot/</url>
     <content><![CDATA[<h4 id="springboot-运行"><a href="#springboot-运行" class="headerlink" title="springboot 运行"></a>springboot 运行</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> jar方式运行   -D 参数必须在jar前面指定</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">java -jar -Dserver.port=8081 spring-boot-test-service-0.0.1-SNAPSHOT.jar</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> spring-boot plugin 运行</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">mvn spring-boot:run -Dspring-boot.run.arguments='--spring.profiles.active=pro'</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> </span></span></pre></td></tr><tr><td class="code"><pre><span class="line">mvn spring-boot:run -Dspring-boot.run.profiles=pro</span></pre></td></tr></table></figure>
@@ -4736,24 +4802,6 @@
       </tags>
   </entry>
   <entry>
-    <title>spring事务</title>
-    <url>/2019/06/18/md/part/spring/spring%E4%BA%8B%E5%8A%A1/</url>
-    <content><![CDATA[<hr>
-<h3 id="Spring声明式事务七种传播行为"><a href="#Spring声明式事务七种传播行为" class="headerlink" title="Spring声明式事务七种传播行为"></a>Spring声明式事务七种传播行为</h3><ul>
-<li>REQUIRES_NEW：不管是否存在事务，该方法总会为自己发起一个新的事务。如果方法已经运行在一个事务中，则原有事务挂起，新的事务被创建。  </li>
-<li>NESTED：如果一个活动的事务存在，则运行在一个嵌套的事务中。如果没有活动事务，则按REQUIRED属性执行。它使用了一个单独的事务，这个事务拥有多个可以回滚的保存点。内部事务的回滚不会对外部事务造成影响。它只对<code>DataSourceTransactionManager</code>事务管理器起效。</li>
-<li>REQUIRED：业务方法需要在一个事务中运行，如果方法运行时，已处在一个事务中，那么就加入该事务，否则自己创建一个新的事务。<strong>这是spring默认的传播行为</strong>。</li>
-<li>MANDATORY：该方法只能在一个已经存在的事务中执行，业务方法不能发起自己的事务。如果在没有事务的环境下被调用，容器抛出异常。</li>
-<li>SUPPORTS：该方法在某个事务范围内被调用，则方法成为该事务的一部分。如果方法在该事务范围外被调用，该方法就在没有事务的环境下执行。</li>
-<li>NOT_SUPPORTED：声明方法不需要事务。如果方法没有关联到一个事务，容器不会为他开启事务，如果方法在一个事务中被调用，该事务会被挂起，调用结束后，原先的事务会恢复执行。</li>
-<li>NEVER：该方法绝对不能在事务范围内执行。如果在就抛异常。只有该方法没有关联到任何事务，才正常执行。</li>
-</ul>
-]]></content>
-      <tags>
-        <tag>spring</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>endPoint</title>
     <url>/2019/06/18/md/part/spring/springboot/endPoint/</url>
     <content><![CDATA[<h3 id="Endpoint"><a href="#Endpoint" class="headerlink" title="Endpoint"></a>Endpoint</h3><p>SpringBoot的Endpoint主要是用来监控应用服务的运行状况，并集成在Mvc中提供查看接口</p>
@@ -4765,6 +4813,17 @@
 ]]></content>
       <tags>
         <tag>spring boot</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>eureka</title>
+    <url>/2019/06/18/md/part/microServices/spring%20cloud/eureka/</url>
+    <content><![CDATA[<h4 id="EMERGENCY-EUREKA-MAY-BE-INCORRECTLY-CLAIMING-INSTANCES-ARE-UP-WHEN-THEY’RE-NOT-RENEWALS-ARE-LESSER-THAN-THRESHOLD-AND-HENCE-THE-INSTANCES-ARE-NOT-BEING-EXPIRED-JUST-TO-BE-SAFE"><a href="#EMERGENCY-EUREKA-MAY-BE-INCORRECTLY-CLAIMING-INSTANCES-ARE-UP-WHEN-THEY’RE-NOT-RENEWALS-ARE-LESSER-THAN-THRESHOLD-AND-HENCE-THE-INSTANCES-ARE-NOT-BEING-EXPIRED-JUST-TO-BE-SAFE" class="headerlink" title="EMERGENCY! EUREKA MAY BE INCORRECTLY CLAIMING INSTANCES ARE UP WHEN THEY’RE NOT. RENEWALS ARE LESSER THAN THRESHOLD AND HENCE THE INSTANCES ARE NOT BEING EXPIRED JUST TO BE SAFE."></a>EMERGENCY! EUREKA MAY BE INCORRECTLY CLAIMING INSTANCES ARE UP WHEN THEY’RE NOT. RENEWALS ARE LESSER THAN THRESHOLD AND HENCE THE INSTANCES ARE NOT BEING EXPIRED JUST TO BE SAFE.</h4><figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="comment">#一般出现此模式时，服务返回错误。即如果真实的服务已经Down掉，但在注册中心界面服务却一直存在，且显示为UP状态，关掉自我保护模式</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">eureka.server.enable-self-preservation</span> = <span class="string">false</span></span></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>微服务</tag>
+        <tag>spring cloud</tag>
       </tags>
   </entry>
   <entry>
@@ -4795,26 +4854,35 @@
       </tags>
   </entry>
   <entry>
-    <title>spring</title>
-    <url>/2019/06/18/md/part/spring/spring/</url>
-    <content><![CDATA[<h1 id="Bean注解修饰带参数方法时，参数取值"><a href="#Bean注解修饰带参数方法时，参数取值" class="headerlink" title="@Bean注解修饰带参数方法时，参数取值"></a>@Bean注解修饰带参数方法时，参数取值</h1><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Bean</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">	<span class="function"><span class="keyword">public</span> RabbitAdmin <span class="title">rabbitAdmin</span><span class="params">(ConnectionFactory connectionFactory)</span></span>&#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">		System.out.println(String.format(<span class="string">"-----------getRabbitAdmin:%s"</span>, connectionFactory.hashCode()));</span></pre></td></tr><tr><td class="code"><pre><span class="line">		<span class="keyword">return</span> <span class="keyword">new</span> RabbitAdmin(connectionFactory);</span></pre></td></tr><tr><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
-
-<p>如上，有参数connectFactory，若spring容器中只有一个ConnectionFactory 类型的bean，则不论参数取名为何都是按类型取bean ConnectionFactory 为参数，若有多个则参数取名必须为多个bean中的一个，否则报错。</p>
-<p>spring：容器<br>核心：依赖注入和控制反转<br>Spring有两个核心接口：BeanFactory和ApplicationContext<br>bean之间不用new object，解耦。由spring容易管理。在需要时，注入<br>@autowire @component @controller @service等注解，通过scan标签扫描。<br>管理bean和bean，模块和模块之间的关系。</p>
+    <title>spring事务</title>
+    <url>/2019/06/18/md/part/spring/spring%E4%BA%8B%E5%8A%A1/</url>
+    <content><![CDATA[<hr>
+<h3 id="Spring声明式事务七种传播行为"><a href="#Spring声明式事务七种传播行为" class="headerlink" title="Spring声明式事务七种传播行为"></a>Spring声明式事务七种传播行为</h3><ul>
+<li>REQUIRES_NEW：不管是否存在事务，该方法总会为自己发起一个新的事务。如果方法已经运行在一个事务中，则原有事务挂起，新的事务被创建。  </li>
+<li>NESTED：如果一个活动的事务存在，则运行在一个嵌套的事务中。如果没有活动事务，则按REQUIRED属性执行。它使用了一个单独的事务，这个事务拥有多个可以回滚的保存点。内部事务的回滚不会对外部事务造成影响。它只对<code>DataSourceTransactionManager</code>事务管理器起效。</li>
+<li>REQUIRED：业务方法需要在一个事务中运行，如果方法运行时，已处在一个事务中，那么就加入该事务，否则自己创建一个新的事务。<strong>这是spring默认的传播行为</strong>。</li>
+<li>MANDATORY：该方法只能在一个已经存在的事务中执行，业务方法不能发起自己的事务。如果在没有事务的环境下被调用，容器抛出异常。</li>
+<li>SUPPORTS：该方法在某个事务范围内被调用，则方法成为该事务的一部分。如果方法在该事务范围外被调用，该方法就在没有事务的环境下执行。</li>
+<li>NOT_SUPPORTED：声明方法不需要事务。如果方法没有关联到一个事务，容器不会为他开启事务，如果方法在一个事务中被调用，该事务会被挂起，调用结束后，原先的事务会恢复执行。</li>
+<li>NEVER：该方法绝对不能在事务范围内执行。如果在就抛异常。只有该方法没有关联到任何事务，才正常执行。</li>
+</ul>
 ]]></content>
       <tags>
         <tag>spring</tag>
       </tags>
   </entry>
   <entry>
-    <title>eureka</title>
-    <url>/2019/06/18/md/part/microServices/spring%20cloud/eureka/</url>
-    <content><![CDATA[<h4 id="EMERGENCY-EUREKA-MAY-BE-INCORRECTLY-CLAIMING-INSTANCES-ARE-UP-WHEN-THEY’RE-NOT-RENEWALS-ARE-LESSER-THAN-THRESHOLD-AND-HENCE-THE-INSTANCES-ARE-NOT-BEING-EXPIRED-JUST-TO-BE-SAFE"><a href="#EMERGENCY-EUREKA-MAY-BE-INCORRECTLY-CLAIMING-INSTANCES-ARE-UP-WHEN-THEY’RE-NOT-RENEWALS-ARE-LESSER-THAN-THRESHOLD-AND-HENCE-THE-INSTANCES-ARE-NOT-BEING-EXPIRED-JUST-TO-BE-SAFE" class="headerlink" title="EMERGENCY! EUREKA MAY BE INCORRECTLY CLAIMING INSTANCES ARE UP WHEN THEY’RE NOT. RENEWALS ARE LESSER THAN THRESHOLD AND HENCE THE INSTANCES ARE NOT BEING EXPIRED JUST TO BE SAFE."></a>EMERGENCY! EUREKA MAY BE INCORRECTLY CLAIMING INSTANCES ARE UP WHEN THEY’RE NOT. RENEWALS ARE LESSER THAN THRESHOLD AND HENCE THE INSTANCES ARE NOT BEING EXPIRED JUST TO BE SAFE.</h4><figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="comment">#一般出现此模式时，服务返回错误。即如果真实的服务已经Down掉，但在注册中心界面服务却一直存在，且显示为UP状态，关掉自我保护模式</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">eureka.server.enable-self-preservation</span> = <span class="string">false</span></span></pre></td></tr></table></figure>
-
+    <title>eq</title>
+    <url>/2019/06/18/md/life/eq/</url>
+    <content><![CDATA[<ul>
+<li>感知他人情绪的能力。</li>
+<li>控制自己情绪的能力。</li>
+<li>目标和行为的高度统一</li>
+</ul>
+<p>感受到对方的表情变化，并及时调整自己的说话思维方式，这才是正确的反馈</p>
 ]]></content>
       <tags>
-        <tag>微服务</tag>
-        <tag>spring cloud</tag>
+        <tag>人生</tag>
       </tags>
   </entry>
   <entry>
@@ -4893,20 +4961,6 @@
       </tags>
   </entry>
   <entry>
-    <title>eq</title>
-    <url>/2019/06/18/md/life/eq/</url>
-    <content><![CDATA[<ul>
-<li>感知他人情绪的能力。</li>
-<li>控制自己情绪的能力。</li>
-<li>目标和行为的高度统一</li>
-</ul>
-<p>感受到对方的表情变化，并及时调整自己的说话思维方式，这才是正确的反馈</p>
-]]></content>
-      <tags>
-        <tag>人生</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>缩写</title>
     <url>/2019/06/18/md/other/%E7%BC%A9%E5%86%99/</url>
     <content><![CDATA[<h1 id="UAT-SIT-QAS-DEV-PET"><a href="#UAT-SIT-QAS-DEV-PET" class="headerlink" title="UAT SIT QAS DEV PET"></a>UAT SIT QAS DEV PET</h1><ul>
@@ -4922,16 +4976,15 @@
       </tags>
   </entry>
   <entry>
-    <title>centos设置</title>
-    <url>/2019/06/18/md/linux/centos/</url>
-    <content><![CDATA[<h4 id="设置静态IP"><a href="#设置静态IP" class="headerlink" title="设置静态IP"></a>设置静态IP</h4><p>修改/etc/sysconfig/network-scripts/ifcfg-ens33  文件</p>
-<figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="attr">BOOTPROTO</span>=<span class="string">static</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="attr">IPADDR</span>=<span class="string">192.168.85.135</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="attr">GATEWAY</span>=<span class="string">192.168.85.2</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="attr">NETMASK</span>=<span class="string">255.255.255.0</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="attr">DNS1</span>=<span class="string">192.168.85.2</span></span></pre></td></tr></table></figure>
-<hr>
-<h4 id="Linux下查看网关方法："><a href="#Linux下查看网关方法：" class="headerlink" title="Linux下查看网关方法："></a>Linux下查看网关方法：</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">route -n</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">ip route show</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">第一行就是自己的默认网关</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">traceroute www.prudentwoo.com -s 100 </span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">netstat -r</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">more /etc/network/interfaces  #Debian/Ubuntu Linux</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">more /etc/sysconfig/network-scripts/ifcfg-eth0 #Red Hat</span></pre></td></tr></table></figure>
-<hr>
-<h4 id="无法访问外网"><a href="#无法访问外网" class="headerlink" title="无法访问外网"></a>无法访问外网</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">修改文件   /etc/sysconfig/network-scripts/ifcfg-ens33 </span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">ONBOOT=no改为yes，确认BOOTPROTO=dhcp</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">然后重启网络服务</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">systemctl restart network</span></pre></td></tr></table></figure>
-<hr>
-<h4 id="如果报未找到ifconfig命令"><a href="#如果报未找到ifconfig命令" class="headerlink" title="如果报未找到ifconfig命令"></a>如果报未找到ifconfig命令</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">安装net-tools</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">yum install net-tools  -y</span></pre></td></tr></table></figure>]]></content>
+    <title>peerDNS</title>
+    <url>/2019/06/18/md/linux/peerDNS/</url>
+    <content><![CDATA[<p>先认识一下这三个配置文件：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">/etc/hosts #：这个是最早的 hostname 对应 IP 的存档；</span></pre></td></tr><tr><td class="code"><pre><span class="line">/etc/resolv.conf #：当需要解析域名时，读取该文件获得DNS 服务器 IP；</span></pre></td></tr><tr><td class="code"><pre><span class="line">/etc/nsswitch.conf#：这个档案『决定』先使用 /etc/hosts 还是 /etc/resolv.conf 的设定！</span></pre></td></tr></table></figure>
+
+<p>当电脑要访问一个域名时，要将域名翻译成IP地址。<br> 这个过程通常会先访问/etc/hosts，看本地是否有对应的hostname – IP记录。<br> 如果没有就去查询DNS服务器，通过/etc/resolv.conf 得到dns服务器地址。</p>
+<p>当在eth接口启用DHCP后，本地resolv.conf文件将被修改，resolv.conf文件中的DNS地址将被改为从DHCP获取到的地址。这种从DHCP获得的DNS即是Peer DNS。</p>
+<p>启用DHCP后即便修改/etc/resolv.conf，不久又恢复成原样。如何解决这个问题？此时，你得要在 /etc/sysconfig/network-scripts/ifcfg-eth0 等相关档案内，增加一行：『PEERDNS=no』，然后重新启动网络即可。</p>
+]]></content>
       <tags>
         <tag>linux</tag>
       </tags>
@@ -4968,15 +5021,16 @@
       </tags>
   </entry>
   <entry>
-    <title>peerDNS</title>
-    <url>/2019/06/18/md/linux/peerDNS/</url>
-    <content><![CDATA[<p>先认识一下这三个配置文件：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">/etc/hosts #：这个是最早的 hostname 对应 IP 的存档；</span></pre></td></tr><tr><td class="code"><pre><span class="line">/etc/resolv.conf #：当需要解析域名时，读取该文件获得DNS 服务器 IP；</span></pre></td></tr><tr><td class="code"><pre><span class="line">/etc/nsswitch.conf#：这个档案『决定』先使用 /etc/hosts 还是 /etc/resolv.conf 的设定！</span></pre></td></tr></table></figure>
-
-<p>当电脑要访问一个域名时，要将域名翻译成IP地址。<br> 这个过程通常会先访问/etc/hosts，看本地是否有对应的hostname – IP记录。<br> 如果没有就去查询DNS服务器，通过/etc/resolv.conf 得到dns服务器地址。</p>
-<p>当在eth接口启用DHCP后，本地resolv.conf文件将被修改，resolv.conf文件中的DNS地址将被改为从DHCP获取到的地址。这种从DHCP获得的DNS即是Peer DNS。</p>
-<p>启用DHCP后即便修改/etc/resolv.conf，不久又恢复成原样。如何解决这个问题？此时，你得要在 /etc/sysconfig/network-scripts/ifcfg-eth0 等相关档案内，增加一行：『PEERDNS=no』，然后重新启动网络即可。</p>
-]]></content>
+    <title>centos设置</title>
+    <url>/2019/06/18/md/linux/centos/</url>
+    <content><![CDATA[<h4 id="设置静态IP"><a href="#设置静态IP" class="headerlink" title="设置静态IP"></a>设置静态IP</h4><p>修改/etc/sysconfig/network-scripts/ifcfg-ens33  文件</p>
+<figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="attr">BOOTPROTO</span>=<span class="string">static</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="attr">IPADDR</span>=<span class="string">192.168.85.135</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="attr">GATEWAY</span>=<span class="string">192.168.85.2</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="attr">NETMASK</span>=<span class="string">255.255.255.0</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="attr">DNS1</span>=<span class="string">192.168.85.2</span></span></pre></td></tr></table></figure>
+<hr>
+<h4 id="Linux下查看网关方法："><a href="#Linux下查看网关方法：" class="headerlink" title="Linux下查看网关方法："></a>Linux下查看网关方法：</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">route -n</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">ip route show</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">第一行就是自己的默认网关</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">traceroute www.prudentwoo.com -s 100 </span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">netstat -r</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">more /etc/network/interfaces  #Debian/Ubuntu Linux</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">more /etc/sysconfig/network-scripts/ifcfg-eth0 #Red Hat</span></pre></td></tr></table></figure>
+<hr>
+<h4 id="无法访问外网"><a href="#无法访问外网" class="headerlink" title="无法访问外网"></a>无法访问外网</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">修改文件   /etc/sysconfig/network-scripts/ifcfg-ens33 </span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">ONBOOT=no改为yes，确认BOOTPROTO=dhcp</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">然后重启网络服务</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">systemctl restart network</span></pre></td></tr></table></figure>
+<hr>
+<h4 id="如果报未找到ifconfig命令"><a href="#如果报未找到ifconfig命令" class="headerlink" title="如果报未找到ifconfig命令"></a>如果报未找到ifconfig命令</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">安装net-tools</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">yum install net-tools  -y</span></pre></td></tr></table></figure>]]></content>
       <tags>
         <tag>linux</tag>
       </tags>
@@ -5019,6 +5073,14 @@
       </tags>
   </entry>
   <entry>
+    <title>file</title>
+    <url>/2019/06/18/md/jdk/jdk%20File/</url>
+    <content><![CDATA[<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">File file = <span class="keyword">new</span> File()</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">//文件名，包含后缀，但不包含路径 </span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">//   /root/11.jpg   则显示 11.jpg  </span></span></pre></td></tr><tr><td class="code"><pre><span class="line">file.getName()</span></pre></td></tr><tr><td class="code"><pre><span class="line">    </span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">// 文件路径  完整的绝对路径</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">//   /root/11.jpg   则显示 /root/11.jpg</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">file.getPath()</span></pre></td></tr><tr><td class="code"><pre><span class="line">    </span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">// 重命名   newPath新目标文件绝对路径    </span></span></pre></td></tr><tr><td class="code"><pre><span class="line">file.renameTo(<span class="keyword">new</span> File(newPath));</span></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>jdk</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>高并发</title>
     <url>/2019/06/18/md/part/project/%E9%AB%98%E5%B9%B6%E5%8F%91/</url>
     <content><![CDATA[<h2 id="首先要了解高并发的的瓶颈在哪里？"><a href="#首先要了解高并发的的瓶颈在哪里？" class="headerlink" title="首先要了解高并发的的瓶颈在哪里？"></a>首先要了解高并发的的瓶颈在哪里？</h2><h3 id="前端性能优化技术"><a href="#前端性能优化技术" class="headerlink" title="前端性能优化技术"></a>前端性能优化技术</h3><ol>
@@ -5055,14 +5117,6 @@
 ]]></content>
       <tags>
         <tag>高并发</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>file</title>
-    <url>/2019/06/18/md/jdk/jdk%20File/</url>
-    <content><![CDATA[<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">File file = <span class="keyword">new</span> File()</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">//文件名，包含后缀，但不包含路径 </span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">//   /root/11.jpg   则显示 11.jpg  </span></span></pre></td></tr><tr><td class="code"><pre><span class="line">file.getName()</span></pre></td></tr><tr><td class="code"><pre><span class="line">    </span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">// 文件路径  完整的绝对路径</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">//   /root/11.jpg   则显示 /root/11.jpg</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">file.getPath()</span></pre></td></tr><tr><td class="code"><pre><span class="line">    </span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">// 重命名   newPath新目标文件绝对路径    </span></span></pre></td></tr><tr><td class="code"><pre><span class="line">file.renameTo(<span class="keyword">new</span> File(newPath));</span></pre></td></tr></table></figure>]]></content>
-      <tags>
-        <tag>jdk</tag>
       </tags>
   </entry>
   <entry>
@@ -5126,16 +5180,6 @@
       </tags>
   </entry>
   <entry>
-    <title>docker相关问题</title>
-    <url>/2019/06/18/md/part/docker/docker%20problem/</url>
-    <content><![CDATA[<h5 id="docker-WARNING-IPv4-forwarding-is-disabled-解决方法"><a href="#docker-WARNING-IPv4-forwarding-is-disabled-解决方法" class="headerlink" title="docker WARNING: IPv4 forwarding is disabled. 解决方法"></a>docker WARNING: IPv4 forwarding is disabled. 解决方法</h5><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">般情况下，我们的linux机器的ip forwarding选项都是关闭的。 但是如果我们的机器需要做网关，或路由器。那么这个就要打开了</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">echo net.ipv4.ip_forward=1 &gt;&gt; /usr/lib/sysctl.d/00-system.conf</span></pre></td></tr><tr><td class="code"><pre><span class="line">systemctl restart network &amp;&amp; systemctl restart docker</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">查看是否修改成功</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">sysctl net.ipv4.ip_forward</span></pre></td></tr></table></figure>
-
-]]></content>
-      <tags>
-        <tag>docker</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>docker挂载目录</title>
     <url>/2019/06/18/md/part/docker/docker%E7%9B%AE%E5%BD%95/</url>
     <content><![CDATA[<h4 id="关于Docker目录挂载的总结"><a href="#关于Docker目录挂载的总结" class="headerlink" title="关于Docker目录挂载的总结"></a>关于Docker目录挂载的总结</h4><ul>
@@ -5153,6 +5197,18 @@
 <p>2&gt; 以特权方式启动容器  指定–privileged参数</p>
 ]]></content>
       <tags>
+        <tag>docker</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>docker运行mariadb</title>
+    <url>/2019/06/18/md/part/docker/mariadb/</url>
+    <content><![CDATA[<h4 id="运行容器"><a href="#运行容器" class="headerlink" title="运行容器"></a>运行容器</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker run  --privileged --name mariadb   -d --restart=always -e TIMEZONE=Asis/Shanghai -e MYSQL_ROOT_PASSWORD=Admin123# -e SERVER_ID=1 -v /docker/mariadb/dbdata:/var/lib/mysql  -p 3306:3306  mariadb:10.4.5 --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">参数说明:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">--privileged 赋予容器扩展权限(root)</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">设置--restart=always 参数的时候， 设置了此参数容器退出了会自动重启， 宿主机重启了容器也能自动重启           </span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">-d后台运行 </span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">TIMEZONE 设置时区</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">MYSQL_ROOT_PASSWORD 设置root密码</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">-v  /opt/data/mariadb/dbdata:/var/lib/mysql:/var/lib/mysql  将mariadb里面的目录（/var/lib/mysql）挂载到宿主机里面</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci 设置 utf-8字符集和排序规则</span></span></pre></td></tr></table></figure>
+
+
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">--创建用户</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">USER</span> sonar <span class="keyword">IDENTIFIED</span> <span class="keyword">BY</span> <span class="string">'sonar'</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">--授权</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">GRANT</span> <span class="keyword">ALL</span> <span class="keyword">ON</span> *.* <span class="keyword">TO</span> <span class="string">'sonar@localhost'</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">GRANT</span> <span class="keyword">ALL</span> <span class="keyword">PRIVILEGES</span> <span class="keyword">ON</span> *.* <span class="keyword">TO</span> <span class="string">'root'</span>@<span class="string">'%'</span><span class="keyword">IDENTIFIED</span> <span class="keyword">BY</span> <span class="string">'Admin123#'</span> <span class="keyword">WITH</span> <span class="keyword">GRANT</span> <span class="keyword">OPTION</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">grant</span> <span class="keyword">all</span> <span class="keyword">privileges</span> <span class="keyword">on</span> *.* <span class="keyword">to</span> sonar <span class="keyword">identified</span> <span class="keyword">by</span> <span class="string">'sonar'</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">FLUSH</span> <span class="keyword">PRIVILEGES</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">-- mariadb 开启远程连接权限</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">grant</span> <span class="keyword">all</span> <span class="keyword">privileges</span> <span class="keyword">on</span> *.* <span class="keyword">to</span> root@<span class="string">"%"</span> <span class="keyword">identified</span> <span class="keyword">by</span> <span class="string">"Admin123#"</span>;  </span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">FLUSH</span> <span class="keyword">PRIVILEGES</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">--指定编码创建db</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">DATABASE</span> <span class="keyword">IF</span> <span class="keyword">NOT</span> <span class="keyword">EXISTS</span> sonar <span class="keyword">DEFAULT</span> <span class="keyword">CHARSET</span> utf8mb4 <span class="keyword">COLLATE</span> utf8mb4_general_ci;</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">--备份数据</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">mysqldump -uroot -p <span class="comment">--all-database &gt; bk.sql</span></span></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>mariadb</tag>
         <tag>docker</tag>
       </tags>
   </entry>
@@ -5185,9 +5241,9 @@
       </tags>
   </entry>
   <entry>
-    <title>docker compose</title>
-    <url>/2019/06/18/md/part/docker/docker%20compose/</url>
-    <content><![CDATA[<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sudo curl -L https://github.com/docker/compose/releases/download/1.16.1/docker-compose-`uname -s`-`uname -m` \</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"> -o /usr/local/bin/docker-compose</span></pre></td></tr></table></figure>
+    <title>docker相关问题</title>
+    <url>/2019/06/18/md/part/docker/docker%20problem/</url>
+    <content><![CDATA[<h5 id="docker-WARNING-IPv4-forwarding-is-disabled-解决方法"><a href="#docker-WARNING-IPv4-forwarding-is-disabled-解决方法" class="headerlink" title="docker WARNING: IPv4 forwarding is disabled. 解决方法"></a>docker WARNING: IPv4 forwarding is disabled. 解决方法</h5><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">般情况下，我们的linux机器的ip forwarding选项都是关闭的。 但是如果我们的机器需要做网关，或路由器。那么这个就要打开了</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">echo net.ipv4.ip_forward=1 &gt;&gt; /usr/lib/sysctl.d/00-system.conf</span></pre></td></tr><tr><td class="code"><pre><span class="line">systemctl restart network &amp;&amp; systemctl restart docker</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">查看是否修改成功</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">sysctl net.ipv4.ip_forward</span></pre></td></tr></table></figure>
 
 ]]></content>
       <tags>
@@ -5195,34 +5251,13 @@
       </tags>
   </entry>
   <entry>
-    <title>docker运行mariadb</title>
-    <url>/2019/06/18/md/part/docker/mariadb/</url>
-    <content><![CDATA[<h4 id="运行容器"><a href="#运行容器" class="headerlink" title="运行容器"></a>运行容器</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker run  --privileged --name mariadb   -d --restart=always -e TIMEZONE=Asis/Shanghai -e MYSQL_ROOT_PASSWORD=Admin123# -e SERVER_ID=1 -v /docker/mariadb/dbdata:/var/lib/mysql  -p 3306:3306  mariadb:10.4.5 --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">参数说明:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">--privileged 赋予容器扩展权限(root)</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">设置--restart=always 参数的时候， 设置了此参数容器退出了会自动重启， 宿主机重启了容器也能自动重启           </span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">-d后台运行 </span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">TIMEZONE 设置时区</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">MYSQL_ROOT_PASSWORD 设置root密码</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">-v  /opt/data/mariadb/dbdata:/var/lib/mysql:/var/lib/mysql  将mariadb里面的目录（/var/lib/mysql）挂载到宿主机里面</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci 设置 utf-8字符集和排序规则</span></span></pre></td></tr></table></figure>
+    <title>docker compose</title>
+    <url>/2019/06/18/md/part/docker/docker%20compose/</url>
+    <content><![CDATA[<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sudo curl -L https://github.com/docker/compose/releases/download/1.16.1/docker-compose-`uname -s`-`uname -m` \</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"> -o /usr/local/bin/docker-compose</span></pre></td></tr></table></figure>
 
-
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">--创建用户</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">USER</span> sonar <span class="keyword">IDENTIFIED</span> <span class="keyword">BY</span> <span class="string">'sonar'</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">--授权</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">GRANT</span> <span class="keyword">ALL</span> <span class="keyword">ON</span> *.* <span class="keyword">TO</span> <span class="string">'sonar@localhost'</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">GRANT</span> <span class="keyword">ALL</span> <span class="keyword">PRIVILEGES</span> <span class="keyword">ON</span> *.* <span class="keyword">TO</span> <span class="string">'root'</span>@<span class="string">'%'</span><span class="keyword">IDENTIFIED</span> <span class="keyword">BY</span> <span class="string">'Admin123#'</span> <span class="keyword">WITH</span> <span class="keyword">GRANT</span> <span class="keyword">OPTION</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">grant</span> <span class="keyword">all</span> <span class="keyword">privileges</span> <span class="keyword">on</span> *.* <span class="keyword">to</span> sonar <span class="keyword">identified</span> <span class="keyword">by</span> <span class="string">'sonar'</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">FLUSH</span> <span class="keyword">PRIVILEGES</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">-- mariadb 开启远程连接权限</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">grant</span> <span class="keyword">all</span> <span class="keyword">privileges</span> <span class="keyword">on</span> *.* <span class="keyword">to</span> root@<span class="string">"%"</span> <span class="keyword">identified</span> <span class="keyword">by</span> <span class="string">"Admin123#"</span>;  </span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">FLUSH</span> <span class="keyword">PRIVILEGES</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">--指定编码创建db</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">DATABASE</span> <span class="keyword">IF</span> <span class="keyword">NOT</span> <span class="keyword">EXISTS</span> sonar <span class="keyword">DEFAULT</span> <span class="keyword">CHARSET</span> utf8mb4 <span class="keyword">COLLATE</span> utf8mb4_general_ci;</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">--备份数据</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">mysqldump -uroot -p <span class="comment">--all-database &gt; bk.sql</span></span></pre></td></tr></table></figure>]]></content>
+]]></content>
       <tags>
-        <tag>mariadb</tag>
         <tag>docker</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>mybatis获取主键</title>
-    <url>/2019/06/18/md/part/db/mybatis/mybatis/</url>
-    <content><![CDATA[<h3 id="Mybatis-在-insert-之后想获取自增的主键-id，但却总是返回1"><a href="#Mybatis-在-insert-之后想获取自增的主键-id，但却总是返回1" class="headerlink" title="Mybatis 在 insert 之后想获取自增的主键 id，但却总是返回1"></a>Mybatis 在 insert 之后想获取自增的主键 id，但却总是返回1</h3><p>想要获取自增主键id，需要通过xx.getId()方法获取，因为在mybatis中指定自增主键id封装到了对象的属性中，所以我们需要在对象中来获取</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">insert</span> <span class="attr">id</span>=<span class="string">"add"</span> <span class="attr">useGeneratedKeys</span>=<span class="string">"true"</span> <span class="attr">keyColumn</span>=<span class="string">"id"</span> <span class="attr">keyProperty</span>=<span class="string">"id"</span> <span class="attr">parameterType</span>=<span class="string">"user"</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    INSERT INTO `user` (`name`,sex,register_ts) VALUES (#&#123;name&#125;,#&#123;sex&#125;,#&#123;registerTs&#125;)</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">selectKey</span> <span class="attr">resultType</span>=<span class="string">"int"</span> <span class="attr">keyProperty</span>=<span class="string">"id"</span> <span class="attr">order</span>=<span class="string">"AFTER"</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">        SELECT LAST_INSERT_ID()</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="tag">&lt;/<span class="name">selectKey</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="tag">&lt;/<span class="name">insert</span>&gt;</span></span></pre></td></tr></table></figure>
-
-<h3 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h3><ol>
-<li><p>想要获取自增主键id，应该通过对象的getId()方法，而并不是insert的返回值，insert的返回值表示的是影响行数</p>
-</li>
-<li><p>在mapper.xml中：useGeneratedKeys=”true”、keyProperty=”id”，这两个属性的作用：</p>
-</li>
-</ol>
-<pre><code>- 共同决定了sql执行后，会将主键封装到id属性上；
-
-- 自增主键封装到了对象的id属性上了，那么想要获取，直接调用对象的getId()方法就可以了</code></pre>]]></content>
-      <tags>
-        <tag>mybatis</tag>
       </tags>
   </entry>
   <entry>
@@ -5253,57 +5288,22 @@
       </tags>
   </entry>
   <entry>
-    <title>netty介绍</title>
-    <url>/2019/06/18/md/%E9%AB%98%E5%8F%AF%E7%94%A8/Netty/</url>
-    <content><![CDATA[<p>netty是由JBOSS提供的一个java开源框架。<br>netty提供异步的、事件驱动的网络应用程序框架和工具，用以快速开发高性能、高可靠性的网络服务器和客户端程序。</p>
-<p>netty：异步非阻塞开源框架<br>bio：同步阻塞<br>nio：同步非阻塞<br>bio：异步非阻塞</p>
-<p>一个IO操作其实分成了两个步骤：发起IO请求和实际的IO操作。<br>同步IO和异步IO的区别就在于第二个步骤是否阻塞，如果实际的IO读写阻塞请求进程，那么就是同步IO。<br>阻塞IO和非阻塞IO的区别在于第一步，发起IO请求是否会被阻塞，如果阻塞直到完成那么就是传统的阻塞IO，如果不阻塞，那么就是非阻塞IO。 </p>
-<ul>
-<li><p>同步阻塞：你到饭馆点餐，然后在那等着，还要一边喊：好了没啊！ </p>
+    <title>mybatis获取主键</title>
+    <url>/2019/06/18/md/part/db/mybatis/mybatis/</url>
+    <content><![CDATA[<h3 id="Mybatis-在-insert-之后想获取自增的主键-id，但却总是返回1"><a href="#Mybatis-在-insert-之后想获取自增的主键-id，但却总是返回1" class="headerlink" title="Mybatis 在 insert 之后想获取自增的主键 id，但却总是返回1"></a>Mybatis 在 insert 之后想获取自增的主键 id，但却总是返回1</h3><p>想要获取自增主键id，需要通过xx.getId()方法获取，因为在mybatis中指定自增主键id封装到了对象的属性中，所以我们需要在对象中来获取</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">insert</span> <span class="attr">id</span>=<span class="string">"add"</span> <span class="attr">useGeneratedKeys</span>=<span class="string">"true"</span> <span class="attr">keyColumn</span>=<span class="string">"id"</span> <span class="attr">keyProperty</span>=<span class="string">"id"</span> <span class="attr">parameterType</span>=<span class="string">"user"</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    INSERT INTO `user` (`name`,sex,register_ts) VALUES (#&#123;name&#125;,#&#123;sex&#125;,#&#123;registerTs&#125;)</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">selectKey</span> <span class="attr">resultType</span>=<span class="string">"int"</span> <span class="attr">keyProperty</span>=<span class="string">"id"</span> <span class="attr">order</span>=<span class="string">"AFTER"</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">        SELECT LAST_INSERT_ID()</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="tag">&lt;/<span class="name">selectKey</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="tag">&lt;/<span class="name">insert</span>&gt;</span></span></pre></td></tr></table></figure>
+
+<h3 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h3><ol>
+<li><p>想要获取自增主键id，应该通过对象的getId()方法，而并不是insert的返回值，insert的返回值表示的是影响行数</p>
 </li>
-<li><p>同步非阻塞：在饭馆点完餐，就去遛狗了。不过溜一会儿，就回饭馆喊一声：好了没啊！ </p>
+<li><p>在mapper.xml中：useGeneratedKeys=”true”、keyProperty=”id”，这两个属性的作用：</p>
 </li>
-<li><p>异步阻塞：遛狗的时候，接到饭馆电话，说饭做好了，让您亲自去拿。 </p>
-</li>
-<li><p>异步非阻塞：饭馆打电话说，我们知道您的位置，一会给你送过来，安心遛狗就可以了。 </p>
-</li>
-</ul>
-]]></content>
+</ol>
+<pre><code>- 共同决定了sql执行后，会将主键封装到id属性上；
+
+- 自增主键封装到了对象的id属性上了，那么想要获取，直接调用对象的getId()方法就可以了</code></pre>]]></content>
       <tags>
-        <tag>netty</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>代理模式与装饰模式区别</title>
-    <url>/2019/06/18/md/develop/base/pattern/pattern/</url>
-    <content><![CDATA[<p>代理模式主要是<code>控制对某个特定对象访问</code>，而装饰模式主要是为了<code>给对象添加行为</code></p>
-<p>代理模式和装饰模式非常类似，甚至代码都类似。二者最主要的区别是：</p>
-<ul>
-<li>代理模式中，代理类对被代理的对象有控制权，决定其执行或者不执行。</li>
-<li>而装饰模式中，装饰类对代理对象<code>没有控制权</code>，只能为其增加一层装饰，以加强被装饰对象的功能，仅此而已。</li>
-</ul>
-]]></content>
-      <categories>
-        <category>设计模式</category>
-      </categories>
-      <tags>
-        <tag>设计模式</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>consul介绍</title>
-    <url>/2019/06/18/md/part/microServices/consul/</url>
-    <content><![CDATA[<p>consul是分布式的、高可用、横向扩展的（CP）。consul提供的一些关键特性：</p>
-<ul>
-<li>service discovery：consul通过DNS或者HTTP接口使服务注册和服务发现变的很容易，一些外部服务，例如saas提供的也可以一样注册。</li>
-<li>health checking：健康检测使consul可以快速的告警在集群中的操作。和服务发现的集成，可以防止服务转发到故障的服务上面。</li>
-<li>key/value storage：一个用来存储动态配置的系统。提供简单的HTTP接口，可以在任何地方操作。</li>
-<li>multi-datacenter：无需复杂的配置，即可支持任意数量的区域。</li>
-</ul>
-]]></content>
-      <tags>
-        <tag>微服务</tag>
-        <tag>consul</tag>
+        <tag>mybatis</tag>
       </tags>
   </entry>
   <entry>
@@ -5344,6 +5344,23 @@
       </tags>
   </entry>
   <entry>
+    <title>代理模式与装饰模式区别</title>
+    <url>/2019/06/18/md/develop/base/pattern/pattern/</url>
+    <content><![CDATA[<p>代理模式主要是<code>控制对某个特定对象访问</code>，而装饰模式主要是为了<code>给对象添加行为</code></p>
+<p>代理模式和装饰模式非常类似，甚至代码都类似。二者最主要的区别是：</p>
+<ul>
+<li>代理模式中，代理类对被代理的对象有控制权，决定其执行或者不执行。</li>
+<li>而装饰模式中，装饰类对代理对象<code>没有控制权</code>，只能为其增加一层装饰，以加强被装饰对象的功能，仅此而已。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>设计模式</category>
+      </categories>
+      <tags>
+        <tag>设计模式</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>面试</title>
     <url>/2019/06/18/md/interview/interview/</url>
     <content><![CDATA[<h3 id="如何提高求职时的谈判能力？"><a href="#如何提高求职时的谈判能力？" class="headerlink" title="如何提高求职时的谈判能力？"></a>如何提高求职时的谈判能力？</h3><ol>
@@ -5370,6 +5387,22 @@
 ]]></content>
       <tags>
         <tag>interview</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>consul介绍</title>
+    <url>/2019/06/18/md/part/microServices/consul/</url>
+    <content><![CDATA[<p>consul是分布式的、高可用、横向扩展的（CP）。consul提供的一些关键特性：</p>
+<ul>
+<li>service discovery：consul通过DNS或者HTTP接口使服务注册和服务发现变的很容易，一些外部服务，例如saas提供的也可以一样注册。</li>
+<li>health checking：健康检测使consul可以快速的告警在集群中的操作。和服务发现的集成，可以防止服务转发到故障的服务上面。</li>
+<li>key/value storage：一个用来存储动态配置的系统。提供简单的HTTP接口，可以在任何地方操作。</li>
+<li>multi-datacenter：无需复杂的配置，即可支持任意数量的区域。</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>consul</tag>
+        <tag>微服务</tag>
       </tags>
   </entry>
   <entry>
@@ -5411,6 +5444,27 @@
 ]]></content>
       <tags>
         <tag>测试</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>netty介绍</title>
+    <url>/2019/06/18/md/%E9%AB%98%E5%8F%AF%E7%94%A8/Netty/</url>
+    <content><![CDATA[<p>netty是由JBOSS提供的一个java开源框架。<br>netty提供异步的、事件驱动的网络应用程序框架和工具，用以快速开发高性能、高可靠性的网络服务器和客户端程序。</p>
+<p>netty：异步非阻塞开源框架<br>bio：同步阻塞<br>nio：同步非阻塞<br>bio：异步非阻塞</p>
+<p>一个IO操作其实分成了两个步骤：发起IO请求和实际的IO操作。<br>同步IO和异步IO的区别就在于第二个步骤是否阻塞，如果实际的IO读写阻塞请求进程，那么就是同步IO。<br>阻塞IO和非阻塞IO的区别在于第一步，发起IO请求是否会被阻塞，如果阻塞直到完成那么就是传统的阻塞IO，如果不阻塞，那么就是非阻塞IO。 </p>
+<ul>
+<li><p>同步阻塞：你到饭馆点餐，然后在那等着，还要一边喊：好了没啊！ </p>
+</li>
+<li><p>同步非阻塞：在饭馆点完餐，就去遛狗了。不过溜一会儿，就回饭馆喊一声：好了没啊！ </p>
+</li>
+<li><p>异步阻塞：遛狗的时候，接到饭馆电话，说饭做好了，让您亲自去拿。 </p>
+</li>
+<li><p>异步非阻塞：饭馆打电话说，我们知道您的位置，一会给你送过来，安心遛狗就可以了。 </p>
+</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>netty</tag>
       </tags>
   </entry>
   <entry>
