@@ -1,6 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>spring-boot 配置 maven-resources-plugins</title>
+    <url>/2020/01/08/md/part/spring/springboot/spring-boot%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 由于$&#123;&#125;方式会被maven处理。如果你pom继承了spring-boot-starter-parent，</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"># Spring Boot已经将maven-resources-plugins默认的$&#123;&#125;方式改为了@@方式，如@name@</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="attr">spring:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">  <span class="attr">profiles:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="attr">active:</span> <span class="string">@spring.profile.active@</span></span></pre></td></tr></table></figure>
+
+
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">properties</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">spring.profile.active</span>&gt;</span>sit<span class="tag">&lt;/<span class="name">spring.profile.active</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>spring boot</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>知识清单，从开发到架构师！</title>
+    <url>/2019/12/26/md/develop/dev-line/</url>
+    <content><![CDATA[<h3 id="常见模式与框架"><a href="#常见模式与框架" class="headerlink" title="常见模式与框架"></a>常见模式与框架</h3><p>设计模式<br>开发框架：比如 Spring, SpringMVC, Mybatis</p>
+<h3 id="工程化与工具"><a href="#工程化与工具" class="headerlink" title="工程化与工具"></a>工程化与工具</h3><p>软件开发流程&amp;规范<br>Git<br>敏捷开发<br>Docker</p>
+<h3 id="分布式架构"><a href="#分布式架构" class="headerlink" title="分布式架构"></a>分布式架构</h3><p>分布式架构设计原则<br>负载均衡，高可用<br>RPC，消息队列<br>分布式存储<br>高性能NIO框架<br>分布式缓存<br>分布式消息中间件</p>
+<h3 id="微服务架构"><a href="#微服务架构" class="headerlink" title="微服务架构"></a>微服务架构</h3><p>Spring Cloud<br>Spring Boot<br>Dubbo<br>Service Mesh</p>
+<h3 id="数据库分库分表"><a href="#数据库分库分表" class="headerlink" title="数据库分库分表"></a>数据库分库分表</h3><p>MySQL<br>MyCat<br>Sharding-JDBC</p>
+<h3 id="性能优化"><a href="#性能优化" class="headerlink" title="性能优化"></a>性能优化</h3><p>应用层：JVM 结构 &amp; 调优<br>web 服务器层：tomcat 等服务器结构 &amp; 调优<br>存储层：MySQL 结构 &amp; sql 优化，搜索引擎结构 &amp; 查询优化</p>
+<h3 id="底层知识"><a href="#底层知识" class="headerlink" title="底层知识"></a>底层知识</h3><p>对 JDK 的包结构，模块深入学习功能&amp;使用场景<br>围绕数据结构&amp;性能优化学习组织<br>对于 Java 开发来讲，JDK 几乎就是最底层和基础的知识了。对 JVM, MySQL等非 Java 程序了解结构，原理，调优基本就差不多了。但是 JDK 是要深入了解掌握的。</p>
+<h3 id="从开发到架构师"><a href="#从开发到架构师" class="headerlink" title="从开发到架构师"></a>从开发到架构师</h3><p>从单体技术 -&gt; 分布式，微服务<br>局部 -&gt; 整体<br>简单 -&gt; 深入</p>
+<p>架构师是一个更宏观的角色，单体系统的时候，单体系统划分、设计功能模块的也是架构师。随着分布式的兴起，架构师需要从分布式角度看整体系统，而到了微服务时代，架构师又要关注微服务，docker 等技术。</p>
+]]></content>
+      <categories>
+        <category>develop</category>
+      </categories>
+      <tags>
+        <tag>develop</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>线程的切换</title>
+    <url>/2019/12/19/md/jdk/mulThread/progress-change/</url>
+    <content><![CDATA[<h4 id="进程切换"><a href="#进程切换" class="headerlink" title="进程切换"></a>进程切换</h4><ul>
+<li>指令切换</li>
+<li>映射表切换</li>
+</ul>
+<h4 id="线程切换"><a href="#线程切换" class="headerlink" title="线程切换"></a>线程切换</h4><ul>
+<li>仅指令切换</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>多线程</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>java中锁的优化 -- JVM对synchronized的优化</title>
     <url>/2019/12/19/md/jdk/mulThread/syn-opti/</url>
     <content><![CDATA[<h3 id="1）锁消除"><a href="#1）锁消除" class="headerlink" title="1）锁消除"></a>1）锁消除</h3><p>概念：JVM在JIT编译(即时编译)时，通过对运行上下文的扫描，去除掉那些不可能发生共享资源竞争的锁，从而节省了线程请求这些锁的时间。</p>
@@ -3219,8 +3267,11 @@
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">modules</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">module</span>&gt;</span>spring-boot-admin-server<span class="tag">&lt;/<span class="name">module</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">module</span>&gt;</span>spring-boot-admin-client<span class="tag">&lt;/<span class="name">module</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="tag">&lt;/<span class="name">modules</span>&gt;</span></span></pre></td></tr></table></figure>
 
 
+<h3 id="mvn-install-resource"><a href="#mvn-install-resource" class="headerlink" title="mvn install resource"></a>mvn install resource</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">mvn clean source:jar install</span></pre></td></tr></table></figure>
 
-<h3 id="mvn-install-resource"><a href="#mvn-install-resource" class="headerlink" title="mvn install resource"></a>mvn install resource</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">mvn clean source:jar install</span></pre></td></tr></table></figure>]]></content>
+<h3 id="mvn-tomcat7-run"><a href="#mvn-tomcat7-run" class="headerlink" title="mvn tomcat7:run"></a>mvn tomcat7:run</h3><p><strong>内存不足时设置参数</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">set MAVEN_OPTS=-Xms256m -Xms512m -XX:MaxNewSize=256m -XX:MaxPermSize=256m</span></pre></td></tr></table></figure>
+]]></content>
       <categories>
         <category>tool</category>
       </categories>
@@ -3888,16 +3939,6 @@
       </tags>
   </entry>
   <entry>
-    <title>vim使用</title>
-    <url>/2019/07/08/md/tool/vim/</url>
-    <content><![CDATA[<h3 id="vim中文乱码"><a href="#vim中文乱码" class="headerlink" title="vim中文乱码"></a>vim中文乱码</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">##配置文件，开头添加以下配置</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="built_in">set</span> fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="built_in">set</span> termencoding=utf-8</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="built_in">set</span> encoding=utf-8</span></pre></td></tr></table></figure>
-
-]]></content>
-      <tags>
-        <tag>tool</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>docker相关</title>
     <url>/2019/07/08/md/problem/docker/</url>
     <content><![CDATA[<h3 id="docker构建脚本报：-Syntax-error-end-of-file-unexpected-expecting-“then”"><a href="#docker构建脚本报：-Syntax-error-end-of-file-unexpected-expecting-“then”" class="headerlink" title="docker构建脚本报：  Syntax error : end of file unexpected (expecting “then”)"></a>docker构建脚本报：  Syntax error : end of file unexpected (expecting “then”)</h3><blockquote>
@@ -3906,6 +3947,16 @@
 ]]></content>
       <tags>
         <tag>problem</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>vim使用</title>
+    <url>/2019/07/08/md/tool/vim/</url>
+    <content><![CDATA[<h3 id="vim中文乱码"><a href="#vim中文乱码" class="headerlink" title="vim中文乱码"></a>vim中文乱码</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">##配置文件，开头添加以下配置</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="built_in">set</span> fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="built_in">set</span> termencoding=utf-8</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="built_in">set</span> encoding=utf-8</span></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>tool</tag>
       </tags>
   </entry>
   <entry>
@@ -3926,6 +3977,54 @@
 <p>注意：tomcat表示要查找的程序进程名，如：tomcat、8081端口、redis等等。</p>
 </blockquote>
 <h3 id="linux查找进程并杀死"><a href="#linux查找进程并杀死" class="headerlink" title="linux查找进程并杀死"></a>linux查找进程并杀死</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">####查找tomcat进程</span></span></span></pre></td></tr><tr><td class="code"><pre><span class="line">ps -ef | grep tomcat | grep -v grep | awk '&#123;print $2&#125;'</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">####查找tomcat进程并杀死</span></span></span></pre></td></tr><tr><td class="code"><pre><span class="line">ps -ef | grep tomcat | grep -v grep | awk '&#123;print $2&#125;' | xargs kill -9</span></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>情商50则</title>
+    <url>/2019/06/21/md/life/%E6%83%85%E5%95%8650%E5%88%99/</url>
+    <content><![CDATA[<p>1，话别说太满，人别熟太快。<br>3，不要把别人想得太坏，也不要把别人想得太好，都是凡人。<br>2，别人自嘲可以，但你千万别附和<br>4，可以嘲笑你的朋友，但不能嘲笑他喜欢的东西。  </p>
+<h2 id="34，自嘲是最高境界，而不是嘲笑别人。"><a href="#34，自嘲是最高境界，而不是嘲笑别人。" class="headerlink" title="34，自嘲是最高境界，而不是嘲笑别人。  "></a>34，自嘲是最高境界，而不是嘲笑别人。  </h2><p>6，刚开始和对方不熟悉的时候，聊到晚上十点多对方发来消息就别回复了，第二天早晨再回复，这样又可以聊一天。<br>7，把“随便”改成“听你的”。<br>23，把“听明白了吗”换成“我说明白了吗”。<br>5，把每一句“我不会”都改成“我可以学”<br>把“谢谢”改成“谢谢你” 并微笑看着对方的眼睛    </p>
+<hr>
+<p>8，别人骂你你要听，别人夸你你别信。<br>9，请道歉而不是取笑别人开不起玩笑，你以为谁没有底线只不过还没到底而已。<br>10，聊天时别人发微笑，你不知道怎么回的话，就回，你笑得真好看。<br>11，能用表情包解决的就不要说脏话！<br>12，恰到好处的装逼，适可而止的套路。  </p>
+<h2 id="13，如果一个人不理你，有可能是对方的问题；如果大家都不理你，那你就要考虑自身问题了。"><a href="#13，如果一个人不理你，有可能是对方的问题；如果大家都不理你，那你就要考虑自身问题了。" class="headerlink" title="13，如果一个人不理你，有可能是对方的问题；如果大家都不理你，那你就要考虑自身问题了。  "></a>13，如果一个人不理你，有可能是对方的问题；如果大家都不理你，那你就要考虑自身问题了。  </h2><p>14，人前不应该说的话，背后也别说。<br>27，不要在公众场合揭别人的短处，让别人难堪。<br>35，请不要随意出卖一个朋友的隐私来取悦另一个不熟的朋友。<br>46，不要人后捅刀子嘴别贱。  </p>
+<hr>
+<p>15，在最愤怒时忍住最伤人对方的那句话。<br>17，不要把负能量带给身边的人。<br>18，不要吝啬你的赞美和表达爱意的语言。<br>40，越是亲近的人越要用心对待，一句随意的话会伤害她。<br>42，千万不要为了恋爱而淡了身边所有人。<br>21，真的不必把太多人请进生命里，太多热情总是不被珍惜。  </p>
+<hr>
+<p>16，如果没有十足的把握和必要，就不要轻易说假话。<br>19，女孩子永远抗拒不了陪她通宵聊天的人。<br>20，刻薄嘴欠和幽默是两回事；口无遮拦和坦率是两回事；没有教养和随性是两回事；轻重不分和耿直是两回事。  </p>
+<hr>
+<p>22，如果遇到了傻Ⅹ，不要与他争论，而且要同意他的一切观点，把他培养成大傻Ⅹ。<br>24，不能侮辱别人的idol，谨记！<br>47，践踏别人的梦想等同于谋杀。  </p>
+<hr>
+<p>25，在拒绝这件事上，越简单越好，明明是别人需求自己帮忙，解释半天变成自己亏欠了别人的感觉，帮得上，想帮就帮，帮不上，就拒绝。人际交往，简单明了有时最恰当，懂得拒绝，才可以洒脱不纠结。<br>33，学会拒绝，没人会感激你的善良，他们只会得寸进尺。  </p>
+<hr>
+<p>26，逢人只说三分话，未可全抛一片心。<br>29，看透不说透，还是好朋友。<br>39，最印象的一句话，“交友不必言尽，言尽则无友”  </p>
+<hr>
+<p>28，社交没那么容易，每个人都有他的手机。<br>30，当你往上爬的时候对别人好一点，因为你走下坡路的时候会遇到他们。</p>
+<hr>
+<p>31，颜值要高，脾气要好，原则要有。<br>36，有分寸的信任，有理由的怀疑。<br>37，把身材练好，把妆化好。<br>41，修得豆腐嘴，藏得刀子心。<br>43，清醒时做事，糊涂时读书，大怒时睡觉，独处时思考。  </p>
+<hr>
+<p>32，该叫阿姨的叫姐，该叫姐的叫美女该叫美女的叫妹子。<br>38，不会讲话时别瞎说沉默微笑更好。<br>44，永远不要听信别人口中的他。<br>45，女生之间的嫉妒心太可怕，不要公开说这个女生比那个好看。<br>48，常与同好争高下，不共傻瓜论短长。——出自《欢乐颂》  </p>
+]]></content>
+      <categories>
+        <category>人生感悟</category>
+      </categories>
+      <tags>
+        <tag>人生</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>linux压缩与解压</title>
+    <url>/2019/06/21/md/linux/linux%E5%8E%8B%E7%BC%A9%E4%B8%8E%E8%A7%A3%E5%8E%8B/</url>
+    <content><![CDATA[<h4 id="unzip解压"><a href="#unzip解压" class="headerlink" title="unzip解压"></a>unzip解压</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 解压window中压缩的文件，不会文件名包含中文乱码</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">unzip -O CP936 xxx.zip</span></pre></td></tr></table></figure>
+
+
+<h4 id="tar-命令"><a href="#tar-命令" class="headerlink" title="tar 命令"></a>tar 命令</h4><p>-c: 建立压缩档案<br>-x：解压<br>-t：查看内容<br>-r：向压缩归档文件末尾追加文件<br>-u：更新原压缩包中的文件</p>
+<p>这五个是独立的命令，压缩解压都要用到其中一个，可以和别的命令连用但只能用其中一个。下面的参数是根据需要在压缩或解压档案时可选的。</p>
+<p>-z：有gzip属性的<br>-j：有bz2属性的<br>-Z：有compress属性的<br>-v：显示所有过程<br>-O：将文件解开到标准输出</p>
+<p>下面的参数-f是必须的</p>
+<p>-f: 使用档案名字，切记，这个参数是最后一个参数，后面只能接档案名。</p>
+<h4 id="tar-示例"><a href="#tar-示例" class="headerlink" title="tar 示例"></a>tar 示例</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">#### 压缩</span></span></span></pre></td></tr><tr><td class="code"><pre><span class="line">tar –cvf jpg.tar *.jpg      // 将目录里所有jpg文件打包成tar.jpg</span></pre></td></tr><tr><td class="code"><pre><span class="line">tar –czf jpg.tar.gz *.jpg   // 将目录里所有jpg文件打包成jpg.tar后，生成gzip压缩过的包，命名为jpg.tar.gz</span></pre></td></tr><tr><td class="code"><pre><span class="line">tar –cjf jpg.tar.bz2 *.jpg  // 将目录里所有jpg文件打包成jpg.tar后，生成bzip2压缩过的包，命名为jpg.tar.bz2</span></pre></td></tr><tr><td class="code"><pre><span class="line">tar –cZf jpg.tar.Z *.jpg    // 将目录里所有jpg文件打包成jpg.tar后，生成umcompress压缩过的包，命名为jpg.tar.Z</span></pre></td></tr><tr><td class="code"><pre><span class="line">rar a jpg.rar *.jpg         // rar格式的压缩，需要先下载rar for Linux</span></pre></td></tr><tr><td class="code"><pre><span class="line">zip -r  jpg.zip  *.jpg      // zip格式的压缩  -r 递归压缩</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">####  解压</span></span></span></pre></td></tr><tr><td class="code"><pre><span class="line">tar –xvf file.tar           //解压 tar包</span></pre></td></tr><tr><td class="code"><pre><span class="line">tar -xzvf file.tar.gz       //解压tar.gz</span></pre></td></tr><tr><td class="code"><pre><span class="line">tar -xjvf file.tar.bz2      //解压 tar.bz2</span></pre></td></tr><tr><td class="code"><pre><span class="line">tar –xZvf file.tar.Z -C /opt/dev      //解压tar.Z</span></pre></td></tr><tr><td class="code"><pre><span class="line">unrar e file.rar            //解压rar</span></pre></td></tr><tr><td class="code"><pre><span class="line">unzip file.zip -d /opt/dev             //解压zip</span></pre></td></tr></table></figure>]]></content>
       <tags>
         <tag>linux</tag>
       </tags>
@@ -3956,6 +4055,20 @@
       </categories>
       <tags>
         <tag>人生</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Nacos配置的加载规则详解</title>
+    <url>/2019/06/21/md/part/microServices/Nacos%E9%85%8D%E7%BD%AE%E7%9A%84%E5%8A%A0%E8%BD%BD%E8%A7%84%E5%88%99%E8%AF%A6%E8%A7%A3/</url>
+    <content><![CDATA[<h3 id="配置管理"><a href="#配置管理" class="headerlink" title="配置管理"></a>配置管理</h3><ul>
+<li>Data ID中的<code>alibaba-nacos-config-client</code>：对应客户端的配置<code>spring.cloud.nacos.config.prefix</code>，默认值为<code>${spring.application.name}</code>，即：服务名</li>
+<li>Data ID中的<code>properties</code>：对应客户端的配置<code>spring.cloud.nacos.config.file-extension</code>，默认值为<code>properties</code></li>
+<li>Group的值<code>DEFAULT_GROUP</code>：对应客户端的配置<code>spring.cloud.nacos.config.group</code>，默认值为<code>DEFAULT_GROUP</code></li>
+</ul>
+<p>在采用默认值的应用要加载的配置规则就是：<code>Data ID=${spring.application.name}.properties</code>，<code>Group=DEFAULT_GROUP</code></p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">server:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">  <span class="attr">port:</span> <span class="number">9000</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="attr">spring:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">  <span class="attr">application:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="attr">name:</span> <span class="string">alibaba-nacos-discovery-client</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">  <span class="comment"># server discovery</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">  <span class="attr">cloud:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="attr">nacos:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">      <span class="attr">discovery:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="attr">server-addr:</span> <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span><span class="string">:8848</span></span></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>微服务</tag>
       </tags>
   </entry>
   <entry>
@@ -3995,68 +4108,6 @@
       </categories>
       <tags>
         <tag>人生</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>情商50则</title>
-    <url>/2019/06/21/md/life/%E6%83%85%E5%95%8650%E5%88%99/</url>
-    <content><![CDATA[<p>1，话别说太满，人别熟太快。<br>3，不要把别人想得太坏，也不要把别人想得太好，都是凡人。<br>2，别人自嘲可以，但你千万别附和<br>4，可以嘲笑你的朋友，但不能嘲笑他喜欢的东西。  </p>
-<h2 id="34，自嘲是最高境界，而不是嘲笑别人。"><a href="#34，自嘲是最高境界，而不是嘲笑别人。" class="headerlink" title="34，自嘲是最高境界，而不是嘲笑别人。  "></a>34，自嘲是最高境界，而不是嘲笑别人。  </h2><p>6，刚开始和对方不熟悉的时候，聊到晚上十点多对方发来消息就别回复了，第二天早晨再回复，这样又可以聊一天。<br>7，把“随便”改成“听你的”。<br>23，把“听明白了吗”换成“我说明白了吗”。<br>5，把每一句“我不会”都改成“我可以学”<br>把“谢谢”改成“谢谢你” 并微笑看着对方的眼睛    </p>
-<hr>
-<p>8，别人骂你你要听，别人夸你你别信。<br>9，请道歉而不是取笑别人开不起玩笑，你以为谁没有底线只不过还没到底而已。<br>10，聊天时别人发微笑，你不知道怎么回的话，就回，你笑得真好看。<br>11，能用表情包解决的就不要说脏话！<br>12，恰到好处的装逼，适可而止的套路。  </p>
-<h2 id="13，如果一个人不理你，有可能是对方的问题；如果大家都不理你，那你就要考虑自身问题了。"><a href="#13，如果一个人不理你，有可能是对方的问题；如果大家都不理你，那你就要考虑自身问题了。" class="headerlink" title="13，如果一个人不理你，有可能是对方的问题；如果大家都不理你，那你就要考虑自身问题了。  "></a>13，如果一个人不理你，有可能是对方的问题；如果大家都不理你，那你就要考虑自身问题了。  </h2><p>14，人前不应该说的话，背后也别说。<br>27，不要在公众场合揭别人的短处，让别人难堪。<br>35，请不要随意出卖一个朋友的隐私来取悦另一个不熟的朋友。<br>46，不要人后捅刀子嘴别贱。  </p>
-<hr>
-<p>15，在最愤怒时忍住最伤人对方的那句话。<br>17，不要把负能量带给身边的人。<br>18，不要吝啬你的赞美和表达爱意的语言。<br>40，越是亲近的人越要用心对待，一句随意的话会伤害她。<br>42，千万不要为了恋爱而淡了身边所有人。<br>21，真的不必把太多人请进生命里，太多热情总是不被珍惜。  </p>
-<hr>
-<p>16，如果没有十足的把握和必要，就不要轻易说假话。<br>19，女孩子永远抗拒不了陪她通宵聊天的人。<br>20，刻薄嘴欠和幽默是两回事；口无遮拦和坦率是两回事；没有教养和随性是两回事；轻重不分和耿直是两回事。  </p>
-<hr>
-<p>22，如果遇到了傻Ⅹ，不要与他争论，而且要同意他的一切观点，把他培养成大傻Ⅹ。<br>24，不能侮辱别人的idol，谨记！<br>47，践踏别人的梦想等同于谋杀。  </p>
-<hr>
-<p>25，在拒绝这件事上，越简单越好，明明是别人需求自己帮忙，解释半天变成自己亏欠了别人的感觉，帮得上，想帮就帮，帮不上，就拒绝。人际交往，简单明了有时最恰当，懂得拒绝，才可以洒脱不纠结。<br>33，学会拒绝，没人会感激你的善良，他们只会得寸进尺。  </p>
-<hr>
-<p>26，逢人只说三分话，未可全抛一片心。<br>29，看透不说透，还是好朋友。<br>39，最印象的一句话，“交友不必言尽，言尽则无友”  </p>
-<hr>
-<p>28，社交没那么容易，每个人都有他的手机。<br>30，当你往上爬的时候对别人好一点，因为你走下坡路的时候会遇到他们。</p>
-<hr>
-<p>31，颜值要高，脾气要好，原则要有。<br>36，有分寸的信任，有理由的怀疑。<br>37，把身材练好，把妆化好。<br>41，修得豆腐嘴，藏得刀子心。<br>43，清醒时做事，糊涂时读书，大怒时睡觉，独处时思考。  </p>
-<hr>
-<p>32，该叫阿姨的叫姐，该叫姐的叫美女该叫美女的叫妹子。<br>38，不会讲话时别瞎说沉默微笑更好。<br>44，永远不要听信别人口中的他。<br>45，女生之间的嫉妒心太可怕，不要公开说这个女生比那个好看。<br>48，常与同好争高下，不共傻瓜论短长。——出自《欢乐颂》  </p>
-]]></content>
-      <categories>
-        <category>人生感悟</category>
-      </categories>
-      <tags>
-        <tag>人生</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Nacos配置的加载规则详解</title>
-    <url>/2019/06/21/md/part/microServices/Nacos%E9%85%8D%E7%BD%AE%E7%9A%84%E5%8A%A0%E8%BD%BD%E8%A7%84%E5%88%99%E8%AF%A6%E8%A7%A3/</url>
-    <content><![CDATA[<h3 id="配置管理"><a href="#配置管理" class="headerlink" title="配置管理"></a>配置管理</h3><ul>
-<li>Data ID中的<code>alibaba-nacos-config-client</code>：对应客户端的配置<code>spring.cloud.nacos.config.prefix</code>，默认值为<code>${spring.application.name}</code>，即：服务名</li>
-<li>Data ID中的<code>properties</code>：对应客户端的配置<code>spring.cloud.nacos.config.file-extension</code>，默认值为<code>properties</code></li>
-<li>Group的值<code>DEFAULT_GROUP</code>：对应客户端的配置<code>spring.cloud.nacos.config.group</code>，默认值为<code>DEFAULT_GROUP</code></li>
-</ul>
-<p>在采用默认值的应用要加载的配置规则就是：<code>Data ID=${spring.application.name}.properties</code>，<code>Group=DEFAULT_GROUP</code></p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">server:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">  <span class="attr">port:</span> <span class="number">9000</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="attr">spring:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">  <span class="attr">application:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="attr">name:</span> <span class="string">alibaba-nacos-discovery-client</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">  <span class="comment"># server discovery</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">  <span class="attr">cloud:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="attr">nacos:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">      <span class="attr">discovery:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="attr">server-addr:</span> <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span><span class="string">:8848</span></span></pre></td></tr></table></figure>]]></content>
-      <tags>
-        <tag>微服务</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>linux压缩与解压</title>
-    <url>/2019/06/21/md/linux/linux%E5%8E%8B%E7%BC%A9%E4%B8%8E%E8%A7%A3%E5%8E%8B/</url>
-    <content><![CDATA[<h4 id="unzip解压"><a href="#unzip解压" class="headerlink" title="unzip解压"></a>unzip解压</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 解压window中压缩的文件，不会文件名包含中文乱码</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">unzip -O CP936 xxx.zip</span></pre></td></tr></table></figure>
-
-
-<h4 id="tar-命令"><a href="#tar-命令" class="headerlink" title="tar 命令"></a>tar 命令</h4><p>-c: 建立压缩档案<br>-x：解压<br>-t：查看内容<br>-r：向压缩归档文件末尾追加文件<br>-u：更新原压缩包中的文件</p>
-<p>这五个是独立的命令，压缩解压都要用到其中一个，可以和别的命令连用但只能用其中一个。下面的参数是根据需要在压缩或解压档案时可选的。</p>
-<p>-z：有gzip属性的<br>-j：有bz2属性的<br>-Z：有compress属性的<br>-v：显示所有过程<br>-O：将文件解开到标准输出</p>
-<p>下面的参数-f是必须的</p>
-<p>-f: 使用档案名字，切记，这个参数是最后一个参数，后面只能接档案名。</p>
-<h4 id="tar-示例"><a href="#tar-示例" class="headerlink" title="tar 示例"></a>tar 示例</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">#### 压缩</span></span></span></pre></td></tr><tr><td class="code"><pre><span class="line">tar –cvf jpg.tar *.jpg      // 将目录里所有jpg文件打包成tar.jpg</span></pre></td></tr><tr><td class="code"><pre><span class="line">tar –czf jpg.tar.gz *.jpg   // 将目录里所有jpg文件打包成jpg.tar后，生成gzip压缩过的包，命名为jpg.tar.gz</span></pre></td></tr><tr><td class="code"><pre><span class="line">tar –cjf jpg.tar.bz2 *.jpg  // 将目录里所有jpg文件打包成jpg.tar后，生成bzip2压缩过的包，命名为jpg.tar.bz2</span></pre></td></tr><tr><td class="code"><pre><span class="line">tar –cZf jpg.tar.Z *.jpg    // 将目录里所有jpg文件打包成jpg.tar后，生成umcompress压缩过的包，命名为jpg.tar.Z</span></pre></td></tr><tr><td class="code"><pre><span class="line">rar a jpg.rar *.jpg         // rar格式的压缩，需要先下载rar for Linux</span></pre></td></tr><tr><td class="code"><pre><span class="line">zip -r  jpg.zip  *.jpg      // zip格式的压缩  -r 递归压缩</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">####  解压</span></span></span></pre></td></tr><tr><td class="code"><pre><span class="line">tar –xvf file.tar           //解压 tar包</span></pre></td></tr><tr><td class="code"><pre><span class="line">tar -xzvf file.tar.gz       //解压tar.gz</span></pre></td></tr><tr><td class="code"><pre><span class="line">tar -xjvf file.tar.bz2      //解压 tar.bz2</span></pre></td></tr><tr><td class="code"><pre><span class="line">tar –xZvf file.tar.Z -C /opt/dev      //解压tar.Z</span></pre></td></tr><tr><td class="code"><pre><span class="line">unrar e file.rar            //解压rar</span></pre></td></tr><tr><td class="code"><pre><span class="line">unzip file.zip -d /opt/dev             //解压zip</span></pre></td></tr></table></figure>]]></content>
-      <tags>
-        <tag>linux</tag>
       </tags>
   </entry>
   <entry>
@@ -4281,6 +4332,67 @@
       </tags>
   </entry>
   <entry>
+    <title>jvm编译类加载和执行</title>
+    <url>/2019/06/18/md/jdk/jvm/jvm%E7%BC%96%E8%AF%91%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%92%8C%E6%89%A7%E8%A1%8C/</url>
+    <content><![CDATA[<p>JVM是Java Virtual Machine（Java虚拟机），Java虚拟机是实现跨平台这一特点的关键。</p>
+<p>Java代码编译和执行的整个过程包含了以下三个重要的机制：</p>
+<ol>
+<li><code>Java源码编译机制</code></li>
+<li><code>类加载机制</code></li>
+<li><code>类执行机制</code></li>
+</ol>
+<h4 id="Java源码编译机制："><a href="#Java源码编译机制：" class="headerlink" title="Java源码编译机制："></a>Java源码编译机制：</h4><ol>
+<li>分析和输入到符号表</li>
+<li>注解处理</li>
+<li>语义分析和生成class文件</li>
+</ol>
+<p>class文件包括结构信息。包括class文件格式版本号及各部分的数量与大小的信息元数据。对应于Java源码中声明与常量的信息。包含类/继承的超类/实现的接口的声明信息、域与方法声明信息和常量池<br>方法信息。对应Java源码中语句和表达式对应的信息。包含字节码、异常处理器表、求值栈与局部变量区大小、求值栈的类型记录、调试符号信息</p>
+<hr>
+<h4 id="类加载机制"><a href="#类加载机制" class="headerlink" title="类加载机制"></a>类加载机制</h4><p>JVM的类加载是通过ClassLoader及其子类来完成的<br>1.Bootstrap ClassLoader<br>负责加载$JAVA_HOME中jre/lib/rt.jar里所有的class<br>2.Extension ClassLoader<br>负责加载java平台中扩展功能的一些jar包，包括$JAVA_HOME中jre/lib/*.jar或-Djava.ext.dirs指定目录下的jar包<br>3.App ClassLoader<br>负责记载classpath中指定的jar包及目录中class<br>4.Custom ClassLoader<br>属于应用程序根据自身需要自定义的ClassLoader，如tomcat、jboss都会根据j2ee规范自行实现ClassLoader</p>
+<p>加载过程中会先检查类是否被已加载，检查顺序是自底向上，从Custom ClassLoader到BootStrap ClassLoader逐层检查，只要某个classloader已加载就视为已加载此类，保证此类只所有ClassLoader加载一次。而加载的顺序是自顶向下，也就是由上层来逐层尝试加载此类。</p>
+<h4 id="类执行机制"><a href="#类执行机制" class="headerlink" title="类执行机制"></a>类执行机制</h4><p>JVM是基于栈的体系结构来执行class字节码的。线程创建后，都会产生程序计数器（PC）和栈（Stack），程序计数器存放下一条要执行的指令在方法内的偏移量，栈中存放一个个栈帧，每个栈帧对应着每个方法的每次调用，而栈帧又是有局部变量区和操作数栈两部分组成，局部变量区用于存放方法中的局部变量和参数，操作数栈中用于存放方法执行过程中产生的中间结果</p>
+<p>类加载生命周期<br><code>加载</code>、<code>连接</code>、<code>初始化</code>、<code>使用</code>、<code>卸载</code><br>hotspot虚拟机是当真正用到一个类的时候才对它进行加载。</p>
+<h5 id="加载："><a href="#加载：" class="headerlink" title="加载："></a>加载：</h5><p> 找到需要加载的类并把类的信息加载到jvm的方法区中，然后在堆区中实例化一个java.lang.Class对象</p>
+<ol>
+<li>通过一个类的全限定名（包名与类名）来获取定义此类的二进制字节流（Class文件）。</li>
+<li>将这个字节流所代表的静态存储结构转化为方法区的运行时数据结构。</li>
+<li>在内存中生成一个代表这个类的java.lang.Class对象，作为方法区这个类的各种数据的访问入口。</li>
+</ol>
+<h5 id="连接"><a href="#连接" class="headerlink" title="连接"></a>连接</h5><ul>
+<li>验证：验证被加载后的类是否有正确的结构，类数据是否会符合虚拟机的要求，确保不会危害虚拟机安全。</li>
+<li>准备：为类的静态变量（static filed）在方法区分配内存，并赋默认初值（0值或null值）。静态常量（static final filed）会在准备阶段赋程序设定的初值，如static final int a = 666;  静态常量a就会在准备阶段被直接赋值为666，对于静态变量，这个操作是在初始化阶段进行的。</li>
+<li>解析：将类的二进制数据中的符号引用换为直接引用。在解析阶段，jvm会将所有的类或接口名、字段名、方法名转换为具体的内存地址。</li>
+</ul>
+<h5 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h5><p>初始化阶段才真正执行Java代码。<br>类的初始化的主要工作是为静态变量赋程序设定的初值。<br>没有static修饰的赋值语句和执行语句在实例化对象的时候才会运行。</p>
+<hr>
+<h4 id="执行过程"><a href="#执行过程" class="headerlink" title="执行过程"></a>执行过程</h4><h5 id="执行过程简介"><a href="#执行过程简介" class="headerlink" title="执行过程简介"></a>执行过程简介</h5><p>当编译和连接一个C++程序时，所获得的可执行二进制文件只能在指定的硬件平台和操作系统上运行，因为这个二进制文件包含了对目标处理器的机器语言。而Java编译器把Java源文件的指令翻译成字节码，这种字节码就是Java虚拟机的“机器语言”。<br>与普通程序不同的是，Java程序（class文件）并不是本地的可执行程序。当运行Java程序时，首先运行JVM（Java虚拟机），然后再把Java class加载到JVM里头运行，负责加载Java class的这部分就叫做Class Loader。</p>
+<h5 id="JVM中的ClassLoader"><a href="#JVM中的ClassLoader" class="headerlink" title="JVM中的ClassLoader"></a>JVM中的ClassLoader</h5><p>JVM本身包含了一个ClassLoader称为<code>BootstrapClassLoader</code>，和JVM一样，BootstrapClassLoader是用本地代码实现的，它负责加载核心JavaClass（即所有java.<em>开头的类）。另外JVM还会提供两个ClassLoader，它们都是用Java语言编写的，由BootstrapClassLoader加载；其中<code>ExtensionClassLoader</code>负责加载扩展的Javaclass（例如所有javax.</em>开头的类和存放在JRE的ext目录下的类）<code>ApplicationClassLoader</code>负责加载应用程序自身的类。<br>当运行一个程序的时候，JVM启动，运行bootstrapclassloader，该ClassLoader加载java核心API（ExtClassLoader和AppClassLoader也在此时被加载），然后调用ExtClassLoader加载扩展API，最后AppClassLoader加载CLASSPATH目录下定义的Class，这就是一个程序最基本的加载流程。</p>
+<h5 id="执行ClassLoader例子"><a href="#执行ClassLoader例子" class="headerlink" title="执行ClassLoader例子"></a>执行ClassLoader例子</h5><p>什么时候JVM会使用ClassLoader加载一个类呢？当你使用java去执行一个类，JVM使用ApplicationClassLoader加载这个类；然后如果类A引用了类B，不管是直接引用还是用Class.forName()引用，JVM就会找到加载类A的ClassLoader，并用这个ClassLoader来加载类B。JVM按照运行时的有效执行语句，来决定是否需要装载新类，从而装载尽可能少的类，这一点和编译类是不相同的。</p>
+]]></content>
+      <tags>
+        <tag>jvm</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>面试知识点确认</title>
+    <url>/2019/06/18/md/interview/%E9%9D%A2%E8%AF%95%E7%9F%A5%E8%AF%86%E7%82%B9%E7%A1%AE%E8%AE%A4/</url>
+    <content><![CDATA[<p>socket多线程                     ok<br>netty底层nio，aio                ok<br>高并发                           ok<br>分布式事务                       ok<br>事务控制多库多表操作             ok<br>spring cloud<br>soa                              ignore<br>jvm调优                          ok<br>类加载机制                       ok<br>gc机制                           ok<br>支付流程和注意点<br>spring的加载机制                 ok<br>tomcat加载机制                   ignore<br>做过的项目                       important</p>
+<p>线程调度；多线程相关：多线程并发用到那哪些？线程数据共享；synchronize 用法，原理 ？死锁的原因，现场写了一下；（重点）</p>
+<p>首先要了解高并发的的瓶颈在哪里？</p>
+<p>1、可能是服务器网络带宽不够<br>增加网络带宽，添加CDN</p>
+<p>2.可能web线程连接数不够<br>负载均衡，前置代理服务器nginx，静态资源分离到另外一个服务器</p>
+<p>3.可能数据库连接查询上不去。<br>优化数据库查询语句，explain之后，找出耗时多的点，添加索引。<br>数据库查询优化，读写分离，分表等等</p>
+<p>4.使用缓存，比较固定长时间少更新的solr，短期的也可以用redis，memcache</p>
+<p>最后复制一些在高并发下面需要常常需要处理的内容:</p>
+<p>统计的功能尽量做缓存，或按每天一统计或定时统计相关报表，避免需要时进行统计的功能。</p>
+<p>能使用静态页面的地方尽量使用，减少容器的解析（尽量将动态内容生成静态html来显示）。</p>
+<p>解决以上问题后，使用服务器集群来解决单台的瓶颈问题。</p>
+]]></content>
+      <tags>
+        <tag>interview</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hystrix Turbine</title>
     <url>/2019/06/18/md/part/microServices/spring%20cloud/Hystrix%20Turbine/</url>
     <content><![CDATA[<h3 id="Hystrix-Turbine简介"><a href="#Hystrix-Turbine简介" class="headerlink" title="Hystrix Turbine简介"></a>Hystrix Turbine简介</h3><p>看单个的Hystrix Dashboard的数据并没有什么多大的价值，要想看这个系统的Hystrix Dashboard数据就需要用到Hystrix Turbine。Hystrix Turbine将每个服务Hystrix Dashboard数据进行了整合。Hystrix Turbine的使用非常简单，只需要引入相应的依赖和加上注解和配置就可以了。</p>
@@ -4300,18 +4412,6 @@
 ]]></content>
       <tags>
         <tag>spring cloud</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Sidecar模式：下一代微服务架构的关键</title>
-    <url>/2019/06/18/md/part/microServices/Sidecar/</url>
-    <content><![CDATA[<h1 id="Sidecar模式：下一代微服务架构的关键"><a href="#Sidecar模式：下一代微服务架构的关键" class="headerlink" title="Sidecar模式：下一代微服务架构的关键"></a>Sidecar模式：下一代微服务架构的关键</h1><h2 id="什么是Sidecar模式？"><a href="#什么是Sidecar模式？" class="headerlink" title="什么是Sidecar模式？"></a>什么是Sidecar模式？</h2><p>Sidecar模式是一种将应用功能从应用本身剥离出来作为单独进程的方式。该模式允许我们向应用无侵入添加多种功能，避免了为满足第三方组件需求而向应用添加额外的配置代码。</p>
-<p>就像边车加装在摩托车上一样，在软件架构中，sidecar附加到主应用，或者叫父应用上，以扩展/增强功能特性，同时Sidecar与主应用是松耦合的。</p>
-<p>举个例子，假设现在有6个相互通信的微服务，每个微服务都需要具有可观察性、监控、日志记录、配置、断路器等功能，而所有这些功能都是在微服务中使用一些第三方库实现的。</p>
-<p>这样一组服务的实际情况可能会非常复杂，增加了应用的整体复杂性，尤其是当每个微服务用不同的语言编写、使用不同的基于.net、Java、Python等语言的第三方库</p>
-]]></content>
-      <tags>
-        <tag>微服务</tag>
       </tags>
   </entry>
   <entry>
@@ -4354,56 +4454,6 @@
 ]]></content>
       <tags>
         <tag>多线程</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>面试知识点确认</title>
-    <url>/2019/06/18/md/interview/%E9%9D%A2%E8%AF%95%E7%9F%A5%E8%AF%86%E7%82%B9%E7%A1%AE%E8%AE%A4/</url>
-    <content><![CDATA[<p>socket多线程                     ok<br>netty底层nio，aio                ok<br>高并发                           ok<br>分布式事务                       ok<br>事务控制多库多表操作             ok<br>spring cloud<br>soa                              ignore<br>jvm调优                          ok<br>类加载机制                       ok<br>gc机制                           ok<br>支付流程和注意点<br>spring的加载机制                 ok<br>tomcat加载机制                   ignore<br>做过的项目                       important</p>
-<p>线程调度；多线程相关：多线程并发用到那哪些？线程数据共享；synchronize 用法，原理 ？死锁的原因，现场写了一下；（重点）</p>
-<p>首先要了解高并发的的瓶颈在哪里？</p>
-<p>1、可能是服务器网络带宽不够<br>增加网络带宽，添加CDN</p>
-<p>2.可能web线程连接数不够<br>负载均衡，前置代理服务器nginx，静态资源分离到另外一个服务器</p>
-<p>3.可能数据库连接查询上不去。<br>优化数据库查询语句，explain之后，找出耗时多的点，添加索引。<br>数据库查询优化，读写分离，分表等等</p>
-<p>4.使用缓存，比较固定长时间少更新的solr，短期的也可以用redis，memcache</p>
-<p>最后复制一些在高并发下面需要常常需要处理的内容:</p>
-<p>统计的功能尽量做缓存，或按每天一统计或定时统计相关报表，避免需要时进行统计的功能。</p>
-<p>能使用静态页面的地方尽量使用，减少容器的解析（尽量将动态内容生成静态html来显示）。</p>
-<p>解决以上问题后，使用服务器集群来解决单台的瓶颈问题。</p>
-]]></content>
-      <tags>
-        <tag>interview</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>拦截器与Filter的区别</title>
-    <url>/2019/06/18/md/other/Filter%E4%B8%8EHandle/</url>
-    <content><![CDATA[<h3 id="拦截器与Filter的区别"><a href="#拦截器与Filter的区别" class="headerlink" title="拦截器与Filter的区别"></a>拦截器与Filter的区别</h3><ul>
-<li><p>相似之处：都是AOP编程思想的体现，都能实现权限检查与日志记录等</p>
-</li>
-<li><p>不同之处：</p>
-</li>
-</ul>
-<ol>
-<li><p>使用范围不同</p>
-<p>​    Filter是Servlet规范规定的，只能用于Web程序中</p>
-<p>​    拦截器既可用于Web程序，与可用于Application,Swing程序中</p>
-</li>
-<li><p>规范不同</p>
-<p>​    Filter是在Servlet规范定义的，是Servlet容器支持的.</p>
-<p>​    而拦截器是在Spring容器内，是Spring框架支持的</p>
-</li>
-<li><p>使用资源不同</p>
-<p>​    拦截器是Spring的一个组件，可以使用spring相关服务，如对象，事务，数据源</p>
-<p>​    而Filter不能</p>
-</li>
-<li><p>深度不同</p>
-<p>​    Filter在Servlet前后启作用，拦截器则可以在方法前后，异常抛出前后</p>
-</li>
-</ol>
-]]></content>
-      <tags>
-        <tag>other</tag>
       </tags>
   </entry>
   <entry>
@@ -4478,45 +4528,46 @@
       </tags>
   </entry>
   <entry>
-    <title>jvm编译类加载和执行</title>
-    <url>/2019/06/18/md/jdk/jvm/jvm%E7%BC%96%E8%AF%91%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%92%8C%E6%89%A7%E8%A1%8C/</url>
-    <content><![CDATA[<p>JVM是Java Virtual Machine（Java虚拟机），Java虚拟机是实现跨平台这一特点的关键。</p>
-<p>Java代码编译和执行的整个过程包含了以下三个重要的机制：</p>
-<ol>
-<li><code>Java源码编译机制</code></li>
-<li><code>类加载机制</code></li>
-<li><code>类执行机制</code></li>
-</ol>
-<h4 id="Java源码编译机制："><a href="#Java源码编译机制：" class="headerlink" title="Java源码编译机制："></a>Java源码编译机制：</h4><ol>
-<li>分析和输入到符号表</li>
-<li>注解处理</li>
-<li>语义分析和生成class文件</li>
-</ol>
-<p>class文件包括结构信息。包括class文件格式版本号及各部分的数量与大小的信息元数据。对应于Java源码中声明与常量的信息。包含类/继承的超类/实现的接口的声明信息、域与方法声明信息和常量池<br>方法信息。对应Java源码中语句和表达式对应的信息。包含字节码、异常处理器表、求值栈与局部变量区大小、求值栈的类型记录、调试符号信息</p>
-<hr>
-<h4 id="类加载机制"><a href="#类加载机制" class="headerlink" title="类加载机制"></a>类加载机制</h4><p>JVM的类加载是通过ClassLoader及其子类来完成的<br>1.Bootstrap ClassLoader<br>负责加载$JAVA_HOME中jre/lib/rt.jar里所有的class<br>2.Extension ClassLoader<br>负责加载java平台中扩展功能的一些jar包，包括$JAVA_HOME中jre/lib/*.jar或-Djava.ext.dirs指定目录下的jar包<br>3.App ClassLoader<br>负责记载classpath中指定的jar包及目录中class<br>4.Custom ClassLoader<br>属于应用程序根据自身需要自定义的ClassLoader，如tomcat、jboss都会根据j2ee规范自行实现ClassLoader</p>
-<p>加载过程中会先检查类是否被已加载，检查顺序是自底向上，从Custom ClassLoader到BootStrap ClassLoader逐层检查，只要某个classloader已加载就视为已加载此类，保证此类只所有ClassLoader加载一次。而加载的顺序是自顶向下，也就是由上层来逐层尝试加载此类。</p>
-<h4 id="类执行机制"><a href="#类执行机制" class="headerlink" title="类执行机制"></a>类执行机制</h4><p>JVM是基于栈的体系结构来执行class字节码的。线程创建后，都会产生程序计数器（PC）和栈（Stack），程序计数器存放下一条要执行的指令在方法内的偏移量，栈中存放一个个栈帧，每个栈帧对应着每个方法的每次调用，而栈帧又是有局部变量区和操作数栈两部分组成，局部变量区用于存放方法中的局部变量和参数，操作数栈中用于存放方法执行过程中产生的中间结果</p>
-<p>类加载生命周期<br><code>加载</code>、<code>连接</code>、<code>初始化</code>、<code>使用</code>、<code>卸载</code><br>hotspot虚拟机是当真正用到一个类的时候才对它进行加载。</p>
-<h5 id="加载："><a href="#加载：" class="headerlink" title="加载："></a>加载：</h5><p> 找到需要加载的类并把类的信息加载到jvm的方法区中，然后在堆区中实例化一个java.lang.Class对象</p>
-<ol>
-<li>通过一个类的全限定名（包名与类名）来获取定义此类的二进制字节流（Class文件）。</li>
-<li>将这个字节流所代表的静态存储结构转化为方法区的运行时数据结构。</li>
-<li>在内存中生成一个代表这个类的java.lang.Class对象，作为方法区这个类的各种数据的访问入口。</li>
-</ol>
-<h5 id="连接"><a href="#连接" class="headerlink" title="连接"></a>连接</h5><ul>
-<li>验证：验证被加载后的类是否有正确的结构，类数据是否会符合虚拟机的要求，确保不会危害虚拟机安全。</li>
-<li>准备：为类的静态变量（static filed）在方法区分配内存，并赋默认初值（0值或null值）。静态常量（static final filed）会在准备阶段赋程序设定的初值，如static final int a = 666;  静态常量a就会在准备阶段被直接赋值为666，对于静态变量，这个操作是在初始化阶段进行的。</li>
-<li>解析：将类的二进制数据中的符号引用换为直接引用。在解析阶段，jvm会将所有的类或接口名、字段名、方法名转换为具体的内存地址。</li>
+    <title>拦截器与Filter的区别</title>
+    <url>/2019/06/18/md/other/Filter%E4%B8%8EHandle/</url>
+    <content><![CDATA[<h3 id="拦截器与Filter的区别"><a href="#拦截器与Filter的区别" class="headerlink" title="拦截器与Filter的区别"></a>拦截器与Filter的区别</h3><ul>
+<li><p>相似之处：都是AOP编程思想的体现，都能实现权限检查与日志记录等</p>
+</li>
+<li><p>不同之处：</p>
+</li>
 </ul>
-<h5 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h5><p>初始化阶段才真正执行Java代码。<br>类的初始化的主要工作是为静态变量赋程序设定的初值。<br>没有static修饰的赋值语句和执行语句在实例化对象的时候才会运行。</p>
-<hr>
-<h4 id="执行过程"><a href="#执行过程" class="headerlink" title="执行过程"></a>执行过程</h4><h5 id="执行过程简介"><a href="#执行过程简介" class="headerlink" title="执行过程简介"></a>执行过程简介</h5><p>当编译和连接一个C++程序时，所获得的可执行二进制文件只能在指定的硬件平台和操作系统上运行，因为这个二进制文件包含了对目标处理器的机器语言。而Java编译器把Java源文件的指令翻译成字节码，这种字节码就是Java虚拟机的“机器语言”。<br>与普通程序不同的是，Java程序（class文件）并不是本地的可执行程序。当运行Java程序时，首先运行JVM（Java虚拟机），然后再把Java class加载到JVM里头运行，负责加载Java class的这部分就叫做Class Loader。</p>
-<h5 id="JVM中的ClassLoader"><a href="#JVM中的ClassLoader" class="headerlink" title="JVM中的ClassLoader"></a>JVM中的ClassLoader</h5><p>JVM本身包含了一个ClassLoader称为<code>BootstrapClassLoader</code>，和JVM一样，BootstrapClassLoader是用本地代码实现的，它负责加载核心JavaClass（即所有java.<em>开头的类）。另外JVM还会提供两个ClassLoader，它们都是用Java语言编写的，由BootstrapClassLoader加载；其中<code>ExtensionClassLoader</code>负责加载扩展的Javaclass（例如所有javax.</em>开头的类和存放在JRE的ext目录下的类）<code>ApplicationClassLoader</code>负责加载应用程序自身的类。<br>当运行一个程序的时候，JVM启动，运行bootstrapclassloader，该ClassLoader加载java核心API（ExtClassLoader和AppClassLoader也在此时被加载），然后调用ExtClassLoader加载扩展API，最后AppClassLoader加载CLASSPATH目录下定义的Class，这就是一个程序最基本的加载流程。</p>
-<h5 id="执行ClassLoader例子"><a href="#执行ClassLoader例子" class="headerlink" title="执行ClassLoader例子"></a>执行ClassLoader例子</h5><p>什么时候JVM会使用ClassLoader加载一个类呢？当你使用java去执行一个类，JVM使用ApplicationClassLoader加载这个类；然后如果类A引用了类B，不管是直接引用还是用Class.forName()引用，JVM就会找到加载类A的ClassLoader，并用这个ClassLoader来加载类B。JVM按照运行时的有效执行语句，来决定是否需要装载新类，从而装载尽可能少的类，这一点和编译类是不相同的。</p>
+<ol>
+<li><p>使用范围不同</p>
+<p>​    Filter是Servlet规范规定的，只能用于Web程序中</p>
+<p>​    拦截器既可用于Web程序，与可用于Application,Swing程序中</p>
+</li>
+<li><p>规范不同</p>
+<p>​    Filter是在Servlet规范定义的，是Servlet容器支持的.</p>
+<p>​    而拦截器是在Spring容器内，是Spring框架支持的</p>
+</li>
+<li><p>使用资源不同</p>
+<p>​    拦截器是Spring的一个组件，可以使用spring相关服务，如对象，事务，数据源</p>
+<p>​    而Filter不能</p>
+</li>
+<li><p>深度不同</p>
+<p>​    Filter在Servlet前后启作用，拦截器则可以在方法前后，异常抛出前后</p>
+</li>
+</ol>
 ]]></content>
       <tags>
-        <tag>jvm</tag>
+        <tag>other</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Sidecar模式：下一代微服务架构的关键</title>
+    <url>/2019/06/18/md/part/microServices/Sidecar/</url>
+    <content><![CDATA[<h1 id="Sidecar模式：下一代微服务架构的关键"><a href="#Sidecar模式：下一代微服务架构的关键" class="headerlink" title="Sidecar模式：下一代微服务架构的关键"></a>Sidecar模式：下一代微服务架构的关键</h1><h2 id="什么是Sidecar模式？"><a href="#什么是Sidecar模式？" class="headerlink" title="什么是Sidecar模式？"></a>什么是Sidecar模式？</h2><p>Sidecar模式是一种将应用功能从应用本身剥离出来作为单独进程的方式。该模式允许我们向应用无侵入添加多种功能，避免了为满足第三方组件需求而向应用添加额外的配置代码。</p>
+<p>就像边车加装在摩托车上一样，在软件架构中，sidecar附加到主应用，或者叫父应用上，以扩展/增强功能特性，同时Sidecar与主应用是松耦合的。</p>
+<p>举个例子，假设现在有6个相互通信的微服务，每个微服务都需要具有可观察性、监控、日志记录、配置、断路器等功能，而所有这些功能都是在微服务中使用一些第三方库实现的。</p>
+<p>这样一组服务的实际情况可能会非常复杂，增加了应用的整体复杂性，尤其是当每个微服务用不同的语言编写、使用不同的基于.net、Java、Python等语言的第三方库</p>
+]]></content>
+      <tags>
+        <tag>微服务</tag>
       </tags>
   </entry>
   <entry>
@@ -4524,24 +4575,6 @@
     <url>/2019/06/18/md/part/db/sql/</url>
     <content><![CDATA[<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 备份数据库 mayday</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">mysqldump -uroot -pAdmin123# mayday  &gt; bk.sql</span></pre></td></tr></table></figure>
 
-]]></content>
-      <tags>
-        <tag>db</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>db</title>
-    <url>/2019/06/18/md/part/db/db/</url>
-    <content><![CDATA[<h3 id="为什么数据库可以没有外键？"><a href="#为什么数据库可以没有外键？" class="headerlink" title="为什么数据库可以没有外键？"></a>为什么数据库可以没有外键？</h3><ul>
-<li>性能，影响插入、更新和删除操作的性能。数据库需要检查它是否违反数据完整性</li>
-<li>传统数据，许多数据库在设计时需要存储来自旧数据库和遗留数据，这些数据可能对数据质量和完整性没有那么严格</li>
-<li>全表重新加载</li>
-</ul>
-<h3 id="规范"><a href="#规范" class="headerlink" title="规范"></a>规范</h3><p>【强制】业务上具有唯一特性的字段，即使是组合字段，也必须建成唯一索引。</p>
-<p>【强制】超过三个表禁止 join。需要 join 的字段，数据类型保持绝对一致；多表关联查询时，<br>保证被关联的字段需要有索引。</p>
-<p>【强制】不要使用 count(列名)或 count(常量)来替代 count(<em>)，count(</em>)就是 SQL92 定义的<br>标准统计行数的语法，跟数据库无关，跟 NULL 和非 NULL 无关。<br>说明：count(*)会统计值为 NULL 的行，而 count(列名)不会统计此列为 NULL 值的行。</p>
-<p>使用 IS NULL()来判断是否为 NULL 值。注意：NULL 与任何值的直接比较都为 NULL。</p>
-<p>单表行数超过 500 万行或者单表容量超过 2GB，才推荐进行分库分表。</p>
 ]]></content>
       <tags>
         <tag>db</tag>
@@ -4577,6 +4610,24 @@
 ]]></content>
       <tags>
         <tag>mariadb</tag>
+        <tag>db</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>db</title>
+    <url>/2019/06/18/md/part/db/db/</url>
+    <content><![CDATA[<h3 id="为什么数据库可以没有外键？"><a href="#为什么数据库可以没有外键？" class="headerlink" title="为什么数据库可以没有外键？"></a>为什么数据库可以没有外键？</h3><ul>
+<li>性能，影响插入、更新和删除操作的性能。数据库需要检查它是否违反数据完整性</li>
+<li>传统数据，许多数据库在设计时需要存储来自旧数据库和遗留数据，这些数据可能对数据质量和完整性没有那么严格</li>
+<li>全表重新加载</li>
+</ul>
+<h3 id="规范"><a href="#规范" class="headerlink" title="规范"></a>规范</h3><p>【强制】业务上具有唯一特性的字段，即使是组合字段，也必须建成唯一索引。</p>
+<p>【强制】超过三个表禁止 join。需要 join 的字段，数据类型保持绝对一致；多表关联查询时，<br>保证被关联的字段需要有索引。</p>
+<p>【强制】不要使用 count(列名)或 count(常量)来替代 count(<em>)，count(</em>)就是 SQL92 定义的<br>标准统计行数的语法，跟数据库无关，跟 NULL 和非 NULL 无关。<br>说明：count(*)会统计值为 NULL 的行，而 count(列名)不会统计此列为 NULL 值的行。</p>
+<p>使用 IS NULL()来判断是否为 NULL 值。注意：NULL 与任何值的直接比较都为 NULL。</p>
+<p>单表行数超过 500 万行或者单表容量超过 2GB，才推荐进行分库分表。</p>
+]]></content>
+      <tags>
         <tag>db</tag>
       </tags>
   </entry>
@@ -4644,6 +4695,38 @@
       </tags>
   </entry>
   <entry>
+    <title>graphql介绍</title>
+    <url>/2019/06/18/md/part/web/graphql/graphql%E4%BB%8B%E7%BB%8D/</url>
+    <content><![CDATA[<h3 id="Query-是查询入口-Mutation则是修改入口"><a href="#Query-是查询入口-Mutation则是修改入口" class="headerlink" title="Query 是查询入口,  Mutation则是修改入口"></a>Query 是查询入口,  Mutation则是修改入口</h3><ul>
+<li>root.graphqls 是graphql 服务入口定义</li>
+<li>scheme.graphqls 则是 query/mutation 具体的 scheme 定义字段、类型</li>
+</ul>
+<p>graphql 入口定义了, 但这只是一个描述, 我们需要实现 query/mutation中的描述(必须全部实现)</p>
+<p>schema 一样像我的目录中的一样 AuthorResolver 这是对schema中的描述的实现</p>
+<blockquote>
+<p>query/mutation和普通的schema 一样, 只是它们是 graphql服务的入口, resolver实现描述遵循:</p>
+</blockquote>
+<ul>
+<li>method <code>name</code>(*args)</li>
+<li>method is<code>Name</code>(*args) 仅支持 return boolean</li>
+<li>method get<code>Name</code>(*args)</li>
+<li>method getField<code>Name</code>(*args)</li>
+</ul>
+<p>这是种实现, 当提供了resolver时优先使用, 其次是 class this.get<code>Name</code>方法</p>
+<p>返回参数类型不一致，或者没有返回，需在resolver中添加</p>
+<p>在GraphQL中，我们通过预先定义一张<code>Schema</code>和声明一些<code>Type</code>来达到上面提及的效果，我们需要知道：</p>
+<ul>
+<li>对于数据模型的抽象是通过Type来描述的</li>
+<li>对于接口获取数据的逻辑是通过Schema来描述的</li>
+</ul>
+<h3 id="Type"><a href="#Type" class="headerlink" title="Type"></a>Type</h3><p>对于数据模型的抽象是通过Type来描述的，每一个Type有若干Field组成，每个Field又分别指向某个Type。</p>
+<p>GraphQL的Type简单可以分为两种，一种叫做<code>Scalar Type(标量类型)</code>，另一种叫做<code>Object Type(对象类型)</code>。</p>
+]]></content>
+      <tags>
+        <tag>graphql</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>RPC vs REST vs GraphQL</title>
     <url>/2019/06/18/md/part/web/graphql/RPC%20vs%20REST%20vs%20GraphQL/</url>
     <content><![CDATA[<h3 id="RPC"><a href="#RPC" class="headerlink" title="RPC"></a>RPC</h3><p>它是Remote Procedure Call(远程过程调用)的简称。一般基于RPC协议所设计的接口，是基于网络采用客户端/服务端的模式完成调用接口的</p>
@@ -4695,38 +4778,6 @@
       </tags>
   </entry>
   <entry>
-    <title>graphql介绍</title>
-    <url>/2019/06/18/md/part/web/graphql/graphql%E4%BB%8B%E7%BB%8D/</url>
-    <content><![CDATA[<h3 id="Query-是查询入口-Mutation则是修改入口"><a href="#Query-是查询入口-Mutation则是修改入口" class="headerlink" title="Query 是查询入口,  Mutation则是修改入口"></a>Query 是查询入口,  Mutation则是修改入口</h3><ul>
-<li>root.graphqls 是graphql 服务入口定义</li>
-<li>scheme.graphqls 则是 query/mutation 具体的 scheme 定义字段、类型</li>
-</ul>
-<p>graphql 入口定义了, 但这只是一个描述, 我们需要实现 query/mutation中的描述(必须全部实现)</p>
-<p>schema 一样像我的目录中的一样 AuthorResolver 这是对schema中的描述的实现</p>
-<blockquote>
-<p>query/mutation和普通的schema 一样, 只是它们是 graphql服务的入口, resolver实现描述遵循:</p>
-</blockquote>
-<ul>
-<li>method <code>name</code>(*args)</li>
-<li>method is<code>Name</code>(*args) 仅支持 return boolean</li>
-<li>method get<code>Name</code>(*args)</li>
-<li>method getField<code>Name</code>(*args)</li>
-</ul>
-<p>这是种实现, 当提供了resolver时优先使用, 其次是 class this.get<code>Name</code>方法</p>
-<p>返回参数类型不一致，或者没有返回，需在resolver中添加</p>
-<p>在GraphQL中，我们通过预先定义一张<code>Schema</code>和声明一些<code>Type</code>来达到上面提及的效果，我们需要知道：</p>
-<ul>
-<li>对于数据模型的抽象是通过Type来描述的</li>
-<li>对于接口获取数据的逻辑是通过Schema来描述的</li>
-</ul>
-<h3 id="Type"><a href="#Type" class="headerlink" title="Type"></a>Type</h3><p>对于数据模型的抽象是通过Type来描述的，每一个Type有若干Field组成，每个Field又分别指向某个Type。</p>
-<p>GraphQL的Type简单可以分为两种，一种叫做<code>Scalar Type(标量类型)</code>，另一种叫做<code>Object Type(对象类型)</code>。</p>
-]]></content>
-      <tags>
-        <tag>graphql</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>MapStruct</title>
     <url>/2019/06/18/md/tool/MapStruct/</url>
     <content><![CDATA[<h3 id="MapStruct-一个-Java-实体映射工具"><a href="#MapStruct-一个-Java-实体映射工具" class="headerlink" title="MapStruct 一个 Java 实体映射工具"></a>MapStruct 一个 Java 实体映射工具</h3><p>一个成熟的工程中，尤其是现在的分布式系统中，应用与应用之间，还有单独的应用细分模块之后，DO 一般不会让外部依赖，对象与对象之间的互相转换，就需要有一个专门用来解决转换问题的工具</p>
@@ -4754,18 +4805,6 @@
 ]]></content>
       <tags>
         <tag>other</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>spring</title>
-    <url>/2019/06/18/md/part/spring/spring/</url>
-    <content><![CDATA[<h1 id="Bean注解修饰带参数方法时，参数取值"><a href="#Bean注解修饰带参数方法时，参数取值" class="headerlink" title="@Bean注解修饰带参数方法时，参数取值"></a>@Bean注解修饰带参数方法时，参数取值</h1><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Bean</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">	<span class="function"><span class="keyword">public</span> RabbitAdmin <span class="title">rabbitAdmin</span><span class="params">(ConnectionFactory connectionFactory)</span></span>&#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">		System.out.println(String.format(<span class="string">"-----------getRabbitAdmin:%s"</span>, connectionFactory.hashCode()));</span></pre></td></tr><tr><td class="code"><pre><span class="line">		<span class="keyword">return</span> <span class="keyword">new</span> RabbitAdmin(connectionFactory);</span></pre></td></tr><tr><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
-
-<p>如上，有参数connectFactory，若spring容器中只有一个ConnectionFactory 类型的bean，则不论参数取名为何都是按类型取bean ConnectionFactory 为参数，若有多个则参数取名必须为多个bean中的一个，否则报错。</p>
-<p>spring：容器<br>核心：依赖注入和控制反转<br>Spring有两个核心接口：BeanFactory和ApplicationContext<br>bean之间不用new object，解耦。由spring容易管理。在需要时，注入<br>@autowire @component @controller @service等注解，通过scan标签扫描。<br>管理bean和bean，模块和模块之间的关系。</p>
-]]></content>
-      <tags>
-        <tag>spring</tag>
       </tags>
   </entry>
   <entry>
@@ -4802,28 +4841,15 @@
       </tags>
   </entry>
   <entry>
-    <title>endPoint</title>
-    <url>/2019/06/18/md/part/spring/springboot/endPoint/</url>
-    <content><![CDATA[<h3 id="Endpoint"><a href="#Endpoint" class="headerlink" title="Endpoint"></a>Endpoint</h3><p>SpringBoot的Endpoint主要是用来监控应用服务的运行状况，并集成在Mvc中提供查看接口</p>
-<hr>
-<h3 id="内置Endpoint"><a href="#内置Endpoint" class="headerlink" title="内置Endpoint"></a>内置Endpoint</h3><ul>
-<li>HealthEndpoint 监控dist和db的状态</li>
-<li>MetricsEndpoint 监控内存与gc的状况</li>
-</ul>
-]]></content>
-      <tags>
-        <tag>spring boot</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>eureka</title>
-    <url>/2019/06/18/md/part/microServices/spring%20cloud/eureka/</url>
-    <content><![CDATA[<h4 id="EMERGENCY-EUREKA-MAY-BE-INCORRECTLY-CLAIMING-INSTANCES-ARE-UP-WHEN-THEY’RE-NOT-RENEWALS-ARE-LESSER-THAN-THRESHOLD-AND-HENCE-THE-INSTANCES-ARE-NOT-BEING-EXPIRED-JUST-TO-BE-SAFE"><a href="#EMERGENCY-EUREKA-MAY-BE-INCORRECTLY-CLAIMING-INSTANCES-ARE-UP-WHEN-THEY’RE-NOT-RENEWALS-ARE-LESSER-THAN-THRESHOLD-AND-HENCE-THE-INSTANCES-ARE-NOT-BEING-EXPIRED-JUST-TO-BE-SAFE" class="headerlink" title="EMERGENCY! EUREKA MAY BE INCORRECTLY CLAIMING INSTANCES ARE UP WHEN THEY’RE NOT. RENEWALS ARE LESSER THAN THRESHOLD AND HENCE THE INSTANCES ARE NOT BEING EXPIRED JUST TO BE SAFE."></a>EMERGENCY! EUREKA MAY BE INCORRECTLY CLAIMING INSTANCES ARE UP WHEN THEY’RE NOT. RENEWALS ARE LESSER THAN THRESHOLD AND HENCE THE INSTANCES ARE NOT BEING EXPIRED JUST TO BE SAFE.</h4><figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="comment">#一般出现此模式时，服务返回错误。即如果真实的服务已经Down掉，但在注册中心界面服务却一直存在，且显示为UP状态，关掉自我保护模式</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">eureka.server.enable-self-preservation</span> = <span class="string">false</span></span></pre></td></tr></table></figure>
+    <title>spring</title>
+    <url>/2019/06/18/md/part/spring/spring/</url>
+    <content><![CDATA[<h1 id="Bean注解修饰带参数方法时，参数取值"><a href="#Bean注解修饰带参数方法时，参数取值" class="headerlink" title="@Bean注解修饰带参数方法时，参数取值"></a>@Bean注解修饰带参数方法时，参数取值</h1><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Bean</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">	<span class="function"><span class="keyword">public</span> RabbitAdmin <span class="title">rabbitAdmin</span><span class="params">(ConnectionFactory connectionFactory)</span></span>&#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">		System.out.println(String.format(<span class="string">"-----------getRabbitAdmin:%s"</span>, connectionFactory.hashCode()));</span></pre></td></tr><tr><td class="code"><pre><span class="line">		<span class="keyword">return</span> <span class="keyword">new</span> RabbitAdmin(connectionFactory);</span></pre></td></tr><tr><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
 
+<p>如上，有参数connectFactory，若spring容器中只有一个ConnectionFactory 类型的bean，则不论参数取名为何都是按类型取bean ConnectionFactory 为参数，若有多个则参数取名必须为多个bean中的一个，否则报错。</p>
+<p>spring：容器<br>核心：依赖注入和控制反转<br>Spring有两个核心接口：BeanFactory和ApplicationContext<br>bean之间不用new object，解耦。由spring容易管理。在需要时，注入<br>@autowire @component @controller @service等注解，通过scan标签扫描。<br>管理bean和bean，模块和模块之间的关系。</p>
 ]]></content>
       <tags>
-        <tag>微服务</tag>
-        <tag>spring cloud</tag>
+        <tag>spring</tag>
       </tags>
   </entry>
   <entry>
@@ -4851,6 +4877,31 @@
       <tags>
         <tag>微服务</tag>
         <tag>spring cloud</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>eureka</title>
+    <url>/2019/06/18/md/part/microServices/spring%20cloud/eureka/</url>
+    <content><![CDATA[<h4 id="EMERGENCY-EUREKA-MAY-BE-INCORRECTLY-CLAIMING-INSTANCES-ARE-UP-WHEN-THEY’RE-NOT-RENEWALS-ARE-LESSER-THAN-THRESHOLD-AND-HENCE-THE-INSTANCES-ARE-NOT-BEING-EXPIRED-JUST-TO-BE-SAFE"><a href="#EMERGENCY-EUREKA-MAY-BE-INCORRECTLY-CLAIMING-INSTANCES-ARE-UP-WHEN-THEY’RE-NOT-RENEWALS-ARE-LESSER-THAN-THRESHOLD-AND-HENCE-THE-INSTANCES-ARE-NOT-BEING-EXPIRED-JUST-TO-BE-SAFE" class="headerlink" title="EMERGENCY! EUREKA MAY BE INCORRECTLY CLAIMING INSTANCES ARE UP WHEN THEY’RE NOT. RENEWALS ARE LESSER THAN THRESHOLD AND HENCE THE INSTANCES ARE NOT BEING EXPIRED JUST TO BE SAFE."></a>EMERGENCY! EUREKA MAY BE INCORRECTLY CLAIMING INSTANCES ARE UP WHEN THEY’RE NOT. RENEWALS ARE LESSER THAN THRESHOLD AND HENCE THE INSTANCES ARE NOT BEING EXPIRED JUST TO BE SAFE.</h4><figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="comment">#一般出现此模式时，服务返回错误。即如果真实的服务已经Down掉，但在注册中心界面服务却一直存在，且显示为UP状态，关掉自我保护模式</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">eureka.server.enable-self-preservation</span> = <span class="string">false</span></span></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>微服务</tag>
+        <tag>spring cloud</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>endPoint</title>
+    <url>/2019/06/18/md/part/spring/springboot/endPoint/</url>
+    <content><![CDATA[<h3 id="Endpoint"><a href="#Endpoint" class="headerlink" title="Endpoint"></a>Endpoint</h3><p>SpringBoot的Endpoint主要是用来监控应用服务的运行状况，并集成在Mvc中提供查看接口</p>
+<hr>
+<h3 id="内置Endpoint"><a href="#内置Endpoint" class="headerlink" title="内置Endpoint"></a>内置Endpoint</h3><ul>
+<li>HealthEndpoint 监控dist和db的状态</li>
+<li>MetricsEndpoint 监控内存与gc的状况</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>spring boot</tag>
       </tags>
   </entry>
   <entry>
@@ -4976,20 +5027,6 @@
       </tags>
   </entry>
   <entry>
-    <title>peerDNS</title>
-    <url>/2019/06/18/md/linux/peerDNS/</url>
-    <content><![CDATA[<p>先认识一下这三个配置文件：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">/etc/hosts #：这个是最早的 hostname 对应 IP 的存档；</span></pre></td></tr><tr><td class="code"><pre><span class="line">/etc/resolv.conf #：当需要解析域名时，读取该文件获得DNS 服务器 IP；</span></pre></td></tr><tr><td class="code"><pre><span class="line">/etc/nsswitch.conf#：这个档案『决定』先使用 /etc/hosts 还是 /etc/resolv.conf 的设定！</span></pre></td></tr></table></figure>
-
-<p>当电脑要访问一个域名时，要将域名翻译成IP地址。<br> 这个过程通常会先访问/etc/hosts，看本地是否有对应的hostname – IP记录。<br> 如果没有就去查询DNS服务器，通过/etc/resolv.conf 得到dns服务器地址。</p>
-<p>当在eth接口启用DHCP后，本地resolv.conf文件将被修改，resolv.conf文件中的DNS地址将被改为从DHCP获取到的地址。这种从DHCP获得的DNS即是Peer DNS。</p>
-<p>启用DHCP后即便修改/etc/resolv.conf，不久又恢复成原样。如何解决这个问题？此时，你得要在 /etc/sysconfig/network-scripts/ifcfg-eth0 等相关档案内，增加一行：『PEERDNS=no』，然后重新启动网络即可。</p>
-]]></content>
-      <tags>
-        <tag>linux</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>linux安装软件</title>
     <url>/2019/06/18/md/linux/linux%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6/</url>
     <content><![CDATA[<h3 id="设置交换分区"><a href="#设置交换分区" class="headerlink" title="设置交换分区"></a>设置交换分区</h3><p>SpringBoot多项目部署项目运行被killed解决办法，没有分配swap空间</p>
@@ -5049,74 +5086,17 @@
       </tags>
   </entry>
   <entry>
-    <title>java8</title>
-    <url>/2019/06/18/md/jdk/java8/</url>
-    <content><![CDATA[<h4 id="Optional"><a href="#Optional" class="headerlink" title="Optional"></a>Optional</h4><p> 类主要解决的问题是臭名昭著的空指针异常（<code>NullPointerException</code>）</p>
-<h5 id="orElse与orElseGet"><a href="#orElse与orElseGet" class="headerlink" title="orElse与orElseGet"></a>orElse与orElseGet</h5><p>of中值不为空，则orElseGet不执行函数，而orElse一定会执行的</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> String <span class="title">B</span><span class="params">()</span> </span>&#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">  System.out.println(<span class="string">"B()..."</span>);</span></pre></td></tr><tr><td class="code"><pre><span class="line">  <span class="keyword">return</span> <span class="string">"B"</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(<span class="keyword">final</span> String... args)</span> </span>&#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">  System.out.println(Optional.of(<span class="string">"A"</span>).orElse(B()));</span></pre></td></tr><tr><td class="code"><pre><span class="line">  System.out.println(Optional.of(<span class="string">"A"</span>).orElseGet(() -&gt; B()));</span></pre></td></tr><tr><td class="code"><pre><span class="line">  System.out.println(Optional.ofNullable(<span class="keyword">null</span>).orElseGet(() -&gt; B()));</span></pre></td></tr><tr><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">//执行结果</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">B()...</span></pre></td></tr><tr><td class="code"><pre><span class="line">A</span></pre></td></tr><tr><td class="code"><pre><span class="line">A</span></pre></td></tr><tr><td class="code"><pre><span class="line">B()...</span></pre></td></tr><tr><td class="code"><pre><span class="line">B</span></pre></td></tr></table></figure>
+    <title>peerDNS</title>
+    <url>/2019/06/18/md/linux/peerDNS/</url>
+    <content><![CDATA[<p>先认识一下这三个配置文件：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">/etc/hosts #：这个是最早的 hostname 对应 IP 的存档；</span></pre></td></tr><tr><td class="code"><pre><span class="line">/etc/resolv.conf #：当需要解析域名时，读取该文件获得DNS 服务器 IP；</span></pre></td></tr><tr><td class="code"><pre><span class="line">/etc/nsswitch.conf#：这个档案『决定』先使用 /etc/hosts 还是 /etc/resolv.conf 的设定！</span></pre></td></tr></table></figure>
 
-<hr>
-<h4 id="map"><a href="#map" class="headerlink" title="map"></a>map</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Optional&lt;String&gt;  name=Optional.of(<span class="string">"Huang Dahui"</span>);</span></pre></td></tr><tr><td class="code"><pre><span class="line">Optional&lt;String&gt; upperName = name.map(String::toUpperCase);</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">//执行结果：  HUANG DAHUI</span></span></pre></td></tr></table></figure>
-
-<h4 id="Predicate"><a href="#Predicate" class="headerlink" title="Predicate"></a>Predicate</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Java8Tester</span> </span>&#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span>&#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">      List&lt;Integer&gt; list = Arrays.asList(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>);</span></pre></td></tr><tr><td class="code"><pre><span class="line">        </span></pre></td></tr><tr><td class="code"><pre><span class="line">      <span class="comment">// Predicate&lt;Integer&gt; predicate = n -&gt; true</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">      <span class="comment">// n 是一个参数传递到 Predicate 接口的 test 方法</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">      <span class="comment">// n 如果存在则 test 方法返回 true</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">        </span></pre></td></tr><tr><td class="code"><pre><span class="line">      System.out.println(<span class="string">"输出所有数据:"</span>);</span></pre></td></tr><tr><td class="code"><pre><span class="line">        </span></pre></td></tr><tr><td class="code"><pre><span class="line">      <span class="comment">// 传递参数 n</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">      eval(list, n-&gt;<span class="keyword">true</span>);</span></pre></td></tr><tr><td class="code"><pre><span class="line">        </span></pre></td></tr><tr><td class="code"><pre><span class="line">      <span class="comment">// Predicate&lt;Integer&gt; predicate1 = n -&gt; n%2 == 0</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">      <span class="comment">// n 是一个参数传递到 Predicate 接口的 test 方法</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">      <span class="comment">// 如果 n%2 为 0 test 方法返回 true</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">        </span></pre></td></tr><tr><td class="code"><pre><span class="line">      System.out.println(<span class="string">"输出所有偶数:"</span>);</span></pre></td></tr><tr><td class="code"><pre><span class="line">      eval(list, n-&gt; n%<span class="number">2</span> == <span class="number">0</span> );</span></pre></td></tr><tr><td class="code"><pre><span class="line">        </span></pre></td></tr><tr><td class="code"><pre><span class="line">      <span class="comment">// Predicate&lt;Integer&gt; predicate2 = n -&gt; n &gt; 3</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">      <span class="comment">// n 是一个参数传递到 Predicate 接口的 test 方法</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">      <span class="comment">// 如果 n 大于 3 test 方法返回 true</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">      System.out.println(<span class="string">"输出大于 3 的所有数字:"</span>);</span></pre></td></tr><tr><td class="code"><pre><span class="line">      eval(list, n-&gt; n &gt; <span class="number">3</span> );</span></pre></td></tr><tr><td class="code"><pre><span class="line">   &#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    </span></pre></td></tr><tr><td class="code"><pre><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">eval</span><span class="params">(List&lt;Integer&gt; list, Predicate&lt;Integer&gt; predicate)</span> </span>&#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">      <span class="keyword">for</span>(Integer n: list) &#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">         <span class="keyword">if</span>(predicate.test(n)) &#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">            System.out.println(n + <span class="string">" "</span>);</span></pre></td></tr><tr><td class="code"><pre><span class="line">         &#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line">      &#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line">   &#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
-
-<h4 id="stream"><a href="#stream" class="headerlink" title="stream"></a>stream</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">List&lt;String&gt; spuCodes = itemDetails.stream().map(ItemListByKeyOVO.ItemDetail::getCode).collect(Collectors.toList());</span></pre></td></tr></table></figure>
-
-
-
-<h4 id="CompletableFuture"><a href="#CompletableFuture" class="headerlink" title="CompletableFuture"></a>CompletableFuture</h4><p>可以看到，thenAccept和thenRun都是无返回值的。如果说thenApply是不停的输入输出的进行生产，那么thenAccept和thenRun就是在进行消耗。它们是整个计算的最后两个阶段。<br>同样是执行指定的动作，同样是消耗，二者也有区别：</p>
-<p>thenAccept接收上一阶段的输出作为本阶段的输入 　　</p>
-<p>thenRun根本不关心前一阶段的输出，根本不不关心前一阶段的计算结果，因为它不需要输入参数</p>
+<p>当电脑要访问一个域名时，要将域名翻译成IP地址。<br> 这个过程通常会先访问/etc/hosts，看本地是否有对应的hostname – IP记录。<br> 如果没有就去查询DNS服务器，通过/etc/resolv.conf 得到dns服务器地址。</p>
+<p>当在eth接口启用DHCP后，本地resolv.conf文件将被修改，resolv.conf文件中的DNS地址将被改为从DHCP获取到的地址。这种从DHCP获得的DNS即是Peer DNS。</p>
+<p>启用DHCP后即便修改/etc/resolv.conf，不久又恢复成原样。如何解决这个问题？此时，你得要在 /etc/sysconfig/network-scripts/ifcfg-eth0 等相关档案内，增加一行：『PEERDNS=no』，然后重新启动网络即可。</p>
 ]]></content>
       <tags>
-        <tag>jdk</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>file</title>
-    <url>/2019/06/18/md/jdk/jdk%20File/</url>
-    <content><![CDATA[<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">File file = <span class="keyword">new</span> File()</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">//文件名，包含后缀，但不包含路径 </span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">//   /root/11.jpg   则显示 11.jpg  </span></span></pre></td></tr><tr><td class="code"><pre><span class="line">file.getName()</span></pre></td></tr><tr><td class="code"><pre><span class="line">    </span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">// 文件路径  完整的绝对路径</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">//   /root/11.jpg   则显示 /root/11.jpg</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">file.getPath()</span></pre></td></tr><tr><td class="code"><pre><span class="line">    </span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">// 重命名   newPath新目标文件绝对路径    </span></span></pre></td></tr><tr><td class="code"><pre><span class="line">file.renameTo(<span class="keyword">new</span> File(newPath));</span></pre></td></tr></table></figure>]]></content>
-      <tags>
-        <tag>jdk</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>高并发</title>
-    <url>/2019/06/18/md/part/project/%E9%AB%98%E5%B9%B6%E5%8F%91/</url>
-    <content><![CDATA[<h2 id="首先要了解高并发的的瓶颈在哪里？"><a href="#首先要了解高并发的的瓶颈在哪里？" class="headerlink" title="首先要了解高并发的的瓶颈在哪里？"></a>首先要了解高并发的的瓶颈在哪里？</h2><h3 id="前端性能优化技术"><a href="#前端性能优化技术" class="headerlink" title="前端性能优化技术"></a>前端性能优化技术</h3><ol>
-<li><p>前端负载均衡: DNS，CDN</p>
-</li>
-<li><p>减少前端链接数: 把js打成一个文件，把css也打成一个文件，把图标也打成一个文件，用css分块展示。把链接数减到最低。</p>
-</li>
-<li><p>减少网页大小增加带宽:尽量少用图片</p>
-</li>
-<li><p>前端页面静态化: 静态化一些不常变的页面和数据</p>
-</li>
-<li><p>优化查询: redis缓存</p>
-</li>
-</ol>
-<hr>
-<h3 id="后端性能优化技术"><a href="#后端性能优化技术" class="headerlink" title="后端性能优化技术"></a>后端性能优化技术</h3><ol>
-<li><p>数据冗余: 减少表连接这样的开销比较大的操作，优化sql语句</p>
-</li>
-<li><p>数据镜像: 把一台数据库的负载均分到多台上，同时又保证了数据一致性(Oracle的SCN)。最重要的是，这样还可以有高可用性，一台废了，还有另一台在服务</p>
-</li>
-<li><p>数据分区</p>
-<ul>
-<li>把数据把某种逻辑来分类: 把一张表拆成多张有一样的字段但是不同种类的表</li>
-<li>把数据按字段分，也就是竖着分表: 把一些不经常改的数据放在一个表里，经常改的数据放在另外多个表里。把一张表变成1对1的关系</li>
-<li>平均分表: 通过主键ID的范围来分表。</li>
-<li>同一数据分区: 把同一商品的库存值分到不同的服务器上，然后负载均衡</li>
-</ul>
-</li>
-<li><p>后端系统负载均衡: 需要一个任务分配系统，其还能监控各个服务器的负载情况。</p>
-</li>
-<li><p>异步、 throttle 和 批量处理: 把一堆基本相同的请求批量处理,大家同时购买同一个商品，没有必要你买一个我就写一次数据库，完全可以收集到一定数量的请求，一次操作一个是作业量，另一个是timeout</p>
-</li>
-</ol>
-]]></content>
-      <tags>
-        <tag>高并发</tag>
+        <tag>linux</tag>
       </tags>
   </entry>
   <entry>
@@ -5170,6 +5150,77 @@
       </tags>
   </entry>
   <entry>
+    <title>高并发</title>
+    <url>/2019/06/18/md/part/project/%E9%AB%98%E5%B9%B6%E5%8F%91/</url>
+    <content><![CDATA[<h2 id="首先要了解高并发的的瓶颈在哪里？"><a href="#首先要了解高并发的的瓶颈在哪里？" class="headerlink" title="首先要了解高并发的的瓶颈在哪里？"></a>首先要了解高并发的的瓶颈在哪里？</h2><h3 id="前端性能优化技术"><a href="#前端性能优化技术" class="headerlink" title="前端性能优化技术"></a>前端性能优化技术</h3><ol>
+<li><p>前端负载均衡: DNS，CDN</p>
+</li>
+<li><p>减少前端链接数: 把js打成一个文件，把css也打成一个文件，把图标也打成一个文件，用css分块展示。把链接数减到最低。</p>
+</li>
+<li><p>减少网页大小增加带宽:尽量少用图片</p>
+</li>
+<li><p>前端页面静态化: 静态化一些不常变的页面和数据</p>
+</li>
+<li><p>优化查询: redis缓存</p>
+</li>
+</ol>
+<hr>
+<h3 id="后端性能优化技术"><a href="#后端性能优化技术" class="headerlink" title="后端性能优化技术"></a>后端性能优化技术</h3><ol>
+<li><p>数据冗余: 减少表连接这样的开销比较大的操作，优化sql语句</p>
+</li>
+<li><p>数据镜像: 把一台数据库的负载均分到多台上，同时又保证了数据一致性(Oracle的SCN)。最重要的是，这样还可以有高可用性，一台废了，还有另一台在服务</p>
+</li>
+<li><p>数据分区</p>
+<ul>
+<li>把数据把某种逻辑来分类: 把一张表拆成多张有一样的字段但是不同种类的表</li>
+<li>把数据按字段分，也就是竖着分表: 把一些不经常改的数据放在一个表里，经常改的数据放在另外多个表里。把一张表变成1对1的关系</li>
+<li>平均分表: 通过主键ID的范围来分表。</li>
+<li>同一数据分区: 把同一商品的库存值分到不同的服务器上，然后负载均衡</li>
+</ul>
+</li>
+<li><p>后端系统负载均衡: 需要一个任务分配系统，其还能监控各个服务器的负载情况。</p>
+</li>
+<li><p>异步、 throttle 和 批量处理: 把一堆基本相同的请求批量处理,大家同时购买同一个商品，没有必要你买一个我就写一次数据库，完全可以收集到一定数量的请求，一次操作一个是作业量，另一个是timeout</p>
+</li>
+</ol>
+]]></content>
+      <tags>
+        <tag>高并发</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>file</title>
+    <url>/2019/06/18/md/jdk/jdk%20File/</url>
+    <content><![CDATA[<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">File file = <span class="keyword">new</span> File()</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">//文件名，包含后缀，但不包含路径 </span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">//   /root/11.jpg   则显示 11.jpg  </span></span></pre></td></tr><tr><td class="code"><pre><span class="line">file.getName()</span></pre></td></tr><tr><td class="code"><pre><span class="line">    </span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">// 文件路径  完整的绝对路径</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">//   /root/11.jpg   则显示 /root/11.jpg</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">file.getPath()</span></pre></td></tr><tr><td class="code"><pre><span class="line">    </span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">// 重命名   newPath新目标文件绝对路径    </span></span></pre></td></tr><tr><td class="code"><pre><span class="line">file.renameTo(<span class="keyword">new</span> File(newPath));</span></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>jdk</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>java8</title>
+    <url>/2019/06/18/md/jdk/java8/</url>
+    <content><![CDATA[<h4 id="Optional"><a href="#Optional" class="headerlink" title="Optional"></a>Optional</h4><p> 类主要解决的问题是臭名昭著的空指针异常（<code>NullPointerException</code>）</p>
+<h5 id="orElse与orElseGet"><a href="#orElse与orElseGet" class="headerlink" title="orElse与orElseGet"></a>orElse与orElseGet</h5><p>of中值不为空，则orElseGet不执行函数，而orElse一定会执行的</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> String <span class="title">B</span><span class="params">()</span> </span>&#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">  System.out.println(<span class="string">"B()..."</span>);</span></pre></td></tr><tr><td class="code"><pre><span class="line">  <span class="keyword">return</span> <span class="string">"B"</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(<span class="keyword">final</span> String... args)</span> </span>&#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">  System.out.println(Optional.of(<span class="string">"A"</span>).orElse(B()));</span></pre></td></tr><tr><td class="code"><pre><span class="line">  System.out.println(Optional.of(<span class="string">"A"</span>).orElseGet(() -&gt; B()));</span></pre></td></tr><tr><td class="code"><pre><span class="line">  System.out.println(Optional.ofNullable(<span class="keyword">null</span>).orElseGet(() -&gt; B()));</span></pre></td></tr><tr><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">//执行结果</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">B()...</span></pre></td></tr><tr><td class="code"><pre><span class="line">A</span></pre></td></tr><tr><td class="code"><pre><span class="line">A</span></pre></td></tr><tr><td class="code"><pre><span class="line">B()...</span></pre></td></tr><tr><td class="code"><pre><span class="line">B</span></pre></td></tr></table></figure>
+
+<hr>
+<h4 id="map"><a href="#map" class="headerlink" title="map"></a>map</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Optional&lt;String&gt;  name=Optional.of(<span class="string">"Huang Dahui"</span>);</span></pre></td></tr><tr><td class="code"><pre><span class="line">Optional&lt;String&gt; upperName = name.map(String::toUpperCase);</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">//执行结果：  HUANG DAHUI</span></span></pre></td></tr></table></figure>
+
+<h4 id="Predicate"><a href="#Predicate" class="headerlink" title="Predicate"></a>Predicate</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Java8Tester</span> </span>&#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span>&#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">      List&lt;Integer&gt; list = Arrays.asList(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>);</span></pre></td></tr><tr><td class="code"><pre><span class="line">        </span></pre></td></tr><tr><td class="code"><pre><span class="line">      <span class="comment">// Predicate&lt;Integer&gt; predicate = n -&gt; true</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">      <span class="comment">// n 是一个参数传递到 Predicate 接口的 test 方法</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">      <span class="comment">// n 如果存在则 test 方法返回 true</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">        </span></pre></td></tr><tr><td class="code"><pre><span class="line">      System.out.println(<span class="string">"输出所有数据:"</span>);</span></pre></td></tr><tr><td class="code"><pre><span class="line">        </span></pre></td></tr><tr><td class="code"><pre><span class="line">      <span class="comment">// 传递参数 n</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">      eval(list, n-&gt;<span class="keyword">true</span>);</span></pre></td></tr><tr><td class="code"><pre><span class="line">        </span></pre></td></tr><tr><td class="code"><pre><span class="line">      <span class="comment">// Predicate&lt;Integer&gt; predicate1 = n -&gt; n%2 == 0</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">      <span class="comment">// n 是一个参数传递到 Predicate 接口的 test 方法</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">      <span class="comment">// 如果 n%2 为 0 test 方法返回 true</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">        </span></pre></td></tr><tr><td class="code"><pre><span class="line">      System.out.println(<span class="string">"输出所有偶数:"</span>);</span></pre></td></tr><tr><td class="code"><pre><span class="line">      eval(list, n-&gt; n%<span class="number">2</span> == <span class="number">0</span> );</span></pre></td></tr><tr><td class="code"><pre><span class="line">        </span></pre></td></tr><tr><td class="code"><pre><span class="line">      <span class="comment">// Predicate&lt;Integer&gt; predicate2 = n -&gt; n &gt; 3</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">      <span class="comment">// n 是一个参数传递到 Predicate 接口的 test 方法</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">      <span class="comment">// 如果 n 大于 3 test 方法返回 true</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">      System.out.println(<span class="string">"输出大于 3 的所有数字:"</span>);</span></pre></td></tr><tr><td class="code"><pre><span class="line">      eval(list, n-&gt; n &gt; <span class="number">3</span> );</span></pre></td></tr><tr><td class="code"><pre><span class="line">   &#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    </span></pre></td></tr><tr><td class="code"><pre><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">eval</span><span class="params">(List&lt;Integer&gt; list, Predicate&lt;Integer&gt; predicate)</span> </span>&#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">      <span class="keyword">for</span>(Integer n: list) &#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">         <span class="keyword">if</span>(predicate.test(n)) &#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">            System.out.println(n + <span class="string">" "</span>);</span></pre></td></tr><tr><td class="code"><pre><span class="line">         &#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line">      &#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line">   &#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
+<h4 id="stream"><a href="#stream" class="headerlink" title="stream"></a>stream</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">List&lt;String&gt; spuCodes = itemDetails.stream().map(ItemListByKeyOVO.ItemDetail::getCode).collect(Collectors.toList());</span></pre></td></tr></table></figure>
+
+
+
+<h4 id="CompletableFuture"><a href="#CompletableFuture" class="headerlink" title="CompletableFuture"></a>CompletableFuture</h4><p>可以看到，thenAccept和thenRun都是无返回值的。如果说thenApply是不停的输入输出的进行生产，那么thenAccept和thenRun就是在进行消耗。它们是整个计算的最后两个阶段。<br>同样是执行指定的动作，同样是消耗，二者也有区别：</p>
+<p>thenAccept接收上一阶段的输出作为本阶段的输入 　　</p>
+<p>thenRun根本不关心前一阶段的输出，根本不不关心前一阶段的计算结果，因为它不需要输入参数</p>
+]]></content>
+      <tags>
+        <tag>jdk</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>java</title>
     <url>/2019/06/18/md/jdk/java/</url>
     <content><![CDATA[<h4 id="集合排序"><a href="#集合排序" class="headerlink" title="集合排序"></a>集合排序</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 默认是升序</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">Collections.sort;</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">// 降序</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">Arrays.sort(strArray, Collections.reverseOrder());</span></pre></td></tr></table></figure>
@@ -5213,6 +5264,26 @@
       </tags>
   </entry>
   <entry>
+    <title>docker相关问题</title>
+    <url>/2019/06/18/md/part/docker/docker%20problem/</url>
+    <content><![CDATA[<h5 id="docker-WARNING-IPv4-forwarding-is-disabled-解决方法"><a href="#docker-WARNING-IPv4-forwarding-is-disabled-解决方法" class="headerlink" title="docker WARNING: IPv4 forwarding is disabled. 解决方法"></a>docker WARNING: IPv4 forwarding is disabled. 解决方法</h5><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">般情况下，我们的linux机器的ip forwarding选项都是关闭的。 但是如果我们的机器需要做网关，或路由器。那么这个就要打开了</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">echo net.ipv4.ip_forward=1 &gt;&gt; /usr/lib/sysctl.d/00-system.conf</span></pre></td></tr><tr><td class="code"><pre><span class="line">systemctl restart network &amp;&amp; systemctl restart docker</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">查看是否修改成功</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">sysctl net.ipv4.ip_forward</span></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>docker</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>docker compose</title>
+    <url>/2019/06/18/md/part/docker/docker%20compose/</url>
+    <content><![CDATA[<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sudo curl -L https://github.com/docker/compose/releases/download/1.16.1/docker-compose-`uname -s`-`uname -m` \</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"> -o /usr/local/bin/docker-compose</span></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>docker</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>docker常用命令</title>
     <url>/2019/06/18/md/part/docker/docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
     <content><![CDATA[<p><code>Docker</code> 是一个开源的轻量级容器管理<code>引擎</code>，可以轻松的为任<br>何应用创建一个轻量级的、可移植的、自给自足的容器</p>
@@ -5241,23 +5312,22 @@
       </tags>
   </entry>
   <entry>
-    <title>docker相关问题</title>
-    <url>/2019/06/18/md/part/docker/docker%20problem/</url>
-    <content><![CDATA[<h5 id="docker-WARNING-IPv4-forwarding-is-disabled-解决方法"><a href="#docker-WARNING-IPv4-forwarding-is-disabled-解决方法" class="headerlink" title="docker WARNING: IPv4 forwarding is disabled. 解决方法"></a>docker WARNING: IPv4 forwarding is disabled. 解决方法</h5><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">般情况下，我们的linux机器的ip forwarding选项都是关闭的。 但是如果我们的机器需要做网关，或路由器。那么这个就要打开了</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">echo net.ipv4.ip_forward=1 &gt;&gt; /usr/lib/sysctl.d/00-system.conf</span></pre></td></tr><tr><td class="code"><pre><span class="line">systemctl restart network &amp;&amp; systemctl restart docker</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">查看是否修改成功</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">sysctl net.ipv4.ip_forward</span></pre></td></tr></table></figure>
+    <title>mybatis获取主键</title>
+    <url>/2019/06/18/md/part/db/mybatis/mybatis/</url>
+    <content><![CDATA[<h3 id="Mybatis-在-insert-之后想获取自增的主键-id，但却总是返回1"><a href="#Mybatis-在-insert-之后想获取自增的主键-id，但却总是返回1" class="headerlink" title="Mybatis 在 insert 之后想获取自增的主键 id，但却总是返回1"></a>Mybatis 在 insert 之后想获取自增的主键 id，但却总是返回1</h3><p>想要获取自增主键id，需要通过xx.getId()方法获取，因为在mybatis中指定自增主键id封装到了对象的属性中，所以我们需要在对象中来获取</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">insert</span> <span class="attr">id</span>=<span class="string">"add"</span> <span class="attr">useGeneratedKeys</span>=<span class="string">"true"</span> <span class="attr">keyColumn</span>=<span class="string">"id"</span> <span class="attr">keyProperty</span>=<span class="string">"id"</span> <span class="attr">parameterType</span>=<span class="string">"user"</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    INSERT INTO `user` (`name`,sex,register_ts) VALUES (#&#123;name&#125;,#&#123;sex&#125;,#&#123;registerTs&#125;)</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">selectKey</span> <span class="attr">resultType</span>=<span class="string">"int"</span> <span class="attr">keyProperty</span>=<span class="string">"id"</span> <span class="attr">order</span>=<span class="string">"AFTER"</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">        SELECT LAST_INSERT_ID()</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="tag">&lt;/<span class="name">selectKey</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="tag">&lt;/<span class="name">insert</span>&gt;</span></span></pre></td></tr></table></figure>
 
-]]></content>
-      <tags>
-        <tag>docker</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>docker compose</title>
-    <url>/2019/06/18/md/part/docker/docker%20compose/</url>
-    <content><![CDATA[<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sudo curl -L https://github.com/docker/compose/releases/download/1.16.1/docker-compose-`uname -s`-`uname -m` \</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"> -o /usr/local/bin/docker-compose</span></pre></td></tr></table></figure>
+<h3 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h3><ol>
+<li><p>想要获取自增主键id，应该通过对象的getId()方法，而并不是insert的返回值，insert的返回值表示的是影响行数</p>
+</li>
+<li><p>在mapper.xml中：useGeneratedKeys=”true”、keyProperty=”id”，这两个属性的作用：</p>
+</li>
+</ol>
+<pre><code>- 共同决定了sql执行后，会将主键封装到id属性上；
 
-]]></content>
+- 自增主键封装到了对象的id属性上了，那么想要获取，直接调用对象的getId()方法就可以了</code></pre>]]></content>
       <tags>
-        <tag>docker</tag>
+        <tag>mybatis</tag>
       </tags>
   </entry>
   <entry>
@@ -5288,25 +5358,6 @@
       </tags>
   </entry>
   <entry>
-    <title>mybatis获取主键</title>
-    <url>/2019/06/18/md/part/db/mybatis/mybatis/</url>
-    <content><![CDATA[<h3 id="Mybatis-在-insert-之后想获取自增的主键-id，但却总是返回1"><a href="#Mybatis-在-insert-之后想获取自增的主键-id，但却总是返回1" class="headerlink" title="Mybatis 在 insert 之后想获取自增的主键 id，但却总是返回1"></a>Mybatis 在 insert 之后想获取自增的主键 id，但却总是返回1</h3><p>想要获取自增主键id，需要通过xx.getId()方法获取，因为在mybatis中指定自增主键id封装到了对象的属性中，所以我们需要在对象中来获取</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">insert</span> <span class="attr">id</span>=<span class="string">"add"</span> <span class="attr">useGeneratedKeys</span>=<span class="string">"true"</span> <span class="attr">keyColumn</span>=<span class="string">"id"</span> <span class="attr">keyProperty</span>=<span class="string">"id"</span> <span class="attr">parameterType</span>=<span class="string">"user"</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    INSERT INTO `user` (`name`,sex,register_ts) VALUES (#&#123;name&#125;,#&#123;sex&#125;,#&#123;registerTs&#125;)</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">selectKey</span> <span class="attr">resultType</span>=<span class="string">"int"</span> <span class="attr">keyProperty</span>=<span class="string">"id"</span> <span class="attr">order</span>=<span class="string">"AFTER"</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">        SELECT LAST_INSERT_ID()</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="tag">&lt;/<span class="name">selectKey</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="tag">&lt;/<span class="name">insert</span>&gt;</span></span></pre></td></tr></table></figure>
-
-<h3 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h3><ol>
-<li><p>想要获取自增主键id，应该通过对象的getId()方法，而并不是insert的返回值，insert的返回值表示的是影响行数</p>
-</li>
-<li><p>在mapper.xml中：useGeneratedKeys=”true”、keyProperty=”id”，这两个属性的作用：</p>
-</li>
-</ol>
-<pre><code>- 共同决定了sql执行后，会将主键封装到id属性上；
-
-- 自增主键封装到了对象的id属性上了，那么想要获取，直接调用对象的getId()方法就可以了</code></pre>]]></content>
-      <tags>
-        <tag>mybatis</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>分布式</title>
     <url>/2019/06/18/md/part/distributed/Distributed/</url>
     <content><![CDATA[<p><code>通信渠道的不可靠</code>（超时等）是造成构建大规模分布式系统非常复杂并且困难的重要原因。</p>
@@ -5331,16 +5382,19 @@
       </tags>
   </entry>
   <entry>
-    <title>公钥与私钥</title>
-    <url>/2019/06/18/md/other/encrypt/</url>
-    <content><![CDATA[<p>公钥与私钥使用，在大部分情况下</p>
-<ul>
-<li>我们使用公钥加密、私钥解密，</li>
-<li><code>签名</code>却是使用私钥加密，公钥解密</li>
-</ul>
+    <title>测试相关</title>
+    <url>/2019/06/18/md/%E6%B5%8B%E8%AF%95/</url>
+    <content><![CDATA[<p>把数据把某种逻辑来分类: 把一张表拆成多张有一样的字段但是不同种类的表</p>
+<p>把数据按字段分，也就是竖着分表: 把一些不经常改的数据放在一个表里，经常改的数据放在另外多个表里。把一张表变成1对1的关系</p>
+<p>平均分表: 通过主键ID的范围来分表。</p>
+<h4 id="测试分类"><a href="#测试分类" class="headerlink" title="测试分类"></a>测试分类</h4><p>冒烟测试;<br>    冒烟测试就是先保证系统能跑的起来，不至于让测试工作做到一半突然出现错误导致业务中断。目的就是先通过最基本的测试</p>
+<p>猴子测试:<br>    它针对的不是功能点，而是业务流程,就是说，你把自己看成白痴，随便乱点，没有任何主观想法参与进来，让一些想不到的操作呈现出错误来</p>
+<p>数据库来说吧， 数据做了分区， 一致性怎么保证啊？   选择分布式事务非常麻烦， 有时候不得不选择最终一致性来妥协</p>
+<p>迅速定位问题:</p>
+<p>一是查看错误日志，推断错误的可能</p>
 ]]></content>
       <tags>
-        <tag>tool</tag>
+        <tag>测试</tag>
       </tags>
   </entry>
   <entry>
@@ -5358,6 +5412,52 @@
       </categories>
       <tags>
         <tag>设计模式</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>公钥与私钥</title>
+    <url>/2019/06/18/md/other/encrypt/</url>
+    <content><![CDATA[<p>公钥与私钥使用，在大部分情况下</p>
+<ul>
+<li>我们使用公钥加密、私钥解密，</li>
+<li><code>签名</code>却是使用私钥加密，公钥解密</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>tool</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>docker运行redis</title>
+    <url>/2019/06/18/md/part/docker/redis/</url>
+    <content><![CDATA[<h4 id="运行容器"><a href="#运行容器" class="headerlink" title="运行容器"></a>运行容器</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker run  --privileged  --name redis -v /docker/redis/data:/data  -p  6379:6379 -d redis:5.0.5  redis-server --appendonly yes</span></pre></td></tr></table></figure>
+
+
+
+
+
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">#客户端连 redis</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">redis-cli.exe -h <span class="number">192.168</span>.<span class="number">85.135</span> -p <span class="number">6379</span></span></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>redis</tag>
+        <tag>docker</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>consul介绍</title>
+    <url>/2019/06/18/md/part/microServices/consul/</url>
+    <content><![CDATA[<p>consul是分布式的、高可用、横向扩展的（CP）。consul提供的一些关键特性：</p>
+<ul>
+<li>service discovery：consul通过DNS或者HTTP接口使服务注册和服务发现变的很容易，一些外部服务，例如saas提供的也可以一样注册。</li>
+<li>health checking：健康检测使consul可以快速的告警在集群中的操作。和服务发现的集成，可以防止服务转发到故障的服务上面。</li>
+<li>key/value storage：一个用来存储动态配置的系统。提供简单的HTTP接口，可以在任何地方操作。</li>
+<li>multi-datacenter：无需复杂的配置，即可支持任意数量的区域。</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>微服务</tag>
+        <tag>consul</tag>
       </tags>
   </entry>
   <entry>
@@ -5390,19 +5490,24 @@
       </tags>
   </entry>
   <entry>
-    <title>consul介绍</title>
-    <url>/2019/06/18/md/part/microServices/consul/</url>
-    <content><![CDATA[<p>consul是分布式的、高可用、横向扩展的（CP）。consul提供的一些关键特性：</p>
+    <title>netty介绍</title>
+    <url>/2019/06/18/md/%E9%AB%98%E5%8F%AF%E7%94%A8/Netty/</url>
+    <content><![CDATA[<p>netty是由JBOSS提供的一个java开源框架。<br>netty提供异步的、事件驱动的网络应用程序框架和工具，用以快速开发高性能、高可靠性的网络服务器和客户端程序。</p>
+<p>netty：异步非阻塞开源框架<br>bio：同步阻塞<br>nio：同步非阻塞<br>bio：异步非阻塞</p>
+<p>一个IO操作其实分成了两个步骤：发起IO请求和实际的IO操作。<br>同步IO和异步IO的区别就在于第二个步骤是否阻塞，如果实际的IO读写阻塞请求进程，那么就是同步IO。<br>阻塞IO和非阻塞IO的区别在于第一步，发起IO请求是否会被阻塞，如果阻塞直到完成那么就是传统的阻塞IO，如果不阻塞，那么就是非阻塞IO。 </p>
 <ul>
-<li>service discovery：consul通过DNS或者HTTP接口使服务注册和服务发现变的很容易，一些外部服务，例如saas提供的也可以一样注册。</li>
-<li>health checking：健康检测使consul可以快速的告警在集群中的操作。和服务发现的集成，可以防止服务转发到故障的服务上面。</li>
-<li>key/value storage：一个用来存储动态配置的系统。提供简单的HTTP接口，可以在任何地方操作。</li>
-<li>multi-datacenter：无需复杂的配置，即可支持任意数量的区域。</li>
+<li><p>同步阻塞：你到饭馆点餐，然后在那等着，还要一边喊：好了没啊！ </p>
+</li>
+<li><p>同步非阻塞：在饭馆点完餐，就去遛狗了。不过溜一会儿，就回饭馆喊一声：好了没啊！ </p>
+</li>
+<li><p>异步阻塞：遛狗的时候，接到饭馆电话，说饭做好了，让您亲自去拿。 </p>
+</li>
+<li><p>异步非阻塞：饭馆打电话说，我们知道您的位置，一会给你送过来，安心遛狗就可以了。 </p>
+</li>
 </ul>
 ]]></content>
       <tags>
-        <tag>consul</tag>
-        <tag>微服务</tag>
+        <tag>netty</tag>
       </tags>
   </entry>
   <entry>
@@ -5428,60 +5533,6 @@
 ]]></content>
       <tags>
         <tag>响应式编程</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>测试相关</title>
-    <url>/2019/06/18/md/%E6%B5%8B%E8%AF%95/</url>
-    <content><![CDATA[<p>把数据把某种逻辑来分类: 把一张表拆成多张有一样的字段但是不同种类的表</p>
-<p>把数据按字段分，也就是竖着分表: 把一些不经常改的数据放在一个表里，经常改的数据放在另外多个表里。把一张表变成1对1的关系</p>
-<p>平均分表: 通过主键ID的范围来分表。</p>
-<h4 id="测试分类"><a href="#测试分类" class="headerlink" title="测试分类"></a>测试分类</h4><p>冒烟测试;<br>    冒烟测试就是先保证系统能跑的起来，不至于让测试工作做到一半突然出现错误导致业务中断。目的就是先通过最基本的测试</p>
-<p>猴子测试:<br>    它针对的不是功能点，而是业务流程,就是说，你把自己看成白痴，随便乱点，没有任何主观想法参与进来，让一些想不到的操作呈现出错误来</p>
-<p>数据库来说吧， 数据做了分区， 一致性怎么保证啊？   选择分布式事务非常麻烦， 有时候不得不选择最终一致性来妥协</p>
-<p>迅速定位问题:</p>
-<p>一是查看错误日志，推断错误的可能</p>
-]]></content>
-      <tags>
-        <tag>测试</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>netty介绍</title>
-    <url>/2019/06/18/md/%E9%AB%98%E5%8F%AF%E7%94%A8/Netty/</url>
-    <content><![CDATA[<p>netty是由JBOSS提供的一个java开源框架。<br>netty提供异步的、事件驱动的网络应用程序框架和工具，用以快速开发高性能、高可靠性的网络服务器和客户端程序。</p>
-<p>netty：异步非阻塞开源框架<br>bio：同步阻塞<br>nio：同步非阻塞<br>bio：异步非阻塞</p>
-<p>一个IO操作其实分成了两个步骤：发起IO请求和实际的IO操作。<br>同步IO和异步IO的区别就在于第二个步骤是否阻塞，如果实际的IO读写阻塞请求进程，那么就是同步IO。<br>阻塞IO和非阻塞IO的区别在于第一步，发起IO请求是否会被阻塞，如果阻塞直到完成那么就是传统的阻塞IO，如果不阻塞，那么就是非阻塞IO。 </p>
-<ul>
-<li><p>同步阻塞：你到饭馆点餐，然后在那等着，还要一边喊：好了没啊！ </p>
-</li>
-<li><p>同步非阻塞：在饭馆点完餐，就去遛狗了。不过溜一会儿，就回饭馆喊一声：好了没啊！ </p>
-</li>
-<li><p>异步阻塞：遛狗的时候，接到饭馆电话，说饭做好了，让您亲自去拿。 </p>
-</li>
-<li><p>异步非阻塞：饭馆打电话说，我们知道您的位置，一会给你送过来，安心遛狗就可以了。 </p>
-</li>
-</ul>
-]]></content>
-      <tags>
-        <tag>netty</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>docker运行redis</title>
-    <url>/2019/06/18/md/part/docker/redis/</url>
-    <content><![CDATA[<h4 id="运行容器"><a href="#运行容器" class="headerlink" title="运行容器"></a>运行容器</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker run  --privileged  --name redis -v /docker/redis/data:/data  -p  6379:6379 -d redis:5.0.5  redis-server --appendonly yes</span></pre></td></tr></table></figure>
-
-
-
-
-
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">#客户端连 redis</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">redis-cli.exe -h <span class="number">192.168</span>.<span class="number">85.135</span> -p <span class="number">6379</span></span></pre></td></tr></table></figure>
-
-]]></content>
-      <tags>
-        <tag>redis</tag>
-        <tag>docker</tag>
       </tags>
   </entry>
   <entry>
