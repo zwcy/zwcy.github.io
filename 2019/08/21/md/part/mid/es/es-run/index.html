@@ -47,15 +47,15 @@
   };
 </script>
 
-  <meta name="description" content="启动下载 https:&#x2F;&#x2F;www.elastic.co&#x2F;products&#x2F;elasticsearch 运行执行bin文件夹中的elasticsearch.bat ，查看  http:&#x2F;&#x2F;localhost:9200 安装ik中文分词器https:&#x2F;&#x2F;github.com&#x2F;medcl&#x2F;elasticsearch-analysis-ik&#x2F;releases  选择和已经下载的elasticsearch版">
+  <meta name="description" content="启动下载 https:&#x2F;&#x2F;www.elastic.co&#x2F;products&#x2F;elasticsearch https:&#x2F;&#x2F;github.com&#x2F;elastic&#x2F;elasticsearch 运行执行bin文件夹中的elasticsearch.bat ，查看  http:&#x2F;&#x2F;localhost:9200 安装ik中文分词器https:&#x2F;&#x2F;github.com&#x2F;medcl&#x2F;elasticsearch-ana">
 <meta property="og:type" content="article">
 <meta property="og:title" content="es搭建">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;08&#x2F;21&#x2F;md&#x2F;part&#x2F;mid&#x2F;es&#x2F;es-run&#x2F;index.html">
 <meta property="og:site_name" content="小灰灰的博客">
-<meta property="og:description" content="启动下载 https:&#x2F;&#x2F;www.elastic.co&#x2F;products&#x2F;elasticsearch 运行执行bin文件夹中的elasticsearch.bat ，查看  http:&#x2F;&#x2F;localhost:9200 安装ik中文分词器https:&#x2F;&#x2F;github.com&#x2F;medcl&#x2F;elasticsearch-analysis-ik&#x2F;releases  选择和已经下载的elasticsearch版">
+<meta property="og:description" content="启动下载 https:&#x2F;&#x2F;www.elastic.co&#x2F;products&#x2F;elasticsearch https:&#x2F;&#x2F;github.com&#x2F;elastic&#x2F;elasticsearch 运行执行bin文件夹中的elasticsearch.bat ，查看  http:&#x2F;&#x2F;localhost:9200 安装ik中文分词器https:&#x2F;&#x2F;github.com&#x2F;medcl&#x2F;elasticsearch-ana">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2019-08-21T08:38:50.000Z">
-<meta property="article:modified_time" content="2019-11-28T06:38:05.823Z">
+<meta property="article:modified_time" content="2020-03-27T11:32:20.356Z">
 <meta property="article:author" content="mqiy">
 <meta property="article:tag" content="es">
 <meta name="twitter:card" content="summary">
@@ -142,7 +142,7 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">55</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">52</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
@@ -152,7 +152,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">183</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">219</span></a>
 
   </li>
         <li class="menu-item menu-item-relate">
@@ -252,7 +252,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>826</span>
+              <span>1.6k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -272,6 +272,7 @@
 
       
         <h4 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h4><h4 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h4><p> <a href="https://www.elastic.co/products/elasticsearch" target="_blank" rel="noopener">https://www.elastic.co/products/elasticsearch</a></p>
+<p><a href="https://github.com/elastic/elasticsearch" target="_blank" rel="noopener">https://github.com/elastic/elasticsearch</a></p>
 <h4 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h4><p>执行bin文件夹中的elasticsearch.bat ，查看  <a href="http://localhost:9200" target="_blank" rel="noopener">http://localhost:9200</a></p>
 <h4 id="安装ik中文分词器"><a href="#安装ik中文分词器" class="headerlink" title="安装ik中文分词器"></a>安装ik中文分词器</h4><p><a href="https://github.com/medcl/elasticsearch-analysis-ik/releases" target="_blank" rel="noopener">https://github.com/medcl/elasticsearch-analysis-ik/releases</a></p>
 <ul>
@@ -280,6 +281,12 @@
 <li>重新运行elasticsearch.bat</li>
 </ul>
 <p><a href="https://blog.csdn.net/u010391342/article/details/82117389" target="_blank" rel="noopener">https://blog.csdn.net/u010391342/article/details/82117389</a></p>
+<h3 id="集群elasticsearch-yml相关配置如下"><a href="#集群elasticsearch-yml相关配置如下" class="headerlink" title="集群elasticsearch.yml相关配置如下"></a>集群<code>elasticsearch.yml</code>相关配置如下</h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="string">----------------------------------</span> <span class="string">Cluster</span> <span class="string">-----------------------------------</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="attr">cluster.name:</span> <span class="string">mqiy-es</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="comment">#</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># ------------------------------------ Node ------------------------------------</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="attr">node.name:</span> <span class="string">node-1</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># ---------------------------------- Network -----------------------------------</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"><span class="attr">network.host:</span> <span class="number">192.168</span><span class="number">.85</span><span class="number">.141</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"><span class="attr">http.port:</span> <span class="number">9200</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># --------------------------------- Discovery ----------------------------------</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line"><span class="attr">discovery.seed_hosts:</span> <span class="string">["192.168.85.142",</span> <span class="string">"192.168.85.143"</span><span class="string">]</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line"><span class="attr">cluster.initial_master_nodes:</span> <span class="string">["node-1",</span> <span class="string">"node-2"</span><span class="string">,"node-3"]</span></span></pre></td></tr></table></figure>
+
+<h4 id="查看集群状态"><a href="#查看集群状态" class="headerlink" title="查看集群状态"></a>查看集群状态</h4><blockquote>
+<p><a href="http://192.168.85.141:9200/_cat/health?v" target="_blank" rel="noopener">http://192.168.85.141:9200/_cat/health?v</a>      查看集群的健康状态<br><a href="http://192.168.85.141:9200/_cat/indices?v" target="_blank" rel="noopener">http://192.168.85.141:9200/_cat/indices?v</a>     查看集群的索引数<br><a href="http://192.168.85.141:9200/_cat/allocation?v" target="_blank" rel="noopener">http://192.168.85.141:9200/_cat/allocation?v</a>  查看集群所在磁盘的分配状况<br><a href="http://192.168.85.141:9200/_cat/nodes?v" target="_blank" rel="noopener">http://192.168.85.141:9200/_cat/nodes?v</a>       查看集群的节点<br><a href="http://192.168.85.141:9200/_cat" target="_blank" rel="noopener">http://192.168.85.141:9200/_cat</a>               查看集群信息目录(包含上面的)</p>
+</blockquote>
+<p>v 表示带title</p>
 <h3 id="启动过程报错"><a href="#启动过程报错" class="headerlink" title="启动过程报错"></a>启动过程报错</h3><h4 id="max-virtual-memory-areas-vm-max-map-count-65530-is-too-low-increase-to-at-least-262144"><a href="#max-virtual-memory-areas-vm-max-map-count-65530-is-too-low-increase-to-at-least-262144" class="headerlink" title="max virtual memory areas vm.max_map_count [65530] is too low, increase to at least [262144]"></a>max virtual memory areas vm.max_map_count [65530] is too low, increase to at least [262144]</h4><p>添加配置 /etc/sysctl.conf (永久性修改)</p>
 <figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># elasticsearch config start</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="meta">vm.max_map_count</span>=<span class="string">262144</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># elasticsearch config end</span></span></pre></td></tr></table></figure>
 
@@ -288,11 +295,9 @@
 </blockquote>
 <h4 id="max-file-descriptors-4096-for-elasticsearch-process-is-too-low-increase-to-at-least-65535"><a href="#max-file-descriptors-4096-for-elasticsearch-process-is-too-low-increase-to-at-least-65535" class="headerlink" title="max file descriptors [4096] for elasticsearch process is too low, increase to at least [65535]"></a>max file descriptors [4096] for elasticsearch process is too low, increase to at least [65535]</h4><p>添加配置 /etc/security/limits.conf  (永久性修改)　</p>
 <figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># elasticsearch config start</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="meta">*</span> <span class="string">soft nofile 65536</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="meta">*</span> <span class="string">hard nofile 131072</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="meta">*</span> <span class="string">soft nproc 2048</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="meta">*</span> <span class="string">hard nproc 4096</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># elasticsearch config end</span></span></pre></td></tr></table></figure>
-
-<p>重启，<code>elasticsearch.yml</code>相关配置如下</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="attr">node.name:</span> <span class="string">node-1</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="attr">cluster.initial_master_nodes:</span> <span class="string">["node-1"]</span></span></pre></td></tr></table></figure>
-
-
+<blockquote>
+<p>其中<code>*</code> 号不能省略，不需要重启</p>
+</blockquote>
 
     </div>
 
@@ -378,7 +383,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#启动"><span class="nav-number">1.</span> <span class="nav-text">启动</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#下载"><span class="nav-number">2.</span> <span class="nav-text">下载</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#运行"><span class="nav-number">3.</span> <span class="nav-text">运行</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装ik中文分词器"><span class="nav-number">4.</span> <span class="nav-text">安装ik中文分词器</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#启动过程报错"><span class="nav-number"></span> <span class="nav-text">启动过程报错</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#max-virtual-memory-areas-vm-max-map-count-65530-is-too-low-increase-to-at-least-262144"><span class="nav-number">1.</span> <span class="nav-text">max virtual memory areas vm.max_map_count [65530] is too low, increase to at least [262144]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#max-file-descriptors-4096-for-elasticsearch-process-is-too-low-increase-to-at-least-65535"><span class="nav-number">2.</span> <span class="nav-text">max file descriptors [4096] for elasticsearch process is too low, increase to at least [65535]</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#启动"><span class="nav-number">1.</span> <span class="nav-text">启动</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#下载"><span class="nav-number">2.</span> <span class="nav-text">下载</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#运行"><span class="nav-number">3.</span> <span class="nav-text">运行</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装ik中文分词器"><span class="nav-number">4.</span> <span class="nav-text">安装ik中文分词器</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#集群elasticsearch-yml相关配置如下"><span class="nav-number"></span> <span class="nav-text">集群elasticsearch.yml相关配置如下</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#查看集群状态"><span class="nav-number">1.</span> <span class="nav-text">查看集群状态</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#启动过程报错"><span class="nav-number"></span> <span class="nav-text">启动过程报错</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#max-virtual-memory-areas-vm-max-map-count-65530-is-too-low-increase-to-at-least-262144"><span class="nav-number">1.</span> <span class="nav-text">max virtual memory areas vm.max_map_count [65530] is too low, increase to at least [262144]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#max-file-descriptors-4096-for-elasticsearch-process-is-too-low-increase-to-at-least-65535"><span class="nav-number">2.</span> <span class="nav-text">max file descriptors [4096] for elasticsearch process is too low, increase to at least [65535]</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -392,7 +397,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">183</span>
+          <span class="site-state-item-count">219</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -405,7 +410,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">55</span>
+        <span class="site-state-item-count">52</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -439,12 +444,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">227k</span>
+    <span title="站点总字数">256k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">3:27</span>
+    <span title="站点阅读时长">3:52</span>
 </div>
 
         

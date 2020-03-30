@@ -140,7 +140,7 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">55</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">52</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
@@ -150,7 +150,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">183</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">219</span></a>
 
   </li>
         <li class="menu-item menu-item-relate">
@@ -211,7 +211,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/03/md/%E9%AB%98%E5%8F%AF%E7%94%A8/rocketmq/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/21/md/part/distributed/%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -225,7 +225,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2019/07/03/md/%E9%AB%98%E5%8F%AF%E7%94%A8/rocketmq/" class="post-title-link" itemprop="url">rocketmq</a>
+            <a href="/2019/10/21/md/part/distributed/%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81/" class="post-title-link" itemprop="url">分布式锁</a>
         </h1>
 
         <div class="post-meta">
@@ -235,7 +235,7 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2019-07-03 14:13 14:13:10" itemprop="dateCreated datePublished" datetime="2019-07-03T14:13:10+08:00">2019-07-03 14:13</time>
+              <time title="创建时间：2019-10-21 15:16 15:16:13" itemprop="dateCreated datePublished" datetime="2019-10-21T15:16:13+08:00">2019-10-21 15:16</time>
             </span>
 
           <br>
@@ -244,7 +244,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>354</span>
+              <span>65</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -263,442 +263,13 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">nohup sh bin/mqnamesrv &amp;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">tail -f ~/logs/rocketmqlogs/namesrv.log</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">nohup sh mqbroker -n localhost:9876 -c conf/broker.conf &amp;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">nohup sh bin/mqbroker -n localhost:9876 -c conf/broker.conf  autoCreateTopicEnable=true  &amp;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line"> tail -f ~/logs/rocketmqlogs/broker.log </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line"> export NAMESRV_ADDR=localhost:9876</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">关闭rocketmq</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line">sh bin/mqshutdown broker</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line">sh bin/mqshutdown namesrv</span></pre></td></tr></table></figure>
-
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/21/md/linux/%E5%A6%82%E4%BD%95%E6%9F%A5%E6%89%BESHELL%E7%9A%84%E8%BF%9B%E7%A8%8B%E5%8F%B7%E5%B9%B6%E6%9D%80%E6%AD%BB/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="mqiy">
-      <meta itemprop="description" content="永远为下个月离职做好准备">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小灰灰的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/06/21/md/linux/%E5%A6%82%E4%BD%95%E6%9F%A5%E6%89%BESHELL%E7%9A%84%E8%BF%9B%E7%A8%8B%E5%8F%B7%E5%B9%B6%E6%9D%80%E6%AD%BB/" class="post-title-link" itemprop="url">如何查找SHELL的进程号并杀死</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-06-21 17:59 17:59:40" itemprop="dateCreated datePublished" datetime="2019-06-21T17:59:40+08:00">2019-06-21 17:59</time>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>369</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="shell查找进程并杀死"><a href="#shell查找进程并杀死" class="headerlink" title="shell查找进程并杀死"></a>shell查找进程并杀死</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/sh</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">tomcat_id=`ps -ef | grep tomcat | grep -v "grep" | awk '&#123;print $2&#125;'`</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">echo $tomcat_id</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">for id in $tomcat_id</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">do</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">    kill -9 $id  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">    echo "killed $id"  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">done</span></pre></td></tr></table></figure>
-<blockquote>
-<p>注意：tomcat表示要查找的程序进程名，如：tomcat、8081端口、redis等等。</p>
-</blockquote>
-<h3 id="linux查找进程并杀死"><a href="#linux查找进程并杀死" class="headerlink" title="linux查找进程并杀死"></a>linux查找进程并杀死</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">####查找tomcat进程</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">ps -ef | grep tomcat | grep -v grep | awk '&#123;print $2&#125;'</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">####查找tomcat进程并杀死</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">ps -ef | grep tomcat | grep -v grep | awk '&#123;print $2&#125;' | xargs kill -9</span></pre></td></tr></table></figure>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/21/md/life/%E6%83%85%E5%95%8650%E5%88%99/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="mqiy">
-      <meta itemprop="description" content="永远为下个月离职做好准备">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小灰灰的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/06/21/md/life/%E6%83%85%E5%95%8650%E5%88%99/" class="post-title-link" itemprop="url">情商50则</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-06-21 15:35 15:35:59" itemprop="dateCreated datePublished" datetime="2019-06-21T15:35:59+08:00">2019-06-21 15:35</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E4%BA%BA%E7%94%9F%E6%84%9F%E6%82%9F/" itemprop="url" rel="index">
-                    <span itemprop="name">人生感悟</span>
-                  </a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1.2k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>1，话别说太满，人别熟太快。<br>3，不要把别人想得太坏，也不要把别人想得太好，都是凡人。<br>2，别人自嘲可以，但你千万别附和<br>4，可以嘲笑你的朋友，但不能嘲笑他喜欢的东西。  </p>
-<h2 id="34，自嘲是最高境界，而不是嘲笑别人。"><a href="#34，自嘲是最高境界，而不是嘲笑别人。" class="headerlink" title="34，自嘲是最高境界，而不是嘲笑别人。  "></a>34，自嘲是最高境界，而不是嘲笑别人。  </h2><p>6，刚开始和对方不熟悉的时候，聊到晚上十点多对方发来消息就别回复了，第二天早晨再回复，这样又可以聊一天。<br>7，把“随便”改成“听你的”。<br>23，把“听明白了吗”换成“我说明白了吗”。<br>5，把每一句“我不会”都改成“我可以学”<br>把“谢谢”改成“谢谢你” 并微笑看着对方的眼睛    </p>
-<hr>
-<p>8，别人骂你你要听，别人夸你你别信。<br>9，请道歉而不是取笑别人开不起玩笑，你以为谁没有底线只不过还没到底而已。<br>10，聊天时别人发微笑，你不知道怎么回的话，就回，你笑得真好看。<br>11，能用表情包解决的就不要说脏话！<br>12，恰到好处的装逼，适可而止的套路。  </p>
-<h2 id="13，如果一个人不理你，有可能是对方的问题；如果大家都不理你，那你就要考虑自身问题了。"><a href="#13，如果一个人不理你，有可能是对方的问题；如果大家都不理你，那你就要考虑自身问题了。" class="headerlink" title="13，如果一个人不理你，有可能是对方的问题；如果大家都不理你，那你就要考虑自身问题了。  "></a>13，如果一个人不理你，有可能是对方的问题；如果大家都不理你，那你就要考虑自身问题了。  </h2><p>14，人前不应该说的话，背后也别说。<br>27，不要在公众场合揭别人的短处，让别人难堪。<br>35，请不要随意出卖一个朋友的隐私来取悦另一个不熟的朋友。<br>46，不要人后捅刀子嘴别贱。  </p>
-<hr>
-<p>15，在最愤怒时忍住最伤人对方的那句话。<br>17，不要把负能量带给身边的人。<br>18，不要吝啬你的赞美和表达爱意的语言。<br>40，越是亲近的人越要用心对待，一句随意的话会伤害她。<br>42，千万不要为了恋爱而淡了身边所有人。<br>21，真的不必把太多人请进生命里，太多热情总是不被珍惜。  </p>
-<hr>
-<p>16，如果没有十足的把握和必要，就不要轻易说假话。<br>19，女孩子永远抗拒不了陪她通宵聊天的人。<br>20，刻薄嘴欠和幽默是两回事；口无遮拦和坦率是两回事；没有教养和随性是两回事；轻重不分和耿直是两回事。  </p>
-<hr>
-<p>22，如果遇到了傻Ⅹ，不要与他争论，而且要同意他的一切观点，把他培养成大傻Ⅹ。<br>24，不能侮辱别人的idol，谨记！<br>47，践踏别人的梦想等同于谋杀。  </p>
-<hr>
-<p>25，在拒绝这件事上，越简单越好，明明是别人需求自己帮忙，解释半天变成自己亏欠了别人的感觉，帮得上，想帮就帮，帮不上，就拒绝。人际交往，简单明了有时最恰当，懂得拒绝，才可以洒脱不纠结。<br>33，学会拒绝，没人会感激你的善良，他们只会得寸进尺。  </p>
-<hr>
-<p>26，逢人只说三分话，未可全抛一片心。<br>29，看透不说透，还是好朋友。<br>39，最印象的一句话，“交友不必言尽，言尽则无友”  </p>
-<hr>
-<p>28，社交没那么容易，每个人都有他的手机。<br>30，当你往上爬的时候对别人好一点，因为你走下坡路的时候会遇到他们。</p>
-<hr>
-<p>31，颜值要高，脾气要好，原则要有。<br>36，有分寸的信任，有理由的怀疑。<br>37，把身材练好，把妆化好。<br>41，修得豆腐嘴，藏得刀子心。<br>43，清醒时做事，糊涂时读书，大怒时睡觉，独处时思考。  </p>
-<hr>
-<p>32，该叫阿姨的叫姐，该叫姐的叫美女该叫美女的叫妹子。<br>38，不会讲话时别瞎说沉默微笑更好。<br>44，永远不要听信别人口中的他。<br>45，女生之间的嫉妒心太可怕，不要公开说这个女生比那个好看。<br>48，常与同好争高下，不共傻瓜论短长。——出自《欢乐颂》  </p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/21/md/linux/linux%E5%8E%8B%E7%BC%A9%E4%B8%8E%E8%A7%A3%E5%8E%8B/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="mqiy">
-      <meta itemprop="description" content="永远为下个月离职做好准备">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小灰灰的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/06/21/md/linux/linux%E5%8E%8B%E7%BC%A9%E4%B8%8E%E8%A7%A3%E5%8E%8B/" class="post-title-link" itemprop="url">linux压缩与解压</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-06-21 15:35 15:35:59" itemprop="dateCreated datePublished" datetime="2019-06-21T15:35:59+08:00">2019-06-21 15:35</time>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>829</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h4 id="unzip解压"><a href="#unzip解压" class="headerlink" title="unzip解压"></a>unzip解压</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 解压window中压缩的文件，不会文件名包含中文乱码</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">unzip -O CP936 xxx.zip</span></pre></td></tr></table></figure>
-
-
-<h4 id="tar-命令"><a href="#tar-命令" class="headerlink" title="tar 命令"></a>tar 命令</h4><p>-c: 建立压缩档案<br>-x：解压<br>-t：查看内容<br>-r：向压缩归档文件末尾追加文件<br>-u：更新原压缩包中的文件</p>
-<p>这五个是独立的命令，压缩解压都要用到其中一个，可以和别的命令连用但只能用其中一个。下面的参数是根据需要在压缩或解压档案时可选的。</p>
-<p>-z：有gzip属性的<br>-j：有bz2属性的<br>-Z：有compress属性的<br>-v：显示所有过程<br>-O：将文件解开到标准输出</p>
-<p>下面的参数-f是必须的</p>
-<p>-f: 使用档案名字，切记，这个参数是最后一个参数，后面只能接档案名。</p>
-<h4 id="tar-示例"><a href="#tar-示例" class="headerlink" title="tar 示例"></a>tar 示例</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">#### 压缩</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">tar –cvf jpg.tar *.jpg      // 将目录里所有jpg文件打包成tar.jpg</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">tar –czf jpg.tar.gz *.jpg   // 将目录里所有jpg文件打包成jpg.tar后，生成gzip压缩过的包，命名为jpg.tar.gz</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">tar –cjf jpg.tar.bz2 *.jpg  // 将目录里所有jpg文件打包成jpg.tar后，生成bzip2压缩过的包，命名为jpg.tar.bz2</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">tar –cZf jpg.tar.Z *.jpg    // 将目录里所有jpg文件打包成jpg.tar后，生成umcompress压缩过的包，命名为jpg.tar.Z</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">rar a jpg.rar *.jpg         // rar格式的压缩，需要先下载rar for Linux</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">zip -r  jpg.zip  *.jpg      // zip格式的压缩  -r 递归压缩</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">####  解压</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">tar –xvf file.tar           //解压 tar包</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">tar -xzvf file.tar.gz       //解压tar.gz</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">tar -xjvf file.tar.bz2      //解压 tar.bz2</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">tar –xZvf file.tar.Z -C /opt/dev      //解压tar.Z</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">unrar e file.rar            //解压rar</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">unzip file.zip -d /opt/dev             //解压zip</span></pre></td></tr></table></figure>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/21/md/life/%E8%BF%99%E5%B0%B1%E6%98%AF%E4%BA%BA%E7%94%9F/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="mqiy">
-      <meta itemprop="description" content="永远为下个月离职做好准备">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小灰灰的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/06/21/md/life/%E8%BF%99%E5%B0%B1%E6%98%AF%E4%BA%BA%E7%94%9F/" class="post-title-link" itemprop="url">这就是人生</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-06-21 15:35 15:35:59" itemprop="dateCreated datePublished" datetime="2019-06-21T15:35:59+08:00">2019-06-21 15:35</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E4%BA%BA%E7%94%9F%E6%84%9F%E6%82%9F/" itemprop="url" rel="index">
-                    <span itemprop="name">人生感悟</span>
-                  </a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1.7k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>孤独是人生的常态，一定要拥有真正喜欢的兴趣爱好，这样才能支持你渡过无数个漫漫长夜和无数个孤独的时候，读书则是成本最低的兴趣爱好。很多人看起来什么都感兴趣，啥都能参与一定点但都不深入，这种人是最孤独的，因为他根本不知道自己想要什么，喜欢什么。</p>
-<p>绝大部分焦虑不过是脑子勤奋（想的太多）和身体懒惰之间的矛盾，自视甚高是人之常情，但一般要等到人到中年才能明白。20岁：我一定行——40岁：我本可以——60岁：我真的不行哎，是大部分人的人生轨迹。</p>
-<p>一个人行不行可能早就注定了，比如家庭，比如言行举止，比如不经意间的流露……比如知乎的提问，大部分人都不懂得先问是不是再问为什么，大部分人都来懒的出奇，对自己不负责任，问的很随便，不说任何前提，不说任何自己情况，比如太多人问什么专业好、XX专业有没有前景、550分能读什么学校……只有这几个字，惜墨如金守口如瓶的，这些人将来基本上都会庸庸碌碌一辈子。因为思考意识具有决定性作用，跟年龄关系不大，如果你跟顶级中学的高中生聊过天 ，会发现她们比很多大学生有思想有见识，问问题的时候会把个人和家庭情况、问题背景、愿景交待的很清楚。</p>
-<p>对于大部分人来说，体制内尤其是公务员是最好是工作，因为大部分人到了中年才会明白自己不过是庸人，是站在路边给别人喝彩，坐在台下给别人鼓掌的人，年轻时所谓的理想情怀豪言壮语只是对自己不了解，或者人云亦云。</p>
-<p>大部分人一辈子也不会遇到轰轰烈烈荡气回肠的爱情，不过的找一个能接受的，不喜欢也不讨厌，甚至不那么讨厌的人将就着，婚姻，不过是人生的例行公事。</p>
-<p>大部分失败的婚姻不是败给大是大非，而是日常再小不过的琐事，零刀子割肉没感觉，时间长了才会发现情感已经跌破发行价了。跟门当户对、经济条件、颜值相比，一个有趣的人开朗的人善良的人积极阳光的人，重要的多。大多数的婚姻失败不是大是大非的原则性问题，而是无数细枝末节的煎熬和落差，天长日久的日常摩擦，好的性格和心态，可以避免和减少大多数以上不快。</p>
-<p>婚姻的真谛不只是爱，更多是忍受，求同存异，利弊权衡。</p>
-<p>绝大多数人找的媳妇儿都不如大学里的恋人，能在大学找个媳妇儿就尽量，毕业后你会发现你根本找不到这么好的了，甚至可以让你越来越绝望。不被父母祝福的婚姻大概率是不会幸福的，尤其是远嫁、两人落差太大，都是一种孤军深入式的冒险。</p>
-<p>没有遭遇大的意外，比如战争、大的天灾、绝症、残疾，有一份能养家糊口的工作就是一种幸福甚至幸运，当然你不会觉察到，直到失去。大部分人一辈子也没有一个真正的爱好，没有被谁真爱过，真爱过谁，没有痛痛快快哭过笑过，都是复制黏贴型人生。</p>
-<p>绝大多数人都有阴暗面，即便一辈子不为人所知。人性是最不靠谱的东西，法律和契约最实实在在的。</p>
-<p>大多数人一辈子也没有真正的朋友，所谓的朋友不过是同学、同事、同行、熟人甚至亲戚邻居身份的外延，别看平时亲密热烈，你好我好，一遇到事情，朋友二字就褪色了。朋友也不是人生的标配，友情也不是一成不变的，因为每个人都是在变化之中，当再次见面时，大家说着言不由衷的话，去没有什么交集时，就让这份友情活在对往事的回忆中去吧。</p>
-<p>除了父母，真的很少有人想你好，大部分人盼你倒大霉。</p>
-<p>大部分人都会受父母的影响，这种影响是骨子里的，越想摆脱越摆脱不了，会草蛇灰线伏延几十年，尤其是人到中年，有一天会突然发现自己变成了讨厌的模样，被父母附体。</p>
-<p>大部分人，一辈子和文艺也没有交集，看电影看个热闹，听音乐听个响，看书图个刺激，虽然朋友圈都是纳兰容若、尼采。文艺青年大都会在潦倒、衰败、激愤、穷酸中渡过一生。</p>
-<p>出轨、堕落是一种戒不了毒，不要指望用感动、谅解、宽恕去改变，当然也有回头是岸立地成佛的，但概率低到你不敢冒险。</p>
-<p>知乎大部分故事都是假的，教人月入XX年入XX大都是收智商税的，推荐的东西大部分用处不大，思维、决策、分析等高赞文章大都是自问自答，也是心理学管理学书社会学籍上都有的，基本上属于收藏不看系列。</p>
-<p>残忍归残忍，可日子也得过不是，罗曼罗兰那句话不是都会背了嘛。其实也谈不上残忍，这就是真实的人生，只不过大部分人把生活想的太美好而已。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/21/md/part/microServices/Nacos%E9%85%8D%E7%BD%AE%E7%9A%84%E5%8A%A0%E8%BD%BD%E8%A7%84%E5%88%99%E8%AF%A6%E8%A7%A3/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="mqiy">
-      <meta itemprop="description" content="永远为下个月离职做好准备">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小灰灰的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/06/21/md/part/microServices/Nacos%E9%85%8D%E7%BD%AE%E7%9A%84%E5%8A%A0%E8%BD%BD%E8%A7%84%E5%88%99%E8%AF%A6%E8%A7%A3/" class="post-title-link" itemprop="url">Nacos配置的加载规则详解</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-06-21 15:35 15:35:59" itemprop="dateCreated datePublished" datetime="2019-06-21T15:35:59+08:00">2019-06-21 15:35</time>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>510</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="配置管理"><a href="#配置管理" class="headerlink" title="配置管理"></a>配置管理</h3><ul>
-<li>Data ID中的<code>alibaba-nacos-config-client</code>：对应客户端的配置<code>spring.cloud.nacos.config.prefix</code>，默认值为<code>${spring.application.name}</code>，即：服务名</li>
-<li>Data ID中的<code>properties</code>：对应客户端的配置<code>spring.cloud.nacos.config.file-extension</code>，默认值为<code>properties</code></li>
-<li>Group的值<code>DEFAULT_GROUP</code>：对应客户端的配置<code>spring.cloud.nacos.config.group</code>，默认值为<code>DEFAULT_GROUP</code></li>
+          <p>三种实现：</p>
+<ul>
+<li>基于数据库实现分布式锁</li>
+<li>基于缓存（redis，memcached，tair）实现分布式锁</li>
+<li>基于Zookeeper实现分布式锁</li>
 </ul>
-<p>在采用默认值的应用要加载的配置规则就是：<code>Data ID=${spring.application.name}.properties</code>，<code>Group=DEFAULT_GROUP</code></p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="attr">server:</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  <span class="attr">port:</span> <span class="number">9000</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="attr">spring:</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">  <span class="attr">application:</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    <span class="attr">name:</span> <span class="string">alibaba-nacos-discovery-client</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">  <span class="comment"># server discovery</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">  <span class="attr">cloud:</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">    <span class="attr">nacos:</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">      <span class="attr">discovery:</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">        <span class="attr">server-addr:</span> <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span><span class="string">:8848</span></span></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -717,7 +288,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/21/md/life/%E7%94%9F%E6%B4%BB%E4%B8%AD%E6%9C%89%E5%93%AA%E4%BA%9B%E6%AE%8B%E5%BF%8D%E7%9A%84%E7%9C%9F%E7%9B%B8/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/17/md/part/mid/es/es%E4%BB%8B%E7%BB%8D/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -731,7 +302,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2019/06/21/md/life/%E7%94%9F%E6%B4%BB%E4%B8%AD%E6%9C%89%E5%93%AA%E4%BA%9B%E6%AE%8B%E5%BF%8D%E7%9A%84%E7%9C%9F%E7%9B%B8/" class="post-title-link" itemprop="url">生活中有哪些残忍的真相</a>
+            <a href="/2019/10/17/md/part/mid/es/es%E4%BB%8B%E7%BB%8D/" class="post-title-link" itemprop="url">es介绍</a>
         </h1>
 
         <div class="post-meta">
@@ -741,18 +312,7 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2019-06-21 15:35 15:35:59" itemprop="dateCreated datePublished" datetime="2019-06-21T15:35:59+08:00">2019-06-21 15:35</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E4%BA%BA%E7%94%9F%E6%84%9F%E6%82%9F/" itemprop="url" rel="index">
-                    <span itemprop="name">人生感悟</span>
-                  </a>
-                </span>
+              <time title="创建时间：2019-10-17 14:13 14:13:10" itemprop="dateCreated datePublished" datetime="2019-10-17T14:13:10+08:00">2019-10-17 14:13</time>
             </span>
 
           <br>
@@ -761,7 +321,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>2k</span>
+              <span>2.3k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -780,34 +340,25 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>1、如果你八岁，十八岁，二十八岁都没有漂亮起来，那这辈子大概率就没法好看了（男生同理）</p>
-<p>解：变有钱，变有内涵，变豁达，提升好看概率，实在不行，提升自己看得开的能力。</p>
-<p>2、大部分人终其一生都不能拥有及格的原生家庭，及格的校园生活，及格的职场发展，以及及格的婚姻和后代</p>
-<p>解：降低及格线，严以律己宽以待人，庸人不自扰。</p>
-<p>3、迷茫是人生80%的状态，剩下的百分之二十，都是一些俗不可耐的目标，比如考大学，比如找工作，比如谈对象，比如买房买车生孩子，恰恰是这些俗不可耐的目标才能暂时将你从迷茫的状态里拯救出来。</p>
-<p>解：做好当下一件事，接受迷茫的状态但不沉沦，或者试试把共产主义作为新的理想？</p>
-<p>4、算计，衡量，比较，得失利弊分析将贯穿大部分人的一生，洒脱，率性而为是很多人向往的状态，却很难做到。</p>
-<p>解：算计过程，衡量结果，但是不算计人心，不衡量感情。洒脱有时候真的意味着卸下很多责任，但凡人在世，岂能没有责任？</p>
-<p>5、攒钱，省吃俭用其实才是大部分人的生存之道，不然你以为拼多多是怎么火起来的，我听过投资需谨慎，理财有风险的，可从没听说过攒钱有风险，储蓄需谨慎的。</p>
-<p>解：没人知道十年后房价暴涨，与其遗憾，不如适当积蓄，给自己一个底气。</p>
-<p>6、有时候感情双方都是彼此的Plan B，却还要在婚礼上宣誓此生唯一。</p>
-<p>解：Plan B也是Plan，因为A计划失败，不得不启动B计划，还记得第一个发明可乐的人吗，他的A计划是止咳药来着，但是B计划更盈利不是吗？</p>
-<p>7、孩子比较爱父母的时候一般是自己无助的时候，父母比较爱孩子的时候一般是自己比较得意的时候。所以事业生活不顺的家长大多会打骂孩子，而混的风生水起的孩子容易忽略父母。（是的，就是这么扎心，父母子女之间的爱也有爱得可以为对方死，非常爱，比较爱，一般爱，不爱，讨厌，恨，恨不得对方去死等不同等级）。</p>
-<p>解：这是唯一一个无解的真相，只能参考第一题最后一句，提升自己看得开的能力。</p>
-<p>8、养个不如意的孩子会严重影响夫妻感情，家庭关系，声称孩子是宝贝天使的父母，心里都在给自己孩子悄悄打分，这个分数一直能打到儿女退休那天，退休金高低也会成为最后一项得分。</p>
-<p>解：养孩子之前，对自己进行充分评审和考核，确定孩子无论什么样，都不后悔做一遭父母，再带孩子来到这个世界上，如果只是把孩子当做自己人生的一个加分项，那说到底还是不配为人父母。</p>
-<p>9、鄙视链真实存在于各行各业，各种阶层，而且处于鄙视链高层的人经常表态的一句话是：我并不觉得XXX的人会有这样的缺点，也不会看不起他们，只是阅历见识不同，三观不同，没法聊得来。潜台词就是：我鄙视你，我不要跟你玩！处于底层的人则经常说这样的话：他们不过是XXXX，其实不也是XXX，谁稀罕他们！潜台词就是：你们那边好像很好玩，为啥不喊我一起玩?！</p>
-<p>解：努力成为鄙视链的上端，不然永远逃不脱鄙视链。</p>
-<p>10、大多数人理智上知道嫉贤妒能是错误的，但感情上已经红了眼，会在各种打擦边球的地方做小动作，让如日中天的人稍微落下西山，然后还会自我安慰：这事情并不能怨我，我能做什么啊，根本不会影响到的。</p>
-<p>解：得意时谨言慎行，失意时不落井下石，已经是很厉害的人了。</p>
-<p>11、生活中也许会发生，但只要电视剧里作为主题来演的，那一定是小概率事件：比如穷人家女孩嫁给富二代；比如家徒四壁的穷孩子考上了清北；比如后爸后妈对孩子视如己出，辛苦养育，感人泪下；比如抱错孩子刚好其中一家是很有钱而由此引发的十八年后的二十集剧情；比如你爱的人刚好也爱你。。。。</p>
-<p>因为不常发生，所以有演绎的价值，可惜蠢人总喜欢拿小概率事件当自家剧本，穷还不思进取，坐等孩子考清华，家庭矛盾都四分五裂了，还不快刀斩乱麻，就在那坐等突发事件发生，人设逆转然后阖家团圆（是的，点名批评最近热门剧“都挺好”的走向，这种剧情会麻痹多少病态的家庭，让他们误以为一切家庭乱象都会有这样的美好结尾）。</p>
-<p>解：看清楚什么是小概率事件，才能在大多数不如意事情发生的时候泰然处之，而又能在小概率事情发生时珍惜美好的那一刻。</p>
-<p>12、残忍的真相就是人人都知道真相，但还要合起来粉饰太平。</p>
-<p>解：生活的本质是钟摆运动，两端是繁花似锦，中间是漫长的平平无奇，粉饰太平也许是在摆动至下一个美好节点期间能做的最大的努力。</p>
-<p>罗曼罗兰那句耳熟能详的话作为结尾：There is only one heroism in the world: to see the world as it is and to love it.</p>
-<p>我写的这个答案的确很扎心，但是这并不是本意，扎心只是一瞬的感触，剩下的时间里依然过好每一天，才是大部分人的选择，我想看过我答案的人，并不会因为这些答案扎心就放弃继续生活了吧。</p>
-<p>我写的解其实也都是大多数人知道的道理，只是知道和做到，不是一回事，像我自己，扎心的真相都是我亲身经历，但是我也在努力践行我自己的英雄主义，与大家共勉。</p>
+          <h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>ElasticSearch 是一个<code>分布式</code>、<code>高扩展</code>、<code>高实时</code>的<code>搜索与数据分析引擎</code>。它能很方便的使大量数据具有搜索、分析和探索的能力。充分利用ElasticSearch的水平伸缩性，能使数据在生产环境变得更有价值。ElasticSearch 的实现原理主要分为以下几个步骤，首先用户将数据提交到Elastic Search 数据库中，再通过分词控制器去将对应的语句分词，将其权重和分词结果一并存入数据，当用户搜索数据时候，再根据权重将结果排名，打分，再将返回结果呈现给用户。<br>Elasticsearch是与名为Logstash的数据收集和日志解析引擎以及名为Kibana的分析和可视化平台一起开发的。这三个产品被设计成一个集成解决方案，称为“Elastic Stack”（以前称为“ELK stack”）。<br>Elasticsearch可以用于搜索各种文档。它提供可扩展的搜索，具有接近实时的搜索，并支持多租户。”Elasticsearch是分布式的，这意味着索引可以被分成分片，每个分片可以有0个或多个副本。每个节点托管一个或多个分片，并充当协调器将操作委托给正确的分片。再平衡和路由是自动完成的。“相关数据通常存储在同一个索引中，该索引由一个或多个主分片和零个或多个复制分片组成。一旦创建了索引，就不能更改主分片的数量。<br>Elasticsearch使用Lucene，并试图通过JSON和Java API提供其所有特性。它支持facetting和percolating，如果新文档与注册查询匹配，这对于通知非常有用。另一个特性称为“网关”，处理索引的长期持久性；例如，在服务器崩溃的情况下，可以从网关恢复索引。Elasticsearch支持<code>实时GET</code>请求，适合作为NoSQL数据存储，但<code>缺少分布式事务</code>。</p>
+<p>Lucene[‘lusen]</p>
+<h3 id="有关概念"><a href="#有关概念" class="headerlink" title="有关概念"></a>有关概念</h3><ul>
+<li>cluster：代表一个<a href="https://baike.baidu.com/item/集群" target="_blank" rel="noopener">集群</a>，集群中有多个节点，其中有一个为主节点，这个主节点是可以通过选举产生的，主从节点是对于集群内部来说的。es的一个概念就是去中心化，字面上理解就是无中心节点，这是对于集群外部来说的，因为从外部来看es集群，在逻辑上是个整体，你与任何一个节点的通信和与整个es集群通信是等价的。</li>
+<li>shards：代表索引分片，es可以把一个完整的索引分成多个分片，这样的好处是可以把一个大的索引拆分成多个，分布到不同的节点上。构成分布式搜索。分片的数量只能在索引创建前指定，并且索引创建后不能更改。</li>
+<li>replicas：代表索引副本，es可以设置多个索引的副本，副本的作用一是提高系统的<a href="https://baike.baidu.com/item/容错性" target="_blank" rel="noopener">容错性</a>，当某个节点某个分片损坏或丢失时可以从副本中恢复。二是提高es的查询效率，es会自动对搜索请求进行负载均衡。</li>
+<li>recovery：代表数据恢复或叫数据重新分布，es在有节点加入或退出时会根据机器的负载对索引分片进行重新分配，挂掉的节点重新启动时也会进行数据恢复。</li>
+<li>river：代表es的一个数据源，也是其它存储方式（如：数据库）同步数据到es的一个方法。它是以插件方式存在的一个es服务，通过读取river中的数据并把它索引到es中，官方的river有couchDB的，RabbitMQ的，Twitter的，Wikipedia的。</li>
+<li>gateway：代表es索引快照的存储方式，es默认是先把索引存放到内存中，当内存满了时再持久化到本地硬盘。gateway对索引快照进行存储，当这个es集群关闭再重新启动时就会从gateway中读取索引备份数据。es支持多种类型的gateway，有本地文件系统（默认），<a href="https://baike.baidu.com/item/分布式文件系统" target="_blank" rel="noopener">分布式文件系统</a>，Hadoop的HDFS和amazon的s3<a href="https://baike.baidu.com/item/云存储" target="_blank" rel="noopener">云存储</a>服务。</li>
+<li>discovery.zen：代表es的自动发现节点机制，es是一个基于p2p的系统，它先通过广播寻找存在的节点，再通过<a href="https://baike.baidu.com/item/多播" target="_blank" rel="noopener">多播</a>协议来进行节点之间的通信，同时也支持<a href="https://baike.baidu.com/item/点对点" target="_blank" rel="noopener">点对点</a>的交互。</li>
+<li>Transport：代表es内部节点或集群与客户端的交互方式，默认内部是使用tcp协议进行交互，同时它支持http协议（json格式）、<a href="https://baike.baidu.com/item/thrift" target="_blank" rel="noopener">thrift</a>、servlet、memcached、zeroMQ等的<a href="https://baike.baidu.com/item/传输协议" target="_blank" rel="noopener">传输协议</a>（通过<a href="https://baike.baidu.com/item/插件" target="_blank" rel="noopener">插件</a>方式集成）。</li>
+</ul>
+<p><code>主节点</code>负责创建索引、删除索引、分配分片、追踪集群中的节点状态等工作</p>
+<p>Elasticsearch中的主节点的工作量相对较轻，用户的请求可以发往任何一个节点，由该节点负责分发和返回结果，而不需要经过主节点转发</p>
+<p>如果单个node分配多个shard，就会引入另外一系列的性能问题，我们知道对于任意一次完整的搜索，ElasticSearch会分别对每个shard进行查询，最后进行汇总。当节点数和shard数是一对一的时候，所有的查询可以并行运行。但是，对于具有多个shard的节点，如果磁盘是15000RPM或SSD，可能会相对较快，但是这也会存在等待响应的问题，所以通常不推荐一个节点超过2个shard。</p>
+<p>但是如果一个小集群，就10个以内的节点，那就所有节点都可以作为master eligible node以及data node即可，超过10个node的集群再单独拆分master和data node吧  </p>
+<p>如果你的节点数量小于10个，小集群，那所有的node，就不要做额外的配置了，master eligible node，同时也是data node</p>
+<h3 id="倒排索引"><a href="#倒排索引" class="headerlink" title="倒排索引"></a>倒排索引</h3><p>倒排索引源于实际应用中需要<code>根据属性的值来查找记录</code>。这种索引表中的每一项都包括一个属性值和具有该属性值的各记录的地址。由于不是由记录来确定属性值，而是由<code>属性值来确定记录的位置</code>，因而称为倒排索引(inverted index)。带有倒排索引的文件我们称为倒排索引文件，简称倒排文件(inverted file)。</p>
+<p>倒排索引就是关键词到文档 ID 的映射</p>
 
       
     </div>
@@ -827,7 +378,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/21/md/tool/uml/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/09/md/jdk/other/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -841,7 +392,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2019/06/21/md/tool/uml/" class="post-title-link" itemprop="url">uml</a>
+            <a href="/2019/10/09/md/jdk/other/" class="post-title-link" itemprop="url">常用解惑</a>
         </h1>
 
         <div class="post-meta">
@@ -851,7 +402,158 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2019-06-21 15:32 15:32:59" itemprop="dateCreated datePublished" datetime="2019-06-21T15:32:59+08:00">2019-06-21 15:32</time>
+              <time title="创建时间：2019-10-09 14:52 14:52:14" itemprop="dateCreated datePublished" datetime="2019-10-09T14:52:14+08:00">2019-10-09 14:52</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>216</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="for-和while-true-的区别"><a href="#for-和while-true-的区别" class="headerlink" title="for(;;)和while(true)的区别"></a>for(;;)和while(true)的区别</h3><p>总结 for(;;) 比 while(true) 好</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"> 编译前              编译后 </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> (<span class="number">1</span>)         mov eax,<span class="number">1</span>  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">                    test eax,eax </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">                    je foo+<span class="number">23</span>h</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">                    jmp foo+<span class="number">18</span>h</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="comment">//VS                 </span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">编译前              编译后 </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (;;)          jmp foo+<span class="number">23</span>h</span></pre></td></tr></table></figure>
+
+<p>对比之下，for (；；)指令少，不占用<code>寄存器</code>，而且没有判断跳转，比while (1)好。</p>
+<p>也就是说两者在在宏观上完全一样的逻辑，但是底层完全不一样，for相对于来说更加简洁明</p>
+<hr>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/25/md/part/system/linux/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="mqiy">
+      <meta itemprop="description" content="永远为下个月离职做好准备">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小灰灰的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/09/25/md/part/system/linux/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="post-title-link" itemprop="url">linux常用命令</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-09-25 17:21 17:21:41" itemprop="dateCreated datePublished" datetime="2019-09-25T17:21:41+08:00">2019-09-25 17:21</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>114</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h4 id="搜索文件"><a href="#搜索文件" class="headerlink" title="搜索文件"></a>搜索文件</h4><p>find / -name my.cnf </p>
+<h4 id="修改文件归属用户与用户组"><a href="#修改文件归属用户与用户组" class="headerlink" title="修改文件归属用户与用户组"></a>修改文件归属用户与用户组</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">修改文件归属用户  </span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">chown -R hdh elasticsearch-7.3.2</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">修改文件归属用户组</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">chgrp -R hdh elasticsearch-7.3.2</span></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/24/md/tool/maven/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="mqiy">
+      <meta itemprop="description" content="永远为下个月离职做好准备">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小灰灰的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/09/24/md/tool/maven/" class="post-title-link" itemprop="url">maven</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-09-24 09:47 09:47:57" itemprop="dateCreated datePublished" datetime="2019-09-24T09:47:57+08:00">2019-09-24 09:47</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -871,7 +573,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>303</span>
+              <span>994</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -890,17 +592,32 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="口决"><a href="#口决" class="headerlink" title="口决"></a>口决</h3><ul>
-<li>虚箭实现实泛化</li>
-<li>虚线依赖实关联</li>
-<li>空菱聚合实组合</li>
+          <h3 id="run命令"><a href="#run命令" class="headerlink" title="run命令"></a>run命令</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">java -jar -Dmaven.test.skip=true</span></pre></td></tr></table></figure>
+
+
+
+<h3 id="maven阿里镜像"><a href="#maven阿里镜像" class="headerlink" title="maven阿里镜像"></a>maven阿里镜像</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">mirror</span>&gt;</span>  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  <span class="tag">&lt;<span class="name">id</span>&gt;</span>alimaven<span class="tag">&lt;/<span class="name">id</span>&gt;</span>  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">  <span class="tag">&lt;<span class="name">name</span>&gt;</span>aliyun maven<span class="tag">&lt;/<span class="name">name</span>&gt;</span>  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">  <span class="tag">&lt;<span class="name">url</span>&gt;</span>https://maven.aliyun.com/repository/public/<span class="tag">&lt;/<span class="name">url</span>&gt;</span>  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">  <span class="tag">&lt;<span class="name">mirrorOf</span>&gt;</span>central<span class="tag">&lt;/<span class="name">mirrorOf</span>&gt;</span>          </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;/<span class="name">mirror</span>&gt;</span></span></pre></td></tr></table></figure>
+
+
+
+
+
+<h3 id="Spring-Boot-全局排除-spring-boot-starter-logging-依赖"><a href="#Spring-Boot-全局排除-spring-boot-starter-logging-依赖" class="headerlink" title="Spring Boot 全局排除 spring-boot-starter-logging 依赖"></a>Spring Boot 全局排除 spring-boot-starter-logging 依赖</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--全局排除spring-boot-starter-logging内的所有依赖--&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-logging<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">exclusions</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">        <span class="tag">&lt;<span class="name">exclusion</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>*<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>*<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">        <span class="tag">&lt;/<span class="name">exclusion</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;/<span class="name">exclusions</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span></pre></td></tr></table></figure>
+
+
+
+<h3 id="多模块maven"><a href="#多模块maven" class="headerlink" title="多模块maven"></a>多模块maven</h3><ul>
+<li>创建项目类型为maven pom的主项目</li>
+<li>然后分别创建子模块</li>
+<li>最后在父pom.xml添加子模块，idea成功识别</li>
 </ul>
-<h4 id="泛化"><a href="#泛化" class="headerlink" title="泛化"></a>泛化</h4><p>用一条带空心箭头的直接表示，通常在程序里面泛化表现为继承于非抽象类。</p>
-<h4 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h4><p>用一条带实心箭头的虚线表示。通常程序里面实现关系表现为继承抽象类,或接口。</p>
-<h4 id="聚合"><a href="#聚合" class="headerlink" title="聚合"></a>聚合</h4><p>用一条带空心菱形箭头的直线表示。与组合关系不同的是，整体和部分不是强依赖的，即使整体不存在了，部分仍然存在。</p>
-<h4 id="组合"><a href="#组合" class="headerlink" title="组合"></a>组合</h4><p>用一条带实心菱形箭头直线表示，如果整体不存在了，部分也不复存在</p>
-<h4 id="依赖"><a href="#依赖" class="headerlink" title="依赖"></a>依赖</h4><p>用一套带箭头的虚线表示，描述一个对象在运行期间会用到另一个对象的关系。通常在程序里面通过构造函数、形参等体现。</p>
-<h4 id="关联"><a href="#关联" class="headerlink" title="关联"></a>关联</h4><p>用一条直线表示，当然如果需要标明方向可以添加箭头，通常不会随着状态的变化而变化。通常在程序里面以类变量的方式表现。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">modules</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">module</span>&gt;</span>spring-boot-admin-server<span class="tag">&lt;/<span class="name">module</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">module</span>&gt;</span>spring-boot-admin-client<span class="tag">&lt;/<span class="name">module</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;/<span class="name">modules</span>&gt;</span></span></pre></td></tr></table></figure>
+
+
+<h3 id="mvn-install-resource"><a href="#mvn-install-resource" class="headerlink" title="mvn install resource"></a>mvn install resource</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">mvn clean source:jar install</span></pre></td></tr></table></figure>
+
+<h3 id="mvn-tomcat7-run"><a href="#mvn-tomcat7-run" class="headerlink" title="mvn tomcat7:run"></a>mvn tomcat7:run</h3><p><strong>内存不足时设置参数</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">set MAVEN_OPTS=-Xms256m -Xms512m -XX:MaxNewSize=256m -XX:MaxPermSize=256m</span></pre></td></tr></table></figure>
 
       
     </div>
@@ -920,7 +637,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/21/md/part/microServices/spring%20cloud/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E5%81%A5%E5%BA%B7%E6%A3%80%E6%9F%A5/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/18/md/life/%E4%B8%8D%E5%81%9A%E8%80%81%E5%A5%BD%E4%BA%BA%EF%BC%8C%E4%BD%A0%E7%9A%84%E5%96%84%E8%89%AF%E5%BF%85%E9%A1%BB%E8%A6%81%E6%9C%89%E9%94%8B%E8%8A%92/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -934,7 +651,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2019/06/21/md/part/microServices/spring%20cloud/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E5%81%A5%E5%BA%B7%E6%A3%80%E6%9F%A5/" class="post-title-link" itemprop="url">微服务健康检查</a>
+            <a href="/2019/09/18/md/life/%E4%B8%8D%E5%81%9A%E8%80%81%E5%A5%BD%E4%BA%BA%EF%BC%8C%E4%BD%A0%E7%9A%84%E5%96%84%E8%89%AF%E5%BF%85%E9%A1%BB%E8%A6%81%E6%9C%89%E9%94%8B%E8%8A%92/" class="post-title-link" itemprop="url">不做老好人，你的善良必须要有锋芒</a>
         </h1>
 
         <div class="post-meta">
@@ -944,7 +661,18 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2019-06-21 14:44 14:44:23" itemprop="dateCreated datePublished" datetime="2019-06-21T14:44:23+08:00">2019-06-21 14:44</time>
+              <time title="创建时间：2019-09-18 15:27 15:27:30" itemprop="dateCreated datePublished" datetime="2019-09-18T15:27:30+08:00">2019-09-18 15:27</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%BA%BA%E7%94%9F%E6%84%9F%E6%82%9F/" itemprop="url" rel="index">
+                    <span itemprop="name">人生感悟</span>
+                  </a>
+                </span>
             </span>
 
           <br>
@@ -953,7 +681,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>426</span>
+              <span>937</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -972,14 +700,13 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h4 id="健康检查"><a href="#健康检查" class="headerlink" title="健康检查"></a>健康检查</h4><figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment">#开启健康检查（需要spring-boot-starter-actuator依赖）</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="meta">eureka.client.healthcheck.enabled</span>=<span class="string">true</span></span></pre></td></tr></table></figure>
+          <p>  有一些耋好人，为了周围人的喜欢和认可，不懂拒绝别人，却让自己活得很累，可是别人也不会真的感激你，你为别人付出的时候，别人却不会为你付出，在这样一种不对等的关系中，所以就会产生出让人失望的情绪。很多人不明白，为什么自己替别人做了很多，却得不到应有的回报和尊重呢？而且还会因为稍有一点不满意，别人还会记恨。其实，这其中主要的原因就是因为你太喜欢帮助别人了。</p>
+<p>  老好人也称为“利他主义者。事实上，利他主义者是用自己的行为在对自己进行操纵——并没有人要求他们这么做！他们的过度付出是造成这种”做了好事却得不到尊重“的情形的元凶。  </p>
+<p>  好人我们都喜欢，但一旦你被别人当成”老好人“，那么你的付出就只会给自己带来无尽的麻烦了。因为，老好人往往给人一种懦弱、没主见的印象。总是表现得很无私，面对别人的种种请求，不管能不能做到，都会硬着头皮允诺，甚至有时候会不惜牺牲自己的利益来帮助他人。</p>
+<p>  总是毫无怨言地帮别人做事，时间一长，他们会认为你做这些事情是应该的。还有些人是欺软怕硬型的，你总是表现得很弱势，对方会以为你很好”欺负“，所以有什么事情都会想到让你来承担。你帮助他们做一次事情，他们便会让你做更多的事情，因为他们摸准了你不好意思拒绝的弱点。你要知道，只有”雪中送炭“式的帮助才会让人铭记一生，但是如果你随时都会帮助你身边的人做各种事情，那么你很可能会被别人当作傻瓜，或者廉价的劳动力。  </p>
+<p>  老好人的处世原则是宁可自己受委屈也不拒绝别人，但是这样做，却不会被人真正铭记。作为老好人，之所以对他人的要求不愿意轻易拒绝，是担心因为拒绝而使对方难堪，无法保持友好关系。然而，一味地隐忍却不会让对方高看你，相反，还很有可能会越来越瞧不起你。<br>  我们之中大部分人都有欺软怕硬的本质。对于做惯了好人的你，可能要改变自己的秉性的确有些不容易，但是你如果不改变自己的”利他主义“，别人就可能毫无底线地侵犯你。  </p>
+<p>  当然，对于他人的求助，我们不可能袖手旁观，那样的话，我们就太冷血了。但是帮助别人也要遵循一定的原则，要帮助真正有需要帮助和值得帮助的人。如果对方因为懒惰、虚荣、爱占小便宜等原因而让你代劳，那还是果断拒绝吧。此外，对于那些知恩不报，甚至”得了便宜还卖乖“的人，更要保持距离，因为他们是不值得你去付出自己的精力和时间的。  </p>
 
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment">#应用信息 /actuator/info</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="attr">info:</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">  <span class="attr">app:</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    <span class="attr">name:</span> <span class="string">@project.name@</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">    <span class="attr">description:</span> <span class="string">@project.description@</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    <span class="attr">version:</span> <span class="string">@project.version@</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">    <span class="attr">encoding:</span> <span class="string">@project.build.sourceEncoding@</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">    <span class="attr">java:</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">      <span class="attr">version:</span> <span class="string">@java.version@</span></span></pre></td></tr></table></figure>
-
-
-
-
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-actuator<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span></pre></td></tr></table></figure>
       
     </div>
 
@@ -998,7 +725,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/21/md/part/microServices/spring%20cloud/spring%20cloud%20gateway%20%E5%85%A5%E9%97%A8/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/18/md/life/%E8%80%81%E5%A5%BD%E4%BA%BA/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -1012,7 +739,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2019/06/21/md/part/microServices/spring%20cloud/spring%20cloud%20gateway%20%E5%85%A5%E9%97%A8/" class="post-title-link" itemprop="url">spring cloud gateway 入门</a>
+            <a href="/2019/09/18/md/life/%E8%80%81%E5%A5%BD%E4%BA%BA/" class="post-title-link" itemprop="url">老好人</a>
         </h1>
 
         <div class="post-meta">
@@ -1022,7 +749,7 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2019-06-21 14:44 14:44:23" itemprop="dateCreated datePublished" datetime="2019-06-21T14:44:23+08:00">2019-06-21 14:44</time>
+              <time title="创建时间：2019-09-18 15:12 15:12:51" itemprop="dateCreated datePublished" datetime="2019-09-18T15:12:51+08:00">2019-09-18 15:12</time>
             </span>
 
           <br>
@@ -1031,7 +758,91 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.2k</span>
+              <span>2.2k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><code>老好人</code>指的是随和厚道，性格温柔，不愿得罪人，不会拒绝别人，缺乏原则性的人。然而现在社会中普遍反对老好人主义。</p>
+<h3 id="心理提示"><a href="#心理提示" class="headerlink" title="心理提示"></a>心理提示</h3><p>一直以来，老好人都是以待人热情大方，不会拒绝别人而让你在交际中容易受到大家欢迎，特别是最初阶段。但是，人类都有欺软怕硬心理，在这种心理下，如果你总是习惯性地接受他人的任何请求，常常扮演着一种“老好人”的角色，让人在你身上得寸进尺，那渐渐地你自己也会身心疲惫，早晚有一天会出问题的。<br>能帮助别人固然很好，但如果总是如此，对方就会得寸进尺，认为你帮忙是理所当然的，感激之情也会淡薄。为了避免这种情况，最好灵活一些，可以偶尔故意拒绝对方的要求。<br>做人要有自己的尺度，你不是神，也不是大圣人，不可事事做“老好人”，总是对别人谦让，有求必应，这样会让人得寸进尺。<br>自古以来，什么人都有，恶人，人们恐惧他；善人，人们爱戴他；而那些老好人呢？生活中总是可以看到那些随和厚道的、从不得罪人、看起来似乎没有一点儿脾气儿的，人家什么忙都愿意帮的人。按理来说，这种人应该是最讨人喜欢的，若你遇见了自己不愿意去做的或者懒得去做的事，只要叫一句“某某某，帮我个忙好不好”，一个简单明了的“好”，你就可以潇洒解脱，去做自己喜欢的事情。这多亏了那个热心人啊，怎么着也得给他授予一枚好人勋章吧！可是调查却表明，正是这种不拒绝，也不反抗的人，在“世界上最讨厌的人”排名榜中名列前茅。哎呦，出了力还不得好，为什么会这样呢？</p>
+<h4 id="【一、阿伦森效应】"><a href="#【一、阿伦森效应】" class="headerlink" title="【一、阿伦森效应】"></a>【一、阿伦森效应】</h4><p>这得归根于有名的阿伦森效应。所谓阿伦森效应，是指伴随奖励减少，态度也逐渐消极；伴随奖励增加，而态度逐渐积极的心理现象。曾经有人做过一个实验，将被试分4组对某一人给予不同的评价，借以观察某人对哪一组最具好感。第一组始终对之褒扬有加，第二组始终对之贬损否定，第三组先褒后贬，第四组先贬后褒，最后在实验对象对数十人进行后，发现大部分人对第四组最具好感，而对第三组最具反感。<br>阿伦森效应提醒人们，在日常工作与生活中，应该尽力避免由于自己的表现不当所造成的他人对自己印象不良方向的逆转。<br>老好人在人际交往中吃力不讨好便是这个缘故，当生活的风向改变，他也不得不开口说拒绝。而这唯有的一次拒绝，却比一个贬义词更像是一记巴掌，拍在对方的脸皮上。举例来说吧，有这么一个老好人，第一次，A找他帮忙，他没拒绝；第二次，A又寻求帮助，老好人又帮了他……之后，第三次，第四次，第五次，老好人都毫无意外的帮助A了。但在第无数次的帮忙后，老好人终于因为某些不得已的原因拒绝了A的请求，此时A被激起的愤怒感与失望感将胜于从前的种种，而老好人之前帮A做的所有事情，似乎都在他拒绝A的那一刻起，变得毫无意义。<br>经过无数次的帮助而建立起来的好感就因为仅有一次的拒绝就被破坏了，这究竟是谁的错？老好人想必也是捶胸顿足，有口难言。可能有人会说“这都是老好人的自作自受，谁让他一直都充当这个老“好人”呢”，但事情远远没有这么简单。</p>
+<h4 id="【二、登门槛效应】"><a href="#【二、登门槛效应】" class="headerlink" title="【二、登门槛效应】"></a>【二、登门槛效应】</h4><p>很久以前就有人提出了“得寸进尺效应”，也叫做“登门槛效应”，这是指一个人如果接受了别人的一个小要求，那么别人在此基础上再提出一个更高点的要求，这个人也会倾向于接受。<br>上面所讲的A同志运用的就是得寸进尺效应，因为人的每个意志行动都有其行动的最初目标，在许多场合下，由于人的动机是复杂的，因此常常会面对不同的目标进行比较、衡量和选择，在相同情况下，那些简单易行的目标较容易让人接受并采取行动。另外，人们总愿意把自己调整成前后一贯、首尾一致的形象，即使别人的要求有些过分，但为了维护印象的一贯性，人们也会维持下去。老好人在一开始的时候帮助了A，为了他的美好形象，即使再不情愿，他也会始终的帮助A，所以才会有接踵而来的求助。</p>
+<h4 id="【三、摆脱“老好人”的形象】"><a href="#【三、摆脱“老好人”的形象】" class="headerlink" title="【三、摆脱“老好人”的形象】"></a>【三、摆脱“老好人”的形象】</h4><p>如何摆脱“老好人”的形象？这个就需要改变你的行为模式。根据吸引力法则，他们会找你帮忙，是因为你是那个“愿意帮忙的人”。<br>当然，可能有些读者想问，朋友间，总会有不方便、需要帮忙的时候，难道说人家找你帮忙就必须一口拒绝，以免后患吗？我只能说，如果你这么做了，最后倒霉的还是你，你的人际关系和生活最后只会被你的这个“一口拒绝”弄的乱七八糟。对于别人的请求，需要选择性的帮忙，你要戴上辨别是非的眼镜去进行筛选。</p>
+<h4 id="【四、选择性帮忙】"><a href="#【四、选择性帮忙】" class="headerlink" title="【四、选择性帮忙】"></a>【四、选择性帮忙】</h4><p>如果把你身边的人分成几个生活圈的话，你可以选择：</p>
+<ol>
+<li>亲密圈：很好很好的朋友，你和他之间已经不在乎钱的问题，甚至可以分享一切；</li>
+<li>朋友圈：身边经常一起玩的，关系不错的，但比亲密圈少一分熟稔的人；</li>
+<li>熟人圈：同事、同学，你对他的感觉一般，不热情，不冷淡的；</li>
+<li>世界圈：陌生人（调查显示，一个人对陌生人比对认识的人愿意投入更多的信任）。</li>
+</ol>
+<p>对于你心目中的亲密圈内的人也不用我说，连钱你都愿意彼此分享了，为他付出，你也定是心甘情愿的；朋友圈里的人，他的人格、人品，他是一个怎样的人，你们经常混在一起，总是略有耳闻的。爱占小便宜的家伙你委婉拒绝他或许是更好的选择，你觉得他还不错的人帮个小忙也无妨。剩下的那些人，你应该切身思考下你的人生会和他有交集吗？你讨厌他什么？仔细衡量其中的利与弊便可瞬间得出结果。<br>生活是美好的，每个人都是善良的。赠人玫瑰，手留余香。帮助了别人，心里也会快乐。但每个人都是独立的个体，谁也没有义务去无条件地帮谁。与其做一个博爱的滥好人，不如去爱少数人，也为少数人所爱。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/04/md/life/%E5%8E%8B%E5%8A%9B%E7%AE%A1%E7%90%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="mqiy">
+      <meta itemprop="description" content="永远为下个月离职做好准备">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小灰灰的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/09/04/md/life/%E5%8E%8B%E5%8A%9B%E7%AE%A1%E7%90%86/" class="post-title-link" itemprop="url">压力管理</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-09-04 14:20 14:20:15" itemprop="dateCreated datePublished" datetime="2019-09-04T14:20:15+08:00">2019-09-04 14:20</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>27</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -1050,19 +861,182 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.cloud<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-cloud-starter-gateway<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    <span class="comment">&lt;!-- 集成eureka --&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">    <span class="comment">&lt;!--&lt;dependency&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"><span class="comment">        &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"><span class="comment">        &lt;artifactId&gt;spring-cloud-starter-netflix-eureka-client&lt;/artifactId&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line"><span class="comment">    &lt;/dependency&gt;--&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span></pre></td></tr></table></figure>
-<p>spring-cloud-gateway有两种配置方式，一种是在application.yml中配置，一种是使用@Bean对象注入。（注意：二者选其一）</p>
-<h4 id="application-yml方式"><a href="#application-yml方式" class="headerlink" title="application.yml方式"></a>application.yml方式</h4><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="attr">spring:</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  <span class="attr">cloud:</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    <span class="attr">gateway:</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">      <span class="attr">routes:</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">      <span class="bullet">-</span> <span class="attr">id:</span> <span class="string">WEB</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">        <span class="attr">uri:</span> <span class="string">http://127.0.0.1:8661</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">        <span class="attr">predicates:</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">        <span class="bullet">-</span> <span class="string">Path=/web/&#123;segment&#125;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">        <span class="attr">filters:</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">        <span class="bullet">-</span> <span class="string">SetPath=/&#123;segment&#125;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">        <span class="bullet">-</span> <span class="string">StripPrefix=1</span></span></pre></td></tr></table></figure>
+          <p>搞定<code>老婆</code>和<code>老板</code>  </p>
+<p>情绪不好，<code>不要做重要的决定</code>和<code>接触重要的人</code></p>
 
-<h4 id="Bean对象注入配置方式"><a href="#Bean对象注入配置方式" class="headerlink" title="@Bean对象注入配置方式"></a>@Bean对象注入配置方式</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">@Bean</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> RouteLocator <span class="title">routeLocator</span><span class="params">(RouteLocatorBuilder builder)</span> </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">return</span> builder.routes()</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">            .route(<span class="string">"WEB"</span>, r -&gt; r.path(<span class="string">"/web/&#123;segment&#125;"</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">                    .filters(f -&gt; f.setPath(<span class="string">"/&#123;segment&#125;"</span>))</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">                    .uri(<span class="string">"http://127.0.0.1:8661"</span>))</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">            .build();</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+      
+    </div>
 
-<p>简要说明：</p>
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/23/md/part/distributed/cap/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="mqiy">
+      <meta itemprop="description" content="永远为下个月离职做好准备">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小灰灰的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/08/23/md/part/distributed/cap/" class="post-title-link" itemprop="url">cap</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-08-23 10:26 10:26:14" itemprop="dateCreated datePublished" datetime="2019-08-23T10:26:14+08:00">2019-08-23 10:26</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>408</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h4 id="CAP设计原则"><a href="#CAP设计原则" class="headerlink" title="CAP设计原则"></a>CAP设计原则</h4><ul>
+<li><p><code>一致性</code>（C）：在分布式系统中的所有数据备份，在同一时刻是否同样的值。（等同于所有节点访问同一份最新的数据副本）</p>
+</li>
+<li><p><code>可用性</code>（A）：在集群中一部分节点故障后，集群整体是否还能响应客户端的读写请求。（对数据更新具备高可用性）</p>
+</li>
+<li><p><code>分区容忍性</code>（P）：就是当由于网络故障之时，导致集群里的机器不能保证其互相保持正常通信之时，每台机器所具备各自为战能力，保证服务能否正常使用</p>
+</li>
+</ul>
+<p>CAP原则的精髓就是要么AP，要么CP，要么AC，但是不存在CAP。</p>
+<p>如果在某个分布式系统中数据无副本， 那么系统必然满足强一致性条件， 因为只有独一数据，不会出现数据不一致的情况，此时C和P两要素具备</p>
+<p>但是如果系统发生了网络分区状况或者宕机，必然导致某些数据不可以访问</p>
+<p>此时可用性条件就不能被满足，即在此情况下获得了CP系统，但是CAP不可同时满足。必然导致某些数据不可以访问，此时可用性条件就不能被满足，即在此情况下获得了CP系统，但是CAP不可同时满足。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/22/md/develop/SRE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="mqiy">
+      <meta itemprop="description" content="永远为下个月离职做好准备">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小灰灰的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/08/22/md/develop/SRE/" class="post-title-link" itemprop="url">SRE</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-08-22 10:27 10:27:49" itemprop="dateCreated datePublished" datetime="2019-08-22T10:27:49+08:00">2019-08-22 10:27</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>245</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>SRE是指Site Reliability Engineer (网站可靠性工程师)。他是软件工程师和系统管理员的结合，一个SRE工程师基本上需要掌握很多<br>知识：<code>算法</code>，数据结构，<code>编程能力</code>，<code>网络编程</code>，<code>分布式系统</code>，<code>可扩展架构</code>，故障排除。</p>
+<p>，DevOps 可能缺乏 SRE 在一些专业领域的技能： </p>
 <ul>
-<li>id：路由的id，参数配置不要重复，如不配置，gateway会使用生成一个uuid代替。</li>
-<li>uri：路由的目标地址。注意：uri地址后面不要加 “ / “</li>
-<li>Path：配置路由的路径。比如：/web/{segment}则表示当访问<a href="http://127.0.0.1:8562/web/**时候路由的指定的uri上面" target="_blank" rel="noopener">http://127.0.0.1:8562/web/**时候路由的指定的uri上面</a></li>
-<li>SetPath：在发起请求时，在路由请求路径后面加上web/后面的内容。如果不配置，将无法路由地址后缀/web/index，只能路由/web</li>
-<li>StripPrefix 去掉转发根据路径web</li>
+<li><p>计算机体系结构能力；</p>
+</li>
+<li><p>高吞吐高并发优化能力；</p>
+</li>
+<li><p>可扩展系统设计能力；</p>
+</li>
+<li><p>复杂系统设计能力；</p>
+</li>
+<li><p>业务系统排查能力。 </p>
+</li>
+</ul>
+<p>两者都需要软实力，但是 SRE 面临复杂度更高，挑战更大，要求也更高：</p>
+<ul>
+<li>分析问题、解决问题能力</li>
+<li>战胜困难决心</li>
+<li>面对挑战热情</li>
+<li>自驱学习</li>
 </ul>
 
       
@@ -1083,7 +1057,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/11/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><span class="page-number current">12</span><a class="page-number" href="/page/13/">13</a><span class="space">&hellip;</span><a class="page-number" href="/page/19/">19</a><a class="extend next" rel="next" href="/page/13/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/11/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><span class="page-number current">12</span><a class="page-number" href="/page/13/">13</a><span class="space">&hellip;</span><a class="page-number" href="/page/22/">22</a><a class="extend next" rel="next" href="/page/13/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1149,7 +1123,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">183</span>
+          <span class="site-state-item-count">219</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1162,7 +1136,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">55</span>
+        <span class="site-state-item-count">52</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -1196,12 +1170,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">227k</span>
+    <span title="站点总字数">256k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">3:27</span>
+    <span title="站点阅读时长">3:52</span>
 </div>
 
         

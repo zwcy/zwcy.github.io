@@ -140,7 +140,7 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">55</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">52</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
@@ -150,7 +150,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">183</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">219</span></a>
 
   </li>
         <li class="menu-item menu-item-relate">
@@ -211,7 +211,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/other/need%20attention/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/11/md/problem/mybatis/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -225,7 +225,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2019/06/18/md/other/need%20attention/" class="post-title-link" itemprop="url">need attention</a>
+            <a href="/2019/07/11/md/problem/mybatis/" class="post-title-link" itemprop="url">mybatis相关问题</a>
         </h1>
 
         <div class="post-meta">
@@ -235,7 +235,7 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2019-06-18 14:52 14:52:10" itemprop="dateCreated datePublished" datetime="2019-06-18T14:52:10+08:00">2019-06-18 14:52</time>
+              <time title="创建时间：2019-07-11 11:54 11:54:55" itemprop="dateCreated datePublished" datetime="2019-07-11T11:54:55+08:00">2019-07-11 11:54</time>
             </span>
 
           <br>
@@ -244,7 +244,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>66</span>
+              <span>622</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -263,217 +263,89 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h4 id="定义接口不规范"><a href="#定义接口不规范" class="headerlink" title="定义接口不规范"></a>定义接口不规范</h4><ul>
-<li>hagendaza项目，定义一个HdOrderManager接口，没有继承基类<code>BaseManager</code>，无法实现<code>读写分离</code></li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/part/web/graphql/graphql%E4%BB%8B%E7%BB%8D/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="mqiy">
-      <meta itemprop="description" content="永远为下个月离职做好准备">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小灰灰的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/06/18/md/part/web/graphql/graphql%E4%BB%8B%E7%BB%8D/" class="post-title-link" itemprop="url">graphql介绍</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-06-18 14:40 14:40:10" itemprop="dateCreated datePublished" datetime="2019-06-18T14:40:10+08:00">2019-06-18 14:40</time>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>656</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="Query-是查询入口-Mutation则是修改入口"><a href="#Query-是查询入口-Mutation则是修改入口" class="headerlink" title="Query 是查询入口,  Mutation则是修改入口"></a>Query 是查询入口,  Mutation则是修改入口</h3><ul>
-<li>root.graphqls 是graphql 服务入口定义</li>
-<li>scheme.graphqls 则是 query/mutation 具体的 scheme 定义字段、类型</li>
-</ul>
-<p>graphql 入口定义了, 但这只是一个描述, 我们需要实现 query/mutation中的描述(必须全部实现)</p>
-<p>schema 一样像我的目录中的一样 AuthorResolver 这是对schema中的描述的实现</p>
+          <h3 id="mybatis报错-Specified-class-is-an-interface"><a href="#mybatis报错-Specified-class-is-an-interface" class="headerlink" title="mybatis报错 Specified class is an interface"></a>mybatis报错 Specified class is an interface</h3><h4 id="1-错误原因"><a href="#1-错误原因" class="headerlink" title="1.错误原因"></a>1.错误原因</h4><p>Caused by: org.springframework.beans.factory.BeanCreationException: </p>
+<p>Error creating bean with name ‘admUserMapper’ defined in file<br>[E:\idea_soft\workspace\xxxx-mircoservices\i\classes\main\com\imassbank\admin\mapper\AdmUserMapper-\classes\main\com\admin\mapper\AdmUserMapper.class]:<br>Instantiation of bean failed; nested exception is org.springframework.beans.BeanInstantiationException: </p>
+<p>Failed to instantiate [com.xxxxxx.mapper.AdmUserMapper]: Specified class is an interface</p>
+<h4 id="2-原因以及解决方案"><a href="#2-原因以及解决方案" class="headerlink" title="2.原因以及解决方案"></a>2.原因以及解决方案</h4><p>1）原因: Mapper有重复的  例如  AdmUserMapper   在 a工程中有  但是 在b工程中  并且 叫相同的名字   导致  spring 在加载时 调用mapper解析器 导致出错</p>
 <blockquote>
-<p>query/mutation和普通的schema 一样, 只是它们是 graphql服务的入口, resolver实现描述遵循:</p>
+<p>Mapper报错的名称可能不对,如上文AdmUserMapper,可能其他Mapper重复导致</p>
 </blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/10/md/langu/go/go/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="mqiy">
+      <meta itemprop="description" content="永远为下个月离职做好准备">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小灰灰的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/07/10/md/langu/go/go/" class="post-title-link" itemprop="url">go优缺点</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-07-10 11:54 11:54:55" itemprop="dateCreated datePublished" datetime="2019-07-10T11:54:55+08:00">2019-07-10 11:54</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>22</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>使用 Go 语言的<code>缺点</code></p>
 <ul>
-<li>method <code>name</code>(*args)</li>
-<li>method is<code>Name</code>(*args) 仅支持 return boolean</li>
-<li>method get<code>Name</code>(*args)</li>
-<li>method getField<code>Name</code>(*args)</li>
-</ul>
-<p>这是种实现, 当提供了resolver时优先使用, 其次是 class this.get<code>Name</code>方法</p>
-<p>返回参数类型不一致，或者没有返回，需在resolver中添加</p>
-<p>在GraphQL中，我们通过预先定义一张<code>Schema</code>和声明一些<code>Type</code>来达到上面提及的效果，我们需要知道：</p>
-<ul>
-<li>对于数据模型的抽象是通过Type来描述的</li>
-<li>对于接口获取数据的逻辑是通过Schema来描述的</li>
-</ul>
-<h3 id="Type"><a href="#Type" class="headerlink" title="Type"></a>Type</h3><p>对于数据模型的抽象是通过Type来描述的，每一个Type有若干Field组成，每个Field又分别指向某个Type。</p>
-<p>GraphQL的Type简单可以分为两种，一种叫做<code>Scalar Type(标量类型)</code>，另一种叫做<code>Object Type(对象类型)</code>。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/part/web/graphql/RPC%20vs%20REST%20vs%20GraphQL/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="mqiy">
-      <meta itemprop="description" content="永远为下个月离职做好准备">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小灰灰的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/06/18/md/part/web/graphql/RPC%20vs%20REST%20vs%20GraphQL/" class="post-title-link" itemprop="url">RPC vs REST vs GraphQL</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-06-18 14:40 14:40:10" itemprop="dateCreated datePublished" datetime="2019-06-18T14:40:10+08:00">2019-06-18 14:40</time>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1.4k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="RPC"><a href="#RPC" class="headerlink" title="RPC"></a>RPC</h3><p>它是Remote Procedure Call(远程过程调用)的简称。一般基于RPC协议所设计的接口，是基于网络采用客户端/服务端的模式完成调用接口的</p>
-<h4 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h4><ul>
-<li><p>简单并且易于理解（面向开发者）</p>
-</li>
-<li><p>轻量级的数据载体</p>
-</li>
-<li><p>高性能</p>
-</li>
-</ul>
-<h4 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h4><ul>
-<li>对于系统本身耦合性高</li>
-<li>因为RPC本身很简单、轻量，因此很容易造成 function explosion</li>
-</ul>
-<p>关于RPC的优点其实很好理解，就是因为它性能高同时又很简单，但是我认为这是对于接口提供者来讲的（因为它的高耦合性）。</p>
-<p>但是如果从接口调用者的角度来看，高耦合性就变成了缺点，因为高耦合意味着调用者必须要足够了解系统本身的实现才能够完成调用，比如：</p>
-<ul>
-<li>调用者需要知道所调用接口的函数名、参数格式、参数顺序、参数名称等等</li>
-<li>如果接口提供者(server)要对接口做出一些改变，很容易对接口调用者(client)造成breaking change（违背开闭原则)</li>
-<li>一般RPC所暴露接口仅仅会暴露函数的名称和参数等信息，对于函数之间的调用关系无法提供，这意味着调用者必须足够了解系统，从能够知道如何正确的调用这些接口，但是对于接口调用者往往不需要了解过多系统内部实现细节</li>
-</ul>
-<hr>
-<h3 id="REST"><a href="#REST" class="headerlink" title="REST"></a>REST</h3><p>当前REST风格的API架构方式已经成了主流解决方案了，相比较RPC，它的主要不同之处在于，它是对于资源(Resource)的模型化而非步骤(Procedure)。</p>
-<h4 id="优点-1"><a href="#优点-1" class="headerlink" title="优点"></a>优点</h4><ul>
-<li>对于系统本身耦合性低，调用者不再需要了解接口内部处理和实现细节</li>
-<li>重复使用了一些 http 协议中的已定义好的部分状态动词，增强语义表现力</li>
-<li>API可以随着时间而不断演进<h4 id="缺点-1"><a href="#缺点-1" class="headerlink" title="缺点"></a>缺点</h4></li>
-<li>缺少约束，缺少简单、统一的规范</li>
-<li>有时候 payload 会变的冗余(overload)，有时候调用api会比较繁琐(chattiness)</li>
-<li>有时候需要发送多条请求已获取数据，在网络带宽较低的场景，往往会造成不好的影响</li>
-</ul>
-<p>REST的优点基本解决了RPC中存在的问题，就是解耦，从而使得前后端分离成为可能。接口提供者在修改接口时，不容易造成breaking-change，接口调用者在调用接口时，往往面向数据模型编程，而省去了了解接口本身的时间成本。</p>
-<p>但是，我认为REST当前最大的问题在于虽然它利用<code>http</code>的动词约束了接口的暴露方式，同时增强了语义，但是却没有约束接口如何返回数据的最佳实践</p>
-<hr>
-<h3 id="GraphQL"><a href="#GraphQL" class="headerlink" title="GraphQL"></a>GraphQL</h3><p>GraphQL是近来比较热门的一个技术话题，相比REST和RPC，它汲取了两者的优点，即不面向资源，也不面向过程，而是面向数据查询(ask for exactly what you want)。同时GraphQL本身需要使用强类型的Schema来对数据模型进行定义，因此相比REST它的约束性更强。</p>
-<h4 id="优点-2"><a href="#优点-2" class="headerlink" title="优点"></a>优点</h4><ul>
-<li>网络开销低，可以在单一请求中获取REST中使用多条请求获取的资源</li>
-<li>强类型Schema（约束意味着可以根据规范形成文档、IDE、错误提示等生态工具）</li>
-<li>特别适合图状数据结构的业务场景（比如好友、流程、组织架构等系统）<h4 id="缺点-2"><a href="#缺点-2" class="headerlink" title="缺点"></a>缺点</h4></li>
-<li>本身的语法相比较REST和RPC均复杂一些</li>
-<li>实现方面需要配套 Caching 以解决性能瓶颈</li>
-<li>对于 API 的版本控制当前没有完善解决方案（社区的建议是不要使API版本化）</li>
-<li>仍然是新鲜事物，很多技术细节仍然处于待验证状态<br>首先值得肯定的是，在某些程度上确实解决了REST的缺点所带来的问题,GraphQL所带来的好处，大部分是对于接口调用者而言的，但是实现这部分的工作却需要接口提供者来完成。</li>
+<li>缺少框架</li>
+<li>错误处理</li>
+<li>软件包管理</li>
 </ul>
 
       
@@ -494,7 +366,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/tool/MapStruct/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/09/md/part/cicd/%E9%83%A8%E7%BD%B2%E6%96%B9%E5%BC%8F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -508,7 +380,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2019/06/18/md/tool/MapStruct/" class="post-title-link" itemprop="url">MapStruct</a>
+            <a href="/2019/07/09/md/part/cicd/%E9%83%A8%E7%BD%B2%E6%96%B9%E5%BC%8F/" class="post-title-link" itemprop="url">部署方式</a>
         </h1>
 
         <div class="post-meta">
@@ -518,7 +390,7 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2019-06-18 14:38 14:38:10" itemprop="dateCreated datePublished" datetime="2019-06-18T14:38:10+08:00">2019-06-18 14:38</time>
+              <time title="创建时间：2019-07-09 14:13 14:13:10" itemprop="dateCreated datePublished" datetime="2019-07-09T14:13:10+08:00">2019-07-09 14:13</time>
             </span>
 
           <br>
@@ -527,7 +399,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.1k</span>
+              <span>152</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -546,187 +418,13 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="MapStruct-一个-Java-实体映射工具"><a href="#MapStruct-一个-Java-实体映射工具" class="headerlink" title="MapStruct 一个 Java 实体映射工具"></a>MapStruct 一个 Java 实体映射工具</h3><p>一个成熟的工程中，尤其是现在的分布式系统中，应用与应用之间，还有单独的应用细分模块之后，DO 一般不会让外部依赖，对象与对象之间的互相转换，就需要有一个专门用来解决转换问题的工具</p>
-<h3 id="maven-依赖"><a href="#maven-依赖" class="headerlink" title="maven 依赖"></a>maven 依赖</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">properties</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">mapstruct.version</span>&gt;</span>1.2.0.Final<span class="tag">&lt;/<span class="name">mapstruct.version</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">      <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.mapstruct<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">      <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mapstruct-jdk8<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">      <span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;mapstruct.version&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">      <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.mapstruct<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">      <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mapstruct-processor<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">      <span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;mapstruct.version&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span></pre></td></tr></table></figure>
-
-
-
-
-
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">@Mapper</span>(componentModel = <span class="string">"spring"</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">PesonMapper</span> </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">   <span class="function"><span class="keyword">public</span> PersonModel <span class="title">mapEighteen</span><span class="params">( Person entity)</span> </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">	  <span class="keyword">if</span> (entity.getName.equals(<span class="number">18</span>)) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">		   <span class="keyword">return</span> map(entity);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">      &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">   &#125;;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">	</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">   <span class="meta">@Mapping</span>(target = <span class="string">"personName"</span>, source = <span class="string">"name"</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">   <span class="meta">@Mapping</span>(target = <span class="string">"hand"</span>,  ignore = <span class="keyword">true</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">   <span class="function"><span class="keyword">protected</span> <span class="keyword">abstract</span> PersonModel <span class="title">map</span><span class="params">( Person entity)</span></span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">   <span class="keyword">protected</span> <span class="keyword">abstract</span>  List&lt;PersonModel &gt; map(List&lt; Person&gt; entity);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
-
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/tool/oss/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="mqiy">
-      <meta itemprop="description" content="永远为下个月离职做好准备">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小灰灰的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/06/18/md/tool/oss/" class="post-title-link" itemprop="url">阿里云oss缩略图</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-06-18 14:38 14:38:10" itemprop="dateCreated datePublished" datetime="2019-06-18T14:38:10+08:00">2019-06-18 14:38</time>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>452</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h4 id="OSS是使用通过URL尾部的参数指定图片的缩放大小"><a href="#OSS是使用通过URL尾部的参数指定图片的缩放大小" class="headerlink" title="OSS是使用通过URL尾部的参数指定图片的缩放大小"></a>OSS是使用通过URL尾部的参数指定图片的缩放大小</h4><p>图片路径后面拼接如下路径：<br>?x-oss-process=image/[处理类型],x_100,y_50[宽高等参数]</p>
-<p>?x-oss-process=image/resize,m_fill,h_高度,w_宽度,limit_0</p>
-<p>示例：</p>
-<p>原图：<br><a href="http://qunxianghui-upload.oss-cn-hangzhou.aliyuncs.com/upload/image/20180829/84cb48ea3923c827481787b8877f9260.jpeg" target="_blank" rel="noopener">http://qunxianghui-upload.oss-cn-hangzhou.aliyuncs.com/upload/image/20180829/84cb48ea3923c827481787b8877f9260.jpeg</a></p>
-<p>缩略图：（注意：复制下面链接到浏览器中访问，直接点击可能后面参数带不过去）<br><a href="http://qunxianghui-upload.oss-cn-hangzhou.aliyuncs.com/upload/image/20180829/84cb48ea3923c827481787b8877f9260.jpeg?x-oss-process=image/resize,m_fill,h_100,w_200" target="_blank" rel="noopener">http://qunxianghui-upload.oss-cn-hangzhou.aliyuncs.com/upload/image/20180829/84cb48ea3923c827481787b8877f9260.jpeg?x-oss-process=image/resize,m_fill,h_100,w_200</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/part/spring/springBoot/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="mqiy">
-      <meta itemprop="description" content="永远为下个月离职做好准备">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小灰灰的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/06/18/md/part/spring/springBoot/" class="post-title-link" itemprop="url">spring boot 运行方式</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-06-18 14:35 14:35:10" itemprop="dateCreated datePublished" datetime="2019-06-18T14:35:10+08:00">2019-06-18 14:35</time>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1.3k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h4 id="springboot-运行"><a href="#springboot-运行" class="headerlink" title="springboot 运行"></a>springboot 运行</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> jar方式运行   -D 参数必须在jar前面指定</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">java -jar -Dserver.port=8081 spring-boot-test-service-0.0.1-SNAPSHOT.jar</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> spring-boot plugin 运行</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">mvn spring-boot:run -Dspring-boot.run.arguments='--spring.profiles.active=pro'</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> </span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">mvn spring-boot:run -Dspring-boot.run.profiles=pro</span></pre></td></tr></table></figure>
-
-
-
-<h4 id="springboot中的配置文件server-context-path不起作用"><a href="#springboot中的配置文件server-context-path不起作用" class="headerlink" title="springboot中的配置文件server.context-path不起作用"></a>springboot中的配置文件server.context-path不起作用</h4><p>因为spring boot版本问题导致的！！现在用的比较新的版本在2.0以上！以前是1.0-2.0之间的.server.context-path=/XXXXX</p>
-<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">server.servlet.context-path</span>=<span class="string">/XXXXX  # 2.0以上</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="meta">server.context-path</span>=<span class="string">/XXXXX          #  2.0以下</span></span></pre></td></tr></table></figure>
-
-
-
-<hr>
-<h4 id="springboot无法完成变量从pom到-properties文件自动替换的问题"><a href="#springboot无法完成变量从pom到-properties文件自动替换的问题" class="headerlink" title="springboot无法完成变量从pom到.properties文件自动替换的问题"></a>springboot无法完成变量从pom到.properties文件自动替换的问题</h4><p>我在maven的pom文件中进行了多环境变量配置，引用了maven-resources-plugin，在application.properties文件中通过以下配置指定不同环境下的配置文件，</p>
-<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">spring.profiles.active</span> = <span class="string">$&#123;profiles.active&#125;</span></span></pre></td></tr></table></figure>
-
-<p>但是${profiles.active}无法从pom文件中获取变量值替换</p>
+          <h3 id="金丝雀部署"><a href="#金丝雀部署" class="headerlink" title="金丝雀部署"></a>金丝雀部署</h3><p>先部署单台服务器，金丝雀测试（国内常称灰度测试）通过，则全部部署<br>简单的金丝雀测试一般通过手工测试验证，复杂的金丝雀测试需要比较完善的监控基础设施配合，通过监控指标反馈，观察金丝雀的健康状况，作为后续发布或回退的依据  </p>
 <blockquote>
-<p>由于<code>${}</code>方式会被maven处理。如果你pom继承了<code>spring-boot-starter-parent</code>，Spring<br>Boot已经将maven-resources-plugins默认的<code>${}</code>方式改为了<code>@@</code>方式，如<code>@name@</code></p>
+<p><code>优势</code> ： 用户体验影响小，体验较平滑  </p>
 </blockquote>
-<p>如果还想继续使用${}占位符方式，只需要在pom文件中加上下面配置即可：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>maven-resources-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">        <span class="tag">&lt;<span class="name">encoding</span>&gt;</span>utf-8<span class="tag">&lt;/<span class="name">encoding</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">        <span class="tag">&lt;<span class="name">useDefaultDelimiters</span>&gt;</span>true<span class="tag">&lt;/<span class="name">useDefaultDelimiters</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span></pre></td></tr></table></figure>
-
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">## tag.tagid，不能使用 #&#123;tag.tagid&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="meta">@Cacheable</span>(value = ARTICLES_CACHE_NAME, key = <span class="string">"'findArtileByTag'+#tag.tagId+#page+#limit+#status"</span>)</span></pre></td></tr></table></figure>
-
-
-
-<p>较新版的Spring Boot取消了@<code>SpringApplicationConfiguration</code>这个注解，用<code>@SpringBootTest</code>就可以了</p>
+<blockquote>
+<p><code>不足</code>：发布自动化程度不够，发布期间可引发服务中断</p>
+</blockquote>
 
       
     </div>
@@ -746,7 +444,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/part/spring/spring/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/08/md/problem/docker/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -760,7 +458,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2019/06/18/md/part/spring/spring/" class="post-title-link" itemprop="url">spring</a>
+            <a href="/2019/07/08/md/problem/docker/" class="post-title-link" itemprop="url">docker相关问题</a>
         </h1>
 
         <div class="post-meta">
@@ -770,7 +468,7 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2019-06-18 14:35 14:35:10" itemprop="dateCreated datePublished" datetime="2019-06-18T14:35:10+08:00">2019-06-18 14:35</time>
+              <time title="创建时间：2019-07-08 16:51 16:51:43" itemprop="dateCreated datePublished" datetime="2019-07-08T16:51:43+08:00">2019-07-08 16:51</time>
             </span>
 
           <br>
@@ -779,7 +477,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>550</span>
+              <span>129</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -798,99 +496,9 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="Bean注解修饰带参数方法时，参数取值"><a href="#Bean注解修饰带参数方法时，参数取值" class="headerlink" title="@Bean注解修饰带参数方法时，参数取值"></a>@Bean注解修饰带参数方法时，参数取值</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">@Bean</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">	<span class="function"><span class="keyword">public</span> RabbitAdmin <span class="title">rabbitAdmin</span><span class="params">(ConnectionFactory connectionFactory)</span></span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">		System.out.println(String.format(<span class="string">"-----------getRabbitAdmin:%s"</span>, connectionFactory.hashCode()));</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">		<span class="keyword">return</span> <span class="keyword">new</span> RabbitAdmin(connectionFactory);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
-
-<p>如上，有参数connectFactory，若spring容器中只有一个ConnectionFactory 类型的bean，则不论参数取名为何都是按类型取bean ConnectionFactory 为参数，若有多个则参数取名必须为多个bean中的一个，否则报错。</p>
-<p>spring：容器<br>核心：依赖注入和控制反转<br>Spring有两个核心接口：BeanFactory和ApplicationContext<br>bean之间不用new object，解耦。由spring容易管理。在需要时，注入<br>@autowire @component @controller @service等注解，通过scan标签扫描。<br>管理bean和bean，模块和模块之间的关系。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/part/microServices/spring%20cloud/spring%20Cloud%E4%BB%8B%E7%BB%8D/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="mqiy">
-      <meta itemprop="description" content="永远为下个月离职做好准备">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小灰灰的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/06/18/md/part/microServices/spring%20cloud/spring%20Cloud%E4%BB%8B%E7%BB%8D/" class="post-title-link" itemprop="url">spring cloud介绍</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-06-18 14:35 14:35:10" itemprop="dateCreated datePublished" datetime="2019-06-18T14:35:10+08:00">2019-06-18 14:35</time>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>758</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="服务发现组件：eureka"><a href="#服务发现组件：eureka" class="headerlink" title="服务发现组件：eureka"></a>服务发现组件：eureka</h3><p>eureka client注册到eureka服务端上，不管服务提供者还是服务消费者都要注册。<br>eureka服务端和客户端有心跳机制，默认30秒。90秒没有收到，就会剔除掉这个客户端。<br>服务消费者客户端上有服务注册表缓存，eureka服务端down之后，也能找到服务提供者。</p>
-<hr>
-<h3 id="客户端负载均衡组件：ribbon"><a href="#客户端负载均衡组件：ribbon" class="headerlink" title="客户端负载均衡组件：ribbon"></a>客户端负载均衡组件：ribbon</h3><p>三种方式：<code>轮循</code>，<code>随机</code>，<code>根据响应时间加权</code><br>默认策略是<code>轮循</code>。<br>可以自定义<br>eureka包含有ribbon的jar包</p>
-<hr>
-<h3 id="feign：命名式的http-client"><a href="#feign：命名式的http-client" class="headerlink" title="feign：命名式的http client"></a>feign：命名式的http client</h3><p>整合了ribbon和eureka    支持springMVC的注解<br>包含feign encoder ，feign decoder，feign contract</p>
-<hr>
-<h3 id="hystrix：断路器和超时机制的组件"><a href="#hystrix：断路器和超时机制的组件" class="headerlink" title="hystrix：断路器和超时机制的组件"></a>hystrix：断路器和超时机制的组件</h3><p>没有保护应用会导致雪崩效应<br>超时机制<br>断路器模式：依赖的服务有大量超时，不去请求，快速失败<br>断路器状态：关闭，打开，断开<br>打开，直接返回状态不可用<br>半开，尝试请求，成功率达标，断路器关闭，反之打开<br>关闭，正常请求</p>
-<p>1.监控，总共请求多少次，有多少失败，失败率达到标准，断路器打开<br>2.断路器状态<br>3.半开时，分流<br>4.自我修复，断路器状态切换</p>
-<p>当对特定服务呼叫，hystrix默认5秒钟失败20次，打开断路器<br>回退机制，fallback，可以由开发人员提供<br>health indicator健康指标<br>hystrix.stream 监控</p>
-<p>turbine 监控整个集群</p>
-<hr>
-<p>zuul 实现比较好的api gateway<br>反向代理所有注册在eureka上的服务</p>
-<p>Sidecar 支持使用其他语言的微服务</p>
-<hr>
-<h3 id="spring-cloud-config统一管理微服务配置的组件"><a href="#spring-cloud-config统一管理微服务配置的组件" class="headerlink" title="spring cloud config统一管理微服务配置的组件"></a>spring cloud config统一管理微服务配置的组件</h3><p>集中管理<br>动态调整<br>不同环境不同配置<br>自动刷新<br>config server<br>连上GIT </p>
-<p>config client<br>获取git上的配置</p>
-<hr>
-<p>spring cloud bus<br>基于mq<br>trace追踪</p>
+          <h3 id="docker构建脚本报：-Syntax-error-end-of-file-unexpected-expecting-“then”"><a href="#docker构建脚本报：-Syntax-error-end-of-file-unexpected-expecting-“then”" class="headerlink" title="docker构建脚本报：  Syntax error : end of file unexpected (expecting “then”)"></a>docker构建脚本报：  Syntax error : end of file unexpected (expecting “then”)</h3><blockquote>
+<p>用vim   操作 startup.sh  :set fileformat=unix修改ubuntu 和linux服务器、 dos等非图形界面冲突<br>:wq保存</p>
+</blockquote>
 
       
     </div>
@@ -910,7 +518,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/part/microServices/spring%20cloud/eureka/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/08/md/tool/vim/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -924,7 +532,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2019/06/18/md/part/microServices/spring%20cloud/eureka/" class="post-title-link" itemprop="url">eureka</a>
+            <a href="/2019/07/08/md/tool/vim/" class="post-title-link" itemprop="url">vim使用</a>
         </h1>
 
         <div class="post-meta">
@@ -934,80 +542,7 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2019-06-18 14:35 14:35:10" itemprop="dateCreated datePublished" datetime="2019-06-18T14:35:10+08:00">2019-06-18 14:35</time>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>262</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h4 id="EMERGENCY-EUREKA-MAY-BE-INCORRECTLY-CLAIMING-INSTANCES-ARE-UP-WHEN-THEY’RE-NOT-RENEWALS-ARE-LESSER-THAN-THRESHOLD-AND-HENCE-THE-INSTANCES-ARE-NOT-BEING-EXPIRED-JUST-TO-BE-SAFE"><a href="#EMERGENCY-EUREKA-MAY-BE-INCORRECTLY-CLAIMING-INSTANCES-ARE-UP-WHEN-THEY’RE-NOT-RENEWALS-ARE-LESSER-THAN-THRESHOLD-AND-HENCE-THE-INSTANCES-ARE-NOT-BEING-EXPIRED-JUST-TO-BE-SAFE" class="headerlink" title="EMERGENCY! EUREKA MAY BE INCORRECTLY CLAIMING INSTANCES ARE UP WHEN THEY’RE NOT. RENEWALS ARE LESSER THAN THRESHOLD AND HENCE THE INSTANCES ARE NOT BEING EXPIRED JUST TO BE SAFE."></a>EMERGENCY! EUREKA MAY BE INCORRECTLY CLAIMING INSTANCES ARE UP WHEN THEY’RE NOT. RENEWALS ARE LESSER THAN THRESHOLD AND HENCE THE INSTANCES ARE NOT BEING EXPIRED JUST TO BE SAFE.</h4><figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment">#一般出现此模式时，服务返回错误。即如果真实的服务已经Down掉，但在注册中心界面服务却一直存在，且显示为UP状态，关掉自我保护模式</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="meta">eureka.server.enable-self-preservation</span> = <span class="string">false</span></span></pre></td></tr></table></figure>
-
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/part/spring/springboot/endPoint/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="mqiy">
-      <meta itemprop="description" content="永远为下个月离职做好准备">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小灰灰的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/06/18/md/part/spring/springboot/endPoint/" class="post-title-link" itemprop="url">endPoint</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-06-18 14:35 14:35:10" itemprop="dateCreated datePublished" datetime="2019-06-18T14:35:10+08:00">2019-06-18 14:35</time>
+              <time title="创建时间：2019-07-08 16:51 16:51:43" itemprop="dateCreated datePublished" datetime="2019-07-08T16:51:43+08:00">2019-07-08 16:51</time>
             </span>
 
           <br>
@@ -1035,12 +570,468 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="Endpoint"><a href="#Endpoint" class="headerlink" title="Endpoint"></a>Endpoint</h3><p>SpringBoot的Endpoint主要是用来监控应用服务的运行状况，并集成在Mvc中提供查看接口</p>
+          <h3 id="vim中文乱码"><a href="#vim中文乱码" class="headerlink" title="vim中文乱码"></a>vim中文乱码</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment">##配置文件，开头添加以下配置</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span> fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span> termencoding=utf-8</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span> encoding=utf-8</span></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/03/md/part/mq/rocketmq-test/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="mqiy">
+      <meta itemprop="description" content="永远为下个月离职做好准备">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小灰灰的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/07/03/md/part/mq/rocketmq-test/" class="post-title-link" itemprop="url">rocketmq 测试</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-07-03 14:13 14:13:10" itemprop="dateCreated datePublished" datetime="2019-07-03T14:13:10+08:00">2019-07-03 14:13</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>354</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">nohup sh bin/mqnamesrv &amp;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">tail -f ~/logs/rocketmqlogs/namesrv.log</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">nohup sh mqbroker -n localhost:9876 -c conf/broker.conf &amp;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">nohup sh bin/mqbroker -n localhost:9876 -c conf/broker.conf  autoCreateTopicEnable=true  &amp;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line"> tail -f ~/logs/rocketmqlogs/broker.log </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line"> export NAMESRV_ADDR=localhost:9876</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">关闭rocketmq</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line">sh bin/mqshutdown broker</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line">sh bin/mqshutdown namesrv</span></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/21/md/part/system/linux/find%20progress%20kill/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="mqiy">
+      <meta itemprop="description" content="永远为下个月离职做好准备">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小灰灰的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/06/21/md/part/system/linux/find%20progress%20kill/" class="post-title-link" itemprop="url">如何查找SHELL的进程号并杀死</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-06-21 17:59 17:59:40" itemprop="dateCreated datePublished" datetime="2019-06-21T17:59:40+08:00">2019-06-21 17:59</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>369</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="shell查找进程并杀死"><a href="#shell查找进程并杀死" class="headerlink" title="shell查找进程并杀死"></a>shell查找进程并杀死</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/sh</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">tomcat_id=`ps -ef | grep tomcat | grep -v "grep" | awk '&#123;print $2&#125;'`</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">echo $tomcat_id</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">for id in $tomcat_id</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">do</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">    kill -9 $id  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">    echo "killed $id"  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">done</span></pre></td></tr></table></figure>
+<blockquote>
+<p>注意：tomcat表示要查找的程序进程名，如：tomcat、8081端口、redis等等。</p>
+</blockquote>
+<h3 id="linux查找进程并杀死"><a href="#linux查找进程并杀死" class="headerlink" title="linux查找进程并杀死"></a>linux查找进程并杀死</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">####查找tomcat进程</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">ps -ef | grep tomcat | grep -v grep | awk '&#123;print $2&#125;'</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">####查找tomcat进程并杀死</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">ps -ef | grep tomcat | grep -v grep | awk '&#123;print $2&#125;' | xargs kill -9</span></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/21/md/life/%E6%83%85%E5%95%8650%E5%88%99/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="mqiy">
+      <meta itemprop="description" content="永远为下个月离职做好准备">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小灰灰的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/06/21/md/life/%E6%83%85%E5%95%8650%E5%88%99/" class="post-title-link" itemprop="url">情商50则</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-06-21 15:35 15:35:59" itemprop="dateCreated datePublished" datetime="2019-06-21T15:35:59+08:00">2019-06-21 15:35</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%BA%BA%E7%94%9F%E6%84%9F%E6%82%9F/" itemprop="url" rel="index">
+                    <span itemprop="name">人生感悟</span>
+                  </a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.2k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>1，话别说太满，人别熟太快。<br>3，不要把别人想得太坏，也不要把别人想得太好，都是凡人。<br>2，别人自嘲可以，但你千万别附和<br>4，可以嘲笑你的朋友，但不能嘲笑他喜欢的东西。  </p>
+<h2 id="34，自嘲是最高境界，而不是嘲笑别人。"><a href="#34，自嘲是最高境界，而不是嘲笑别人。" class="headerlink" title="34，自嘲是最高境界，而不是嘲笑别人。  "></a>34，自嘲是最高境界，而不是嘲笑别人。  </h2><p>6，刚开始和对方不熟悉的时候，聊到晚上十点多对方发来消息就别回复了，第二天早晨再回复，这样又可以聊一天。<br>7，把“随便”改成“听你的”。<br>23，把“听明白了吗”换成“我说明白了吗”。<br>5，把每一句“我不会”都改成“我可以学”<br>把“谢谢”改成“谢谢你” 并微笑看着对方的眼睛    </p>
 <hr>
-<h3 id="内置Endpoint"><a href="#内置Endpoint" class="headerlink" title="内置Endpoint"></a>内置Endpoint</h3><ul>
-<li>HealthEndpoint 监控dist和db的状态</li>
-<li>MetricsEndpoint 监控内存与gc的状况</li>
-</ul>
+<p>8，别人骂你你要听，别人夸你你别信。<br>9，请道歉而不是取笑别人开不起玩笑，你以为谁没有底线只不过还没到底而已。<br>10，聊天时别人发微笑，你不知道怎么回的话，就回，你笑得真好看。<br>11，能用表情包解决的就不要说脏话！<br>12，恰到好处的装逼，适可而止的套路。  </p>
+<h2 id="13，如果一个人不理你，有可能是对方的问题；如果大家都不理你，那你就要考虑自身问题了。"><a href="#13，如果一个人不理你，有可能是对方的问题；如果大家都不理你，那你就要考虑自身问题了。" class="headerlink" title="13，如果一个人不理你，有可能是对方的问题；如果大家都不理你，那你就要考虑自身问题了。  "></a>13，如果一个人不理你，有可能是对方的问题；如果大家都不理你，那你就要考虑自身问题了。  </h2><p>14，人前不应该说的话，背后也别说。<br>27，不要在公众场合揭别人的短处，让别人难堪。<br>35，请不要随意出卖一个朋友的隐私来取悦另一个不熟的朋友。<br>46，不要人后捅刀子嘴别贱。  </p>
+<hr>
+<p>15，在最愤怒时忍住最伤人对方的那句话。<br>17，不要把负能量带给身边的人。<br>18，不要吝啬你的赞美和表达爱意的语言。<br>40，越是亲近的人越要用心对待，一句随意的话会伤害她。<br>42，千万不要为了恋爱而淡了身边所有人。<br>21，真的不必把太多人请进生命里，太多热情总是不被珍惜。  </p>
+<hr>
+<p>16，如果没有十足的把握和必要，就不要轻易说假话。<br>19，女孩子永远抗拒不了陪她通宵聊天的人。<br>20，刻薄嘴欠和幽默是两回事；口无遮拦和坦率是两回事；没有教养和随性是两回事；轻重不分和耿直是两回事。  </p>
+<hr>
+<p>22，如果遇到了傻Ⅹ，不要与他争论，而且要同意他的一切观点，把他培养成大傻Ⅹ。<br>24，不能侮辱别人的idol，谨记！<br>47，践踏别人的梦想等同于谋杀。  </p>
+<hr>
+<p>25，在拒绝这件事上，越简单越好，明明是别人需求自己帮忙，解释半天变成自己亏欠了别人的感觉，帮得上，想帮就帮，帮不上，就拒绝。人际交往，简单明了有时最恰当，懂得拒绝，才可以洒脱不纠结。<br>33，学会拒绝，没人会感激你的善良，他们只会得寸进尺。  </p>
+<hr>
+<p>26，逢人只说三分话，未可全抛一片心。<br>29，看透不说透，还是好朋友。<br>39，最印象的一句话，“交友不必言尽，言尽则无友”  </p>
+<hr>
+<p>28，社交没那么容易，每个人都有他的手机。<br>30，当你往上爬的时候对别人好一点，因为你走下坡路的时候会遇到他们。</p>
+<hr>
+<p>31，颜值要高，脾气要好，原则要有。<br>36，有分寸的信任，有理由的怀疑。<br>37，把身材练好，把妆化好。<br>41，修得豆腐嘴，藏得刀子心。<br>43，清醒时做事，糊涂时读书，大怒时睡觉，独处时思考。  </p>
+<hr>
+<p>32，该叫阿姨的叫姐，该叫姐的叫美女该叫美女的叫妹子。<br>38，不会讲话时别瞎说沉默微笑更好。<br>44，永远不要听信别人口中的他。<br>45，女生之间的嫉妒心太可怕，不要公开说这个女生比那个好看。<br>48，常与同好争高下，不共傻瓜论短长。——出自《欢乐颂》  </p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/21/md/life/%E8%BF%99%E5%B0%B1%E6%98%AF%E4%BA%BA%E7%94%9F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="mqiy">
+      <meta itemprop="description" content="永远为下个月离职做好准备">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小灰灰的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/06/21/md/life/%E8%BF%99%E5%B0%B1%E6%98%AF%E4%BA%BA%E7%94%9F/" class="post-title-link" itemprop="url">这就是人生</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-06-21 15:35 15:35:59" itemprop="dateCreated datePublished" datetime="2019-06-21T15:35:59+08:00">2019-06-21 15:35</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%BA%BA%E7%94%9F%E6%84%9F%E6%82%9F/" itemprop="url" rel="index">
+                    <span itemprop="name">人生感悟</span>
+                  </a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.7k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>孤独是人生的常态，一定要拥有真正喜欢的兴趣爱好，这样才能支持你渡过无数个漫漫长夜和无数个孤独的时候，读书则是成本最低的兴趣爱好。很多人看起来什么都感兴趣，啥都能参与一定点但都不深入，这种人是最孤独的，因为他根本不知道自己想要什么，喜欢什么。</p>
+<p>绝大部分焦虑不过是脑子勤奋（想的太多）和身体懒惰之间的矛盾，自视甚高是人之常情，但一般要等到人到中年才能明白。20岁：我一定行——40岁：我本可以——60岁：我真的不行哎，是大部分人的人生轨迹。</p>
+<p>一个人行不行可能早就注定了，比如家庭，比如言行举止，比如不经意间的流露……比如知乎的提问，大部分人都不懂得先问是不是再问为什么，大部分人都来懒的出奇，对自己不负责任，问的很随便，不说任何前提，不说任何自己情况，比如太多人问什么专业好、XX专业有没有前景、550分能读什么学校……只有这几个字，惜墨如金守口如瓶的，这些人将来基本上都会庸庸碌碌一辈子。因为思考意识具有决定性作用，跟年龄关系不大，如果你跟顶级中学的高中生聊过天 ，会发现她们比很多大学生有思想有见识，问问题的时候会把个人和家庭情况、问题背景、愿景交待的很清楚。</p>
+<p>对于大部分人来说，体制内尤其是公务员是最好是工作，因为大部分人到了中年才会明白自己不过是庸人，是站在路边给别人喝彩，坐在台下给别人鼓掌的人，年轻时所谓的理想情怀豪言壮语只是对自己不了解，或者人云亦云。</p>
+<p>大部分人一辈子也不会遇到轰轰烈烈荡气回肠的爱情，不过的找一个能接受的，不喜欢也不讨厌，甚至不那么讨厌的人将就着，婚姻，不过是人生的例行公事。</p>
+<p>大部分失败的婚姻不是败给大是大非，而是日常再小不过的琐事，零刀子割肉没感觉，时间长了才会发现情感已经跌破发行价了。跟门当户对、经济条件、颜值相比，一个有趣的人开朗的人善良的人积极阳光的人，重要的多。大多数的婚姻失败不是大是大非的原则性问题，而是无数细枝末节的煎熬和落差，天长日久的日常摩擦，好的性格和心态，可以避免和减少大多数以上不快。</p>
+<p>婚姻的真谛不只是爱，更多是忍受，求同存异，利弊权衡。</p>
+<p>绝大多数人找的媳妇儿都不如大学里的恋人，能在大学找个媳妇儿就尽量，毕业后你会发现你根本找不到这么好的了，甚至可以让你越来越绝望。不被父母祝福的婚姻大概率是不会幸福的，尤其是远嫁、两人落差太大，都是一种孤军深入式的冒险。</p>
+<p>没有遭遇大的意外，比如战争、大的天灾、绝症、残疾，有一份能养家糊口的工作就是一种幸福甚至幸运，当然你不会觉察到，直到失去。大部分人一辈子也没有一个真正的爱好，没有被谁真爱过，真爱过谁，没有痛痛快快哭过笑过，都是复制黏贴型人生。</p>
+<p>绝大多数人都有阴暗面，即便一辈子不为人所知。人性是最不靠谱的东西，法律和契约最实实在在的。</p>
+<p>大多数人一辈子也没有真正的朋友，所谓的朋友不过是同学、同事、同行、熟人甚至亲戚邻居身份的外延，别看平时亲密热烈，你好我好，一遇到事情，朋友二字就褪色了。朋友也不是人生的标配，友情也不是一成不变的，因为每个人都是在变化之中，当再次见面时，大家说着言不由衷的话，去没有什么交集时，就让这份友情活在对往事的回忆中去吧。</p>
+<p>除了父母，真的很少有人想你好，大部分人盼你倒大霉。</p>
+<p>大部分人都会受父母的影响，这种影响是骨子里的，越想摆脱越摆脱不了，会草蛇灰线伏延几十年，尤其是人到中年，有一天会突然发现自己变成了讨厌的模样，被父母附体。</p>
+<p>大部分人，一辈子和文艺也没有交集，看电影看个热闹，听音乐听个响，看书图个刺激，虽然朋友圈都是纳兰容若、尼采。文艺青年大都会在潦倒、衰败、激愤、穷酸中渡过一生。</p>
+<p>出轨、堕落是一种戒不了毒，不要指望用感动、谅解、宽恕去改变，当然也有回头是岸立地成佛的，但概率低到你不敢冒险。</p>
+<p>知乎大部分故事都是假的，教人月入XX年入XX大都是收智商税的，推荐的东西大部分用处不大，思维、决策、分析等高赞文章大都是自问自答，也是心理学管理学书社会学籍上都有的，基本上属于收藏不看系列。</p>
+<p>残忍归残忍，可日子也得过不是，罗曼罗兰那句话不是都会背了嘛。其实也谈不上残忍，这就是真实的人生，只不过大部分人把生活想的太美好而已。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/21/md/life/%E7%94%9F%E6%B4%BB%E4%B8%AD%E6%9C%89%E5%93%AA%E4%BA%9B%E6%AE%8B%E5%BF%8D%E7%9A%84%E7%9C%9F%E7%9B%B8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="mqiy">
+      <meta itemprop="description" content="永远为下个月离职做好准备">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小灰灰的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/06/21/md/life/%E7%94%9F%E6%B4%BB%E4%B8%AD%E6%9C%89%E5%93%AA%E4%BA%9B%E6%AE%8B%E5%BF%8D%E7%9A%84%E7%9C%9F%E7%9B%B8/" class="post-title-link" itemprop="url">生活中有哪些残忍的真相</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-06-21 15:35 15:35:59" itemprop="dateCreated datePublished" datetime="2019-06-21T15:35:59+08:00">2019-06-21 15:35</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%BA%BA%E7%94%9F%E6%84%9F%E6%82%9F/" itemprop="url" rel="index">
+                    <span itemprop="name">人生感悟</span>
+                  </a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>2k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>1、如果你八岁，十八岁，二十八岁都没有漂亮起来，那这辈子大概率就没法好看了（男生同理）</p>
+<p>解：变有钱，变有内涵，变豁达，提升好看概率，实在不行，提升自己看得开的能力。</p>
+<p>2、大部分人终其一生都不能拥有及格的原生家庭，及格的校园生活，及格的职场发展，以及及格的婚姻和后代</p>
+<p>解：降低及格线，严以律己宽以待人，庸人不自扰。</p>
+<p>3、迷茫是人生80%的状态，剩下的百分之二十，都是一些俗不可耐的目标，比如考大学，比如找工作，比如谈对象，比如买房买车生孩子，恰恰是这些俗不可耐的目标才能暂时将你从迷茫的状态里拯救出来。</p>
+<p>解：做好当下一件事，接受迷茫的状态但不沉沦，或者试试把共产主义作为新的理想？</p>
+<p>4、算计，衡量，比较，得失利弊分析将贯穿大部分人的一生，洒脱，率性而为是很多人向往的状态，却很难做到。</p>
+<p>解：算计过程，衡量结果，但是不算计人心，不衡量感情。洒脱有时候真的意味着卸下很多责任，但凡人在世，岂能没有责任？</p>
+<p>5、攒钱，省吃俭用其实才是大部分人的生存之道，不然你以为拼多多是怎么火起来的，我听过投资需谨慎，理财有风险的，可从没听说过攒钱有风险，储蓄需谨慎的。</p>
+<p>解：没人知道十年后房价暴涨，与其遗憾，不如适当积蓄，给自己一个底气。</p>
+<p>6、有时候感情双方都是彼此的Plan B，却还要在婚礼上宣誓此生唯一。</p>
+<p>解：Plan B也是Plan，因为A计划失败，不得不启动B计划，还记得第一个发明可乐的人吗，他的A计划是止咳药来着，但是B计划更盈利不是吗？</p>
+<p>7、孩子比较爱父母的时候一般是自己无助的时候，父母比较爱孩子的时候一般是自己比较得意的时候。所以事业生活不顺的家长大多会打骂孩子，而混的风生水起的孩子容易忽略父母。（是的，就是这么扎心，父母子女之间的爱也有爱得可以为对方死，非常爱，比较爱，一般爱，不爱，讨厌，恨，恨不得对方去死等不同等级）。</p>
+<p>解：这是唯一一个无解的真相，只能参考第一题最后一句，提升自己看得开的能力。</p>
+<p>8、养个不如意的孩子会严重影响夫妻感情，家庭关系，声称孩子是宝贝天使的父母，心里都在给自己孩子悄悄打分，这个分数一直能打到儿女退休那天，退休金高低也会成为最后一项得分。</p>
+<p>解：养孩子之前，对自己进行充分评审和考核，确定孩子无论什么样，都不后悔做一遭父母，再带孩子来到这个世界上，如果只是把孩子当做自己人生的一个加分项，那说到底还是不配为人父母。</p>
+<p>9、鄙视链真实存在于各行各业，各种阶层，而且处于鄙视链高层的人经常表态的一句话是：我并不觉得XXX的人会有这样的缺点，也不会看不起他们，只是阅历见识不同，三观不同，没法聊得来。潜台词就是：我鄙视你，我不要跟你玩！处于底层的人则经常说这样的话：他们不过是XXXX，其实不也是XXX，谁稀罕他们！潜台词就是：你们那边好像很好玩，为啥不喊我一起玩?！</p>
+<p>解：努力成为鄙视链的上端，不然永远逃不脱鄙视链。</p>
+<p>10、大多数人理智上知道嫉贤妒能是错误的，但感情上已经红了眼，会在各种打擦边球的地方做小动作，让如日中天的人稍微落下西山，然后还会自我安慰：这事情并不能怨我，我能做什么啊，根本不会影响到的。</p>
+<p>解：得意时谨言慎行，失意时不落井下石，已经是很厉害的人了。</p>
+<p>11、生活中也许会发生，但只要电视剧里作为主题来演的，那一定是小概率事件：比如穷人家女孩嫁给富二代；比如家徒四壁的穷孩子考上了清北；比如后爸后妈对孩子视如己出，辛苦养育，感人泪下；比如抱错孩子刚好其中一家是很有钱而由此引发的十八年后的二十集剧情；比如你爱的人刚好也爱你。。。。</p>
+<p>因为不常发生，所以有演绎的价值，可惜蠢人总喜欢拿小概率事件当自家剧本，穷还不思进取，坐等孩子考清华，家庭矛盾都四分五裂了，还不快刀斩乱麻，就在那坐等突发事件发生，人设逆转然后阖家团圆（是的，点名批评最近热门剧“都挺好”的走向，这种剧情会麻痹多少病态的家庭，让他们误以为一切家庭乱象都会有这样的美好结尾）。</p>
+<p>解：看清楚什么是小概率事件，才能在大多数不如意事情发生的时候泰然处之，而又能在小概率事情发生时珍惜美好的那一刻。</p>
+<p>12、残忍的真相就是人人都知道真相，但还要合起来粉饰太平。</p>
+<p>解：生活的本质是钟摆运动，两端是繁花似锦，中间是漫长的平平无奇，粉饰太平也许是在摆动至下一个美好节点期间能做的最大的努力。</p>
+<p>罗曼罗兰那句耳熟能详的话作为结尾：There is only one heroism in the world: to see the world as it is and to love it.</p>
+<p>我写的这个答案的确很扎心，但是这并不是本意，扎心只是一瞬的感触，剩下的时间里依然过好每一天，才是大部分人的选择，我想看过我答案的人，并不会因为这些答案扎心就放弃继续生活了吧。</p>
+<p>我写的解其实也都是大多数人知道的道理，只是知道和做到，不是一回事，像我自己，扎心的真相都是我亲身经历，但是我也在努力践行我自己的英雄主义，与大家共勉。</p>
 
       
     </div>
@@ -1060,7 +1051,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/14/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><span class="page-number current">15</span><a class="page-number" href="/page/16/">16</a><span class="space">&hellip;</span><a class="page-number" href="/page/19/">19</a><a class="extend next" rel="next" href="/page/16/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/14/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><span class="page-number current">15</span><a class="page-number" href="/page/16/">16</a><span class="space">&hellip;</span><a class="page-number" href="/page/22/">22</a><a class="extend next" rel="next" href="/page/16/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1126,7 +1117,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">183</span>
+          <span class="site-state-item-count">219</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1139,7 +1130,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">55</span>
+        <span class="site-state-item-count">52</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -1173,12 +1164,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">227k</span>
+    <span title="站点总字数">256k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">3:27</span>
+    <span title="站点阅读时长">3:52</span>
 </div>
 
         

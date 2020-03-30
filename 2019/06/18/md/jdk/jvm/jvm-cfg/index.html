@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.1.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('http://yoursite.com').hostname,
+    root: '/',
+    scheme: 'Mist',
+    version: '7.6.0',
+    exturl: false,
+    sidebar: {"position":"right","display":"hide","padding":18,"offset":12,"onmobile":true},
+    copycode: {"enable":true,"show_result":true,"style":"mac"},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":true,"color":"#222","save":"manual"},
+    fancybox: true,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="Java 堆内存开关   VM 开关 VM 开关描述    -Xms 设置JVM启动时堆的初始化大小。   -Xmx 设置堆最大值。   -Xmn 设置年轻代的空间大小，剩下的为老年代的空间大小。   -XX:PermGen 设置永久代内存的初始化大小。   -XX:MaxPermGen 设置永久代的最大值。   -XX:SurvivorRatio 提供Eden区和survivor区的空间比例。比">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jvm参数">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;06&#x2F;18&#x2F;md&#x2F;jdk&#x2F;jvm&#x2F;jvm-cfg&#x2F;index.html">
+<meta property="og:site_name" content="小灰灰的博客">
+<meta property="og:description" content="Java 堆内存开关   VM 开关 VM 开关描述    -Xms 设置JVM启动时堆的初始化大小。   -Xmx 设置堆最大值。   -Xmn 设置年轻代的空间大小，剩下的为老年代的空间大小。   -XX:PermGen 设置永久代内存的初始化大小。   -XX:MaxPermGen 设置永久代的最大值。   -XX:SurvivorRatio 提供Eden区和survivor区的空间比例。比">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-06-18T06:28:10.000Z">
+<meta property="article:modified_time" content="2020-03-29T02:32:48.015Z">
+<meta property="article:author" content="mqiy">
+<meta property="article:tag" content="jvm">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/2019/06/18/md/jdk/jvm/jvm-cfg/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>jvm参数 | 小灰灰的博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">小灰灰的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">52</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类<span class="badge">5</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">219</span></a>
+
+  </li>
+        <li class="menu-item menu-item-relate">
+
+    <a href="/relate" rel="section"><i class="fa fa-fw fa-star"></i>relate</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/jdk/jvm/jvm-cfg/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="mqiy">
+      <meta itemprop="description" content="永远为下个月离职做好准备">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小灰灰的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          jvm参数
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-06-18 14:28 14:28:10" itemprop="dateCreated datePublished" datetime="2019-06-18T14:28:10+08:00">2019-06-18 14:28</time>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.5k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h3 id="Java-堆内存开关"><a href="#Java-堆内存开关" class="headerlink" title="Java 堆内存开关"></a>Java 堆内存开关</h3><table>
+<thead>
+<tr>
+<th align="center">VM 开关</th>
+<th align="left">VM 开关描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">-Xms</td>
+<td align="left">设置JVM启动时堆的初始化大小。</td>
+</tr>
+<tr>
+<td align="center">-Xmx</td>
+<td align="left">设置堆最大值。</td>
+</tr>
+<tr>
+<td align="center">-Xmn</td>
+<td align="left">设置年轻代的空间大小，剩下的为老年代的空间大小。</td>
+</tr>
+<tr>
+<td align="center">-XX:PermGen</td>
+<td align="left">设置永久代内存的初始化大小。</td>
+</tr>
+<tr>
+<td align="center">-XX:MaxPermGen</td>
+<td align="left">设置永久代的最大值。</td>
+</tr>
+<tr>
+<td align="center">-XX:SurvivorRatio</td>
+<td align="left">提供Eden区和survivor区的空间比例。比如，如果年轻代的大小为10m并且VM开关是-XX:SurvivorRatio=2，那么将会保留5m内存给Eden区和每个Survivor区分配2.5m内存。默认比例是8。</td>
+</tr>
+<tr>
+<td align="center">-XX:NewRatio</td>
+<td align="left">提供年老代和年轻代的比例大小。默认值是2。</td>
+</tr>
+</tbody></table>
+<h3 id="最后汇总一下JVM常见配置"><a href="#最后汇总一下JVM常见配置" class="headerlink" title="最后汇总一下JVM常见配置"></a>最后汇总一下JVM常见配置</h3><h3 id="堆设置"><a href="#堆设置" class="headerlink" title="堆设置"></a>堆设置</h3><p>-Xms:初始堆大小   </p>
+<p>-Xmx:最大堆大小   </p>
+<p>-XX:NewSize=n:设置年轻代大小</p>
+<p>-XX:NewRatio=n:设置年轻代和年老代的比值。如:为3，表示年轻代与年老代比值为1：3，年轻代占整个年轻代年老代和的1/4</p>
+<p>-XX:SurvivorRatio=n:年轻代中Eden区与两个Survivor区的比值。注意Survivor区有两个。如：3，表示Eden：Survivor=3：2，一个Survivor区占整个年轻代的1/5</p>
+<p>-XX:MaxPermSize=n:设置持久代大小</p>
+<h4 id="收集器设置"><a href="#收集器设置" class="headerlink" title="收集器设置"></a>收集器设置</h4><p>-XX:+UseSerialGC:设置串行收集器</p>
+<p>-XX:+UseParallelGC:设置并行收集器</p>
+<p>-XX:+UseParalledlOldGC:设置并行年老代收集器</p>
+<p>-XX:+UseConcMarkSweepGC:设置并发收集器</p>
+<h4 id="垃圾回收统计信息"><a href="#垃圾回收统计信息" class="headerlink" title="垃圾回收统计信息"></a>垃圾回收统计信息</h4><p>-XX:+PrintGC  </p>
+<p>-XX:+PrintGCDetails  </p>
+<p>-XX:+PrintGCTimeStamps  </p>
+<p>-Xloggc:filename</p>
+<h4 id="并行收集器设置"><a href="#并行收集器设置" class="headerlink" title="并行收集器设置"></a>并行收集器设置</h4><p>-XX:ParallelGCThreads=n:设置并行收集器收集时使用的CPU数。并行收集线程数。</p>
+<p>-XX:MaxGCPauseMillis=n:设置并行收集最大暂停时间</p>
+<p>-XX:GCTimeRatio=n:设置垃圾回收时间占程序运行时间的百分比。公式为1/(1+n)</p>
+<h4 id="并发收集器设置"><a href="#并发收集器设置" class="headerlink" title="并发收集器设置"></a>并发收集器设置</h4><p>-XX:+CMSIncrementalMode:设置为增量模式。适用于单CPU情况。</p>
+<p>-XX:ParallelGCThreads=n:设置并发收集器年轻代收集方式为并行收集时，使用的CPU数。并行收集线程数。</p>
+<h3 id="Tomcat运行jvm参数"><a href="#Tomcat运行jvm参数" class="headerlink" title="Tomcat运行jvm参数"></a>Tomcat运行jvm参数</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">-Xms256m -Xmx512m -XX:MaxNewSize=256m -XX:MaxPermSize=256m</span></pre></td></tr></table></figure>
+
+<h3 id="jdk版本变更中jvm内存结构变化"><a href="#jdk版本变更中jvm内存结构变化" class="headerlink" title="jdk版本变更中jvm内存结构变化"></a>jdk版本变更中jvm内存结构变化</h3><p>永久代的工作从JDK 1.7就开始了。JDK 1.7中，存储在永久代的部分数据就已经转移到Java Heap或者Native Heap。但永久代仍存在于JDK 1.7中，并没有完全移除，<br>符号引用(Symbols)转移到了native heap；<br>字面量(interned strings)转移到了Java heap；<br>类的静态变量(class statics)转移到了Java heap。</p>
+<p><em>Java8之后的变化：</em></p>
+<ul>
+<li>移除了永久代（PermGen），替换为元空间（Metaspace）；</li>
+<li>永久代中的 class metadata 转移到了 native memory（本地内存，而不是虚拟机）；</li>
+<li>永久代中的 interned Strings 和 class static variables 转移到了 Java heap；</li>
+<li>永久代参数 （PermSize MaxPermSize） -&gt; 元空间参数（MetaspaceSize MaxMetaspaceSize）</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/jvm/" rel="tag"><i class="fa fa-tag"></i> jvm</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2019/06/18/md/jdk/java8/" rel="prev" title="java8">
+      <i class="fa fa-chevron-left"></i> java8
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2019/06/18/md/part/project/%E9%AB%98%E5%B9%B6%E5%8F%91/" rel="next" title="高并发">
+      高并发 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Java-堆内存开关"><span class="nav-number">1.</span> <span class="nav-text">Java 堆内存开关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最后汇总一下JVM常见配置"><span class="nav-number">2.</span> <span class="nav-text">最后汇总一下JVM常见配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#堆设置"><span class="nav-number">3.</span> <span class="nav-text">堆设置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#收集器设置"><span class="nav-number">3.1.</span> <span class="nav-text">收集器设置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#垃圾回收统计信息"><span class="nav-number">3.2.</span> <span class="nav-text">垃圾回收统计信息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#并行收集器设置"><span class="nav-number">3.3.</span> <span class="nav-text">并行收集器设置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#并发收集器设置"><span class="nav-number">3.4.</span> <span class="nav-text">并发收集器设置</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Tomcat运行jvm参数"><span class="nav-number">4.</span> <span class="nav-text">Tomcat运行jvm参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#jdk版本变更中jvm内存结构变化"><span class="nav-number">5.</span> <span class="nav-text">jdk版本变更中jvm内存结构变化</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">mqiy</p>
+  <div class="site-description" itemprop="description">永远为下个月离职做好准备</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">219</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">52</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">mqiy</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="站点总字数">256k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">3:52</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/clicklove.js"></script>
+
+</html>

@@ -140,7 +140,7 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">55</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">52</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
@@ -150,7 +150,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">183</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">219</span></a>
 
   </li>
         <li class="menu-item menu-item-relate">
@@ -211,7 +211,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/part/spring/spring%E4%BA%8B%E5%8A%A1/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/21/md/part/microServices/Nacos%E9%85%8D%E7%BD%AE%E7%9A%84%E5%8A%A0%E8%BD%BD%E8%A7%84%E5%88%99%E8%AF%A6%E8%A7%A3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -225,7 +225,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2019/06/18/md/part/spring/spring%E4%BA%8B%E5%8A%A1/" class="post-title-link" itemprop="url">spring事务</a>
+            <a href="/2019/06/21/md/part/microServices/Nacos%E9%85%8D%E7%BD%AE%E7%9A%84%E5%8A%A0%E8%BD%BD%E8%A7%84%E5%88%99%E8%AF%A6%E8%A7%A3/" class="post-title-link" itemprop="url">Nacos配置的加载规则详解</a>
         </h1>
 
         <div class="post-meta">
@@ -235,7 +235,7 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2019-06-18 14:35 14:35:10" itemprop="dateCreated datePublished" datetime="2019-06-18T14:35:10+08:00">2019-06-18 14:35</time>
+              <time title="创建时间：2019-06-21 15:35 15:35:59" itemprop="dateCreated datePublished" datetime="2019-06-21T15:35:59+08:00">2019-06-21 15:35</time>
             </span>
 
           <br>
@@ -244,7 +244,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>581</span>
+              <span>510</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -263,17 +263,13 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <hr>
-<h3 id="Spring声明式事务七种传播行为"><a href="#Spring声明式事务七种传播行为" class="headerlink" title="Spring声明式事务七种传播行为"></a>Spring声明式事务七种传播行为</h3><ul>
-<li>REQUIRES_NEW：不管是否存在事务，该方法总会为自己发起一个新的事务。如果方法已经运行在一个事务中，则原有事务挂起，新的事务被创建。  </li>
-<li>NESTED：如果一个活动的事务存在，则运行在一个嵌套的事务中。如果没有活动事务，则按REQUIRED属性执行。它使用了一个单独的事务，这个事务拥有多个可以回滚的保存点。内部事务的回滚不会对外部事务造成影响。它只对<code>DataSourceTransactionManager</code>事务管理器起效。</li>
-<li>REQUIRED：业务方法需要在一个事务中运行，如果方法运行时，已处在一个事务中，那么就加入该事务，否则自己创建一个新的事务。<strong>这是spring默认的传播行为</strong>。</li>
-<li>MANDATORY：该方法只能在一个已经存在的事务中执行，业务方法不能发起自己的事务。如果在没有事务的环境下被调用，容器抛出异常。</li>
-<li>SUPPORTS：该方法在某个事务范围内被调用，则方法成为该事务的一部分。如果方法在该事务范围外被调用，该方法就在没有事务的环境下执行。</li>
-<li>NOT_SUPPORTED：声明方法不需要事务。如果方法没有关联到一个事务，容器不会为他开启事务，如果方法在一个事务中被调用，该事务会被挂起，调用结束后，原先的事务会恢复执行。</li>
-<li>NEVER：该方法绝对不能在事务范围内执行。如果在就抛异常。只有该方法没有关联到任何事务，才正常执行。</li>
+          <h3 id="配置管理"><a href="#配置管理" class="headerlink" title="配置管理"></a>配置管理</h3><ul>
+<li>Data ID中的<code>alibaba-nacos-config-client</code>：对应客户端的配置<code>spring.cloud.nacos.config.prefix</code>，默认值为<code>${spring.application.name}</code>，即：服务名</li>
+<li>Data ID中的<code>properties</code>：对应客户端的配置<code>spring.cloud.nacos.config.file-extension</code>，默认值为<code>properties</code></li>
+<li>Group的值<code>DEFAULT_GROUP</code>：对应客户端的配置<code>spring.cloud.nacos.config.group</code>，默认值为<code>DEFAULT_GROUP</code></li>
 </ul>
-
+<p>在采用默认值的应用要加载的配置规则就是：<code>Data ID=${spring.application.name}.properties</code>，<code>Group=DEFAULT_GROUP</code></p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="attr">server:</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  <span class="attr">port:</span> <span class="number">9000</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="attr">spring:</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">  <span class="attr">application:</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    <span class="attr">name:</span> <span class="string">alibaba-nacos-discovery-client</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">  <span class="comment"># server discovery</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">  <span class="attr">cloud:</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">    <span class="attr">nacos:</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">      <span class="attr">discovery:</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">        <span class="attr">server-addr:</span> <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span><span class="string">:8848</span></span></pre></td></tr></table></figure>
       
     </div>
 
@@ -292,7 +288,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/life/eq/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/21/md/part/system/linux/linux%E5%8E%8B%E7%BC%A9%E4%B8%8E%E8%A7%A3%E5%8E%8B/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -306,7 +302,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2019/06/18/md/life/eq/" class="post-title-link" itemprop="url">eq</a>
+            <a href="/2019/06/21/md/part/system/linux/linux%E5%8E%8B%E7%BC%A9%E4%B8%8E%E8%A7%A3%E5%8E%8B/" class="post-title-link" itemprop="url">linux压缩与解压</a>
         </h1>
 
         <div class="post-meta">
@@ -316,7 +312,7 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2019-06-18 14:34 14:34:10" itemprop="dateCreated datePublished" datetime="2019-06-18T14:34:10+08:00">2019-06-18 14:34</time>
+              <time title="创建时间：2019-06-21 15:35 15:35:59" itemprop="dateCreated datePublished" datetime="2019-06-21T15:35:59+08:00">2019-06-21 15:35</time>
             </span>
 
           <br>
@@ -325,7 +321,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>64</span>
+              <span>829</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -344,13 +340,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <ul>
-<li>感知他人情绪的能力。</li>
-<li>控制自己情绪的能力。</li>
-<li>目标和行为的高度统一</li>
-</ul>
-<p>感受到对方的表情变化，并及时调整自己的说话思维方式，这才是正确的反馈</p>
+          <h4 id="unzip解压"><a href="#unzip解压" class="headerlink" title="unzip解压"></a>unzip解压</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 解压window中压缩的文件，不会文件名包含中文乱码</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">unzip -O CP936 xxx.zip</span></pre></td></tr></table></figure>
 
+
+<h4 id="tar-命令"><a href="#tar-命令" class="headerlink" title="tar 命令"></a>tar 命令</h4><p>-c: 建立压缩档案<br>-x：解压<br>-t：查看内容<br>-r：向压缩归档文件末尾追加文件<br>-u：更新原压缩包中的文件</p>
+<p>这五个是独立的命令，压缩解压都要用到其中一个，可以和别的命令连用但只能用其中一个。下面的参数是根据需要在压缩或解压档案时可选的。</p>
+<p>-z：有gzip属性的<br>-j：有bz2属性的<br>-Z：有compress属性的<br>-v：显示所有过程<br>-O：将文件解开到标准输出</p>
+<p>下面的参数-f是必须的</p>
+<p>-f: 使用档案名字，切记，这个参数是最后一个参数，后面只能接档案名。</p>
+<h4 id="tar-示例"><a href="#tar-示例" class="headerlink" title="tar 示例"></a>tar 示例</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">#### 压缩</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">tar –cvf jpg.tar *.jpg      // 将目录里所有jpg文件打包成tar.jpg</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">tar –czf jpg.tar.gz *.jpg   // 将目录里所有jpg文件打包成jpg.tar后，生成gzip压缩过的包，命名为jpg.tar.gz</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">tar –cjf jpg.tar.bz2 *.jpg  // 将目录里所有jpg文件打包成jpg.tar后，生成bzip2压缩过的包，命名为jpg.tar.bz2</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">tar –cZf jpg.tar.Z *.jpg    // 将目录里所有jpg文件打包成jpg.tar后，生成umcompress压缩过的包，命名为jpg.tar.Z</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">rar a jpg.rar *.jpg         // rar格式的压缩，需要先下载rar for Linux</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">zip -r  jpg.zip  *.jpg      // zip格式的压缩  -r 递归压缩</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">####  解压</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">tar –xvf file.tar           //解压 tar包</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">tar -xzvf file.tar.gz       //解压tar.gz</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">tar -xjvf file.tar.bz2      //解压 tar.bz2</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">tar –xZvf file.tar.Z -C /opt/dev      //解压tar.Z</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">unrar e file.rar            //解压rar</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">unzip file.zip -d /opt/dev             //解压zip</span></pre></td></tr></table></figure>
       
     </div>
 
@@ -369,7 +367,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/life/%E9%80%82%E5%BA%94%E7%A4%BE%E4%BC%9A%E8%80%8C%E7%A3%A8%E5%B9%B3%E6%A3%B1%E8%A7%92%E5%90%97/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/21/md/tool/uml/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -383,7 +381,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2019/06/18/md/life/%E9%80%82%E5%BA%94%E7%A4%BE%E4%BC%9A%E8%80%8C%E7%A3%A8%E5%B9%B3%E6%A3%B1%E8%A7%92%E5%90%97/" class="post-title-link" itemprop="url">适应社会而磨平棱角吗</a>
+            <a href="/2019/06/21/md/tool/uml/" class="post-title-link" itemprop="url">uml</a>
         </h1>
 
         <div class="post-meta">
@@ -393,7 +391,7 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2019-06-18 14:34 14:34:10" itemprop="dateCreated datePublished" datetime="2019-06-18T14:34:10+08:00">2019-06-18 14:34</time>
+              <time title="创建时间：2019-06-21 15:32 15:32:59" itemprop="dateCreated datePublished" datetime="2019-06-21T15:32:59+08:00">2019-06-21 15:32</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -401,8 +399,8 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E4%BA%BA%E7%94%9F%E6%84%9F%E6%82%9F/" itemprop="url" rel="index">
-                    <span itemprop="name">人生感悟</span>
+                  <a href="/categories/tool/" itemprop="url" rel="index">
+                    <span itemprop="name">tool</span>
                   </a>
                 </span>
             </span>
@@ -413,142 +411,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>4.4k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>4 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h4 id="如果成长就是向世界妥协，你愿意为了适应社会而磨平棱角吗？"><a href="#如果成长就是向世界妥协，你愿意为了适应社会而磨平棱角吗？" class="headerlink" title="如果成长就是向世界妥协，你愿意为了适应社会而磨平棱角吗？"></a>如果成长就是向世界妥协，你愿意为了适应社会而磨平棱角吗？</h4><p>我也曾经以为我在妥协，后来发现我只是自说自话地感动自己罢了，就像你长大了明白你是两性生殖产生的，而不是像小时候妈妈告诉你，你是路边上捡来的。</p>
-<p>这叫妥协吗……？</p>
-<p>简单的来讲，套用逼乎模版，我可以说：（太长不看版）</p>
-<p>1.先问是不是，再问为什么。成长是认识世界的过程，一草一木皆是世界，臭水沟是世界，乌托邦也是世界，小孩子可能只见识到世界的5%，而20岁的你可能见识到了10%，等四十不惑的时候可能到了25%，当我们悲伤逆流成河地说自己跟世界“妥协”了，你有没有想过，</p>
-<p>这个宾语，所谓“世界”，你真的知道是什么吗？到底跟谁妥协的呢？美国国家妥协局？中国人民妥协部？你是在遍历了世界所有元素之后，然后说，这就是世界，我真的看透了，所以我不得不为了生存而修改自己的初心？</p>
-<p>2.以大部分人的认知阅历水平，是没资格谈论自己的所谓“初心”被抹平的。你都不知道自己到底想要啥，还谈个锤子的初心？就像全中国你能够抓出来100万个创业者，连街边卖地瓜的都算，他也有梦想，他也会振振有词告诉你怎么从卖地瓜到卖坦克走向人生巅峰。</p>
-<p>但这不意味着他真的拥有或者配拥有一个普遍意义上他能够驾驭的比较合理的梦想，梦想是个宏大叙事，而平头百姓烫头百姓很难说自己有资格探讨宏大叙事。就像你不能说自己看了本《时间简史》就说自己算是科学家了，你这充其量是个科晓家，少看点郭德纲吧。</p>
-<p>3.私以为，很多人有这种疑问，还是因为过于“顾影自怜”+“对世界认识不到位”。就像第一点探讨的，世界就是世界，你也是世界的一部分，它不是割裂的，不是随着18岁生日的蜡烛吹灭，突然骤然忽然莫名其妙地就巨变了质变了。</p>
-<p>你的所谓初心，类比一下，就好比windows系统，你中学是windows98，高中是windowsXP，大学是win8，等到成家立业可能变成了win10，难道你告诉我，“当年我像win98一样简陋的初心，当初我想当科学家，后来我成绩不好上了专科，我的梦想破灭了，我为了生存不得不跟世界妥协！”这不是很可笑吗？之所以有人能当科学家，是因为他们有资格当，而不仅仅是因为他们想当，你想当，那你就拿出证据。</p>
-<p>win10之所以比前几版好使，不是它跟谁妥协了，是它更成熟了，更完善了，更适应时代了，你可以说98和XP也有很多独到之处，但是事实上，他们就是落伍了，他们也并不因为你的情怀，而变得可以亘古不变价值永恒，如果你觉得自己的初心是不可更改不可妥协的，我觉得90%的可能是你太自恋。记住，情怀，绝大多数时候，都是自恋，难道不是吗？</p>
-<p>你的初恋，你念念不忘，但是关我屁事呢？我会对她/他高看一眼吗？不会。</p>
-<p>你的梦想，你不能平息，但是我凭什么就得理解你呢？你爱干嘛干嘛与我无关啊。</p>
-<p>先看看题主的问题：</p>
-<p>在成人世界里，一直保持一颗初心和童真，怕是一件非常难的事儿吧。</p>
-<blockquote>
-<p>随着逐渐年长，人们总是在不停地向现实妥协，在守护心灵中的理想世界和接受世俗融入社会之间，大部分人都被迫选择了后者，世界给这种举动起了一个很好听的名儿：成长。<br>于是成长在成人世界里的含义，往往都是残酷的。<br>有的时候你会羡慕那些一直天真乐观的大孩子，因为他们就像年轻时候的自己；也会心疼那些保持初心却饱受现实摧残的「边缘人士」，也想要劝他们跟现实和解。<br>大多数时候，不是我们选择「自我阉割」，而是被生活「阉割」；很多经历促使你变得理性克制近乎冷淡、迟钝抗压近乎麻木，平滑老道近乎世故，因为这才是现在这个社会的生存之道。<br>如果可以选择的话，你会选择接受现实从而活的容易一些，还是宁愿跌跌撞撞也要永远年轻热泪盈眶?</p>
-</blockquote>
-<p>我是很有资格探讨这种问题的，初心，初恋，热血，激情，本愿，这些高大上的词汇，大家都有，我更有。<br>曾经中学的我，也是非常文艺的，我敢说比很多自诩文艺青年的人都更有资格，毕竟，那些熟读唐诗三百首的人，大概还是不如我这种写了诗歌300首的有资格说自己文艺吧，你行你也写呗，对吧。短篇也写了十几篇，长篇大概开了两个坑，我的理想就是去当个写手，甚至作家。我知道这条路很难，但是我想，韩寒，郭敬明，蒋方舟，这些人不都或多或少跟我有点像，他们能够成功，我为什么不能？</p>
-<p>当然，这都不重要，我只是想证明，我确实有自己的初心，我也有点资格说自己有这个初心。</p>
-<p>后来呢？我当然没有那么冲动，我没有辍学，我还是坚持学习，同时笔耕不辍，想着等我高考完，立马开始投稿，各种投，我写的也杂，我写诗歌，也写短篇小说，写长篇校园小说（类似于韩寒那种），也写科幻小说，我觉得自己还是挺有天赋的吧，我也觉得自己是独特的。</p>
-<p>显然，我自然是四处碰壁，投稿别说拒稿，人家根本不回复你，你都以为自己是不是没有发过去。</p>
-<p>另一方面，高中的时候，我一直是我们班里的前五名，万年掉不出去，我只要不自暴自弃，怎么都是前五，第一倒是少有，第二第三考过好几次，我觉得自己还是学习蛮好的吧，我觉得自己既文艺，又兼顾学业，多厉害啊。所以我觉得，我的前途是充满未知却金光灿烂的，我可以成为学霸型写手，以后那真是风光无限，美女如云……</p>
-<p>然而？</p>
-<p>投稿石沉大海，而且随着我在网上看各种文章，逛文学类贴吧，找所谓文字工作室（网上的小团体，收稿子卖钱那种），我才了解到，原来文字圈是这样，别说扬名立万了，现在出版社本身就不景气，你想出书也容易，几万块就可以出，然而意义何在？你说你想出名？不好意思，本来现在看书的就少，推广成本你没个上百万你根本推不出去，而且，文字圈毕竟是讲究圈子的，就像娱乐圈一样，不是你够努力够砸钱就能够混成当成炸子鸡的，你需要贵人伯乐，你需要切入点好机会……</p>
-<p>这些，在最初形成我的初心的时候，我是都不知道的，所以赖谁呢？赖世界吗？</p>
-<p>高考，更有意思了，我这个全班名列前茅的人只高了一本线一分，根本上不了什么正经的一本，我之前也知道我们班不是好班，但是谁知道到底放在高考的尺度下算是什么水平呢，对吧？</p>
-<p>最后我们班一共才有五六个人过了一本线，最好的一个才去了青岛大学而已，这就是赤裸裸的世界，我的初心自然被打破了。</p>
-<p>还是那个问题，这赖谁呢？赖世界没有给我一个我以为的预期吗？</p>
-<p>难道这些不是世界本来的面目吗？投稿很难，难道不是一直都那样吗，出版业不景气，你自己不知道你赖谁呢？高考难，难道不是全中国人都该知道的吗，你以为自己学习很好，那又如何呢？大家都想考北大清华所以大家都该上吗？</p>
-<p>因为你不知道，所以你就非常唯心主义的觉得，不对，这跟我想的不一样，所以世界错了，你们错了， 你们要按我说的改！</p>
-<p>您是上帝吗？</p>
-<p>再来看题主的话：</p>
-<blockquote>
-<p>随着逐渐年长，人们总是在不停地向现实妥协，在守护心灵中的理想世界和接受世俗融入社会之间，大部分人都被迫选择了后者，世界给这种举动起了一个很好听的名儿：成长。</p>
-</blockquote>
-<p>现实并没有变化，变化的是你而已，世俗也一直就是那样，只是你一直蹲在新手村看不见而已，大部分人当然选择后者，不然呢？就你特殊可以不去适应世界是吗？<br>进化论还不明白吗？尼安格特人怎么灭绝的？是因为他们不够强大，被我们的祖先给竞争灭绝了，你不想融入世俗，您就接受灭绝就好了，你有今天的这个肉体，全仰赖你的老祖宗积极入世。</p>
-<blockquote>
-<p>有的时候你会羡慕那些一直天真乐观的大孩子，因为他们就像年轻时候的自己；也会心疼那些保持初心却饱受现实摧残的「边缘人士」，也想要劝他们跟现实和解。</p>
-</blockquote>
-<p>一直的乐观天真，到底是一种<strong>不自知的愚昧</strong>，还是一种大无畏的乐观主义？</p>
-<blockquote>
-<p>大多数时候，不是我们选择「自我阉割」，而是被生活「阉割」</p>
-</blockquote>
-<p>文艺青年总喜欢说这种玄了吧唧的废话，我当年就是这样——自我阉割也好，被别人阉割也好，本质上是为了融入世界，你完全可以不融入，死掉就好咯，就这么简单。何况，所谓“自我阉割”，到底是自己越来越有逼数，越来越不那么狂妄愚昧，还是真的你一个天选之子不得不屈服于浮尘俗世？</p>
-<p>丑小鸭不屈服于群体，那是因为人家基因里就是天鹅，你要是鸭子怎么办？</p>
-<p>换句话说，你是选择主动认错，还是被别人揍一顿之后被教做人？</p>
-<blockquote>
-<p>很多经历促使你变得理性克制近乎冷淡、迟钝抗压近乎麻木，平滑老道近乎世故，因为这才是现在这个社会的生存之道。</p>
-</blockquote>
-<p>很多人以为变得理性就是变得迟钝，变得博学就是变得麻木，不好意思，我们家是县城的，我们家是做生意的，我从小到大就见识了太多底层家庭，底层人民，我还算是知道普罗大众的精神面貌和认知水平的，从农村的工人大爷，到城里的穷苦泼妇，从学校的天真中产，到大学的官富二代。</p>
-<p>难道天真就意味着不迟钝？难道愚昧就意味着活力四射？</p>
-<p>就像当年那个充满激情，满脑子未来憧憬的自己，我不知道投稿有多难，我不知道自己作品水平没那么好，我不知道自己高考就那么回事，我甚至也不知道自己到底多丑多帅……</p>
-<p>所以当年那个我，就是所谓“不冷淡，不麻木，不圆滑不世故”的好青年了？</p>
-<p>你当然可以说当年的自己是充满热血的，但是这不意味着中二少年就是值得敬佩的，这充其量，是人生的一个阶段，就像小处男夜夜幻想着美女的胴体，然后过了几年有了孩子反而性冷淡了，你难道还能分出个优劣来？你就应该一辈子都跟个小处男一样，像个泰迪一样看着谁都想日？这就是青春永驻了？这就是有意义的人生？</p>
-<blockquote>
-<p>如果可以选择的话，你会选择接受现实从而活的容易一些，还是宁愿跌跌撞撞也要永远年轻热泪盈眶?</p>
-</blockquote>
-<p>如果说我们有的选择的话，大概这句话还有点意义，<br>就像当初的我，我可以选择留在国内，按部就班来毕业找工作，考国家电网或者公务员，也可以选择出国留学充满未知和机遇，走一条比较艰险的路。</p>
-<p>但是要说“跌跌撞撞也要永远年轻热泪盈眶”这就太符合我一开始说的，“自我感动”“不自知不自觉”“顾影自怜”，不要觉得我无情，毕竟，本人自己就非常中二过，我也有资格说自己追梦吧，你们有本事也写几百首诗然后投稿啊挣扎啊，别光口嗨啊对吧？我好歹真的去做了。</p>
-<p>所以恰恰因为这样，我才认识到自己当初多么狂妄，多么自恋，多么无知。</p>
-<p>这个世界不是给你准备的，你不是主角，你只是75亿人里面的一个罢了。</p>
-<p>成长本质上就是越来越认识这个世界的面貌，越来越熟悉里面的规则，你会觉得这些东西残酷，那是因为，当你在父母的庇护下的时候，你不需要考虑这些——但不意味着这些不存在，因为当时——是你的父母在考虑这些，不是你。当你成为父母的时候，你的孩子也会一样，心安理得地造梦，觉得世界是他自己的，所有人都该围着他转，有这种心态这很正常，但是你不能一辈子都这样，这也不是对的。</p>
-<p>所以总而言之，我们幻想出一个“棱角”来取悦自己的内心，让自己以为曾经，自己也是个勇士也是英雄，只是俗世逼自己一个大人物妥协，这个心态很常见，但是它是不靠谱的，你也根本就是普普通通的人罢了，你根本没有什么牛逼闪闪的“棱角”，被什么巨兽恶魔所打磨，你只是越来越有逼数了，越来越认识到自己在这个社会里的位置，世界到底是什么样子，你修正自己的航线，是为了不至于撞冰山撞死，而不是什么伟大的“壮士断腕”，</p>
-<p>说难听点，你当年的梦想，一文不值。就像我当年的梦想，一文不值，但是这并不妨碍我继续前进，不然，也没有我今天知乎上的这个答案对吧？</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/other/%E7%BC%A9%E5%86%99/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="mqiy">
-      <meta itemprop="description" content="永远为下个月离职做好准备">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小灰灰的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/06/18/md/other/%E7%BC%A9%E5%86%99/" class="post-title-link" itemprop="url">缩写</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-06-18 14:34 14:34:10" itemprop="dateCreated datePublished" datetime="2019-06-18T14:34:10+08:00">2019-06-18 14:34</time>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>339</span>
+              <span>303</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -567,13 +430,17 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="UAT-SIT-QAS-DEV-PET"><a href="#UAT-SIT-QAS-DEV-PET" class="headerlink" title="UAT SIT QAS DEV PET"></a>UAT SIT QAS DEV PET</h1><ul>
-<li><code>SIT</code>: System Integrate Test的缩写，即系统整合测试 </li>
-<li><code>QAS</code>: Quality Assurance system　质量保证 </li>
-<li><code>DEV</code>: Development 开发 </li>
-<li><code>PET</code>: Performance Evaluation Test　性能测试</li>
+          <h3 id="口决"><a href="#口决" class="headerlink" title="口决"></a>口决</h3><ul>
+<li>虚箭实现实泛化</li>
+<li>虚线依赖实关联</li>
+<li>空菱聚合实组合</li>
 </ul>
-<p><strong>QPS</strong>：<code>Queries Per Second</code>意思是“每秒查询率”，是一台服务器每秒能够相应的查询次数，是对一个特定的查询服务器在规定时间内所处理流量多少的衡量标准。<br><strong>TPS</strong>：是<code>TransactionsPerSecond</code>的缩写，也就是事务数/秒。它是软件测试结果的测量单位。一个事务是指一个客户机向服务器发送请求然后服务器做出反应的过程。客户机在发送请时开始计时，收到服务器响应后结束计时，以此来计算使用的时间和完成的事务个数。</p>
+<h4 id="泛化"><a href="#泛化" class="headerlink" title="泛化"></a>泛化</h4><p>用一条带空心箭头的直接表示，通常在程序里面泛化表现为继承于非抽象类。</p>
+<h4 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h4><p>用一条带实心箭头的虚线表示。通常程序里面实现关系表现为继承抽象类,或接口。</p>
+<h4 id="聚合"><a href="#聚合" class="headerlink" title="聚合"></a>聚合</h4><p>用一条带空心菱形箭头的直线表示。与组合关系不同的是，整体和部分不是强依赖的，即使整体不存在了，部分仍然存在。</p>
+<h4 id="组合"><a href="#组合" class="headerlink" title="组合"></a>组合</h4><p>用一条带实心菱形箭头直线表示，如果整体不存在了，部分也不复存在</p>
+<h4 id="依赖"><a href="#依赖" class="headerlink" title="依赖"></a>依赖</h4><p>用一套带箭头的虚线表示，描述一个对象在运行期间会用到另一个对象的关系。通常在程序里面通过构造函数、形参等体现。</p>
+<h4 id="关联"><a href="#关联" class="headerlink" title="关联"></a>关联</h4><p>用一条直线表示，当然如果需要标明方向可以添加箭头，通常不会随着状态的变化而变化。通常在程序里面以类变量的方式表现。</p>
 
       
     </div>
@@ -593,7 +460,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/linux/linux%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/21/md/part/microServices/spring%20cloud/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E5%81%A5%E5%BA%B7%E6%A3%80%E6%9F%A5/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -607,7 +474,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2019/06/18/md/linux/linux%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6/" class="post-title-link" itemprop="url">linux安装软件</a>
+            <a href="/2019/06/21/md/part/microServices/spring%20cloud/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E5%81%A5%E5%BA%B7%E6%A3%80%E6%9F%A5/" class="post-title-link" itemprop="url">微服务健康检查</a>
         </h1>
 
         <div class="post-meta">
@@ -617,7 +484,7 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2019-06-18 14:31 14:31:10" itemprop="dateCreated datePublished" datetime="2019-06-18T14:31:10+08:00">2019-06-18 14:31</time>
+              <time title="创建时间：2019-06-21 14:44 14:44:23" itemprop="dateCreated datePublished" datetime="2019-06-21T14:44:23+08:00">2019-06-21 14:44</time>
             </span>
 
           <br>
@@ -626,7 +493,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.3k</span>
+              <span>426</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -645,30 +512,14 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="设置交换分区"><a href="#设置交换分区" class="headerlink" title="设置交换分区"></a>设置交换分区</h3><p>SpringBoot多项目部署项目运行被killed解决办法，没有分配swap空间</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">创建/home/swap这么一个分区文件。文件大小是512000个block，一般情况下1个block为1k，所以这里空间是1024M，一般是物理内存的2倍。</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">dd if=/dev/zero of=/home/swap bs=1024 count=1024000</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">将这个分区变成swap分区。</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">/sbin/mkswap /home/swap</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">使用swap分区，使其生效</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">/sbin/swapon /home/swap</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">查看swap分区大小</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">free -m</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 系统重启后swap分区会还原，解决办法：修改/etc/fstab文件，增加一行</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">/home/swap           swap                 swap       defaults              0 0</span></pre></td></tr></table></figure>
+          <h4 id="健康检查"><a href="#健康检查" class="headerlink" title="健康检查"></a>健康检查</h4><figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment">#开启健康检查（需要spring-boot-starter-actuator依赖）</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="meta">eureka.client.healthcheck.enabled</span>=<span class="string">true</span></span></pre></td></tr></table></figure>
+
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment">#应用信息 /actuator/info</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="attr">info:</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">  <span class="attr">app:</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    <span class="attr">name:</span> <span class="string">@project.name@</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">    <span class="attr">description:</span> <span class="string">@project.description@</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    <span class="attr">version:</span> <span class="string">@project.version@</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">    <span class="attr">encoding:</span> <span class="string">@project.build.sourceEncoding@</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">    <span class="attr">java:</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">      <span class="attr">version:</span> <span class="string">@java.version@</span></span></pre></td></tr></table></figure>
 
 
 
-<h3 id="安装openJdk"><a href="#安装openJdk" class="headerlink" title="安装openJdk"></a>安装openJdk</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># 必须安装带devel版本（完整jdk）</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">yum -y install java-1.8.0-openjdk.x86_64 java-1.8.0-openjdk-devel.x86_64</span></pre></td></tr></table></figure>
 
-
-
-<h3 id="安装nginx"><a href="#安装nginx" class="headerlink" title="安装nginx"></a>安装nginx</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> first install yum-utils</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">yum install yum-utils</span></pre></td></tr></table></figure>
-
-<p>To set up the yum repository, create the file named <code>/etc/yum.repos.d/nginx.repo</code> with the following contents:</p>
-<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="attr">[nginx-stable]</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="attr">name</span>=<span class="string">nginx stable repo</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="attr">baseurl</span>=<span class="string">http://nginx.org/packages/centos/$releasever/$basearch/</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="attr">gpgcheck</span>=<span class="string">1</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="attr">enabled</span>=<span class="string">1</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="attr">gpgkey</span>=<span class="string">https://nginx.org/keys/nginx_signing.key</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"><span class="attr">[nginx-mainline]</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"><span class="attr">name</span>=<span class="string">nginx mainline repo</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line"><span class="attr">baseurl</span>=<span class="string">http://nginx.org/packages/mainline/centos/$releasever/$basearch/</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line"><span class="attr">gpgcheck</span>=<span class="string">1</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line"><span class="attr">enabled</span>=<span class="string">0</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line"><span class="attr">gpgkey</span>=<span class="string">https://nginx.org/keys/nginx_signing.key</span></span></pre></td></tr></table></figure>
-
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> By default, the repository <span class="keyword">for</span> stable nginx packages is used. If you would like to use mainline nginx packages, run the following <span class="built_in">command</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">yum-config-manager --enable nginx-mainline</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> To install nginx,</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">yum install nginx</span></pre></td></tr></table></figure>
-
-<h3 id="vmware-centos网络不通"><a href="#vmware-centos网络不通" class="headerlink" title="vmware centos网络不通"></a>vmware centos网络不通</h3><p>编辑 /etc/sysconfig/network-scripts/ifcfg-ensXXXX</p>
-<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment">#修改如下值</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="attr">BOOTPROTO</span>=<span class="string">dhcp</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="attr">ONBOOT</span>=<span class="string">yes</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="comment">#重启网络服务</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="attr">service</span> <span class="string">network restart</span></span></pre></td></tr></table></figure>
-
-
-<blockquote>
-<p>目前在官网下载低于jdk1.8的java jdk的时候需要登陆，这边分享一个账号，方便下载<br><a href="mailto:2696671285@qq.com">2696671285@qq.com</a><br>密码：Oracle123</p>
-</blockquote>
-
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-actuator<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span></pre></td></tr></table></figure>
       
     </div>
 
@@ -687,7 +538,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/linux/centos/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/21/md/part/microServices/spring%20cloud/spring%20cloud%20gateway%20%E5%85%A5%E9%97%A8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -701,7 +552,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2019/06/18/md/linux/centos/" class="post-title-link" itemprop="url">centos设置</a>
+            <a href="/2019/06/21/md/part/microServices/spring%20cloud/spring%20cloud%20gateway%20%E5%85%A5%E9%97%A8/" class="post-title-link" itemprop="url">spring cloud gateway 入门</a>
         </h1>
 
         <div class="post-meta">
@@ -711,7 +562,7 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2019-06-18 14:31 14:31:10" itemprop="dateCreated datePublished" datetime="2019-06-18T14:31:10+08:00">2019-06-18 14:31</time>
+              <time title="创建时间：2019-06-21 14:44 14:44:23" itemprop="dateCreated datePublished" datetime="2019-06-21T14:44:23+08:00">2019-06-21 14:44</time>
             </span>
 
           <br>
@@ -720,7 +571,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>524</span>
+              <span>1.2k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -739,88 +590,19 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h4 id="设置静态IP"><a href="#设置静态IP" class="headerlink" title="设置静态IP"></a>设置静态IP</h4><p>修改/etc/sysconfig/network-scripts/ifcfg-ens33  文件</p>
-<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="attr">BOOTPROTO</span>=<span class="string">static</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="attr">IPADDR</span>=<span class="string">192.168.85.135</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="attr">GATEWAY</span>=<span class="string">192.168.85.2</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="attr">NETMASK</span>=<span class="string">255.255.255.0</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="attr">DNS1</span>=<span class="string">192.168.85.2</span></span></pre></td></tr></table></figure>
-<hr>
-<h4 id="Linux下查看网关方法："><a href="#Linux下查看网关方法：" class="headerlink" title="Linux下查看网关方法："></a>Linux下查看网关方法：</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">route -n</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">ip route show</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">第一行就是自己的默认网关</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">traceroute www.prudentwoo.com -s 100 </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">netstat -r</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">more /etc/network/interfaces  #Debian/Ubuntu Linux</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">more /etc/sysconfig/network-scripts/ifcfg-eth0 #Red Hat</span></pre></td></tr></table></figure>
-<hr>
-<h4 id="无法访问外网"><a href="#无法访问外网" class="headerlink" title="无法访问外网"></a>无法访问外网</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">修改文件   /etc/sysconfig/network-scripts/ifcfg-ens33 </span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">ONBOOT=no改为yes，确认BOOTPROTO=dhcp</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">然后重启网络服务</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">systemctl restart network</span></pre></td></tr></table></figure>
-<hr>
-<h4 id="如果报未找到ifconfig命令"><a href="#如果报未找到ifconfig命令" class="headerlink" title="如果报未找到ifconfig命令"></a>如果报未找到ifconfig命令</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">安装net-tools</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">yum install net-tools  -y</span></pre></td></tr></table></figure>
-      
-    </div>
+          <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.cloud<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-cloud-starter-gateway<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    <span class="comment">&lt;!-- 集成eureka --&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">    <span class="comment">&lt;!--&lt;dependency&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"><span class="comment">        &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"><span class="comment">        &lt;artifactId&gt;spring-cloud-starter-netflix-eureka-client&lt;/artifactId&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line"><span class="comment">    &lt;/dependency&gt;--&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span></pre></td></tr></table></figure>
+<p>spring-cloud-gateway有两种配置方式，一种是在application.yml中配置，一种是使用@Bean对象注入。（注意：二者选其一）</p>
+<h4 id="application-yml方式"><a href="#application-yml方式" class="headerlink" title="application.yml方式"></a>application.yml方式</h4><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="attr">spring:</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  <span class="attr">cloud:</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    <span class="attr">gateway:</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">      <span class="attr">routes:</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">      <span class="bullet">-</span> <span class="attr">id:</span> <span class="string">WEB</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">        <span class="attr">uri:</span> <span class="string">http://127.0.0.1:8661</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">        <span class="attr">predicates:</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">        <span class="bullet">-</span> <span class="string">Path=/web/&#123;segment&#125;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">        <span class="attr">filters:</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">        <span class="bullet">-</span> <span class="string">SetPath=/&#123;segment&#125;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">        <span class="bullet">-</span> <span class="string">StripPrefix=1</span></span></pre></td></tr></table></figure>
 
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
+<h4 id="Bean对象注入配置方式"><a href="#Bean对象注入配置方式" class="headerlink" title="@Bean对象注入配置方式"></a>@Bean对象注入配置方式</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">@Bean</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> RouteLocator <span class="title">routeLocator</span><span class="params">(RouteLocatorBuilder builder)</span> </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">return</span> builder.routes()</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">            .route(<span class="string">"WEB"</span>, r -&gt; r.path(<span class="string">"/web/&#123;segment&#125;"</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">                    .filters(f -&gt; f.setPath(<span class="string">"/&#123;segment&#125;"</span>))</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">                    .uri(<span class="string">"http://127.0.0.1:8661"</span>))</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">            .build();</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/linux/shell/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="mqiy">
-      <meta itemprop="description" content="永远为下个月离职做好准备">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小灰灰的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/06/18/md/linux/shell/" class="post-title-link" itemprop="url">shell</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-06-18 14:31 14:31:10" itemprop="dateCreated datePublished" datetime="2019-06-18T14:31:10+08:00">2019-06-18 14:31</time>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>92</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>单引号字符串的限制：</p>
+<p>简要说明：</p>
 <ul>
-<li>单引号里的任何字符都会原样输出，单引号字符串中的变量是无效的；</li>
-<li>单引号字串中不能出现单独一个的单引号（对单引号使用转义符后也不行），但可成对出现，作为字符串拼接使用。</li>
+<li>id：路由的id，参数配置不要重复，如不配置，gateway会使用生成一个uuid代替。</li>
+<li>uri：路由的目标地址。注意：uri地址后面不要加 “ / “</li>
+<li>Path：配置路由的路径。比如：/web/{segment}则表示当访问<a href="http://127.0.0.1:8562/web/**时候路由的指定的uri上面" target="_blank" rel="noopener">http://127.0.0.1:8562/web/**时候路由的指定的uri上面</a></li>
+<li>SetPath：在发起请求时，在路由请求路径后面加上web/后面的内容。如果不配置，将无法路由地址后缀/web/index，只能路由/web</li>
+<li>StripPrefix 去掉转发根据路径web</li>
 </ul>
 
       
@@ -841,7 +623,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/linux/peerDNS/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/21/md/life/%E7%94%B7%E5%A3%AB%E6%8A%A4%E8%82%A4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -855,7 +637,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2019/06/18/md/linux/peerDNS/" class="post-title-link" itemprop="url">peerDNS</a>
+            <a href="/2019/06/21/md/life/%E7%94%B7%E5%A3%AB%E6%8A%A4%E8%82%A4/" class="post-title-link" itemprop="url">洁面-洗面奶</a>
         </h1>
 
         <div class="post-meta">
@@ -865,7 +647,7 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2019-06-18 14:31 14:31:10" itemprop="dateCreated datePublished" datetime="2019-06-18T14:31:10+08:00">2019-06-18 14:31</time>
+              <time title="创建时间：2019-06-21 14:41 14:41:52" itemprop="dateCreated datePublished" datetime="2019-06-21T14:41:52+08:00">2019-06-21 14:41</time>
             </span>
 
           <br>
@@ -874,7 +656,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>492</span>
+              <span>193</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -893,12 +675,11 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>先认识一下这三个配置文件：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">/etc/hosts #：这个是最早的 hostname 对应 IP 的存档；</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">/etc/resolv.conf #：当需要解析域名时，读取该文件获得DNS 服务器 IP；</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">/etc/nsswitch.conf#：这个档案『决定』先使用 /etc/hosts 还是 /etc/resolv.conf 的设定！</span></pre></td></tr></table></figure>
-
-<p>当电脑要访问一个域名时，要将域名翻译成IP地址。<br> 这个过程通常会先访问/etc/hosts，看本地是否有对应的hostname – IP记录。<br> 如果没有就去查询DNS服务器，通过/etc/resolv.conf 得到dns服务器地址。</p>
-<p>当在eth接口启用DHCP后，本地resolv.conf文件将被修改，resolv.conf文件中的DNS地址将被改为从DHCP获取到的地址。这种从DHCP获得的DNS即是Peer DNS。</p>
-<p>启用DHCP后即便修改/etc/resolv.conf，不久又恢复成原样。如何解决这个问题？此时，你得要在 /etc/sysconfig/network-scripts/ifcfg-eth0 等相关档案内，增加一行：『PEERDNS=no』，然后重新启动网络即可。</p>
+          <p><strong>洁面-洗面奶</strong></p>
+<p><strong>水温：一定选择和皮肤温度相近的水温</strong>，不要觉得夏天太热就用凉水，冬天太冷就用较烫的水，这都会刺激到皮肤；<strong>最后可以用稍凉一些的水收尾，达到收缩毛孔的效果。</strong></p>
+<p><strong>手法：</strong>在脸上转圈打炮泡，注意T区等容易出油的部位可以多照顾一些，没什么好说的。</p>
+<p><strong>时间：不低于30秒，不超过三分钟；</strong>不要觉得洗的时间越长越好。</p>
+<p><strong>注意</strong>：洗完及时擦干脸上的水分，刚洗完脸，毛孔张开状态下，水分蒸发更容易带走皮肤的水分。</p>
 
       
     </div>
@@ -918,7 +699,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/jdk/jvm/jvm/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/21/md/part/db/%E4%BA%8B%E5%8A%A1%E7%9A%84%E5%9B%9B%E7%A7%8D%E9%9A%94%E7%A6%BB%E7%BA%A7%E5%88%AB/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -932,7 +713,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2019/06/18/md/jdk/jvm/jvm/" class="post-title-link" itemprop="url">jvm参数</a>
+            <a href="/2019/06/21/md/part/db/%E4%BA%8B%E5%8A%A1%E7%9A%84%E5%9B%9B%E7%A7%8D%E9%9A%94%E7%A6%BB%E7%BA%A7%E5%88%AB/" class="post-title-link" itemprop="url">事务的四种隔离级别</a>
         </h1>
 
         <div class="post-meta">
@@ -942,7 +723,7 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2019-06-18 14:28 14:28:10" itemprop="dateCreated datePublished" datetime="2019-06-18T14:28:10+08:00">2019-06-18 14:28</time>
+              <time title="创建时间：2019-06-21 14:39 14:39:46" itemprop="dateCreated datePublished" datetime="2019-06-21T14:39:46+08:00">2019-06-21 14:39</time>
             </span>
 
           <br>
@@ -951,7 +732,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>355</span>
+              <span>440</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -970,48 +751,50 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="Java-堆内存开关"><a href="#Java-堆内存开关" class="headerlink" title="Java 堆内存开关"></a>Java 堆内存开关</h3><table>
+          <h3 id="事务的四种隔离级别"><a href="#事务的四种隔离级别" class="headerlink" title="事务的四种隔离级别"></a>事务的四种隔离级别</h3><table>
 <thead>
 <tr>
-<th align="center">VM 开关</th>
-<th align="left">VM 开关描述</th>
+<th></th>
+<th>脏读</th>
+<th>不可重复读</th>
+<th>幻读</th>
 </tr>
 </thead>
 <tbody><tr>
-<td align="center">-Xms</td>
-<td align="left">设置JVM启动时堆的初始化大小。</td>
+<td>Read uncommitted</td>
+<td>X</td>
+<td>X</td>
+<td>X</td>
 </tr>
 <tr>
-<td align="center">-Xmx</td>
-<td align="left">设置堆最大值。</td>
+<td>Read committed</td>
+<td>√</td>
+<td>X</td>
+<td>X</td>
 </tr>
 <tr>
-<td align="center">-Xmn</td>
-<td align="left">设置年轻代的空间大小，剩下的为老年代的空间大小。</td>
+<td>Repeatable read</td>
+<td>√</td>
+<td>√</td>
+<td>X</td>
 </tr>
 <tr>
-<td align="center">-XX:PermGen</td>
-<td align="left">设置永久代内存的初始化大小。</td>
-</tr>
-<tr>
-<td align="center">-XX:MaxPermGen</td>
-<td align="left">设置永久代的最大值。</td>
-</tr>
-<tr>
-<td align="center">-XX:SurvivorRatio</td>
-<td align="left">提供Eden区和survivor区的空间比例。比如，如果年轻代的大小为10m并且VM开关是-XX:SurvivorRatio=2，那么将会保留5m内存给Eden区和每个Survivor区分配2.5m内存。默认比例是8。</td>
-</tr>
-<tr>
-<td align="center">-XX:NewRatio</td>
-<td align="left">提供年老代和年轻代的比例大小。默认值是2。</td>
+<td>Serializable</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
 </tr>
 </tbody></table>
-<h3 id="Tomcat运行jvm参数"><a href="#Tomcat运行jvm参数" class="headerlink" title="Tomcat运行jvm参数"></a>Tomcat运行jvm参数</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">-Xms256m -Xms512m -XX:MaxNewSize=256m -XX:MaxPermSize=256m</span></pre></td></tr></table></figure>
-
-
-
-
-
+<ol>
+<li><p><strong>ISOLATION_READ_UNCOMMITTED</strong>：读未提交，这是事务最低的隔离级别，它充许令外一个事务可以看到这个事务未提交的数据。</p>
+<pre><code>这种隔离级别会产生脏读，不可重复读和幻像读。、</code></pre></li>
+<li><p><strong>ISOLATION_READ_COMMITTED</strong>：读已提交，保证一个事务修改的数据提交后才能被另外一个事务读取。另外一个事务不能读取该事务未提交的数据</p>
+</li>
+<li><p><strong>ISOLATION_REPEATABLE_READ</strong>：可重复读，这种事务隔离级别可以防止脏读，不可重复读。但是可能出现幻像读。</p>
+<pre><code>它除了保证一个事务不能读取另一个事务未提交的数据外，还保证了避免下面的情况产生(不可重复读)。</code></pre></li>
+<li><p><strong>ISOLATION_SERIALIZABLE</strong>：串行化，这是花费最高代价但是最可靠的事务隔离级别。事务被处理为<strong>顺序执行</strong>。</p>
+<pre><code>除了防止脏读，不可重复读外，还避免了幻像读。 </code></pre></li>
+</ol>
 
       
     </div>
@@ -1031,7 +814,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/part/project/%E9%AB%98%E5%B9%B6%E5%8F%91/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/20/md/problem/web/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -1045,7 +828,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2019/06/18/md/part/project/%E9%AB%98%E5%B9%B6%E5%8F%91/" class="post-title-link" itemprop="url">高并发</a>
+            <a href="/2019/06/20/md/problem/web/" class="post-title-link" itemprop="url">问题日志</a>
         </h1>
 
         <div class="post-meta">
@@ -1055,7 +838,7 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2019-06-18 14:28 14:28:10" itemprop="dateCreated datePublished" datetime="2019-06-18T14:28:10+08:00">2019-06-18 14:28</time>
+              <time title="创建时间：2019-06-20 16:51 16:51:43" itemprop="dateCreated datePublished" datetime="2019-06-20T16:51:43+08:00">2019-06-20 16:51</time>
             </span>
 
           <br>
@@ -1064,7 +847,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>542</span>
+              <span>102</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -1083,38 +866,152 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="首先要了解高并发的的瓶颈在哪里？"><a href="#首先要了解高并发的的瓶颈在哪里？" class="headerlink" title="首先要了解高并发的的瓶颈在哪里？"></a>首先要了解高并发的的瓶颈在哪里？</h2><h3 id="前端性能优化技术"><a href="#前端性能优化技术" class="headerlink" title="前端性能优化技术"></a>前端性能优化技术</h3><ol>
-<li><p>前端负载均衡: DNS，CDN</p>
-</li>
-<li><p>减少前端链接数: 把js打成一个文件，把css也打成一个文件，把图标也打成一个文件，用css分块展示。把链接数减到最低。</p>
-</li>
-<li><p>减少网页大小增加带宽:尽量少用图片</p>
-</li>
-<li><p>前端页面静态化: 静态化一些不常变的页面和数据</p>
-</li>
-<li><p>优化查询: redis缓存</p>
-</li>
-</ol>
+          <h3 id="Invalid-character-found-in-method-name-HTTP-method-names-must-be-tokens-the-HTTP-protoco"><a href="#Invalid-character-found-in-method-name-HTTP-method-names-must-be-tokens-the-HTTP-protoco" class="headerlink" title="Invalid character found in method name. HTTP method names must be tokens|the HTTP protoco"></a>Invalid character found in method name. HTTP method names must be tokens|the HTTP protoco</h3><p><code>因为请求协议不对，需要统一成https或http请求</code></p>
 <hr>
-<h3 id="后端性能优化技术"><a href="#后端性能优化技术" class="headerlink" title="后端性能优化技术"></a>后端性能优化技术</h3><ol>
-<li><p>数据冗余: 减少表连接这样的开销比较大的操作，优化sql语句</p>
-</li>
-<li><p>数据镜像: 把一台数据库的负载均分到多台上，同时又保证了数据一致性(Oracle的SCN)。最重要的是，这样还可以有高可用性，一台废了，还有另一台在服务</p>
-</li>
-<li><p>数据分区</p>
-<ul>
-<li>把数据把某种逻辑来分类: 把一张表拆成多张有一样的字段但是不同种类的表</li>
-<li>把数据按字段分，也就是竖着分表: 把一些不经常改的数据放在一个表里，经常改的数据放在另外多个表里。把一张表变成1对1的关系</li>
-<li>平均分表: 通过主键ID的范围来分表。</li>
-<li>同一数据分区: 把同一商品的库存值分到不同的服务器上，然后负载均衡</li>
-</ul>
-</li>
-<li><p>后端系统负载均衡: 需要一个任务分配系统，其还能监控各个服务器的负载情况。</p>
-</li>
-<li><p>异步、 throttle 和 批量处理: 把一堆基本相同的请求批量处理,大家同时购买同一个商品，没有必要你买一个我就写一次数据库，完全可以收集到一定数量的请求，一次操作一个是作业量，另一个是timeout</p>
-</li>
-</ol>
 
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/20/md/part/docker/docker-nexus/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="mqiy">
+      <meta itemprop="description" content="永远为下个月离职做好准备">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小灰灰的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/06/20/md/part/docker/docker-nexus/" class="post-title-link" itemprop="url">docker设计</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-06-20 14:17 14:17:10" itemprop="dateCreated datePublished" datetime="2019-06-20T14:17:10+08:00">2019-06-20 14:17</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>153</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>docker run -tid -p 8081:8081 –name nexus  –restart=always  –privileged=true   -e NEXUS_CONTEXT=nexus -v /usr/local/nexus3/nexus-data:/nexus-data  docker.io/sonatype/nexus3 </p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/20/md/part/docker/docker%E8%AE%BE%E8%AE%A1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="mqiy">
+      <meta itemprop="description" content="永远为下个月离职做好准备">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小灰灰的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/06/20/md/part/docker/docker%E8%AE%BE%E8%AE%A1/" class="post-title-link" itemprop="url">docker设计</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-06-20 14:17 14:17:10" itemprop="dateCreated datePublished" datetime="2019-06-20T14:17:10+08:00">2019-06-20 14:17</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>34</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h5 id="Docker通过引人分层文件系统构建和高效的镜像机制，降低了迁移难度"><a href="#Docker通过引人分层文件系统构建和高效的镜像机制，降低了迁移难度" class="headerlink" title="Docker通过引人分层文件系统构建和高效的镜像机制，降低了迁移难度"></a>Docker通过引人分层文件系统构建和高效的镜像机制，降低了迁移难度</h5>
       
     </div>
 
@@ -1133,7 +1030,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/15/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><span class="page-number current">16</span><a class="page-number" href="/page/17/">17</a><span class="space">&hellip;</span><a class="page-number" href="/page/19/">19</a><a class="extend next" rel="next" href="/page/17/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/15/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><span class="page-number current">16</span><a class="page-number" href="/page/17/">17</a><span class="space">&hellip;</span><a class="page-number" href="/page/22/">22</a><a class="extend next" rel="next" href="/page/17/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1199,7 +1096,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">183</span>
+          <span class="site-state-item-count">219</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1212,7 +1109,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">55</span>
+        <span class="site-state-item-count">52</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -1246,12 +1143,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">227k</span>
+    <span title="站点总字数">256k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">3:27</span>
+    <span title="站点阅读时长">3:52</span>
 </div>
 
         

@@ -140,7 +140,7 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">55</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">52</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
@@ -150,7 +150,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">183</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">219</span></a>
 
   </li>
         <li class="menu-item menu-item-relate">
@@ -211,7 +211,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/part/distributed/Distributed/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/part/microServices/Sidecar/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -225,7 +225,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2019/06/18/md/part/distributed/Distributed/" class="post-title-link" itemprop="url">分布式</a>
+            <a href="/2019/06/18/md/part/microServices/Sidecar/" class="post-title-link" itemprop="url">Sidecar模式：下一代微服务架构的关键</a>
         </h1>
 
         <div class="post-meta">
@@ -235,7 +235,7 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2019-06-18 14:13 14:13:10" itemprop="dateCreated datePublished" datetime="2019-06-18T14:13:10+08:00">2019-06-18 14:13</time>
+              <time title="创建时间：2019-06-18 15:27 15:27:31" itemprop="dateCreated datePublished" datetime="2019-06-18T15:27:31+08:00">2019-06-18 15:27</time>
             </span>
 
           <br>
@@ -244,7 +244,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>40</span>
+              <span>350</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -263,7 +263,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p><code>通信渠道的不可靠</code>（超时等）是造成构建大规模分布式系统非常复杂并且困难的重要原因。</p>
+          <h1 id="Sidecar模式：下一代微服务架构的关键"><a href="#Sidecar模式：下一代微服务架构的关键" class="headerlink" title="Sidecar模式：下一代微服务架构的关键"></a>Sidecar模式：下一代微服务架构的关键</h1><h2 id="什么是Sidecar模式？"><a href="#什么是Sidecar模式？" class="headerlink" title="什么是Sidecar模式？"></a>什么是Sidecar模式？</h2><p>Sidecar模式是一种将应用功能从应用本身剥离出来作为单独进程的方式。该模式允许我们向应用无侵入添加多种功能，避免了为满足第三方组件需求而向应用添加额外的配置代码。</p>
+<p>就像边车加装在摩托车上一样，在软件架构中，sidecar附加到主应用，或者叫父应用上，以扩展/增强功能特性，同时Sidecar与主应用是松耦合的。</p>
+<p>举个例子，假设现在有6个相互通信的微服务，每个微服务都需要具有可观察性、监控、日志记录、配置、断路器等功能，而所有这些功能都是在微服务中使用一些第三方库实现的。</p>
+<p>这样一组服务的实际情况可能会非常复杂，增加了应用的整体复杂性，尤其是当每个微服务用不同的语言编写、使用不同的基于.net、Java、Python等语言的第三方库</p>
 
       
     </div>
@@ -283,7 +286,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/other/%E8%99%9A%E6%8B%9F%E5%8C%96%E6%9E%B6%E6%9E%84/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/part/microServices/spring%20cloud/Hystrix%20Turbine/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -297,7 +300,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2019/06/18/md/other/%E8%99%9A%E6%8B%9F%E5%8C%96%E6%9E%B6%E6%9E%84/" class="post-title-link" itemprop="url">KVM架构和Xen架构</a>
+            <a href="/2019/06/18/md/part/microServices/spring%20cloud/Hystrix%20Turbine/" class="post-title-link" itemprop="url">Hystrix Turbine</a>
         </h1>
 
         <div class="post-meta">
@@ -307,7 +310,7 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2019-06-18 14:13 14:13:10" itemprop="dateCreated datePublished" datetime="2019-06-18T14:13:10+08:00">2019-06-18 14:13</time>
+              <time title="创建时间：2019-06-18 15:27 15:27:31" itemprop="dateCreated datePublished" datetime="2019-06-18T15:27:31+08:00">2019-06-18 15:27</time>
             </span>
 
           <br>
@@ -316,14 +319,14 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1k</span>
+              <span>1.9k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="fa fa-clock-o"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
+              <span>2 分钟</span>
             </span>
 
         </div>
@@ -335,13 +338,20 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>简述KVM架构和Xen架构<br>暑假最后一篇更新，因为，，，明天我就回学校了。</p>
-<p>以下均为个人理解，如果有不对的地方还望各位dalao不吝赐教。</p>
-<p>虚拟化<br>虚拟化是通过Hypervisor程序实现的，Hypervisor的作用是将硬件虚拟化提供给多个操作系统使用，是虚拟化技术的核心。<br>虚拟化分为两种：<code>1型虚拟化</code>和<code>2型虚拟化</code>。</p>
-<p>1型虚拟化是将Hypervisor直接安装在物理机上，然后虚拟机直接运行在Hypervisor上，Xen就是属于1型虚拟化。<br>2型虚拟化是先在硬件上安装操作系统，然后将Hypervisor作为系统的一个程序运行在系统上从而实现对虚拟机的管理，KVM就是属于2型虚拟化。</p>
-<h4 id="KVM架构"><a href="#KVM架构" class="headerlink" title="KVM架构"></a>KVM架构</h4><p>先来看一下KVM，KVM是基于Linux内核实现的，KVM的内核模块叫做kvm.ko，实现对Linux的CPU和内存虚拟化，是Linux的一个进程，负责VCPU和内存的分配,而其他设备的虚拟就交给了qemu。<br>qemu运行在用户空间，KVM运行在内核，两者通过/dev/kvm进行交互。<br>KVM仅支持全局虚拟化。</p>
-<h4 id="Xen架构"><a href="#Xen架构" class="headerlink" title="Xen架构"></a>Xen架构</h4><p>再来看一下Xen，Xen支持全虚拟化和半虚拟化，（全虚拟化就是运行在虚拟环境的虚拟机无法感知到自己是运行在虚拟环境之上，只会觉得自己是运行在硬件之上，半虚拟化是运行在虚拟环境的虚拟机可以感知到自己不是直接运行在硬件环境之上）这一点不同于KVM的仅支持全局虚拟化。Xen是直接运行在硬件上的，也就是上面提到的1型虚拟化，直接对硬件进行虚拟化，然后在硬件之上直接跑虚拟机，在Xen架构中的虚拟机分为两种：Domain0和DoaminU.Domain0又叫做特权虚拟机，具有直接访问硬件和管理其他操作系统的权限，而DoaminU就是普通的虚拟机，DoaminU不能直接访问硬件，所有的操作都是通过驱动发送到特权虚拟机Domain0，由Domain0去和硬件交互再返回给普通用户，所以，Xen架构的虚拟化需要先运行Domain0。<br>Xen架构也是对CPU和内存进行虚拟化,提供给虚拟机用，其余硬件访问是通过特权虚拟机直接与硬件进行交互再返回的。<br>默认Domain0VCPU和内存的大小是这样计算的：</p>
-<p>Domain0的VCPU = 物理设备线程数 % 10然后向上取最小的一个偶数，就是Domain0的VCPU数。<br>Domain0的内存：如果物理设备的内存小于96G，那么就默认为8G,如果物理机的内存大于96G，那么Domain0的内存 = 物理机内存 *0.05 + 8G。</p>
+          <h3 id="Hystrix-Turbine简介"><a href="#Hystrix-Turbine简介" class="headerlink" title="Hystrix Turbine简介"></a>Hystrix Turbine简介</h3><p>看单个的Hystrix Dashboard的数据并没有什么多大的价值，要想看这个系统的Hystrix Dashboard数据就需要用到Hystrix Turbine。Hystrix Turbine将每个服务Hystrix Dashboard数据进行了整合。Hystrix Turbine的使用非常简单，只需要引入相应的依赖和加上注解和配置就可以了。</p>
+<h3 id="引入相应的依赖"><a href="#引入相应的依赖" class="headerlink" title="引入相应的依赖"></a>引入相应的依赖</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.cloud<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-cloud-starter-turbine<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.cloud<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-cloud-netflix-turbine<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-actuator<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span></pre></td></tr></table></figure>
+
+<hr>
+<p>在其入口类ServiceTurbineApplication加上注解@EnableTurbine，开启turbine，@EnableTurbine注解包含了@EnableDiscoveryClient注解，即开启了注册服务。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">@SpringBootApplication</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="meta">@EnableTurbine</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ServiceTurbineApplication</span> </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">new</span> SpringApplicationBuilder(ServiceTurbineApplication<span class="class">.<span class="keyword">class</span>).<span class="title">web</span>(<span class="title">true</span>).<span class="title">run</span>(<span class="title">args</span>)</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
+<hr>
+<p>配置文件application.yml</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="attr">spring:</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  <span class="attr">application.name:</span> <span class="string">service-turbine</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="attr">server:</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">  <span class="attr">port:</span> <span class="number">8769</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="attr">security.basic.enabled:</span> <span class="literal">false</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="attr">turbine:</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">  <span class="attr">aggregator:</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">    <span class="attr">clusterConfig:</span> <span class="string">default</span>   <span class="comment"># 指定聚合哪些集群，多个使用","分割，默认为default。可使用http://.../turbine.stream?cluster=&#123;clusterConfig之一&#125;访问</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">  <span class="attr">appConfig:</span> <span class="string">service-hi,service-lucy</span>  <span class="comment">### 配置Eureka中的serviceId列表，表明监控哪些服务</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">  <span class="attr">clusterNameExpression:</span> <span class="string">new</span> <span class="string">String("default")</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">  <span class="comment"># 1. clusterNameExpression指定集群名称，默认表达式appName；此时：turbine.aggregator.clusterConfig需要配置想要监控的应用名称</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">  <span class="comment"># 2. 当clusterNameExpression: default时，turbine.aggregator.clusterConfig可以不写，因为默认就是default</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">  <span class="comment"># 3. 当clusterNameExpression: metadata['cluster']时，假设想要监控的应用配置了eureka.instance.metadata-map.cluster: ABC，则需要配置，同时turbine.aggregator.clusterConfig: ABC</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line"><span class="attr">eureka:</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">  <span class="attr">client:</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">    <span class="attr">serviceUrl:</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">      <span class="attr">defaultZone:</span> <span class="string">http://localhost:8761/eureka/</span></span></pre></td></tr></table></figure>
+
+
+
+<p>输入监控流<a href="http://localhost:8769/turbine.stream" target="_blank" rel="noopener">http://localhost:8769/turbine.stream</a></p>
 
       
     </div>
@@ -361,7 +371,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/%E6%B5%8B%E8%AF%95/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/part/db/db/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -375,7 +385,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2019/06/18/md/%E6%B5%8B%E8%AF%95/" class="post-title-link" itemprop="url">测试相关</a>
+            <a href="/2019/06/18/md/part/db/db/" class="post-title-link" itemprop="url">db</a>
         </h1>
 
         <div class="post-meta">
@@ -385,7 +395,7 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2019-06-18 14:13 14:13:10" itemprop="dateCreated datePublished" datetime="2019-06-18T14:13:10+08:00">2019-06-18 14:13</time>
+              <time title="创建时间：2019-06-18 15:03 15:03:36" itemprop="dateCreated datePublished" datetime="2019-06-18T15:03:36+08:00">2019-06-18 15:03</time>
             </span>
 
           <br>
@@ -394,7 +404,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>318</span>
+              <span>414</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -413,102 +423,16 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>把数据把某种逻辑来分类: 把一张表拆成多张有一样的字段但是不同种类的表</p>
-<p>把数据按字段分，也就是竖着分表: 把一些不经常改的数据放在一个表里，经常改的数据放在另外多个表里。把一张表变成1对1的关系</p>
-<p>平均分表: 通过主键ID的范围来分表。</p>
-<h4 id="测试分类"><a href="#测试分类" class="headerlink" title="测试分类"></a>测试分类</h4><p>冒烟测试;<br>    冒烟测试就是先保证系统能跑的起来，不至于让测试工作做到一半突然出现错误导致业务中断。目的就是先通过最基本的测试</p>
-<p>猴子测试:<br>    它针对的不是功能点，而是业务流程,就是说，你把自己看成白痴，随便乱点，没有任何主观想法参与进来，让一些想不到的操作呈现出错误来</p>
-<p>数据库来说吧， 数据做了分区， 一致性怎么保证啊？   选择分布式事务非常麻烦， 有时候不得不选择最终一致性来妥协</p>
-<p>迅速定位问题:</p>
-<p>一是查看错误日志，推断错误的可能</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/develop/base/pattern/pattern/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="mqiy">
-      <meta itemprop="description" content="永远为下个月离职做好准备">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小灰灰的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/06/18/md/develop/base/pattern/pattern/" class="post-title-link" itemprop="url">代理模式与装饰模式区别</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-06-18 14:13 14:13:10" itemprop="dateCreated datePublished" datetime="2019-06-18T14:13:10+08:00">2019-06-18 14:13</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" itemprop="url" rel="index">
-                    <span itemprop="name">设计模式</span>
-                  </a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>149</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>代理模式主要是<code>控制对某个特定对象访问</code>，而装饰模式主要是为了<code>给对象添加行为</code></p>
-<p>代理模式和装饰模式非常类似，甚至代码都类似。二者最主要的区别是：</p>
-<ul>
-<li>代理模式中，代理类对被代理的对象有控制权，决定其执行或者不执行。</li>
-<li>而装饰模式中，装饰类对代理对象<code>没有控制权</code>，只能为其增加一层装饰，以加强被装饰对象的功能，仅此而已。</li>
+          <h3 id="为什么数据库可以没有外键？"><a href="#为什么数据库可以没有外键？" class="headerlink" title="为什么数据库可以没有外键？"></a>为什么数据库可以没有外键？</h3><ul>
+<li>性能，影响插入、更新和删除操作的性能。数据库需要检查它是否违反数据完整性</li>
+<li>传统数据，许多数据库在设计时需要存储来自旧数据库和遗留数据，这些数据可能对数据质量和完整性没有那么严格</li>
+<li>全表重新加载</li>
 </ul>
+<h3 id="规范"><a href="#规范" class="headerlink" title="规范"></a>规范</h3><p>【强制】业务上具有唯一特性的字段，即使是组合字段，也必须建成唯一索引。</p>
+<p>【强制】超过三个表禁止 join。需要 join 的字段，数据类型保持绝对一致；多表关联查询时，<br>保证被关联的字段需要有索引。</p>
+<p>【强制】不要使用 count(列名)或 count(常量)来替代 count(<em>)，count(</em>)就是 SQL92 定义的<br>标准统计行数的语法，跟数据库无关，跟 NULL 和非 NULL 无关。<br>说明：count(*)会统计值为 NULL 的行，而 count(列名)不会统计此列为 NULL 值的行。</p>
+<p>使用 IS NULL()来判断是否为 NULL 值。注意：NULL 与任何值的直接比较都为 NULL。</p>
+<p>单表行数超过 500 万行或者单表容量超过 2GB，才推荐进行分库分表。</p>
 
       
     </div>
@@ -528,7 +452,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/other/encrypt/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/part/db/mysql/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -542,7 +466,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2019/06/18/md/other/encrypt/" class="post-title-link" itemprop="url">公钥与私钥</a>
+            <a href="/2019/06/18/md/part/db/mysql/" class="post-title-link" itemprop="url">MYSQL索引</a>
         </h1>
 
         <div class="post-meta">
@@ -552,7 +476,7 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2019-06-18 14:13 14:13:10" itemprop="dateCreated datePublished" datetime="2019-06-18T14:13:10+08:00">2019-06-18 14:13</time>
+              <time title="创建时间：2019-06-18 15:03 15:03:36" itemprop="dateCreated datePublished" datetime="2019-06-18T15:03:36+08:00">2019-06-18 15:03</time>
             </span>
 
           <br>
@@ -561,7 +485,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>44</span>
+              <span>465</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -580,432 +504,626 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>公钥与私钥使用，在大部分情况下</p>
-<ul>
-<li>我们使用公钥加密、私钥解密，</li>
-<li><code>签名</code>却是使用私钥加密，公钥解密</li>
+          <h3 id="MyISAM-VS-Innodb"><a href="#MyISAM-VS-Innodb" class="headerlink" title="MyISAM VS  Innodb"></a>MyISAM VS  Innodb</h3><table>
+<thead>
+<tr>
+<th>内容</th>
+<th>MyISAM</th>
+<th>Innodb</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>叶子节点存放数据</td>
+<td>数据记录的地址</td>
+<td>完整的数据记录</td>
+</tr>
+<tr>
+<td>索引与数据文件</td>
+<td>合一</td>
+<td>分索引文件，数据文件</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="索引："><a href="#索引：" class="headerlink" title="索引："></a>索引：</h3><h4 id="创建数量限制："><a href="#创建数量限制：" class="headerlink" title="创建数量限制："></a>创建数量限制：</h4><ul>
+<li>单表不超过5个</li>
 </ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/part/docker/redis/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="mqiy">
-      <meta itemprop="description" content="永远为下个月离职做好准备">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小灰灰的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/06/18/md/part/docker/redis/" class="post-title-link" itemprop="url">docker运行redis</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-06-18 14:13 14:13:10" itemprop="dateCreated datePublished" datetime="2019-06-18T14:13:10+08:00">2019-06-18 14:13</time>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>162</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h4 id="运行容器"><a href="#运行容器" class="headerlink" title="运行容器"></a>运行容器</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">docker run  --privileged  --name redis -v /docker/redis/data:/data  -p  6379:6379 -d redis:5.0.5  redis-server --appendonly yes</span></pre></td></tr></table></figure>
-
-
-
-
-
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="comment">#客户端连 redis</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">redis-cli.exe -h <span class="number">192.168</span>.<span class="number">85.135</span> -p <span class="number">6379</span></span></pre></td></tr></table></figure>
-
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/part/microServices/consul/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="mqiy">
-      <meta itemprop="description" content="永远为下个月离职做好准备">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小灰灰的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/06/18/md/part/microServices/consul/" class="post-title-link" itemprop="url">consul介绍</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-06-18 14:13 14:13:10" itemprop="dateCreated datePublished" datetime="2019-06-18T14:13:10+08:00">2019-06-18 14:13</time>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>275</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>consul是分布式的、高可用、横向扩展的（CP）。consul提供的一些关键特性：</p>
-<ul>
-<li>service discovery：consul通过DNS或者HTTP接口使服务注册和服务发现变的很容易，一些外部服务，例如saas提供的也可以一样注册。</li>
-<li>health checking：健康检测使consul可以快速的告警在集群中的操作。和服务发现的集成，可以防止服务转发到故障的服务上面。</li>
-<li>key/value storage：一个用来存储动态配置的系统。提供简单的HTTP接口，可以在任何地方操作。</li>
-<li>multi-datacenter：无需复杂的配置，即可支持任意数量的区域。</li>
+<h4 id="创建组合索引的顺序："><a href="#创建组合索引的顺序：" class="headerlink" title="创建组合索引的顺序："></a>创建组合索引的顺序：</h4><ul>
+<li>区分度最高的放在联合索引的最左侧（区分度=列中不同值的数量/列的总行数）</li>
+<li>尽量把字段长度小的列放在联合索引的最左侧（因为字段长度越小，一页能存储的数据量越大，IO 性能也就越好）</li>
+<li>使用最频繁的列放到联合索引的左侧（这样可以比较少的建立一些索引）</li>
 </ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/interview/interview/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="mqiy">
-      <meta itemprop="description" content="永远为下个月离职做好准备">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小灰灰的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/06/18/md/interview/interview/" class="post-title-link" itemprop="url">面试</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-06-18 14:13 14:13:10" itemprop="dateCreated datePublished" datetime="2019-06-18T14:13:10+08:00">2019-06-18 14:13</time>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>546</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="如何提高求职时的谈判能力？"><a href="#如何提高求职时的谈判能力？" class="headerlink" title="如何提高求职时的谈判能力？"></a>如何提高求职时的谈判能力？</h3><ol>
-<li><p>记住你不是在展示编程技巧或者漂亮的脸蛋，而是在推销某种商业需求（增加收入或降低成本）的解决方案。</p>
-</li>
-<li><p>面试时，要有自信，要平等的对话。你的对手可能也在做同样的事情。你要的是一个互利的录用合同，不要每次对方提出要求，你都说 Yes。</p>
-</li>
-<li><p>雇主可能会问”你的上一份工资是多少”，他们其实在说”给我一个理由，压低你的报酬”。你要想好如何适当地回答这个问题。</p>
-</li>
-<li><p>要讨价还价。这里不仅仅指钱，还指其它你关心的方面。如果你无法要求更高的薪水，那就试着要求更多的假期。</p>
-</li>
-<li><p>在对方决定录用你以后，才开始讨论薪水。因为那时，他们已经在你身上，投入了大量的时间和金钱。这个时候他们说“不行，我们不能成交”会浪费很大的成本，他们会觉得一些小问题已经不值得再纠缠了，比如每年的工资增加几千元。</p>
-</li>
-<li><p>多读书吧。很多人写过谈判方面的书。我喜欢《Getting To Yes | 谈判力》这本书。有一点令人不解的是，就整个职业生涯而言，谈判技巧值得每年花费数千美元，但工程师们却认为针对这学习方面很疯狂，他们宁愿去学习感兴趣技术的细枝末节。</p>
-</li>
-</ol>
-<h3 id="面试时一定要问清楚这4点"><a href="#面试时一定要问清楚这4点" class="headerlink" title="面试时一定要问清楚这4点"></a>面试时一定要问清楚这4点</h3><ul>
-<li>试用期的工资及时间</li>
-<li>考核的转正方式及薪资范围</li>
-<li>工作时间和加班时间计算</li>
-<li>培训和晋升机制</li>
+<h3 id="列"><a href="#列" class="headerlink" title="列"></a>列</h3><ul>
+<li>尽可能把所有列定义为 NOT NULL</li>
+<li>单表记录数量控制在500万以内</li>
+<li>尽量做到冷热数据分离,减小表的宽度</li>
+<li>禁止在数据库中存储图片,文件等大的二进制数据</li>
+<li>不建议使用过长的字段作为主键</li>
 </ul>
-<p>spring的事务传播机制<br>springmvc参数绑定原理<br>mybatis的分页原理 limit</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/%E9%AB%98%E5%8F%AF%E7%94%A8/Netty/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="mqiy">
-      <meta itemprop="description" content="永远为下个月离职做好准备">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小灰灰的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/06/18/md/%E9%AB%98%E5%8F%AF%E7%94%A8/Netty/" class="post-title-link" itemprop="url">netty介绍</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-06-18 14:13 14:13:10" itemprop="dateCreated datePublished" datetime="2019-06-18T14:13:10+08:00">2019-06-18 14:13</time>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>410</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>netty是由JBOSS提供的一个java开源框架。<br>netty提供异步的、事件驱动的网络应用程序框架和工具，用以快速开发高性能、高可靠性的网络服务器和客户端程序。</p>
-<p>netty：异步非阻塞开源框架<br>bio：同步阻塞<br>nio：同步非阻塞<br>bio：异步非阻塞</p>
-<p>一个IO操作其实分成了两个步骤：发起IO请求和实际的IO操作。<br>同步IO和异步IO的区别就在于第二个步骤是否阻塞，如果实际的IO读写阻塞请求进程，那么就是同步IO。<br>阻塞IO和非阻塞IO的区别在于第一步，发起IO请求是否会被阻塞，如果阻塞直到完成那么就是传统的阻塞IO，如果不阻塞，那么就是非阻塞IO。 </p>
-<ul>
-<li><p>同步阻塞：你到饭馆点餐，然后在那等着，还要一边喊：好了没啊！ </p>
-</li>
-<li><p>同步非阻塞：在饭馆点完餐，就去遛狗了。不过溜一会儿，就回饭馆喊一声：好了没啊！ </p>
-</li>
-<li><p>异步阻塞：遛狗的时候，接到饭馆电话，说饭做好了，让您亲自去拿。 </p>
-</li>
-<li><p>异步非阻塞：饭馆打电话说，我们知道您的位置，一会给你送过来，安心遛狗就可以了。 </p>
-</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/other/Reactive%20Programming/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="mqiy">
-      <meta itemprop="description" content="永远为下个月离职做好准备">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小灰灰的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/06/18/md/other/Reactive%20Programming/" class="post-title-link" itemprop="url">响应式编程</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-06-18 14:13 14:13:10" itemprop="dateCreated datePublished" datetime="2019-06-18T14:13:10+08:00">2019-06-18 14:13</time>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>160</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h4 id="响应式编程核心特征"><a href="#响应式编程核心特征" class="headerlink" title="响应式编程核心特征"></a>响应式编程核心特征</h4><ul>
-<li>变化传递(propagation of change)</li>
-<li>基于数据流(data stream)</li>
-<li>声明式(declarative)</li>
-</ul>
-<h4 id="响应式流"><a href="#响应式流" class="headerlink" title="响应式流"></a>响应式流</h4><ul>
-<li>异步非阻塞</li>
-<li>流量控制</li>
-</ul>
+<h3 id="外键"><a href="#外键" class="headerlink" title="外键"></a>外键</h3><p>会影响父表和子表的写操作从而降低性能</p>
 <blockquote>
-<p>(ps Java Stream是一种同步API)</p>
+<p>表与表之间的关联键上建立索引</p>
 </blockquote>
-<p>阻塞造成的性能损失，我们通常有两种思路来解决</p>
-<ol>
-<li>并行化：使用更多的线程和硬件资源；</li>
-<li>异步化：基于现有的资源来提高执行效率。</li>
+<h3 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h3><p>原则</p>
+<ul>
+<li>最左前缀匹配原则</li>
+<li>索引列不能参与计算</li>
+<li>关联查询表，建议不超过 5 个</li>
+</ul>
+<h4 id="具体查询"><a href="#具体查询" class="headerlink" title="具体查询"></a>具体查询</h4><ul>
+<li>在明显不会有重复值时使用 UNION ALL 而不是 UNION</li>
+<li>少使用子查询（原因：子查询的结果集无法使用索引）</li>
+</ul>
+<p>or-&gt; in</p>
+<p>优化：<br>充分利用已有索引，尽可能的扩展索引<br>覆盖索引(不需要回表)</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/part/db/sql/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="mqiy">
+      <meta itemprop="description" content="永远为下个月离职做好准备">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小灰灰的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/06/18/md/part/db/sql/" class="post-title-link" itemprop="url">常用sql</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-06-18 15:03 15:03:36" itemprop="dateCreated datePublished" datetime="2019-06-18T15:03:36+08:00">2019-06-18 15:03</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>56</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 备份数据库 mayday</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">mysqldump -uroot -pAdmin123# mayday  &gt; bk.sql</span></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/part/db/maria/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="mqiy">
+      <meta itemprop="description" content="永远为下个月离职做好准备">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小灰灰的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/06/18/md/part/db/maria/" class="post-title-link" itemprop="url">mariadb</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-06-18 15:03 15:03:36" itemprop="dateCreated datePublished" datetime="2019-06-18T15:03:36+08:00">2019-06-18 15:03</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>432</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="maven-配置"><a href="#maven-配置" class="headerlink" title="maven 配置"></a>maven 配置</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.mariadb.jdbc<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mariadb-java-client<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.4.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span></pre></td></tr></table></figure>
+
+<h3 id="jdbc设置"><a href="#jdbc设置" class="headerlink" title="jdbc设置"></a>jdbc设置</h3><table>
+<thead>
+<tr>
+<th>字段</th>
+<th>值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>driver-class-name</td>
+<td>org.mariadb.jdbc.Driver</td>
+</tr>
+<tr>
+<td>url</td>
+<td>jdbc:mariadb://localhost:3306/test</td>
+</tr>
+</tbody></table>
+<hr>
+<h3 id="Linux下MySQL表名不区分大小写的设置方法"><a href="#Linux下MySQL表名不区分大小写的设置方法" class="headerlink" title="Linux下MySQL表名不区分大小写的设置方法"></a>Linux下MySQL表名不区分大小写的设置方法</h3><ol>
+<li>用root登录，打开并修改 /etc/my.cnf；在[mysqld]节点下，加入一行： lower_case_table_names=1。</li>
+<li>重启mysql服务</li>
 </ol>
+<p>[^]: lower_case_table_names=1 参数缺省地在 Windows 中这个选项为 1 ，在 Unix 中为 0</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/part/system/linux/linux%20%E5%AE%89%E8%A3%85mariadb/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="mqiy">
+      <meta itemprop="description" content="永远为下个月离职做好准备">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小灰灰的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/06/18/md/part/system/linux/linux%20%E5%AE%89%E8%A3%85mariadb/" class="post-title-link" itemprop="url">linux安装mariadb</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-06-18 15:03 15:03:10" itemprop="dateCreated datePublished" datetime="2019-06-18T15:03:10+08:00">2019-06-18 15:03</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.6k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="安装MariaDB"><a href="#安装MariaDB" class="headerlink" title="安装MariaDB"></a>安装MariaDB</h3><p>安装命令</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">yum -y install mariadb mariadb-server</span></pre></td></tr></table></figure>
+
+<p>安装完成MariaDB，首先启动MariaDB</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">systemctl start mariadb</span></pre></td></tr></table></figure>
+
+<p>设置开机启动</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">systemctl enable mariadb</span></pre></td></tr></table></figure>
+
+<p>接下来进行MariaDB的相关简单配置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">mysql_secure_installation</span></pre></td></tr></table></figure>
+
+
+
+<p>初始化MariaDB完成，接下来测试登录</p>
+<p>mysql -uroot -ppassword</p>
+<h3 id="配置MariaDB的字符集"><a href="#配置MariaDB的字符集" class="headerlink" title="配置MariaDB的字符集"></a>配置MariaDB的字符集</h3><p>文件/etc/my.cnf</p>
+<p>在[mysqld]标签下添加</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="attr">init_connect</span>=<span class="string">'SET collation_connection = utf8mb4_unicode_ci'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="attr">init_connect</span>=<span class="string">'SET NAMES utf8mb4'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="attr">character_set_server</span>=<span class="string">utf8mb4</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="meta">collation-server</span>=<span class="string">utf8mb4_unicode_ci</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="attr">init_connect</span>=<span class="string">'SET NAMES utf8mb4'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="meta">skip-character-set-client-handshake</span>=<span class="string">true</span></span></pre></td></tr></table></figure>
+
+<hr>
+<p>文件/etc/my.cnf.d/client.cnf</p>
+<p>在[client]中添加</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">default-character-set</span>=<span class="string">utf8mb4</span></span></pre></td></tr></table></figure>
+
+<hr>
+<p>文件/etc/my.cnf.d/mysql-clients.cnf</p>
+<p>在[mysql]中添加</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">default-character-set</span>=<span class="string">utf8mb4</span></span></pre></td></tr></table></figure>
+
+
+
+<p> 全部配置完成，重启mariadb</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">systemctl restart mariadb</span></pre></td></tr></table></figure>
+
+<p>之后进入MariaDB查看字符集</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">MariaDB [(none)]&gt; show variables like "%character%";show variables like "%collation%";</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">+<span class="comment">--------------------------+----------------------------+</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">| Variable_name | Value |</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">+<span class="comment">--------------------------+----------------------------+</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">| character_set_client | utf8 |</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">| character_set_connection | utf8 |</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">| character_set_database | latin1 |</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">| character_set_filesystem | binary |</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">| character_set_results | utf8 |</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">| character_set_server | latin1 |</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">| character_set_system | utf8 |</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">| character_sets_dir | /usr/share/mysql/charsets/ |</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">+<span class="comment">--------------------------+----------------------------+</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line">8 rows in <span class="keyword">set</span> (<span class="number">0.01</span> sec)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">20</span></pre></td><td class="code"><pre><span class="line">+<span class="comment">----------------------+-------------------+</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">21</span></pre></td><td class="code"><pre><span class="line">| Variable_name | <span class="keyword">Value</span> |</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">22</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">23</span></pre></td><td class="code"><pre><span class="line">+<span class="comment">----------------------+-------------------+</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">24</span></pre></td><td class="code"><pre><span class="line">| collation_connection | utf8_general_ci |</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">25</span></pre></td><td class="code"><pre><span class="line">| collation_database | latin1_swedish_ci |</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">26</span></pre></td><td class="code"><pre><span class="line">| collation_server | latin1_swedish_ci |</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">27</span></pre></td><td class="code"><pre><span class="line">+<span class="comment">----------------------+-------------------+</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">28</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">29</span></pre></td><td class="code"><pre><span class="line"><span class="number">3</span> <span class="keyword">rows</span> <span class="keyword">in</span> <span class="keyword">set</span> (<span class="number">0.00</span> sec)</span></pre></td></tr></table></figure>
+
+
+
+<p>修改DB的默认编码：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">DATABASE</span> XX_db <span class="built_in">CHARACTER</span> <span class="keyword">SET</span> utf8mb4;</span></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/other/need%20attention/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="mqiy">
+      <meta itemprop="description" content="永远为下个月离职做好准备">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小灰灰的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/06/18/md/other/need%20attention/" class="post-title-link" itemprop="url">need attention</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-06-18 14:52 14:52:10" itemprop="dateCreated datePublished" datetime="2019-06-18T14:52:10+08:00">2019-06-18 14:52</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>66</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h4 id="定义接口不规范"><a href="#定义接口不规范" class="headerlink" title="定义接口不规范"></a>定义接口不规范</h4><ul>
+<li>hagendaza项目，定义一个HdOrderManager接口，没有继承基类<code>BaseManager</code>，无法实现<code>读写分离</code></li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/part/web/graphql/graphql%E4%BB%8B%E7%BB%8D/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="mqiy">
+      <meta itemprop="description" content="永远为下个月离职做好准备">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小灰灰的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/06/18/md/part/web/graphql/graphql%E4%BB%8B%E7%BB%8D/" class="post-title-link" itemprop="url">graphql介绍</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-06-18 14:40 14:40:10" itemprop="dateCreated datePublished" datetime="2019-06-18T14:40:10+08:00">2019-06-18 14:40</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>656</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="Query-是查询入口-Mutation则是修改入口"><a href="#Query-是查询入口-Mutation则是修改入口" class="headerlink" title="Query 是查询入口,  Mutation则是修改入口"></a>Query 是查询入口,  Mutation则是修改入口</h3><ul>
+<li>root.graphqls 是graphql 服务入口定义</li>
+<li>scheme.graphqls 则是 query/mutation 具体的 scheme 定义字段、类型</li>
+</ul>
+<p>graphql 入口定义了, 但这只是一个描述, 我们需要实现 query/mutation中的描述(必须全部实现)</p>
+<p>schema 一样像我的目录中的一样 AuthorResolver 这是对schema中的描述的实现</p>
+<blockquote>
+<p>query/mutation和普通的schema 一样, 只是它们是 graphql服务的入口, resolver实现描述遵循:</p>
+</blockquote>
+<ul>
+<li>method <code>name</code>(*args)</li>
+<li>method is<code>Name</code>(*args) 仅支持 return boolean</li>
+<li>method get<code>Name</code>(*args)</li>
+<li>method getField<code>Name</code>(*args)</li>
+</ul>
+<p>这是种实现, 当提供了resolver时优先使用, 其次是 class this.get<code>Name</code>方法</p>
+<p>返回参数类型不一致，或者没有返回，需在resolver中添加</p>
+<p>在GraphQL中，我们通过预先定义一张<code>Schema</code>和声明一些<code>Type</code>来达到上面提及的效果，我们需要知道：</p>
+<ul>
+<li>对于数据模型的抽象是通过Type来描述的</li>
+<li>对于接口获取数据的逻辑是通过Schema来描述的</li>
+</ul>
+<h3 id="Type"><a href="#Type" class="headerlink" title="Type"></a>Type</h3><p>对于数据模型的抽象是通过Type来描述的，每一个Type有若干Field组成，每个Field又分别指向某个Type。</p>
+<p>GraphQL的Type简单可以分为两种，一种叫做<code>Scalar Type(标量类型)</code>，另一种叫做<code>Object Type(对象类型)</code>。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/part/web/graphql/RPC%20vs%20REST%20vs%20GraphQL/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="mqiy">
+      <meta itemprop="description" content="永远为下个月离职做好准备">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小灰灰的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/06/18/md/part/web/graphql/RPC%20vs%20REST%20vs%20GraphQL/" class="post-title-link" itemprop="url">RPC vs REST vs GraphQL</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-06-18 14:40 14:40:10" itemprop="dateCreated datePublished" datetime="2019-06-18T14:40:10+08:00">2019-06-18 14:40</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.4k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="RPC"><a href="#RPC" class="headerlink" title="RPC"></a>RPC</h3><p>它是Remote Procedure Call(远程过程调用)的简称。一般基于RPC协议所设计的接口，是基于网络采用客户端/服务端的模式完成调用接口的</p>
+<h4 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h4><ul>
+<li><p>简单并且易于理解（面向开发者）</p>
+</li>
+<li><p>轻量级的数据载体</p>
+</li>
+<li><p>高性能</p>
+</li>
+</ul>
+<h4 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h4><ul>
+<li>对于系统本身耦合性高</li>
+<li>因为RPC本身很简单、轻量，因此很容易造成 function explosion</li>
+</ul>
+<p>关于RPC的优点其实很好理解，就是因为它性能高同时又很简单，但是我认为这是对于接口提供者来讲的（因为它的高耦合性）。</p>
+<p>但是如果从接口调用者的角度来看，高耦合性就变成了缺点，因为高耦合意味着调用者必须要足够了解系统本身的实现才能够完成调用，比如：</p>
+<ul>
+<li>调用者需要知道所调用接口的函数名、参数格式、参数顺序、参数名称等等</li>
+<li>如果接口提供者(server)要对接口做出一些改变，很容易对接口调用者(client)造成breaking change（违背开闭原则)</li>
+<li>一般RPC所暴露接口仅仅会暴露函数的名称和参数等信息，对于函数之间的调用关系无法提供，这意味着调用者必须足够了解系统，从能够知道如何正确的调用这些接口，但是对于接口调用者往往不需要了解过多系统内部实现细节</li>
+</ul>
+<hr>
+<h3 id="REST"><a href="#REST" class="headerlink" title="REST"></a>REST</h3><p>当前REST风格的API架构方式已经成了主流解决方案了，相比较RPC，它的主要不同之处在于，它是对于资源(Resource)的模型化而非步骤(Procedure)。</p>
+<h4 id="优点-1"><a href="#优点-1" class="headerlink" title="优点"></a>优点</h4><ul>
+<li>对于系统本身耦合性低，调用者不再需要了解接口内部处理和实现细节</li>
+<li>重复使用了一些 http 协议中的已定义好的部分状态动词，增强语义表现力</li>
+<li>API可以随着时间而不断演进<h4 id="缺点-1"><a href="#缺点-1" class="headerlink" title="缺点"></a>缺点</h4></li>
+<li>缺少约束，缺少简单、统一的规范</li>
+<li>有时候 payload 会变的冗余(overload)，有时候调用api会比较繁琐(chattiness)</li>
+<li>有时候需要发送多条请求已获取数据，在网络带宽较低的场景，往往会造成不好的影响</li>
+</ul>
+<p>REST的优点基本解决了RPC中存在的问题，就是解耦，从而使得前后端分离成为可能。接口提供者在修改接口时，不容易造成breaking-change，接口调用者在调用接口时，往往面向数据模型编程，而省去了了解接口本身的时间成本。</p>
+<p>但是，我认为REST当前最大的问题在于虽然它利用<code>http</code>的动词约束了接口的暴露方式，同时增强了语义，但是却没有约束接口如何返回数据的最佳实践</p>
+<hr>
+<h3 id="GraphQL"><a href="#GraphQL" class="headerlink" title="GraphQL"></a>GraphQL</h3><p>GraphQL是近来比较热门的一个技术话题，相比REST和RPC，它汲取了两者的优点，即不面向资源，也不面向过程，而是面向数据查询(ask for exactly what you want)。同时GraphQL本身需要使用强类型的Schema来对数据模型进行定义，因此相比REST它的约束性更强。</p>
+<h4 id="优点-2"><a href="#优点-2" class="headerlink" title="优点"></a>优点</h4><ul>
+<li>网络开销低，可以在单一请求中获取REST中使用多条请求获取的资源</li>
+<li>强类型Schema（约束意味着可以根据规范形成文档、IDE、错误提示等生态工具）</li>
+<li>特别适合图状数据结构的业务场景（比如好友、流程、组织架构等系统）<h4 id="缺点-2"><a href="#缺点-2" class="headerlink" title="缺点"></a>缺点</h4></li>
+<li>本身的语法相比较REST和RPC均复杂一些</li>
+<li>实现方面需要配套 Caching 以解决性能瓶颈</li>
+<li>对于 API 的版本控制当前没有完善解决方案（社区的建议是不要使API版本化）</li>
+<li>仍然是新鲜事物，很多技术细节仍然处于待验证状态<br>首先值得肯定的是，在某些程度上确实解决了REST的缺点所带来的问题,GraphQL所带来的好处，大部分是对于接口调用者而言的，但是实现这部分的工作却需要接口提供者来完成。</li>
+</ul>
 
       
     </div>
@@ -1025,7 +1143,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/17/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/">17</a><span class="page-number current">18</span><a class="page-number" href="/page/19/">19</a><a class="extend next" rel="next" href="/page/19/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/17/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/">17</a><span class="page-number current">18</span><a class="page-number" href="/page/19/">19</a><span class="space">&hellip;</span><a class="page-number" href="/page/22/">22</a><a class="extend next" rel="next" href="/page/19/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1091,7 +1209,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">183</span>
+          <span class="site-state-item-count">219</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1104,7 +1222,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">55</span>
+        <span class="site-state-item-count">52</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -1138,12 +1256,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">227k</span>
+    <span title="站点总字数">256k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">3:27</span>
+    <span title="站点阅读时长">3:52</span>
 </div>
 
         

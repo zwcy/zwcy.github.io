@@ -140,7 +140,7 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">55</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">52</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
@@ -150,7 +150,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">183</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">219</span></a>
 
   </li>
         <li class="menu-item menu-item-relate">
@@ -211,7 +211,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/07/md/develop/outline/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/27/md/part/mq/kafaka-key/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -225,7 +225,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2019/11/07/md/develop/outline/" class="post-title-link" itemprop="url">知识大纲</a>
+            <a href="/2020/02/27/md/part/mq/kafaka-key/" class="post-title-link" itemprop="url">kafka关键点</a>
         </h1>
 
         <div class="post-meta">
@@ -235,7 +235,580 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2019-11-07 15:39 15:39:17" itemprop="dateCreated datePublished" datetime="2019-11-07T15:39:17+08:00">2019-11-07 15:39</time>
+              <time title="创建时间：2020-02-27 16:05 16:05:56" itemprop="dateCreated datePublished" datetime="2020-02-27T16:05:56+08:00">2020-02-27 16:05</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>862</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="如何保证消息队列的高可用？"><a href="#如何保证消息队列的高可用？" class="headerlink" title="如何保证消息队列的高可用？"></a>如何保证消息队列的高可用？</h3><p> replica（复制品）副本机制。每个 partition 的数据都会同步到其它机器上，形成自己的多个 replica 副本。broker宕机，存在leader partition ，则会从其他broker上该partition<br>　的follower 中，选举leader。</p>
+<h3 id="如何保证消息不被重复消费？或者说，如何保证消息消费的幂等性？"><a href="#如何保证消息不被重复消费？或者说，如何保证消息消费的幂等性？" class="headerlink" title="如何保证消息不被重复消费？或者说，如何保证消息消费的幂等性？"></a>如何保证消息不被重复消费？或者说，如何保证消息消费的幂等性？</h3><p>Kafka 使用offset记录消息者消费记录，消费者来保证幂等性</p>
+<ul>
+<li>写db时，用主键查，存在则更新；使用唯一约束</li>
+<li>写redis时，不用处理，天然幂等性</li>
+<li>其他使用全局唯一的 id </li>
+</ul>
+<blockquote>
+<p>需要为每个Consumer 指定一个Consumer Group，不同Group可读取相同消息；同一group内不同consumer 互斥，不会消费相同的消息，consumer 相关信息也在zk中维护</p>
+</blockquote>
+<blockquote>
+<p>broker.id 用来唯一标识每一个 broker，每个broker都有一个唯一的id值用来区分彼此。Kafka在启动时会在zookeeper中/brokers/ids路径下创建一个与当前broker的id为名称的虚节点，Kafka的健康状态检查就依赖于此节点。</p>
+</blockquote>
+<blockquote>
+<p>bootstrap-servers指的是目标集群的服务器地址，这个和broker-list功能是一样的，只不过我们在console producer要求用后者</p>
+</blockquote>
+<blockquote>
+<p>0.8以前的kafka，消费的进度(offset)是写在zk中的，所以consumer需要知道zk的地址。后来的版本都统一由broker管理，所以就用bootstrap-server了。</p>
+</blockquote>
+<h3 id="不会丢数据"><a href="#不会丢数据" class="headerlink" title="不会丢数据"></a>不会丢数据</h3><p>default.replication.factor=2  （副本数量，要求大于1）</p>
+<p>producer.type = sync (同步模式,sync:同步,异步:async)</p>
+<p>min.insync.replicas=2 ()</p>
+<p>broker.rack</p>
+<p>request.required.acks=1（值可设为 0, 1, -1/all, 其中 -1 和 all 等同）  producer 发消息到broker</p>
+<p>调用read函数，文件数据copy到内核缓冲区</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/27/md/tool/ppt/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="mqiy">
+      <meta itemprop="description" content="永远为下个月离职做好准备">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小灰灰的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/02/27/md/tool/ppt/" class="post-title-link" itemprop="url">PPT放映当前页快捷键是</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-02-27 16:02 16:02:54" itemprop="dateCreated datePublished" datetime="2020-02-27T16:02:54+08:00">2020-02-27 16:02</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>23</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><em>PPT当前页开始放映的快捷键是Shift+F5</em></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/27/md/part/mq/rockemq-concept/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="mqiy">
+      <meta itemprop="description" content="永远为下个月离职做好准备">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小灰灰的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/02/27/md/part/mq/rockemq-concept/" class="post-title-link" itemprop="url">rocketmq主要概念</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-02-27 15:46 15:46:21" itemprop="dateCreated datePublished" datetime="2020-02-27T15:46:21+08:00">2020-02-27 15:46</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>875</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="主要概念"><a href="#主要概念" class="headerlink" title="主要概念"></a>主要概念</h3><p>1.NameServer<br>可以理解为是消息队列的协调者，Broker向它注册路由信息，同时Client向其获取路由信息，如果使用过Zookeeper，就比较容易理解了，但是功能比Zookeeper弱；<br>NameServer本身是没有状态的，并且多个NameServer直接并没有通信，可以横向扩展多台，Broker会和每一台NameServer建立长连接；</p>
+<p>2.Broker<br>Broker是RocketMQ的核心，提供了消息的接收，存储，拉取等功能，一般都需要保证Broker的高可用，所以会配置Broker Slave，当Master挂掉之后，Consumer然后可以消费Slave；<br>Broker分为Master和Slave，一个Master可以对应多个Slave，Master与Slave的对应关系通过指定相同的BrokerName，不同的BrokerId来定义，BrokerId为0表示Master，非0表示Slave；</p>
+<p>3.Producer<br>消息队列的生产者，需要与NameServer建立连接，从NameServer获取Topic路由信息，并向提供Topic服务的Broker Master建立连接；Producer无状态，看集群部署；</p>
+<p>4.Consumer<br>消息队列的消费者，同样与NameServer建立连接，从NameServer获取Topic路由信息，并向提供Topic服务的Broker Master，Slave建立连接；</p>
+<p>5.Topic和Message Queue<br>在介绍完以上4个角色以后，还需要重点介绍一下上面提到的Topic和Message Queue；字面意思就是主题，用来区分不同类型的消息，发送和接收消息前都需要先创建Topic，针对Topic来发送和接收消息，为了提高性能和吞吐量，引入了Message Queue，一个Topic可以设置一个或多个Message Queue，有点类似kafka的分区(Partition)，这样消息就可以并行往各个Message Queue发送消息，消费者也可以并行的从多个Message Queue读取消息；</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/27/md/plan/lean-template/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="mqiy">
+      <meta itemprop="description" content="永远为下个月离职做好准备">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小灰灰的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/02/27/md/plan/lean-template/" class="post-title-link" itemprop="url">学习模板</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-02-27 15:09 15:09:00" itemprop="dateCreated datePublished" datetime="2020-02-27T15:09:00+08:00">2020-02-27 15:09</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>19</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="学习模板"><a href="#学习模板" class="headerlink" title="学习模板"></a>学习模板</h3><ul>
+<li>主要概念</li>
+<li>主要流程</li>
+<li>常规问题</li>
+<li>关键点</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/25/md/jdk/mulThread/juc/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="mqiy">
+      <meta itemprop="description" content="永远为下个月离职做好准备">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小灰灰的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/02/25/md/jdk/mulThread/juc/" class="post-title-link" itemprop="url">JUC基本概念</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-02-25 18:05 18:05:48" itemprop="dateCreated datePublished" datetime="2020-02-25T18:05:48+08:00">2020-02-25 18:05</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="1，tools（工具类）：又叫信号量三组工具类，包含有"><a href="#1，tools（工具类）：又叫信号量三组工具类，包含有" class="headerlink" title="1，tools（工具类）：又叫信号量三组工具类，包含有"></a>1，tools（工具类）：又叫信号量三组工具类，包含有</h3><p>1）<code>CountDownLatch</code>（闭锁） 是一个同步辅助类，在完成一组正在其他线程中执行的操作之前，它允许一个或多个线程一直等待<br>2）<code>CyclicBarrier</code>（栅栏） 之所以叫barrier，是因为是一个同步辅助类，允许一组线程互相等待，直到到达某个公共屏障点 ，并且在释放等待线程后可以重用。<br>3）<code>Semaphore</code>（信号量） 是一个计数信号量，它的本质是一个“共享锁“。信号量维护了一个信号量许可集。线程可以通过调用                                                                                        acquire()来获取信号量的许可；当信号量中有可用的许可时，线程能获取该许可；否则线程必须等待，                                                                                  直到有可用的许可为止。 线程可以通过release()来释放它所持有的信号量许可。</p>
+<h3 id="2，executor-执行者-：是Java里面线程池的顶级接口，但它只是一个执行线程的工具，真正的线程池接口是ExecutorService，里面包含的类有："><a href="#2，executor-执行者-：是Java里面线程池的顶级接口，但它只是一个执行线程的工具，真正的线程池接口是ExecutorService，里面包含的类有：" class="headerlink" title="2，executor(执行者)：是Java里面线程池的顶级接口，但它只是一个执行线程的工具，真正的线程池接口是ExecutorService，里面包含的类有："></a>2，executor(执行者)：是Java里面线程池的顶级接口，但它只是一个执行线程的工具，真正的线程池接口是ExecutorService，里面包含的类有：</h3><p>1）<code>ScheduledExecutorService</code>  解决那些需要任务重复执行的问题<br>2）<code>ScheduledThreadPoolExecutor</code>   周期性任务调度的类实现</p>
+<h3 id="3，atomic-原子性包-：是JDK提供的一组原子操作类，"><a href="#3，atomic-原子性包-：是JDK提供的一组原子操作类，" class="headerlink" title="3，atomic(原子性包)：是JDK提供的一组原子操作类，"></a>3，atomic(原子性包)：是JDK提供的一组原子操作类，</h3><p>包含有AtomicBoolean、AtomicInteger、AtomicIntegerArray等原子变量类，他们的实现原理大多是持有它们各自的对应的类型变量value，而且被volatile关键字修饰了。这样来保证每次一个线程要使用它都会拿到最新的值。</p>
+<h3 id="4，locks（锁包）：是JDK提供的锁机制，相比synchronized关键字来进行同步锁，功能更加强大，它为锁提供了一个框架，该框架允许更灵活地。包含的实现类有：-使用锁"><a href="#4，locks（锁包）：是JDK提供的锁机制，相比synchronized关键字来进行同步锁，功能更加强大，它为锁提供了一个框架，该框架允许更灵活地。包含的实现类有：-使用锁" class="headerlink" title="4，locks（锁包）：是JDK提供的锁机制，相比synchronized关键字来进行同步锁，功能更加强大，它为锁提供了一个框架，该框架允许更灵活地。包含的实现类有：                                              使用锁"></a>4，locks（锁包）：是JDK提供的锁机制，相比synchronized关键字来进行同步锁，功能更加强大，它为锁提供了一个框架，该框架允许更灵活地。包含的实现类有：                                              使用锁</h3><p>1）<code>ReentrantLock</code>   它是独占锁，是指只能被独自占领，即同一个时间点只能被一个线程锁获取到的锁。<br>2）<code>ReentrantReadWriteLock</code>   它包括子类ReadLock和WriteLock。ReadLock是共享锁，而WriteLock是独占锁。<br>3）<code>LockSupport</code> 它具备阻塞线程和解除阻塞线程的功能，并且不会引发死锁。</p>
+<h3 id="5，collections-集合类-：主要是提供线程安全的集合，"><a href="#5，collections-集合类-：主要是提供线程安全的集合，" class="headerlink" title="5，collections(集合类)：主要是提供线程安全的集合，"></a>5，collections(集合类)：主要是提供线程安全的集合，</h3><p>1）ArrayList对应的高并发类是CopyOnWriteArrayList，<br>2）HashSet对应的高并发类是 CopyOnWriteArraySet，<br>3）HashMap对应的高并发类是ConcurrentHashMap等等</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/24/md/part/microServices/spring%20cloud/spring%20cloud%20version/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="mqiy">
+      <meta itemprop="description" content="永远为下个月离职做好准备">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小灰灰的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/02/24/md/part/microServices/spring%20cloud/spring%20cloud%20version/" class="post-title-link" itemprop="url">Spring Cloud 和 Spring Boot对应版本</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-02-24 17:27 17:27:46" itemprop="dateCreated datePublished" datetime="2020-02-24T17:27:46+08:00">2020-02-24 17:27</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>127</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>Spring Cloud 和 Spring Boot 兼容性请见正文表格：</p>
+<table>
+<thead>
+<tr>
+<th align="left">Spring Cloud Train</th>
+<th align="left">Spring Boot Version</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">Hoxton</td>
+<td align="left">2.2.x</td>
+</tr>
+<tr>
+<td align="left">Greenwich</td>
+<td align="left">2.1.x</td>
+</tr>
+<tr>
+<td align="left">Finchley</td>
+<td align="left">2.0.x</td>
+</tr>
+<tr>
+<td align="left">Edgware</td>
+<td align="left">1.5.x</td>
+</tr>
+<tr>
+<td align="left">Dalston</td>
+<td align="left">1.5.x</td>
+</tr>
+</tbody></table>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/08/md/part/spring/springboot/spring-boot%E9%85%8D%E7%BD%AE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="mqiy">
+      <meta itemprop="description" content="永远为下个月离职做好准备">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小灰灰的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/01/08/md/part/spring/springboot/spring-boot%E9%85%8D%E7%BD%AE/" class="post-title-link" itemprop="url">spring-boot 配置 maven-resources-plugins</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-01-08 10:17 10:17:27" itemprop="dateCreated datePublished" datetime="2020-01-08T10:17:27+08:00">2020-01-08 10:17</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>287</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># 由于$&#123;&#125;方式会被maven处理。如果你pom继承了spring-boot-starter-parent，</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># Spring Boot已经将maven-resources-plugins默认的$&#123;&#125;方式改为了@@方式，如@name@</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="attr">spring:</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">  <span class="attr">profiles:</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">    <span class="attr">active:</span> <span class="string">@spring.profile.active@</span></span></pre></td></tr></table></figure>
+
+
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">properties</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">spring.profile.active</span>&gt;</span>sit<span class="tag">&lt;/<span class="name">spring.profile.active</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/26/md/develop/dev-line/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="mqiy">
+      <meta itemprop="description" content="永远为下个月离职做好准备">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小灰灰的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/12/26/md/develop/dev-line/" class="post-title-link" itemprop="url">知识清单，从开发到架构师！</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-12-26 15:11 15:11:04" itemprop="dateCreated datePublished" datetime="2019-12-26T15:11:04+08:00">2019-12-26 15:11</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -255,7 +828,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>32</span>
+              <span>554</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -274,15 +847,92 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h4 id="md作用"><a href="#md作用" class="headerlink" title="md作用"></a>md作用</h4><ul>
-<li>解耦</li>
-<li>消峰</li>
-<li>最终一致性</li>
-<li>广播</li>
+          <h3 id="常见模式与框架"><a href="#常见模式与框架" class="headerlink" title="常见模式与框架"></a>常见模式与框架</h3><p>设计模式<br>开发框架：比如 Spring, SpringMVC, Mybatis</p>
+<h3 id="工程化与工具"><a href="#工程化与工具" class="headerlink" title="工程化与工具"></a>工程化与工具</h3><p>软件开发流程&amp;规范<br>Git<br>敏捷开发<br>Docker</p>
+<h3 id="分布式架构"><a href="#分布式架构" class="headerlink" title="分布式架构"></a>分布式架构</h3><p>分布式架构设计原则<br>负载均衡，高可用<br>RPC，消息队列<br>分布式存储<br>高性能NIO框架<br>分布式缓存<br>分布式消息中间件</p>
+<h3 id="微服务架构"><a href="#微服务架构" class="headerlink" title="微服务架构"></a>微服务架构</h3><p>Spring Cloud<br>Spring Boot<br>Dubbo<br>Service Mesh</p>
+<h3 id="数据库分库分表"><a href="#数据库分库分表" class="headerlink" title="数据库分库分表"></a>数据库分库分表</h3><p>MySQL<br>MyCat<br>Sharding-JDBC</p>
+<h3 id="性能优化"><a href="#性能优化" class="headerlink" title="性能优化"></a>性能优化</h3><p>应用层：JVM 结构 &amp; 调优<br>web 服务器层：tomcat 等服务器结构 &amp; 调优<br>存储层：MySQL 结构 &amp; sql 优化，搜索引擎结构 &amp; 查询优化</p>
+<h3 id="底层知识"><a href="#底层知识" class="headerlink" title="底层知识"></a>底层知识</h3><p>对 JDK 的包结构，模块深入学习功能&amp;使用场景<br>围绕数据结构&amp;性能优化学习组织<br>对于 Java 开发来讲，JDK 几乎就是最底层和基础的知识了。对 JVM, MySQL等非 Java 程序了解结构，原理，调优基本就差不多了。但是 JDK 是要深入了解掌握的。</p>
+<h3 id="从开发到架构师"><a href="#从开发到架构师" class="headerlink" title="从开发到架构师"></a>从开发到架构师</h3><p>从单体技术 -&gt; 分布式，微服务<br>局部 -&gt; 整体<br>简单 -&gt; 深入</p>
+<p>架构师是一个更宏观的角色，单体系统的时候，单体系统划分、设计功能模块的也是架构师。随着分布式的兴起，架构师需要从分布式角度看整体系统，而到了微服务时代，架构师又要关注微服务，docker 等技术。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/19/md/jdk/mulThread/progress-change/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="mqiy">
+      <meta itemprop="description" content="永远为下个月离职做好准备">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小灰灰的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/12/19/md/jdk/mulThread/progress-change/" class="post-title-link" itemprop="url">线程的切换</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-12-19 18:11 18:11:14" itemprop="dateCreated datePublished" datetime="2019-12-19T18:11:14+08:00">2019-12-19 18:11</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>22</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h4 id="进程切换"><a href="#进程切换" class="headerlink" title="进程切换"></a>进程切换</h4><ul>
+<li>指令切换</li>
+<li>映射表切换</li>
 </ul>
-<h4 id="分布式事务"><a href="#分布式事务" class="headerlink" title="分布式事务"></a>分布式事务</h4><ul>
-<li>TCC</li>
-<li>最大努力通知型事务</li>
+<h4 id="线程切换"><a href="#线程切换" class="headerlink" title="线程切换"></a>线程切换</h4><ul>
+<li>仅指令切换</li>
 </ul>
 
       
@@ -303,7 +953,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/07/md/problem/pro/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/19/md/jdk/mulThread/syn-opti/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -317,7 +967,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2019/11/07/md/problem/pro/" class="post-title-link" itemprop="url">线上问题</a>
+            <a href="/2019/12/19/md/jdk/mulThread/syn-opti/" class="post-title-link" itemprop="url">java中锁的优化 -- JVM对synchronized的优化</a>
         </h1>
 
         <div class="post-meta">
@@ -327,7 +977,7 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2019-11-07 09:52 09:52:45" itemprop="dateCreated datePublished" datetime="2019-11-07T09:52:45+08:00">2019-11-07 09:52</time>
+              <time title="创建时间：2019-12-19 13:52 13:52:55" itemprop="dateCreated datePublished" datetime="2019-12-19T13:52:55+08:00">2019-12-19 13:52</time>
             </span>
 
           <br>
@@ -336,14 +986,14 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>245</span>
+              <span>3k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="fa fa-clock-o"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
+              <span>3 分钟</span>
             </span>
 
         </div>
@@ -355,767 +1005,52 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="CPU100-问题如何快速定位"><a href="#CPU100-问题如何快速定位" class="headerlink" title="CPU100%问题如何快速定位"></a>CPU100%问题如何快速定位</h3><h4 id="找到占用cpu最高的进程"><a href="#找到占用cpu最高的进程" class="headerlink" title="找到占用cpu最高的进程"></a>找到占用cpu最高的进程</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> P 排序</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">top -c</span></pre></td></tr></table></figure>
-
-<h4 id="取上一歩的进程pid-查询-占用cpu最高的线程"><a href="#取上一歩的进程pid-查询-占用cpu最高的线程" class="headerlink" title="取上一歩的进程pid,查询 占用cpu最高的线程"></a>取上一歩的进程pid,查询 占用cpu最高的线程</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> P 排序    11647上一歩的线程pid</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">top -Hp 11647</span></pre></td></tr></table></figure>
-
-<h4 id="线程pid转16进制"><a href="#线程pid转16进制" class="headerlink" title="线程pid转16进制"></a>线程pid转16进制</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> %x 表示 16进制 ;  \n  强制刷新缓冲区到屏幕   11656上一歩的线程pid</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">printf '%x\n' 11656</span></pre></td></tr></table></figure>
-
-<h4 id="查看java栈信息-定位代码"><a href="#查看java栈信息-定位代码" class="headerlink" title="查看java栈信息,定位代码"></a>查看java栈信息,定位代码</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">   11647第一歩的进程pid   2d88  占用的线程16进制   -c30 指打印出30行</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">jstack 11647 | grep '2d88' -C30 --color</span></pre></td></tr></table></figure>
-<p><img src="https://www.mqiy.xyz/image/problem/out-of-cpu.png" alt="out-of-cpu.png"></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/06/md/part/project/saas/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="mqiy">
-      <meta itemprop="description" content="永远为下个月离职做好准备">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小灰灰的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/11/06/md/part/project/saas/" class="post-title-link" itemprop="url">SaaS</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-11-06 18:53 18:53:18" itemprop="dateCreated datePublished" datetime="2019-11-06T18:53:18+08:00">2019-11-06 18:53</time>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>58</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>SaaS产品与生俱来的的几个缺陷</p>
+          <h3 id="1）锁消除"><a href="#1）锁消除" class="headerlink" title="1）锁消除"></a>1）锁消除</h3><p>概念：JVM在JIT编译(即时编译)时，通过对运行上下文的扫描，去除掉那些不可能发生共享资源竞争的锁，从而节省了线程请求这些锁的时间。</p>
+<p><strong>举例</strong>：<br>        StringBuffer的append方法是一个同步方法，如果StringBuffer类型的变量是一个局部变量，则该变量就不会被其它线程所使用，即对局部变量的操作是不会发生线程不安全的问题。<br>        在这种情景下，JVM会在JIT编译时自动将append方法上的锁去掉。</p>
+<h3 id="2）锁粗化"><a href="#2）锁粗化" class="headerlink" title="2）锁粗化"></a>2）锁粗化</h3><p>概念：将多个连续的加锁、解锁操作连接在一起，扩展成一个范围更大的锁，即将加锁的粒度放大。</p>
+<p><strong>举例</strong>：在for循环里的加锁/解锁操作，一般需要放到for循环外。</p>
+<h3 id="3）使用偏向锁和轻量级锁"><a href="#3）使用偏向锁和轻量级锁" class="headerlink" title="3）使用偏向锁和轻量级锁"></a>3）使用偏向锁和轻量级锁</h3><p>说明：</p>
 <ul>
-<li>软件控制权</li>
-<li>消费者基数</li>
-<li>性能瓶颈</li>
-<li>安全问题 (数据的隔离、敏感数据的加密、数据访问权限控制)</li>
+<li>1)java6为了减少获取锁和释放锁带来的性能消耗，引入了偏向锁和轻量级锁。</li>
+<li>2)锁一共有4种状态，级别从低到高依次是：无锁状态、偏向锁、轻量级锁、重量级锁。</li>
+<li>3)锁的状态会随着竞争情况逐渐升级，并且只可以升级而不能降级。</li>
 </ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/06/md/tool/vpn/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="mqiy">
-      <meta itemprop="description" content="永远为下个月离职做好准备">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小灰灰的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/11/06/md/tool/vpn/" class="post-title-link" itemprop="url">vpn</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-11-06 18:38 18:38:39" itemprop="dateCreated datePublished" datetime="2019-11-06T18:38:39+08:00">2019-11-06 18:38</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/tool/" itemprop="url" rel="index">
-                    <span itemprop="name">tool</span>
-                  </a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1.1k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="安装v2ray"><a href="#安装v2ray" class="headerlink" title="安装v2ray"></a>安装v2ray</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">bash &lt;(curl -s -L https://git.io/v2ray.sh)</span></pre></td></tr></table></figure>
-
-
-
-<h3 id="MTProxy"><a href="#MTProxy" class="headerlink" title="MTProxy"></a>MTProxy</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/mtproxy.sh &amp;&amp; chmod +x mtproxy.sh &amp;&amp; bash mtproxy.sh</span></pre></td></tr></table></figure>
-
-
-
-<h3 id="Brook"><a href="#Brook" class="headerlink" title="Brook"></a>Brook</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># https://github.com/txthinking/brook</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">wget https://github.com/txthinking/brook/releases/download/v20190601/brook</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> chmod</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">chmod u+x brook</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">## Shadowsocks</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">nohup brook ssserver -l :3072 -p Admin123# &gt; /dev/null 2&gt;&amp;1  &amp; </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> brook server</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">nohup brook server -l :2222 -p Admin123#  &gt; /dev/null 2&gt;&amp;1  &amp;</span></pre></td></tr></table></figure>
-
-
-
-<h3 id="youtube-dl"><a href="#youtube-dl" class="headerlink" title="youtube-dl"></a>youtube-dl</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> youtube</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">wget http://www.youtube-dl.org/downloads/latest/youtube-dl</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">chmod u+x youtube-dl</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 需要安装yasm</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> wget http://www.tortall.net/projects/yasm/releases/yasm-1.3.0.tar.gz</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> tar -zxvf yasm-1.3.0.tar.gz</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">cd</span> yasm-1.3.0</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> ./configure</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> make &amp;&amp; make install</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> install ffmpep</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> wget https://ffmpeg.org/releases/ffmpeg-4.1.3.tar.bz2</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> tar -zxvf ffmpeg-4.1.tar.gz</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">cd</span> ffmpeg-4.1</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> ./configure --prefix=/usr/<span class="built_in">local</span>/ffmpeg</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> make &amp;&amp; make install</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">20</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">vi /etc/profile</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">21</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">在最后PATH添加环境变量：</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">22</span></pre></td><td class="code"><pre><span class="line">PATH=$PATH:/usr/local/ffmpeg/bin</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">23</span></pre></td><td class="code"><pre><span class="line">export PATH</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">24</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">25</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">保存退出</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">26</span></pre></td><td class="code"><pre><span class="line"> source /ect/profile   设置生效</span></pre></td></tr></table></figure>
-
-
-
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">blog</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">nohup mvn spring-boot:run  &gt; /dev/null 2&gt;&amp;1 &amp;</span></pre></td></tr></table></figure>
-
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/06/md/life/pua/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="mqiy">
-      <meta itemprop="description" content="永远为下个月离职做好准备">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小灰灰的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/11/06/md/life/pua/" class="post-title-link" itemprop="url">撩妹</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-11-06 15:32 15:32:44" itemprop="dateCreated datePublished" datetime="2019-11-06T15:32:44+08:00">2019-11-06 15:32</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E4%BA%BA%E7%94%9F%E6%84%9F%E6%82%9F/" itemprop="url" rel="index">
-                    <span itemprop="name">人生感悟</span>
-                  </a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>174</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="男票需做到"><a href="#男票需做到" class="headerlink" title="男票需做到"></a>男票需做到</h3><p>1、记得你的生日；</p>
-<p>2、手机保持畅通让你能够联系得到他；</p>
-<p>3、在乎你穿的暖不暖，有没有按时吃饭；</p>
-<p>4、和他微信聊天时，态度积极，不会敷衍了事或总是隔很久才回复；</p>
-<p>5、对你大方从不吝啬；</p>
-<p>6、不嫌弃你；</p>
-<p>7、一有时间就会抽空陪着你；</p>
-<p>8、带你见过他最要好的朋友，甚至是家长；</p>
-<p>9、憧憬你们的未来，计划里一定有你；</p>
-<p>10、当你生病时，他会担心不已，亲自照顾你。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/06/md/life/failure/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="mqiy">
-      <meta itemprop="description" content="永远为下个月离职做好准备">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小灰灰的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/11/06/md/life/failure/" class="post-title-link" itemprop="url">失败者的十大特点</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-11-06 15:31 15:31:21" itemprop="dateCreated datePublished" datetime="2019-11-06T15:31:21+08:00">2019-11-06 15:31</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E4%BA%BA%E7%94%9F%E6%84%9F%E6%82%9F/" itemprop="url" rel="index">
-                    <span itemprop="name">人生感悟</span>
-                  </a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>70</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><strong>失败者的十大特点：</strong><br>一、脸皮薄<br>二、清高<br>三、懒惰<br>四、不喜欢学习<br>五、没情商<br>六、不舍得吃亏<br>七、不爱社交<br>八、不愿意求助他人<br>九、没有目标<br>十、胆小，不敢拼</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/06/md/tool/recommon-book/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="mqiy">
-      <meta itemprop="description" content="永远为下个月离职做好准备">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小灰灰的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/11/06/md/tool/recommon-book/" class="post-title-link" itemprop="url">推荐书籍</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-11-06 15:26 15:26:44" itemprop="dateCreated datePublished" datetime="2019-11-06T15:26:44+08:00">2019-11-06 15:26</time>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1.3k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="阿里毕玄：推荐给Java程序员的7本好书"><a href="#阿里毕玄：推荐给Java程序员的7本好书" class="headerlink" title="阿里毕玄：推荐给Java程序员的7本好书"></a>阿里毕玄：推荐给Java程序员的7本好书</h3><h4 id="Java相关的。"><a href="#Java相关的。" class="headerlink" title="Java相关的。"></a>Java相关的。</h4><p>《Java并发编程实战》<br>并发是高级语言里都需要掌握的稍微高级一些的技巧，这本书尽管是2012年的书了，但我觉得仍然是无比经典，绝对是必读书。<br>《Netty实战》<br>Netty是Java中通信框架实现的典范，非常值得通过这个来学习好语言中IO相关的知识，以及优秀的通信框架的写法。<br>《深入理解Java虚拟机（第2版）》<br>这本书我自己没看过，但听很多读过的同学的评价都是不错的，要真正的理解Java语言，就必须真正的去了解Java虚拟机，这样才能知道它的运行机制，例如Java编译、Java线程机制、Java内存管理等。<br>《Java性能优化权威指南》<br>这书是大神级人物写的，绝对值得一看，对排查问题、性能优化都有不小的帮助。<br>《Oracle JRockit: The Definitive Guide》<br>这书也是一本老书了，2010年写的，同样也是大神级人物写的，只有英文版，当年读这书对我学习JVM起到了很大的帮助，尽管Java同学主要用的是OpenJDK，而不是JRockit，而正因为有了对比，会对Java语言的实现有更深的理解。<br>《垃圾回收算法手册：自动内存管理的艺术》<br>中文版是2016年的，英文版是2011年的，这书对深刻的理解自动内存管理会有很大的帮助，毕竟其实自动内存管理这个领域的实现原理很多年是没有太大改变的，但实现的细节上有了很多的优化。<br>《性能之巅：洞悉系统、企业与云计算》<br>这书放在自己的想读列表里很久了，看评价应该是不错的，之前也说过，对于编程进阶的能力而言，查问题的能力是非常重要的一方面，这书应该有帮助，看过的同学也欢迎回复评价下。<br>还有很多书，先就推荐这些了，不过发现如果是论编程进阶相关的书，看起来还真有点缺，大部分书都是多年前写的。</p>
-<h4 id="系统设计相关"><a href="#系统设计相关" class="headerlink" title="系统设计相关"></a>系统设计相关</h4><p>《架构即未来：现代企业可扩展的Web架构、流程和组织(原书第2版)》<br>这书没看过，不过英文版我记得有点印象，评价好像不错的，欢迎看过的同学来说说。<br>《大型网站系统与Java中间件开发实践》<br>老伙伴华黎几年前写的书，对于开发大型的Web系统的同学而言是很值得学习的。<br>《SRE：Google运维解密》<br>理论上这不算系统设计的书，但运维其实是系统设计中很重要的要考虑的环节，我以前见过有些架构师设计的系统到上线的时候才发现少考虑了东西，导致上线没法上，我自己其实也干过这样的书，所以对于架构师而言，通过读这些书来扩充视野是非常重要的。<br>系统设计相关的书写的好的还真是有点少，当然也有原因是我看这方面的书很少。</p>
-<h4 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h4><p>《智能时代》吴军<br>很值得推荐，看这书能更充分的感受到智能时代带来的冲击，例如智能+工业可能会发生什么。<br>看这些类型的书对自己在技术方向的判断上是能有不错的帮助的。</p>
-<p>《人类简史》<br>很多地方都在推荐，对我来说是看了后才更加明白了人类发展，例如人类的协同演进。<br>《大学之路》 吴军<br>可能很多人都觉得这书是在讲怎么选美国的大学，以及怎么考，但看了后我觉得最值得推荐的是看这书才明白了高等教育的两个主流理念，以及美国、英国这些大学是怎么建设的，为什么和国内的高等教育会不同，强烈推荐。<br>《鞋狗》<br>看Nike的创始人是怎么把Nike做起来的，挺有意思的，可能是也很对胃口吧，兴趣和专业，是能做起来的关键。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/06/md/life/sevel-lift-advice/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="mqiy">
-      <meta itemprop="description" content="永远为下个月离职做好准备">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小灰灰的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/11/06/md/life/sevel-lift-advice/" class="post-title-link" itemprop="url">几条也许有用的生活建议</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-11-06 15:25 15:25:23" itemprop="dateCreated datePublished" datetime="2019-11-06T15:25:23+08:00">2019-11-06 15:25</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E4%BA%BA%E7%94%9F%E6%84%9F%E6%82%9F/" itemprop="url" rel="index">
-                    <span itemprop="name">人生感悟</span>
-                  </a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1.1k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>1、坚持锻炼</p>
-<p>你不一定非要去健身房撸铁，也不用非要去报瑜伽班，只要能保持一周3-4天的锻炼就可以，锻炼的方式有很多种，建议最好可以选择跑步，一开始可以从一公里、两公里慢慢坚持，设立目标，不必追求速度，慢跑即可，渐渐你会发现坚持十公里也不是多困难的事情。</p>
-<p>2、阅读</p>
-<p>你不一定非要有多高的学历，不一定非要名校毕业，但是希望你养成天天阅读的习惯，根据自己的爱好，买上几本名著，每晚入睡前阅读上几页，你会睡的更香，而且慢慢你会发现再和朋友聊天，不论朋友们聊到什么样的话题，你都不再无话可接。</p>
-<p>3、不要把幸福寄托在别人身上</p>
-<p>这或许很难，但是一定要明白人会变、情会散，人生的路就是要自己走，没有人可以代替我们的幸福，也不能有人夺走我们的幸福，自给自足的幸福才不会患得患失。</p>
-<p>4、沉稳</p>
-<p>比如任何事情，不要太早急于下结论；不随意表露自己的情绪；遇到事情，都要强制自己冷静下来，只有冷静，才会想到更好的应对方法。如果一开始做不到，压制不住内心的激动或紧张，那就装，使劲装，直到做到。</p>
-<p>5、及时止损</p>
-<p>不要在一个不爱你或者你不爱的人身上浪费时间；不要在你不喜欢且毫无好处的事情上浪费精力。一个人或者一件事，如果发现不对，要及时暂停付出，这样才能不会让自己的时间、经历甚至金钱白白浪费。</p>
-<p>6、不和别人比较</p>
-<p><code>一辈子都要和别人比较是人生悲剧的源头。</code>不要拿自己的缺点和别人的优点比较；可以去羡慕别人，不要去嫉妒别人，我们遇到的每个人，要去发现别人的优点，然后去学习，看到别人的缺点，要联想到自己，在自身避免。</p>
-<p>7、培养有一个爱好</p>
-<p>它可以是唱歌、跳舞、乐器、画画、篮球、羽毛球等等，因为它可以让你在遇到挫折的时候转移注意力；还可以在高兴的时候更加放飞自我；也可以让你在朋友面前更好的展现自己。</p>
-<p>8、拥有另一份收入</p>
-<p>除了工作，一定要再有一个挣钱的技能，“挑水的同时不要忘记挖井”，这可以增加你的收入，况且任何职业都没有真正的“铁饭碗”，一旦有一天你失去工作，你会庆幸你还有一份可以维持生计的收入。</p>
-<p>9、控制情绪</p>
-<p>这一条或许你觉得与第四条相似，但相似绝不重复，这一点我想说的是与家人、朋友、同事相处，都可能会产生摩擦或矛盾，这个时候我希望你不论多生气，都先冷静30秒再说话，带着愤怒的情绪处理一件事只会让这件事最后变的更加糟糕。反之也是一样，得意但不要忘形。</p>
-<p>10、万恶淫为首</p>
-<p>这里的“淫”不是指淫欲或淫秽的意思，而是指“放纵、没有节制”，意思是讲这个世界上最大的恶是做事没有节制且放纵自己，不论好事还是坏事，适度最好，正如《论语•八佾》关雎中所说：“乐而不淫，哀而不伤”。</p>
-<p>11、知行合一</p>
-<p>最后一条算是对以上十条的再次叮嘱，王阳明提出“知行合一”，是要告诉我们“知道做不到，等于不知道”。再多的道理如果只是停留在知道的层面，而没有去付出实践，那这一切都将只是徒劳。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/06/md/life/thirty-year-advice/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="mqiy">
-      <meta itemprop="description" content="永远为下个月离职做好准备">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小灰灰的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/11/06/md/life/thirty-year-advice/" class="post-title-link" itemprop="url">程序员，活得是本事：30 岁后的 20 条人生建议</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-11-06 15:21 15:21:13" itemprop="dateCreated datePublished" datetime="2019-11-06T15:21:13+08:00">2019-11-06 15:21</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E4%BA%BA%E7%94%9F%E6%84%9F%E6%82%9F/" itemprop="url" rel="index">
-                    <span itemprop="name">人生感悟</span>
-                  </a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1.2k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>一个程序员看待职业的方式，决定了他能走多远。</p>
-<p>有的人把职业当游戏，不论 buff 还是 bug 都要闯过去；有的人把职业当对手，不是一心想赢，只是不想输；有的人，活得是造型；有的人，活得是人设；程序员，活得是本事。</p>
-<p>今天，我们采访了 10 多位程序员，并将他们的经验整理成这篇《程序员的 20 条职业感悟》。请查阅。</p>
-<h3 id="关于-Work-life-balance"><a href="#关于-Work-life-balance" class="headerlink" title="关于 Work life balance"></a>关于 Work life balance</h3><p>❶ 把身体锻炼好，只要你有一个健康的身体和健康的生活观，这个世界就饿不死人。</p>
-<p>❷ 最好能够做到早起，一方面早上人的头脑比较清晰，另一方面可以在没有人打扰的时间里多学点东西。</p>
-<p>❸ 自己的发展路线应该是最大限度地加强和发挥自己独特的组合，而不是寻求单项的超越。主要是通过实践，其次是要有意识地构造。</p>
-<p>❹ 学习的能力和阅读的习惯，是从大学毕业后最该带到工作里的两样东西。</p>
-<p>❺ 不要做个纯码农，多抽空做点其他自己感兴趣的事情。</p>
-<h3 id="于技术"><a href="#于技术" class="headerlink" title="于技术"></a>于技术</h3><p>❶ 编程是一件需要技术积累的工作。涉及的不仅仅是写程序，还有对系统的了解，对工具的熟悉，工作方法，经验很重要。</p>
-<p>❷ 学习新技术的时候多看“官方文档”。编写文档的人群，通常就是这些技术或者软件的开发者，他们是对这些东西最了解的人。因此，官方文档质量是很高的，通常也是最新的。</p>
-<p>❸ 把觉得不靠谱的需求放到最后做，也许到时候需求就变了。</p>
-<p>❹ 宁愿终止程序也不要带着错误运行下去。</p>
-<p>❺ 隔一段时间就回去看看自己几个月之前写的代码，这能够让你认识到代码的可读性有多重要，亲身体会才能懂得。</p>
-<p>❻ 程序不等于数据结构加算法，而等于搜索引擎加英语。</p>
-<h3 id="关于年龄"><a href="#关于年龄" class="headerlink" title="关于年龄"></a>关于年龄</h3><p>❶ 所谓的年龄歧视是在给自己设定心理障碍，你真正应该担心的不是年龄，在于你是否有职业规划，是否朝职业目标努力，你的年龄是否达到了相应的能力及经验。</p>
-<p>❷ 如果你坚持持续学习，不管在哪一个行业都会越老越香的。</p>
-<p>❸ 无论年龄多大，需要学习的东西有很多，在专业的道路上还是要继续尝试做技术创新。</p>
-<p>❹ 条条大路通罗马，选择一个自己热爱的行业很重要。</p>
-<p>04</p>
-<h3 id="关于情商"><a href="#关于情商" class="headerlink" title="关于情商"></a>关于情商</h3><p>❶ 心要皮实，但话语和脸皮要柔软，记住有句老话叫，伸手不打笑脸人。</p>
-<p>❷ 编码的时候只思考同一个思维层次的逻辑，在这层完成之后再思考下一层。</p>
-<p>❸ 千万别真的认为别人都是傻逼，否则会降低你的可合作性，可合作性在团队里是项很重要的能力。</p>
-<p>❹ 真正的领导能力不是令人服从，而是让大家用正确高效的方法完成任务。</p>
-<p>❺ 永远别小看程序媛。</p>
-<p>对了，还有一条最重要的感悟是几位程序员共同提到的</p>
-<p>一定要记录自己的技术积累</p>
-<p>才能获得技术的提升</p>
-<p>不论是写文章还是做分享</p>
-<p>或许你资历尚浅，技术思路和技术方向还很难摸清。这时学习与模仿对你来说至关重要，学习别人思考问题的角度，分析成熟的技术文章的知识脉络。</p>
-<p>这样做的意义在于：</p>
-<ul>
-<li>从自身学习出发：从别人的思路里看到自己的技术边界，找到一个方向学习；</li>
-<li>从业务方向出发：看看别人输出成熟的技术实践，帮助你解决业务难题</li>
-<li>比如说，各大社区技术达人、技术大佬的那些高质量文章，总有一篇能够戳中当下现状的你，汲取他们的技术经验和技术思想，应用在自己的学习与项目中。</li>
+<h4 id="【偏向锁】"><a href="#【偏向锁】" class="headerlink" title="【偏向锁】"></a>【偏向锁】</h4><ul>
+<li><p>1)背景：大多数情况下，锁不仅不存在多线程竞争，而且总是由同一线程多次获得，为了让线程获得锁的代价更低而引入了偏向锁。</p>
+</li>
+<li><p>2)概念：核心思想就是锁会偏向第一个获取它的线程，如果在接下来的执行过程中没有其它的线程获取该锁，则持有偏向锁的线程永远不需要同步。</p>
+</li>
+<li><p>3)目的：偏向锁实际上是一种优化锁，其目的是为了减少数据在无竞争情况下的性能损耗。</p>
+</li>
+<li><p>4)原理：<br>1&gt;当一个线程访问同步块并获取锁时，会在对象头和栈帧中的锁记录里存储锁偏向的线程ID。<br>2&gt;以后该线程在进入和退出同步块时就不需要进行CAS操作来加锁和解锁，只需简单地判断一下对象头的Mark Word里是否存储着指向当前线程的偏向锁。</p>
+</li>
+<li><p>5)偏向锁的获取：<br>1&gt;访问Mark Word中偏向锁的标识位是否为1，如果是1，则确定为偏向锁。<br>说明：<br>  [1]如果偏向锁的标识位为0，说明此时是处于无锁状态，则当前线程通过CAS操作尝试获取偏向锁，如果获取锁成功，则将Mark Word中的偏向线程ID设置为当前线程ID；并且将偏向标识位设为1。<br>  [2]如果偏向锁的标识位不为1，也不为0(此时偏向锁的标识位没有值)，说明发生了竞争，偏向锁已经膨胀为轻量级锁，这时使用CAS操作尝试获得锁。</p>
+<p>2&gt;如果是偏向锁，则判断Mark Word中的偏向线程ID是否指向当前线程，如果偏向线程ID指向当前线程，则表明当前线程已经获取到了锁；</p>
+<p>3&gt;如果偏向线程ID并未指向当前线程，则通过CAS操作尝试获取偏向锁，如果获取锁成功，则将Mark Word中的偏向线程ID设置为当前线程ID；</p>
+<p>4&gt;如果CAS获取偏向锁失败，则表示有竞争。当到达全局安全点时(在这个时间点上没有正在执行的字节码)，获得偏向锁的线程被挂起，偏向锁升级为轻量级锁，然后被阻塞在安全点的线程继续往下执行同步代码。</p>
+</li>
+<li><p>6)偏向锁的释放：<br>1&gt;当其它的线程尝试获取偏向锁时，持有偏向锁的线程才会释放偏向锁。<br>2&gt;释放偏向锁需要等待全局安全点(在这个时间点上没有正在执行的字节码)。<br>3&gt;过程：</p>
+<pre><code>首先暂停拥有偏向锁的线程，然后检查持有偏向锁的线程是否活着，如果线程不处于活动状态，则将对象头设置成无锁状态，
+如果线程还活着，说明此时发生了竞争，则偏向锁升级为轻量级锁，然后刚刚被暂停的线程会继续往下执行同步代码。</code></pre></li>
+<li><p>7)优点：加锁和解锁不需要额外的消耗，和执行非同步方法相比仅存在纳秒级的差距</p>
+</li>
+<li><p>8)缺点：如果线程间存在锁竞争，锁撤销会带来额外的消耗。</p>
+</li>
+<li><p>9)说明：<br>1&gt;偏向锁默认在应用程序启动几秒钟之后才激活。<br>2&gt;可以通过设置 -XX:BiasedLockingStartupDelay=0 来关闭延迟。<br>3&gt;可以通过设置 -XX:-UseBiasedLocking=false 来关闭偏向锁，程序默认会进入轻量级锁状态。(如果应用程序里的锁大多情况下处于竞争状态，则应该将偏向锁关闭)</p>
+</li>
 </ul>
-<p><strong>加油，不给自己留遗憾~</strong></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/06/md/life/need-self/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="mqiy">
-      <meta itemprop="description" content="永远为下个月离职做好准备">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小灰灰的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/11/06/md/life/need-self/" class="post-title-link" itemprop="url">你之所以感到不快乐，其实是因为你还不够自私</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-11-06 15:19 15:19:55" itemprop="dateCreated datePublished" datetime="2019-11-06T15:19:55+08:00">2019-11-06 15:19</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E4%BA%BA%E7%94%9F%E6%84%9F%E6%82%9F/" itemprop="url" rel="index">
-                    <span itemprop="name">人生感悟</span>
-                  </a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1.3k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>人是自然的产物，所有对于人性的研究自然要从人与自然说起。</p>
-<p>达尔文的生物进化论、社会心理学、生物学、生理学等多个领域的研究都一致表明：</p>
-<p>人类的本性不仅仅存在生理需求还存在情感需求，情感需求即快乐以及痛苦的情绪表达。</p>
-<p>追求快乐是人的天性，而造成快乐与痛苦的因素其实有很多，适当的自私也的确可以让人更快乐。</p>
-<p>当然，这里所讲的自私，并不是让你去做一个遭人厌弃之人，而是在保证别人利益的前提下，多为自己考虑，更多的去关注自己的情绪变化及心理需求。</p>
-<p>心理学：你之所以感到不快乐，其实是因为你还不够自私<br>我们习惯给那些自私的人贴上标签：以自我为中心，贪婪，冷酷，吝啬，敏感，多疑，性格孤僻。总之，自私在群体意识中属于贬义词，然而，人的本性其实是是自私的，因为追求快乐是生存的意义，具有生物适应性。</p>
-<p>社会心理学观点认为，人在社会群体中的幸福指数高低，不是权利，更不是财富，而是保持良好的心态，即拥有一个好心情。所以，通过适度的自私让自己保持快乐是非常有必要的。</p>
-<p>心理学：你之所以感到不快乐，其实是因为你还不够自私<br>高尚的无私</p>
-<p>相比于自私，无私则是一种崇高的精神，指的是对别人无私奉献，没有私心。你有没有过这样的经历。</p>
-<p>下班回来，爱人翘着二郎腿，玩着手机，享受着美好的游戏时光，你用“无私”告诉自己，要做一个贤妻良母，做着家务，照顾着孩子，还要为家人准备一顿可口的饭菜。</p>
-<p>假期里，老板的一个电话催促你回去义务加班，你用“无私”告诉自己做一个好员工，提前结束了自己的假期生活。</p>
-<p>当父母打着为你好的旗号，不去顾虑的意愿，强行左右你的人生之时，你用“无私”告诉自己做一个好儿女，放弃了自己的坚持。</p>
-<p>心理学：你之所以感到不快乐，其实是因为你还不够自私<br>但是，在你无私的做了这些事情以后，你会发现，自己并不开心。这些通过强制手段去扭曲自身意识的事情，压的你喘不过气，让你根本快乐不起来。</p>
-<p>重点是，我们一边在做着“无私”的事情，压抑着自己的心性，委屈着自己，一边又自私的在心里为自己鸣不平。其实，你完全可以更自私一点。</p>
-<p>心理学：你之所以感到不快乐，其实是因为你还不够自私<br>高尚的自私</p>
-<p>尼采曾经说过：最高尚的人恰恰是最自私的人。美国心理学博士大卫·西伯里提出“高尚的自私”这个概念，大卫认为，现代人最大的苦恼在于过度迎合，讨好别人，以至于逐渐丧失了自我。</p>
-<p>他崇尚“自私”，是一种尊重自我内心，强调自我价值的“自私”，以免让人们在“无私”中失去了自我。因为，所有装出来崇高的“无私”，最后都会以最自私的形式表现出来。</p>
-<p>最终伤害的不仅仅是你，还有被你宠坏的对方。所以，西伯里博士所说的崇尚自私，其实是在教你如何关注自我，回归自我。</p>
-<p>心理学：你之所以感到不快乐，其实是因为你还不够自私<br>适度自私，尊重人性</p>
-<p>与其为了别人委屈自己，逼自己去做一个“无私”的人，不如，适当的放开心性，让自己适度“自私”，获得快乐和开心。</p>
-<p>当然，此自私非彼自私，那些只考虑自己，而忽略别人感受的人，是令人厌恶的，排斥的，那是真正自私的人。而为了保障自身利益，适度的对别人自私一点，这不算真正的自私，最多只是人性的体现而已。</p>
+<h4 id="【轻量级锁】"><a href="#【轻量级锁】" class="headerlink" title="【轻量级锁】"></a>【轻量级锁】</h4><p>1)原理：<br> 1&gt;当使用轻量级锁(锁标识位为00)时，线程在执行同步块之前，JVM会先在当前线程的栈桢中创建用于存储锁记录的空间，并将对象头中的Mark Word复制到锁记录中(注:锁记录中的标识字段称为Displaced Mark Word)。</p>
+<p> 2&gt;将对象头中的MarkWord复制到栈桢中的锁记录中之后，虚拟机将尝试使用CAS将对象头中Mark Word替换为指向该线程虚拟机栈中锁记录的指针，此时如果没有线程占有锁或者没有线程竞争锁，则当前线程成功获取到锁，然后执行同步块中的代码。</p>
+<p> 3&gt;如果在获取到锁的线程执行同步代码的过程中，另一个线程也完成了栈桢中锁记录的创建，并且已经将对象头中的MarkWord复制到了自己的锁记录中，然后尝试使用CAS将对象头中的MarkWord修改为指向自己的锁记录的指针，但是由于之前获取到锁的线程已经将对象头中的MarkWord修改过了(并且现在还在执行同步体中的代码,即仍然持有着锁)，所以此时对象头中的MarkWord与当前线程锁记录中MarkWord的值不同，导致CAS操作失败，然后该线程就会不停地循环使用CAS操作试图将对象头中的MarkWord替换为自己锁记录中MarkWord的值，(当循环次数或循环时间达到上限时停止循环)如果在循环结束之前CAS操作成功，那么该线程就可以成功获取到锁，如果循环结束之后依然获取不到锁，则锁获取失败，对象头中的MarkWord会被修改为指向重量级锁的指针，然后这个获取锁失败的线程就会被挂起，阻塞了。</p>
+<p> 4&gt;当持有锁的那个线程执行完同步体之后，使用CAS操作将对象头中的MarkWord还原为最初的状态时(将对象头中指向锁记录的指针替换为Displaced Mark Word )，发现MarkWord已被修改为指向重量级锁的指针，因此CAS操作失败，该线程会释放锁并唤起阻塞等待的线程，开始新一轮夺锁之争，而此时，轻量级锁已经膨胀为重量级锁，所有竞争失败的线程都会阻塞，而不是自旋。</p>
+<p> 自旋锁：<br>     1)所谓自旋锁，就是让没有获得锁的进程自己运行一段时间自循环(默认开启)，但是不挂起线程。<br>     2)自旋的代价就是该线程会一直占用处理器如果锁占用的时间很短，自旋等待的效果很好，反之，自旋锁会消耗大量处理器资源。<br>     3)因此，自旋的等待时间必须有一定限度，超过限度还没有获得锁，就要挂起线程。  </p>
+<p> 优点：在没有多线程竞争的前提下，减少传统的重量级锁带来的性能损耗。<br> 缺点：竞争的线程如果始终得不到锁，自旋会消耗cpu。<br> 应用：追求响应时间，同步块执行速度非常快。  </p>
+<h4 id="【重量级锁】"><a href="#【重量级锁】" class="headerlink" title="【重量级锁】"></a>【重量级锁】</h4><ul>
+<li>说明：<br>  1)java6之前的synchronized属于重量级锁，效率低下，因为monitor是依赖操作系统的Mutex Lock(互斥量)来实现的。<br>  2)多线程竞争锁时，会引起线程的上下文切换(即在cpu分配的时间片还没有用完的情况下进行了上下文切换)。<br>  3)操作系统实现线程的上下文切换需要从用户态转换到核心态，这个状态之间的转换需要相对较长的时间，时间成本相对较高。<br>  4)在互斥状态下，没有得到锁的线程会被挂起阻塞，而挂起线程和恢复线程的操作都需要从用户态转入内核态中完成。</li>
+<li>优点：线程竞争不使用自旋，不会消耗cpu。</li>
+<li>缺点：线程阻塞，响应时间缓慢。</li>
+<li>应用：追求吞吐量，同步块执行速度较长</li>
+</ul>
 
       
     </div>
@@ -1135,7 +1070,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/19/">19</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/22/">22</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1201,7 +1136,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">183</span>
+          <span class="site-state-item-count">219</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1214,7 +1149,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">55</span>
+        <span class="site-state-item-count">52</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -1248,12 +1183,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">227k</span>
+    <span title="站点总字数">256k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">3:27</span>
+    <span title="站点阅读时长">3:52</span>
 </div>
 
         

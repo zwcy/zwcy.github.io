@@ -47,15 +47,15 @@
   };
 </script>
 
-  <meta name="description" content="主题，发布订阅模式下的消息统一汇集地，不同生产者向topic发送消息，由MQ服务器分发到不同的订阅者，实现消息的广播PPT当前页开始放映的快捷键是Shift+F5 需要为每个Consumer 指定一个Consumer Group，不同Group可读取相同消息；同一group内不同consumer 互斥，不会消费相同的消息consumer 相关信息也在zk中维护">
+  <meta name="description" content="主题，发布订阅模式下的消息统一汇集地，不同生产者向topic发送消息，由MQ服务器分发到不同的订阅者，实现消息的广播">
 <meta property="og:type" content="article">
-<meta property="og:title" content="mq">
+<meta property="og:title" content="mq设计">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;08&#x2F;20&#x2F;md&#x2F;part&#x2F;mq&#x2F;mq&#x2F;index.html">
 <meta property="og:site_name" content="小灰灰的博客">
-<meta property="og:description" content="主题，发布订阅模式下的消息统一汇集地，不同生产者向topic发送消息，由MQ服务器分发到不同的订阅者，实现消息的广播PPT当前页开始放映的快捷键是Shift+F5 需要为每个Consumer 指定一个Consumer Group，不同Group可读取相同消息；同一group内不同consumer 互斥，不会消费相同的消息consumer 相关信息也在zk中维护">
+<meta property="og:description" content="主题，发布订阅模式下的消息统一汇集地，不同生产者向topic发送消息，由MQ服务器分发到不同的订阅者，实现消息的广播">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2019-08-20T08:33:35.000Z">
-<meta property="article:modified_time" content="2019-08-20T08:33:36.244Z">
+<meta property="article:modified_time" content="2020-03-27T11:32:20.363Z">
 <meta property="article:author" content="mqiy">
 <meta property="article:tag" content="mq">
 <meta name="twitter:card" content="summary">
@@ -72,7 +72,7 @@
   };
 </script>
 
-  <title>mq | 小灰灰的博客</title>
+  <title>mq设计 | 小灰灰的博客</title>
   
 
 
@@ -142,7 +142,7 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">55</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">52</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
@@ -152,7 +152,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">183</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">219</span></a>
 
   </li>
         <li class="menu-item menu-item-relate">
@@ -226,7 +226,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          mq
+          mq设计
         </h1>
 
         <div class="post-meta">
@@ -252,7 +252,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>176</span>
+              <span>58</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -271,8 +271,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>主题，发布订阅模式下的消息统一汇集地，不同生产者向topic发送消息，由MQ服务器分发到不同的订阅者，实现消息的广播<br>PPT当前页开始放映的快捷键是Shift+F5</p>
-<p>需要为每个Consumer 指定一个Consumer Group，不同Group可读取相同消息；同一group内不同consumer 互斥，不会消费相同的消息<br>consumer 相关信息也在zk中维护</p>
+        <p>主题，发布订阅模式下的消息统一汇集地，不同生产者向topic发送消息，由MQ服务器分发到不同的订阅者，实现消息的广播</p>
 
     </div>
 
@@ -371,7 +370,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">183</span>
+          <span class="site-state-item-count">219</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -384,7 +383,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">55</span>
+        <span class="site-state-item-count">52</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -418,12 +417,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">227k</span>
+    <span title="站点总字数">256k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">3:27</span>
+    <span title="站点阅读时长">3:52</span>
 </div>
 
         

@@ -47,18 +47,18 @@
   };
 </script>
 
-  <meta name="description" content="EMERGENCY! EUREKA MAY BE INCORRECTLY CLAIMING INSTANCES ARE UP WHEN THEY’RE NOT. RENEWALS ARE LESSER THAN THRESHOLD AND HENCE THE INSTANCES ARE NOT BEING EXPIRED JUST TO BE SAFE.1#一般出现此模式时，服务返回错误。即如果真">
+  <meta name="description" content="Eureka注册中心的作用很大的程度是作用于服务发现和服务心跳，在多个注册中心的时候,依赖于zuul的负载均衡,保证异常的服务停止,正常的服务加载,保证服务的稳定性。 Eureka能够通过心跳检查、客户端缓存等机制，确保了系统的高可用性。 默认配置，Eureka Server在90s没有得到客户端的心跳，则注销该实例，同时Eureka 有自我保护机制（防止本身不可用，而干掉可用服务），通过在Eur">
 <meta property="og:type" content="article">
 <meta property="og:title" content="eureka">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;06&#x2F;18&#x2F;md&#x2F;part&#x2F;microServices&#x2F;spring%20cloud&#x2F;eureka&#x2F;index.html">
 <meta property="og:site_name" content="小灰灰的博客">
-<meta property="og:description" content="EMERGENCY! EUREKA MAY BE INCORRECTLY CLAIMING INSTANCES ARE UP WHEN THEY’RE NOT. RENEWALS ARE LESSER THAN THRESHOLD AND HENCE THE INSTANCES ARE NOT BEING EXPIRED JUST TO BE SAFE.1#一般出现此模式时，服务返回错误。即如果真">
+<meta property="og:description" content="Eureka注册中心的作用很大的程度是作用于服务发现和服务心跳，在多个注册中心的时候,依赖于zuul的负载均衡,保证异常的服务停止,正常的服务加载,保证服务的稳定性。 Eureka能够通过心跳检查、客户端缓存等机制，确保了系统的高可用性。 默认配置，Eureka Server在90s没有得到客户端的心跳，则注销该实例，同时Eureka 有自我保护机制（防止本身不可用，而干掉可用服务），通过在Eur">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2019-06-18T06:35:10.000Z">
-<meta property="article:modified_time" content="2019-06-22T01:58:20.000Z">
+<meta property="article:modified_time" content="2020-02-25T23:50:05.220Z">
 <meta property="article:author" content="mqiy">
-<meta property="article:tag" content="微服务">
 <meta property="article:tag" content="spring cloud">
+<meta property="article:tag" content="微服务">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://yoursite.com/2019/06/18/md/part/microServices/spring%20cloud/eureka/">
@@ -143,7 +143,7 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">55</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">52</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
@@ -153,7 +153,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">183</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">219</span></a>
 
   </li>
         <li class="menu-item menu-item-relate">
@@ -253,7 +253,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>262</span>
+              <span>803</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -272,7 +272,13 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h4 id="EMERGENCY-EUREKA-MAY-BE-INCORRECTLY-CLAIMING-INSTANCES-ARE-UP-WHEN-THEY’RE-NOT-RENEWALS-ARE-LESSER-THAN-THRESHOLD-AND-HENCE-THE-INSTANCES-ARE-NOT-BEING-EXPIRED-JUST-TO-BE-SAFE"><a href="#EMERGENCY-EUREKA-MAY-BE-INCORRECTLY-CLAIMING-INSTANCES-ARE-UP-WHEN-THEY’RE-NOT-RENEWALS-ARE-LESSER-THAN-THRESHOLD-AND-HENCE-THE-INSTANCES-ARE-NOT-BEING-EXPIRED-JUST-TO-BE-SAFE" class="headerlink" title="EMERGENCY! EUREKA MAY BE INCORRECTLY CLAIMING INSTANCES ARE UP WHEN THEY’RE NOT. RENEWALS ARE LESSER THAN THRESHOLD AND HENCE THE INSTANCES ARE NOT BEING EXPIRED JUST TO BE SAFE."></a>EMERGENCY! EUREKA MAY BE INCORRECTLY CLAIMING INSTANCES ARE UP WHEN THEY’RE NOT. RENEWALS ARE LESSER THAN THRESHOLD AND HENCE THE INSTANCES ARE NOT BEING EXPIRED JUST TO BE SAFE.</h4><figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment">#一般出现此模式时，服务返回错误。即如果真实的服务已经Down掉，但在注册中心界面服务却一直存在，且显示为UP状态，关掉自我保护模式</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="meta">eureka.server.enable-self-preservation</span> = <span class="string">false</span></span></pre></td></tr></table></figure>
+        <p>Eureka注册中心的作用很大的程度是作用于<code>服务发现</code>和<code>服务心跳</code>，在多个注册中心的时候,依赖于zuul的负载均衡,保证异常的服务停止,正常的服务加载,保证服务的稳定性。</p>
+<p>Eureka能够通过心跳检查、客户端缓存等机制，确保了系统的高可用性。</p>
+<p>默认配置，Eureka Server在90s没有得到客户端的心跳，则注销该实例，同时Eureka 有自我保护机制（防止本身不可用，而干掉可用服务），通过在Eureka Server配置参数，<br>可启动保护机制它的工作原理是：当Eureka Server节点在短时间内丢失过多的客户端时（可能发送了网络故障），那么这个节点将进入自我保护模式，<br>不再注销任何微服务，当网络故障回复后，该节点会自动退出自我保护模式。</p>
+<p>Eureka VS Zookeeper</p>
+<p>在CAP理论中说道，一个分布式系统不可能同时满足C(一致性)、A(可用性)和P(分区容错性)。由于分区容错性在是分布式系统中必须要保证的，因此我们只能在A和C之间进行权衡</p>
+<p>此Zookeeper保证的是CP, 而Eureka则是AP<br>zookeeper：当master节点因为网络故障与其他节点失去联系时，剩余节点会重新进行leader选举。选举leader的时间太长，30 ~ 120s, 且选举期间整个zk集群都是不可用的</p>
+<h4 id="EMERGENCY-EUREKA-MAY-BE-INCORRECTLY-CLAIMING-INSTANCES-ARE-UP-WHEN-THEY’RE-NOT-RENEWALS-ARE-LESSER-THAN-THRESHOLD-AND-HENCE-THE-INSTANCES-ARE-NOT-BEING-EXPIRED-JUST-TO-BE-SAFE"><a href="#EMERGENCY-EUREKA-MAY-BE-INCORRECTLY-CLAIMING-INSTANCES-ARE-UP-WHEN-THEY’RE-NOT-RENEWALS-ARE-LESSER-THAN-THRESHOLD-AND-HENCE-THE-INSTANCES-ARE-NOT-BEING-EXPIRED-JUST-TO-BE-SAFE" class="headerlink" title="EMERGENCY! EUREKA MAY BE INCORRECTLY CLAIMING INSTANCES ARE UP WHEN THEY’RE NOT. RENEWALS ARE LESSER THAN THRESHOLD AND HENCE THE INSTANCES ARE NOT BEING EXPIRED JUST TO BE SAFE."></a>EMERGENCY! EUREKA MAY BE INCORRECTLY CLAIMING INSTANCES ARE UP WHEN THEY’RE NOT. RENEWALS ARE LESSER THAN THRESHOLD AND HENCE THE INSTANCES ARE NOT BEING EXPIRED JUST TO BE SAFE.</h4><figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment">#一般出现此模式时，服务返回错误。即如果真实的服务已经Down掉，</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># 但在注册中心界面服务却一直存在，且显示为UP状态，关掉自我保护模式</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="meta">eureka.server.enable-self-preservation</span> = <span class="string">false</span></span></pre></td></tr></table></figure>
 
 
     </div>
@@ -284,8 +290,8 @@
       <footer class="post-footer">
           
           <div class="post-tags">
-              <a href="/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/" rel="tag"><i class="fa fa-tag"></i> 微服务</a>
               <a href="/tags/spring-cloud/" rel="tag"><i class="fa fa-tag"></i> spring cloud</a>
+              <a href="/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/" rel="tag"><i class="fa fa-tag"></i> 微服务</a>
           </div>
 
         
@@ -294,8 +300,8 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2019/06/18/md/part/microServices/spring%20cloud/spring%20Cloud%E4%BB%8B%E7%BB%8D/" rel="prev" title="spring cloud介绍">
-      <i class="fa fa-chevron-left"></i> spring cloud介绍
+    <a href="/2019/06/18/md/part/microServices/spring%20cloud/spring%20Cloud%E4%BB%8B%E7%BB%8D/" rel="prev" title="spring cloud各组件介绍">
+      <i class="fa fa-chevron-left"></i> spring cloud各组件介绍
     </a></div>
       <div class="post-nav-item">
     <a href="/2019/06/18/md/part/spring/springboot/endPoint/" rel="next" title="endPoint">
@@ -374,7 +380,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">183</span>
+          <span class="site-state-item-count">219</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -387,7 +393,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">55</span>
+        <span class="site-state-item-count">52</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -421,12 +427,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">227k</span>
+    <span title="站点总字数">256k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">3:27</span>
+    <span title="站点阅读时长">3:52</span>
 </div>
 
         
