@@ -211,6 +211,111 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/jdk/mulThread/%E5%A4%9A%E7%BA%BF%E7%A8%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="mqiy">
+      <meta itemprop="description" content="永远为下个月离职做好准备">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小灰灰的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/06/18/md/jdk/mulThread/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" class="post-title-link" itemprop="url">多线程概要</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-06-18 15:27 15:27:31" itemprop="dateCreated datePublished" datetime="2019-06-18T15:27:31+08:00">2019-06-18 15:27</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>2.5k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>多线程只有一个目的：更好的利用cpu的资源</p>
+<ul>
+<li><p>并行：多个cpu实例或者多台机器同时执行一段处理逻辑，是真正的同时。</p>
+</li>
+<li><p>并发：通过cpu调度算法，让用户看上去同时执行，实际上从cpu操作层面不是真正的同时。</p>
+</li>
+<li><p>线程安全：经常用来描绘一段代码。指在并发的情况之下，该代码经过多线程使用，线程的调度顺序不影响任何结果。</p>
+</li>
+<li><p>同步：Java中的同步指的是通过人为的控制和调度，保证共享资源的多线程访问成为线程安全，来保证结果的准确。如简单加入@synchronized关键字。</p>
+</li>
+</ul>
+<p><strong>阻塞(Blocked)</strong>：</p>
+<ol>
+<li>调用join()和sleep()方法，sleep()时间结束或被打断，join()中断,IO完成都会回到Runnable状态，等待JVM的调度。</li>
+<li>调用wait()，使该线程处于等待池(wait blocked pool),直到notify()/notifyAll()，线程被唤醒被放到锁定池(lock blocked pool )，释放同步锁使线程回到可运行状态（Runnable）</li>
+<li>对Running状态的线程加同步锁(Synchronized)使其进入(lock blocked pool ),同步锁被释放进入可运行状态(Runnable)。</li>
+</ol>
+<p>Thread类中的yield方法可以让一个running状态的线程转入runnable。</p>
+<ul>
+<li>yield()应该做的是让当前运行线程回到可运行状态，以允许具有相同优先级的其他线程获得运行机会，可能无效，又选择了让步的线程。</li>
+<li>join()在一个线程中调用other.join(),将等待other执行完后才继续本线程。</li>
+<li>interrupted方法其本质只是设置该线程的中断标志，真正实现线程的中断原理是：开发人员根据中断标志的具体值，来决定如何退出线程。</li>
+<li>stop方法会中断一个正在运行的线程</li>
+</ul>
+<p>synchronized, wait, notify 是任何对象都具有的同步工具<br>monitor 在synchronized 范围内，监视器发挥作用<br>wait/notify必须存在于synchronized块，这三个关键字针对的是同一个监视器，意味着wait之后，其他线程可以进入同步块执行。</p>
+<p><code>volatile 多线程的内存模型</code>：<br>main memory（主存）、working memory（线程栈）<br>在处理数据时，线程会把值从主存load到本地栈，完成操作后再save回去(volatile关键词的作用：每次针对该变量的操作都激发一次load and save)。</p>
+<h3 id="多线程包-java-util-concurrent"><a href="#多线程包-java-util-concurrent" class="headerlink" title="多线程包:java.util.concurrent"></a>多线程包:java.util.concurrent</h3><p><code>ThreadLocal类</code>，每个使用该变量的线程提供独立的变量副本，常用于用户登录控制，如记录session信息<br>每个Thread都持有一个TreadLocalMap类型的变量</p>
+<p><code>原子类</code>（AtomicInteger、AtomicBoolean……）等同于synchronized，AtomicInteger.compareAndSet(int expect,int update)可实现乐观锁   </p>
+<h4 id="Lock类"><a href="#Lock类" class="headerlink" title="Lock类"></a>Lock类</h4><p>ReentrantLock<br>ReentrantReadWriteLock.ReadLock<br>ReentrantReadWriteLock.WriteLock<br>lock 阻塞式, trylock 无阻塞式, lockInterruptily 可打断式， 还有trylock的带超时时间版本<br>r.lock()或r.lockInterruptibly()<br>r.unlock()<br>ReentrantReadWriteLock，写写，写读互斥；读读不互斥。可以实现并发读的高效线程安全代码</p>
+<h4 id="容器类"><a href="#容器类" class="headerlink" title="容器类"></a>容器类</h4><p>BlockingQueue 这个queue是单向队列，特别适用于先进先出策略的一些应用场景，BlockingQueue在队列的基础上添加了多线程协作的功能，提供了阻塞接口put和take，带超时功能的阻塞接口offer和poll。put会在队列满的时候阻塞，直到有空间时被唤醒；take在队列空的时候阻塞，直到有东西拿的时候才被唤醒。用于生产者-消费者模型尤其好用，堪称神器<br>常见的阻塞队列有：<br><code>ArrayListBlockingQueue</code><br><code>LinkedListBlockingQueue</code><br><code>DelayQueue</code><br><code>SynchronousQueue</code><br><code>ConcurrentHashMap</code>  </p>
+<p>高效的线程安全哈希map。请对比hashTable , concurrentHashMap, HashMap</p>
+<p><strong>HashMap</strong><br>put(key, value)存储对象到HashMap中，使用get(key)从HashMap中获取对象<br>put()方法传递键和值时，我们先对键调用hashCode()方法，返回的hashCode用于找到bucket位置来储存Entry对象<br>HashMap是在bucket中储存键对象和值对象</p>
+<h4 id="线程池管理类ThreadPoolExecutor"><a href="#线程池管理类ThreadPoolExecutor" class="headerlink" title="线程池管理类ThreadPoolExecutor"></a>线程池管理类ThreadPoolExecutor</h4><p>corePoolSize:池内线程初始值与最小值，就算是空闲状态，也会保持该数量线程。<br>maximumPoolSize:线程最大值，线程的增长始终不会超过该值。<br>keepAliveTime：当池内线程数高于corePoolSize时，经过多少时间多余的空闲线程才会被回收。回收前处于wait状态<br>unit：时间单位，可以使用TimeUnit的实例，如TimeUnit.MILLISECONDS。<br>workQueue:待入任务（Runnable）的等待场所，该参数主要影响调度策略，如公平与否，是否产生饿(starving)  。<br>threadFactory:线程工厂类，有默认实现，如果有自定义的需要则需要自己实现ThreadFactory接口并作为参数传入。   </p>
+<p>有一个内存区域是jvm虚拟机栈，每一个线程运行时都有一个线程栈，线程栈保存了线程运行时候变量值信息。当线程访问某一个对象时候值的时候，首先通过对象的引用找到对应在堆内存的变量的值，然后把堆内存变量的具体值load到线程本地内存中，建立一个变量副本，之后线程就不再和对象在堆内存变量值有任何关系，而是直接修改副本变量的值，在修改完之后的某一个时刻（线程退出之前），自动把线程变量副本的值回写到对象在堆中变量。这样在堆中的对象的值就产生变化了。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/part/microServices/Sidecar/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -433,132 +538,6 @@
 <p>【强制】不要使用 count(列名)或 count(常量)来替代 count(<em>)，count(</em>)就是 SQL92 定义的<br>标准统计行数的语法，跟数据库无关，跟 NULL 和非 NULL 无关。<br>说明：count(*)会统计值为 NULL 的行，而 count(列名)不会统计此列为 NULL 值的行。</p>
 <p>使用 IS NULL()来判断是否为 NULL 值。注意：NULL 与任何值的直接比较都为 NULL。</p>
 <p>单表行数超过 500 万行或者单表容量超过 2GB，才推荐进行分库分表。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/part/db/mysql/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="mqiy">
-      <meta itemprop="description" content="永远为下个月离职做好准备">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小灰灰的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/06/18/md/part/db/mysql/" class="post-title-link" itemprop="url">MYSQL索引</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-06-18 15:03 15:03:36" itemprop="dateCreated datePublished" datetime="2019-06-18T15:03:36+08:00">2019-06-18 15:03</time>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>465</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="MyISAM-VS-Innodb"><a href="#MyISAM-VS-Innodb" class="headerlink" title="MyISAM VS  Innodb"></a>MyISAM VS  Innodb</h3><table>
-<thead>
-<tr>
-<th>内容</th>
-<th>MyISAM</th>
-<th>Innodb</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>叶子节点存放数据</td>
-<td>数据记录的地址</td>
-<td>完整的数据记录</td>
-</tr>
-<tr>
-<td>索引与数据文件</td>
-<td>合一</td>
-<td>分索引文件，数据文件</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
-<h3 id="索引："><a href="#索引：" class="headerlink" title="索引："></a>索引：</h3><h4 id="创建数量限制："><a href="#创建数量限制：" class="headerlink" title="创建数量限制："></a>创建数量限制：</h4><ul>
-<li>单表不超过5个</li>
-</ul>
-<h4 id="创建组合索引的顺序："><a href="#创建组合索引的顺序：" class="headerlink" title="创建组合索引的顺序："></a>创建组合索引的顺序：</h4><ul>
-<li>区分度最高的放在联合索引的最左侧（区分度=列中不同值的数量/列的总行数）</li>
-<li>尽量把字段长度小的列放在联合索引的最左侧（因为字段长度越小，一页能存储的数据量越大，IO 性能也就越好）</li>
-<li>使用最频繁的列放到联合索引的左侧（这样可以比较少的建立一些索引）</li>
-</ul>
-<h3 id="列"><a href="#列" class="headerlink" title="列"></a>列</h3><ul>
-<li>尽可能把所有列定义为 NOT NULL</li>
-<li>单表记录数量控制在500万以内</li>
-<li>尽量做到冷热数据分离,减小表的宽度</li>
-<li>禁止在数据库中存储图片,文件等大的二进制数据</li>
-<li>不建议使用过长的字段作为主键</li>
-</ul>
-<h3 id="外键"><a href="#外键" class="headerlink" title="外键"></a>外键</h3><p>会影响父表和子表的写操作从而降低性能</p>
-<blockquote>
-<p>表与表之间的关联键上建立索引</p>
-</blockquote>
-<h3 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h3><p>原则</p>
-<ul>
-<li>最左前缀匹配原则</li>
-<li>索引列不能参与计算</li>
-<li>关联查询表，建议不超过 5 个</li>
-</ul>
-<h4 id="具体查询"><a href="#具体查询" class="headerlink" title="具体查询"></a>具体查询</h4><ul>
-<li>在明显不会有重复值时使用 UNION ALL 而不是 UNION</li>
-<li>少使用子查询（原因：子查询的结果集无法使用索引）</li>
-</ul>
-<p>or-&gt; in</p>
-<p>优化：<br>充分利用已有索引，尽可能的扩展索引<br>覆盖索引(不需要回表)</p>
 
       
     </div>

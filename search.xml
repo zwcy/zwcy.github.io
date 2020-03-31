@@ -28,6 +28,69 @@
       </tags>
   </entry>
   <entry>
+    <title>MYSQL索引</title>
+    <url>/2020/03/31/md/part/db/mysql/</url>
+    <content><![CDATA[<h3 id="MyISAM-VS-Innodb"><a href="#MyISAM-VS-Innodb" class="headerlink" title="MyISAM VS  Innodb"></a>MyISAM VS  Innodb</h3><table>
+<thead>
+<tr>
+<th>内容</th>
+<th>MyISAM</th>
+<th>Innodb</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>叶子节点存放数据</td>
+<td>数据记录的地址</td>
+<td>完整的数据记录</td>
+</tr>
+<tr>
+<td>索引与数据文件</td>
+<td>合一</td>
+<td>分索引文件，数据文件</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="索引："><a href="#索引：" class="headerlink" title="索引："></a>索引：</h3><h4 id="创建数量限制："><a href="#创建数量限制：" class="headerlink" title="创建数量限制："></a>创建数量限制：</h4><ul>
+<li>单表不超过5个</li>
+</ul>
+<h4 id="创建组合索引的顺序："><a href="#创建组合索引的顺序：" class="headerlink" title="创建组合索引的顺序："></a>创建组合索引的顺序：</h4><ul>
+<li>区分度最高的放在联合索引的最左侧（区分度=列中不同值的数量/列的总行数）</li>
+<li>尽量把字段长度小的列放在联合索引的最左侧（因为字段长度越小，一页能存储的数据量越大，IO 性能也就越好）</li>
+<li>使用最频繁的列放到联合索引的左侧（这样可以比较少的建立一些索引）</li>
+</ul>
+<h3 id="列"><a href="#列" class="headerlink" title="列"></a>列</h3><ul>
+<li>尽可能把所有列定义为 NOT NULL</li>
+<li>单表记录数量控制在500万以内</li>
+<li>尽量做到冷热数据分离,减小表的宽度</li>
+<li>禁止在数据库中存储图片,文件等大的二进制数据</li>
+<li>不建议使用过长的字段作为主键</li>
+</ul>
+<h3 id="外键"><a href="#外键" class="headerlink" title="外键"></a>外键</h3><p>会影响父表和子表的写操作从而降低性能</p>
+<blockquote>
+<p>表与表之间的关联键上建立索引</p>
+</blockquote>
+<h3 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h3><p>原则</p>
+<ul>
+<li>最左前缀匹配原则</li>
+<li>索引列不能参与计算</li>
+<li>关联查询表，建议不超过 5 个</li>
+</ul>
+<h4 id="具体查询"><a href="#具体查询" class="headerlink" title="具体查询"></a>具体查询</h4><ul>
+<li>在明显不会有重复值时使用 UNION ALL 而不是 UNION</li>
+<li>少使用子查询（原因：子查询的结果集无法使用索引）</li>
+</ul>
+<p>or-&gt; in</p>
+<p>优化：<br>充分利用已有索引，尽可能的扩展索引<br>覆盖索引(不需要回表)</p>
+]]></content>
+      <tags>
+        <tag>db</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>jvm内存模型</title>
     <url>/2020/03/30/md/jdk/mulThread/jmm/</url>
     <content><![CDATA[<p><img src="https://www.mqiy.xyz/image/jvm/jmm.png" alt="jmm.png"></p>
@@ -4710,19 +4773,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Springboot</title>
-    <url>/2019/07/11/md/problem/spring-boot/</url>
-    <content><![CDATA[<h3 id="Springboot-Filter中注入bean-无效为null"><a href="#Springboot-Filter中注入bean-无效为null" class="headerlink" title="Springboot Filter中注入bean 无效为null"></a>Springboot Filter中注入bean 无效为null</h3><p>问题原因：</p>
-<p>Web应用的启动顺序是：Lisenter-&gt;Fliter-&gt;Servlet,  应用程序上下文， 初始化 Fliter的时候，还没有初始化Servlert，所有没有进入DispacterServlet的初始化，故在Fliter中使用注解注入bean为空；</p>
-<p>解决办法：</p>
-<p>添加初始化bean配置，手动创建对象new</p>
-]]></content>
-      <tags>
-        <tag>problem</tag>
-        <tag>spring boot</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>mybatis相关问题</title>
     <url>/2019/07/11/md/problem/mybatis/</url>
     <content><![CDATA[<h3 id="mybatis报错-Specified-class-is-an-interface"><a href="#mybatis报错-Specified-class-is-an-interface" class="headerlink" title="mybatis报错 Specified class is an interface"></a>mybatis报错 Specified class is an interface</h3><h4 id="1-错误原因"><a href="#1-错误原因" class="headerlink" title="1.错误原因"></a>1.错误原因</h4><p>Caused by: org.springframework.beans.factory.BeanCreationException: </p>
@@ -4736,6 +4786,19 @@
       <tags>
         <tag>problem</tag>
         <tag>mybatis</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Springboot</title>
+    <url>/2019/07/11/md/problem/spring-boot/</url>
+    <content><![CDATA[<h3 id="Springboot-Filter中注入bean-无效为null"><a href="#Springboot-Filter中注入bean-无效为null" class="headerlink" title="Springboot Filter中注入bean 无效为null"></a>Springboot Filter中注入bean 无效为null</h3><p>问题原因：</p>
+<p>Web应用的启动顺序是：Lisenter-&gt;Fliter-&gt;Servlet,  应用程序上下文， 初始化 Fliter的时候，还没有初始化Servlert，所有没有进入DispacterServlet的初始化，故在Fliter中使用注解注入bean为空；</p>
+<p>解决办法：</p>
+<p>添加初始化bean配置，手动创建对象new</p>
+]]></content>
+      <tags>
+        <tag>problem</tag>
+        <tag>spring boot</tag>
       </tags>
   </entry>
   <entry>
@@ -4844,34 +4907,6 @@
       </tags>
   </entry>
   <entry>
-    <title>这就是人生</title>
-    <url>/2019/06/21/md/life/%E8%BF%99%E5%B0%B1%E6%98%AF%E4%BA%BA%E7%94%9F/</url>
-    <content><![CDATA[<p>孤独是人生的常态，一定要拥有真正喜欢的兴趣爱好，这样才能支持你渡过无数个漫漫长夜和无数个孤独的时候，读书则是成本最低的兴趣爱好。很多人看起来什么都感兴趣，啥都能参与一定点但都不深入，这种人是最孤独的，因为他根本不知道自己想要什么，喜欢什么。</p>
-<p>绝大部分焦虑不过是脑子勤奋（想的太多）和身体懒惰之间的矛盾，自视甚高是人之常情，但一般要等到人到中年才能明白。20岁：我一定行——40岁：我本可以——60岁：我真的不行哎，是大部分人的人生轨迹。</p>
-<p>一个人行不行可能早就注定了，比如家庭，比如言行举止，比如不经意间的流露……比如知乎的提问，大部分人都不懂得先问是不是再问为什么，大部分人都来懒的出奇，对自己不负责任，问的很随便，不说任何前提，不说任何自己情况，比如太多人问什么专业好、XX专业有没有前景、550分能读什么学校……只有这几个字，惜墨如金守口如瓶的，这些人将来基本上都会庸庸碌碌一辈子。因为思考意识具有决定性作用，跟年龄关系不大，如果你跟顶级中学的高中生聊过天 ，会发现她们比很多大学生有思想有见识，问问题的时候会把个人和家庭情况、问题背景、愿景交待的很清楚。</p>
-<p>对于大部分人来说，体制内尤其是公务员是最好是工作，因为大部分人到了中年才会明白自己不过是庸人，是站在路边给别人喝彩，坐在台下给别人鼓掌的人，年轻时所谓的理想情怀豪言壮语只是对自己不了解，或者人云亦云。</p>
-<p>大部分人一辈子也不会遇到轰轰烈烈荡气回肠的爱情，不过的找一个能接受的，不喜欢也不讨厌，甚至不那么讨厌的人将就着，婚姻，不过是人生的例行公事。</p>
-<p>大部分失败的婚姻不是败给大是大非，而是日常再小不过的琐事，零刀子割肉没感觉，时间长了才会发现情感已经跌破发行价了。跟门当户对、经济条件、颜值相比，一个有趣的人开朗的人善良的人积极阳光的人，重要的多。大多数的婚姻失败不是大是大非的原则性问题，而是无数细枝末节的煎熬和落差，天长日久的日常摩擦，好的性格和心态，可以避免和减少大多数以上不快。</p>
-<p>婚姻的真谛不只是爱，更多是忍受，求同存异，利弊权衡。</p>
-<p>绝大多数人找的媳妇儿都不如大学里的恋人，能在大学找个媳妇儿就尽量，毕业后你会发现你根本找不到这么好的了，甚至可以让你越来越绝望。不被父母祝福的婚姻大概率是不会幸福的，尤其是远嫁、两人落差太大，都是一种孤军深入式的冒险。</p>
-<p>没有遭遇大的意外，比如战争、大的天灾、绝症、残疾，有一份能养家糊口的工作就是一种幸福甚至幸运，当然你不会觉察到，直到失去。大部分人一辈子也没有一个真正的爱好，没有被谁真爱过，真爱过谁，没有痛痛快快哭过笑过，都是复制黏贴型人生。</p>
-<p>绝大多数人都有阴暗面，即便一辈子不为人所知。人性是最不靠谱的东西，法律和契约最实实在在的。</p>
-<p>大多数人一辈子也没有真正的朋友，所谓的朋友不过是同学、同事、同行、熟人甚至亲戚邻居身份的外延，别看平时亲密热烈，你好我好，一遇到事情，朋友二字就褪色了。朋友也不是人生的标配，友情也不是一成不变的，因为每个人都是在变化之中，当再次见面时，大家说着言不由衷的话，去没有什么交集时，就让这份友情活在对往事的回忆中去吧。</p>
-<p>除了父母，真的很少有人想你好，大部分人盼你倒大霉。</p>
-<p>大部分人都会受父母的影响，这种影响是骨子里的，越想摆脱越摆脱不了，会草蛇灰线伏延几十年，尤其是人到中年，有一天会突然发现自己变成了讨厌的模样，被父母附体。</p>
-<p>大部分人，一辈子和文艺也没有交集，看电影看个热闹，听音乐听个响，看书图个刺激，虽然朋友圈都是纳兰容若、尼采。文艺青年大都会在潦倒、衰败、激愤、穷酸中渡过一生。</p>
-<p>出轨、堕落是一种戒不了毒，不要指望用感动、谅解、宽恕去改变，当然也有回头是岸立地成佛的，但概率低到你不敢冒险。</p>
-<p>知乎大部分故事都是假的，教人月入XX年入XX大都是收智商税的，推荐的东西大部分用处不大，思维、决策、分析等高赞文章大都是自问自答，也是心理学管理学书社会学籍上都有的，基本上属于收藏不看系列。</p>
-<p>残忍归残忍，可日子也得过不是，罗曼罗兰那句话不是都会背了嘛。其实也谈不上残忍，这就是真实的人生，只不过大部分人把生活想的太美好而已。</p>
-]]></content>
-      <categories>
-        <category>人生感悟</category>
-      </categories>
-      <tags>
-        <tag>人生</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>生活中有哪些残忍的真相</title>
     <url>/2019/06/21/md/life/%E7%94%9F%E6%B4%BB%E4%B8%AD%E6%9C%89%E5%93%AA%E4%BA%9B%E6%AE%8B%E5%BF%8D%E7%9A%84%E7%9C%9F%E7%9B%B8/</url>
     <content><![CDATA[<p>1、如果你八岁，十八岁，二十八岁都没有漂亮起来，那这辈子大概率就没法好看了（男生同理）</p>
@@ -4902,6 +4937,34 @@
 <p>罗曼罗兰那句耳熟能详的话作为结尾：There is only one heroism in the world: to see the world as it is and to love it.</p>
 <p>我写的这个答案的确很扎心，但是这并不是本意，扎心只是一瞬的感触，剩下的时间里依然过好每一天，才是大部分人的选择，我想看过我答案的人，并不会因为这些答案扎心就放弃继续生活了吧。</p>
 <p>我写的解其实也都是大多数人知道的道理，只是知道和做到，不是一回事，像我自己，扎心的真相都是我亲身经历，但是我也在努力践行我自己的英雄主义，与大家共勉。</p>
+]]></content>
+      <categories>
+        <category>人生感悟</category>
+      </categories>
+      <tags>
+        <tag>人生</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>这就是人生</title>
+    <url>/2019/06/21/md/life/%E8%BF%99%E5%B0%B1%E6%98%AF%E4%BA%BA%E7%94%9F/</url>
+    <content><![CDATA[<p>孤独是人生的常态，一定要拥有真正喜欢的兴趣爱好，这样才能支持你渡过无数个漫漫长夜和无数个孤独的时候，读书则是成本最低的兴趣爱好。很多人看起来什么都感兴趣，啥都能参与一定点但都不深入，这种人是最孤独的，因为他根本不知道自己想要什么，喜欢什么。</p>
+<p>绝大部分焦虑不过是脑子勤奋（想的太多）和身体懒惰之间的矛盾，自视甚高是人之常情，但一般要等到人到中年才能明白。20岁：我一定行——40岁：我本可以——60岁：我真的不行哎，是大部分人的人生轨迹。</p>
+<p>一个人行不行可能早就注定了，比如家庭，比如言行举止，比如不经意间的流露……比如知乎的提问，大部分人都不懂得先问是不是再问为什么，大部分人都来懒的出奇，对自己不负责任，问的很随便，不说任何前提，不说任何自己情况，比如太多人问什么专业好、XX专业有没有前景、550分能读什么学校……只有这几个字，惜墨如金守口如瓶的，这些人将来基本上都会庸庸碌碌一辈子。因为思考意识具有决定性作用，跟年龄关系不大，如果你跟顶级中学的高中生聊过天 ，会发现她们比很多大学生有思想有见识，问问题的时候会把个人和家庭情况、问题背景、愿景交待的很清楚。</p>
+<p>对于大部分人来说，体制内尤其是公务员是最好是工作，因为大部分人到了中年才会明白自己不过是庸人，是站在路边给别人喝彩，坐在台下给别人鼓掌的人，年轻时所谓的理想情怀豪言壮语只是对自己不了解，或者人云亦云。</p>
+<p>大部分人一辈子也不会遇到轰轰烈烈荡气回肠的爱情，不过的找一个能接受的，不喜欢也不讨厌，甚至不那么讨厌的人将就着，婚姻，不过是人生的例行公事。</p>
+<p>大部分失败的婚姻不是败给大是大非，而是日常再小不过的琐事，零刀子割肉没感觉，时间长了才会发现情感已经跌破发行价了。跟门当户对、经济条件、颜值相比，一个有趣的人开朗的人善良的人积极阳光的人，重要的多。大多数的婚姻失败不是大是大非的原则性问题，而是无数细枝末节的煎熬和落差，天长日久的日常摩擦，好的性格和心态，可以避免和减少大多数以上不快。</p>
+<p>婚姻的真谛不只是爱，更多是忍受，求同存异，利弊权衡。</p>
+<p>绝大多数人找的媳妇儿都不如大学里的恋人，能在大学找个媳妇儿就尽量，毕业后你会发现你根本找不到这么好的了，甚至可以让你越来越绝望。不被父母祝福的婚姻大概率是不会幸福的，尤其是远嫁、两人落差太大，都是一种孤军深入式的冒险。</p>
+<p>没有遭遇大的意外，比如战争、大的天灾、绝症、残疾，有一份能养家糊口的工作就是一种幸福甚至幸运，当然你不会觉察到，直到失去。大部分人一辈子也没有一个真正的爱好，没有被谁真爱过，真爱过谁，没有痛痛快快哭过笑过，都是复制黏贴型人生。</p>
+<p>绝大多数人都有阴暗面，即便一辈子不为人所知。人性是最不靠谱的东西，法律和契约最实实在在的。</p>
+<p>大多数人一辈子也没有真正的朋友，所谓的朋友不过是同学、同事、同行、熟人甚至亲戚邻居身份的外延，别看平时亲密热烈，你好我好，一遇到事情，朋友二字就褪色了。朋友也不是人生的标配，友情也不是一成不变的，因为每个人都是在变化之中，当再次见面时，大家说着言不由衷的话，去没有什么交集时，就让这份友情活在对往事的回忆中去吧。</p>
+<p>除了父母，真的很少有人想你好，大部分人盼你倒大霉。</p>
+<p>大部分人都会受父母的影响，这种影响是骨子里的，越想摆脱越摆脱不了，会草蛇灰线伏延几十年，尤其是人到中年，有一天会突然发现自己变成了讨厌的模样，被父母附体。</p>
+<p>大部分人，一辈子和文艺也没有交集，看电影看个热闹，听音乐听个响，看书图个刺激，虽然朋友圈都是纳兰容若、尼采。文艺青年大都会在潦倒、衰败、激愤、穷酸中渡过一生。</p>
+<p>出轨、堕落是一种戒不了毒，不要指望用感动、谅解、宽恕去改变，当然也有回头是岸立地成佛的，但概率低到你不敢冒险。</p>
+<p>知乎大部分故事都是假的，教人月入XX年入XX大都是收智商税的，推荐的东西大部分用处不大，思维、决策、分析等高赞文章大都是自问自答，也是心理学管理学书社会学籍上都有的，基本上属于收藏不看系列。</p>
+<p>残忍归残忍，可日子也得过不是，罗曼罗兰那句话不是都会背了嘛。其实也谈不上残忍，这就是真实的人生，只不过大部分人把生活想的太美好而已。</p>
 ]]></content>
       <categories>
         <category>人生感悟</category>
@@ -5380,69 +5443,6 @@
       </tags>
   </entry>
   <entry>
-    <title>MYSQL索引</title>
-    <url>/2019/06/18/md/part/db/mysql/</url>
-    <content><![CDATA[<h3 id="MyISAM-VS-Innodb"><a href="#MyISAM-VS-Innodb" class="headerlink" title="MyISAM VS  Innodb"></a>MyISAM VS  Innodb</h3><table>
-<thead>
-<tr>
-<th>内容</th>
-<th>MyISAM</th>
-<th>Innodb</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>叶子节点存放数据</td>
-<td>数据记录的地址</td>
-<td>完整的数据记录</td>
-</tr>
-<tr>
-<td>索引与数据文件</td>
-<td>合一</td>
-<td>分索引文件，数据文件</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
-<h3 id="索引："><a href="#索引：" class="headerlink" title="索引："></a>索引：</h3><h4 id="创建数量限制："><a href="#创建数量限制：" class="headerlink" title="创建数量限制："></a>创建数量限制：</h4><ul>
-<li>单表不超过5个</li>
-</ul>
-<h4 id="创建组合索引的顺序："><a href="#创建组合索引的顺序：" class="headerlink" title="创建组合索引的顺序："></a>创建组合索引的顺序：</h4><ul>
-<li>区分度最高的放在联合索引的最左侧（区分度=列中不同值的数量/列的总行数）</li>
-<li>尽量把字段长度小的列放在联合索引的最左侧（因为字段长度越小，一页能存储的数据量越大，IO 性能也就越好）</li>
-<li>使用最频繁的列放到联合索引的左侧（这样可以比较少的建立一些索引）</li>
-</ul>
-<h3 id="列"><a href="#列" class="headerlink" title="列"></a>列</h3><ul>
-<li>尽可能把所有列定义为 NOT NULL</li>
-<li>单表记录数量控制在500万以内</li>
-<li>尽量做到冷热数据分离,减小表的宽度</li>
-<li>禁止在数据库中存储图片,文件等大的二进制数据</li>
-<li>不建议使用过长的字段作为主键</li>
-</ul>
-<h3 id="外键"><a href="#外键" class="headerlink" title="外键"></a>外键</h3><p>会影响父表和子表的写操作从而降低性能</p>
-<blockquote>
-<p>表与表之间的关联键上建立索引</p>
-</blockquote>
-<h3 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h3><p>原则</p>
-<ul>
-<li>最左前缀匹配原则</li>
-<li>索引列不能参与计算</li>
-<li>关联查询表，建议不超过 5 个</li>
-</ul>
-<h4 id="具体查询"><a href="#具体查询" class="headerlink" title="具体查询"></a>具体查询</h4><ul>
-<li>在明显不会有重复值时使用 UNION ALL 而不是 UNION</li>
-<li>少使用子查询（原因：子查询的结果集无法使用索引）</li>
-</ul>
-<p>or-&gt; in</p>
-<p>优化：<br>充分利用已有索引，尽可能的扩展索引<br>覆盖索引(不需要回表)</p>
-]]></content>
-      <tags>
-        <tag>db</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>常用sql</title>
     <url>/2019/06/18/md/part/db/sql/</url>
     <content><![CDATA[<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 备份数据库 mayday</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">mysqldump -uroot -pAdmin123# mayday  &gt; bk.sql</span></pre></td></tr></table></figure>
@@ -5724,6 +5724,23 @@
       </tags>
   </entry>
   <entry>
+    <title>eureka</title>
+    <url>/2019/06/18/md/part/microServices/spring%20cloud/eureka/</url>
+    <content><![CDATA[<p>Eureka注册中心的作用很大的程度是作用于<code>服务发现</code>和<code>服务心跳</code>，在多个注册中心的时候,依赖于zuul的负载均衡,保证异常的服务停止,正常的服务加载,保证服务的稳定性。</p>
+<p>Eureka能够通过心跳检查、客户端缓存等机制，确保了系统的高可用性。</p>
+<p>默认配置，Eureka Server在90s没有得到客户端的心跳，则注销该实例，同时Eureka 有自我保护机制（防止本身不可用，而干掉可用服务），通过在Eureka Server配置参数，<br>可启动保护机制它的工作原理是：当Eureka Server节点在短时间内丢失过多的客户端时（可能发送了网络故障），那么这个节点将进入自我保护模式，<br>不再注销任何微服务，当网络故障回复后，该节点会自动退出自我保护模式。</p>
+<p>Eureka VS Zookeeper</p>
+<p>在CAP理论中说道，一个分布式系统不可能同时满足C(一致性)、A(可用性)和P(分区容错性)。由于分区容错性在是分布式系统中必须要保证的，因此我们只能在A和C之间进行权衡</p>
+<p>此Zookeeper保证的是CP, 而Eureka则是AP<br>zookeeper：当master节点因为网络故障与其他节点失去联系时，剩余节点会重新进行leader选举。选举leader的时间太长，30 ~ 120s, 且选举期间整个zk集群都是不可用的</p>
+<h4 id="EMERGENCY-EUREKA-MAY-BE-INCORRECTLY-CLAIMING-INSTANCES-ARE-UP-WHEN-THEY’RE-NOT-RENEWALS-ARE-LESSER-THAN-THRESHOLD-AND-HENCE-THE-INSTANCES-ARE-NOT-BEING-EXPIRED-JUST-TO-BE-SAFE"><a href="#EMERGENCY-EUREKA-MAY-BE-INCORRECTLY-CLAIMING-INSTANCES-ARE-UP-WHEN-THEY’RE-NOT-RENEWALS-ARE-LESSER-THAN-THRESHOLD-AND-HENCE-THE-INSTANCES-ARE-NOT-BEING-EXPIRED-JUST-TO-BE-SAFE" class="headerlink" title="EMERGENCY! EUREKA MAY BE INCORRECTLY CLAIMING INSTANCES ARE UP WHEN THEY’RE NOT. RENEWALS ARE LESSER THAN THRESHOLD AND HENCE THE INSTANCES ARE NOT BEING EXPIRED JUST TO BE SAFE."></a>EMERGENCY! EUREKA MAY BE INCORRECTLY CLAIMING INSTANCES ARE UP WHEN THEY’RE NOT. RENEWALS ARE LESSER THAN THRESHOLD AND HENCE THE INSTANCES ARE NOT BEING EXPIRED JUST TO BE SAFE.</h4><figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="comment">#一般出现此模式时，服务返回错误。即如果真实的服务已经Down掉，</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"># 但在注册中心界面服务却一直存在，且显示为UP状态，关掉自我保护模式</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">eureka.server.enable-self-preservation</span> = <span class="string">false</span></span></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>spring cloud</tag>
+        <tag>微服务</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>spring cloud各组件介绍</title>
     <url>/2019/06/18/md/part/microServices/spring%20cloud/spring%20Cloud%E4%BB%8B%E7%BB%8D/</url>
     <content><![CDATA[<h3 id="主要组成如下："><a href="#主要组成如下：" class="headerlink" title="主要组成如下："></a>主要组成如下：</h3><p>　　服务发现——Netflix Eureka                      服务调用——Netflix Feign<br>　　熔断器——Netflix Hystrix                          服务网关——Netflix Zuul<br>　　分布式配置——Spring Cloud Config         消息总线 —— Spring Cloud Bus</p>
@@ -5745,23 +5762,6 @@
 <p>config client<br>获取git上的配置</p>
 <hr>
 <p>spring cloud bus<br>基于mq<br>trace追踪</p>
-]]></content>
-      <tags>
-        <tag>spring cloud</tag>
-        <tag>微服务</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>eureka</title>
-    <url>/2019/06/18/md/part/microServices/spring%20cloud/eureka/</url>
-    <content><![CDATA[<p>Eureka注册中心的作用很大的程度是作用于<code>服务发现</code>和<code>服务心跳</code>，在多个注册中心的时候,依赖于zuul的负载均衡,保证异常的服务停止,正常的服务加载,保证服务的稳定性。</p>
-<p>Eureka能够通过心跳检查、客户端缓存等机制，确保了系统的高可用性。</p>
-<p>默认配置，Eureka Server在90s没有得到客户端的心跳，则注销该实例，同时Eureka 有自我保护机制（防止本身不可用，而干掉可用服务），通过在Eureka Server配置参数，<br>可启动保护机制它的工作原理是：当Eureka Server节点在短时间内丢失过多的客户端时（可能发送了网络故障），那么这个节点将进入自我保护模式，<br>不再注销任何微服务，当网络故障回复后，该节点会自动退出自我保护模式。</p>
-<p>Eureka VS Zookeeper</p>
-<p>在CAP理论中说道，一个分布式系统不可能同时满足C(一致性)、A(可用性)和P(分区容错性)。由于分区容错性在是分布式系统中必须要保证的，因此我们只能在A和C之间进行权衡</p>
-<p>此Zookeeper保证的是CP, 而Eureka则是AP<br>zookeeper：当master节点因为网络故障与其他节点失去联系时，剩余节点会重新进行leader选举。选举leader的时间太长，30 ~ 120s, 且选举期间整个zk集群都是不可用的</p>
-<h4 id="EMERGENCY-EUREKA-MAY-BE-INCORRECTLY-CLAIMING-INSTANCES-ARE-UP-WHEN-THEY’RE-NOT-RENEWALS-ARE-LESSER-THAN-THRESHOLD-AND-HENCE-THE-INSTANCES-ARE-NOT-BEING-EXPIRED-JUST-TO-BE-SAFE"><a href="#EMERGENCY-EUREKA-MAY-BE-INCORRECTLY-CLAIMING-INSTANCES-ARE-UP-WHEN-THEY’RE-NOT-RENEWALS-ARE-LESSER-THAN-THRESHOLD-AND-HENCE-THE-INSTANCES-ARE-NOT-BEING-EXPIRED-JUST-TO-BE-SAFE" class="headerlink" title="EMERGENCY! EUREKA MAY BE INCORRECTLY CLAIMING INSTANCES ARE UP WHEN THEY’RE NOT. RENEWALS ARE LESSER THAN THRESHOLD AND HENCE THE INSTANCES ARE NOT BEING EXPIRED JUST TO BE SAFE."></a>EMERGENCY! EUREKA MAY BE INCORRECTLY CLAIMING INSTANCES ARE UP WHEN THEY’RE NOT. RENEWALS ARE LESSER THAN THRESHOLD AND HENCE THE INSTANCES ARE NOT BEING EXPIRED JUST TO BE SAFE.</h4><figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="comment">#一般出现此模式时，服务返回错误。即如果真实的服务已经Down掉，</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"># 但在注册中心界面服务却一直存在，且显示为UP状态，关掉自我保护模式</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">eureka.server.enable-self-preservation</span> = <span class="string">false</span></span></pre></td></tr></table></figure>
-
 ]]></content>
       <tags>
         <tag>spring cloud</tag>
@@ -5978,14 +5978,6 @@
       </tags>
   </entry>
   <entry>
-    <title>file</title>
-    <url>/2019/06/18/md/jdk/jdk%20File/</url>
-    <content><![CDATA[<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">File file = <span class="keyword">new</span> File()</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">//文件名，包含后缀，但不包含路径 </span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">//   /root/11.jpg   则显示 11.jpg  </span></span></pre></td></tr><tr><td class="code"><pre><span class="line">file.getName()</span></pre></td></tr><tr><td class="code"><pre><span class="line">    </span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">// 文件路径  完整的绝对路径</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">//   /root/11.jpg   则显示 /root/11.jpg</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">file.getPath()</span></pre></td></tr><tr><td class="code"><pre><span class="line">    </span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">// 重命名   newPath新目标文件绝对路径    </span></span></pre></td></tr><tr><td class="code"><pre><span class="line">file.renameTo(<span class="keyword">new</span> File(newPath));</span></pre></td></tr></table></figure>]]></content>
-      <tags>
-        <tag>jdk</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>java8</title>
     <url>/2019/06/18/md/jdk/java8/</url>
     <content><![CDATA[<h4 id="Optional"><a href="#Optional" class="headerlink" title="Optional"></a>Optional</h4><p> 类主要解决的问题是臭名昭著的空指针异常（<code>NullPointerException</code>）</p>
@@ -6005,6 +5997,14 @@
 <p>thenAccept接收上一阶段的输出作为本阶段的输入 　　</p>
 <p>thenRun根本不关心前一阶段的输出，根本不不关心前一阶段的计算结果，因为它不需要输入参数</p>
 ]]></content>
+      <tags>
+        <tag>jdk</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>file</title>
+    <url>/2019/06/18/md/jdk/jdk%20File/</url>
+    <content><![CDATA[<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">File file = <span class="keyword">new</span> File()</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">//文件名，包含后缀，但不包含路径 </span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">//   /root/11.jpg   则显示 11.jpg  </span></span></pre></td></tr><tr><td class="code"><pre><span class="line">file.getName()</span></pre></td></tr><tr><td class="code"><pre><span class="line">    </span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">// 文件路径  完整的绝对路径</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">//   /root/11.jpg   则显示 /root/11.jpg</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">file.getPath()</span></pre></td></tr><tr><td class="code"><pre><span class="line">    </span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">// 重命名   newPath新目标文件绝对路径    </span></span></pre></td></tr><tr><td class="code"><pre><span class="line">file.renameTo(<span class="keyword">new</span> File(newPath));</span></pre></td></tr></table></figure>]]></content>
       <tags>
         <tag>jdk</tag>
       </tags>
@@ -6316,6 +6316,22 @@
       </tags>
   </entry>
   <entry>
+    <title>测试相关</title>
+    <url>/2019/06/18/md/other/%E6%B5%8B%E8%AF%95/</url>
+    <content><![CDATA[<p>把数据把某种逻辑来分类: 把一张表拆成多张有一样的字段但是不同种类的表</p>
+<p>把数据按字段分，也就是竖着分表: 把一些不经常改的数据放在一个表里，经常改的数据放在另外多个表里。把一张表变成1对1的关系</p>
+<p>平均分表: 通过主键ID的范围来分表。</p>
+<h4 id="测试分类"><a href="#测试分类" class="headerlink" title="测试分类"></a>测试分类</h4><p>冒烟测试;<br>    冒烟测试就是先保证系统能跑的起来，不至于让测试工作做到一半突然出现错误导致业务中断。目的就是先通过最基本的测试</p>
+<p>猴子测试:<br>    它针对的不是功能点，而是业务流程,就是说，你把自己看成白痴，随便乱点，没有任何主观想法参与进来，让一些想不到的操作呈现出错误来</p>
+<p>数据库来说吧， 数据做了分区， 一致性怎么保证啊？   选择分布式事务非常麻烦， 有时候不得不选择最终一致性来妥协</p>
+<p>迅速定位问题:</p>
+<p>一是查看错误日志，推断错误的可能</p>
+]]></content>
+      <tags>
+        <tag>测试</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>KVM架构和Xen架构</title>
     <url>/2019/06/18/md/other/%E8%99%9A%E6%8B%9F%E5%8C%96%E6%9E%B6%E6%9E%84/</url>
     <content><![CDATA[<p>简述KVM架构和Xen架构<br>暑假最后一篇更新，因为，，，明天我就回学校了。</p>
@@ -6349,22 +6365,6 @@
 ]]></content>
       <tags>
         <tag>netty</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>测试相关</title>
-    <url>/2019/06/18/md/other/%E6%B5%8B%E8%AF%95/</url>
-    <content><![CDATA[<p>把数据把某种逻辑来分类: 把一张表拆成多张有一样的字段但是不同种类的表</p>
-<p>把数据按字段分，也就是竖着分表: 把一些不经常改的数据放在一个表里，经常改的数据放在另外多个表里。把一张表变成1对1的关系</p>
-<p>平均分表: 通过主键ID的范围来分表。</p>
-<h4 id="测试分类"><a href="#测试分类" class="headerlink" title="测试分类"></a>测试分类</h4><p>冒烟测试;<br>    冒烟测试就是先保证系统能跑的起来，不至于让测试工作做到一半突然出现错误导致业务中断。目的就是先通过最基本的测试</p>
-<p>猴子测试:<br>    它针对的不是功能点，而是业务流程,就是说，你把自己看成白痴，随便乱点，没有任何主观想法参与进来，让一些想不到的操作呈现出错误来</p>
-<p>数据库来说吧， 数据做了分区， 一致性怎么保证啊？   选择分布式事务非常麻烦， 有时候不得不选择最终一致性来妥协</p>
-<p>迅速定位问题:</p>
-<p>一是查看错误日志，推断错误的可能</p>
-]]></content>
-      <tags>
-        <tag>测试</tag>
       </tags>
   </entry>
   <entry>
@@ -6405,8 +6405,8 @@
 </ul>
 ]]></content>
       <tags>
-        <tag>consul</tag>
         <tag>微服务</tag>
+        <tag>consul</tag>
       </tags>
   </entry>
   <entry>

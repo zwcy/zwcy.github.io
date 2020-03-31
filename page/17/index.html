@@ -211,6 +211,77 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/20/md/part/docker/docker%E8%AE%BE%E8%AE%A1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="mqiy">
+      <meta itemprop="description" content="永远为下个月离职做好准备">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小灰灰的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/06/20/md/part/docker/docker%E8%AE%BE%E8%AE%A1/" class="post-title-link" itemprop="url">docker设计</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-06-20 14:17 14:17:10" itemprop="dateCreated datePublished" datetime="2019-06-20T14:17:10+08:00">2019-06-20 14:17</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>34</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h5 id="Docker通过引人分层文件系统构建和高效的镜像机制，降低了迁移难度"><a href="#Docker通过引人分层文件系统构建和高效的镜像机制，降低了迁移难度" class="headerlink" title="Docker通过引人分层文件系统构建和高效的镜像机制，降低了迁移难度"></a>Docker通过引人分层文件系统构建和高效的镜像机制，降低了迁移难度</h5>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/19/md/part/web/js/dist%E6%96%87%E4%BB%B6%E4%BD%BF%E7%94%A8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -960,111 +1031,6 @@
 <h4 id="执行过程"><a href="#执行过程" class="headerlink" title="执行过程"></a>执行过程</h4><h5 id="执行过程简介"><a href="#执行过程简介" class="headerlink" title="执行过程简介"></a>执行过程简介</h5><p>当编译和连接一个C++程序时，所获得的可执行二进制文件只能在指定的硬件平台和操作系统上运行，因为这个二进制文件包含了对目标处理器的机器语言。而Java编译器把Java源文件的指令翻译成字节码，这种字节码就是Java虚拟机的“机器语言”。<br>与普通程序不同的是，Java程序（class文件）并不是本地的可执行程序。当运行Java程序时，首先运行JVM（Java虚拟机），然后再把Java class加载到JVM里头运行，负责加载Java class的这部分就叫做Class Loader。</p>
 <h5 id="JVM中的ClassLoader"><a href="#JVM中的ClassLoader" class="headerlink" title="JVM中的ClassLoader"></a>JVM中的ClassLoader</h5><p>JVM本身包含了一个ClassLoader称为<code>BootstrapClassLoader</code>，和JVM一样，BootstrapClassLoader是用本地代码实现的，它负责加载核心JavaClass（即所有java.<em>开头的类）。另外JVM还会提供两个ClassLoader，它们都是用Java语言编写的，由BootstrapClassLoader加载；其中<code>ExtensionClassLoader</code>负责加载扩展的Javaclass（例如所有javax.</em>开头的类和存放在JRE的ext目录下的类）<code>ApplicationClassLoader</code>负责加载应用程序自身的类。<br>当运行一个程序的时候，JVM启动，运行bootstrapclassloader，该ClassLoader加载java核心API（ExtClassLoader和AppClassLoader也在此时被加载），然后调用ExtClassLoader加载扩展API，最后AppClassLoader加载CLASSPATH目录下定义的Class，这就是一个程序最基本的加载流程。</p>
 <h5 id="执行ClassLoader例子"><a href="#执行ClassLoader例子" class="headerlink" title="执行ClassLoader例子"></a>执行ClassLoader例子</h5><p>什么时候JVM会使用ClassLoader加载一个类呢？当你使用java去执行一个类，JVM使用ApplicationClassLoader加载这个类；然后如果类A引用了类B，不管是直接引用还是用Class.forName()引用，JVM就会找到加载类A的ClassLoader，并用这个ClassLoader来加载类B。JVM按照运行时的有效执行语句，来决定是否需要装载新类，从而装载尽可能少的类，这一点和编译类是不相同的。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/jdk/mulThread/%E5%A4%9A%E7%BA%BF%E7%A8%8B/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="mqiy">
-      <meta itemprop="description" content="永远为下个月离职做好准备">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小灰灰的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/06/18/md/jdk/mulThread/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" class="post-title-link" itemprop="url">多线程概要</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-06-18 15:27 15:27:31" itemprop="dateCreated datePublished" datetime="2019-06-18T15:27:31+08:00">2019-06-18 15:27</time>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>2.5k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>多线程只有一个目的：更好的利用cpu的资源</p>
-<ul>
-<li><p>并行：多个cpu实例或者多台机器同时执行一段处理逻辑，是真正的同时。</p>
-</li>
-<li><p>并发：通过cpu调度算法，让用户看上去同时执行，实际上从cpu操作层面不是真正的同时。</p>
-</li>
-<li><p>线程安全：经常用来描绘一段代码。指在并发的情况之下，该代码经过多线程使用，线程的调度顺序不影响任何结果。</p>
-</li>
-<li><p>同步：Java中的同步指的是通过人为的控制和调度，保证共享资源的多线程访问成为线程安全，来保证结果的准确。如简单加入@synchronized关键字。</p>
-</li>
-</ul>
-<p><strong>阻塞(Blocked)</strong>：</p>
-<ol>
-<li>调用join()和sleep()方法，sleep()时间结束或被打断，join()中断,IO完成都会回到Runnable状态，等待JVM的调度。</li>
-<li>调用wait()，使该线程处于等待池(wait blocked pool),直到notify()/notifyAll()，线程被唤醒被放到锁定池(lock blocked pool )，释放同步锁使线程回到可运行状态（Runnable）</li>
-<li>对Running状态的线程加同步锁(Synchronized)使其进入(lock blocked pool ),同步锁被释放进入可运行状态(Runnable)。</li>
-</ol>
-<p>Thread类中的yield方法可以让一个running状态的线程转入runnable。</p>
-<ul>
-<li>yield()应该做的是让当前运行线程回到可运行状态，以允许具有相同优先级的其他线程获得运行机会，可能无效，又选择了让步的线程。</li>
-<li>join()在一个线程中调用other.join(),将等待other执行完后才继续本线程。</li>
-<li>interrupted方法其本质只是设置该线程的中断标志，真正实现线程的中断原理是：开发人员根据中断标志的具体值，来决定如何退出线程。</li>
-<li>stop方法会中断一个正在运行的线程</li>
-</ul>
-<p>synchronized, wait, notify 是任何对象都具有的同步工具<br>monitor 在synchronized 范围内，监视器发挥作用<br>wait/notify必须存在于synchronized块，这三个关键字针对的是同一个监视器，意味着wait之后，其他线程可以进入同步块执行。</p>
-<p><code>volatile 多线程的内存模型</code>：<br>main memory（主存）、working memory（线程栈）<br>在处理数据时，线程会把值从主存load到本地栈，完成操作后再save回去(volatile关键词的作用：每次针对该变量的操作都激发一次load and save)。</p>
-<h3 id="多线程包-java-util-concurrent"><a href="#多线程包-java-util-concurrent" class="headerlink" title="多线程包:java.util.concurrent"></a>多线程包:java.util.concurrent</h3><p><code>ThreadLocal类</code>，每个使用该变量的线程提供独立的变量副本，常用于用户登录控制，如记录session信息<br>每个Thread都持有一个TreadLocalMap类型的变量</p>
-<p><code>原子类</code>（AtomicInteger、AtomicBoolean……）等同于synchronized，AtomicInteger.compareAndSet(int expect,int update)可实现乐观锁   </p>
-<h4 id="Lock类"><a href="#Lock类" class="headerlink" title="Lock类"></a>Lock类</h4><p>ReentrantLock<br>ReentrantReadWriteLock.ReadLock<br>ReentrantReadWriteLock.WriteLock<br>lock 阻塞式, trylock 无阻塞式, lockInterruptily 可打断式， 还有trylock的带超时时间版本<br>r.lock()或r.lockInterruptibly()<br>r.unlock()<br>ReentrantReadWriteLock，写写，写读互斥；读读不互斥。可以实现并发读的高效线程安全代码</p>
-<h4 id="容器类"><a href="#容器类" class="headerlink" title="容器类"></a>容器类</h4><p>BlockingQueue 这个queue是单向队列，特别适用于先进先出策略的一些应用场景，BlockingQueue在队列的基础上添加了多线程协作的功能，提供了阻塞接口put和take，带超时功能的阻塞接口offer和poll。put会在队列满的时候阻塞，直到有空间时被唤醒；take在队列空的时候阻塞，直到有东西拿的时候才被唤醒。用于生产者-消费者模型尤其好用，堪称神器<br>常见的阻塞队列有：<br><code>ArrayListBlockingQueue</code><br><code>LinkedListBlockingQueue</code><br><code>DelayQueue</code><br><code>SynchronousQueue</code><br><code>ConcurrentHashMap</code>  </p>
-<p>高效的线程安全哈希map。请对比hashTable , concurrentHashMap, HashMap</p>
-<p><strong>HashMap</strong><br>put(key, value)存储对象到HashMap中，使用get(key)从HashMap中获取对象<br>put()方法传递键和值时，我们先对键调用hashCode()方法，返回的hashCode用于找到bucket位置来储存Entry对象<br>HashMap是在bucket中储存键对象和值对象</p>
-<h4 id="线程池管理类ThreadPoolExecutor"><a href="#线程池管理类ThreadPoolExecutor" class="headerlink" title="线程池管理类ThreadPoolExecutor"></a>线程池管理类ThreadPoolExecutor</h4><p>corePoolSize:池内线程初始值与最小值，就算是空闲状态，也会保持该数量线程。<br>maximumPoolSize:线程最大值，线程的增长始终不会超过该值。<br>keepAliveTime：当池内线程数高于corePoolSize时，经过多少时间多余的空闲线程才会被回收。回收前处于wait状态<br>unit：时间单位，可以使用TimeUnit的实例，如TimeUnit.MILLISECONDS。<br>workQueue:待入任务（Runnable）的等待场所，该参数主要影响调度策略，如公平与否，是否产生饿(starving)  。<br>threadFactory:线程工厂类，有默认实现，如果有自定义的需要则需要自己实现ThreadFactory接口并作为参数传入。   </p>
-<p>有一个内存区域是jvm虚拟机栈，每一个线程运行时都有一个线程栈，线程栈保存了线程运行时候变量值信息。当线程访问某一个对象时候值的时候，首先通过对象的引用找到对应在堆内存的变量的值，然后把堆内存变量的具体值load到线程本地内存中，建立一个变量副本，之后线程就不再和对象在堆内存变量值有任何关系，而是直接修改副本变量的值，在修改完之后的某一个时刻（线程退出之前），自动把线程变量副本的值回写到对象在堆中变量。这样在堆中的对象的值就产生变化了。</p>
 
       
     </div>
