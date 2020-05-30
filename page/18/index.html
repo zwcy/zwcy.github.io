@@ -140,7 +140,7 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">52</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">54</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
@@ -150,7 +150,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">219</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">243</span></a>
 
   </li>
         <li class="menu-item menu-item-relate">
@@ -211,7 +211,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/jdk/mulThread/%E5%A4%9A%E7%BA%BF%E7%A8%8B/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/21/md/life/%E8%BF%99%E5%B0%B1%E6%98%AF%E4%BA%BA%E7%94%9F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -225,7 +225,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2019/06/18/md/jdk/mulThread/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" class="post-title-link" itemprop="url">多线程概要</a>
+            <a href="/2019/06/21/md/life/%E8%BF%99%E5%B0%B1%E6%98%AF%E4%BA%BA%E7%94%9F/" class="post-title-link" itemprop="url">这就是人生</a>
         </h1>
 
         <div class="post-meta">
@@ -235,7 +235,18 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2019-06-18 15:27 15:27:31" itemprop="dateCreated datePublished" datetime="2019-06-18T15:27:31+08:00">2019-06-18 15:27</time>
+              <time title="创建时间：2019-06-21 15:35 15:35:59" itemprop="dateCreated datePublished" datetime="2019-06-21T15:35:59+08:00">2019-06-21 15:35</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%BA%BA%E7%94%9F%E6%84%9F%E6%82%9F/" itemprop="url" rel="index">
+                    <span itemprop="name">人生感悟</span>
+                  </a>
+                </span>
             </span>
 
           <br>
@@ -244,7 +255,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>2.5k</span>
+              <span>1.7k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -263,40 +274,23 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>多线程只有一个目的：更好的利用cpu的资源</p>
-<ul>
-<li><p>并行：多个cpu实例或者多台机器同时执行一段处理逻辑，是真正的同时。</p>
-</li>
-<li><p>并发：通过cpu调度算法，让用户看上去同时执行，实际上从cpu操作层面不是真正的同时。</p>
-</li>
-<li><p>线程安全：经常用来描绘一段代码。指在并发的情况之下，该代码经过多线程使用，线程的调度顺序不影响任何结果。</p>
-</li>
-<li><p>同步：Java中的同步指的是通过人为的控制和调度，保证共享资源的多线程访问成为线程安全，来保证结果的准确。如简单加入@synchronized关键字。</p>
-</li>
-</ul>
-<p><strong>阻塞(Blocked)</strong>：</p>
-<ol>
-<li>调用join()和sleep()方法，sleep()时间结束或被打断，join()中断,IO完成都会回到Runnable状态，等待JVM的调度。</li>
-<li>调用wait()，使该线程处于等待池(wait blocked pool),直到notify()/notifyAll()，线程被唤醒被放到锁定池(lock blocked pool )，释放同步锁使线程回到可运行状态（Runnable）</li>
-<li>对Running状态的线程加同步锁(Synchronized)使其进入(lock blocked pool ),同步锁被释放进入可运行状态(Runnable)。</li>
-</ol>
-<p>Thread类中的yield方法可以让一个running状态的线程转入runnable。</p>
-<ul>
-<li>yield()应该做的是让当前运行线程回到可运行状态，以允许具有相同优先级的其他线程获得运行机会，可能无效，又选择了让步的线程。</li>
-<li>join()在一个线程中调用other.join(),将等待other执行完后才继续本线程。</li>
-<li>interrupted方法其本质只是设置该线程的中断标志，真正实现线程的中断原理是：开发人员根据中断标志的具体值，来决定如何退出线程。</li>
-<li>stop方法会中断一个正在运行的线程</li>
-</ul>
-<p>synchronized, wait, notify 是任何对象都具有的同步工具<br>monitor 在synchronized 范围内，监视器发挥作用<br>wait/notify必须存在于synchronized块，这三个关键字针对的是同一个监视器，意味着wait之后，其他线程可以进入同步块执行。</p>
-<p><code>volatile 多线程的内存模型</code>：<br>main memory（主存）、working memory（线程栈）<br>在处理数据时，线程会把值从主存load到本地栈，完成操作后再save回去(volatile关键词的作用：每次针对该变量的操作都激发一次load and save)。</p>
-<h3 id="多线程包-java-util-concurrent"><a href="#多线程包-java-util-concurrent" class="headerlink" title="多线程包:java.util.concurrent"></a>多线程包:java.util.concurrent</h3><p><code>ThreadLocal类</code>，每个使用该变量的线程提供独立的变量副本，常用于用户登录控制，如记录session信息<br>每个Thread都持有一个TreadLocalMap类型的变量</p>
-<p><code>原子类</code>（AtomicInteger、AtomicBoolean……）等同于synchronized，AtomicInteger.compareAndSet(int expect,int update)可实现乐观锁   </p>
-<h4 id="Lock类"><a href="#Lock类" class="headerlink" title="Lock类"></a>Lock类</h4><p>ReentrantLock<br>ReentrantReadWriteLock.ReadLock<br>ReentrantReadWriteLock.WriteLock<br>lock 阻塞式, trylock 无阻塞式, lockInterruptily 可打断式， 还有trylock的带超时时间版本<br>r.lock()或r.lockInterruptibly()<br>r.unlock()<br>ReentrantReadWriteLock，写写，写读互斥；读读不互斥。可以实现并发读的高效线程安全代码</p>
-<h4 id="容器类"><a href="#容器类" class="headerlink" title="容器类"></a>容器类</h4><p>BlockingQueue 这个queue是单向队列，特别适用于先进先出策略的一些应用场景，BlockingQueue在队列的基础上添加了多线程协作的功能，提供了阻塞接口put和take，带超时功能的阻塞接口offer和poll。put会在队列满的时候阻塞，直到有空间时被唤醒；take在队列空的时候阻塞，直到有东西拿的时候才被唤醒。用于生产者-消费者模型尤其好用，堪称神器<br>常见的阻塞队列有：<br><code>ArrayListBlockingQueue</code><br><code>LinkedListBlockingQueue</code><br><code>DelayQueue</code><br><code>SynchronousQueue</code><br><code>ConcurrentHashMap</code>  </p>
-<p>高效的线程安全哈希map。请对比hashTable , concurrentHashMap, HashMap</p>
-<p><strong>HashMap</strong><br>put(key, value)存储对象到HashMap中，使用get(key)从HashMap中获取对象<br>put()方法传递键和值时，我们先对键调用hashCode()方法，返回的hashCode用于找到bucket位置来储存Entry对象<br>HashMap是在bucket中储存键对象和值对象</p>
-<h4 id="线程池管理类ThreadPoolExecutor"><a href="#线程池管理类ThreadPoolExecutor" class="headerlink" title="线程池管理类ThreadPoolExecutor"></a>线程池管理类ThreadPoolExecutor</h4><p>corePoolSize:池内线程初始值与最小值，就算是空闲状态，也会保持该数量线程。<br>maximumPoolSize:线程最大值，线程的增长始终不会超过该值。<br>keepAliveTime：当池内线程数高于corePoolSize时，经过多少时间多余的空闲线程才会被回收。回收前处于wait状态<br>unit：时间单位，可以使用TimeUnit的实例，如TimeUnit.MILLISECONDS。<br>workQueue:待入任务（Runnable）的等待场所，该参数主要影响调度策略，如公平与否，是否产生饿(starving)  。<br>threadFactory:线程工厂类，有默认实现，如果有自定义的需要则需要自己实现ThreadFactory接口并作为参数传入。   </p>
-<p>有一个内存区域是jvm虚拟机栈，每一个线程运行时都有一个线程栈，线程栈保存了线程运行时候变量值信息。当线程访问某一个对象时候值的时候，首先通过对象的引用找到对应在堆内存的变量的值，然后把堆内存变量的具体值load到线程本地内存中，建立一个变量副本，之后线程就不再和对象在堆内存变量值有任何关系，而是直接修改副本变量的值，在修改完之后的某一个时刻（线程退出之前），自动把线程变量副本的值回写到对象在堆中变量。这样在堆中的对象的值就产生变化了。</p>
+          <p>孤独是人生的常态，一定要拥有真正喜欢的兴趣爱好，这样才能支持你渡过无数个漫漫长夜和无数个孤独的时候，读书则是成本最低的兴趣爱好。很多人看起来什么都感兴趣，啥都能参与一定点但都不深入，这种人是最孤独的，因为他根本不知道自己想要什么，喜欢什么。</p>
+<p>绝大部分焦虑不过是脑子勤奋（想的太多）和身体懒惰之间的矛盾，自视甚高是人之常情，但一般要等到人到中年才能明白。20岁：我一定行——40岁：我本可以——60岁：我真的不行哎，是大部分人的人生轨迹。</p>
+<p>一个人行不行可能早就注定了，比如家庭，比如言行举止，比如不经意间的流露……比如知乎的提问，大部分人都不懂得先问是不是再问为什么，大部分人都来懒的出奇，对自己不负责任，问的很随便，不说任何前提，不说任何自己情况，比如太多人问什么专业好、XX专业有没有前景、550分能读什么学校……只有这几个字，惜墨如金守口如瓶的，这些人将来基本上都会庸庸碌碌一辈子。因为思考意识具有决定性作用，跟年龄关系不大，如果你跟顶级中学的高中生聊过天 ，会发现她们比很多大学生有思想有见识，问问题的时候会把个人和家庭情况、问题背景、愿景交待的很清楚。</p>
+<p>对于大部分人来说，体制内尤其是公务员是最好是工作，因为大部分人到了中年才会明白自己不过是庸人，是站在路边给别人喝彩，坐在台下给别人鼓掌的人，年轻时所谓的理想情怀豪言壮语只是对自己不了解，或者人云亦云。</p>
+<p>大部分人一辈子也不会遇到轰轰烈烈荡气回肠的爱情，不过的找一个能接受的，不喜欢也不讨厌，甚至不那么讨厌的人将就着，婚姻，不过是人生的例行公事。</p>
+<p>大部分失败的婚姻不是败给大是大非，而是日常再小不过的琐事，零刀子割肉没感觉，时间长了才会发现情感已经跌破发行价了。跟门当户对、经济条件、颜值相比，一个有趣的人开朗的人善良的人积极阳光的人，重要的多。大多数的婚姻失败不是大是大非的原则性问题，而是无数细枝末节的煎熬和落差，天长日久的日常摩擦，好的性格和心态，可以避免和减少大多数以上不快。</p>
+<p>婚姻的真谛不只是爱，更多是忍受，求同存异，利弊权衡。</p>
+<p>绝大多数人找的媳妇儿都不如大学里的恋人，能在大学找个媳妇儿就尽量，毕业后你会发现你根本找不到这么好的了，甚至可以让你越来越绝望。不被父母祝福的婚姻大概率是不会幸福的，尤其是远嫁、两人落差太大，都是一种孤军深入式的冒险。</p>
+<p>没有遭遇大的意外，比如战争、大的天灾、绝症、残疾，有一份能养家糊口的工作就是一种幸福甚至幸运，当然你不会觉察到，直到失去。大部分人一辈子也没有一个真正的爱好，没有被谁真爱过，真爱过谁，没有痛痛快快哭过笑过，都是复制黏贴型人生。</p>
+<p>绝大多数人都有阴暗面，即便一辈子不为人所知。人性是最不靠谱的东西，法律和契约最实实在在的。</p>
+<p>大多数人一辈子也没有真正的朋友，所谓的朋友不过是同学、同事、同行、熟人甚至亲戚邻居身份的外延，别看平时亲密热烈，你好我好，一遇到事情，朋友二字就褪色了。朋友也不是人生的标配，友情也不是一成不变的，因为每个人都是在变化之中，当再次见面时，大家说着言不由衷的话，去没有什么交集时，就让这份友情活在对往事的回忆中去吧。</p>
+<p>除了父母，真的很少有人想你好，大部分人盼你倒大霉。</p>
+<p>大部分人都会受父母的影响，这种影响是骨子里的，越想摆脱越摆脱不了，会草蛇灰线伏延几十年，尤其是人到中年，有一天会突然发现自己变成了讨厌的模样，被父母附体。</p>
+<p>大部分人，一辈子和文艺也没有交集，看电影看个热闹，听音乐听个响，看书图个刺激，虽然朋友圈都是纳兰容若、尼采。文艺青年大都会在潦倒、衰败、激愤、穷酸中渡过一生。</p>
+<p>出轨、堕落是一种戒不了毒，不要指望用感动、谅解、宽恕去改变，当然也有回头是岸立地成佛的，但概率低到你不敢冒险。</p>
+<p>知乎大部分故事都是假的，教人月入XX年入XX大都是收智商税的，推荐的东西大部分用处不大，思维、决策、分析等高赞文章大都是自问自答，也是心理学管理学书社会学籍上都有的，基本上属于收藏不看系列。</p>
+<p>残忍归残忍，可日子也得过不是，罗曼罗兰那句话不是都会背了嘛。其实也谈不上残忍，这就是真实的人生，只不过大部分人把生活想的太美好而已。</p>
 
       
     </div>
@@ -316,7 +310,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/part/microServices/Sidecar/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/21/md/life/%E6%83%85%E5%95%8650%E5%88%99/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -330,7 +324,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2019/06/18/md/part/microServices/Sidecar/" class="post-title-link" itemprop="url">Sidecar模式：下一代微服务架构的关键</a>
+            <a href="/2019/06/21/md/life/%E6%83%85%E5%95%8650%E5%88%99/" class="post-title-link" itemprop="url">情商50则</a>
         </h1>
 
         <div class="post-meta">
@@ -340,7 +334,18 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2019-06-18 15:27 15:27:31" itemprop="dateCreated datePublished" datetime="2019-06-18T15:27:31+08:00">2019-06-18 15:27</time>
+              <time title="创建时间：2019-06-21 15:35 15:35:59" itemprop="dateCreated datePublished" datetime="2019-06-21T15:35:59+08:00">2019-06-21 15:35</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%BA%BA%E7%94%9F%E6%84%9F%E6%82%9F/" itemprop="url" rel="index">
+                    <span itemprop="name">人生感悟</span>
+                  </a>
+                </span>
             </span>
 
           <br>
@@ -349,7 +354,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>350</span>
+              <span>1.2k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -368,95 +373,27 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="Sidecar模式：下一代微服务架构的关键"><a href="#Sidecar模式：下一代微服务架构的关键" class="headerlink" title="Sidecar模式：下一代微服务架构的关键"></a>Sidecar模式：下一代微服务架构的关键</h1><h2 id="什么是Sidecar模式？"><a href="#什么是Sidecar模式？" class="headerlink" title="什么是Sidecar模式？"></a>什么是Sidecar模式？</h2><p>Sidecar模式是一种将应用功能从应用本身剥离出来作为单独进程的方式。该模式允许我们向应用无侵入添加多种功能，避免了为满足第三方组件需求而向应用添加额外的配置代码。</p>
-<p>就像边车加装在摩托车上一样，在软件架构中，sidecar附加到主应用，或者叫父应用上，以扩展/增强功能特性，同时Sidecar与主应用是松耦合的。</p>
-<p>举个例子，假设现在有6个相互通信的微服务，每个微服务都需要具有可观察性、监控、日志记录、配置、断路器等功能，而所有这些功能都是在微服务中使用一些第三方库实现的。</p>
-<p>这样一组服务的实际情况可能会非常复杂，增加了应用的整体复杂性，尤其是当每个微服务用不同的语言编写、使用不同的基于.net、Java、Python等语言的第三方库</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/part/microServices/spring%20cloud/Hystrix%20Turbine/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="mqiy">
-      <meta itemprop="description" content="永远为下个月离职做好准备">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小灰灰的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/06/18/md/part/microServices/spring%20cloud/Hystrix%20Turbine/" class="post-title-link" itemprop="url">Hystrix Turbine</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-06-18 15:27 15:27:31" itemprop="dateCreated datePublished" datetime="2019-06-18T15:27:31+08:00">2019-06-18 15:27</time>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1.9k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="Hystrix-Turbine简介"><a href="#Hystrix-Turbine简介" class="headerlink" title="Hystrix Turbine简介"></a>Hystrix Turbine简介</h3><p>看单个的Hystrix Dashboard的数据并没有什么多大的价值，要想看这个系统的Hystrix Dashboard数据就需要用到Hystrix Turbine。Hystrix Turbine将每个服务Hystrix Dashboard数据进行了整合。Hystrix Turbine的使用非常简单，只需要引入相应的依赖和加上注解和配置就可以了。</p>
-<h3 id="引入相应的依赖"><a href="#引入相应的依赖" class="headerlink" title="引入相应的依赖"></a>引入相应的依赖</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.cloud<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-cloud-starter-turbine<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.cloud<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-cloud-netflix-turbine<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-actuator<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span></pre></td></tr></table></figure>
-
+          <p>1，话别说太满，人别熟太快。<br>3，不要把别人想得太坏，也不要把别人想得太好，都是凡人。<br>2，别人自嘲可以，但你千万别附和<br>4，可以嘲笑你的朋友，但不能嘲笑他喜欢的东西。  </p>
+<h2 id="34，自嘲是最高境界，而不是嘲笑别人。"><a href="#34，自嘲是最高境界，而不是嘲笑别人。" class="headerlink" title="34，自嘲是最高境界，而不是嘲笑别人。  "></a>34，自嘲是最高境界，而不是嘲笑别人。  </h2><p>6，刚开始和对方不熟悉的时候，聊到晚上十点多对方发来消息就别回复了，第二天早晨再回复，这样又可以聊一天。<br>7，把“随便”改成“听你的”。<br>23，把“听明白了吗”换成“我说明白了吗”。<br>5，把每一句“我不会”都改成“我可以学”<br>把“谢谢”改成“谢谢你” 并微笑看着对方的眼睛    </p>
 <hr>
-<p>在其入口类ServiceTurbineApplication加上注解@EnableTurbine，开启turbine，@EnableTurbine注解包含了@EnableDiscoveryClient注解，即开启了注册服务。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">@SpringBootApplication</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="meta">@EnableTurbine</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ServiceTurbineApplication</span> </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">new</span> SpringApplicationBuilder(ServiceTurbineApplication<span class="class">.<span class="keyword">class</span>).<span class="title">web</span>(<span class="title">true</span>).<span class="title">run</span>(<span class="title">args</span>)</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
-
+<p>8，别人骂你你要听，别人夸你你别信。<br>9，请道歉而不是取笑别人开不起玩笑，你以为谁没有底线只不过还没到底而已。<br>10，聊天时别人发微笑，你不知道怎么回的话，就回，你笑得真好看。<br>11，能用表情包解决的就不要说脏话！<br>12，恰到好处的装逼，适可而止的套路。  </p>
+<h2 id="13，如果一个人不理你，有可能是对方的问题；如果大家都不理你，那你就要考虑自身问题了。"><a href="#13，如果一个人不理你，有可能是对方的问题；如果大家都不理你，那你就要考虑自身问题了。" class="headerlink" title="13，如果一个人不理你，有可能是对方的问题；如果大家都不理你，那你就要考虑自身问题了。  "></a>13，如果一个人不理你，有可能是对方的问题；如果大家都不理你，那你就要考虑自身问题了。  </h2><p>14，人前不应该说的话，背后也别说。<br>27，不要在公众场合揭别人的短处，让别人难堪。<br>35，请不要随意出卖一个朋友的隐私来取悦另一个不熟的朋友。<br>46，不要人后捅刀子嘴别贱。  </p>
 <hr>
-<p>配置文件application.yml</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="attr">spring:</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  <span class="attr">application.name:</span> <span class="string">service-turbine</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="attr">server:</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">  <span class="attr">port:</span> <span class="number">8769</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="attr">security.basic.enabled:</span> <span class="literal">false</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="attr">turbine:</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">  <span class="attr">aggregator:</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">    <span class="attr">clusterConfig:</span> <span class="string">default</span>   <span class="comment"># 指定聚合哪些集群，多个使用","分割，默认为default。可使用http://.../turbine.stream?cluster=&#123;clusterConfig之一&#125;访问</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">  <span class="attr">appConfig:</span> <span class="string">service-hi,service-lucy</span>  <span class="comment">### 配置Eureka中的serviceId列表，表明监控哪些服务</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">  <span class="attr">clusterNameExpression:</span> <span class="string">new</span> <span class="string">String("default")</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">  <span class="comment"># 1. clusterNameExpression指定集群名称，默认表达式appName；此时：turbine.aggregator.clusterConfig需要配置想要监控的应用名称</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">  <span class="comment"># 2. 当clusterNameExpression: default时，turbine.aggregator.clusterConfig可以不写，因为默认就是default</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">  <span class="comment"># 3. 当clusterNameExpression: metadata['cluster']时，假设想要监控的应用配置了eureka.instance.metadata-map.cluster: ABC，则需要配置，同时turbine.aggregator.clusterConfig: ABC</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line"><span class="attr">eureka:</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">  <span class="attr">client:</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">    <span class="attr">serviceUrl:</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">      <span class="attr">defaultZone:</span> <span class="string">http://localhost:8761/eureka/</span></span></pre></td></tr></table></figure>
-
-
-
-<p>输入监控流<a href="http://localhost:8769/turbine.stream" target="_blank" rel="noopener">http://localhost:8769/turbine.stream</a></p>
+<p>15，在最愤怒时忍住最伤人对方的那句话。<br>17，不要把负能量带给身边的人。<br>18，不要吝啬你的赞美和表达爱意的语言。<br>40，越是亲近的人越要用心对待，一句随意的话会伤害她。<br>42，千万不要为了恋爱而淡了身边所有人。<br>21，真的不必把太多人请进生命里，太多热情总是不被珍惜。  </p>
+<hr>
+<p>16，如果没有十足的把握和必要，就不要轻易说假话。<br>19，女孩子永远抗拒不了陪她通宵聊天的人。<br>20，刻薄嘴欠和幽默是两回事；口无遮拦和坦率是两回事；没有教养和随性是两回事；轻重不分和耿直是两回事。  </p>
+<hr>
+<p>22，如果遇到了傻Ⅹ，不要与他争论，而且要同意他的一切观点，把他培养成大傻Ⅹ。<br>24，不能侮辱别人的idol，谨记！<br>47，践踏别人的梦想等同于谋杀。  </p>
+<hr>
+<p>25，在拒绝这件事上，越简单越好，明明是别人需求自己帮忙，解释半天变成自己亏欠了别人的感觉，帮得上，想帮就帮，帮不上，就拒绝。人际交往，简单明了有时最恰当，懂得拒绝，才可以洒脱不纠结。<br>33，学会拒绝，没人会感激你的善良，他们只会得寸进尺。  </p>
+<hr>
+<p>26，逢人只说三分话，未可全抛一片心。<br>29，看透不说透，还是好朋友。<br>39，最印象的一句话，“交友不必言尽，言尽则无友”  </p>
+<hr>
+<p>28，社交没那么容易，每个人都有他的手机。<br>30，当你往上爬的时候对别人好一点，因为你走下坡路的时候会遇到他们。</p>
+<hr>
+<p>31，颜值要高，脾气要好，原则要有。<br>36，有分寸的信任，有理由的怀疑。<br>37，把身材练好，把妆化好。<br>41，修得豆腐嘴，藏得刀子心。<br>43，清醒时做事，糊涂时读书，大怒时睡觉，独处时思考。  </p>
+<hr>
+<p>32，该叫阿姨的叫姐，该叫姐的叫美女该叫美女的叫妹子。<br>38，不会讲话时别瞎说沉默微笑更好。<br>44，永远不要听信别人口中的他。<br>45，女生之间的嫉妒心太可怕，不要公开说这个女生比那个好看。<br>48，常与同好争高下，不共傻瓜论短长。——出自《欢乐颂》  </p>
 
       
     </div>
@@ -476,7 +413,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/part/db/db/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/21/md/part/microServices/Nacos%E9%85%8D%E7%BD%AE%E7%9A%84%E5%8A%A0%E8%BD%BD%E8%A7%84%E5%88%99%E8%AF%A6%E8%A7%A3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -490,7 +427,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2019/06/18/md/part/db/db/" class="post-title-link" itemprop="url">db</a>
+            <a href="/2019/06/21/md/part/microServices/Nacos%E9%85%8D%E7%BD%AE%E7%9A%84%E5%8A%A0%E8%BD%BD%E8%A7%84%E5%88%99%E8%AF%A6%E8%A7%A3/" class="post-title-link" itemprop="url">Nacos配置的加载规则详解</a>
         </h1>
 
         <div class="post-meta">
@@ -500,7 +437,7 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2019-06-18 15:03 15:03:36" itemprop="dateCreated datePublished" datetime="2019-06-18T15:03:36+08:00">2019-06-18 15:03</time>
+              <time title="创建时间：2019-06-21 15:35 15:35:59" itemprop="dateCreated datePublished" datetime="2019-06-21T15:35:59+08:00">2019-06-21 15:35</time>
             </span>
 
           <br>
@@ -509,7 +446,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>414</span>
+              <span>510</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -528,16 +465,184 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="为什么数据库可以没有外键？"><a href="#为什么数据库可以没有外键？" class="headerlink" title="为什么数据库可以没有外键？"></a>为什么数据库可以没有外键？</h3><ul>
-<li>性能，影响插入、更新和删除操作的性能。数据库需要检查它是否违反数据完整性</li>
-<li>传统数据，许多数据库在设计时需要存储来自旧数据库和遗留数据，这些数据可能对数据质量和完整性没有那么严格</li>
-<li>全表重新加载</li>
+          <h3 id="配置管理"><a href="#配置管理" class="headerlink" title="配置管理"></a>配置管理</h3><ul>
+<li>Data ID中的<code>alibaba-nacos-config-client</code>：对应客户端的配置<code>spring.cloud.nacos.config.prefix</code>，默认值为<code>${spring.application.name}</code>，即：服务名</li>
+<li>Data ID中的<code>properties</code>：对应客户端的配置<code>spring.cloud.nacos.config.file-extension</code>，默认值为<code>properties</code></li>
+<li>Group的值<code>DEFAULT_GROUP</code>：对应客户端的配置<code>spring.cloud.nacos.config.group</code>，默认值为<code>DEFAULT_GROUP</code></li>
 </ul>
-<h3 id="规范"><a href="#规范" class="headerlink" title="规范"></a>规范</h3><p>【强制】业务上具有唯一特性的字段，即使是组合字段，也必须建成唯一索引。</p>
-<p>【强制】超过三个表禁止 join。需要 join 的字段，数据类型保持绝对一致；多表关联查询时，<br>保证被关联的字段需要有索引。</p>
-<p>【强制】不要使用 count(列名)或 count(常量)来替代 count(<em>)，count(</em>)就是 SQL92 定义的<br>标准统计行数的语法，跟数据库无关，跟 NULL 和非 NULL 无关。<br>说明：count(*)会统计值为 NULL 的行，而 count(列名)不会统计此列为 NULL 值的行。</p>
-<p>使用 IS NULL()来判断是否为 NULL 值。注意：NULL 与任何值的直接比较都为 NULL。</p>
-<p>单表行数超过 500 万行或者单表容量超过 2GB，才推荐进行分库分表。</p>
+<p>在采用默认值的应用要加载的配置规则就是：<code>Data ID=${spring.application.name}.properties</code>，<code>Group=DEFAULT_GROUP</code></p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="attr">server:</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  <span class="attr">port:</span> <span class="number">9000</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="attr">spring:</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">  <span class="attr">application:</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    <span class="attr">name:</span> <span class="string">alibaba-nacos-discovery-client</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">  <span class="comment"># server discovery</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">  <span class="attr">cloud:</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">    <span class="attr">nacos:</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">      <span class="attr">discovery:</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">        <span class="attr">server-addr:</span> <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span><span class="string">:8848</span></span></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/21/md/part/system/linux/linux%E5%8E%8B%E7%BC%A9%E4%B8%8E%E8%A7%A3%E5%8E%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="mqiy">
+      <meta itemprop="description" content="永远为下个月离职做好准备">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小灰灰的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/06/21/md/part/system/linux/linux%E5%8E%8B%E7%BC%A9%E4%B8%8E%E8%A7%A3%E5%8E%8B/" class="post-title-link" itemprop="url">linux压缩与解压</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-06-21 15:35 15:35:59" itemprop="dateCreated datePublished" datetime="2019-06-21T15:35:59+08:00">2019-06-21 15:35</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>829</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h4 id="unzip解压"><a href="#unzip解压" class="headerlink" title="unzip解压"></a>unzip解压</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 解压window中压缩的文件，不会文件名包含中文乱码</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">unzip -O CP936 xxx.zip</span></pre></td></tr></table></figure>
+
+
+<h4 id="tar-命令"><a href="#tar-命令" class="headerlink" title="tar 命令"></a>tar 命令</h4><p>-c: 建立压缩档案<br>-x：解压<br>-t：查看内容<br>-r：向压缩归档文件末尾追加文件<br>-u：更新原压缩包中的文件</p>
+<p>这五个是独立的命令，压缩解压都要用到其中一个，可以和别的命令连用但只能用其中一个。下面的参数是根据需要在压缩或解压档案时可选的。</p>
+<p>-z：有gzip属性的<br>-j：有bz2属性的<br>-Z：有compress属性的<br>-v：显示所有过程<br>-O：将文件解开到标准输出</p>
+<p>下面的参数-f是必须的</p>
+<p>-f: 使用档案名字，切记，这个参数是最后一个参数，后面只能接档案名。</p>
+<h4 id="tar-示例"><a href="#tar-示例" class="headerlink" title="tar 示例"></a>tar 示例</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">#### 压缩</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">tar –cvf jpg.tar *.jpg      // 将目录里所有jpg文件打包成tar.jpg</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">tar –czf jpg.tar.gz *.jpg   // 将目录里所有jpg文件打包成jpg.tar后，生成gzip压缩过的包，命名为jpg.tar.gz</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">tar –cjf jpg.tar.bz2 *.jpg  // 将目录里所有jpg文件打包成jpg.tar后，生成bzip2压缩过的包，命名为jpg.tar.bz2</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">tar –cZf jpg.tar.Z *.jpg    // 将目录里所有jpg文件打包成jpg.tar后，生成umcompress压缩过的包，命名为jpg.tar.Z</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">rar a jpg.rar *.jpg         // rar格式的压缩，需要先下载rar for Linux</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">zip -r  jpg.zip  *.jpg      // zip格式的压缩  -r 递归压缩</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">####  解压</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">tar –xvf file.tar           //解压 tar包</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">tar -xzvf file.tar.gz       //解压tar.gz</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">tar -xjvf file.tar.bz2      //解压 tar.bz2</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">tar –xZvf file.tar.Z -C /opt/dev      //解压tar.Z</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">unrar e file.rar            //解压rar</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">unzip file.zip -d /opt/dev             //解压zip</span></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/21/md/tool/uml/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="mqiy">
+      <meta itemprop="description" content="永远为下个月离职做好准备">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小灰灰的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/06/21/md/tool/uml/" class="post-title-link" itemprop="url">uml</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-06-21 15:32 15:32:59" itemprop="dateCreated datePublished" datetime="2019-06-21T15:32:59+08:00">2019-06-21 15:32</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/tool/" itemprop="url" rel="index">
+                    <span itemprop="name">tool</span>
+                  </a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>303</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="口决"><a href="#口决" class="headerlink" title="口决"></a>口决</h3><ul>
+<li>虚箭实现实泛化</li>
+<li>虚线依赖实关联</li>
+<li>空菱聚合实组合</li>
+</ul>
+<h4 id="泛化"><a href="#泛化" class="headerlink" title="泛化"></a>泛化</h4><p>用一条带空心箭头的直接表示，通常在程序里面泛化表现为继承于非抽象类。</p>
+<h4 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h4><p>用一条带实心箭头的虚线表示。通常程序里面实现关系表现为继承抽象类,或接口。</p>
+<h4 id="聚合"><a href="#聚合" class="headerlink" title="聚合"></a>聚合</h4><p>用一条带空心菱形箭头的直线表示。与组合关系不同的是，整体和部分不是强依赖的，即使整体不存在了，部分仍然存在。</p>
+<h4 id="组合"><a href="#组合" class="headerlink" title="组合"></a>组合</h4><p>用一条带实心菱形箭头直线表示，如果整体不存在了，部分也不复存在</p>
+<h4 id="依赖"><a href="#依赖" class="headerlink" title="依赖"></a>依赖</h4><p>用一套带箭头的虚线表示，描述一个对象在运行期间会用到另一个对象的关系。通常在程序里面通过构造函数、形参等体现。</p>
+<h4 id="关联"><a href="#关联" class="headerlink" title="关联"></a>关联</h4><p>用一条直线表示，当然如果需要标明方向可以添加箭头，通常不会随着状态的变化而变化。通常在程序里面以类变量的方式表现。</p>
 
       
     </div>
@@ -557,7 +662,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/part/db/sql/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/21/md/part/microServices/spring%20cloud/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E5%81%A5%E5%BA%B7%E6%A3%80%E6%9F%A5/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -571,7 +676,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2019/06/18/md/part/db/sql/" class="post-title-link" itemprop="url">常用sql</a>
+            <a href="/2019/06/21/md/part/microServices/spring%20cloud/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E5%81%A5%E5%BA%B7%E6%A3%80%E6%9F%A5/" class="post-title-link" itemprop="url">微服务健康检查</a>
         </h1>
 
         <div class="post-meta">
@@ -581,7 +686,7 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2019-06-18 15:03 15:03:36" itemprop="dateCreated datePublished" datetime="2019-06-18T15:03:36+08:00">2019-06-18 15:03</time>
+              <time title="创建时间：2019-06-21 14:44 14:44:23" itemprop="dateCreated datePublished" datetime="2019-06-21T14:44:23+08:00">2019-06-21 14:44</time>
             </span>
 
           <br>
@@ -590,7 +695,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>56</span>
+              <span>426</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -609,8 +714,98 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 备份数据库 mayday</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">mysqldump -uroot -pAdmin123# mayday  &gt; bk.sql</span></pre></td></tr></table></figure>
+          <h4 id="健康检查"><a href="#健康检查" class="headerlink" title="健康检查"></a>健康检查</h4><figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment">#开启健康检查（需要spring-boot-starter-actuator依赖）</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="meta">eureka.client.healthcheck.enabled</span>=<span class="string">true</span></span></pre></td></tr></table></figure>
 
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment">#应用信息 /actuator/info</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="attr">info:</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">  <span class="attr">app:</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    <span class="attr">name:</span> <span class="string">@project.name@</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">    <span class="attr">description:</span> <span class="string">@project.description@</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    <span class="attr">version:</span> <span class="string">@project.version@</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">    <span class="attr">encoding:</span> <span class="string">@project.build.sourceEncoding@</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">    <span class="attr">java:</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">      <span class="attr">version:</span> <span class="string">@java.version@</span></span></pre></td></tr></table></figure>
+
+
+
+
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-actuator<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/21/md/part/microServices/spring%20cloud/spring%20cloud%20gateway%20%E5%85%A5%E9%97%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="mqiy">
+      <meta itemprop="description" content="永远为下个月离职做好准备">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小灰灰的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/06/21/md/part/microServices/spring%20cloud/spring%20cloud%20gateway%20%E5%85%A5%E9%97%A8/" class="post-title-link" itemprop="url">spring cloud gateway 入门</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-06-21 14:44 14:44:23" itemprop="dateCreated datePublished" datetime="2019-06-21T14:44:23+08:00">2019-06-21 14:44</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.2k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.cloud<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-cloud-starter-gateway<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    <span class="comment">&lt;!-- 集成eureka --&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">    <span class="comment">&lt;!--&lt;dependency&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"><span class="comment">        &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"><span class="comment">        &lt;artifactId&gt;spring-cloud-starter-netflix-eureka-client&lt;/artifactId&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line"><span class="comment">    &lt;/dependency&gt;--&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span></pre></td></tr></table></figure>
+<p>spring-cloud-gateway有两种配置方式，一种是在application.yml中配置，一种是使用@Bean对象注入。（注意：二者选其一）</p>
+<h4 id="application-yml方式"><a href="#application-yml方式" class="headerlink" title="application.yml方式"></a>application.yml方式</h4><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="attr">spring:</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  <span class="attr">cloud:</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    <span class="attr">gateway:</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">      <span class="attr">routes:</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">      <span class="bullet">-</span> <span class="attr">id:</span> <span class="string">WEB</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">        <span class="attr">uri:</span> <span class="string">http://127.0.0.1:8661</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">        <span class="attr">predicates:</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">        <span class="bullet">-</span> <span class="string">Path=/web/&#123;segment&#125;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">        <span class="attr">filters:</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">        <span class="bullet">-</span> <span class="string">SetPath=/&#123;segment&#125;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">        <span class="bullet">-</span> <span class="string">StripPrefix=1</span></span></pre></td></tr></table></figure>
+
+<h4 id="Bean对象注入配置方式"><a href="#Bean对象注入配置方式" class="headerlink" title="@Bean对象注入配置方式"></a>@Bean对象注入配置方式</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">@Bean</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> RouteLocator <span class="title">routeLocator</span><span class="params">(RouteLocatorBuilder builder)</span> </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">return</span> builder.routes()</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">            .route(<span class="string">"WEB"</span>, r -&gt; r.path(<span class="string">"/web/&#123;segment&#125;"</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">                    .filters(f -&gt; f.setPath(<span class="string">"/&#123;segment&#125;"</span>))</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">                    .uri(<span class="string">"http://127.0.0.1:8661"</span>))</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">            .build();</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
+<p>简要说明：</p>
+<ul>
+<li>id：路由的id，参数配置不要重复，如不配置，gateway会使用生成一个uuid代替。</li>
+<li>uri：路由的目标地址。注意：uri地址后面不要加 “ / “</li>
+<li>Path：配置路由的路径。比如：/web/{segment}则表示当访问<a href="http://127.0.0.1:8562/web/**时候路由的指定的uri上面" target="_blank" rel="noopener">http://127.0.0.1:8562/web/**时候路由的指定的uri上面</a></li>
+<li>SetPath：在发起请求时，在路由请求路径后面加上web/后面的内容。如果不配置，将无法路由地址后缀/web/index，只能路由/web</li>
+<li>StripPrefix 去掉转发根据路径web</li>
+</ul>
 
       
     </div>
@@ -630,7 +825,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/part/db/maria/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/21/md/life/%E7%94%B7%E5%A3%AB%E6%8A%A4%E8%82%A4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -644,7 +839,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2019/06/18/md/part/db/maria/" class="post-title-link" itemprop="url">mariadb</a>
+            <a href="/2019/06/21/md/life/%E7%94%B7%E5%A3%AB%E6%8A%A4%E8%82%A4/" class="post-title-link" itemprop="url">洁面-洗面奶</a>
         </h1>
 
         <div class="post-meta">
@@ -654,7 +849,7 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2019-06-18 15:03 15:03:36" itemprop="dateCreated datePublished" datetime="2019-06-18T15:03:36+08:00">2019-06-18 15:03</time>
+              <time title="创建时间：2019-06-21 14:41 14:41:52" itemprop="dateCreated datePublished" datetime="2019-06-21T14:41:52+08:00">2019-06-21 14:41</time>
             </span>
 
           <br>
@@ -663,7 +858,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>432</span>
+              <span>193</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -682,30 +877,126 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="maven-配置"><a href="#maven-配置" class="headerlink" title="maven 配置"></a>maven 配置</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.mariadb.jdbc<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mariadb-java-client<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.4.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span></pre></td></tr></table></figure>
+          <p><strong>洁面-洗面奶</strong></p>
+<p><strong>水温：一定选择和皮肤温度相近的水温</strong>，不要觉得夏天太热就用凉水，冬天太冷就用较烫的水，这都会刺激到皮肤；<strong>最后可以用稍凉一些的水收尾，达到收缩毛孔的效果。</strong></p>
+<p><strong>手法：</strong>在脸上转圈打炮泡，注意T区等容易出油的部位可以多照顾一些，没什么好说的。</p>
+<p><strong>时间：不低于30秒，不超过三分钟；</strong>不要觉得洗的时间越长越好。</p>
+<p><strong>注意</strong>：洗完及时擦干脸上的水分，刚洗完脸，毛孔张开状态下，水分蒸发更容易带走皮肤的水分。</p>
 
-<h3 id="jdbc设置"><a href="#jdbc设置" class="headerlink" title="jdbc设置"></a>jdbc设置</h3><table>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/21/md/part/db/trac-isolate/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="mqiy">
+      <meta itemprop="description" content="永远为下个月离职做好准备">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小灰灰的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/06/21/md/part/db/trac-isolate/" class="post-title-link" itemprop="url">事务的四种隔离级别</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-06-21 14:39 14:39:46" itemprop="dateCreated datePublished" datetime="2019-06-21T14:39:46+08:00">2019-06-21 14:39</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>440</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="事务的四种隔离级别"><a href="#事务的四种隔离级别" class="headerlink" title="事务的四种隔离级别"></a>事务的四种隔离级别</h3><table>
 <thead>
 <tr>
-<th>字段</th>
-<th>值</th>
+<th></th>
+<th>脏读</th>
+<th>不可重复读</th>
+<th>幻读</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>driver-class-name</td>
-<td>org.mariadb.jdbc.Driver</td>
+<td>Read uncommitted</td>
+<td>X</td>
+<td>X</td>
+<td>X</td>
 </tr>
 <tr>
-<td>url</td>
-<td>jdbc:mariadb://localhost:3306/test</td>
+<td>Read committed</td>
+<td>√</td>
+<td>X</td>
+<td>X</td>
+</tr>
+<tr>
+<td>Repeatable read</td>
+<td>√</td>
+<td>√</td>
+<td>X</td>
+</tr>
+<tr>
+<td>Serializable</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
 </tr>
 </tbody></table>
-<hr>
-<h3 id="Linux下MySQL表名不区分大小写的设置方法"><a href="#Linux下MySQL表名不区分大小写的设置方法" class="headerlink" title="Linux下MySQL表名不区分大小写的设置方法"></a>Linux下MySQL表名不区分大小写的设置方法</h3><ol>
-<li>用root登录，打开并修改 /etc/my.cnf；在[mysqld]节点下，加入一行： lower_case_table_names=1。</li>
-<li>重启mysql服务</li>
+<ol>
+<li><p><strong>ISOLATION_READ_UNCOMMITTED</strong>：读未提交，这是事务最低的隔离级别，它充许令外一个事务可以看到这个事务未提交的数据。</p>
+<pre><code>这种隔离级别会产生脏读，不可重复读和幻像读。、</code></pre></li>
+<li><p><strong>ISOLATION_READ_COMMITTED</strong>：读已提交，保证一个事务修改的数据提交后才能被另外一个事务读取。另外一个事务不能读取该事务未提交的数据</p>
+</li>
+<li><p><strong>ISOLATION_REPEATABLE_READ</strong>：可重复读，这种事务隔离级别可以防止脏读，不可重复读。但是可能出现幻像读。</p>
+<pre><code>它除了保证一个事务不能读取另一个事务未提交的数据外，还保证了避免下面的情况产生(不可重复读)。</code></pre></li>
+<li><p><strong>ISOLATION_SERIALIZABLE</strong>：串行化，这是花费最高代价但是最可靠的事务隔离级别。事务被处理为<strong>顺序执行</strong>。</p>
+<pre><code>除了防止脏读，不可重复读外，还避免了幻像读。 </code></pre></li>
 </ol>
-<p>[^]: lower_case_table_names=1 参数缺省地在 Windows 中这个选项为 1 ，在 Unix 中为 0</p>
 
       
     </div>
@@ -725,7 +1016,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/part/system/linux/linux%20%E5%AE%89%E8%A3%85mariadb/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/20/md/problem/web/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -739,7 +1030,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2019/06/18/md/part/system/linux/linux%20%E5%AE%89%E8%A3%85mariadb/" class="post-title-link" itemprop="url">linux安装mariadb</a>
+            <a href="/2019/06/20/md/problem/web/" class="post-title-link" itemprop="url">问题日志</a>
         </h1>
 
         <div class="post-meta">
@@ -749,7 +1040,7 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2019-06-18 15:03 15:03:10" itemprop="dateCreated datePublished" datetime="2019-06-18T15:03:10+08:00">2019-06-18 15:03</time>
+              <time title="创建时间：2019-06-20 16:51 16:51:43" itemprop="dateCreated datePublished" datetime="2019-06-20T16:51:43+08:00">2019-06-20 16:51</time>
             </span>
 
           <br>
@@ -758,7 +1049,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.6k</span>
+              <span>102</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -777,332 +1068,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="安装MariaDB"><a href="#安装MariaDB" class="headerlink" title="安装MariaDB"></a>安装MariaDB</h3><p>安装命令</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">yum -y install mariadb mariadb-server</span></pre></td></tr></table></figure>
-
-<p>安装完成MariaDB，首先启动MariaDB</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">systemctl start mariadb</span></pre></td></tr></table></figure>
-
-<p>设置开机启动</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">systemctl enable mariadb</span></pre></td></tr></table></figure>
-
-<p>接下来进行MariaDB的相关简单配置</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">mysql_secure_installation</span></pre></td></tr></table></figure>
-
-
-
-<p>初始化MariaDB完成，接下来测试登录</p>
-<p>mysql -uroot -ppassword</p>
-<h3 id="配置MariaDB的字符集"><a href="#配置MariaDB的字符集" class="headerlink" title="配置MariaDB的字符集"></a>配置MariaDB的字符集</h3><p>文件/etc/my.cnf</p>
-<p>在[mysqld]标签下添加</p>
-<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="attr">init_connect</span>=<span class="string">'SET collation_connection = utf8mb4_unicode_ci'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="attr">init_connect</span>=<span class="string">'SET NAMES utf8mb4'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="attr">character_set_server</span>=<span class="string">utf8mb4</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="meta">collation-server</span>=<span class="string">utf8mb4_unicode_ci</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="attr">init_connect</span>=<span class="string">'SET NAMES utf8mb4'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="meta">skip-character-set-client-handshake</span>=<span class="string">true</span></span></pre></td></tr></table></figure>
-
+          <h3 id="Invalid-character-found-in-method-name-HTTP-method-names-must-be-tokens-the-HTTP-protoco"><a href="#Invalid-character-found-in-method-name-HTTP-method-names-must-be-tokens-the-HTTP-protoco" class="headerlink" title="Invalid character found in method name. HTTP method names must be tokens|the HTTP protoco"></a>Invalid character found in method name. HTTP method names must be tokens|the HTTP protoco</h3><p><code>因为请求协议不对，需要统一成https或http请求</code></p>
 <hr>
-<p>文件/etc/my.cnf.d/client.cnf</p>
-<p>在[client]中添加</p>
-<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">default-character-set</span>=<span class="string">utf8mb4</span></span></pre></td></tr></table></figure>
-
-<hr>
-<p>文件/etc/my.cnf.d/mysql-clients.cnf</p>
-<p>在[mysql]中添加</p>
-<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">default-character-set</span>=<span class="string">utf8mb4</span></span></pre></td></tr></table></figure>
-
-
-
-<p> 全部配置完成，重启mariadb</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">systemctl restart mariadb</span></pre></td></tr></table></figure>
-
-<p>之后进入MariaDB查看字符集</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">MariaDB [(none)]&gt; show variables like "%character%";show variables like "%collation%";</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">+<span class="comment">--------------------------+----------------------------+</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">| Variable_name | Value |</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">+<span class="comment">--------------------------+----------------------------+</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">| character_set_client | utf8 |</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">| character_set_connection | utf8 |</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">| character_set_database | latin1 |</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">| character_set_filesystem | binary |</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">| character_set_results | utf8 |</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">| character_set_server | latin1 |</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">| character_set_system | utf8 |</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">| character_sets_dir | /usr/share/mysql/charsets/ |</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">+<span class="comment">--------------------------+----------------------------+</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line">8 rows in <span class="keyword">set</span> (<span class="number">0.01</span> sec)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">20</span></pre></td><td class="code"><pre><span class="line">+<span class="comment">----------------------+-------------------+</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">21</span></pre></td><td class="code"><pre><span class="line">| Variable_name | <span class="keyword">Value</span> |</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">22</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">23</span></pre></td><td class="code"><pre><span class="line">+<span class="comment">----------------------+-------------------+</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">24</span></pre></td><td class="code"><pre><span class="line">| collation_connection | utf8_general_ci |</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">25</span></pre></td><td class="code"><pre><span class="line">| collation_database | latin1_swedish_ci |</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">26</span></pre></td><td class="code"><pre><span class="line">| collation_server | latin1_swedish_ci |</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">27</span></pre></td><td class="code"><pre><span class="line">+<span class="comment">----------------------+-------------------+</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">28</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">29</span></pre></td><td class="code"><pre><span class="line"><span class="number">3</span> <span class="keyword">rows</span> <span class="keyword">in</span> <span class="keyword">set</span> (<span class="number">0.00</span> sec)</span></pre></td></tr></table></figure>
-
-
-
-<p>修改DB的默认编码：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">DATABASE</span> XX_db <span class="built_in">CHARACTER</span> <span class="keyword">SET</span> utf8mb4;</span></pre></td></tr></table></figure>
-
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/other/need%20attention/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="mqiy">
-      <meta itemprop="description" content="永远为下个月离职做好准备">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小灰灰的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/06/18/md/other/need%20attention/" class="post-title-link" itemprop="url">need attention</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-06-18 14:52 14:52:10" itemprop="dateCreated datePublished" datetime="2019-06-18T14:52:10+08:00">2019-06-18 14:52</time>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>66</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h4 id="定义接口不规范"><a href="#定义接口不规范" class="headerlink" title="定义接口不规范"></a>定义接口不规范</h4><ul>
-<li>hagendaza项目，定义一个HdOrderManager接口，没有继承基类<code>BaseManager</code>，无法实现<code>读写分离</code></li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/part/web/graphql/graphql%E4%BB%8B%E7%BB%8D/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="mqiy">
-      <meta itemprop="description" content="永远为下个月离职做好准备">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小灰灰的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/06/18/md/part/web/graphql/graphql%E4%BB%8B%E7%BB%8D/" class="post-title-link" itemprop="url">graphql介绍</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-06-18 14:40 14:40:10" itemprop="dateCreated datePublished" datetime="2019-06-18T14:40:10+08:00">2019-06-18 14:40</time>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>656</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="Query-是查询入口-Mutation则是修改入口"><a href="#Query-是查询入口-Mutation则是修改入口" class="headerlink" title="Query 是查询入口,  Mutation则是修改入口"></a>Query 是查询入口,  Mutation则是修改入口</h3><ul>
-<li>root.graphqls 是graphql 服务入口定义</li>
-<li>scheme.graphqls 则是 query/mutation 具体的 scheme 定义字段、类型</li>
-</ul>
-<p>graphql 入口定义了, 但这只是一个描述, 我们需要实现 query/mutation中的描述(必须全部实现)</p>
-<p>schema 一样像我的目录中的一样 AuthorResolver 这是对schema中的描述的实现</p>
-<blockquote>
-<p>query/mutation和普通的schema 一样, 只是它们是 graphql服务的入口, resolver实现描述遵循:</p>
-</blockquote>
-<ul>
-<li>method <code>name</code>(*args)</li>
-<li>method is<code>Name</code>(*args) 仅支持 return boolean</li>
-<li>method get<code>Name</code>(*args)</li>
-<li>method getField<code>Name</code>(*args)</li>
-</ul>
-<p>这是种实现, 当提供了resolver时优先使用, 其次是 class this.get<code>Name</code>方法</p>
-<p>返回参数类型不一致，或者没有返回，需在resolver中添加</p>
-<p>在GraphQL中，我们通过预先定义一张<code>Schema</code>和声明一些<code>Type</code>来达到上面提及的效果，我们需要知道：</p>
-<ul>
-<li>对于数据模型的抽象是通过Type来描述的</li>
-<li>对于接口获取数据的逻辑是通过Schema来描述的</li>
-</ul>
-<h3 id="Type"><a href="#Type" class="headerlink" title="Type"></a>Type</h3><p>对于数据模型的抽象是通过Type来描述的，每一个Type有若干Field组成，每个Field又分别指向某个Type。</p>
-<p>GraphQL的Type简单可以分为两种，一种叫做<code>Scalar Type(标量类型)</code>，另一种叫做<code>Object Type(对象类型)</code>。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/part/web/graphql/RPC%20vs%20REST%20vs%20GraphQL/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="mqiy">
-      <meta itemprop="description" content="永远为下个月离职做好准备">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小灰灰的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/06/18/md/part/web/graphql/RPC%20vs%20REST%20vs%20GraphQL/" class="post-title-link" itemprop="url">RPC vs REST vs GraphQL</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-06-18 14:40 14:40:10" itemprop="dateCreated datePublished" datetime="2019-06-18T14:40:10+08:00">2019-06-18 14:40</time>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1.4k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="RPC"><a href="#RPC" class="headerlink" title="RPC"></a>RPC</h3><p>它是Remote Procedure Call(远程过程调用)的简称。一般基于RPC协议所设计的接口，是基于网络采用客户端/服务端的模式完成调用接口的</p>
-<h4 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h4><ul>
-<li><p>简单并且易于理解（面向开发者）</p>
-</li>
-<li><p>轻量级的数据载体</p>
-</li>
-<li><p>高性能</p>
-</li>
-</ul>
-<h4 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h4><ul>
-<li>对于系统本身耦合性高</li>
-<li>因为RPC本身很简单、轻量，因此很容易造成 function explosion</li>
-</ul>
-<p>关于RPC的优点其实很好理解，就是因为它性能高同时又很简单，但是我认为这是对于接口提供者来讲的（因为它的高耦合性）。</p>
-<p>但是如果从接口调用者的角度来看，高耦合性就变成了缺点，因为高耦合意味着调用者必须要足够了解系统本身的实现才能够完成调用，比如：</p>
-<ul>
-<li>调用者需要知道所调用接口的函数名、参数格式、参数顺序、参数名称等等</li>
-<li>如果接口提供者(server)要对接口做出一些改变，很容易对接口调用者(client)造成breaking change（违背开闭原则)</li>
-<li>一般RPC所暴露接口仅仅会暴露函数的名称和参数等信息，对于函数之间的调用关系无法提供，这意味着调用者必须足够了解系统，从能够知道如何正确的调用这些接口，但是对于接口调用者往往不需要了解过多系统内部实现细节</li>
-</ul>
-<hr>
-<h3 id="REST"><a href="#REST" class="headerlink" title="REST"></a>REST</h3><p>当前REST风格的API架构方式已经成了主流解决方案了，相比较RPC，它的主要不同之处在于，它是对于资源(Resource)的模型化而非步骤(Procedure)。</p>
-<h4 id="优点-1"><a href="#优点-1" class="headerlink" title="优点"></a>优点</h4><ul>
-<li>对于系统本身耦合性低，调用者不再需要了解接口内部处理和实现细节</li>
-<li>重复使用了一些 http 协议中的已定义好的部分状态动词，增强语义表现力</li>
-<li>API可以随着时间而不断演进<h4 id="缺点-1"><a href="#缺点-1" class="headerlink" title="缺点"></a>缺点</h4></li>
-<li>缺少约束，缺少简单、统一的规范</li>
-<li>有时候 payload 会变的冗余(overload)，有时候调用api会比较繁琐(chattiness)</li>
-<li>有时候需要发送多条请求已获取数据，在网络带宽较低的场景，往往会造成不好的影响</li>
-</ul>
-<p>REST的优点基本解决了RPC中存在的问题，就是解耦，从而使得前后端分离成为可能。接口提供者在修改接口时，不容易造成breaking-change，接口调用者在调用接口时，往往面向数据模型编程，而省去了了解接口本身的时间成本。</p>
-<p>但是，我认为REST当前最大的问题在于虽然它利用<code>http</code>的动词约束了接口的暴露方式，同时增强了语义，但是却没有约束接口如何返回数据的最佳实践</p>
-<hr>
-<h3 id="GraphQL"><a href="#GraphQL" class="headerlink" title="GraphQL"></a>GraphQL</h3><p>GraphQL是近来比较热门的一个技术话题，相比REST和RPC，它汲取了两者的优点，即不面向资源，也不面向过程，而是面向数据查询(ask for exactly what you want)。同时GraphQL本身需要使用强类型的Schema来对数据模型进行定义，因此相比REST它的约束性更强。</p>
-<h4 id="优点-2"><a href="#优点-2" class="headerlink" title="优点"></a>优点</h4><ul>
-<li>网络开销低，可以在单一请求中获取REST中使用多条请求获取的资源</li>
-<li>强类型Schema（约束意味着可以根据规范形成文档、IDE、错误提示等生态工具）</li>
-<li>特别适合图状数据结构的业务场景（比如好友、流程、组织架构等系统）<h4 id="缺点-2"><a href="#缺点-2" class="headerlink" title="缺点"></a>缺点</h4></li>
-<li>本身的语法相比较REST和RPC均复杂一些</li>
-<li>实现方面需要配套 Caching 以解决性能瓶颈</li>
-<li>对于 API 的版本控制当前没有完善解决方案（社区的建议是不要使API版本化）</li>
-<li>仍然是新鲜事物，很多技术细节仍然处于待验证状态<br>首先值得肯定的是，在某些程度上确实解决了REST的缺点所带来的问题,GraphQL所带来的好处，大部分是对于接口调用者而言的，但是实现这部分的工作却需要接口提供者来完成。</li>
-</ul>
 
       
     </div>
@@ -1122,7 +1089,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/17/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/">17</a><span class="page-number current">18</span><a class="page-number" href="/page/19/">19</a><span class="space">&hellip;</span><a class="page-number" href="/page/22/">22</a><a class="extend next" rel="next" href="/page/19/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/17/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/">17</a><span class="page-number current">18</span><a class="page-number" href="/page/19/">19</a><span class="space">&hellip;</span><a class="page-number" href="/page/25/">25</a><a class="extend next" rel="next" href="/page/19/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1188,7 +1155,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">219</span>
+          <span class="site-state-item-count">243</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1201,7 +1168,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">52</span>
+        <span class="site-state-item-count">54</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -1235,12 +1202,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">256k</span>
+    <span title="站点总字数">264k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">3:52</span>
+    <span title="站点阅读时长">4:01</span>
 </div>
 
         

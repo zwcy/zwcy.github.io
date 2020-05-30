@@ -140,7 +140,7 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">52</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">54</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
@@ -150,7 +150,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">219</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">243</span></a>
 
   </li>
         <li class="menu-item menu-item-relate">
@@ -211,7 +211,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/part/docker/docker%20compose/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/other/need%20attention/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -225,7 +225,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2019/06/18/md/part/docker/docker%20compose/" class="post-title-link" itemprop="url">docker compose</a>
+            <a href="/2019/06/18/md/other/need%20attention/" class="post-title-link" itemprop="url">need attention</a>
         </h1>
 
         <div class="post-meta">
@@ -235,7 +235,7 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2019-06-18 14:27 14:27:10" itemprop="dateCreated datePublished" datetime="2019-06-18T14:27:10+08:00">2019-06-18 14:27</time>
+              <time title="创建时间：2019-06-18 14:52 14:52:10" itemprop="dateCreated datePublished" datetime="2019-06-18T14:52:10+08:00">2019-06-18 14:52</time>
             </span>
 
           <br>
@@ -244,7 +244,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>140</span>
+              <span>66</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -263,8 +263,9 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sudo curl -L https://github.com/docker/compose/releases/download/1.16.1/docker-compose-`uname -s`-`uname -m` \</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"> -o /usr/local/bin/docker-compose</span></pre></td></tr></table></figure>
-
+          <h4 id="定义接口不规范"><a href="#定义接口不规范" class="headerlink" title="定义接口不规范"></a>定义接口不规范</h4><ul>
+<li>hagendaza项目，定义一个HdOrderManager接口，没有继承基类<code>BaseManager</code>，无法实现<code>读写分离</code></li>
+</ul>
 
       
     </div>
@@ -284,7 +285,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/part/docker/docker%20problem/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/part/web/graphql/RPC%20vs%20REST%20vs%20GraphQL/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -298,7 +299,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2019/06/18/md/part/docker/docker%20problem/" class="post-title-link" itemprop="url">docker相关问题</a>
+            <a href="/2019/06/18/md/part/web/graphql/RPC%20vs%20REST%20vs%20GraphQL/" class="post-title-link" itemprop="url">RPC vs REST vs GraphQL</a>
         </h1>
 
         <div class="post-meta">
@@ -308,7 +309,7 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2019-06-18 14:27 14:27:10" itemprop="dateCreated datePublished" datetime="2019-06-18T14:27:10+08:00">2019-06-18 14:27</time>
+              <time title="创建时间：2019-06-18 14:40 14:40:10" itemprop="dateCreated datePublished" datetime="2019-06-18T14:40:10+08:00">2019-06-18 14:40</time>
             </span>
 
           <br>
@@ -317,7 +318,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>269</span>
+              <span>1.4k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -336,92 +337,49 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h5 id="docker-WARNING-IPv4-forwarding-is-disabled-解决方法"><a href="#docker-WARNING-IPv4-forwarding-is-disabled-解决方法" class="headerlink" title="docker WARNING: IPv4 forwarding is disabled. 解决方法"></a>docker WARNING: IPv4 forwarding is disabled. 解决方法</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">般情况下，我们的linux机器的ip forwarding选项都是关闭的。 但是如果我们的机器需要做网关，或路由器。那么这个就要打开了</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">echo net.ipv4.ip_forward=1 &gt;&gt; /usr/lib/sysctl.d/00-system.conf</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">systemctl restart network &amp;&amp; systemctl restart docker</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">查看是否修改成功</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">sysctl net.ipv4.ip_forward</span></pre></td></tr></table></figure>
-
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/part/docker/docker%E7%9B%AE%E5%BD%95/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="mqiy">
-      <meta itemprop="description" content="永远为下个月离职做好准备">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小灰灰的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/06/18/md/part/docker/docker%E7%9B%AE%E5%BD%95/" class="post-title-link" itemprop="url">docker挂载目录</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-06-18 14:27 14:27:10" itemprop="dateCreated datePublished" datetime="2019-06-18T14:27:10+08:00">2019-06-18 14:27</time>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>236</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h4 id="关于Docker目录挂载的总结"><a href="#关于Docker目录挂载的总结" class="headerlink" title="关于Docker目录挂载的总结"></a>关于Docker目录挂载的总结</h4><ul>
-<li><p>容器目录不可以为相对路径</p>
+          <h3 id="RPC"><a href="#RPC" class="headerlink" title="RPC"></a>RPC</h3><p>它是Remote Procedure Call(远程过程调用)的简称。一般基于RPC协议所设计的接口，是基于网络采用客户端/服务端的模式完成调用接口的</p>
+<h4 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h4><ul>
+<li><p>简单并且易于理解（面向开发者）</p>
 </li>
-<li><p>宿主机目录如果不存在，则会自动生成</p>
+<li><p>轻量级的数据载体</p>
 </li>
-<li><p>宿主机的目录如果为相对路径(实际上对路径指的是/var/lib/docker/volumes/，与宿主机的当前目录无关)</p>
-</li>
-<li><p>在容器内修改了目录的属主和属组，那么对应的挂载点会修改，容器销毁了，新建的挂载目录不会消失</p>
+<li><p>高性能</p>
 </li>
 </ul>
-<p>挂载宿主机已存在目录后，在容器内对其进行操作，报“Permission denied”。</p>
-<p>1&gt; 关闭selinux。</p>
-<p>2&gt; 以特权方式启动容器  指定–privileged参数</p>
+<h4 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h4><ul>
+<li>对于系统本身耦合性高</li>
+<li>因为RPC本身很简单、轻量，因此很容易造成 function explosion</li>
+</ul>
+<p>关于RPC的优点其实很好理解，就是因为它性能高同时又很简单，但是我认为这是对于接口提供者来讲的（因为它的高耦合性）。</p>
+<p>但是如果从接口调用者的角度来看，高耦合性就变成了缺点，因为高耦合意味着调用者必须要足够了解系统本身的实现才能够完成调用，比如：</p>
+<ul>
+<li>调用者需要知道所调用接口的函数名、参数格式、参数顺序、参数名称等等</li>
+<li>如果接口提供者(server)要对接口做出一些改变，很容易对接口调用者(client)造成breaking change（违背开闭原则)</li>
+<li>一般RPC所暴露接口仅仅会暴露函数的名称和参数等信息，对于函数之间的调用关系无法提供，这意味着调用者必须足够了解系统，从能够知道如何正确的调用这些接口，但是对于接口调用者往往不需要了解过多系统内部实现细节</li>
+</ul>
+<hr>
+<h3 id="REST"><a href="#REST" class="headerlink" title="REST"></a>REST</h3><p>当前REST风格的API架构方式已经成了主流解决方案了，相比较RPC，它的主要不同之处在于，它是对于资源(Resource)的模型化而非步骤(Procedure)。</p>
+<h4 id="优点-1"><a href="#优点-1" class="headerlink" title="优点"></a>优点</h4><ul>
+<li>对于系统本身耦合性低，调用者不再需要了解接口内部处理和实现细节</li>
+<li>重复使用了一些 http 协议中的已定义好的部分状态动词，增强语义表现力</li>
+<li>API可以随着时间而不断演进<h4 id="缺点-1"><a href="#缺点-1" class="headerlink" title="缺点"></a>缺点</h4></li>
+<li>缺少约束，缺少简单、统一的规范</li>
+<li>有时候 payload 会变的冗余(overload)，有时候调用api会比较繁琐(chattiness)</li>
+<li>有时候需要发送多条请求已获取数据，在网络带宽较低的场景，往往会造成不好的影响</li>
+</ul>
+<p>REST的优点基本解决了RPC中存在的问题，就是解耦，从而使得前后端分离成为可能。接口提供者在修改接口时，不容易造成breaking-change，接口调用者在调用接口时，往往面向数据模型编程，而省去了了解接口本身的时间成本。</p>
+<p>但是，我认为REST当前最大的问题在于虽然它利用<code>http</code>的动词约束了接口的暴露方式，同时增强了语义，但是却没有约束接口如何返回数据的最佳实践</p>
+<hr>
+<h3 id="GraphQL"><a href="#GraphQL" class="headerlink" title="GraphQL"></a>GraphQL</h3><p>GraphQL是近来比较热门的一个技术话题，相比REST和RPC，它汲取了两者的优点，即不面向资源，也不面向过程，而是面向数据查询(ask for exactly what you want)。同时GraphQL本身需要使用强类型的Schema来对数据模型进行定义，因此相比REST它的约束性更强。</p>
+<h4 id="优点-2"><a href="#优点-2" class="headerlink" title="优点"></a>优点</h4><ul>
+<li>网络开销低，可以在单一请求中获取REST中使用多条请求获取的资源</li>
+<li>强类型Schema（约束意味着可以根据规范形成文档、IDE、错误提示等生态工具）</li>
+<li>特别适合图状数据结构的业务场景（比如好友、流程、组织架构等系统）<h4 id="缺点-2"><a href="#缺点-2" class="headerlink" title="缺点"></a>缺点</h4></li>
+<li>本身的语法相比较REST和RPC均复杂一些</li>
+<li>实现方面需要配套 Caching 以解决性能瓶颈</li>
+<li>对于 API 的版本控制当前没有完善解决方案（社区的建议是不要使API版本化）</li>
+<li>仍然是新鲜事物，很多技术细节仍然处于待验证状态<br>首先值得肯定的是，在某些程度上确实解决了REST的缺点所带来的问题,GraphQL所带来的好处，大部分是对于接口调用者而言的，但是实现这部分的工作却需要接口提供者来完成。</li>
+</ul>
 
       
     </div>
@@ -441,7 +399,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/part/docker/docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/part/web/graphql/graphql%E4%BB%8B%E7%BB%8D/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -455,7 +413,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2019/06/18/md/part/docker/docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="post-title-link" itemprop="url">docker常用命令</a>
+            <a href="/2019/06/18/md/part/web/graphql/graphql%E4%BB%8B%E7%BB%8D/" class="post-title-link" itemprop="url">graphql介绍</a>
         </h1>
 
         <div class="post-meta">
@@ -465,7 +423,178 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2019-06-18 14:27 14:27:10" itemprop="dateCreated datePublished" datetime="2019-06-18T14:27:10+08:00">2019-06-18 14:27</time>
+              <time title="创建时间：2019-06-18 14:40 14:40:10" itemprop="dateCreated datePublished" datetime="2019-06-18T14:40:10+08:00">2019-06-18 14:40</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>656</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="Query-是查询入口-Mutation则是修改入口"><a href="#Query-是查询入口-Mutation则是修改入口" class="headerlink" title="Query 是查询入口,  Mutation则是修改入口"></a>Query 是查询入口,  Mutation则是修改入口</h3><ul>
+<li>root.graphqls 是graphql 服务入口定义</li>
+<li>scheme.graphqls 则是 query/mutation 具体的 scheme 定义字段、类型</li>
+</ul>
+<p>graphql 入口定义了, 但这只是一个描述, 我们需要实现 query/mutation中的描述(必须全部实现)</p>
+<p>schema 一样像我的目录中的一样 AuthorResolver 这是对schema中的描述的实现</p>
+<blockquote>
+<p>query/mutation和普通的schema 一样, 只是它们是 graphql服务的入口, resolver实现描述遵循:</p>
+</blockquote>
+<ul>
+<li>method <code>name</code>(*args)</li>
+<li>method is<code>Name</code>(*args) 仅支持 return boolean</li>
+<li>method get<code>Name</code>(*args)</li>
+<li>method getField<code>Name</code>(*args)</li>
+</ul>
+<p>这是种实现, 当提供了resolver时优先使用, 其次是 class this.get<code>Name</code>方法</p>
+<p>返回参数类型不一致，或者没有返回，需在resolver中添加</p>
+<p>在GraphQL中，我们通过预先定义一张<code>Schema</code>和声明一些<code>Type</code>来达到上面提及的效果，我们需要知道：</p>
+<ul>
+<li>对于数据模型的抽象是通过Type来描述的</li>
+<li>对于接口获取数据的逻辑是通过Schema来描述的</li>
+</ul>
+<h3 id="Type"><a href="#Type" class="headerlink" title="Type"></a>Type</h3><p>对于数据模型的抽象是通过Type来描述的，每一个Type有若干Field组成，每个Field又分别指向某个Type。</p>
+<p>GraphQL的Type简单可以分为两种，一种叫做<code>Scalar Type(标量类型)</code>，另一种叫做<code>Object Type(对象类型)</code>。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/tool/oss/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="mqiy">
+      <meta itemprop="description" content="永远为下个月离职做好准备">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小灰灰的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/06/18/md/tool/oss/" class="post-title-link" itemprop="url">阿里云oss缩略图</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-06-18 14:38 14:38:10" itemprop="dateCreated datePublished" datetime="2019-06-18T14:38:10+08:00">2019-06-18 14:38</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>452</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h4 id="OSS是使用通过URL尾部的参数指定图片的缩放大小"><a href="#OSS是使用通过URL尾部的参数指定图片的缩放大小" class="headerlink" title="OSS是使用通过URL尾部的参数指定图片的缩放大小"></a>OSS是使用通过URL尾部的参数指定图片的缩放大小</h4><p>图片路径后面拼接如下路径：<br>?x-oss-process=image/[处理类型],x_100,y_50[宽高等参数]</p>
+<p>?x-oss-process=image/resize,m_fill,h_高度,w_宽度,limit_0</p>
+<p>示例：</p>
+<p>原图：<br><a href="http://qunxianghui-upload.oss-cn-hangzhou.aliyuncs.com/upload/image/20180829/84cb48ea3923c827481787b8877f9260.jpeg" target="_blank" rel="noopener">http://qunxianghui-upload.oss-cn-hangzhou.aliyuncs.com/upload/image/20180829/84cb48ea3923c827481787b8877f9260.jpeg</a></p>
+<p>缩略图：（注意：复制下面链接到浏览器中访问，直接点击可能后面参数带不过去）<br><a href="http://qunxianghui-upload.oss-cn-hangzhou.aliyuncs.com/upload/image/20180829/84cb48ea3923c827481787b8877f9260.jpeg?x-oss-process=image/resize,m_fill,h_100,w_200" target="_blank" rel="noopener">http://qunxianghui-upload.oss-cn-hangzhou.aliyuncs.com/upload/image/20180829/84cb48ea3923c827481787b8877f9260.jpeg?x-oss-process=image/resize,m_fill,h_100,w_200</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/tool/MapStruct/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="mqiy">
+      <meta itemprop="description" content="永远为下个月离职做好准备">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小灰灰的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/06/18/md/tool/MapStruct/" class="post-title-link" itemprop="url">MapStruct</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-06-18 14:38 14:38:10" itemprop="dateCreated datePublished" datetime="2019-06-18T14:38:10+08:00">2019-06-18 14:38</time>
             </span>
 
           <br>
@@ -493,26 +622,95 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p><code>Docker</code> 是一个开源的轻量级容器管理<code>引擎</code>，可以轻松的为任<br>何应用创建一个轻量级的、可移植的、自给自足的容器</p>
-<ul>
-<li>简化程序</li>
-<li>避免选择恐惧症</li>
-<li>节省开支</li>
+          <h3 id="MapStruct-一个-Java-实体映射工具"><a href="#MapStruct-一个-Java-实体映射工具" class="headerlink" title="MapStruct 一个 Java 实体映射工具"></a>MapStruct 一个 Java 实体映射工具</h3><p>一个成熟的工程中，尤其是现在的分布式系统中，应用与应用之间，还有单独的应用细分模块之后，DO 一般不会让外部依赖，对象与对象之间的互相转换，就需要有一个专门用来解决转换问题的工具</p>
+<h3 id="maven-依赖"><a href="#maven-依赖" class="headerlink" title="maven 依赖"></a>maven 依赖</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">properties</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">mapstruct.version</span>&gt;</span>1.2.0.Final<span class="tag">&lt;/<span class="name">mapstruct.version</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">      <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.mapstruct<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">      <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mapstruct-jdk8<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">      <span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;mapstruct.version&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">      <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.mapstruct<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">      <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mapstruct-processor<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">      <span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;mapstruct.version&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span></pre></td></tr></table></figure>
+
+
+
+
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">@Mapper</span>(componentModel = <span class="string">"spring"</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">PesonMapper</span> </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">   <span class="function"><span class="keyword">public</span> PersonModel <span class="title">mapEighteen</span><span class="params">( Person entity)</span> </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">	  <span class="keyword">if</span> (entity.getName.equals(<span class="number">18</span>)) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">		   <span class="keyword">return</span> map(entity);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">      &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">   &#125;;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">	</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">   <span class="meta">@Mapping</span>(target = <span class="string">"personName"</span>, source = <span class="string">"name"</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">   <span class="meta">@Mapping</span>(target = <span class="string">"hand"</span>,  ignore = <span class="keyword">true</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">   <span class="function"><span class="keyword">protected</span> <span class="keyword">abstract</span> PersonModel <span class="title">map</span><span class="params">( Person entity)</span></span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">   <span class="keyword">protected</span> <span class="keyword">abstract</span>  List&lt;PersonModel &gt; map(List&lt; Person&gt; entity);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/part/spring/spring-trac/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="mqiy">
+      <meta itemprop="description" content="永远为下个月离职做好准备">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小灰灰的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/06/18/md/part/spring/spring-trac/" class="post-title-link" itemprop="url">spring事务</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-06-18 14:35 14:35:10" itemprop="dateCreated datePublished" datetime="2019-06-18T14:35:10+08:00">2019-06-18 14:35</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>581</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="Spring声明式事务七种传播行为"><a href="#Spring声明式事务七种传播行为" class="headerlink" title="Spring声明式事务七种传播行为"></a>Spring声明式事务七种传播行为</h3><ul>
+<li>REQUIRES_NEW：不管是否存在事务，该方法总会为自己发起一个新的事务。如果方法已经运行在一个事务中，则原有事务挂起，新的事务被创建。  </li>
+<li>NESTED：如果一个活动的事务存在，则运行在一个嵌套的事务中。如果没有活动事务，则按REQUIRED属性执行。它使用了一个单独的事务，这个事务拥有多个可以回滚的保存点。内部事务的回滚不会对外部事务造成影响。它只对<code>DataSourceTransactionManager</code>事务管理器起效。</li>
+<li>REQUIRED：业务方法需要在一个事务中运行，如果方法运行时，已处在一个事务中，那么就加入该事务，否则自己创建一个新的事务。<strong>这是spring默认的传播行为</strong>。</li>
+<li>MANDATORY：该方法只能在一个已经存在的事务中执行，业务方法不能发起自己的事务。如果在没有事务的环境下被调用，容器抛出异常。</li>
+<li>SUPPORTS：该方法在某个事务范围内被调用，则方法成为该事务的一部分。如果方法在该事务范围外被调用，该方法就在没有事务的环境下执行。</li>
+<li>NOT_SUPPORTED：声明方法不需要事务。如果方法没有关联到一个事务，容器不会为他开启事务，如果方法在一个事务中被调用，该事务会被挂起，调用结束后，原先的事务会恢复执行。</li>
+<li>NEVER：该方法绝对不能在事务范围内执行。如果在就抛异常。只有该方法没有关联到任何事务，才正常执行。</li>
 </ul>
-<h4 id="创建镜像"><a href="#创建镜像" class="headerlink" title="创建镜像"></a><strong>创建镜像</strong></h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"> docker commit -m " add hdh.log file" -a="hdh"  48f1dac1ceb9  mqiy/ubuntu:v0.01</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> -m:提交的描述信息</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> -a:指定镜像作者</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 48f1dac1ceb9：容器ID</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> mqiy/ubuntu:v0.01:指定要创建的目标镜像名   v0.01 tag</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 执行新建镜像</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"> docker run -t -i mqiy/ubuntu:v0.01</span></pre></td></tr></table></figure>
-
-<h4 id="启动容器"><a href="#启动容器" class="headerlink" title="启动容器"></a>启动容器</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">docker run ubuntu:15.10   --name hdh0.01  /bin/echo "Hello world"</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> docker: Docker 的二进制执行文件。</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> run:与前面的 docker 组合来运行一个容器。</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> ubuntu:15.10指定要运行的镜像，Docker首先从本地主机上查找镜像是否存在，如果不存在，Docker 就会从镜像仓库Docker Hub  下载公</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 共镜像</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> /bin/<span class="built_in">echo</span> <span class="string">"Hello world"</span>: 在启动的容器里执行的命令</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 以上命令完整的意思：Docker 以 ubuntu15.10 镜像创建一个新容器，然后在容器里执行 bin/<span class="built_in">echo</span> <span class="string">"Hello world"</span>，然后输出结果。</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> -d 开启Daemon模式</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> --name hdh0.01 容器名称</span></span></pre></td></tr></table></figure>
-
-<h5 id="运行交互式的容器"><a href="#运行交互式的容器" class="headerlink" title="运行交互式的容器"></a>运行交互式的容器</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">docker run -i -t ubuntu:15.10 /bin/bash</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> -t:在新容器内指定一个伪终端或终端。</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> -i:允许你对容器内的标准输入 (STDIN) 进行交互。</span></span></pre></td></tr></table></figure>
-
-<h5 id="启动容器（后台模式）"><a href="#启动容器（后台模式）" class="headerlink" title="启动容器（后台模式）"></a>启动容器（后台模式）</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">docker run -d ubuntu:15.10 /bin/sh -c "while true; do echo hello world; sleep 1; done"</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> -d 开启Daemon模式</span></span></pre></td></tr></table></figure>
-
-<h4 id="关闭容器"><a href="#关闭容器" class="headerlink" title="关闭容器"></a>关闭容器</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">docker stop contain_id | name</span></pre></td></tr></table></figure>
-
-
-<h4 id="docker查看日志"><a href="#docker查看日志" class="headerlink" title="docker查看日志"></a>docker查看日志</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">docker logs -f -t --since="2018-03-31" --tail=100 elastic_raman</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> –since : 此参数指定了输出日志开始日期，即只输出指定日期之后的日志。 </span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> -f : 表示查看实时日志 </span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">　-t : 查看日志产生的日期 </span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> -tail=200 : 查看最后的200条日志。 </span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> sleepy_snyder 容器的名称，并不是镜像的名字</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> ps </span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">：执行docker ps命令可以看到docker容器列表，NAMES即为容器名，而不是image</span></span></pre></td></tr></table></figure>
-<h4 id="删除容器"><a href="#删除容器" class="headerlink" title="删除容器"></a>删除容器</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">docker container ls -a</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">docker container rm   XX  #   XX 为CONTAINER ID or NAMES</span></pre></td></tr></table></figure>
-
 
       
     </div>
@@ -532,7 +730,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/part/docker/mariadb/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/part/spring/spring/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -546,7 +744,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2019/06/18/md/part/docker/mariadb/" class="post-title-link" itemprop="url">docker运行mariadb</a>
+            <a href="/2019/06/18/md/part/spring/spring/" class="post-title-link" itemprop="url">spring</a>
         </h1>
 
         <div class="post-meta">
@@ -556,7 +754,7 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2019-06-18 14:27 14:27:10" itemprop="dateCreated datePublished" datetime="2019-06-18T14:27:10+08:00">2019-06-18 14:27</time>
+              <time title="创建时间：2019-06-18 14:35 14:35:10" itemprop="dateCreated datePublished" datetime="2019-06-18T14:35:10+08:00">2019-06-18 14:35</time>
             </span>
 
           <br>
@@ -565,7 +763,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1k</span>
+              <span>651</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -584,99 +782,11 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h4 id="运行容器"><a href="#运行容器" class="headerlink" title="运行容器"></a>运行容器</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">docker run  --privileged --name mariadb   -d --restart=always -e TIMEZONE=Asis/Shanghai -e MYSQL_ROOT_PASSWORD=Admin123# -e SERVER_ID=1 -v /docker/mariadb/dbdata:/var/lib/mysql  -p 3306:3306  mariadb:10.4.5 --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">参数说明:</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">--privileged 赋予容器扩展权限(root)</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">设置--restart=always 参数的时候， 设置了此参数容器退出了会自动重启， 宿主机重启了容器也能自动重启           </span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">-d后台运行 </span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">TIMEZONE 设置时区</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">MYSQL_ROOT_PASSWORD 设置root密码</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">-v  /opt/data/mariadb/dbdata:/var/lib/mysql:/var/lib/mysql  将mariadb里面的目录（/var/lib/mysql）挂载到宿主机里面</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci 设置 utf-8字符集和排序规则</span></span></pre></td></tr></table></figure>
+          <h1 id="Bean注解修饰带参数方法时，参数取值"><a href="#Bean注解修饰带参数方法时，参数取值" class="headerlink" title="@Bean注解修饰带参数方法时，参数取值"></a>@Bean注解修饰带参数方法时，参数取值</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">@Bean</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">	<span class="function"><span class="keyword">public</span> RabbitAdmin <span class="title">rabbitAdmin</span><span class="params">(ConnectionFactory connectionFactory)</span></span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">		System.out.println(String.format(<span class="string">"-----------getRabbitAdmin:%s"</span>, connectionFactory.hashCode()));</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">		<span class="keyword">return</span> <span class="keyword">new</span> RabbitAdmin(connectionFactory);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
 
-
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment">--创建用户</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">USER</span> sonar <span class="keyword">IDENTIFIED</span> <span class="keyword">BY</span> <span class="string">'sonar'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="comment">--授权</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">GRANT</span> <span class="keyword">ALL</span> <span class="keyword">ON</span> *.* <span class="keyword">TO</span> <span class="string">'sonar@localhost'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">GRANT</span> <span class="keyword">ALL</span> <span class="keyword">PRIVILEGES</span> <span class="keyword">ON</span> *.* <span class="keyword">TO</span> <span class="string">'root'</span>@<span class="string">'%'</span><span class="keyword">IDENTIFIED</span> <span class="keyword">BY</span> <span class="string">'Admin123#'</span> <span class="keyword">WITH</span> <span class="keyword">GRANT</span> <span class="keyword">OPTION</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">grant</span> <span class="keyword">all</span> <span class="keyword">privileges</span> <span class="keyword">on</span> *.* <span class="keyword">to</span> sonar <span class="keyword">identified</span> <span class="keyword">by</span> <span class="string">'sonar'</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">FLUSH</span> <span class="keyword">PRIVILEGES</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line"><span class="comment">-- mariadb 开启远程连接权限</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">grant</span> <span class="keyword">all</span> <span class="keyword">privileges</span> <span class="keyword">on</span> *.* <span class="keyword">to</span> root@<span class="string">"%"</span> <span class="keyword">identified</span> <span class="keyword">by</span> <span class="string">"Admin123#"</span>;  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">FLUSH</span> <span class="keyword">PRIVILEGES</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line"><span class="comment">--指定编码创建db</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">DATABASE</span> <span class="keyword">IF</span> <span class="keyword">NOT</span> <span class="keyword">EXISTS</span> sonar <span class="keyword">DEFAULT</span> <span class="keyword">CHARSET</span> utf8mb4 <span class="keyword">COLLATE</span> utf8mb4_general_ci;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line"><span class="comment">--备份数据</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line">mysqldump -uroot -p <span class="comment">--all-database &gt; bk.sql</span></span></pre></td></tr></table></figure>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/part/docker/%E4%BD%BF%E7%94%A8Dockerfile%E5%88%9B%E5%BB%BA%E9%95%9C%E5%83%8F/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="mqiy">
-      <meta itemprop="description" content="永远为下个月离职做好准备">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小灰灰的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/06/18/md/part/docker/%E4%BD%BF%E7%94%A8Dockerfile%E5%88%9B%E5%BB%BA%E9%95%9C%E5%83%8F/" class="post-title-link" itemprop="url">使用Dockerfile创建镜像</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-06-18 14:14 14:14:10" itemprop="dateCreated datePublished" datetime="2019-06-18T14:14:10+08:00">2019-06-18 14:14</time>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>2.1k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>在Dockerfile中用到的命令有</p>
-<h5 id="FROM"><a href="#FROM" class="headerlink" title="FROM"></a>FROM</h5><p>​    FROM指定一个基础镜像， 一般情况下一个可用的 Dockerfile一定是 FROM 为第一个指令。至于image则可以是任何合理存在的image镜像。<br>​    FROM 一定是首个非注释指令 Dockerfile.<br>​    FROM 可以在一个 Dockerfile 中出现多次，以便于创建混合的images。<br>​    如果没有指定 tag ，latest 将会被指定为要使用的基础镜像版本。</p>
-<h5 id="MAINTAINER"><a href="#MAINTAINER" class="headerlink" title="MAINTAINER"></a>MAINTAINER</h5><p>​    这里是用于指定镜像制作者的信息</p>
-<h5 id="RUN"><a href="#RUN" class="headerlink" title="RUN"></a>RUN</h5><p>​    RUN命令将在当前image中执行任意合法命令并提交执行结果。命令执行提交后，就会自动执行Dockerfile中的下一个指令。<br>​    层级 RUN 指令和生成提交是符合Docker核心理念的做法。它允许像版本控制那样，在任意一个点，对image 镜像进行定制化构建。<br>​    RUN 指令缓存不会在下个命令执行时自动失效。比如 RUN apt-get dist-upgrade -y 的缓存就可能被用于下一个指令. –no-cache 标志可以被用于强制取消缓存使用。</p>
-<h5 id="ENV"><a href="#ENV" class="headerlink" title="ENV"></a>ENV</h5><p>​    ENV指令可以用于为docker容器设置环境变量<br>​    ENV设置的环境变量，可以使用 docker inspect命令来查看。同时还可以使用docker run –env <code>key</code>=<code>value</code>来修改环境变量。</p>
-<h5 id="USER"><a href="#USER" class="headerlink" title="USER"></a>USER</h5><p>​    USER 用来切换运行属主身份的。Docker 默认是使用 root，但若不需要，建议切换使用者身分，毕竟 root 权限太大了，使用上有安全的风险。</p>
-<h5 id="WORKDIR"><a href="#WORKDIR" class="headerlink" title="WORKDIR"></a>WORKDIR</h5><p>​    WORKDIR 用来切换工作目录的。Docker 默认的工作目录是/，只有 RUN 能执行 cd 命令切换目录，而且还只作用在当下下的 RUN，也就是说每一个 RUN 都是独立进行的。如果想让其他指令在指定的目录下执行，就得靠 WORKDIR。WORKDIR 动作的目录改变是持久的，不用每个指令前都使用一次 WORKDIR。</p>
-<h5 id="COPY"><a href="#COPY" class="headerlink" title="COPY"></a>COPY</h5><p>​    COPY 将文件从路径 <code>src</code> 复制添加到容器内部路径 <code>dest</code>。<br>​    <code>src</code> 必须是想对于源文件夹的一个文件或目录，也可以是一个远程的url，<code>dest</code> 是目标容器中的绝对路径。<br>​    所有的新文件和文件夹都会创建UID 和 GID 。事实上如果 <code>src</code> 是一个远程文件URL，那么目标文件的权限将会是600。</p>
-<h5 id="ADD"><a href="#ADD" class="headerlink" title="ADD"></a>ADD</h5><p>​    ADD 将文件从路径 <code>src</code> 复制添加到容器内部路径 <code>dest</code>。<br>​    <code>src</code> 必须是想对于源文件夹的一个文件或目录，也可以是一个远程的url。<code>dest</code> 是目标容器中的绝对路径。<br>​    所有的新文件和文件夹都会创建UID 和 GID。事实上如果 <code>src</code> 是一个远程文件URL，那么目标文件的权限将会是600。</p>
-<h5 id="VOLUME"><a href="#VOLUME" class="headerlink" title="VOLUME"></a>VOLUME</h5><p>​    创建一个可以从本地主机或其他容器挂载的挂载点，一般用来存放数据库和需要保持的数据等。</p>
-<h5 id="EXPOSE"><a href="#EXPOSE" class="headerlink" title="EXPOSE"></a>EXPOSE</h5><p>​    EXPOSE 指令指定在docker允许时指定的端口进行转发。</p>
-<h5 id="CMD"><a href="#CMD" class="headerlink" title="CMD"></a>CMD</h5><p>​    Dockerfile.中只能有一个CMD指令。 如果你指定了多个，那么最后个CMD指令是生效的。<br>​    CMD指令的主要作用是提供默认的执行容器。这些默认值可以包括可执行文件，也可以省略可执行文件。<br>​    当你使用shell或exec格式时，  CMD 会自动执行这个命令。</p>
-<h5 id="ONBUILD"><a href="#ONBUILD" class="headerlink" title="ONBUILD"></a>ONBUILD</h5><p>​    ONBUILD 的作用就是让指令延迟執行，延迟到下一个使用 FROM 的 Dockerfile 在建立 image 时执行，只限延迟一次。<br>​    ONBUILD 的使用情景是在建立镜像时取得最新的源码 (搭配 RUN) 与限定系统框架。</p>
-<h5 id="ARG"><a href="#ARG" class="headerlink" title="ARG"></a>ARG</h5><p>​    ARG是Docker1.9 版本才新加入的指令。<br>​    ARG 定义的变量只在建立 image 时有效，建立完成后变量就失效消失</p>
-<h5 id="LABEL"><a href="#LABEL" class="headerlink" title="LABEL"></a>LABEL</h5><p>​    定义一个 image 标签 Owner，并赋值，其值为变量 Name 的值。(LABEL Owner=$Name )</p>
-<h5 id="ENTRYPOINT"><a href="#ENTRYPOINT" class="headerlink" title="ENTRYPOINT"></a>ENTRYPOINT</h5><p>​    是指定 Docker image 运行成 instance (也就是 Docker container) 时，要执行的命令或者文件。<br>​    </p>
-<p>我自己的Dockerfile文件内容如下：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">FROM docker.io/centos</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">MAINTAINER The CentOS Test Images - test</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">RUN mkdir -p /usr/app</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">RUN ls</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">RUN pwd</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">COPY /jdk /usr/app/jdk/</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">ADD tomcat/ /usr/app/tomcat/</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">ADD hadoop/ /usr/app/hadoop/</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">ENV JAVA_HOME /usr/app/jdk</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">ENV PATH $JAVA_HOME/bin:$PATH</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">ADD /soft/jdk /</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">ADD /soft/tomcat /</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">ADD /soft/hadoop /</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> Volumes <span class="keyword">for</span> systemd</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> VOLUME [<span class="string">"/run"</span>, <span class="string">"/tmp"</span>]</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> Environment <span class="keyword">for</span> systemd</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> ENV container=docker</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> For systemd usage this changes to /usr/sbin/init</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> Keeping it as /bin/bash <span class="keyword">for</span> compatibility with previous</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">20</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">CMD [<span class="string">"/bin/bash"</span>]</span></span></pre></td></tr></table></figure>
-
+<p>如上，有参数connectFactory，若spring容器中只有一个ConnectionFactory 类型的bean，则不论参数取名为何都是按类型取bean ConnectionFactory 为参数，若有多个则参数取名必须为多个bean中的一个，否则报错。</p>
+<p>spring：容器<br>核心：依赖注入和控制反转<br>Spring有两个核心接口：BeanFactory和ApplicationContext<br>bean之间不用new object，解耦。由spring容易管理。在需要时，注入<br>@autowire @component @controller @service等注解，通过scan标签扫描。<br>管理bean和bean，模块和模块之间的关系。</p>
+<h3 id="bean生成"><a href="#bean生成" class="headerlink" title="bean生成"></a>bean生成</h3><p>xml配置文件bean -&gt; BeanDefinition对象-&gt;保存在beanFactory的ConcurrentHashMap(通过BeanDefinitionRegistry)</p>
 
       
     </div>
@@ -696,7 +806,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/part/db/mybatis/mybatis/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/part/microServices/eureka/eureka/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -710,7 +820,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2019/06/18/md/part/db/mybatis/mybatis/" class="post-title-link" itemprop="url">mybatis获取主键</a>
+            <a href="/2019/06/18/md/part/microServices/eureka/eureka/" class="post-title-link" itemprop="url">eureka</a>
         </h1>
 
         <div class="post-meta">
@@ -720,7 +830,7 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2019-06-18 14:14 14:14:10" itemprop="dateCreated datePublished" datetime="2019-06-18T14:14:10+08:00">2019-06-18 14:14</time>
+              <time title="创建时间：2019-06-18 14:35 14:35:10" itemprop="dateCreated datePublished" datetime="2019-06-18T14:35:10+08:00">2019-06-18 14:35</time>
             </span>
 
           <br>
@@ -729,7 +839,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>630</span>
+              <span>949</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -748,109 +858,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="Mybatis-在-insert-之后想获取自增的主键-id，但却总是返回1"><a href="#Mybatis-在-insert-之后想获取自增的主键-id，但却总是返回1" class="headerlink" title="Mybatis 在 insert 之后想获取自增的主键 id，但却总是返回1"></a>Mybatis 在 insert 之后想获取自增的主键 id，但却总是返回1</h3><p>想要获取自增主键id，需要通过xx.getId()方法获取，因为在mybatis中指定自增主键id封装到了对象的属性中，所以我们需要在对象中来获取</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">insert</span> <span class="attr">id</span>=<span class="string">"add"</span> <span class="attr">useGeneratedKeys</span>=<span class="string">"true"</span> <span class="attr">keyColumn</span>=<span class="string">"id"</span> <span class="attr">keyProperty</span>=<span class="string">"id"</span> <span class="attr">parameterType</span>=<span class="string">"user"</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    INSERT INTO `user` (`name`,sex,register_ts) VALUES (#&#123;name&#125;,#&#123;sex&#125;,#&#123;registerTs&#125;)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">selectKey</span> <span class="attr">resultType</span>=<span class="string">"int"</span> <span class="attr">keyProperty</span>=<span class="string">"id"</span> <span class="attr">order</span>=<span class="string">"AFTER"</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">        SELECT LAST_INSERT_ID()</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;/<span class="name">selectKey</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;/<span class="name">insert</span>&gt;</span></span></pre></td></tr></table></figure>
+          <p>Eureka Server采用的是Peer to Peer对等通信。这是一种去中心化的架构，无master/slave区分，每一个Peer都是对等的。<br>在这种架构中，节点通过彼此互相注册来提高可用性，每个节点需要添加一个或多个有效的serviceUrl指向其他节点。每个节点都可被视为其他节点的副本。</p>
+<p>Eureka注册中心的作用很大的程度是作用于<code>服务发现</code>和<code>服务心跳</code>，在多个注册中心的时候,依赖于zuul的负载均衡,保证异常的服务停止,正常的服务加载,保证服务的稳定性。</p>
+<p>Eureka能够通过心跳检查、客户端缓存等机制，确保了系统的高可用性。</p>
+<p>默认配置，Eureka Server在90s没有得到客户端的心跳，则注销该实例，同时Eureka 有自我保护机制（防止本身不可用，而干掉可用服务），通过在Eureka Server配置参数，<br>可启动保护机制它的工作原理是：当Eureka Server节点在短时间内丢失过多的客户端时（可能发送了网络故障），那么这个节点将进入自我保护模式，<br>不再注销任何微服务，当网络故障回复后，该节点会自动退出自我保护模式。</p>
+<p>Eureka VS Zookeeper</p>
+<p>在CAP理论中说道，一个分布式系统不可能同时满足C(一致性)、A(可用性)和P(分区容错性)。由于分区容错性在是分布式系统中必须要保证的，因此我们只能在A和C之间进行权衡</p>
+<p>此Zookeeper保证的是CP, 而Eureka则是AP<br>zookeeper：当master节点因为网络故障与其他节点失去联系时，剩余节点会重新进行leader选举。选举leader的时间太长，30 ~ 120s, 且选举期间整个zk集群都是不可用的</p>
+<h4 id="EMERGENCY-EUREKA-MAY-BE-INCORRECTLY-CLAIMING-INSTANCES-ARE-UP-WHEN-THEY’RE-NOT-RENEWALS-ARE-LESSER-THAN-THRESHOLD-AND-HENCE-THE-INSTANCES-ARE-NOT-BEING-EXPIRED-JUST-TO-BE-SAFE"><a href="#EMERGENCY-EUREKA-MAY-BE-INCORRECTLY-CLAIMING-INSTANCES-ARE-UP-WHEN-THEY’RE-NOT-RENEWALS-ARE-LESSER-THAN-THRESHOLD-AND-HENCE-THE-INSTANCES-ARE-NOT-BEING-EXPIRED-JUST-TO-BE-SAFE" class="headerlink" title="EMERGENCY! EUREKA MAY BE INCORRECTLY CLAIMING INSTANCES ARE UP WHEN THEY’RE NOT. RENEWALS ARE LESSER THAN THRESHOLD AND HENCE THE INSTANCES ARE NOT BEING EXPIRED JUST TO BE SAFE."></a>EMERGENCY! EUREKA MAY BE INCORRECTLY CLAIMING INSTANCES ARE UP WHEN THEY’RE NOT. RENEWALS ARE LESSER THAN THRESHOLD AND HENCE THE INSTANCES ARE NOT BEING EXPIRED JUST TO BE SAFE.</h4><figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment">#一般出现此模式时，服务返回错误。即如果真实的服务已经Down掉，</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># 但在注册中心界面服务却一直存在，且显示为UP状态，关掉自我保护模式</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="meta">eureka.server.enable-self-preservation</span> = <span class="string">false</span></span></pre></td></tr></table></figure>
 
-<h3 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h3><ol>
-<li><p>想要获取自增主键id，应该通过对象的getId()方法，而并不是insert的返回值，insert的返回值表示的是影响行数</p>
-</li>
-<li><p>在mapper.xml中：useGeneratedKeys=”true”、keyProperty=”id”，这两个属性的作用：</p>
-</li>
-</ol>
-<pre><code>- 共同决定了sql执行后，会将主键封装到id属性上；
-
-- 自增主键封装到了对象的id属性上了，那么想要获取，直接调用对象的getId()方法就可以了</code></pre>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/interview/interview/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="mqiy">
-      <meta itemprop="description" content="永远为下个月离职做好准备">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小灰灰的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/06/18/md/interview/interview/" class="post-title-link" itemprop="url">面试</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-06-18 14:13 14:13:10" itemprop="dateCreated datePublished" datetime="2019-06-18T14:13:10+08:00">2019-06-18 14:13</time>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>546</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="如何提高求职时的谈判能力？"><a href="#如何提高求职时的谈判能力？" class="headerlink" title="如何提高求职时的谈判能力？"></a>如何提高求职时的谈判能力？</h3><ol>
-<li><p>记住你不是在展示编程技巧或者漂亮的脸蛋，而是在推销某种商业需求（增加收入或降低成本）的解决方案。</p>
-</li>
-<li><p>面试时，要有自信，要平等的对话。你的对手可能也在做同样的事情。你要的是一个互利的录用合同，不要每次对方提出要求，你都说 Yes。</p>
-</li>
-<li><p>雇主可能会问”你的上一份工资是多少”，他们其实在说”给我一个理由，压低你的报酬”。你要想好如何适当地回答这个问题。</p>
-</li>
-<li><p>要讨价还价。这里不仅仅指钱，还指其它你关心的方面。如果你无法要求更高的薪水，那就试着要求更多的假期。</p>
-</li>
-<li><p>在对方决定录用你以后，才开始讨论薪水。因为那时，他们已经在你身上，投入了大量的时间和金钱。这个时候他们说“不行，我们不能成交”会浪费很大的成本，他们会觉得一些小问题已经不值得再纠缠了，比如每年的工资增加几千元。</p>
-</li>
-<li><p>多读书吧。很多人写过谈判方面的书。我喜欢《Getting To Yes | 谈判力》这本书。有一点令人不解的是，就整个职业生涯而言，谈判技巧值得每年花费数千美元，但工程师们却认为针对这学习方面很疯狂，他们宁愿去学习感兴趣技术的细枝末节。</p>
-</li>
-</ol>
-<h3 id="面试时一定要问清楚这4点"><a href="#面试时一定要问清楚这4点" class="headerlink" title="面试时一定要问清楚这4点"></a>面试时一定要问清楚这4点</h3><ul>
-<li>试用期的工资及时间</li>
-<li>考核的转正方式及薪资范围</li>
-<li>工作时间和加班时间计算</li>
-<li>培训和晋升机制</li>
-</ul>
-<p>spring的事务传播机制<br>springmvc参数绑定原理<br>mybatis的分页原理 limit</p>
 
       
     </div>
@@ -870,7 +886,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/other/Reactive%20Programming/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/part/microServices/spring%20cloud/spring%20Cloud%E4%BB%8B%E7%BB%8D/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -884,7 +900,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2019/06/18/md/other/Reactive%20Programming/" class="post-title-link" itemprop="url">响应式编程</a>
+            <a href="/2019/06/18/md/part/microServices/spring%20cloud/spring%20Cloud%E4%BB%8B%E7%BB%8D/" class="post-title-link" itemprop="url">spring cloud各组件介绍</a>
         </h1>
 
         <div class="post-meta">
@@ -894,7 +910,7 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2019-06-18 14:13 14:13:10" itemprop="dateCreated datePublished" datetime="2019-06-18T14:13:10+08:00">2019-06-18 14:13</time>
+              <time title="创建时间：2019-06-18 14:35 14:35:10" itemprop="dateCreated datePublished" datetime="2019-06-18T14:35:10+08:00">2019-06-18 14:35</time>
             </span>
 
           <br>
@@ -903,7 +919,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>160</span>
+              <span>882</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -922,23 +938,25 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h4 id="响应式编程核心特征"><a href="#响应式编程核心特征" class="headerlink" title="响应式编程核心特征"></a>响应式编程核心特征</h4><ul>
-<li>变化传递(propagation of change)</li>
-<li>基于数据流(data stream)</li>
-<li>声明式(declarative)</li>
-</ul>
-<h4 id="响应式流"><a href="#响应式流" class="headerlink" title="响应式流"></a>响应式流</h4><ul>
-<li>异步非阻塞</li>
-<li>流量控制</li>
-</ul>
-<blockquote>
-<p>(ps Java Stream是一种同步API)</p>
-</blockquote>
-<p>阻塞造成的性能损失，我们通常有两种思路来解决</p>
-<ol>
-<li>并行化：使用更多的线程和硬件资源；</li>
-<li>异步化：基于现有的资源来提高执行效率。</li>
-</ol>
+          <h3 id="主要组成如下："><a href="#主要组成如下：" class="headerlink" title="主要组成如下："></a>主要组成如下：</h3><p>　　服务发现——Netflix Eureka                      服务调用——Netflix Feign<br>　　熔断器——Netflix Hystrix                          服务网关——Netflix Zuul<br>　　分布式配置——Spring Cloud Config         消息总线 —— Spring Cloud Bus</p>
+<h3 id="服务发现组件：eureka"><a href="#服务发现组件：eureka" class="headerlink" title="服务发现组件：eureka"></a>服务发现组件：eureka</h3><p>eureka client注册到eureka服务端上，不管服务提供者还是服务消费者都要注册。<br>eureka服务端和客户端有心跳机制，默认30秒。90秒没有收到，就会剔除掉这个客户端。<br>服务消费者客户端上有服务注册表缓存，eureka服务端down之后，也能找到服务提供者。</p>
+<hr>
+<h3 id="客户端负载均衡组件：ribbon"><a href="#客户端负载均衡组件：ribbon" class="headerlink" title="客户端负载均衡组件：ribbon"></a>客户端负载均衡组件：ribbon</h3><p>三种方式：<code>轮循</code>，<code>随机</code>，<code>根据响应时间加权</code><br>默认策略是<code>轮循</code>。<br>可以自定义<br>eureka包含有ribbon的jar包</p>
+<hr>
+<h3 id="feign：命名式的http-client"><a href="#feign：命名式的http-client" class="headerlink" title="feign：命名式的http client"></a>feign：命名式的http client</h3><p>整合了ribbon和eureka    支持springMVC的注解<br>包含feign encoder ，feign decoder，feign contract</p>
+<hr>
+<h3 id="hystrix：断路器和超时机制的组件"><a href="#hystrix：断路器和超时机制的组件" class="headerlink" title="hystrix：断路器和超时机制的组件"></a>hystrix：断路器和超时机制的组件</h3><p>没有保护应用会导致雪崩效应<br>超时机制<br>断路器模式：依赖的服务有大量超时，不去请求，快速失败<br>断路器状态：关闭，打开，断开<br>打开，直接返回状态不可用<br>半开，尝试请求，成功率达标，断路器关闭，反之打开<br>关闭，正常请求</p>
+<p>1.监控，总共请求多少次，有多少失败，失败率达到标准，断路器打开<br>2.断路器状态<br>3.半开时，分流<br>4.自我修复，断路器状态切换</p>
+<p>当对特定服务呼叫，hystrix默认5秒钟失败20次，打开断路器<br>回退机制，fallback，可以由开发人员提供<br>health indicator健康指标<br>hystrix.stream 监控</p>
+<p>turbine 监控整个集群</p>
+<hr>
+<p>zuul 实现比较好的api gateway<br>反向代理所有注册在eureka上的服务</p>
+<p>Sidecar 支持使用其他语言的微服务</p>
+<hr>
+<h3 id="spring-cloud-config统一管理微服务配置的组件"><a href="#spring-cloud-config统一管理微服务配置的组件" class="headerlink" title="spring cloud config统一管理微服务配置的组件"></a>spring cloud config统一管理微服务配置的组件</h3><p>集中管理<br>动态调整<br>不同环境不同配置<br>自动刷新<br>config server<br>连上GIT </p>
+<p>config client<br>获取git上的配置</p>
+<hr>
+<p>spring cloud bus<br>基于mq<br>trace追踪</p>
 
       
     </div>
@@ -958,7 +976,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/other/encrypt/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/part/spring/springboot/endPoint/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -972,7 +990,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2019/06/18/md/other/encrypt/" class="post-title-link" itemprop="url">公钥与私钥</a>
+            <a href="/2019/06/18/md/part/spring/springboot/endPoint/" class="post-title-link" itemprop="url">endPoint</a>
         </h1>
 
         <div class="post-meta">
@@ -982,7 +1000,7 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2019-06-18 14:13 14:13:10" itemprop="dateCreated datePublished" datetime="2019-06-18T14:13:10+08:00">2019-06-18 14:13</time>
+              <time title="创建时间：2019-06-18 14:35 14:35:10" itemprop="dateCreated datePublished" datetime="2019-06-18T14:35:10+08:00">2019-06-18 14:35</time>
             </span>
 
           <br>
@@ -991,7 +1009,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>44</span>
+              <span>119</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -1010,10 +1028,11 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>公钥与私钥使用，在大部分情况下</p>
-<ul>
-<li>我们使用公钥加密、私钥解密，</li>
-<li><code>签名</code>却是使用私钥加密，公钥解密</li>
+          <h3 id="Endpoint"><a href="#Endpoint" class="headerlink" title="Endpoint"></a>Endpoint</h3><p>SpringBoot的Endpoint主要是用来监控应用服务的运行状况，并集成在Mvc中提供查看接口</p>
+<hr>
+<h3 id="内置Endpoint"><a href="#内置Endpoint" class="headerlink" title="内置Endpoint"></a>内置Endpoint</h3><ul>
+<li>HealthEndpoint 监控dist和db的状态</li>
+<li>MetricsEndpoint 监控内存与gc的状况</li>
 </ul>
 
       
@@ -1034,7 +1053,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/20/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/20/">20</a><span class="page-number current">21</span><a class="page-number" href="/page/22/">22</a><a class="extend next" rel="next" href="/page/22/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/20/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/20/">20</a><span class="page-number current">21</span><a class="page-number" href="/page/22/">22</a><span class="space">&hellip;</span><a class="page-number" href="/page/25/">25</a><a class="extend next" rel="next" href="/page/22/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1100,7 +1119,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">219</span>
+          <span class="site-state-item-count">243</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1113,7 +1132,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">52</span>
+        <span class="site-state-item-count">54</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -1147,12 +1166,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">256k</span>
+    <span title="站点总字数">264k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">3:52</span>
+    <span title="站点阅读时长">4:01</span>
 </div>
 
         

@@ -3,8 +3,11 @@
   <entry>
     <title>2020年计划</title>
     <url>/2020/12/31/md/plan/2020/</url>
-    <content><![CDATA[<p>戒掉网络小说</p>
-<p>二周看一本书</p>
+    <content><![CDATA[<h3 id="一-改掉坏习惯"><a href="#一-改掉坏习惯" class="headerlink" title="一 改掉坏习惯"></a>一 改掉坏习惯</h3><ul>
+<li>戒掉网络小说</li>
+<li>二周看一本书</li>
+<li>每周至少三次锻炼</li>
+</ul>
 ]]></content>
       <tags>
         <tag>计划</tag>
@@ -28,63 +31,275 @@
       </tags>
   </entry>
   <entry>
-    <title>MYSQL索引</title>
-    <url>/2020/03/31/md/part/db/mysql/</url>
-    <content><![CDATA[<h3 id="MyISAM-VS-Innodb"><a href="#MyISAM-VS-Innodb" class="headerlink" title="MyISAM VS  Innodb"></a>MyISAM VS  Innodb</h3><table>
-<thead>
-<tr>
-<th>内容</th>
-<th>MyISAM</th>
-<th>Innodb</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>叶子节点存放数据</td>
-<td>数据记录的地址</td>
-<td>完整的数据记录</td>
-</tr>
-<tr>
-<td>索引与数据文件</td>
-<td>合一</td>
-<td>分索引文件，数据文件</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
-<h3 id="索引："><a href="#索引：" class="headerlink" title="索引："></a>索引：</h3><h4 id="创建数量限制："><a href="#创建数量限制：" class="headerlink" title="创建数量限制："></a>创建数量限制：</h4><ul>
-<li>单表不超过5个</li>
-</ul>
-<h4 id="创建组合索引的顺序："><a href="#创建组合索引的顺序：" class="headerlink" title="创建组合索引的顺序："></a>创建组合索引的顺序：</h4><ul>
-<li>区分度最高的放在联合索引的最左侧（区分度=列中不同值的数量/列的总行数）</li>
-<li>尽量把字段长度小的列放在联合索引的最左侧（因为字段长度越小，一页能存储的数据量越大，IO 性能也就越好）</li>
-<li>使用最频繁的列放到联合索引的左侧（这样可以比较少的建立一些索引）</li>
-</ul>
-<h3 id="列"><a href="#列" class="headerlink" title="列"></a>列</h3><ul>
-<li>尽可能把所有列定义为 NOT NULL</li>
-<li>单表记录数量控制在500万以内</li>
-<li>尽量做到冷热数据分离,减小表的宽度</li>
-<li>禁止在数据库中存储图片,文件等大的二进制数据</li>
-<li>不建议使用过长的字段作为主键</li>
-</ul>
-<h3 id="外键"><a href="#外键" class="headerlink" title="外键"></a>外键</h3><p>会影响父表和子表的写操作从而降低性能</p>
+    <title>成年人高情商的20个表现】</title>
+    <url>/2020/05/17/md/other/good-eq/</url>
+    <content><![CDATA[<p>成年人高情商的20个表现】<br>1.见到女同事，多夸漂亮准没错。<br>2.别人自嘲，千万不要附和。<br>3.同事犯错，最好私下里提醒一下。<br>4.办公室同事说话没有人接，你接一下，对方会感激。。<br>5.办公室分享食品，一定是见者有份。<br>6.没有人喜欢被批评，实在要批评，先肯定再批评。<br>7.不在背后说人坏话。<br>8.不要在经济上贪别人便宜。<br>9.同事不要闹得太僵，再不喜欢面上也要过的去。<br>10.不要为无意义的话题争论到伤了和气。。<br>11.请人帮忙，别人没有直接答应就是拒绝。<br>12、不说别人的缺点。没有人喜欢别人说自己的缺点，哪怕他再不堪。<br>13、不会交浅言深，认识几天就什么都说，日久见人心。<br>14、拒绝别人越干脆，越不会得罪人。<br>15、能用钱解决的事，就别用人情来解决，因为人情难还。<br>16、答应别人的事，不管是否能做到，一定有回音。<br>17、不要四处炫耀，真希望你好的人不多。<br>18、不要总是试图证明自己是对的，自己多博学，只会招人反感。</p>
+]]></content>
+      <tags>
+        <tag>other</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>增进情侣之间的感情</title>
+    <url>/2020/05/16/md/other/purchase/increate-yours/</url>
+    <content><![CDATA[<p>这个话题能增进情侣之间的感情</p>
+<p>1聊一聊初次见面的印象<br>2什么时候开始喜欢对方<br>3聊聊双方的爱情观<br>4分享童年往事<br>5制定爱情规则<br>6分享兴趣爱好<br>7聊一聊在一起之后一定要做的事情<br>8聊聊共同的未来规划</p>
+]]></content>
+      <tags>
+        <tag>other</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>为何和女生聊不嗨</title>
+    <url>/2020/05/16/md/other/purchase/chat-not-well/</url>
+    <content><![CDATA[<p>和女人聊天你要抓住她的心里，她最喜欢听的是什么话题，你要勾起他的好感</p>
 <blockquote>
-<p>表与表之间的关联键上建立索引</p>
+<p>如果她不喜欢你，你说什么也是无济于事的，</p>
 </blockquote>
-<h3 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h3><p>原则</p>
+<p>为什么聊不嗨？你该问问自己过得什么生活！<br>一个有趣的人，他必然腹中有货，言之有物，并且与人交流带着思想的火花。<br>这种人聊吃的，天南地北说的出味道，街头巷尾知道哪里可寻觅美食;聊玩的全球各地都留下足迹，所到之处都有故事；聊天下大事，他深刻洞察，见地新颖，谈吐不凡，似乎乾坤历史都在掌握；聊读书，他博览群书，又不读死书，典故诗歌信手拈来；玩乐器，他抱起吉可以唱民谣，坐在身子可以谈月光曲。<br>试问，这样的人能不能聊嗨？<br>那些聊不嗨小男生，要么是性格内向封闭，要么是自卑沉默，归根到底是没有见识，没有阅历，没有什么值得分享的经历。</p>
 <ul>
-<li>最左前缀匹配原则</li>
-<li>索引列不能参与计算</li>
-<li>关联查询表，建议不超过 5 个</li>
+<li>请问，天天吃鸡，空下来就王者农药，能谈什么？</li>
+<li>请问，只看遮天，斗破，玄幻小说，除了说两句狂话，能聊什么？</li>
+<li>请问，一百年不看书，要看只看动漫书，你能聊什么？</li>
+<li>请问，山川原野从来不屑远行，躲在家里能聊什么？</li>
+<li>请问，读书不努力，落榜进工厂，流水线上你能聊什么？</li>
+<li>请问，财经新闻，天下大事不关心，八卦花边津津乐道，你能聊什么？</li>
+<li>请问，闲暇时间不去广结良友，天天和酒肉朋友撸串喝酒，醉生梦死，你能聊什么？</li>
 </ul>
-<h4 id="具体查询"><a href="#具体查询" class="headerlink" title="具体查询"></a>具体查询</h4><ul>
-<li>在明显不会有重复值时使用 UNION ALL 而不是 UNION</li>
-<li>少使用子查询（原因：子查询的结果集无法使用索引）</li>
+<p>和女生聊天，其实是考验一个人的积累和修炼，能够脱单的人必然有优秀之处，单身狗半天掐不出一个屁，那就要好好反省，自己有多偷懒。</p>
+]]></content>
+      <tags>
+        <tag>other</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>午睡</title>
+    <url>/2020/05/16/md/other/day-sleep-and-alone/</url>
+    <content><![CDATA[<p>如果一个人住，<br>千万不要在下午时睡午觉。</p>
+<p>因为，<br>等你一觉睡到六七点，<br>等你一睁开眼，<br>看着朦胧泛黑的天空，<br>看着空荡荡的房间，<br>会有一种被全世界遗弃的感觉。</p>
+<p>孤独，<br>在这一刻，<br>体现的淋漓尽致。</p>
+]]></content>
+      <tags>
+        <tag>other</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>4条撩妹规则</title>
+    <url>/2020/05/16/md/other/purchase/four-advise/</url>
+    <content><![CDATA[<h4 id="1，不要问女生：我能不能牵你的手？"><a href="#1，不要问女生：我能不能牵你的手？" class="headerlink" title="1，不要问女生：我能不能牵你的手？"></a>1，不要问女生：我能不能牵你的手？</h4><p>相信我，你得到的答案肯定是拒绝。<br>女生天生羞涩，让她回答“好啊”，你知道是有多么难说出口吗？<br>如果，男生想牵女生的手，就需要自己判断准确的时机，然后，主动牵起女生的手，这样就好。</p>
+<h4 id="2，跟女生表白，就有被拒绝的风险，所以，一般现在男生都不表白-，这样就没有风险。"><a href="#2，跟女生表白，就有被拒绝的风险，所以，一般现在男生都不表白-，这样就没有风险。" class="headerlink" title="2，跟女生表白，就有被拒绝的风险，所以，一般现在男生都不表白,，这样就没有风险。"></a>2，跟女生表白，就有被拒绝的风险，所以，一般现在男生都不表白,，这样就没有风险。</h4><p>最安全的追女生方式是：当两个人的相处就像男女朋友一样，再给女生一个承诺，这样也是确定关系的一种方式。</p>
+<h4 id="3，女生总喜欢说“随便”，但是，男生如果没有安排好，女生就会不开心。"><a href="#3，女生总喜欢说“随便”，但是，男生如果没有安排好，女生就会不开心。" class="headerlink" title="3，女生总喜欢说“随便”，但是，男生如果没有安排好，女生就会不开心。"></a>3，女生总喜欢说“随便”，但是，男生如果没有安排好，女生就会不开心。</h4><p>男生：明天出去玩，你想吃什么？<br>女生：随便。<br>隔天，男生见到女生，还在纠结去哪里吃饭，女生就肯定会不开心。</p>
+<blockquote>
+<p>女生的“随便”，意思就是你要安排好。</p>
+</blockquote>
+<h5 id="4，在女生有情绪的时候，不要跟女生讲道理，不要想着如何解决问题？"><a href="#4，在女生有情绪的时候，不要跟女生讲道理，不要想着如何解决问题？" class="headerlink" title="4，在女生有情绪的时候，不要跟女生讲道理，不要想着如何解决问题？"></a>4，在女生有情绪的时候，不要跟女生讲道理，不要想着如何解决问题？</h5><p>当一个女生有情绪的时候，你跟她讲任何事情，她都不会听得进去。<br>所以，在女生生气的时候，男生最应该做的是：先安抚好女生的情绪，然后，再去想解决办法。</p>
+]]></content>
+      <tags>
+        <tag>other</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>线程生命周期</title>
+    <url>/2020/05/05/md/jdk/mulThread/thread-cycle/</url>
+    <content><![CDATA[<p><img src="https://www.mqiy.xyz/image/jdk/thread-lifecycle.png" alt="thread-lifecycle.png"></p>
+]]></content>
+      <tags>
+        <tag>多线程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>三次握手</title>
+    <url>/2020/05/05/md/part/web/http/three-shake-hand/</url>
+    <content><![CDATA[<h3 id="三次握手示意图"><a href="#三次握手示意图" class="headerlink" title="三次握手示意图"></a>三次握手示意图</h3><p><img src="https://www.mqiy.xyz/image/http/three-shake-hand.png" alt="three-shake-hand.png"></p>
+<h3 id="两次握手存在的问题"><a href="#两次握手存在的问题" class="headerlink" title="两次握手存在的问题"></a>两次握手存在的问题</h3><p><img src="https://www.mqiy.xyz/image/http/two-shake-hand-problem.png" alt="two-shake-hand-problem.png"></p>
+<h3 id="低三层协议"><a href="#低三层协议" class="headerlink" title="低三层协议"></a>低三层协议</h3><p><img src="https://www.mqiy.xyz/image/http/internet-three-layer.png" alt="internet-three-layer.png"></p>
+<h3 id="http数据包格式"><a href="#http数据包格式" class="headerlink" title="http数据包格式"></a>http数据包格式</h3><p><img src="https://www.mqiy.xyz/image/http/http-data-package.png" alt="http-data-package.png"></p>
+]]></content>
+      <tags>
+        <tag>HTTP</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>反射</title>
+    <url>/2020/04/24/md/jdk/re/</url>
+    <content><![CDATA[<h4 id="反射"><a href="#反射" class="headerlink" title="反射"></a>反射</h4><p>1.什么叫反射</p>
+<p>在运行状态中，对于任意一个类，都能够知道这个类的所有属性和方法；</p>
+<p>对于任意一个对象，都能够调用它的任意一个方法和属性</p>
+<p>这种动态获取信息以及动态调用对象的方法的功能称为java语言的反射机制</p>
+<p>2.反射的优点：</p>
+<p>反射提高了程序的灵活性和扩展性，降低耦合性，提高自适应能力。它允许程序创和控制任何类的对象，无需提前硬编码目标类</p>
+<p>3.反射的缺点</p>
+]]></content>
+      <tags>
+        <tag>jdk</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>三次握手</title>
+    <url>/2020/04/23/md/part/web/http/</url>
+    <content><![CDATA[<p>双方都需要确认对方收到了自己的序列号</p>
+]]></content>
+      <tags>
+        <tag>HTTP</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>线程池</title>
+    <url>/2020/04/23/md/jdk/thread-pool/</url>
+    <content><![CDATA[<p>1、线程池的学与思；<br>2、使用线程池的好与不好；<br>3、为什么阿里开发手册建议自定义线程池；<br>4、自定义线程池的最佳实践；</p>
+<p>线程池类型与应用场景：<br>      1）CachedPool<br>      2）FixedThreadPool<br>      3）ScheduledPool<br>      4）WorkStealingPool<br>      5）ForkJoinPool</p>
+<p>线程池类型</p>
+<p>newCachedThreadPool<br>newFixedThreadPool<br>newSingleThreadExecutor</p>
+<p>newScheduleThreadPool<br>newSingleThreadScheduledExecutor</p>
+<p>Java提供的四种线程池的好处：</p>
+<ul>
+<li>重用存在的线程，减少对象创建、消亡的开销，性能佳。</li>
+<li>可有效控制最大并发线程数，提高系统资源的使用率，同时避免过多资源竞争，避免堵塞。</li>
+<li>提供定时执行、定期执行、单线程、并发数控制等功能。</li>
 </ul>
-<p>or-&gt; in</p>
-<p>优化：<br>充分利用已有索引，尽可能的扩展索引<br>覆盖索引(不需要回表)</p>
+<h3 id="饱和策略"><a href="#饱和策略" class="headerlink" title="饱和策略"></a>饱和策略</h3><p>当你提交任务时，线程队列已经满了，这时会发生什么？<br>ThreadPoolExecutor.AbortPolicy:丢弃任务并抛出RejectedExecutionException异常。注：默认策略！！！！！！<br>ThreadPoolExecutor.DiscardPolicy：也是丢弃任务，但是不抛出异常。<br>ThreadPoolExecutor.DiscardOldestPolicy：丢弃队列最前面的任务，然后重新尝试执行任务（重复此过程）<br>ThreadPoolExecutor.CallerRunsPolicy：由调用线程处理该任务</p>
+]]></content>
+      <tags>
+        <tag>jdk</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>cas</title>
+    <url>/2020/04/23/md/jdk/mulThread/cas/</url>
+    <content><![CDATA[<p>CAS的全称为Compare-And-Swap ,它是一条CPU并发原语。它的功能是判断内存某个位置的值是否为预期值,如果是则更新为新的值,这个过程是原子的。<br>CAS 操作包含三个操作数 —— 内存位置（V）、预期原值（A）和新值(B)。 如果内存位置的值与预期原值相匹配，那么处理器会自动将该位置值更新为新值 。否则，处理器不做任何操作。</p>
+<p>CAS操作都是通过sun包下Unsafe类实现，而Unsafe类中的方法都是native方法，由JVM本地实现</p>
+]]></content>
+      <tags>
+        <tag>多线程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>spring boot</title>
+    <url>/2020/04/23/md/part/spring/springboot/spring-boot/</url>
+    <content><![CDATA[<h4 id="Spring-Boot的核心思想就是约定大于配置"><a href="#Spring-Boot的核心思想就是约定大于配置" class="headerlink" title="Spring Boot的核心思想就是约定大于配置"></a>Spring Boot的核心思想就是约定大于配置</h4><p>其设计目的是用来简化新Spring应用的初始搭建以及开发过程。该框架使用了特定的方式来进行配置，从而使开发人员不再需要定义样板化的配置.它默认配置了很多框架的使用方式</p>
+<h4 id="指定端口号方式"><a href="#指定端口号方式" class="headerlink" title="指定端口号方式"></a>指定端口号方式</h4><p>mvn spring-boot:run -Dspring-boot.run.arguments=–server.port=8085</p>
+]]></content>
+      <tags>
+        <tag>spring boot</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>并发一</title>
+    <url>/2020/04/08/md/interview/my/conrrent/</url>
+    <content><![CDATA[<h3 id="Synchronized和ReentrantLock的区别"><a href="#Synchronized和ReentrantLock的区别" class="headerlink" title="Synchronized和ReentrantLock的区别"></a>Synchronized和ReentrantLock的区别</h3><p>Synchronized和ReentrantLock的区别</p>
+<ul>
+<li>synchronized既可以修饰方法，也可以修饰代码块。 </li>
+<li>等待可中断。synchronized中等待线程不能中断，一直等;ReentrantLock不是</li>
+<li>公平锁。synchronized的锁是非公平锁，ReentrantLock默认情况下也是非公平锁，可以设置为公平锁。</li>
+<li>锁绑定多个条件。ReentrantLock可以同时绑定多个Condition对象，只需多次调用newCondition方法即可;synchronized中，锁对象的wait()和notify()或notifyAll()方法可以实现一个隐含的条件。但如果要和多于一个的条件关联的时候，就不得不额外添加一个锁。</li>
+<li>性能。JDK 1.5中，synchronized还有很大的优化余地。JDK 1.6 中加入了很多针对锁的优化措施，synchronized与ReentrantLock性能方面基本持平。虚拟机在未来的改进中更偏向于原生的synchronized。</li>
+</ul>
+<p>补充：关于synchronized关键字<br>1.Java中每个对象都有一个锁（lock）或者叫做监视器（monitor）。<br>2.ReentrantLock和synchronized持有的对象监视器不同。<br>3.如果某个synchronized方法是static的，那么当线程方法改方法时，它锁的并不是synchronized方法所在的对象，而是synchronized方法所在对象所对应的Class对象，因为Java中不管一个类有多少对象，这些对象会对应唯一一个Class对象。因此当线程分别访问同一个类的两个对象的两个static，synchronized方法时，是顺序执行的，亦即一个线程先执行，完毕之后，另一个才开始执行。<br>4.synchronized 方法是一种粗粒度的并发控制，某一时刻，只能有一个线程执行synchronized方法；synchronized块则是一种细粒度的并发控制。只会将块中代码同步，位于方法内，synchronized块之外的代码是可以被多个线程同时访问的。<br>5.synchronized关键字经过编译之后，会在同步块的前后分别形成monitorenter和monitorexit两个字节码指令，操作对象均为锁的计数器。<br>6.相同点：都是可重入的。可重入值的是同一个线程多次试图获取它所占的锁，请求会成功。当释放的时候，直到冲入次数清零，锁才释放。</p>
+]]></content>
+      <tags>
+        <tag>interview</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>jvm</title>
+    <url>/2020/04/08/md/interview/my/jvm/</url>
+    <content><![CDATA[<h3 id="类加载机制"><a href="#类加载机制" class="headerlink" title="类加载机制"></a>类加载机制</h3><p>JVM的类加载是通过ClassLoader及其子类来完成的</p>
+<p>BootstrapClassLoader(c++编写，加载java核心库 java.*,开发者无法直接获取到启动类加载器的引用)<br>ExtensionClassLoader<br>AppClassLoader（系统类加载器）<br>CustomClassLoader（用户自定义类加载器）</p>
+<p>双亲委托机制：</p>
+<p>自底向上检查类是否已加载；其二，自顶向下尝试加载类。</p>
+<p>作用：</p>
+<ul>
+<li>防止重复加载同一个.class</li>
+<li>保证核心.class不能被篡改</li>
+</ul>
+<p>类的生命周期：<br>加载、连接、初始化、使用、卸载<br>其中连接分为：<br>校验（符合JVM的要求），准备(静态变量，常量赋值)，解析（符号引用-&gt; 直接引用）</p>
+<p>初始化：执行没有static修饰的赋值语句和执行语句，为静态变量赋程序设定的初值</p>
+]]></content>
+      <tags>
+        <tag>interview</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>mq设计</title>
+    <url>/2020/04/07/md/part/mq/mq/</url>
+    <content><![CDATA[<p>主题，发布订阅模式下的消息统一汇集地，不同生产者向topic发送消息，由MQ服务器分发到不同的订阅者，实现消息的广播</p>
+<p><img src="https://www.mqiy.xyz/image/mq/rocketmq-role.png" alt="rocketmq-role.png"></p>
+]]></content>
+      <tags>
+        <tag>mq</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Zuul VS Gateway</title>
+    <url>/2020/04/03/md/part/microServices/gateway/gateway-vs-zuul/</url>
+    <content><![CDATA[<p>Zuul is built on servlet 2.5 (works with 3.x), using blocking APIs. It doesn’t support any long lived connections, like websockets.</p>
+<p>Gateway is built on Spring Framework 5, Project Reactor and Spring Boot 2 using non-blocking APIs. Websockets are supported and it’s a much better developer experience since it’s tightly integrated with Spring.</p>
+<p>difference between gateway and zuul</p>
+]]></content>
+      <tags>
+        <tag>微服务</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>高并发、分布式学习</title>
+    <url>/2020/04/02/md/part/distributed/distributed-use/</url>
+    <content><![CDATA[<p>微服务如何拆分？<br>微服务如何选型、组合与落地？<br>微服务治理场景及方法有哪些？<br>流控、负载、容错级别、链路追踪参数等都有哪些调整策略？<br>需求、性能、数据一致性方面都需要注意那些设计细节？</p>
+<p>1.微服务架构如何拆分<br>2.微服务架构应用场合<br>3.微服务架构与Docker容器化<br>4.微服务架构如何达到99.999%的高可用<br>5.微服务架构性能怎么满足千亿次请求调用<br>6.微服务架构开源框架对比（Spring Boot , Spring Cloud , Dubbo等）</p>
+<h3 id="Dubbo-微服务之负载均衡算法原理分析"><a href="#Dubbo-微服务之负载均衡算法原理分析" class="headerlink" title="Dubbo 微服务之负载均衡算法原理分析"></a>Dubbo 微服务之负载均衡算法原理分析</h3><ol>
+<li>如何理解集群与微服务的关系</li>
+<li>负载均衡有哪些业务场景</li>
+<li>分析几种负载均衡的异同点</li>
+</ol>
+<p>Dubbo微服务之服务治理算法原理分析</p>
+<ol>
+<li>微服务治理运作核心原理</li>
+<li>微服务治理手段与场景</li>
+<li>微服务服务降级、容错、限流工作机制等流程</li>
+</ol>
+<p>深入认识分布式事务</p>
+<p>1、事务的基本概念（ ACID ）<br>2、理解分布式事务的应用场景及面临的问题<br>3、认识分布式事务事务模型<br>4、演示 LCN 框架分布式事务管理<br>5、分布式事务解决方案（ Atomikos、LCN、TCC、MQ ）<br>6、CAP 定理 &amp; Base 理论及柔性事务</p>
+]]></content>
+      <tags>
+        <tag>分布式</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Elasticsearch与Solr的比较</title>
+    <url>/2020/04/02/md/part/mid/es/es-vs-solr/</url>
+    <content><![CDATA[<p><em>Elasticsearch与Solr的比较</em></p>
+<h4 id="Search-Fesh-Index-While-Idle"><a href="#Search-Fesh-Index-While-Idle" class="headerlink" title="Search Fesh Index While Idle"></a>Search Fesh Index While Idle</h4><p>当单纯的对已有数据进行搜索时，Solr更快。</p>
+<h4 id="search-fresh-index-while-indexing"><a href="#search-fresh-index-while-indexing" class="headerlink" title="search_fresh_index_while_indexing"></a>search_fresh_index_while_indexing</h4><ul>
+<li>当实时建立索引时, Solr会产生io阻塞，查询性能较差, Elasticsearch具有明显的优势。</li>
+<li>随着数据量的增加，Solr的搜索效率会变得更低，而Elasticsearch却没有明显的变化。</li>
+</ul>
+<p>综上所述，Solr的架构不适合实时搜索的应用。<br>Solr 是传统搜索应用的有力解决方案，但 Elasticsearch 更适用于新兴的实时搜索应用。</p>
+]]></content>
+      <tags>
+        <tag>es</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>promotion failure VS concurrent mode failure</title>
+    <url>/2020/04/02/md/jdk/jvm/gc-problem/</url>
+    <content><![CDATA[<p>1、promotion failure，是在minor gc过程中，survivor的剩余空间不足以容纳eden及当前在用survivor区间存活对象，只能将容纳不下的对象移到年老代(promotion)，而此时年老代满了无法容纳更多对象，通常伴随full gc，因而导致的promotion failure。这种情况通常需要增加年轻代大小，尽量让新生对象在年轻代的时候尽量清理掉。<br>2、concurrent mode failure，主要是由于cms的无法处理浮动垃圾（Floating Garbage）引起的。这个跟cms的机制有关。cms的并发清理阶段，用户线程还在运行，因此不断有新的垃圾产生，而这些垃圾不在这次清理标记的范畴里头，cms无法再本次gc清除掉，这些就是浮动垃圾。由于这种机制，cms年老代回收的阈值不能太高，否则就容易预留的内存空间很可能不够(因为本次gc同时还有浮动垃圾产生)，从而导致concurrent mode failure发生。可以通过-XX:CMSInitiatingOccupancyFraction的值来调优。</p>
+]]></content>
+      <tags>
+        <tag>jvm</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hashMap</title>
+    <url>/2020/04/01/md/jdk/mulThread/hashmap/</url>
+    <content><![CDATA[<h4 id="HashMap-put过程-jdk8"><a href="#HashMap-put过程-jdk8" class="headerlink" title="HashMap put过程(jdk8)"></a>HashMap put过程(jdk8)</h4><p><img src="https://www.mqiy.xyz/image/jdk/hashMap-put-jdk8.png" alt="hashMap-put-jdk8.png"></p>
+]]></content>
+      <tags>
+        <tag>Collection</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MYSQL索引结构</title>
+    <url>/2020/03/31/md/part/db/mysql-problem/</url>
+    <content><![CDATA[<h3 id="B-树"><a href="#B-树" class="headerlink" title="B+树"></a>B+树</h3><p>叶子结点放数据，树节点只包含索引，减少IO次数<br>叶子节点间有指针相连，遍历叶子就可以区间访问</p>
 ]]></content>
       <tags>
         <tag>db</tag>
@@ -124,23 +339,37 @@
     <url>/2020/03/29/md/jdk/jvm/gc-opt/</url>
     <content><![CDATA[<p>JVM内存调优<br>使用JDK提供的内存查看工具，比如JConsole和Java VisualVM。</p>
 <p> 首先需要注意的是在对JVM内存调优的时候不能只看操作系统级别Java进程所占用的内存，这个数值不能准确的反应堆内存的真实占用情况，因为GC过后这个值是不会变化的，因此内存调优的时候要更多地使用JDK提供的内存查看工具，比如JConsole和Java VisualVM。</p>
-<pre><code>对JVM内存的系统级的调优主要的目的是减少GC的频率和Full GC的次数，过多的GC和Full GC是会占用很多的系统资源（主要是CPU），影响系统的吞吐量。特别要关注Full GC，因为它会对整个堆进行整理，导致Full GC一般由于以下几种情况：</code></pre><p>旧生代空间不足<br>    调优时尽量让对象在新生代GC时被回收、让对象在新生代多存活一段时间和不要创建过大的对象及数组避免直接在旧生代创建对象 </p>
-<p>Pemanet Generation空间不足<br>    增大Perm Gen空间，避免太多静态对象 </p>
-<pre><code>统计得到的GC后晋升到旧生代的平均大小大于旧生代剩余空间
-控制好新生代和旧生代的比例 </code></pre><p>System.gc()被显示调用<br>    垃圾回收不要手动触发，尽量依靠JVM自身的机制 </p>
-<pre><code>调优手段主要是通过控制堆内存的各个部分的比例和GC策略来实现，下面来看看各部分比例不良设置会导致什么后果</code></pre><p>1）新生代设置过小</p>
-<pre><code>一是新生代GC次数非常频繁，增大系统消耗；二是导致大对象直接进入旧生代，占据了旧生代剩余空间，诱发Full GC</code></pre><p>2）新生代设置过大</p>
-<pre><code>一是新生代设置过大会导致旧生代过小（堆总量一定），从而诱发Full GC；二是新生代GC耗时大幅度增加
-
-一般说来新生代占整个堆1/3比较合适</code></pre><p>3）Survivor设置过小</p>
-<pre><code>导致对象从eden直接到达旧生代，降低了在新生代的存活时间</code></pre><p>4）Survivor设置过大</p>
-<pre><code>导致eden过小，增加了GC频率
-
-另外，通过-XX:MaxTenuringThreshold=n来控制新生代存活时间，尽量让对象在新生代被回收
-
-由内存管理和垃圾回收可知新生代和旧生代都有多种GC策略和组合搭配，选择这些策略对于我们这些开发人员是个难题，JVM提供两种较为简单的GC策略的设置方式</code></pre><p>1）吞吐量优先</p>
-<pre><code>JVM以吞吐量为指标，自行选择相应的GC策略及控制新生代与旧生代的大小比例，来达到吞吐量指标。这个值可由-XX:GCTimeRatio=n来设置</code></pre><p>2）暂停时间优先</p>
-<pre><code>JVM以暂停时间为指标，自行选择相应的GC策略及控制新生代与旧生代的大小比例，尽量保证每次GC造成的应用停止时间都在指定的数值范围内完成。这个值可由-XX:MaxGCPauseRatio=n来设置</code></pre>]]></content>
+<p> 对JVM内存的系统级的调优主要的目的是减少GC的频率和Full GC的次数，过多的GC和Full GC是会占用很多的系统资源（主要是CPU），影响系统的吞吐量。特别要关注Full GC，因为它会对整个堆进行整理，</p>
+<h3 id="导致Full-GC一般由于以下几种情况："><a href="#导致Full-GC一般由于以下几种情况：" class="headerlink" title="导致Full GC一般由于以下几种情况："></a>导致Full GC一般由于以下几种情况：</h3><p>旧生代空间不足<br>    调优时尽量让对象在新生代GC时被回收、让对象在新生代多存活一段时间和不要创建过大的对象及数组避免直接在旧生代创建对象 </p>
+<p>Pemanet Generation空间不足<br>增大Perm Gen空间，避免太多静态对象<br>统计得到的GC后晋升到旧生代的平均大小大于旧生代剩余空间<br>控制好新生代和旧生代的比例 </p>
+<p>System.gc()被显示调用<br>    垃圾回收不要手动触发，尽量依靠JVM自身的机制 </p>
+<h3 id="调优手段主要是通过控制堆内存的各个部分的比例和GC策略来实现，下面来看看各部分比例不良设置会导致什么后果"><a href="#调优手段主要是通过控制堆内存的各个部分的比例和GC策略来实现，下面来看看各部分比例不良设置会导致什么后果" class="headerlink" title="调优手段主要是通过控制堆内存的各个部分的比例和GC策略来实现，下面来看看各部分比例不良设置会导致什么后果"></a>调优手段主要是通过控制堆内存的各个部分的比例和GC策略来实现，下面来看看各部分比例不良设置会导致什么后果</h3><p>1）新生代设置过小</p>
+<p>一是新生代GC次数非常频繁，增大系统消耗；二是导致大对象直接进入旧生代，占据了旧生代剩余空间，诱发Full GC</p>
+<p>2）新生代设置过大</p>
+<p>一是新生代设置过大会导致旧生代过小（堆总量一定），从而诱发Full GC；二是新生代GC耗时大幅度增加</p>
+<p>一般说来新生代占整个堆1/3比较合适</p>
+<p>3）Survivor设置过小<br>导致对象从eden直接到达旧生代，降低了在新生代的存活时间</p>
+<p>4）Survivor设置过大<br>导致eden过小，增加了GC频率</p>
+<blockquote>
+<p>通过-XX:MaxTenuringThreshold=n来控制新生代存活时间，尽量让对象在新生代被回收</p>
+</blockquote>
+<h3 id="由内存管理和垃圾回收可知新生代和旧生代都有多种GC策略和组合搭配，选择这些策略对于我们这些开发人员是个难题，JVM提供两种较为简单的GC策略的设置方式"><a href="#由内存管理和垃圾回收可知新生代和旧生代都有多种GC策略和组合搭配，选择这些策略对于我们这些开发人员是个难题，JVM提供两种较为简单的GC策略的设置方式" class="headerlink" title="由内存管理和垃圾回收可知新生代和旧生代都有多种GC策略和组合搭配，选择这些策略对于我们这些开发人员是个难题，JVM提供两种较为简单的GC策略的设置方式"></a>由内存管理和垃圾回收可知新生代和旧生代都有多种GC策略和组合搭配，选择这些策略对于我们这些开发人员是个难题，JVM提供两种较为简单的GC策略的设置方式</h3><ul>
+<li>1）吞吐量优先<br>  JVM以吞吐量为指标，自行选择相应的GC策略及控制新生代与旧生代的大小比例，来达到吞吐量指标。这个值可由-XX:GCTimeRatio=n来设置</li>
+<li>2）暂停时间优先<br>  JVM以暂停时间为指标，自行选择相应的GC策略及控制新生代与旧生代的大小比例，尽量保证每次GC造成的应用停止时间都在指定的数值范围内完成。这个值可由-XX:MaxGCPauseRatio=n来设置</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>jvm</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JVM内存调优</title>
+    <url>/2020/03/29/md/jdk/jvm/jvm-date/</url>
+    <content><![CDATA[<p>HotSpot 1.7中，使用永久代来实现方法区，</p>
+<p>方法区和“PermGen space”又有着本质的区别。前者是JVM的规范，而后者则是JVM规范的一种实现(HotSpot)</p>
+<p>元空间</p>
+<p>方法区存储类信息、常量、静态变量</p>
+]]></content>
       <tags>
         <tag>jvm</tag>
       </tags>
@@ -148,17 +377,35 @@
   <entry>
     <title>equal与hashcode </title>
     <url>/2020/03/28/md/jdk/equal-hashCode/</url>
-    <content><![CDATA[<h3 id="1、equal-和-hashcode-作用和区别？"><a href="#1、equal-和-hashcode-作用和区别？" class="headerlink" title="1、equal 和 hashcode 作用和区别？"></a>1、equal 和 hashcode 作用和区别？</h3><p>答：首先，我们要明白hashCode()和equals（）方法的作用是什么，然后才能说他的区别，说了区别之后在说明使用的时候需要注意的地方，这样的回答思路基本是OK的。<br>一、hahsCode()和equals()的作用是什么？<br>hahsCode()和equals()的作用其实是一样的，目的都是为了再java里面比较两个对象是否相等一致<br>二、hahsCode()和equals()的区别是什么？<br>我们可以从两个角度分别介绍他们的区别：一个是性能，一个是可靠性。他们的主要区别体现在这里<br>1.equals()既然已经实现比较两个对象的功能了，为什么还需要hashCode()呢？<br>因为重写的equals()里一般比较的较为全面和复杂(它会对这个对象内所以成员变量一一进行比较)，这样效率很低，而通过hashCode()对比，则只要生成一个hash值就能比较了，效率很高</p>
-<h3 id="2-那hashCode的效率这么高，为啥还要用equals-呢？"><a href="#2-那hashCode的效率这么高，为啥还要用equals-呢？" class="headerlink" title="2.那hashCode的效率这么高，为啥还要用equals()呢？"></a>2.那hashCode的效率这么高，为啥还要用equals()呢？</h3><p>因为hashCode()并不是完全可靠，非常有可能的情况是，两个完全不同的对象的hash值却是一样的。<br>所以会有下面三个重要的结论：<br>*equals()相等的两个对象他们的hashCode()肯定相等，即equals()绝对可靠。<br>*hahsCode()相同的两个对象，它们的equals()不一定相同。即用hashCode()比较相同的时候不靠谱<br>*hashCode()不同的两个对象，他们的那么equals()肯定不同。即用hashCode()比较不同的时候肯定靠谱</p>
+    <content><![CDATA[<h3 id="一、equal-和-hashcode-作用和区别？"><a href="#一、equal-和-hashcode-作用和区别？" class="headerlink" title="一、equal 和 hashcode 作用和区别？"></a>一、equal 和 hashcode 作用和区别？</h3><p>答：首先，我们要明白hashCode()和equals（）方法的作用是什么，然后才能说他的区别，说了区别之后在说明使用的时候需要注意的地方，这样的回答思路基本是OK的。<br>一、hahsCode()和equals()的作用是什么？<br>hahsCode()和equals()的作用其实是一样的，目的都是为了再java里面比较两个对象是否相等一致<br>二、hahsCode()和equals()的区别是什么？<br>我们可以从两个角度分别介绍他们的区别：一个是性能，一个是可靠性。他们的主要区别体现在这里<br>1.equals()既然已经实现比较两个对象的功能了，为什么还需要hashCode()呢？<br>因为重写的equals()里一般比较的较为全面和复杂(它会对这个对象内所以成员变量一一进行比较)，这样效率很低，而通过hashCode()对比，则只要生成一个hash值就能比较了，效率很高</p>
+<h3 id="二-那hashCode的效率这么高，为啥还要用equals-呢？"><a href="#二-那hashCode的效率这么高，为啥还要用equals-呢？" class="headerlink" title="二.那hashCode的效率这么高，为啥还要用equals()呢？"></a>二.那hashCode的效率这么高，为啥还要用equals()呢？</h3><p>因为hashCode()并不是完全可靠，非常有可能的情况是，两个完全不同的对象的hash值却是一样的。<br>所以会有下面三个重要的结论：</p>
+<ul>
+<li>equals()相等的两个对象他们的hashCode()肯定相等，即equals()绝对可靠。</li>
+<li>hahsCode()相同的两个对象，它们的equals()不一定相同。即用hashCode()比较相同的时候不靠谱</li>
+<li>hashCode()不同的两个对象，他们的那么equals()肯定不同。即用hashCode()比较不同的时候肯定靠谱</li>
+</ul>
 <h3 id="三、hashCode-和equals使用的注意事项"><a href="#三、hashCode-和equals使用的注意事项" class="headerlink" title="三、hashCode()和equals使用的注意事项"></a>三、hashCode()和equals使用的注意事项</h3><ul>
 <li>对于需要大量并且快速的对比的话如果都用equals()去做显然效率太低，所以解决方案为：每当需要比较的时候，首先用hahsCode（）去对比，而如果hashCode()不一样，则两个对象肯定不一样，此时就没有必要再用equals()比较了；如果hashCode()相同，则这两个对象有可能相同，这时候再去比较这两个对象的equals()，如若equals()也相同，则表示这两个真的相同的，这样既大大提高了效率，又保证了准确性。</li>
 <li>事实上，我们平时用的集合框架中的hashMap、hashSet,hashTable 中对key的比较就是使用上述这种方法。</li>
-<li>而Obejct默认的equals和HashCode方法返回的是对象的地址相关信息。所以当我们通过new关键字创建了两个内容相同的对象，虽然他们的内容相同，但是他们在内存中分配的地址不同，导致它们的hashCode()不同，这肯定不是我们想要的。所以当我们要将某个类应用到集合中去的时候，就必须重写equals()方法和hashCode()方法。<h3 id="四、扩展"><a href="#四、扩展" class="headerlink" title="四、扩展"></a>四、扩展</h3></li>
+<li>而Obejct默认的equals和HashCode方法返回的是对象的地址相关信息。所以当我们通过new关键字创建了两个内容相同的对象，虽然他们的内容相同，但是他们在内存中分配的地址不同，导致它们的hashCode()不同，这肯定不是我们想要的。所以当我们要将某个类应用到集合中去的时候，就必须重写equals()方法和hashCode()方法。</li>
 </ul>
-<p>1.阿里巴巴开发规约明确规定：<br>*.只要重写了equals()方法，就必须重写hashCode()方法<br>*.因为Set存储的是不重复的对象，依据hashCode和equals进行判断，所以Set存储的对象必须重写这两个方法<br>*.如果对象定义为Map的健，那么就必须重写equals()方法和hashCode()方法<br>*.String重写了equals()方法和hashCode()方法，所以我们可以非常愉快的时候String对象作为key<br>2.是不是每个对象都要重写这两个方法，到底什么时候重写？<br>*.事实上一般情况下，我们并不需要重写这两个方法，只有该类被应用到集合框架中去的时候，才应该重写。<br>3.我能不能值重写equals()方法，不重写hashCode()方法？<br>*.如果重写了equals()方法，比如说基于对象的内容实现的，而保留了hashCode()的实现不改变，那么最终出现的情况很可能是，两个对象明明是“相等的”，但是hashCode()却不一样，这不是宝宝想要的</p>
+<h3 id="四、扩展"><a href="#四、扩展" class="headerlink" title="四、扩展"></a>四、扩展</h3><p>1.阿里巴巴开发规约明确规定：<br>*.只要重写了equals()方法，就必须重写hashCode()方法<br>*.因为Set存储的是不重复的对象，依据hashCode和equals进行判断，所以Set存储的对象必须重写这两个方法<br>*.如果对象定义为Map的健，那么就必须重写equals()方法和hashCode()方法<br>*.String重写了equals()方法和hashCode()方法，所以我们可以非常愉快的时候String对象作为key<br>2.是不是每个对象都要重写这两个方法，到底什么时候重写？<br>*.事实上一般情况下，我们并不需要重写这两个方法，只有该类被应用到集合框架中去的时候，才应该重写。<br>3.我能不能值重写equals()方法，不重写hashCode()方法？<br>*.如果重写了equals()方法，比如说基于对象的内容实现的，而保留了hashCode()的实现不改变，那么最终出现的情况很可能是，两个对象明明是“相等的”，但是hashCode()却不一样，这不是宝宝想要的</p>
 ]]></content>
       <tags>
         <tag>jdk</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>DNS使用的是TCP协议还是UDP协议简析?</title>
+    <url>/2020/03/28/md/part/web/http/dns-find/</url>
+    <content><![CDATA[<h3 id="DNS使用的是TCP协议还是UDP协议简析"><a href="#DNS使用的是TCP协议还是UDP协议简析" class="headerlink" title="DNS使用的是TCP协议还是UDP协议简析?"></a>DNS使用的是TCP协议还是UDP协议简析?</h3><p>dns同时占用tcp和udp的53端口！<br>区域传复送时使用TCP，主要有一下两点考虑：</p>
+<ul>
+<li>1.辅域名服务器会定时（一般时3小时）向主域名服务器进行查询以便了制解数据是否有变动。如有变动，则会执行一次区域传送，进行数据同步。区域传送将使用TCP而不是UDP，因为数据同步传送的数据量比一个请求和应答的百数据量要多得多。</li>
+<li>2.TCP是一种可靠的连接，保证了数据的准确性。<br>域名解析时使用UDP协议：<br>客户端向DNS服务器查询域名，一般返回的度内容都不超过512字节，用UDP传输即可。不用经过TCP三次握手，这样DNS服务器负载更低，响应更快。虽然从理论上说，问客户端也可以指定向DNS服务器查询的时候使用TCP，但事答实上，很多DNS服务器进行配置的时候，仅支持UDP查询包。</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>HTTP</tag>
       </tags>
   </entry>
   <entry>
@@ -177,18 +424,70 @@
       </tags>
   </entry>
   <entry>
-    <title>粘包与拆包</title>
-    <url>/2020/03/28/md/part/web/http/tcp-key/</url>
-    <content><![CDATA[<p>TCP和UDP的区别，TCP为什么是三次握手，不是两次。<br>答：1、因为tcp是全双工协议，区别在于前者可靠，后者不可靠，以及效率更高。</p>
-]]></content>
-      <tags>
-        <tag>jdk</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>db分库分表</title>
+    <title>Mysql索引</title>
     <url>/2020/03/27/md/part/db/db-index/</url>
-    <content><![CDATA[<p>Mysql如何为表字段添加索引？？？<br>1.添加PRIMARY KEY（主键索引）</p>
+    <content><![CDATA[<h3 id="MyISAM-VS-Innodb"><a href="#MyISAM-VS-Innodb" class="headerlink" title="MyISAM VS  Innodb"></a>MyISAM VS  Innodb</h3><table>
+<thead>
+<tr>
+<th>内容</th>
+<th>MyISAM</th>
+<th>Innodb</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>叶子节点存放数据</td>
+<td>数据记录的地址</td>
+<td>完整的数据记录</td>
+</tr>
+<tr>
+<td>索引与数据文件</td>
+<td>合一</td>
+<td>分索引文件，数据文件</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="索引："><a href="#索引：" class="headerlink" title="索引："></a>索引：</h3><h4 id="创建数量限制："><a href="#创建数量限制：" class="headerlink" title="创建数量限制："></a>创建数量限制：</h4><ul>
+<li>单表不超过5个(浪费空间，更新变慢)</li>
+<li>区分度低的字段，例如性别，不要建索引。(离散度太低，导致扫描行数过多)</li>
+<li>频繁更新的值，不要作为主键或者索引。(——页分裂)</li>
+<li>不建议用无序的值（例如身份证、UUID ）作为索引</li>
+</ul>
+<h4 id="加索引字段"><a href="#加索引字段" class="headerlink" title="加索引字段"></a>加索引字段</h4><ul>
+<li>在用于 where 判断 order 排序和 join 的（on）字段上创建索引</li>
+</ul>
+<h4 id="创建组合索引的顺序："><a href="#创建组合索引的顺序：" class="headerlink" title="创建组合索引的顺序："></a>创建组合索引的顺序：</h4><ul>
+<li>区分度最高的放在联合索引的最左侧（区分度=列中不同值的数量/列的总行数）</li>
+<li>尽量把字段长度小的列放在联合索引的最左侧（因为字段长度越小，一页能存储的数据量越大，IO 性能也就越好）</li>
+<li>使用最频繁的列放到联合索引的左侧（这样可以比较少的建立一些索引）</li>
+</ul>
+<h3 id="列"><a href="#列" class="headerlink" title="列"></a>列</h3><ul>
+<li>尽可能把所有列定义为 NOT NULL</li>
+<li>单表记录数量控制在500万以内</li>
+<li>尽量做到冷热数据分离,减小表的宽度</li>
+<li>禁止在数据库中存储图片,文件等大的二进制数据</li>
+<li>不建议使用过长的字段作为主键</li>
+</ul>
+<h3 id="外键"><a href="#外键" class="headerlink" title="外键"></a>外键</h3><p>会影响父表和子表的写操作从而降低性能</p>
+<blockquote>
+<p>表与表之间的关联键上建立索引</p>
+</blockquote>
+<h4 id="过长的字段，使用前缀匹配方式创建索引"><a href="#过长的字段，使用前缀匹配方式创建索引" class="headerlink" title="过长的字段，使用前缀匹配方式创建索引"></a>过长的字段，使用前缀匹配方式创建索引</h4><h3 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h3><p>原则</p>
+<ul>
+<li>最左前缀匹配原则</li>
+<li>索引列不能参与计算</li>
+<li>关联查询表，建议不超过 5 个</li>
+</ul>
+<h4 id="具体查询"><a href="#具体查询" class="headerlink" title="具体查询"></a>具体查询</h4><ul>
+<li>在明显不会有重复值时使用 UNION ALL 而不是 UNION</li>
+<li>少使用子查询（原因：子查询的结果集无法使用索引）</li>
+</ul>
+<p>or-&gt; in</p>
+<p>优化：<br>充分利用已有索引，尽可能的扩展索引<br>覆盖索引(不需要回表)<br>范围查询放在最右边</p>
+<h3 id="Mysql如何为表字段添加索引？？？"><a href="#Mysql如何为表字段添加索引？？？" class="headerlink" title="Mysql如何为表字段添加索引？？？"></a>Mysql如何为表字段添加索引？？？</h3><p>1.添加PRIMARY KEY（主键索引）</p>
 <p>ALTER TABLE <code>table_name</code> ADD PRIMARY KEY ( <code>column</code> )<br>2.添加UNIQUE(唯一索引)</p>
 <p>ALTER TABLE <code>table_name</code> ADD UNIQUE ( <code>column</code> )<br>3.添加INDEX(普通索引)</p>
 <p>ALTER TABLE <code>table_name</code> ADD INDEX index_name ( <code>column</code> )<br>4.添加FULLTEXT(全文索引)</p>
@@ -200,37 +499,11 @@
       </tags>
   </entry>
   <entry>
-    <title>mysql优化</title>
-    <url>/2020/03/27/md/part/db/db-op/</url>
-    <content><![CDATA[<p>建索引的几大原则</p>
-<p>1、最左前缀匹配原则，非常重要的原则，mysql会一直向右匹配直到遇到范围查询(&gt;、&lt;、between、like)就停止匹配，比如a = 1 and b = 2 and c &gt; 3 and d = 4 如果建立(a,b,c,d)顺序的索引，d是用不到索引的，如果建立(a,b,d,c)的索引则都可以用到，a,b,d的顺序可以任意调整。</p>
-<p>2、=和in可以乱序，比如a = 1 and b = 2 and c = 3 建立(a,b,c)索引可以任意顺序，mysql的查询优化器会帮你优化成索引可以识别的形式</p>
-<p>3、尽量选择区分度高的列作为索引,区分度的公式是count(distinct col)/count(*)，表示字段不重复的比例，比例越大我们扫描的记录数越少，唯一键的区分度是1，而一些状态、性别字段可能在大数据面前区分度就是0，那可能有人会问，这个比例有什么经验值吗？使用场景不同，这个值也很难确定，一般需要join的字段我们都要求是0.1以上，即平均1条扫描10条记录</p>
-<p>4、索引列不能参与计算，保持列“干净”，比如from_unixtime(create_time) = ’2014-05-29’就不能使用到索引，原因很简单，b+树中存的都是数据表中的字段值，但进行检索时，需要把所有元素都应用函数才能比较，显然成本太大。所以语句应该写成create_time = unix_timestamp(’2014-05-29’);</p>
-<p>5、尽量的扩展索引，不要新建索引。比如表中已经有a的索引，现在要加(a,b)的索引，那么只需要修改原来的索引即可。</p>
-<p>使用索引的注意事项？<br>在经常需要搜索的列上，可以加快搜索的速度；<br>在经常使用在WHERE子句中的列上面创建索引，加快条件的判断速度。<br>在经常需要排序的列上创 建索引，因为索引已经排序，这样查询可以利用索引的排序，加快排序查询时间；<br>对于中到大型表索引都是非常有效的，但是特大型表的话维护开销会很大，不适合建索引<br>在经常用在连接的列上，这 些列主要是一些外键，可以加快连接的速度；<br>避免 where 子句中对宇段施加函数，这会造成无法命中索引。<br>在使用InnoDB时使用与业务无关的自增主键作为主键，即使用逻辑主键，而不要使用业务主键。<br>将打算加索引的列设置为 NOT NULL ，否则将导致引擎放弃使用索引而进行全表扫描<br>删除长期未使用的索引，不用的索引的存在会造成不必要的性能损耗 MySQL 5.7 可以通过查询 sys 库的 chema_unused_indexes 视图来查询哪些索引从未被使用<br>在使用 limit offset 查询缓慢时，可以借助索引来提高性能</p>
-]]></content>
-      <tags>
-        <tag>db</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>redis持久化</title>
-    <url>/2020/03/27/md/part/redis/redis-backup/</url>
-    <content><![CDATA[<p>RDB：　 redis 主进程只需要 fork 一个子进程，让子进程执行磁盘 IO 操作来进行 RDB 持久化</p>
-<p>优点：<br>    数据快照，适合做冷备<br>    对性能影响小<br>    回复快<br>缺点：<br>    丢失少量数据<br>    数据量过大，影响服务提供</p>
-<p>AOF：　AOF 机制对每条写入命令作为日志，以 append-only 的模式写入一个日志文件中，在 redis 重启的时候，可以通过回放 AOF 日志中的写入指令来重新构建整个数据集。<br>优点：<br>    数据不丢失（1s fsync）<br>    可读方式记录，适合恢复<br>缺点：<br>    文件大<br>    QPS相对低<br>    发年bug,数据未恢复一致</p>
-]]></content>
-      <tags>
-        <tag>redis</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>kafka中常规问题</title>
     <url>/2020/03/27/md/part/mq/kafka-mq-problem/</url>
     <content><![CDATA[<h4 id="如何保证高可用"><a href="#如何保证高可用" class="headerlink" title="如何保证高可用"></a>如何保证高可用</h4><h4 id="如何保证消息可靠性"><a href="#如何保证消息可靠性" class="headerlink" title="如何保证消息可靠性"></a>如何保证消息可靠性</h4><h4 id="如何保证消息顺序性"><a href="#如何保证消息顺序性" class="headerlink" title="如何保证消息顺序性"></a>如何保证消息顺序性</h4><h4 id="如何避免消息重复消费"><a href="#如何避免消息重复消费" class="headerlink" title="如何避免消息重复消费"></a>如何避免消息重复消费</h4><h4 id="如何解决消息队列的延时以及过期失效问题"><a href="#如何解决消息队列的延时以及过期失效问题" class="headerlink" title="如何解决消息队列的延时以及过期失效问题"></a>如何解决消息队列的延时以及过期失效问题</h4>]]></content>
       <tags>
-        <tag>mq</tag>
+        <tag>kafka</tag>
       </tags>
   </entry>
   <entry>
@@ -271,45 +544,6 @@
       </tags>
   </entry>
   <entry>
-    <title>IK分词使用</title>
-    <url>/2020/03/27/md/part/mid/es/es-example/</url>
-    <content><![CDATA[<p>curl -XPOST <a href="http://192.168.85.143:9200/index/_mapping" target="_blank" rel="noopener">http://192.168.85.143:9200/index/_mapping</a> -H ‘Content-Type:application/json’ -d’<br>{<br>        “properties”: {<br>            “content”: {<br>                “type”: “text”,<br>                “analyzer”: “ik_max_word”,<br>                “search_analyzer”: “ik_smart”<br>            }<br>        }</p>
-<p>}’</p>
-<p>curl -XPOST <a href="http://192.168.85.143:9200/index/_create/1" target="_blank" rel="noopener">http://192.168.85.143:9200/index/_create/1</a> -H ‘Content-Type:application/json’ -d’<br>{“content”:”美国留给伊拉克的是个烂摊子吗”}’</p>
-<p>curl -XPOST <a href="http://192.168.85.143:9200/index/_create/2" target="_blank" rel="noopener">http://192.168.85.143:9200/index/_create/2</a> -H ‘Content-Type:application/json’ -d’<br>{“content”:”公安部：各地校车将享最高路权”}<br>‘<br>curl -XPOST <a href="http://192.168.85.143:9200/index/_create/3" target="_blank" rel="noopener">http://192.168.85.143:9200/index/_create/3</a> -H ‘Content-Type:application/json’ -d’<br>{“content”:”中韩渔警冲突调查：韩警平均每天扣1艘中国渔船”}<br>‘<br>curl -XPOST <a href="http://192.168.85.143:9200/index/_create/4" target="_blank" rel="noopener">http://192.168.85.143:9200/index/_create/4</a> -H ‘Content-Type:application/json’ -d’<br>{“content”:”中国驻洛杉矶领事馆遭亚裔男子枪击 嫌犯已自首”}<br>‘</p>
-<p>‘<br>curl -XPOST <a href="http://192.168.85.143:9200/index/_create/5" target="_blank" rel="noopener">http://192.168.85.143:9200/index/_create/5</a> -H ‘Content-Type:application/json’ -d’<br>{“content”:”我是中国人”}’</p>
-<p>curl -XPOST <a href="http://192.168.85.143:9200/index/_search?pretty" target="_blank" rel="noopener">http://192.168.85.143:9200/index/_search?pretty</a>  -H ‘Content-Type:application/json’ -d’<br>{<br>    “query” : { “match” : { “content” : “中国” }},<br>    “highlight” : {<br>        “pre_tags” : [“<tag1>“, “<tag2>“],<br>        “post_tags” : [“</tag1>“, “</tag2>“],<br>        “fields” : {<br>            “content” : {}<br>        }<br>    }<br>}<br>‘</p>
-<p>curl -XPOST <a href="http://192.168.85.143:9200/index/_search?pretty" target="_blank" rel="noopener">http://192.168.85.143:9200/index/_search?pretty</a>  -H ‘Content-Type:application/json’ -d’<br>{<br>    “query” : { “match” : { “content” : “渔船” }},<br>    “highlight” : {<br>        “pre_tags” : [“<tag1>“, “<tag2>“],<br>        “post_tags” : [“</tag1>“, “</tag2>“],<br>        “fields” : {<br>            “content” : {}<br>        }<br>    }<br>}<br>‘</p>
-]]></content>
-      <tags>
-        <tag>es</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>响应式编程</title>
-    <url>/2020/03/27/md/other/reactor/</url>
-    <content><![CDATA[<p>将输入转化为输出的过程中，处理速度小于输入速度的状态称为Backpressure<br>通常处理这种状态的策略有以下三种：</p>
-<p>Buffer：将输入暂时保存下来</p>
-<p>Drop：丢弃掉输入</p>
-<p>Control：由消费者来控制生产者的速度</p>
-]]></content>
-      <tags>
-        <tag>other</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>工作建议</title>
-    <url>/2020/03/27/md/life/work/</url>
-    <content><![CDATA[<p>1、不要把同事当朋友，要当盟友。<br>2、不要和同事说过多自己的隐私。<br>3、公司组织的比赛一定要参加！一定要参加！一定要参加！<br>4、保持微笑，不要喜怒无常。<br>5、投资比工作重要，不学习理财投资不买房的若干年后都后悔了。<br>6、尽量别得罪人，三十年河东三十年河西<br>7、不要瞧不起你领导，他能是你的领导，一定有你能学习的地方。<br>8、你可以有理想，但是时刻记住你的理想跟别人没啥关系。<br>9、不要相信公司的奉献精神，他们不想要你的时候可快了。<br>10、保持运动，和你是不是忙没有关系。<br>11、偷奸耍滑可以耍了的一时，但是总要露馅。<br>12、什么30天教你做达人，一个月教你赚100万的攻略都是骗人的，厚积薄发才是真理。<br>13、学习是为你自己。人与人之间的差距是逐步拉开的。<br>14、大部分的工作只看结果，不看过程。很多事情努力了没做到和没做是一样的。<br>15、不要浪费时间在不值得浪费的人身上，自己的时间很宝贵。<br>16、学会站在老板或者公司的角度去思考问题。格局很重要。<br>17、在成人的社交礼仪里，没有爽快的答应就是拒绝。<br>18、抱怨只会显得一个人特别无能。<br>19、不要矫情，除非你是牛人，否则的话，永远提醒自己，人才市场有成千上万的人随时可以取代你顶替这个职位。<br>20、加班这种事情不可避免，忍不了就辞职，走不了就忍着！<br>21、无论多么信任的人，别过多袒露你的过去。为你自己好。<br>22、尽量不要向同事借钱，一般人家都会很反感，除非你们成为了真正的朋友。<br>23、不要为了工作牺牲身体和家庭。<br>24、闷不吭声地埋头苦干，并不一定能够给你带来想要的认可。要学会向领导、上司汇报工作进度。<br>25、低调做人，高调做事。<br>26、老板经营的是他的事业，你经营的是你的人生，所以混不得。<br>27、不要放弃每一个可以请教的机会，不论这个人你是否喜欢，职位是否比你高。<br>28、觉得是垃圾社交，不想参加就不要去，好好把握下班后自由的时间，别为了迎合别人浪费自己时间。<br>29、画饼的领导千千万，谁当领导不画饼？但画了饼连糖都不给吃的公司趁早走，不要回头。<br>30、不要夸夸而谈，这只会让人发现你的浅薄，对于不懂得事情，要懂得闭上嘴巴。<br>31、一定要去大城市，那里才有更多出路和机会。<br>32、我们年轻的时候是得吃苦，但是我们不随便吃苦。<br>33、不要太安逸，现在哪里还有什么稳定工作。<br>34、和公司谈钱时，少讲感情，尽量不讲，拿能力和业绩说话。<br>35、不管你这个工作做的有多差，都不要否定自己。你一定要相信，你还是很优秀。</p>
-]]></content>
-      <categories>
-        <category>人生感悟</category>
-      </categories>
-      <tags>
-        <tag>人生</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>zookeeper主要概念</title>
     <url>/2020/03/27/md/part/mid/zookeeper/zk-main/</url>
     <content><![CDATA[<p>5.Zookeeper做了什么？</p>
@@ -321,6 +555,15 @@
 <li>队列管理</li>
 </ul>
 <p> 是CP</p>
+]]></content>
+      <tags>
+        <tag>zookeeper</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>zookeeper主要概念</title>
+    <url>/2020/03/27/md/part/mid/zookeeper/zk-outline/</url>
+    <content><![CDATA[<p>如果zookeeper正在选主，或者Zookeeper集群中半数以上机器不可用，那么将无法获得数据。所以说，Zookeeper不能保证服务可用性</p>
 ]]></content>
       <tags>
         <tag>zookeeper</tag>
@@ -617,13 +860,24 @@
   <entry>
     <title>深入理解mysql的事务隔离级别和底层实现原理</title>
     <url>/2020/03/20/md/part/db/mysql-trac-basic/</url>
-    <content><![CDATA[<p><strong>深入理解mysql的事务隔离级别和底层实现原理</strong></p>
-<h3 id="一、ACID特性"><a href="#一、ACID特性" class="headerlink" title="一、ACID特性"></a>一、ACID特性</h3><p>持久性，我们就不讲了，易懂。1、原子性<br>在同一个事务内部的一组操作必须全部执行成功（或者全部失败）。<br>为了保证事务操作的原子性，必须实现基于日志的REDO/UNDO机制：将所有对数据的更新操作都写入日志，如果一个事务中的一部分操作已经成功，但以后的操作，由于断电/系统崩溃/其它的软硬件错误而无法继续，则通过回溯日志，将已经执行成功的操作撤销，从而达到“全部操作失败”的目的。 最常见的场景是，数据库系统崩溃后重启，此时数据库处于不一致的状态，必须先执行一个crash recovery的过程：读取日志进行REDO（重演将所有已经执行成功但尚未写入到磁盘的操作，保证持久性），再对所有到崩溃时尚未成功提交的事务进行UNDO（撤销所有执行了一部分但尚未提交的操作，保证原子性）。crash recovery结束后，数据库恢复到一致性状态，可以继续被使用。<br>某个应用在执行转帐的数据库操作时，必须在同一个事务内部调用对帐户A和帐户B的操作，才能保证数据的一致性。<br>但是，原子性并不能完全保证一致性。在多个事务并行进行的情况下，即使保证了每一个事务的原子性，仍然可能导致数据不一致的结果。 例如，事务1需要将100元转入帐号A：先读取帐号A的值，然后在这个值上加上100。但是，在这两个操作之间，另一个事务2修改了帐号A的值，为它增加了100元。那么最后的结果应该是A增加了200元。但事实上，事务1最终完成后，帐号A只增加了100元，因为事务2的修改结果被事务1覆盖掉了。<br>简而言之，就是：原子性仅能够保证单个事务的一致性。就像redis一样，也只能保证单操作的线程安全，并不能保证多操作下的线程安全。2、一致性<br>按照我个人的理解，在事务处理的ACID属性中，一致性是最基本的属性，其它的三个属性都为了保证一致性而存在的。<br>我们举个反例来理解下一致性概念。例如：从帐户A转一笔钱到帐户B上，如果帐户A上的钱减少了，而帐户B上的钱却没有增加，那么我们认为此时数据处于不一致的状态。<br>为了保证并发情况下的一致性，引入了隔离性，即保证每一个事务能够看到的数据总是一致的，就好象其它并发事务并不存在一样。3、隔离性<br>数据库四种隔离级别，以及常见的几种读异常，大家应该都是耳熟能详的，但数据库底层是怎么实现隔离性的呢？都采用了哪些技术呢？ 主要有两个技术：MVCC(多版本并发控制)和锁。<br>（1）MVCC(多版本并发控制)<br>多版本并发控制，顾名思义，在并发访问的时候，数据存在版本的概念，可以有效地提升数据库并发能力，常见的数据库如MySQL、MS SQL Server、IBM DB2、Hbase、MongoDB等等都在使用。<br>简单讲，如果没有MVCC，当想要读取的数据被其他事务用排它锁锁住时，只能互斥等待；而这时MVCC可以通过提供历史版本从而实现读取被锁的数据的历史版本，从而避免了互斥等待。<br>InnoDB采用的MVCC实现方式是：在需要时，通过undo日志构造出历史版本。<br>（2）锁</p>
-<p>1) 锁的分类<br>Shared Locks(共享锁/S锁)<br>若事务T对数据对象A加上S锁，则事务T只能读A；其他事务只能再对A加S锁，而不能加X锁，直到T释放A上的S锁。这就保证了其他事务可以读A，但在T释放A上的S锁之前不能对A做任何修改。<br>Exclusive Locks(排它锁/X锁)<br>若事务T对数据对象A加上X锁，则只允许T读取和修改A，其它任何事务都不能再对A加任何类型的锁，直到T释放A上的锁。它防止任何其它事务获取资源上的锁，直到在事务的末尾将资源上的原始锁释放为止。在更新操作(INSERT、UPDATE 或 DELETE)过程中始终应用排它锁。<br>注意：排他锁会阻止其它事务再对其锁定的数据加读或写的锁，但是不加锁的就没办法控制了。<br>Record Locks(行锁)<br>行锁，顾名思义，是加在索引行(对！是索引行！不是数据行！)上的锁。比如select * from user where id=1 and id=10 for update，就会在id=1和id=10的索引行上加Record Lock。<br>Gap Locks(间隙锁)<br>间隙锁，它会锁住两个索引之间的区域。比如select * from user where id&gt;1 and id&lt;10 for update，就会在id为(1,10)的索引区间上加Gap Lock。<br>Next-Key Locks(间隙锁)<br>也叫间隙锁，它是Record Lock + Gap Lock形成的一个闭区间锁。比如select * from user where id&gt;=1 and id&lt;=10 for update，就会在id为[1,10]的索引闭区间上加Next-Key Lock。<br>这样组合起来就有，行级共享锁，表级共享锁，行级排它锁，表级排它锁。<br>2) 什么时候会加锁？<br>在数据库增删改查四种操作中，insert、delete和update都是会加排它锁(Exclusive Locks)的，而select只有显式声明才会加锁:<br>select: 即最常用的查询，是不加任何锁的<br>select … lock in share mode: 会加共享锁(Shared Locks)<br>select … for update: 会加排它锁<br>3) 四种隔离级别<br>不同的隔离级别是在数据可靠性和并发性之间的均衡取舍，隔离级别越高，对应的并发性能越差，数据越安全可靠。<br>READ UNCOMMITTED<br>顾名思义，事务之间可以读取彼此未提交的数据。机智如你会记得，在前文有说到所有写操作都会加排它锁，那还怎么读未提交呢？<br>机智如你，前面我们介绍排它锁的时候，有这种说明： 排他锁会阻止其它事务再对其锁定的数据加读或写的锁，但是对不加锁的读就不起作用了。<br>READ UNCOMMITTED隔离级别下, 读不会加任何锁。而写会加排他锁，并到事务结束之后释放。<br>实例1：<br>查-写：查并没有阻止写，表明查肯定并没有加锁，要不写肯定就阻塞了。写很明显，会加排它锁的。<br>实例2： 写-写：阻塞，表明，写会加排它锁。<br>READ COMMITTED<br>顾名思义，事务之间可以读取彼此已提交的数据。<br>InnoDB在该隔离级别(READ COMMITTED)写数据时，使用排它锁, 读取数据不加锁而是使用了MVCC机制。<br>因此，在读已提交的级别下，都会通过MVCC获取当前数据的最新快照，不加任何锁，也无视任何锁(因为历史数据是构造出来的，身上不可能有锁)。<br>但是，该级别下还是遗留了不可重复读和幻读问题： MVCC版本的生成时机: 是每次select时。这就意味着，如果我们在事务A中执行多次的select，在每次select之间有其他事务更新了我们读取的数据并提交了，那就出现了不可重复读，即：重复读时，会出现数据不一致问题，后面我们会讲解超支现象，就是这种引起的。<br>REPEATABLE READ<br>READ COMMITTED级别不同的是MVCC版本的生成时机，即：一次事务中只在第一次select时生成版本，后续的查询都是在这个版本上进行，从而实现了可重复读。<br>但是因为MVCC的快照只对读操作有效，对写操作无效，举例说明会更清晰一点： 事务A依次执行如下3条sql，事务B在语句1和2之间，插入10条age=20的记录，事务A就幻读了。</p>
-<ol>
-<li>select count(1) from user where age=20;</li>
-</ol>
-<p>– return 0: 当前没有age=20的<br>2. update user set name=test where age=20;<br>– Affects 10 rows: 因为事务B刚写入10条age=20的记录，而写操作是不受MVCC影响，能看到最新数据的，<br>– 所以更新成功，而一旦操作成功，这些被操作的数据就会对当前事务可见<br>3. select count(1) from user where age=20;<br>– return 10: 出现幻读<br>REPEATABLE READ级别，可以防止大部分的幻读，但像前边举例读-写-读的情况，使用不加锁的select依然会幻读。<br>SERIALISABLE<br>大杀器，该级别下，会自动将所有普通select转化为select … lock in share mode执行，即针对同一数据的所有读写都变成互斥的了，可靠性大大提高，并发性大大降低。<br>读-写，写-写均互斥。<br>4）总结：几类读异常<br>读-写-读，引起的异常</p>
+    <content><![CDATA[<h3 id="一、ACID特性"><a href="#一、ACID特性" class="headerlink" title="一、ACID特性"></a>一、ACID特性</h3><p>持久性，我们就不讲了，易懂。</p>
+<h4 id="1、原子性"><a href="#1、原子性" class="headerlink" title="1、原子性"></a>1、原子性</h4><p>在同一个事务内部的一组操作必须全部执行成功（或者全部失败）。<br>为了保证事务操作的原子性，必须实现基于日志的REDO/UNDO机制：将所有对数据的更新操作都写入日志，如果一个事务中的一部分操作已经成功，但以后的操作，由于断电/系统崩溃/其它的软硬件错误而无法继续，则通过回溯日志，将已经执行成功的操作撤销，从而达到“全部操作失败”的目的。 最常见的场景是，数据库系统崩溃后重启，此时数据库处于不一致的状态，必须先执行一个crash recovery的过程：读取日志进行REDO（重演将所有已经执行成功但尚未写入到磁盘的操作，保证持久性），再对所有到崩溃时尚未成功提交的事务进行UNDO（撤销所有执行了一部分但尚未提交的操作，保证原子性）。crash recovery结束后，数据库恢复到一致性状态，可以继续被使用。<br>某个应用在执行转帐的数据库操作时，必须在同一个事务内部调用对帐户A和帐户B的操作，才能保证数据的一致性。<br>但是，原子性并不能完全保证一致性。在多个事务并行进行的情况下，即使保证了每一个事务的原子性，仍然可能导致数据不一致的结果。 例如，事务1需要将100元转入帐号A：先读取帐号A的值，然后在这个值上加上100。但是，在这两个操作之间，另一个事务2修改了帐号A的值，为它增加了100元。那么最后的结果应该是A增加了200元。但事实上，事务1最终完成后，帐号A只增加了100元，因为事务2的修改结果被事务1覆盖掉了。<br>简而言之，就是：原子性仅能够保证单个事务的一致性。就像redis一样，也只能保证单操作的线程安全，并不能保证多操作下的线程安全。</p>
+<h4 id="2、一致性"><a href="#2、一致性" class="headerlink" title="2、一致性"></a>2、一致性</h4><p>按照我个人的理解，在事务处理的ACID属性中，一致性是最基本的属性，其它的三个属性都为了保证一致性而存在的。<br>我们举个反例来理解下一致性概念。例如：从帐户A转一笔钱到帐户B上，如果帐户A上的钱减少了，而帐户B上的钱却没有增加，那么我们认为此时数据处于不一致的状态。<br>为了保证并发情况下的一致性，引入了隔离性，即保证每一个事务能够看到的数据总是一致的，就好象其它并发事务并不存在一样。</p>
+<h4 id="3、隔离性"><a href="#3、隔离性" class="headerlink" title="3、隔离性"></a>3、隔离性</h4><p>数据库四种隔离级别，以及常见的几种读异常，大家应该都是耳熟能详的，但数据库底层是怎么实现隔离性的呢？都采用了哪些技术呢？ 主要有两个技术：MVCC(多版本并发控制)和锁。</p>
+<h4 id="（1）MVCC-多版本并发控制"><a href="#（1）MVCC-多版本并发控制" class="headerlink" title="（1）MVCC(多版本并发控制)"></a>（1）MVCC(多版本并发控制)</h4><p>多版本并发控制，顾名思义，在并发访问的时候，数据存在版本的概念，可以有效地提升数据库并发能力，常见的数据库如MySQL、MS SQL Server、IBM DB2、Hbase、MongoDB等等都在使用。<br>简单讲，如果没有MVCC，当想要读取的数据被其他事务用排它锁锁住时，只能互斥等待；而这时MVCC可以通过提供历史版本从而实现读取被锁的数据的历史版本，从而避免了互斥等待。<br>InnoDB采用的MVCC实现方式是：在需要时，通过undo日志构造出历史版本。</p>
+<h4 id="（2）锁"><a href="#（2）锁" class="headerlink" title="（2）锁"></a>（2）锁</h4><h5 id="1-锁的分类"><a href="#1-锁的分类" class="headerlink" title="1) 锁的分类"></a>1) 锁的分类</h5><ul>
+<li>Shared Locks(共享锁/S锁)<br>若事务T对数据对象A加上S锁，则事务T只能读A；其他事务只能再对A加S锁，而不能加X锁，直到T释放A上的S锁。这就保证了其他事务可以读A，但在T释放A上的S锁之前不能对A做任何修改。</li>
+<li>Exclusive Locks(排它锁/X锁)<br>若事务T对数据对象A加上X锁，则只允许T读取和修改A，其它任何事务都不能再对A加任何类型的锁，直到T释放A上的锁。它防止任何其它事务获取资源上的锁，直到在事务的末尾将资源上的原始锁释放为止。在更新操作(INSERT、UPDATE 或 DELETE)过程中始终应用排它锁。<br>注意：排他锁会阻止其它事务再对其锁定的数据加读或写的锁，但是不加锁的就没办法控制了。</li>
+<li>Record Locks(行锁)<br>行锁，顾名思义，是加在索引行(对！是索引行！不是数据行！)上的锁。比如select * from user where id=1 and id=10 for update，就会在id=1和id=10的索引行上加Record Lock。</li>
+<li>Gap Locks(间隙锁)<br>间隙锁，它会锁住两个索引之间的区域。比如select * from user where id&gt;1 and id&lt;10 for update，就会在id为(1,10)的索引区间上加Gap Lock。</li>
+<li>Next-Key Locks(间隙锁)<br>也叫间隙锁，它是Record Lock + Gap Lock形成的一个闭区间锁。比如select * from user where id&gt;=1 and id&lt;=10 for update，就会在id为[1,10]的索引闭区间上加Next-Key Lock。<br>这样组合起来就有，行级共享锁，表级共享锁，行级排它锁，表级排它锁。</li>
+</ul>
+<h5 id="2-什么时候会加锁？"><a href="#2-什么时候会加锁？" class="headerlink" title="2) 什么时候会加锁？"></a>2) 什么时候会加锁？</h5><p>在数据库增删改查四种操作中，insert、delete和update都是会加排它锁(Exclusive Locks)的，而select只有显式声明才会加锁:<br>select: 即最常用的查询，是不加任何锁的<br>select … lock in share mode: 会加共享锁(Shared Locks)<br>select … for update: 会加排它锁</p>
+<h5 id="3-四种隔离级别"><a href="#3-四种隔离级别" class="headerlink" title="3) 四种隔离级别"></a>3) 四种隔离级别</h5><p>不同的隔离级别是在数据可靠性和并发性之间的均衡取舍，隔离级别越高，对应的并发性能越差，数据越安全可靠。<br><strong>READ UNCOMMITTED</strong><br>顾名思义，事务之间可以读取彼此未提交的数据。机智如你会记得，在前文有说到所有写操作都会加排它锁，那还怎么读未提交呢？<br>机智如你，前面我们介绍排它锁的时候，有这种说明： 排他锁会阻止其它事务再对其锁定的数据加读或写的锁，但是对不加锁的读就不起作用了。<br>READ UNCOMMITTED隔离级别下, 读不会加任何锁。而写会加排他锁，并到事务结束之后释放。<br>实例1：<br>查-写：查并没有阻止写，表明查肯定并没有加锁，要不写肯定就阻塞了。写很明显，会加排它锁的。<br>实例2： 写-写：阻塞，表明，写会加排它锁。<br><strong>READ COMMITTED</strong><br>顾名思义，事务之间可以读取彼此已提交的数据。<br>InnoDB在该隔离级别(READ COMMITTED)写数据时，使用排它锁, 读取数据不加锁而是使用了MVCC机制。<br>因此，在读已提交的级别下，都会通过MVCC获取当前数据的最新快照，不加任何锁，也无视任何锁(因为历史数据是构造出来的，身上不可能有锁)。<br>但是，该级别下还是遗留了不可重复读和幻读问题： MVCC版本的生成时机: 是每次select时。这就意味着，如果我们在事务A中执行多次的select，在每次select之间有其他事务更新了我们读取的数据并提交了，那就出现了不可重复读，即：重复读时，会出现数据不一致问题，后面我们会讲解超支现象，就是这种引起的。<br><strong>REPEATABLE READ</strong><br>READ COMMITTED级别不同的是MVCC版本的生成时机，即：一次事务中只在第一次select时生成版本，后续的查询都是在这个版本上进行，从而实现了可重复读。<br>但是因为MVCC的快照只对读操作有效，对写操作无效，举例说明会更清晰一点： 事务A依次执行如下3条sql，事务B在语句1和2之间，插入10条age=20的记录，事务A就幻读了。</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">1. <span class="keyword">select</span> <span class="keyword">count</span>(<span class="number">1</span>) <span class="keyword">from</span> <span class="keyword">user</span> <span class="keyword">where</span> age=<span class="number">20</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">-- return 0: 当前没有age=20的</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">2. <span class="keyword">update</span> <span class="keyword">user</span> <span class="keyword">set</span> <span class="keyword">name</span>=<span class="keyword">test</span> <span class="keyword">where</span> age=<span class="number">20</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">-- Affects 10 rows: 因为事务B刚写入10条age=20的记录，而写操作是不受MVCC影响，能看到最新数据的，</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">-- 所以更新成功，而一旦操作成功，这些被操作的数据就会对当前事务可见</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">3. <span class="keyword">select</span> <span class="keyword">count</span>(<span class="number">1</span>) <span class="keyword">from</span> <span class="keyword">user</span> <span class="keyword">where</span> age=<span class="number">20</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">-- return 10: 出现幻读</span></span></pre></td></tr></table></figure>
+
+<p>REPEATABLE READ级别，可以防止大部分的幻读，但像前边举例读-写-读的情况，使用不加锁的select依然会幻读。<br><strong>SERIALISABLE</strong><br>大杀器，该级别下，会自动将所有普通select转化为select … lock in share mode执行，即针对同一数据的所有读写都变成互斥的了，可靠性大大提高，并发性大大降低。<br>读-写，写-写均互斥。</p>
+<h5 id="4）总结：几类读异常"><a href="#4）总结：几类读异常" class="headerlink" title="4）总结：几类读异常*"></a>4）总结：几类读异常*</h5><p>读-写-读，引起的异常</p>
 <p>脏读：读取了脏数据(不存在的数据)。 事务一读 事务二写(未提交) 事务二读(脏数据) 事务二回滚</p>
 <p>不可重复读：既可以读取修改的数据，也可以读取新增的数据(幻读)。 事务一读 事务二写(更新已提交) 事务二读(数据不一致，不可重复读)</p>
 <p>幻读：仅可以读取新增的数据，但是无法读取修改的数据； 事务一读 事务二写(新增已提交) 事务二读(数据不一致，幻读)</p>
@@ -702,6 +956,15 @@
       </tags>
   </entry>
   <entry>
+    <title>rocketmq问题</title>
+    <url>/2020/02/29/md/part/mq/rockemq-problem/</url>
+    <content><![CDATA[<p>匿名方法来代替上面的监听类”我也遇到过这个问题花了1个多小时来解决！<br>最终我认为是CLR把这个匿名类当垃圾回收了！</p>
+]]></content>
+      <tags>
+        <tag>RocketMQ</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>kafka主要流程</title>
     <url>/2020/02/27/md/part/mq/kafka-flow/</url>
     <content><![CDATA[<h2 id="Kakfa的设计思想"><a href="#Kakfa的设计思想" class="headerlink" title="Kakfa的设计思想"></a>Kakfa的设计思想</h2><h4 id="Kakfa-Broker-Leader的选举"><a href="#Kakfa-Broker-Leader的选举" class="headerlink" title="Kakfa Broker Leader的选举"></a>Kakfa Broker Leader的选举</h4><p>Kakfa Broker集群受Zookeeper管理。<br>所有的Kafka Broker节点一起去Zookeeper上注册一个临时节点，因为只有一个Kafka Broker会注册成功，其他的都会失败，所以这个成功在Zookeeper上注册临时节点的这个Kafka Broker会成为<code>Kafka Broker Controller</code>，其他的Kafka broker叫<code>Kafka Broker follower</code>。（这个过程叫Controller在ZooKeeper注册Watch）。<br>这个Controller会监听其他的Kafka Broker的所有信息，如果这个kafka broker controller宕机了，在zookeeper上面的那个临时节点就会消失，此时所有的kafka broker又会一起去Zookeeper上注册一个临时节点，因为只有一个Kafka Broker会注册成功，其他的都会失败，所以这个成功在Zookeeper上注册临时节点的这个Kafka Broker会成为Kafka Broker Controller，其他的Kafka broker叫Kafka Broker follower。<br>例如：一旦有一个broker宕机了，这个kafka broker controller会读取该宕机broker上所有的partition在zookeeper上的状态，并选取ISR列表中的一个replica作为partition leader（如果ISR列表中的replica全挂，选一个幸存的replica作为leader; 如果该partition的所有的replica都宕机了，则将新的leader设置为-1，等待恢复，等待ISR中的任一个Replica“活”过来，并且选它作为Leader；或选择第一个“活”过来的Replica（不一定是ISR中的）作为Leader），这个broker宕机的事情，kafka controller也会通知zookeeper，zookeeper就会通知其他的kafka broker。</p>
@@ -753,7 +1016,7 @@
 </ul>
 ]]></content>
       <tags>
-        <tag>mq</tag>
+        <tag>kafka</tag>
       </tags>
   </entry>
   <entry>
@@ -786,7 +1049,7 @@
 <p>调用read函数，文件数据copy到内核缓冲区</p>
 ]]></content>
       <tags>
-        <tag>mq</tag>
+        <tag>kafka</tag>
       </tags>
   </entry>
   <entry>
@@ -808,7 +1071,39 @@
 <p>5.Topic和Message Queue<br>在介绍完以上4个角色以后，还需要重点介绍一下上面提到的Topic和Message Queue；字面意思就是主题，用来区分不同类型的消息，发送和接收消息前都需要先创建Topic，针对Topic来发送和接收消息，为了提高性能和吞吐量，引入了Message Queue，一个Topic可以设置一个或多个Message Queue，有点类似kafka的分区(Partition)，这样消息就可以并行往各个Message Queue发送消息，消费者也可以并行的从多个Message Queue读取消息；</p>
 ]]></content>
       <tags>
-        <tag>mq</tag>
+        <tag>RocketMQ</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>rocketmq 测试</title>
+    <url>/2020/02/27/md/part/mq/rocketmq-test/</url>
+    <content><![CDATA[<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">nohup sh bin/mqnamesrv &amp;</span></pre></td></tr><tr><td class="code"><pre><span class="line">tail -f ~/logs/rocketmqlogs/namesrv.log</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">nohup sh mqbroker -n localhost:9876 -c conf/broker.conf &amp;</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">nohup sh bin/mqbroker -n localhost:9876 -c conf/broker.conf  autoCreateTopicEnable=true  &amp;</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"> tail -f ~/logs/rocketmqlogs/broker.log </span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"> export NAMESRV_ADDR=localhost:9876</span></pre></td></tr><tr><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">关闭rocketmq</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">sh bin/mqshutdown broker</span></pre></td></tr><tr><td class="code"><pre><span class="line">sh bin/mqshutdown namesrv</span></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>RocketMQ</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Broker集群配置</title>
+    <url>/2020/02/27/md/part/mq/rocketmq/</url>
+    <content><![CDATA[<h4 id="单个-Master"><a href="#单个-Master" class="headerlink" title="单个 Master"></a>单个 Master</h4><p>   这种方式风险较大，一旦Broker 重启或者宕机时，会导致整个服务不可用，不建议线上环境使用。</p>
+<h4 id="多-Master-模式-一个集群无-Slave，全是-Master，例如-2-个-Master-或者-3-个-Master"><a href="#多-Master-模式-一个集群无-Slave，全是-Master，例如-2-个-Master-或者-3-个-Master" class="headerlink" title="多 Master 模式   一个集群无 Slave，全是 Master，例如 2 个 Master 或者 3 个 Master"></a>多 Master 模式   一个集群无 Slave，全是 Master，例如 2 个 Master 或者 3 个 Master</h4><ul>
+<li>优点：配置简单，单个Master 宕机或重启维护对应用无影响，在磁盘配置为 RAID10 时，即使机器宕机不可恢复情况下，由与 RAID10 磁盘非常可靠，消息也不会丢（异步刷盘丢失少量消息，同步刷盘一条不丢）。性能最高。</li>
+<li>缺点：单台机器宕机期间，这台机器上未被消费的消息在机器恢复之前不可订阅，消息实时性会受到受到影响。</li>
+</ul>
+<h4 id="多-Master-多-Slave-模式，异步复制"><a href="#多-Master-多-Slave-模式，异步复制" class="headerlink" title="多 Master 多 Slave 模式，异步复制"></a>多 Master 多 Slave 模式，异步复制</h4><h2 id="每个-Master-配置一个-Slave，有多对Master-Slave，HA-采用异步复制方式，主备有短暂消息延迟，毫秒级。"><a href="#每个-Master-配置一个-Slave，有多对Master-Slave，HA-采用异步复制方式，主备有短暂消息延迟，毫秒级。" class="headerlink" title=" 每个 Master 配置一个 Slave，有多对Master-Slave，HA 采用异步复制方式，主备有短暂消息延迟，毫秒级。"></a> 每个 Master 配置一个 Slave，有多对Master-Slave，HA 采用异步复制方式，主备有<code>短暂消息延迟</code>，毫秒级。</h2><p>优点：即使磁盘损坏，消息丢失的非常少，且消息实时性不会受影响，因为 Master 宕机后，消费者仍然可以从 Slave 消费，此过程对应用透明。不需要人工干预。性能同多 Master 模式几乎一样。</p>
+<ul>
+<li>缺点：Master 宕机，磁盘损坏情况，会丢失少量消息。</li>
+</ul>
+<h4 id="多-Master-多-Slave-模式，同步双写"><a href="#多-Master-多-Slave-模式，同步双写" class="headerlink" title="多 Master 多 Slave 模式，同步双写"></a>多 Master 多 Slave 模式，同步双写</h4><p> 每个 Master 配置一个 Slave，有多对Master-Slave，HA 采用同步双写方式，主备都写成功，向应用返回成功。</p>
+<ul>
+<li>优点：数据与服务都无单点，Master宕机情况下，消息无延迟，服务可用性与数据可用性都非常高</li>
+<li>缺点：性能比异步复制模式略低，大约低 10%左右，发送单个消息的 RT 会略高。目前主宕机后，备机不能自动切换为主机，后续会支持自动切换功能。</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>RocketMQ</tag>
       </tags>
   </entry>
   <entry>
@@ -873,19 +1168,6 @@
 ]]></content>
       <tags>
         <tag>spring cloud</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>spring-boot 配置 maven-resources-plugins</title>
-    <url>/2020/01/08/md/part/spring/springboot/spring-boot%E9%85%8D%E7%BD%AE/</url>
-    <content><![CDATA[<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 由于$&#123;&#125;方式会被maven处理。如果你pom继承了spring-boot-starter-parent，</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"># Spring Boot已经将maven-resources-plugins默认的$&#123;&#125;方式改为了@@方式，如@name@</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="attr">spring:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">  <span class="attr">profiles:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="attr">active:</span> <span class="string">@spring.profile.active@</span></span></pre></td></tr></table></figure>
-
-
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">properties</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">spring.profile.active</span>&gt;</span>sit<span class="tag">&lt;/<span class="name">spring.profile.active</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span></pre></td></tr></table></figure>
-
-]]></content>
-      <tags>
-        <tag>spring boot</tag>
       </tags>
   </entry>
   <entry>
@@ -1013,10 +1295,101 @@
 <p>11.不羞涩，放下自己的面子，去处理难堪的事，去见难堪的人，去说难堪的话。</p>
 <p>12.做人有底线，有原则。越界的事坚决不做。</p>
 <p>13.不去看不起别人，也不去谄媚别人。知道打铁还需自身硬，自己就是最强的人脉。</p>
-<p>14不会为了事业牺牲家庭，会平衡生活与工作。</p>
+<p>14.不会为了事业牺牲家庭，会平衡生活与工作。</p>
 ]]></content>
       <tags>
         <tag>思考</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>间歇性踌躇满志，持续性混吃等死</title>
+    <url>/2019/12/13/md/life/current-status/</url>
+    <content><![CDATA[<p>前年，我从130斤减到104斤，这不算苗条的身材来之不易，我十分珍惜。</p>
+<p>朋友问我秘诀，不过是迈开腿管住嘴，合理运动健康饮食。</p>
+<p>可很多人一听要忌口就放弃追问。</p>
+<p>我的同事COCO郑重其事地上门取经，我热情分享运动安排以及饮食菜单。</p>
+<p>一周后，我好意问她餐食如何？她说晚上涮完重庆火锅，现在捧着薯片追剧。至于计划中的运动，早就抛到九霄云外。</p>
+<p>后来，COCO几次试图减肥，都很快以失败告终。</p>
+<p>COCO说：</p>
+<blockquote>
+<p>我就是那种开始劲头十足，后期恒心不足的人。你说要至少坚持一个月，觉得做不到就放弃了。说到底，COCO是患上“间歇性努力症”。</p>
+</blockquote>
+<p>她无法持久地专注于一件有价值却很艰辛的事，而习惯于在突破的零界点前退却。</p>
+<p>古语有云：有志者立长志，无志者常立志。</p>
+<p>如果你也和COCO一样面临同样的难题，你应该好好想想，为什么你会陷入“间歇性踌躇满志，持续性混吃等死”的矛盾循环？</p>
+<p>为什么你总是“间歇性踌躇满志，持续性混吃等死”？<br>为什么你总是“间歇性踌躇满志，持续性混吃等死”？<br>在我看来，患上“间歇性努力症”主要有下面三种原因。</p>
+<h3 id="认知力不足"><a href="#认知力不足" class="headerlink" title="认知力不足"></a>认知力不足</h3><p>最近非常流行一句话：“道理我都懂，就是做不到”。</p>
+<p>听起来很沮丧，那请问，你真是懂这个“道理”吗？</p>
+<p>在我看来，真正的懂只有一个标准，那就是按照特定的“道理”去执行。</p>
+<p>如果你真的懂了，肯定能看到这件事背后的“好处”和可观的“收益”，且这个“好处”和“收益”正是你想要的。当你口口声声称自己懂了，却没有去坚持践行，只能说你根本没弄懂这件事的价值。</p>
+<p>老是间歇性努力的人，根子还是在认知层面上出现偏差。</p>
+<p>你没弄清楚你的行为和你想要结果之间的关联性，也不清楚持续付出的真正作用，更不明白在既定情况下该如何坚持。</p>
+<p>所以你只有不断重复既有地目标，而无法将目标转化为切实的实施步骤。</p>
+<p>哲学家孙正聿教授在《哲学通论》里说：熟知非真知。说的就是这个道理，认知力不足，导致我们陷入常立志的怪圈。</p>
+<h3 id="高估自己的执行力"><a href="#高估自己的执行力" class="headerlink" title="高估自己的执行力"></a>高估自己的执行力</h3><p>后台曾经有粉丝向我请教写作技巧。我便把这几年整理的心得一条条告诉她。</p>
+<p>她听完直摇头：“这么复杂，我没时间学。”</p>
+<p>我说：“想学写作，就不能懒，笔头勤快才能出好文章。”</p>
+<p>她立马点头说：“对啊，我就是太懒了。如果我努力一点点，肯定也能成名。”</p>
+<p>其实，真正阻碍她成长的，并不是懒惰，而恰恰事那种“努力一点点，就能成功”的意识。</p>
+<p>有的人总以为不用多费时间和精力就能改变现状，其实根本不然。</p>
+<p>每一个小小成功的背后都是日积月累的付出，每一口蜜糖都需要用苦涩的汗水去换取。</p>
+<p>而高估自己能力的人，不论做什么，定会陷入一而再再而衰三而竭的困局，最后不了了之。</p>
+<p>因为他们对困难认识不足，对自己又过于自信，一旦遇到挫折，不会反省自己，而只会抱怨不公。</p>
+<p>这不是懒，而是能力配不上梦想。</p>
+<p>如同龟兔赛跑中的兔子，自以为是，跑到半路就躺下来庆功。</p>
+<h3 id="执迷于宏大的目标"><a href="#执迷于宏大的目标" class="headerlink" title="执迷于宏大的目标"></a>执迷于宏大的目标</h3><p>一个过于依赖目标导向的人往往无法持续地付出。</p>
+<p>罗马不是一天造成的，梦想再美好，最重要的仍是切实可行的方法、步骤和阶段成果。</p>
+<p>比如减肥，我们身体堆集的脂肪块不是一蹴而就，我们不可能指望一夜之间塑造完美身材。</p>
+<p>变苗条只是一个大目标，为达这个目标，一定会有几个关键性结果。比如一周瘦2斤，每天有氧运动40分钟无氧运动10分钟，每日肉类控制在100克，三餐谷物不超过400克等。</p>
+<p>文友柳一一曾分享过一个故事。</p>
+<p>作家斯蒂芬·盖斯想要减肥。他最开始按计划做30分钟俯卧撑，发现根本做不到。</p>
+<p>直到有一次，盖斯心想，管它呢，随便做一个也好啊。当做完第一个，他觉得很轻松呀，于是就继续做第二个，第三个。</p>
+<p>2013年一整年，他都只要求自己每天做一个。</p>
+<p>结果是，每次做起来自然不只一个。因为目标被清晰地分解，他能够持续获得满足感。</p>
+<p>所以，只有将目标具体到可见的阶段结果，才有执行的可能。</p>
+<p>如果一味盯着大梦想，不知将阶段性结果作为执行驱动力，那肯定会陷入间歇性努力的怪圈。</p>
+<p>为什么你总是“间歇性踌躇满志，持续性混吃等死”？<br>为什么你总是“间歇性踌躇满志，持续性混吃等死”？<br>明白这些原因，也就不难找到破解的方法。</p>
+<h4 id="首先，别关注你不能改变的事"><a href="#首先，别关注你不能改变的事" class="headerlink" title="首先，别关注你不能改变的事"></a>首先，别关注你不能改变的事</h4><p>古希腊哲学中的斯多葛派（Stoicism）提出过控制二分法：生活中，有些事情是你能够控制的，有些事情你是控制不了的。</p>
+<p>具体到执行面，就是拿出勇气做你能改变的事，将目标从“外部目标”转化为“内部目标”。</p>
+<p>拿减肥来说，不要考虑脂肪这个你无法掌握的累赘，安心做你能控制的事，丢开垃圾食品、放下手中高热量饮品、迈开腿动起来等。再远大的目标，也都从卑微小事开始。</p>
+<p>谁都想干大事，不愿在小事上浪费精力，但我们是没办法做“不知道该怎么做”的事，更没办法让自己为“不能改变的事”奋斗。好比你想登天，就算你在原地跳出大窟窿也不可能真的上天。</p>
+<p>当我们为能控制的小事不断努力，能力会逐渐增长；随着能力增长，我们能改变的事情就越来越多。如此循环，目标就越来越近。</p>
+<h4 id="其次，分解任务，设定阶段奖励"><a href="#其次，分解任务，设定阶段奖励" class="headerlink" title="其次，分解任务，设定阶段奖励"></a>其次，分解任务，设定阶段奖励</h4><p>如果一件事的完成周期过长、过程较复杂，很容易让人望而生畏，分解是必不可少的手段。</p>
+<p>分解的最大好处是很容易将阶段性结果提取出来，还可以减少失败风险。</p>
+<p>先从简单部分着手。我们大脑的特性是，对于简单而明确的指令，愿意立刻去干，且取得进展的成就感让我们更容易坚持。</p>
+<p>OKR工作法则说：任务里困难的部分往往是衡量目标是否实现的关键结果。</p>
+<p>面对复杂模糊的指令，大脑的本能是调头跑掉。</p>
+<p>不幸的是，生活和工作中80%以上的任务都是复杂的。</p>
+<p>既然躲不掉，只能冲上去跟它拼了！在这个阶段，调动我们所有资源和能力，与之死磕。</p>
+<h4 id="同时，给自己设定阶段性奖励：当完成某事，奖励某物。若完成的快感本身不能缓解奋斗的辛苦时，奖励不失为一种好刺激。"><a href="#同时，给自己设定阶段性奖励：当完成某事，奖励某物。若完成的快感本身不能缓解奋斗的辛苦时，奖励不失为一种好刺激。" class="headerlink" title="同时，给自己设定阶段性奖励：当完成某事，奖励某物。若完成的快感本身不能缓解奋斗的辛苦时，奖励不失为一种好刺激。"></a>同时，给自己设定阶段性奖励：当完成某事，奖励某物。若完成的快感本身不能缓解奋斗的辛苦时，奖励不失为一种好刺激。</h4><p>我曾在减肥坚持不下去的时候，用少量的甜点奖励自己。</p>
+<p>开始吃起来心安理得，后来边吃边自责，因为深知掉下来的肉全是汗水，之后锻炼更努力。这个道理之前听别人说过，但自己切身感受才更明白。</p>
+<p>《管理的实践》中说：并不是有了工作才有目标，而是有了目标才能确定工作。</p>
+<p>我们先在目标这个终点插上旗贴，再分解成适合自己的不同路线，一个个攻克它。</p>
+<h4 id="最后，设想未完成的后果"><a href="#最后，设想未完成的后果" class="headerlink" title="最后，设想未完成的后果"></a>最后，设想未完成的后果</h4><p>任何事情都有后果，判定它是否严重取决于个人。</p>
+<p>有些写作平台规定签约作者每个月要过稿2篇，若未完成，下个月复活必须完成4篇。</p>
+<p>正是有这样的压力，才会让作者们去克服懒惰的天性，不断精益求精。</p>
+<p>你想，每次打开电脑，淘宝、微信、抖音，哪个不比写稿轻松？</p>
+<p>可是一到月底，有的人就如热锅上的蚂蚱： 2篇都过不了，写4篇更完不成。</p>
+<p>这般一想，还是努力看书，持续地输出优质内容，才能有机会让读者粉丝看到自己的作品。</p>
+<p>再比如职场的朋友，多想想，如果年底KPI不过关，后果是：晋升机会拱手让人、年底加薪无望、连累上司没脸。所以还是赶紧工作，提升效率吧。</p>
+<p>《自控力》里说：</p>
+<blockquote>
+<p>当我们打算做某件事情或学习某项技能时，我们的本能会拖延、会效率低下。除了在大脑中演绎失败的各种结果，还可以设想身边人的反应。试想，如果你真的失败了，身边人反应只有两种，亲者惋惜、仇者正中下怀。</p>
+</blockquote>
+<p>多想想身边人的反应，让自己先被绑架，你就有动力坚持。</p>
+<p>为什么你总是“间歇性踌躇满志，持续性混吃等死”？<br>为什么你总是“间歇性踌躇满志，持续性混吃等死”？<br>有句笑谈说：人和猪的区别在于，画一个圈给猪，猪会走出那个圈；画一个圈给人，人却将自己永远锁在圈内。</p>
+<p>这样的人，好比井底之蛙。</p>
+<p>青蛙没有走出井底，没见过外面世界，至少快乐满足，它以为世界就如此。</p>
+<p>间歇性努力的人，是曾经跳出井底又跌落原点的青蛙。他知道身后是万丈深渊，也明白前面天空辽阔，就是不愿付出代价挣脱，只好假装没见过外面的世界。</p>
+<p>真的不会后悔吗？当我们老去，最痛苦的事情不是失败，而是我本可以。</p>
+<p>为了让曾经的苦难配得上自己的梦想，我们可以一步一步由易到难给自己设定目标付诸实践。</p>
+<p>理想总是越想越美，生活却是越做越明。</p>
+]]></content>
+      <categories>
+        <category>人生感悟</category>
+      </categories>
+      <tags>
+        <tag>人生</tag>
       </tags>
   </entry>
   <entry>
@@ -1138,23 +1511,6 @@
 ]]></content>
       <tags>
         <tag>算法</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>redis哨兵</title>
-    <url>/2019/12/11/md/part/redis/redis-sential/</url>
-    <content><![CDATA[<h3 id="安装-redis"><a href="#安装-redis" class="headerlink" title="安装 redis"></a>安装 redis</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 下载,编译</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">wget http://download.redis.io/releases/redis-5.0.7.tar.gz</span></pre></td></tr><tr><td class="code"><pre><span class="line">tar xzf redis-5.0.7.tar.gz</span></pre></td></tr><tr><td class="code"><pre><span class="line">cd redis-5.0.7</span></pre></td></tr><tr><td class="code"><pre><span class="line">make</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> </span></span></pre></td></tr><tr><td class="code"><pre><span class="line">cp src/redis-server /usr/bin/</span></pre></td></tr><tr><td class="code"><pre><span class="line">cp src/redis-cli /usr/bin/</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 开启服务器</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">src/redis-server</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 开启客户端</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">src/redis-cli</span></pre></td></tr></table></figure>
-
-
-<h3 id="安装问题"><a href="#安装问题" class="headerlink" title="安装问题"></a>安装问题</h3><h4 id="cc-command-not-found"><a href="#cc-command-not-found" class="headerlink" title="cc: command not found"></a>cc: command not found</h4><p>安装<code>gcc</code></p>
-<p>yum install -y gcc</p>
-<h4 id="jemalloc-jemalloc-h-No-such-file-or-directory"><a href="#jemalloc-jemalloc-h-No-such-file-or-directory" class="headerlink" title="jemalloc/jemalloc.h: No such file or directory"></a>jemalloc/jemalloc.h: No such file or directory</h4><p>原因是jemalloc重载了Linux下的ANSI C的malloc和free函数。解决办法：make时添加参数。</p>
-<blockquote>
-<p>make MALLOC=libc</p>
-</blockquote>
-]]></content>
-      <tags>
-        <tag>redis</tag>
       </tags>
   </entry>
   <entry>
@@ -1486,9 +1842,12 @@
 <p>4.6　Consumer Group<br>每个Consumer属于一个特定的Consumer Group（可为每个Consumer指定group name，若不指定group name则属于默认的group）。</p>
 <p>4.7　Leader<br>每个partition有多个副本，其中有且仅有一个作为Leader，Leader是当前负责数据的读写的partition。</p>
 <p>4.8　Follower<br>Follower跟随Leader，所有写请求都通过Leader路由，数据变更会广播给所有Follower，Follower与Leader保持数据同步。如果Leader失效，则从Follower中选举出一个新的Leader。当Follower与Leader挂掉、卡住或者同步太慢，leader会把这个follower从“in sync replicas”（ISR）列表中删除，重新创建一个Follower。</p>
+<blockquote>
+<p>kafka没有队列概念，与之对应的是分区(partition)</p>
+</blockquote>
 ]]></content>
       <tags>
-        <tag>mq</tag>
+        <tag>kafka</tag>
       </tags>
   </entry>
   <entry>
@@ -1517,7 +1876,7 @@
 <h3 id="2020-03-03-21-19-35-058-WARN-Consumer-clientId-consumer-console-consumer-84017-1-groupId-console-consumer-84017-Error-while-fetching-metadata-with-correlation-id-90-dahui-LEADER-NOT-AVAILABLE-org-apache-kafka-clients-NetworkClient"><a href="#2020-03-03-21-19-35-058-WARN-Consumer-clientId-consumer-console-consumer-84017-1-groupId-console-consumer-84017-Error-while-fetching-metadata-with-correlation-id-90-dahui-LEADER-NOT-AVAILABLE-org-apache-kafka-clients-NetworkClient" class="headerlink" title="[2020-03-03 21:19:35,058] WARN [Consumer clientId=consumer-console-consumer-84017-1, groupId=console-consumer-84017] Error while fetching metadata with correlation id 90 : {dahui=LEADER_NOT_AVAILABLE} (org.apache.kafka.clients.NetworkClient)"></a>[2020-03-03 21:19:35,058] WARN [Consumer clientId=consumer-console-consumer-84017-1, groupId=console-consumer-84017] Error while fetching metadata with correlation id 90 : {dahui=LEADER_NOT_AVAILABLE} (org.apache.kafka.clients.NetworkClient)</h3><p><strong>解决方案</strong> 添加配置</p>
 <figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="attr">listeners</span>=<span class="string">PLAINTEXT://192.168.85.143:9092</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">advertised.listeners</span>=<span class="string">PLAINTEXT://192.168.85.143:9092</span></span></pre></td></tr></table></figure>]]></content>
       <tags>
-        <tag>mq</tag>
+        <tag>kafka</tag>
       </tags>
   </entry>
   <entry>
@@ -1613,7 +1972,7 @@
 </blockquote>
 ]]></content>
       <tags>
-        <tag>只言片语</tag>
+        <tag>人生</tag>
       </tags>
   </entry>
   <entry>
@@ -1686,125 +2045,6 @@
       </categories>
       <tags>
         <tag>develop</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>redis篇特点</title>
-    <url>/2019/11/12/md/part/redis/subject_redis/</url>
-    <content><![CDATA[<h2 id="redis篇"><a href="#redis篇" class="headerlink" title="redis篇"></a>redis篇</h2><ul>
-<li>第一章节 redis介绍</li>
-<li>第二章节 redis集群策略</li>
-<li>第三章节 redis高级特性</li>
-</ul>
-<h2 id="第一章节"><a href="#第一章节" class="headerlink" title="第一章节"></a>第一章节</h2><ul>
-<li>redis介绍<ul>
-<li>1.1 redis 特性</li>
-<li>1.2 redis 数据类型</li>
-<li>1.3 redis 应用场景</li>
-<li>1.4 redis Java客户端</li>
-</ul>
-</li>
-</ul>
-<h2 id="1-1-redis特性"><a href="#1-1-redis特性" class="headerlink" title="1.1 redis特性"></a>1.1 redis特性</h2><ul>
-<li>单核单线程 没有线程安全问题</li>
-<li>性能高 IO多路复用 内存操作</li>
-<li>支持多种持久化方案</li>
-<li>支持弱事务 不支持Rollback</li>
-<li>支持排序 分页 模糊搜索功能</li>
-<li>支持队列订阅发布</li>
-</ul>
-<h2 id="1-2-redis-数据类型"><a href="#1-2-redis-数据类型" class="headerlink" title="1.2 redis 数据类型"></a>1.2 redis 数据类型</h2><ul>
-<li>String类型 字符串类型 4.0版本后增加json的schema</li>
-<li>hash类型 即可支持kkv模型</li>
-<li>List类型 支持排序 支持队列命令 可用于简单的消息队列</li>
-<li>Set类型 数据唯一类型 类似list</li>
-<li>Sorted set类型 类似set/list 可通过score参数来自动排序</li>
-</ul>
-<h2 id="1-3-redis-应用场景"><a href="#1-3-redis-应用场景" class="headerlink" title="1.3 redis 应用场景"></a>1.3 redis 应用场景</h2><ul>
-<li>各类别缓存方案 页面 业务 数据 </li>
-<li>实时计数器 统计仪表 排行榜</li>
-<li>分布式锁 开关</li>
-<li>消息队列 发布/订阅</li>
-<li>session存储</li>
-<li>支持分页 模糊查询</li>
-<li>搜索倒排的缓存</li>
-</ul>
-<h2 id="1-4-redis-Java客户端"><a href="#1-4-redis-Java客户端" class="headerlink" title="1.4 redis Java客户端"></a>1.4 redis Java客户端</h2><ul>
-<li>Redisson 提供分布式相关操作服务 支持延迟队列</li>
-<li>Jedis 多线程下 有线程安全问题 提供了基础操作</li>
-<li>lettuce 高级Redis客户端 线程安全 springboot2.0集成支持</li>
-</ul>
-<h2 id="第二章节"><a href="#第二章节" class="headerlink" title="第二章节"></a>第二章节</h2><ul>
-<li>redis集群策略<ul>
-<li>2.1 redis 主从复制</li>
-<li>2.2 redis 哨兵模式</li>
-<li>2.2 redis 自带的集群模式</li>
-</ul>
-</li>
-</ul>
-<h2 id="2-1-redis-主从复制"><a href="#2-1-redis-主从复制" class="headerlink" title="2.1 redis 主从复制"></a>2.1 redis 主从复制</h2><ul>
-<li>主数据库(master) 从数据库(slave) master可以进行读写操作 当读写操作导致数据变化时会自动将数据同步salve</li>
-<li>机制初始化 slave发送SYNC命令 master接收到SYNC 将保存的快照文件(rdb)和缓存的命令发送给slave</li>
-<li>复制初始化后 master每次接收到的写命令都会同步发送给slave 保证主从数据一致性</li>
-<li>此方法不可保证高可用 或需要手动或程序来做主从切换等 但可以做到读写分离</li>
-</ul>
-<h2 id="2-2-redis-哨兵模式"><a href="#2-2-redis-哨兵模式" class="headerlink" title="2.2 redis 哨兵模式"></a>2.2 redis 哨兵模式</h2><ul>
-<li>基于主从模式下的监控模式 </li>
-<li>哨兵通过发送命令来监控master/slave是否正常运行</li>
-<li>master出现故障时 开启选举自动将slave转化为master</li>
-<li>多哨兵配置的时候 哨兵之间也会自动监控</li>
-<li>多个哨兵可以监控同一个redis</li>
-<li>基于异步复制 脑裂切换有数据丢失情况</li>
-</ul>
-<h2 id="2-3-redis-自带集群模式"><a href="#2-3-redis-自带集群模式" class="headerlink" title="2.3 redis 自带集群模式"></a>2.3 redis 自带集群模式</h2><ul>
-<li>多master节点 通过hash算法落点到具体的slot master节点上</li>
-<li>此集群模式 一般用于三主三从架构</li>
-<li>slave节点用于备份master节点数据 </li>
-<li>当master节点发生故障时 自动切换到slave节点</li>
-<li>基于异步复制 主从切换有数据丢失情况</li>
-</ul>
-<h2 id="第三章节"><a href="#第三章节" class="headerlink" title="第三章节"></a>第三章节</h2><ul>
-<li>redis高级特性<ul>
-<li>3.1 redis 持久化</li>
-<li>3.2 redis 淘汰机制</li>
-<li>3.3 redis 穿透雪崩场景</li>
-</ul>
-</li>
-</ul>
-<h2 id="3-1-redis-持久化"><a href="#3-1-redis-持久化" class="headerlink" title="3.1 redis 持久化"></a>3.1 redis 持久化</h2><ul>
-<li>redis 支持两种持久化方式 rdb aof</li>
-<li>rdb 存储简单 便于备份 启动效率高 性能高 fork子进程来同步</li>
-<li>rdb 同步由于由子进程来同步 无法做到实时同步</li>
-<li>aof 存储为日志操作形式记录 数据安全性高 有同步策略 更高数据完整性跟一致性</li>
-<li>aof 由于同步策略(每秒同步 每修改同步 不同步) aof在运行效率上往往会慢于rdb 且文件大于rdb</li>
-<li>aof文件会越来越大 数据恢复也会越来越慢 所以rdb在恢复数据时的速度比aof要快</li>
-</ul>
-<h2 id="3-2-1-redis-淘汰机制"><a href="#3-2-1-redis-淘汰机制" class="headerlink" title="3.2.1 redis 淘汰机制"></a>3.2.1 redis 淘汰机制</h2><ul>
-<li>内存的淘汰机制的初衷是为了更好地使用内存 用一定的缓存miss来换取内存的使用效率</li>
-<li>在key无限增加的情况下 已无法达到过期失效 超过增加的极端情况</li>
-<li>redis自带对key的几种淘汰机制 当然也可以自己通过程序或lua编写淘汰机制</li>
-<li>设置参数 maxmemory <byte> maxmemory-policy 策略 即可使用淘汰机制</li>
-</ul>
-<h2 id="3-2-2-redis-淘汰机制"><a href="#3-2-2-redis-淘汰机制" class="headerlink" title="3.2.2 redis 淘汰机制"></a>3.2.2 redis 淘汰机制</h2><ul>
-<li>noeviction 当内存使用达到阈值的时候 所有引起申请内存的命令会报错</li>
-<li>allkeys-lru 在主键空间中 优先移除最近未使用的key</li>
-<li>volatile-lru 在设置了过期时间的键空间中 优先移除最近未使用的key</li>
-<li>allkeys-random 在主键空间中 随机移除某个key</li>
-<li>volatile-random 在设置了过期时间的键空间中 随机移除某个key</li>
-<li>volatile-ttl 在设置了过期时间的键空间中 具有更早过期时间的key优先移除</li>
-</ul>
-<h2 id="3-3-redis-穿透雪崩场景"><a href="#3-3-redis-穿透雪崩场景" class="headerlink" title="3.3 redis 穿透雪崩场景"></a>3.3 redis 穿透雪崩场景</h2><ul>
-<li>有超时缓存 可采用双重加锁方式 让一个请求执行数据库操作并加入缓存 后续请求获得缓存 </li>
-<li>尽可能使用无超时缓存 使用redis 自带的淘汰机制</li>
-<li>无超时缓存 使用定时任务 刷新移除缓存</li>
-<li>利用各类缓存 如页面 数据库缓存 二级缓存</li>
-<li>在redis前加进程缓存 消减redis使用率 通过redis watch机制保证缓存一致性</li>
-<li>布隆过滤器 或自定义过滤器 如bitmap hash值占位</li>
-<li>空key情况(避免全局扫) 设置默认值或上级缓存或使用过滤器</li>
-</ul>
-]]></content>
-      <tags>
-        <tag>redis</tag>
       </tags>
   </entry>
   <entry>
@@ -2208,7 +2448,7 @@
         <category>人生感悟</category>
       </categories>
       <tags>
-        <tag>生活</tag>
+        <tag>人生</tag>
       </tags>
   </entry>
   <entry>
@@ -2368,97 +2608,6 @@
 <h3 id="四、让自己沉湎于无意义的对比情绪中"><a href="#四、让自己沉湎于无意义的对比情绪中" class="headerlink" title="四、让自己沉湎于无意义的对比情绪中"></a>四、让自己沉湎于无意义的对比情绪中</h3><p>想必人活在这个世界，最常做的事情就是拿自己和别人比较了。这种比较的生活已经成为一部分人的生活质量、成功程度和富有程度的一个衡量标准了。当然，这个比较包括向上性的和向下性的。也就是我们通常所说的，比上不足，比下有余。当人们向上比较的时候，总是感觉自己不如别人有钱，不如别人过得好。</p>
 <p>可能会生发出一种失落、失望的情绪。而向下比较的时候，又会觉得自己过得比别人好，有一种优越感。殊不知，在光鲜亮丽之下，也会有着不足为外人道的心酸和痛苦，这些你真的有去想过吗？说白了，这种时刻总想比较的心态真的是毫无意义。</p>
 <p>心理学家：你骨子里的自卑，源自于这4个坏习惯<br>因为人们在得到一些的同时，也必将失去一些，这些不在一个水平上的比较有何意思呢。即使是同一个家庭走出来的孩子，也是不相同的，不是吗。所以尽早放下这种比较情节，让自己活得更轻松吧。</p>
-]]></content>
-      <categories>
-        <category>人生感悟</category>
-      </categories>
-      <tags>
-        <tag>人生</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>间歇性踌躇满志，持续性混吃等死</title>
-    <url>/2019/11/06/md/life/current-status/</url>
-    <content><![CDATA[<p>前年，我从130斤减到104斤，这不算苗条的身材来之不易，我十分珍惜。</p>
-<p>朋友问我秘诀，不过是迈开腿管住嘴，合理运动健康饮食。</p>
-<p>可很多人一听要忌口就放弃追问。</p>
-<p>我的同事COCO郑重其事地上门取经，我热情分享运动安排以及饮食菜单。</p>
-<p>一周后，我好意问她餐食如何？她说晚上涮完重庆火锅，现在捧着薯片追剧。至于计划中的运动，早就抛到九霄云外。</p>
-<p>后来，COCO几次试图减肥，都很快以失败告终。</p>
-<p>COCO说：</p>
-<blockquote>
-<p>我就是那种开始劲头十足，后期恒心不足的人。你说要至少坚持一个月，觉得做不到就放弃了。说到底，COCO是患上“间歇性努力症”。</p>
-</blockquote>
-<p>她无法持久地专注于一件有价值却很艰辛的事，而习惯于在突破的零界点前退却。</p>
-<p>古语有云：有志者立长志，无志者常立志。</p>
-<p>如果你也和COCO一样面临同样的难题，你应该好好想想，为什么你会陷入“间歇性踌躇满志，持续性混吃等死”的矛盾循环？</p>
-<p>为什么你总是“间歇性踌躇满志，持续性混吃等死”？<br>为什么你总是“间歇性踌躇满志，持续性混吃等死”？<br>在我看来，患上“间歇性努力症”主要有下面三种原因。</p>
-<h3 id="认知力不足"><a href="#认知力不足" class="headerlink" title="认知力不足"></a>认知力不足</h3><p>最近非常流行一句话：“道理我都懂，就是做不到”。</p>
-<p>听起来很沮丧，那请问，你真是懂这个“道理”吗？</p>
-<p>在我看来，真正的懂只有一个标准，那就是按照特定的“道理”去执行。</p>
-<p>如果你真的懂了，肯定能看到这件事背后的“好处”和可观的“收益”，且这个“好处”和“收益”正是你想要的。当你口口声声称自己懂了，却没有去坚持践行，只能说你根本没弄懂这件事的价值。</p>
-<p>老是间歇性努力的人，根子还是在认知层面上出现偏差。</p>
-<p>你没弄清楚你的行为和你想要结果之间的关联性，也不清楚持续付出的真正作用，更不明白在既定情况下该如何坚持。</p>
-<p>所以你只有不断重复既有地目标，而无法将目标转化为切实的实施步骤。</p>
-<p>哲学家孙正聿教授在《哲学通论》里说：熟知非真知。说的就是这个道理，认知力不足，导致我们陷入常立志的怪圈。</p>
-<h3 id="高估自己的执行力"><a href="#高估自己的执行力" class="headerlink" title="高估自己的执行力"></a>高估自己的执行力</h3><p>后台曾经有粉丝向我请教写作技巧。我便把这几年整理的心得一条条告诉她。</p>
-<p>她听完直摇头：“这么复杂，我没时间学。”</p>
-<p>我说：“想学写作，就不能懒，笔头勤快才能出好文章。”</p>
-<p>她立马点头说：“对啊，我就是太懒了。如果我努力一点点，肯定也能成名。”</p>
-<p>其实，真正阻碍她成长的，并不是懒惰，而恰恰事那种“努力一点点，就能成功”的意识。</p>
-<p>有的人总以为不用多费时间和精力就能改变现状，其实根本不然。</p>
-<p>每一个小小成功的背后都是日积月累的付出，每一口蜜糖都需要用苦涩的汗水去换取。</p>
-<p>而高估自己能力的人，不论做什么，定会陷入一而再再而衰三而竭的困局，最后不了了之。</p>
-<p>因为他们对困难认识不足，对自己又过于自信，一旦遇到挫折，不会反省自己，而只会抱怨不公。</p>
-<p>这不是懒，而是能力配不上梦想。</p>
-<p>如同龟兔赛跑中的兔子，自以为是，跑到半路就躺下来庆功。</p>
-<h3 id="执迷于宏大的目标"><a href="#执迷于宏大的目标" class="headerlink" title="执迷于宏大的目标"></a>执迷于宏大的目标</h3><p>一个过于依赖目标导向的人往往无法持续地付出。</p>
-<p>罗马不是一天造成的，梦想再美好，最重要的仍是切实可行的方法、步骤和阶段成果。</p>
-<p>比如减肥，我们身体堆集的脂肪块不是一蹴而就，我们不可能指望一夜之间塑造完美身材。</p>
-<p>变苗条只是一个大目标，为达这个目标，一定会有几个关键性结果。比如一周瘦2斤，每天有氧运动40分钟无氧运动10分钟，每日肉类控制在100克，三餐谷物不超过400克等。</p>
-<p>文友柳一一曾分享过一个故事。</p>
-<p>作家斯蒂芬·盖斯想要减肥。他最开始按计划做30分钟俯卧撑，发现根本做不到。</p>
-<p>直到有一次，盖斯心想，管它呢，随便做一个也好啊。当做完第一个，他觉得很轻松呀，于是就继续做第二个，第三个。</p>
-<p>2013年一整年，他都只要求自己每天做一个。</p>
-<p>结果是，每次做起来自然不只一个。因为目标被清晰地分解，他能够持续获得满足感。</p>
-<p>所以，只有将目标具体到可见的阶段结果，才有执行的可能。</p>
-<p>如果一味盯着大梦想，不知将阶段性结果作为执行驱动力，那肯定会陷入间歇性努力的怪圈。</p>
-<p>为什么你总是“间歇性踌躇满志，持续性混吃等死”？<br>为什么你总是“间歇性踌躇满志，持续性混吃等死”？<br>明白这些原因，也就不难找到破解的方法。</p>
-<h4 id="首先，别关注你不能改变的事"><a href="#首先，别关注你不能改变的事" class="headerlink" title="首先，别关注你不能改变的事"></a>首先，别关注你不能改变的事</h4><p>古希腊哲学中的斯多葛派（Stoicism）提出过控制二分法：生活中，有些事情是你能够控制的，有些事情你是控制不了的。</p>
-<p>具体到执行面，就是拿出勇气做你能改变的事，将目标从“外部目标”转化为“内部目标”。</p>
-<p>拿减肥来说，不要考虑脂肪这个你无法掌握的累赘，安心做你能控制的事，丢开垃圾食品、放下手中高热量饮品、迈开腿动起来等。再远大的目标，也都从卑微小事开始。</p>
-<p>谁都想干大事，不愿在小事上浪费精力，但我们是没办法做“不知道该怎么做”的事，更没办法让自己为“不能改变的事”奋斗。好比你想登天，就算你在原地跳出大窟窿也不可能真的上天。</p>
-<p>当我们为能控制的小事不断努力，能力会逐渐增长；随着能力增长，我们能改变的事情就越来越多。如此循环，目标就越来越近。</p>
-<h4 id="其次，分解任务，设定阶段奖励"><a href="#其次，分解任务，设定阶段奖励" class="headerlink" title="其次，分解任务，设定阶段奖励"></a>其次，分解任务，设定阶段奖励</h4><p>如果一件事的完成周期过长、过程较复杂，很容易让人望而生畏，分解是必不可少的手段。</p>
-<p>分解的最大好处是很容易将阶段性结果提取出来，还可以减少失败风险。</p>
-<p>先从简单部分着手。我们大脑的特性是，对于简单而明确的指令，愿意立刻去干，且取得进展的成就感让我们更容易坚持。</p>
-<p>OKR工作法则说：任务里困难的部分往往是衡量目标是否实现的关键结果。</p>
-<p>面对复杂模糊的指令，大脑的本能是调头跑掉。</p>
-<p>不幸的是，生活和工作中80%以上的任务都是复杂的。</p>
-<p>既然躲不掉，只能冲上去跟它拼了！在这个阶段，调动我们所有资源和能力，与之死磕。</p>
-<h4 id="同时，给自己设定阶段性奖励：当完成某事，奖励某物。若完成的快感本身不能缓解奋斗的辛苦时，奖励不失为一种好刺激。"><a href="#同时，给自己设定阶段性奖励：当完成某事，奖励某物。若完成的快感本身不能缓解奋斗的辛苦时，奖励不失为一种好刺激。" class="headerlink" title="同时，给自己设定阶段性奖励：当完成某事，奖励某物。若完成的快感本身不能缓解奋斗的辛苦时，奖励不失为一种好刺激。"></a>同时，给自己设定阶段性奖励：当完成某事，奖励某物。若完成的快感本身不能缓解奋斗的辛苦时，奖励不失为一种好刺激。</h4><p>我曾在减肥坚持不下去的时候，用少量的甜点奖励自己。</p>
-<p>开始吃起来心安理得，后来边吃边自责，因为深知掉下来的肉全是汗水，之后锻炼更努力。这个道理之前听别人说过，但自己切身感受才更明白。</p>
-<p>《管理的实践》中说：并不是有了工作才有目标，而是有了目标才能确定工作。</p>
-<p>我们先在目标这个终点插上旗贴，再分解成适合自己的不同路线，一个个攻克它。</p>
-<h4 id="最后，设想未完成的后果"><a href="#最后，设想未完成的后果" class="headerlink" title="最后，设想未完成的后果"></a>最后，设想未完成的后果</h4><p>任何事情都有后果，判定它是否严重取决于个人。</p>
-<p>有些写作平台规定签约作者每个月要过稿2篇，若未完成，下个月复活必须完成4篇。</p>
-<p>正是有这样的压力，才会让作者们去克服懒惰的天性，不断精益求精。</p>
-<p>你想，每次打开电脑，淘宝、微信、抖音，哪个不比写稿轻松？</p>
-<p>可是一到月底，有的人就如热锅上的蚂蚱： 2篇都过不了，写4篇更完不成。</p>
-<p>这般一想，还是努力看书，持续地输出优质内容，才能有机会让读者粉丝看到自己的作品。</p>
-<p>再比如职场的朋友，多想想，如果年底KPI不过关，后果是：晋升机会拱手让人、年底加薪无望、连累上司没脸。所以还是赶紧工作，提升效率吧。</p>
-<p>《自控力》里说：</p>
-<blockquote>
-<p>当我们打算做某件事情或学习某项技能时，我们的本能会拖延、会效率低下。除了在大脑中演绎失败的各种结果，还可以设想身边人的反应。试想，如果你真的失败了，身边人反应只有两种，亲者惋惜、仇者正中下怀。</p>
-</blockquote>
-<p>多想想身边人的反应，让自己先被绑架，你就有动力坚持。</p>
-<p>为什么你总是“间歇性踌躇满志，持续性混吃等死”？<br>为什么你总是“间歇性踌躇满志，持续性混吃等死”？<br>有句笑谈说：人和猪的区别在于，画一个圈给猪，猪会走出那个圈；画一个圈给人，人却将自己永远锁在圈内。</p>
-<p>这样的人，好比井底之蛙。</p>
-<p>青蛙没有走出井底，没见过外面世界，至少快乐满足，它以为世界就如此。</p>
-<p>间歇性努力的人，是曾经跳出井底又跌落原点的青蛙。他知道身后是万丈深渊，也明白前面天空辽阔，就是不愿付出代价挣脱，只好假装没见过外面的世界。</p>
-<p>真的不会后悔吗？当我们老去，最痛苦的事情不是失败，而是我本可以。</p>
-<p>为了让曾经的苦难配得上自己的梦想，我们可以一步一步由易到难给自己设定目标付诸实践。</p>
-<p>理想总是越想越美，生活却是越做越明。</p>
 ]]></content>
       <categories>
         <category>人生感悟</category>
@@ -3648,6 +3797,190 @@
       </tags>
   </entry>
   <entry>
+    <title>redis持久化</title>
+    <url>/2019/10/30/md/part/redis/redis-backup/</url>
+    <content><![CDATA[<p>RDB：　 redis 主进程只需要 fork 一个子进程，让子进程执行磁盘 IO 操作来进行 RDB 持久化</p>
+<p>优点：<br>    数据快照，适合做冷备<br>    对性能影响小<br>    回复快<br>缺点：<br>    丢失少量数据<br>    数据量过大，影响服务提供</p>
+<p>AOF：　AOF 机制对每条写入命令作为日志，以 append-only 的模式写入一个日志文件中，在 redis 重启的时候，可以通过回放 AOF 日志中的写入指令来重新构建整个数据集。<br>优点：<br>    数据不丢失（1s fsync）<br>    可读方式记录，适合恢复<br>缺点：<br>    文件大<br>    QPS相对低<br>    发年bug,数据未恢复一致</p>
+]]></content>
+      <tags>
+        <tag>redis</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>redis模型模式</title>
+    <url>/2019/10/30/md/part/redis/redis-build/</url>
+    <content><![CDATA[<p>####　sentinel模式</p>
+<h4 id="cluster模式"><a href="#cluster模式" class="headerlink" title="cluster模式"></a>cluster模式</h4><p>cluster可以说是sentinel和主从模式的结合体，通过cluster可以实现主从和master重选功能，<br>这种模式适合<code>数据量巨大</code>的缓存要求</p>
+<p>不足：</p>
+<ul>
+<li>一般涉及多个key的操作会不支持，取两个set的并集，且两个set在不同的Redis实例上面（当然也是能实现的，只是Redis不会直接支持这么做）。</li>
+<li>涉及多个key的事务将不能使用</li>
+<li>使用分区时,数据处理更加复杂,例如你必须处理多个RDB / AOF文件,你需要备份你的数据并聚合多个实例和主机的持久性文件。</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>redis</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>redis热key</title>
+    <url>/2019/10/30/md/part/redis/redis-keyhot/</url>
+    <content><![CDATA[<h4 id=""><a href="#" class="headerlink" title=""></a></h4><p>怎么发现热key<br>方法一:凭借业务经验，进行预估哪些是热key</p>
+<p>其实这个方法还是挺有可行性的。比如某商品在做秒杀，那这个商品的key就可以判断出是热key。缺点很明显，并非所有业务都能预估出哪些key是热key。</p>
+<p>方法二:在客户端进行收集</p>
+<p>这个方式就是在操作redis之前，加入一行代码进行数据统计。</p>
+<p>方法三:在Proxy层做收集 </p>
+<p>方法四:用redis自带命令</p>
+<p>(1)monitor命令，该命令可以实时抓取出redis服务器接收到的命令，然后写代码统计出热key是啥。当然，也有现成的分析工具可以给你使用，比如redis-faina。但是该命令在高并发的条件下，有内存增暴增的隐患，还会降低redis的性能。</p>
+<p>(2)hotkeys参数，redis 4.0.3提供了redis-cli的热点key发现功能，执行redis-cli时加上–hotkeys选项即可。但是该参数在执行的时候，如果key比较多，执行起来比较慢。</p>
+<p>####解决方法：</p>
+<ul>
+<li>利用二级缓存</li>
+<li>备份热key</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>redis</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>redis哨兵</title>
+    <url>/2019/10/30/md/part/redis/redis-sential/</url>
+    <content><![CDATA[<h3 id="安装-redis"><a href="#安装-redis" class="headerlink" title="安装 redis"></a>安装 redis</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 下载,编译</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">wget http://download.redis.io/releases/redis-5.0.7.tar.gz</span></pre></td></tr><tr><td class="code"><pre><span class="line">tar xzf redis-5.0.7.tar.gz</span></pre></td></tr><tr><td class="code"><pre><span class="line">cd redis-5.0.7</span></pre></td></tr><tr><td class="code"><pre><span class="line">make</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> </span></span></pre></td></tr><tr><td class="code"><pre><span class="line">cp src/redis-server /usr/bin/</span></pre></td></tr><tr><td class="code"><pre><span class="line">cp src/redis-cli /usr/bin/</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 开启服务器</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">src/redis-server</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 开启客户端</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">src/redis-cli</span></pre></td></tr></table></figure>
+
+
+<h3 id="安装问题"><a href="#安装问题" class="headerlink" title="安装问题"></a>安装问题</h3><h4 id="cc-command-not-found"><a href="#cc-command-not-found" class="headerlink" title="cc: command not found"></a>cc: command not found</h4><p>安装<code>gcc</code></p>
+<p>yum install -y gcc</p>
+<h4 id="jemalloc-jemalloc-h-No-such-file-or-directory"><a href="#jemalloc-jemalloc-h-No-such-file-or-directory" class="headerlink" title="jemalloc/jemalloc.h: No such file or directory"></a>jemalloc/jemalloc.h: No such file or directory</h4><p>原因是jemalloc重载了Linux下的ANSI C的malloc和free函数。解决办法：make时添加参数。</p>
+<blockquote>
+<p>make MALLOC=libc</p>
+</blockquote>
+]]></content>
+      <tags>
+        <tag>redis</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>redis篇特点</title>
+    <url>/2019/10/30/md/part/redis/subject_redis/</url>
+    <content><![CDATA[<h2 id="redis篇"><a href="#redis篇" class="headerlink" title="redis篇"></a>redis篇</h2><ul>
+<li>第一章节 redis介绍</li>
+<li>第二章节 redis集群策略</li>
+<li>第三章节 redis高级特性</li>
+</ul>
+<h2 id="第一章节"><a href="#第一章节" class="headerlink" title="第一章节"></a>第一章节</h2><ul>
+<li>redis介绍<ul>
+<li>1.1 redis 特性</li>
+<li>1.2 redis 数据类型</li>
+<li>1.3 redis 应用场景</li>
+<li>1.4 redis Java客户端</li>
+</ul>
+</li>
+</ul>
+<h2 id="1-1-redis特性"><a href="#1-1-redis特性" class="headerlink" title="1.1 redis特性"></a>1.1 redis特性</h2><ul>
+<li>单核单线程 没有线程安全问题</li>
+<li>性能高 IO多路复用 内存操作</li>
+<li>支持多种持久化方案</li>
+<li>支持弱事务 不支持Rollback</li>
+<li>支持排序 分页 模糊搜索功能</li>
+<li>支持队列订阅发布</li>
+</ul>
+<h2 id="1-2-redis-数据类型"><a href="#1-2-redis-数据类型" class="headerlink" title="1.2 redis 数据类型"></a>1.2 redis 数据类型</h2><ul>
+<li>String类型 字符串类型 4.0版本后增加json的schema</li>
+<li>hash类型 即可支持kkv模型</li>
+<li>List类型 支持排序 支持队列命令 可用于简单的消息队列</li>
+<li>Set类型 数据唯一类型 类似list</li>
+<li>Sorted set类型 类似set/list 可通过score参数来自动排序</li>
+</ul>
+<h2 id="1-3-redis-应用场景"><a href="#1-3-redis-应用场景" class="headerlink" title="1.3 redis 应用场景"></a>1.3 redis 应用场景</h2><ul>
+<li>各类别缓存方案 页面 业务 数据 </li>
+<li>实时计数器 统计仪表 排行榜</li>
+<li>分布式锁 开关</li>
+<li>消息队列 发布/订阅</li>
+<li>session存储</li>
+<li>支持分页 模糊查询</li>
+<li>搜索倒排的缓存</li>
+</ul>
+<h2 id="1-4-redis-Java客户端"><a href="#1-4-redis-Java客户端" class="headerlink" title="1.4 redis Java客户端"></a>1.4 redis Java客户端</h2><ul>
+<li>Redisson 提供分布式相关操作服务 支持延迟队列</li>
+<li>Jedis 多线程下 有线程安全问题 提供了基础操作</li>
+<li>lettuce 高级Redis客户端 线程安全 springboot2.0集成支持</li>
+</ul>
+<h2 id="第二章节"><a href="#第二章节" class="headerlink" title="第二章节"></a>第二章节</h2><ul>
+<li>redis集群策略<ul>
+<li>2.1 redis 主从复制</li>
+<li>2.2 redis 哨兵模式</li>
+<li>2.2 redis 自带的集群模式</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-1-redis-主从复制"><a href="#2-1-redis-主从复制" class="headerlink" title="2.1 redis 主从复制"></a>2.1 redis 主从复制</h2><ul>
+<li>主数据库(master) 从数据库(slave) master可以进行读写操作 当读写操作导致数据变化时会自动将数据同步salve</li>
+<li>机制初始化 slave发送SYNC命令 master接收到SYNC 将保存的快照文件(rdb)和缓存的命令发送给slave</li>
+<li>复制初始化后 master每次接收到的写命令都会同步发送给slave 保证主从数据一致性</li>
+<li>此方法不可保证高可用 或需要手动或程序来做主从切换等 但可以做到读写分离</li>
+</ul>
+<h2 id="2-2-redis-哨兵模式"><a href="#2-2-redis-哨兵模式" class="headerlink" title="2.2 redis 哨兵模式"></a>2.2 redis 哨兵模式</h2><ul>
+<li>基于主从模式下的监控模式 </li>
+<li>哨兵通过发送命令来监控master/slave是否正常运行</li>
+<li>master出现故障时 开启选举自动将slave转化为master</li>
+<li>多哨兵配置的时候 哨兵之间也会自动监控</li>
+<li>多个哨兵可以监控同一个redis</li>
+<li>基于异步复制 脑裂切换有数据丢失情况</li>
+</ul>
+<h2 id="2-3-redis-自带集群模式"><a href="#2-3-redis-自带集群模式" class="headerlink" title="2.3 redis 自带集群模式"></a>2.3 redis 自带集群模式</h2><ul>
+<li>多master节点 通过hash算法落点到具体的slot master节点上</li>
+<li>此集群模式 一般用于三主三从架构</li>
+<li>slave节点用于备份master节点数据 </li>
+<li>当master节点发生故障时 自动切换到slave节点</li>
+<li>基于异步复制 主从切换有数据丢失情况</li>
+</ul>
+<h2 id="第三章节"><a href="#第三章节" class="headerlink" title="第三章节"></a>第三章节</h2><ul>
+<li>redis高级特性<ul>
+<li>3.1 redis 持久化</li>
+<li>3.2 redis 淘汰机制</li>
+<li>3.3 redis 穿透雪崩场景</li>
+</ul>
+</li>
+</ul>
+<h2 id="3-1-redis-持久化"><a href="#3-1-redis-持久化" class="headerlink" title="3.1 redis 持久化"></a>3.1 redis 持久化</h2><ul>
+<li>redis 支持两种持久化方式 rdb aof</li>
+<li>rdb 存储简单 便于备份 启动效率高 性能高 fork子进程来同步</li>
+<li>rdb 同步由于由子进程来同步 无法做到实时同步</li>
+<li>aof 存储为日志操作形式记录 数据安全性高 有同步策略 更高数据完整性跟一致性</li>
+<li>aof 由于同步策略(每秒同步 每修改同步 不同步) aof在运行效率上往往会慢于rdb 且文件大于rdb</li>
+<li>aof文件会越来越大 数据恢复也会越来越慢 所以rdb在恢复数据时的速度比aof要快</li>
+</ul>
+<h2 id="3-2-1-redis-淘汰机制"><a href="#3-2-1-redis-淘汰机制" class="headerlink" title="3.2.1 redis 淘汰机制"></a>3.2.1 redis 淘汰机制</h2><ul>
+<li>内存的淘汰机制的初衷是为了更好地使用内存 用一定的缓存miss来换取内存的使用效率</li>
+<li>在key无限增加的情况下 已无法达到过期失效 超过增加的极端情况</li>
+<li>redis自带对key的几种淘汰机制 当然也可以自己通过程序或lua编写淘汰机制</li>
+<li>设置参数 maxmemory <byte> maxmemory-policy 策略 即可使用淘汰机制</li>
+</ul>
+<h2 id="3-2-2-redis-淘汰机制"><a href="#3-2-2-redis-淘汰机制" class="headerlink" title="3.2.2 redis 淘汰机制"></a>3.2.2 redis 淘汰机制</h2><ul>
+<li>noeviction 当内存使用达到阈值的时候 所有引起申请内存的命令会报错</li>
+<li>allkeys-lru 在主键空间中 优先移除最近未使用的key</li>
+<li>volatile-lru 在设置了过期时间的键空间中 优先移除最近未使用的key</li>
+<li>allkeys-random 在主键空间中 随机移除某个key</li>
+<li>volatile-random 在设置了过期时间的键空间中 随机移除某个key</li>
+<li>volatile-ttl 在设置了过期时间的键空间中 具有更早过期时间的key优先移除</li>
+</ul>
+<h2 id="3-3-redis-穿透雪崩场景"><a href="#3-3-redis-穿透雪崩场景" class="headerlink" title="3.3 redis 穿透雪崩场景"></a>3.3 redis 穿透雪崩场景</h2><ul>
+<li>有超时缓存 可采用双重加锁方式 让一个请求执行数据库操作并加入缓存 后续请求获得缓存 </li>
+<li>尽可能使用无超时缓存 使用redis 自带的淘汰机制</li>
+<li>无超时缓存 使用定时任务 刷新移除缓存</li>
+<li>利用各类缓存 如页面 数据库缓存 二级缓存</li>
+<li>在redis前加进程缓存 消减redis使用率 通过redis watch机制保证缓存一致性</li>
+<li>布隆过滤器 或自定义过滤器 如bitmap hash值占位</li>
+<li>空key情况(避免全局扫) 设置默认值或上级缓存或使用过滤器</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>redis</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>hexo个人博客搭建</title>
     <url>/2019/10/30/md/tool/hexo-next/</url>
     <content><![CDATA[<h3 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h3><h4 id="开启本地搜索"><a href="#开启本地搜索" class="headerlink" title="开启本地搜索"></a>开启本地搜索</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install hexo-generator-searchdb --save</span></pre></td></tr></table></figure>
@@ -4060,7 +4393,7 @@
   </entry>
   <entry>
     <title>分布式锁</title>
-    <url>/2019/10/21/md/part/distributed/%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81/</url>
+    <url>/2019/10/21/md/part/distributed/distribute-lock/</url>
     <content><![CDATA[<p>三种实现：</p>
 <ul>
 <li>基于数据库实现分布式锁</li>
@@ -4110,7 +4443,7 @@
 <hr>
 ]]></content>
       <tags>
-        <tag>develop</tag>
+        <tag>jdk</tag>
       </tags>
   </entry>
   <entry>
@@ -4179,6 +4512,18 @@
       </tags>
   </entry>
   <entry>
+    <title>工作建议</title>
+    <url>/2019/09/18/md/life/work/</url>
+    <content><![CDATA[<p>1、不要把同事当朋友，要当盟友。<br>2、不要和同事说过多自己的隐私。<br>3、公司组织的比赛一定要参加！一定要参加！一定要参加！<br>4、保持微笑，不要喜怒无常。<br>5、投资比工作重要，不学习理财投资不买房的若干年后都后悔了。<br>6、尽量别得罪人，三十年河东三十年河西<br>7、不要瞧不起你领导，他能是你的领导，一定有你能学习的地方。<br>8、你可以有理想，但是时刻记住你的理想跟别人没啥关系。<br>9、不要相信公司的奉献精神，他们不想要你的时候可快了。<br>10、保持运动，和你是不是忙没有关系。<br>11、偷奸耍滑可以耍了的一时，但是总要露馅。<br>12、什么30天教你做达人，一个月教你赚100万的攻略都是骗人的，厚积薄发才是真理。<br>13、学习是为你自己。人与人之间的差距是逐步拉开的。<br>14、大部分的工作只看结果，不看过程。很多事情努力了没做到和没做是一样的。<br>15、不要浪费时间在不值得浪费的人身上，自己的时间很宝贵。<br>16、学会站在老板或者公司的角度去思考问题。格局很重要。<br>17、在成人的社交礼仪里，没有爽快的答应就是拒绝。<br>18、抱怨只会显得一个人特别无能。<br>19、不要矫情，除非你是牛人，否则的话，永远提醒自己，人才市场有成千上万的人随时可以取代你顶替这个职位。<br>20、加班这种事情不可避免，忍不了就辞职，走不了就忍着！<br>21、无论多么信任的人，别过多袒露你的过去。为你自己好。<br>22、尽量不要向同事借钱，一般人家都会很反感，除非你们成为了真正的朋友。<br>23、不要为了工作牺牲身体和家庭。<br>24、闷不吭声地埋头苦干，并不一定能够给你带来想要的认可。要学会向领导、上司汇报工作进度。<br>25、低调做人，高调做事。<br>26、老板经营的是他的事业，你经营的是你的人生，所以混不得。<br>27、不要放弃每一个可以请教的机会，不论这个人你是否喜欢，职位是否比你高。<br>28、觉得是垃圾社交，不想参加就不要去，好好把握下班后自由的时间，别为了迎合别人浪费自己时间。<br>29、画饼的领导千千万，谁当领导不画饼？但画了饼连糖都不给吃的公司趁早走，不要回头。<br>30、不要夸夸而谈，这只会让人发现你的浅薄，对于不懂得事情，要懂得闭上嘴巴。<br>31、一定要去大城市，那里才有更多出路和机会。<br>32、我们年轻的时候是得吃苦，但是我们不随便吃苦。<br>33、不要太安逸，现在哪里还有什么稳定工作。<br>34、和公司谈钱时，少讲感情，尽量不讲，拿能力和业绩说话。<br>35、不管你这个工作做的有多差，都不要否定自己。你一定要相信，你还是很优秀。</p>
+]]></content>
+      <categories>
+        <category>人生感悟</category>
+      </categories>
+      <tags>
+        <tag>人生</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>老好人</title>
     <url>/2019/09/18/md/life/%E8%80%81%E5%A5%BD%E4%BA%BA/</url>
     <content><![CDATA[<p><code>老好人</code>指的是随和厚道，性格温柔，不愿得罪人，不会拒绝别人，缺乏原则性的人。然而现在社会中普遍反对老好人主义。</p>
@@ -4195,6 +4540,9 @@
 </ol>
 <p>对于你心目中的亲密圈内的人也不用我说，连钱你都愿意彼此分享了，为他付出，你也定是心甘情愿的；朋友圈里的人，他的人格、人品，他是一个怎样的人，你们经常混在一起，总是略有耳闻的。爱占小便宜的家伙你委婉拒绝他或许是更好的选择，你觉得他还不错的人帮个小忙也无妨。剩下的那些人，你应该切身思考下你的人生会和他有交集吗？你讨厌他什么？仔细衡量其中的利与弊便可瞬间得出结果。<br>生活是美好的，每个人都是善良的。赠人玫瑰，手留余香。帮助了别人，心里也会快乐。但每个人都是独立的个体，谁也没有义务去无条件地帮谁。与其做一个博爱的滥好人，不如去爱少数人，也为少数人所爱。</p>
 ]]></content>
+      <categories>
+        <category>人生感悟</category>
+      </categories>
       <tags>
         <tag>性格</tag>
       </tags>
@@ -4205,8 +4553,34 @@
     <content><![CDATA[<p>搞定<code>老婆</code>和<code>老板</code>  </p>
 <p>情绪不好，<code>不要做重要的决定</code>和<code>接触重要的人</code></p>
 ]]></content>
+      <categories>
+        <category>人生感悟</category>
+      </categories>
       <tags>
         <tag>人生</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>BASE理论</title>
+    <url>/2019/08/23/md/part/distributed/base/</url>
+    <content><![CDATA[<h3 id="三个部分："><a href="#三个部分：" class="headerlink" title="三个部分："></a>三个部分：</h3><p>1、基本可用（Base Availability）。</p>
+<p>基本可用就意味着可以容许系统有短暂的不可用状态，只要能快速恢复就可以。</p>
+<p>2、软状态（Soft-state）。</p>
+<p>软状态是跟持久状态相对的，也就意味着系统可以处于一种中间状态，既不是事务执行前的状态，也不是事务成功执行后的状态，这种状态会导致系统的不一致性，但是这种不一致性是短暂的，最终是要回归到一致性的。</p>
+<p>3、最终一致性（Eventual Consistency）。</p>
+<p>最终一致性跟强一致性相对，也就意味着系统只要能在可接受的时间范围内达到一致性即可。</p>
+<p>BASE理论容许系统出现短暂性的问题的，无论是短暂的不可用还是短暂的不一致状态，只要能够在一定时间范围内最终达到可用或者一致状态即可。</p>
+<h3 id="补偿机制"><a href="#补偿机制" class="headerlink" title="补偿机制"></a>补偿机制</h3><p>既然BASE理论容许系统处于短暂的不可用和不一致的状态，那么在设计的时候怎么去保证最终的可用和一致状态呢？这就需要引入补偿机制。<br>现在的系统往往都微服务化了，所以要完成某一个业务流程往往涉及到很多个服务，甚至涉及很多个外部的系统，外部系统的可用性不是我们能够保证的，我们在设计实现流程时能够做的就是当在调用某个三方系统失败时，后续的流程应该怎么去设计。这就需要工作流编排的能力。工作流的编排完全是基于业务的，需要根据业务的实际情况来进行流程的转换。<br>举个例子来说。如果去某个地方旅游，来回机票、酒店都定好了，但是旅游地的短途交通还没有预定成功，这也不会使得我们放弃这次旅游，因为旅游地的短途交通这个事情我们确认可以解决的。这个就说明当整个业务流程中的非关键操作失败后，业务流程可以正常执行。但是如果是回程机票没有定好，那我们可能就会试着再重试去预定，如果实在预定不到，那我们就会取消这次旅游，并且就会去启动取消去程的机票和预定的酒店。这个就说明当整个业务流程中的关键操作失败后，业务流程必须实行回滚操作。</p>
+<p>补偿机制的设计有几个关键点需要考虑：</p>
+<ul>
+<li>1、要使得一个业务流程能够执行完成，必须得保证流程涉及的所有的服务都必须是幂等性的，并且在整个流程的执行过程中需要有重试机制。</li>
+<li>2、整个补偿机制的工作流是状态驱动的，所以需要时刻关注业务流程执行过程中的状态，当某个状态出现时需要有效地驱动工作流引擎中的下一个动作，继续执行或者进行回滚或者补偿动作。</li>
+<li>3、当业务流程执行失败后，需要启动补偿的流程，这个补偿流程不一定完成是业务流程的反向操作，可以根据实际的情况来制定补偿的操作，目标就是补偿流程的启动要么就是保证业务流程执行成功，要么就是保证回滚到业务流程执行前的状态。</li>
+<li>4、有些业务补偿操作不一定需要即时执行，在保证关键的业务操作执行成功的情况下，对于一些非关键的业务操作，可以推迟或者降低优先级执行。</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>分布式</tag>
       </tags>
   </entry>
   <entry>
@@ -4473,18 +4847,6 @@
       </tags>
   </entry>
   <entry>
-    <title>spring-boot全局排除jar</title>
-    <url>/2019/08/20/md/part/spring/springboot/spring-boot%E5%85%A8%E5%B1%80%E6%8E%92%E9%99%A4jar/</url>
-    <content><![CDATA[<p>项目里使用了log4j2做日志处理，要排除掉Spring Boot 很多jar里边默认依赖的日志包spring-boot-starter-logging。一个一个写依赖排除也可以，<br>但是太繁琐了，经过尝试，只让它依赖个<code>spring-boot-starter-logging</code>的空壳，里边的东西全部排除掉即可。使用下边的方式就可以达到想要的效果。</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!--全局排除spring-boot-starter-logging内的所有依赖--&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">       <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">           <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">           <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-logging<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">           <span class="tag">&lt;<span class="name">exclusions</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">               <span class="tag">&lt;<span class="name">exclusion</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">                   <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>*<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">                   <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>*<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">               <span class="tag">&lt;/<span class="name">exclusion</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">           <span class="tag">&lt;/<span class="name">exclusions</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">       <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span></pre></td></tr></table></figure>
-
-
-]]></content>
-      <tags>
-        <tag>spring boot</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>旅游计划</title>
     <url>/2019/08/20/md/plan/%E6%97%85%E6%B8%B8%E8%AE%A1%E5%88%92/</url>
     <content><![CDATA[<p>苏州待玩的地方：<br>钮家巷<br>旺山  </p>
@@ -4527,15 +4889,6 @@
       </tags>
   </entry>
   <entry>
-    <title>mq设计</title>
-    <url>/2019/08/20/md/part/mq/mq/</url>
-    <content><![CDATA[<p>主题，发布订阅模式下的消息统一汇集地，不同生产者向topic发送消息，由MQ服务器分发到不同的订阅者，实现消息的广播</p>
-]]></content>
-      <tags>
-        <tag>mq</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>心有不平</title>
     <url>/2019/08/20/md/life/%E5%BF%83%E6%9C%89%E4%B8%8D%E5%B9%B3/</url>
     <content><![CDATA[<h3 id="2019-08-20"><a href="#2019-08-20" class="headerlink" title="2019-08-20"></a>2019-08-20</h3><p>物业打电话过来，收物业费，自己一顿说，周五过去，其实指的是周五去南京，而不是周五交物业费，瞎弄</p>
@@ -4544,6 +4897,9 @@
 <h3 id="2019-07-22"><a href="#2019-07-22" class="headerlink" title="2019-07-22"></a>2019-07-22</h3><p>小舅来上海玩，晚上带他们吃饭，住酒店，他们说随便，不能当真，还是要认真准备一下。  </p>
 <h3 id="2019-07-18"><a href="#2019-07-18" class="headerlink" title="2019-07-18"></a>2019-07-18</h3><p>公司部门组织活动，自己出一部分钱，关键是我已经参加过一次，现在我又报名了，傻屌  </p>
 ]]></content>
+      <categories>
+        <category>人生感悟</category>
+      </categories>
       <tags>
         <tag>成长</tag>
       </tags>
@@ -4773,6 +5129,19 @@
       </tags>
   </entry>
   <entry>
+    <title>Springboot</title>
+    <url>/2019/07/11/md/problem/spring-boot/</url>
+    <content><![CDATA[<h3 id="Springboot-Filter中注入bean-无效为null"><a href="#Springboot-Filter中注入bean-无效为null" class="headerlink" title="Springboot Filter中注入bean 无效为null"></a>Springboot Filter中注入bean 无效为null</h3><p>问题原因：</p>
+<p>Web应用的启动顺序是：Lisenter-&gt;Fliter-&gt;Servlet,  应用程序上下文， 初始化 Fliter的时候，还没有初始化Servlert，所有没有进入DispacterServlet的初始化，故在Fliter中使用注解注入bean为空；</p>
+<p>解决办法：</p>
+<p>添加初始化bean配置，手动创建对象new</p>
+]]></content>
+      <tags>
+        <tag>problem</tag>
+        <tag>spring boot</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>mybatis相关问题</title>
     <url>/2019/07/11/md/problem/mybatis/</url>
     <content><![CDATA[<h3 id="mybatis报错-Specified-class-is-an-interface"><a href="#mybatis报错-Specified-class-is-an-interface" class="headerlink" title="mybatis报错 Specified class is an interface"></a>mybatis报错 Specified class is an interface</h3><h4 id="1-错误原因"><a href="#1-错误原因" class="headerlink" title="1.错误原因"></a>1.错误原因</h4><p>Caused by: org.springframework.beans.factory.BeanCreationException: </p>
@@ -4786,19 +5155,6 @@
       <tags>
         <tag>problem</tag>
         <tag>mybatis</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Springboot</title>
-    <url>/2019/07/11/md/problem/spring-boot/</url>
-    <content><![CDATA[<h3 id="Springboot-Filter中注入bean-无效为null"><a href="#Springboot-Filter中注入bean-无效为null" class="headerlink" title="Springboot Filter中注入bean 无效为null"></a>Springboot Filter中注入bean 无效为null</h3><p>问题原因：</p>
-<p>Web应用的启动顺序是：Lisenter-&gt;Fliter-&gt;Servlet,  应用程序上下文， 初始化 Fliter的时候，还没有初始化Servlert，所有没有进入DispacterServlet的初始化，故在Fliter中使用注解注入bean为空；</p>
-<p>解决办法：</p>
-<p>添加初始化bean配置，手动创建对象new</p>
-]]></content>
-      <tags>
-        <tag>problem</tag>
-        <tag>spring boot</tag>
       </tags>
   </entry>
   <entry>
@@ -4853,16 +5209,6 @@
       </tags>
   </entry>
   <entry>
-    <title>rocketmq 测试</title>
-    <url>/2019/07/03/md/part/mq/rocketmq-test/</url>
-    <content><![CDATA[<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">nohup sh bin/mqnamesrv &amp;</span></pre></td></tr><tr><td class="code"><pre><span class="line">tail -f ~/logs/rocketmqlogs/namesrv.log</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">nohup sh mqbroker -n localhost:9876 -c conf/broker.conf &amp;</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">nohup sh bin/mqbroker -n localhost:9876 -c conf/broker.conf  autoCreateTopicEnable=true  &amp;</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"> tail -f ~/logs/rocketmqlogs/broker.log </span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"> export NAMESRV_ADDR=localhost:9876</span></pre></td></tr><tr><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">关闭rocketmq</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">sh bin/mqshutdown broker</span></pre></td></tr><tr><td class="code"><pre><span class="line">sh bin/mqshutdown namesrv</span></pre></td></tr></table></figure>
-
-]]></content>
-      <tags>
-        <tag>mq</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>如何查找SHELL的进程号并杀死</title>
     <url>/2019/06/21/md/part/system/linux/find%20progress%20kill/</url>
     <content><![CDATA[<h3 id="shell查找进程并杀死"><a href="#shell查找进程并杀死" class="headerlink" title="shell查找进程并杀死"></a>shell查找进程并杀死</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/sh</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">tomcat_id=`ps -ef | grep tomcat | grep -v "grep" | awk '&#123;print $2&#125;'`</span></pre></td></tr><tr><td class="code"><pre><span class="line">echo $tomcat_id</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">for id in $tomcat_id</span></pre></td></tr><tr><td class="code"><pre><span class="line">do</span></pre></td></tr><tr><td class="code"><pre><span class="line">    kill -9 $id  </span></pre></td></tr><tr><td class="code"><pre><span class="line">    echo "killed $id"  </span></pre></td></tr><tr><td class="code"><pre><span class="line">done</span></pre></td></tr></table></figure>
@@ -4872,38 +5218,6 @@
 <h3 id="linux查找进程并杀死"><a href="#linux查找进程并杀死" class="headerlink" title="linux查找进程并杀死"></a>linux查找进程并杀死</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">####查找tomcat进程</span></span></span></pre></td></tr><tr><td class="code"><pre><span class="line">ps -ef | grep tomcat | grep -v grep | awk '&#123;print $2&#125;'</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">####查找tomcat进程并杀死</span></span></span></pre></td></tr><tr><td class="code"><pre><span class="line">ps -ef | grep tomcat | grep -v grep | awk '&#123;print $2&#125;' | xargs kill -9</span></pre></td></tr></table></figure>]]></content>
       <tags>
         <tag>linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>情商50则</title>
-    <url>/2019/06/21/md/life/%E6%83%85%E5%95%8650%E5%88%99/</url>
-    <content><![CDATA[<p>1，话别说太满，人别熟太快。<br>3，不要把别人想得太坏，也不要把别人想得太好，都是凡人。<br>2，别人自嘲可以，但你千万别附和<br>4，可以嘲笑你的朋友，但不能嘲笑他喜欢的东西。  </p>
-<h2 id="34，自嘲是最高境界，而不是嘲笑别人。"><a href="#34，自嘲是最高境界，而不是嘲笑别人。" class="headerlink" title="34，自嘲是最高境界，而不是嘲笑别人。  "></a>34，自嘲是最高境界，而不是嘲笑别人。  </h2><p>6，刚开始和对方不熟悉的时候，聊到晚上十点多对方发来消息就别回复了，第二天早晨再回复，这样又可以聊一天。<br>7，把“随便”改成“听你的”。<br>23，把“听明白了吗”换成“我说明白了吗”。<br>5，把每一句“我不会”都改成“我可以学”<br>把“谢谢”改成“谢谢你” 并微笑看着对方的眼睛    </p>
-<hr>
-<p>8，别人骂你你要听，别人夸你你别信。<br>9，请道歉而不是取笑别人开不起玩笑，你以为谁没有底线只不过还没到底而已。<br>10，聊天时别人发微笑，你不知道怎么回的话，就回，你笑得真好看。<br>11，能用表情包解决的就不要说脏话！<br>12，恰到好处的装逼，适可而止的套路。  </p>
-<h2 id="13，如果一个人不理你，有可能是对方的问题；如果大家都不理你，那你就要考虑自身问题了。"><a href="#13，如果一个人不理你，有可能是对方的问题；如果大家都不理你，那你就要考虑自身问题了。" class="headerlink" title="13，如果一个人不理你，有可能是对方的问题；如果大家都不理你，那你就要考虑自身问题了。  "></a>13，如果一个人不理你，有可能是对方的问题；如果大家都不理你，那你就要考虑自身问题了。  </h2><p>14，人前不应该说的话，背后也别说。<br>27，不要在公众场合揭别人的短处，让别人难堪。<br>35，请不要随意出卖一个朋友的隐私来取悦另一个不熟的朋友。<br>46，不要人后捅刀子嘴别贱。  </p>
-<hr>
-<p>15，在最愤怒时忍住最伤人对方的那句话。<br>17，不要把负能量带给身边的人。<br>18，不要吝啬你的赞美和表达爱意的语言。<br>40，越是亲近的人越要用心对待，一句随意的话会伤害她。<br>42，千万不要为了恋爱而淡了身边所有人。<br>21，真的不必把太多人请进生命里，太多热情总是不被珍惜。  </p>
-<hr>
-<p>16，如果没有十足的把握和必要，就不要轻易说假话。<br>19，女孩子永远抗拒不了陪她通宵聊天的人。<br>20，刻薄嘴欠和幽默是两回事；口无遮拦和坦率是两回事；没有教养和随性是两回事；轻重不分和耿直是两回事。  </p>
-<hr>
-<p>22，如果遇到了傻Ⅹ，不要与他争论，而且要同意他的一切观点，把他培养成大傻Ⅹ。<br>24，不能侮辱别人的idol，谨记！<br>47，践踏别人的梦想等同于谋杀。  </p>
-<hr>
-<p>25，在拒绝这件事上，越简单越好，明明是别人需求自己帮忙，解释半天变成自己亏欠了别人的感觉，帮得上，想帮就帮，帮不上，就拒绝。人际交往，简单明了有时最恰当，懂得拒绝，才可以洒脱不纠结。<br>33，学会拒绝，没人会感激你的善良，他们只会得寸进尺。  </p>
-<hr>
-<p>26，逢人只说三分话，未可全抛一片心。<br>29，看透不说透，还是好朋友。<br>39，最印象的一句话，“交友不必言尽，言尽则无友”  </p>
-<hr>
-<p>28，社交没那么容易，每个人都有他的手机。<br>30，当你往上爬的时候对别人好一点，因为你走下坡路的时候会遇到他们。</p>
-<hr>
-<p>31，颜值要高，脾气要好，原则要有。<br>36，有分寸的信任，有理由的怀疑。<br>37，把身材练好，把妆化好。<br>41，修得豆腐嘴，藏得刀子心。<br>43，清醒时做事，糊涂时读书，大怒时睡觉，独处时思考。  </p>
-<hr>
-<p>32，该叫阿姨的叫姐，该叫姐的叫美女该叫美女的叫妹子。<br>38，不会讲话时别瞎说沉默微笑更好。<br>44，永远不要听信别人口中的他。<br>45，女生之间的嫉妒心太可怕，不要公开说这个女生比那个好看。<br>48，常与同好争高下，不共傻瓜论短长。——出自《欢乐颂》  </p>
-]]></content>
-      <categories>
-        <category>人生感悟</category>
-      </categories>
-      <tags>
-        <tag>人生</tag>
       </tags>
   </entry>
   <entry>
@@ -4965,6 +5279,38 @@
 <p>出轨、堕落是一种戒不了毒，不要指望用感动、谅解、宽恕去改变，当然也有回头是岸立地成佛的，但概率低到你不敢冒险。</p>
 <p>知乎大部分故事都是假的，教人月入XX年入XX大都是收智商税的，推荐的东西大部分用处不大，思维、决策、分析等高赞文章大都是自问自答，也是心理学管理学书社会学籍上都有的，基本上属于收藏不看系列。</p>
 <p>残忍归残忍，可日子也得过不是，罗曼罗兰那句话不是都会背了嘛。其实也谈不上残忍，这就是真实的人生，只不过大部分人把生活想的太美好而已。</p>
+]]></content>
+      <categories>
+        <category>人生感悟</category>
+      </categories>
+      <tags>
+        <tag>人生</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>情商50则</title>
+    <url>/2019/06/21/md/life/%E6%83%85%E5%95%8650%E5%88%99/</url>
+    <content><![CDATA[<p>1，话别说太满，人别熟太快。<br>3，不要把别人想得太坏，也不要把别人想得太好，都是凡人。<br>2，别人自嘲可以，但你千万别附和<br>4，可以嘲笑你的朋友，但不能嘲笑他喜欢的东西。  </p>
+<h2 id="34，自嘲是最高境界，而不是嘲笑别人。"><a href="#34，自嘲是最高境界，而不是嘲笑别人。" class="headerlink" title="34，自嘲是最高境界，而不是嘲笑别人。  "></a>34，自嘲是最高境界，而不是嘲笑别人。  </h2><p>6，刚开始和对方不熟悉的时候，聊到晚上十点多对方发来消息就别回复了，第二天早晨再回复，这样又可以聊一天。<br>7，把“随便”改成“听你的”。<br>23，把“听明白了吗”换成“我说明白了吗”。<br>5，把每一句“我不会”都改成“我可以学”<br>把“谢谢”改成“谢谢你” 并微笑看着对方的眼睛    </p>
+<hr>
+<p>8，别人骂你你要听，别人夸你你别信。<br>9，请道歉而不是取笑别人开不起玩笑，你以为谁没有底线只不过还没到底而已。<br>10，聊天时别人发微笑，你不知道怎么回的话，就回，你笑得真好看。<br>11，能用表情包解决的就不要说脏话！<br>12，恰到好处的装逼，适可而止的套路。  </p>
+<h2 id="13，如果一个人不理你，有可能是对方的问题；如果大家都不理你，那你就要考虑自身问题了。"><a href="#13，如果一个人不理你，有可能是对方的问题；如果大家都不理你，那你就要考虑自身问题了。" class="headerlink" title="13，如果一个人不理你，有可能是对方的问题；如果大家都不理你，那你就要考虑自身问题了。  "></a>13，如果一个人不理你，有可能是对方的问题；如果大家都不理你，那你就要考虑自身问题了。  </h2><p>14，人前不应该说的话，背后也别说。<br>27，不要在公众场合揭别人的短处，让别人难堪。<br>35，请不要随意出卖一个朋友的隐私来取悦另一个不熟的朋友。<br>46，不要人后捅刀子嘴别贱。  </p>
+<hr>
+<p>15，在最愤怒时忍住最伤人对方的那句话。<br>17，不要把负能量带给身边的人。<br>18，不要吝啬你的赞美和表达爱意的语言。<br>40，越是亲近的人越要用心对待，一句随意的话会伤害她。<br>42，千万不要为了恋爱而淡了身边所有人。<br>21，真的不必把太多人请进生命里，太多热情总是不被珍惜。  </p>
+<hr>
+<p>16，如果没有十足的把握和必要，就不要轻易说假话。<br>19，女孩子永远抗拒不了陪她通宵聊天的人。<br>20，刻薄嘴欠和幽默是两回事；口无遮拦和坦率是两回事；没有教养和随性是两回事；轻重不分和耿直是两回事。  </p>
+<hr>
+<p>22，如果遇到了傻Ⅹ，不要与他争论，而且要同意他的一切观点，把他培养成大傻Ⅹ。<br>24，不能侮辱别人的idol，谨记！<br>47，践踏别人的梦想等同于谋杀。  </p>
+<hr>
+<p>25，在拒绝这件事上，越简单越好，明明是别人需求自己帮忙，解释半天变成自己亏欠了别人的感觉，帮得上，想帮就帮，帮不上，就拒绝。人际交往，简单明了有时最恰当，懂得拒绝，才可以洒脱不纠结。<br>33，学会拒绝，没人会感激你的善良，他们只会得寸进尺。  </p>
+<hr>
+<p>26，逢人只说三分话，未可全抛一片心。<br>29，看透不说透，还是好朋友。<br>39，最印象的一句话，“交友不必言尽，言尽则无友”  </p>
+<hr>
+<p>28，社交没那么容易，每个人都有他的手机。<br>30，当你往上爬的时候对别人好一点，因为你走下坡路的时候会遇到他们。</p>
+<hr>
+<p>31，颜值要高，脾气要好，原则要有。<br>36，有分寸的信任，有理由的怀疑。<br>37，把身材练好，把妆化好。<br>41，修得豆腐嘴，藏得刀子心。<br>43，清醒时做事，糊涂时读书，大怒时睡觉，独处时思考。  </p>
+<hr>
+<p>32，该叫阿姨的叫姐，该叫姐的叫美女该叫美女的叫妹子。<br>38，不会讲话时别瞎说沉默微笑更好。<br>44，永远不要听信别人口中的他。<br>45，女生之间的嫉妒心太可怕，不要公开说这个女生比那个好看。<br>48，常与同好争高下，不共傻瓜论短长。——出自《欢乐颂》  </p>
 ]]></content>
       <categories>
         <category>人生感悟</category>
@@ -5077,7 +5423,7 @@
   </entry>
   <entry>
     <title>事务的四种隔离级别</title>
-    <url>/2019/06/21/md/part/db/%E4%BA%8B%E5%8A%A1%E7%9A%84%E5%9B%9B%E7%A7%8D%E9%9A%94%E7%A6%BB%E7%BA%A7%E5%88%AB/</url>
+    <url>/2019/06/21/md/part/db/trac-isolate/</url>
     <content><![CDATA[<h3 id="事务的四种隔离级别"><a href="#事务的四种隔离级别" class="headerlink" title="事务的四种隔离级别"></a>事务的四种隔离级别</h3><table>
 <thead>
 <tr>
@@ -5220,7 +5566,7 @@
   </entry>
   <entry>
     <title>分布式事务</title>
-    <url>/2019/06/18/md/part/distributed/%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1/</url>
+    <url>/2019/06/18/md/part/distributed/distribute-trac/</url>
     <content><![CDATA[<h3 id="分布式事务"><a href="#分布式事务" class="headerlink" title="分布式事务"></a>分布式事务</h3><ol>
 <li>主流的关系型数据库产品都是实现了XA接口，事务管理器和资源管理器之间使用XA协议，JTA(Java Transaction API)。</li>
 <li><code>TCC</code>   try  comfirm   cancel 。</li>
@@ -5237,7 +5583,7 @@
   <entry>
     <title>面试知识点确认</title>
     <url>/2019/06/18/md/interview/%E9%9D%A2%E8%AF%95%E7%9F%A5%E8%AF%86%E7%82%B9%E7%A1%AE%E8%AE%A4/</url>
-    <content><![CDATA[<p>socket多线程                     ok<br>netty底层nio，aio                ok<br>高并发                           ok<br>分布式事务                       ok<br>事务控制多库多表操作             ok<br>spring cloud<br>soa                              ignore<br>jvm调优                          ok<br>类加载机制                       ok<br>gc机制                           ok<br>支付流程和注意点<br>spring的加载机制                 ok<br>tomcat加载机制                   ignore<br>做过的项目                       important</p>
+    <content><![CDATA[<p>socket多线程                     ok<br>netty底层nio，aio                ok<br>高并发                           ok<br>heh                       ok<br>事务控制多库多表操作             ok<br>spring cloud<br>soa                              ignore<br>jvm调优                          ok<br>类加载机制                       ok<br>gc机制                           ok<br>支付流程和注意点<br>spring的加载机制                 ok<br>tomcat加载机制                   ignore<br>做过的项目                       important</p>
 <p>线程调度；多线程相关：多线程并发用到那哪些？线程数据共享；synchronize 用法，原理 ？死锁的原因，现场写了一下；（重点）</p>
 <p>首先要了解高并发的的瓶颈在哪里？</p>
 <p>1、可能是服务器网络带宽不够<br>增加网络带宽，添加CDN</p>
@@ -5275,35 +5621,12 @@
 <p>​    拦截器是Spring的一个组件，可以使用spring相关服务，如对象，事务，数据源</p>
 <p>​    而Filter不能</p>
 </li>
-<li><p>深度不同</p>
-<p>​    Filter在Servlet前后启作用，拦截器则可以在方法前后，异常抛出前后</p>
+<li><p>深度不同<br>​    Filter在Servlet前后启作用，拦截器则可以在方法前后，异常抛出前后</p>
 </li>
 </ol>
 ]]></content>
       <tags>
         <tag>other</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>jvm内存加载和gc</title>
-    <url>/2019/06/18/md/jdk/jvm/jvm%E5%86%85%E5%AD%98%E5%8A%A0%E8%BD%BD%E5%92%8Cgc/</url>
-    <content><![CDATA[<p>jvm比较重要的内存区域<br><code>方法区</code>：在java的虚拟机中有一块专门用来存放已经加载的类信息、常量、静态变量以及方法代码的内存区域，叫做方法区。<br><code>常量池</code>：常量池是方法区的一部分，主要用来存放常量和类中的符号引用等信息。<br><code>堆区</code>：用于存放类的对象实例。<br><code>栈区</code>：也叫java虚拟机栈，是由一个一个的栈帧组成的后进先出的栈式结构，栈桢中存放方法运行时产生的局部变量、方法出口等信息。当调用一个方法时，虚拟机栈中就会创建一个栈帧存放这些数据，当方法调用完成时，栈帧消失，如果方法中调用了其他方法，则继续在栈顶创建新的栈桢。<br>除了以上四个内存区域之外，jvm中的运行时内存区域还包括<code>本地方法栈</code>和<code>程序计数器</code></p>
-<p>1）堆</p>
-<p>所有通过new创建的对象的内存都在堆中分配，堆的大小可以通过-Xmx和-Xms来控制。<br>堆被划分为<code>新生代</code>和<code>旧生代</code>，新生代又被进一步划分为<code>Eden</code>和<code>Survivor</code>区，最后Survivor由From Space和To Space组成</p>
-<p><code>新生代</code>。新建的对象都是用新生代分配内存，Eden空间不足的时候，会把存活的对象转移到Survivor中，<br>新生代大小可以由-Xmn来控制，也可以用-XX:SurvivorRatio来控制Eden和Survivor的比例</p>
-<p><code>旧生代</code>。在年轻代中经历了N次垃圾回收后仍然存活的对象，就会被放到年老代中。因此，可以认为年老代中存放的都是一些生命周期较长的对象。</p>
-<p><code>持久代</code>。已经取消，JDK8 HotSpot JVM现在使用了本地内存来存储类元数据，被称为Metaspace。</p>
-<p>2）栈<br>每个线程执行每个方法的时候都会在栈中申请一个栈帧，每个栈帧包括局部变量区和操作数栈，用于存放此次方法调用过程中的临时变量、参数和中间结果。</p>
-<p>3）本地方法栈<br>用于支持native方法的执行，存储了每个native方法调用的状态</p>
-<p>4）方法区<br>存放了要加载的类信息、静态变量、final类型的常量、属性和方法信息。</p>
-<h3 id="基本回收算法"><a href="#基本回收算法" class="headerlink" title="基本回收算法"></a>基本回收算法</h3><h4 id="1-复制（Copying）"><a href="#1-复制（Copying）" class="headerlink" title="1. 复制（Copying）"></a>1. 复制（Copying）</h4><p>此算法把内存空间划为两个相等的区域，每次只使用其中一个区域。垃圾回收时，遍历当前使用区域，把正在使用中的对象复制到另外一个区域中。次算法每次只处理正在使用中的对象，因此复制成本比较小，同时复制过去以后还能进行相应的内存整理，不过出现“碎片”问题。当然，此算法的缺点也是很明显的，就是需要两倍内存空间。 </p>
-<h4 id="2-标记-清除（Mark-Sweep）"><a href="#2-标记-清除（Mark-Sweep）" class="headerlink" title="2. 标记-清除（Mark-Sweep）"></a>2. 标记-清除（Mark-Sweep）</h4><p>此算法执行分两阶段。第一阶段从引用根节点开始标记所有被引用的对象，第二阶段遍历整个堆，把未标记的对象清除。此算法需要暂停整个应用，同时，会产生内存碎片。 </p>
-<h4 id="3-标记-整理（Mark-Compact）"><a href="#3-标记-整理（Mark-Compact）" class="headerlink" title="3. 标记-整理（Mark-Compact）"></a>3. 标记-整理（Mark-Compact）</h4><p>此算法结合了 “标记-清除”和“复制”两个算法的优点。也是分两阶段，第一阶段从根节点开始标记所有被引用对象，第二阶段遍历整个堆，把清除未标记对象并且把存活对象 “压缩”到堆的其中一块，按顺序排放。此算法避免了“标记-清除”的碎片问题，同时也避免了“复制”算法的空间问题。 </p>
-<h4 id="4-分代（Generational-Collecting）"><a href="#4-分代（Generational-Collecting）" class="headerlink" title="4. 分代（Generational Collecting）"></a>4. 分代（Generational Collecting）</h4><p>垃圾收集器<br>串行GC（Serial GC）、并行回收GC（Parallel Scavenge）和并发回收GC（ParNew）</p>
-<p>GC有两种类型：<code>Scavenge GC</code>和<code>Full GC</code>。<br>JVM分别对新生代和旧生代采用不同的垃圾回收机制</p>
-]]></content>
-      <tags>
-        <tag>jvm</tag>
       </tags>
   </entry>
   <entry>
@@ -5343,6 +5666,28 @@
 <h4 id="执行过程"><a href="#执行过程" class="headerlink" title="执行过程"></a>执行过程</h4><h5 id="执行过程简介"><a href="#执行过程简介" class="headerlink" title="执行过程简介"></a>执行过程简介</h5><p>当编译和连接一个C++程序时，所获得的可执行二进制文件只能在指定的硬件平台和操作系统上运行，因为这个二进制文件包含了对目标处理器的机器语言。而Java编译器把Java源文件的指令翻译成字节码，这种字节码就是Java虚拟机的“机器语言”。<br>与普通程序不同的是，Java程序（class文件）并不是本地的可执行程序。当运行Java程序时，首先运行JVM（Java虚拟机），然后再把Java class加载到JVM里头运行，负责加载Java class的这部分就叫做Class Loader。</p>
 <h5 id="JVM中的ClassLoader"><a href="#JVM中的ClassLoader" class="headerlink" title="JVM中的ClassLoader"></a>JVM中的ClassLoader</h5><p>JVM本身包含了一个ClassLoader称为<code>BootstrapClassLoader</code>，和JVM一样，BootstrapClassLoader是用本地代码实现的，它负责加载核心JavaClass（即所有java.<em>开头的类）。另外JVM还会提供两个ClassLoader，它们都是用Java语言编写的，由BootstrapClassLoader加载；其中<code>ExtensionClassLoader</code>负责加载扩展的Javaclass（例如所有javax.</em>开头的类和存放在JRE的ext目录下的类）<code>ApplicationClassLoader</code>负责加载应用程序自身的类。<br>当运行一个程序的时候，JVM启动，运行bootstrapclassloader，该ClassLoader加载java核心API（ExtClassLoader和AppClassLoader也在此时被加载），然后调用ExtClassLoader加载扩展API，最后AppClassLoader加载CLASSPATH目录下定义的Class，这就是一个程序最基本的加载流程。</p>
 <h5 id="执行ClassLoader例子"><a href="#执行ClassLoader例子" class="headerlink" title="执行ClassLoader例子"></a>执行ClassLoader例子</h5><p>什么时候JVM会使用ClassLoader加载一个类呢？当你使用java去执行一个类，JVM使用ApplicationClassLoader加载这个类；然后如果类A引用了类B，不管是直接引用还是用Class.forName()引用，JVM就会找到加载类A的ClassLoader，并用这个ClassLoader来加载类B。JVM按照运行时的有效执行语句，来决定是否需要装载新类，从而装载尽可能少的类，这一点和编译类是不相同的。</p>
+]]></content>
+      <tags>
+        <tag>jvm</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>jvm内存加载和gc</title>
+    <url>/2019/06/18/md/jdk/jvm/jvm%E5%86%85%E5%AD%98%E5%8A%A0%E8%BD%BD%E5%92%8Cgc/</url>
+    <content><![CDATA[<p>jvm比较重要的内存区域<br><code>方法区</code>：在java的虚拟机中有一块专门用来存放已经加载的类信息、常量、静态变量以及方法代码的内存区域，叫做方法区。<br><code>常量池</code>：常量池是方法区的一部分，主要用来存放常量和类中的符号引用等信息。<br><code>堆区</code>：用于存放类的对象实例。<br><code>栈区</code>：也叫java虚拟机栈，是由一个一个的栈帧组成的后进先出的栈式结构，栈桢中存放方法运行时产生的局部变量、方法出口等信息。当调用一个方法时，虚拟机栈中就会创建一个栈帧存放这些数据，当方法调用完成时，栈帧消失，如果方法中调用了其他方法，则继续在栈顶创建新的栈桢。<br>除了以上四个内存区域之外，jvm中的运行时内存区域还包括<code>本地方法栈</code>和<code>程序计数器</code></p>
+<p>1）堆</p>
+<p>所有通过new创建的对象的内存都在堆中分配，堆的大小可以通过-Xmx和-Xms来控制。<br>堆被划分为<code>新生代</code>和<code>旧生代</code>，新生代又被进一步划分为<code>Eden</code>和<code>Survivor</code>区，最后Survivor由From Space和To Space组成</p>
+<p><code>新生代</code>。新建的对象都是用新生代分配内存，Eden空间不足的时候，会把存活的对象转移到Survivor中，<br>新生代大小可以由-Xmn来控制，也可以用-XX:SurvivorRatio来控制Eden和Survivor的比例</p>
+<p><code>旧生代</code>。在年轻代中经历了N次垃圾回收后仍然存活的对象，就会被放到年老代中。因此，可以认为年老代中存放的都是一些生命周期较长的对象。</p>
+<p><code>持久代</code>。已经取消，JDK8 HotSpot JVM现在使用了本地内存来存储类元数据，被称为Metaspace。</p>
+<p>2）栈<br>每个线程执行每个方法的时候都会在栈中申请一个栈帧，每个栈帧包括局部变量区和操作数栈，用于存放此次方法调用过程中的临时变量、参数和中间结果。</p>
+<p>3）本地方法栈<br>用于支持native方法的执行，存储了每个native方法调用的状态</p>
+<p>4）方法区<br>存放了要加载的类信息、静态变量、final类型的常量、属性和方法信息。</p>
+<h3 id="基本回收算法"><a href="#基本回收算法" class="headerlink" title="基本回收算法"></a>基本回收算法</h3><h4 id="1-复制（Copying）"><a href="#1-复制（Copying）" class="headerlink" title="1. 复制（Copying）"></a>1. 复制（Copying）</h4><p>此算法把内存空间划为两个相等的区域，每次只使用其中一个区域。垃圾回收时，遍历当前使用区域，把正在使用中的对象复制到另外一个区域中。次算法每次只处理正在使用中的对象，因此复制成本比较小，同时复制过去以后还能进行相应的内存整理，不过出现“碎片”问题。当然，此算法的缺点也是很明显的，就是需要两倍内存空间。 </p>
+<h4 id="2-标记-清除（Mark-Sweep）"><a href="#2-标记-清除（Mark-Sweep）" class="headerlink" title="2. 标记-清除（Mark-Sweep）"></a>2. 标记-清除（Mark-Sweep）</h4><p>此算法执行分两阶段。第一阶段从引用根节点开始标记所有被引用的对象，第二阶段遍历整个堆，把未标记的对象清除。此算法需要暂停整个应用，同时，会产生内存碎片。 </p>
+<h4 id="3-标记-整理（Mark-Compact）"><a href="#3-标记-整理（Mark-Compact）" class="headerlink" title="3. 标记-整理（Mark-Compact）"></a>3. 标记-整理（Mark-Compact）</h4><p>此算法结合了 “标记-清除”和“复制”两个算法的优点。也是分两阶段，第一阶段从根节点开始标记所有被引用对象，第二阶段遍历整个堆，把清除未标记对象并且把存活对象 “压缩”到堆的其中一块，按顺序排放。此算法避免了“标记-清除”的碎片问题，同时也避免了“复制”算法的空间问题。 </p>
+<h4 id="4-分代（Generational-Collecting）"><a href="#4-分代（Generational-Collecting）" class="headerlink" title="4. 分代（Generational Collecting）"></a>4. 分代（Generational Collecting）</h4><p>垃圾收集器<br>串行GC（Serial GC）、并行回收GC（Parallel Scavenge）和并发回收GC（ParNew）</p>
+<p>GC有两种类型：<code>Scavenge GC</code>和<code>Full GC</code>。<br>JVM分别对新生代和旧生代采用不同的垃圾回收机制</p>
 ]]></content>
       <tags>
         <tag>jvm</tag>
@@ -5403,6 +5748,22 @@
       </tags>
   </entry>
   <entry>
+    <title>微服务优缺点</title>
+    <url>/2019/06/18/md/part/microServices/feture/</url>
+    <content><![CDATA[<p>微服务有如下<br>####优点</p>
+<ul>
+<li>微服务是松藕合的，无论是在开发阶段或部署阶段都是独立的。</li>
+<li>能够快速响应, 局部修改容易, 一个服务出现问题不会影响整个应用。</li>
+<li>易于和第三方应用系统集成, 支持使用不同的语言开发, 允许你利用融合最新技术。</li>
+<li>每个微服务都很小，足够内聚，足够小，代码容易理解。团队能够更关注自己的工作成果, 聚焦指定的业务功能或业务需求。</li>
+<li>开发简单、开发效率提高，一个服务可能就是专一的只干一件事, 能够被小团队单独开发，这个小团队可以是 2 到 5 人的开发人员组成。<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点:"></a>缺点:</h3>微服务架构带来过多的运维操作, 可能需要团队具备一定的 DevOps 技巧.<br>分布式系统可能复杂难以管理。因为分布部署跟踪问题难。当服务数量增加，管理复杂性增加。</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>微服务</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hystrix Turbine</title>
     <url>/2019/06/18/md/part/microServices/spring%20cloud/Hystrix%20Turbine/</url>
     <content><![CDATA[<h3 id="Hystrix-Turbine简介"><a href="#Hystrix-Turbine简介" class="headerlink" title="Hystrix Turbine简介"></a>Hystrix Turbine简介</h3><p>看单个的Hystrix Dashboard的数据并没有什么多大的价值，要想看这个系统的Hystrix Dashboard数据就需要用到Hystrix Turbine。Hystrix Turbine将每个服务Hystrix Dashboard数据进行了整合。Hystrix Turbine的使用非常简单，只需要引入相应的依赖和加上注解和配置就可以了。</p>
@@ -5425,18 +5786,9 @@
       </tags>
   </entry>
   <entry>
-    <title>db</title>
-    <url>/2019/06/18/md/part/db/db/</url>
-    <content><![CDATA[<h3 id="为什么数据库可以没有外键？"><a href="#为什么数据库可以没有外键？" class="headerlink" title="为什么数据库可以没有外键？"></a>为什么数据库可以没有外键？</h3><ul>
-<li>性能，影响插入、更新和删除操作的性能。数据库需要检查它是否违反数据完整性</li>
-<li>传统数据，许多数据库在设计时需要存储来自旧数据库和遗留数据，这些数据可能对数据质量和完整性没有那么严格</li>
-<li>全表重新加载</li>
-</ul>
-<h3 id="规范"><a href="#规范" class="headerlink" title="规范"></a>规范</h3><p>【强制】业务上具有唯一特性的字段，即使是组合字段，也必须建成唯一索引。</p>
-<p>【强制】超过三个表禁止 join。需要 join 的字段，数据类型保持绝对一致；多表关联查询时，<br>保证被关联的字段需要有索引。</p>
-<p>【强制】不要使用 count(列名)或 count(常量)来替代 count(<em>)，count(</em>)就是 SQL92 定义的<br>标准统计行数的语法，跟数据库无关，跟 NULL 和非 NULL 无关。<br>说明：count(*)会统计值为 NULL 的行，而 count(列名)不会统计此列为 NULL 值的行。</p>
-<p>使用 IS NULL()来判断是否为 NULL 值。注意：NULL 与任何值的直接比较都为 NULL。</p>
-<p>单表行数超过 500 万行或者单表容量超过 2GB，才推荐进行分库分表。</p>
+    <title>MYSQL explanin命令</title>
+    <url>/2019/06/18/md/part/db/mysql-tool/</url>
+    <content><![CDATA[<p>sql  explanin命令</p>
 ]]></content>
       <tags>
         <tag>db</tag>
@@ -5479,6 +5831,26 @@
 <li>重启mysql服务</li>
 </ol>
 <p>[^]: lower_case_table_names=1 参数缺省地在 Windows 中这个选项为 1 ，在 Unix 中为 0</p>
+]]></content>
+      <tags>
+        <tag>db</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>db</title>
+    <url>/2019/06/18/md/part/db/db/</url>
+    <content><![CDATA[<h3 id="为什么数据库可以没有外键？"><a href="#为什么数据库可以没有外键？" class="headerlink" title="为什么数据库可以没有外键？"></a>为什么数据库可以没有外键？</h3><ul>
+<li>性能，影响插入、更新和删除操作的性能。数据库需要检查它是否违反数据完整性</li>
+<li>传统数据，许多数据库在设计时需要存储来自旧数据库和遗留数据，这些数据可能对数据质量和完整性没有那么严格</li>
+<li>全表重新加载</li>
+</ul>
+<h3 id="规范"><a href="#规范" class="headerlink" title="规范"></a>规范</h3><p>【强制】业务上具有唯一特性的字段，即使是组合字段，也必须建成唯一索引。</p>
+<p>【强制】超过三个表禁止 join。需要 join 的字段，数据类型保持绝对一致；多表关联查询时，<br>保证被关联的字段需要有索引。</p>
+<p>【强制】不要使用 count(列名)或 count(常量)来替代 count(<em>)，count(</em>)就是 SQL92 定义的<br>标准统计行数的语法，跟数据库无关，跟 NULL 和非 NULL 无关。<br>说明：count(*)会统计值为 NULL 的行，而 count(列名)不会统计此列为 NULL 值的行。</p>
+<p>使用 IS NULL()来判断是否为 NULL 值。注意：NULL 与任何值的直接比较都为 NULL。</p>
+<p>单表行数超过 500 万行或者单表容量超过 2GB，才推荐进行分库分表。</p>
+<p>MySQL的基本存储结构是页(记录都存在页里边)：<br>各页：双向链表<br>页内数据：单向链表</p>
+<p><img src="https://www.mqiy.xyz/image/db/mysql-lock.png" alt="mysql-lock.png"></p>
 ]]></content>
       <tags>
         <tag>db</tag>
@@ -5548,38 +5920,6 @@
       </tags>
   </entry>
   <entry>
-    <title>graphql介绍</title>
-    <url>/2019/06/18/md/part/web/graphql/graphql%E4%BB%8B%E7%BB%8D/</url>
-    <content><![CDATA[<h3 id="Query-是查询入口-Mutation则是修改入口"><a href="#Query-是查询入口-Mutation则是修改入口" class="headerlink" title="Query 是查询入口,  Mutation则是修改入口"></a>Query 是查询入口,  Mutation则是修改入口</h3><ul>
-<li>root.graphqls 是graphql 服务入口定义</li>
-<li>scheme.graphqls 则是 query/mutation 具体的 scheme 定义字段、类型</li>
-</ul>
-<p>graphql 入口定义了, 但这只是一个描述, 我们需要实现 query/mutation中的描述(必须全部实现)</p>
-<p>schema 一样像我的目录中的一样 AuthorResolver 这是对schema中的描述的实现</p>
-<blockquote>
-<p>query/mutation和普通的schema 一样, 只是它们是 graphql服务的入口, resolver实现描述遵循:</p>
-</blockquote>
-<ul>
-<li>method <code>name</code>(*args)</li>
-<li>method is<code>Name</code>(*args) 仅支持 return boolean</li>
-<li>method get<code>Name</code>(*args)</li>
-<li>method getField<code>Name</code>(*args)</li>
-</ul>
-<p>这是种实现, 当提供了resolver时优先使用, 其次是 class this.get<code>Name</code>方法</p>
-<p>返回参数类型不一致，或者没有返回，需在resolver中添加</p>
-<p>在GraphQL中，我们通过预先定义一张<code>Schema</code>和声明一些<code>Type</code>来达到上面提及的效果，我们需要知道：</p>
-<ul>
-<li>对于数据模型的抽象是通过Type来描述的</li>
-<li>对于接口获取数据的逻辑是通过Schema来描述的</li>
-</ul>
-<h3 id="Type"><a href="#Type" class="headerlink" title="Type"></a>Type</h3><p>对于数据模型的抽象是通过Type来描述的，每一个Type有若干Field组成，每个Field又分别指向某个Type。</p>
-<p>GraphQL的Type简单可以分为两种，一种叫做<code>Scalar Type(标量类型)</code>，另一种叫做<code>Object Type(对象类型)</code>。</p>
-]]></content>
-      <tags>
-        <tag>graphql</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>RPC vs REST vs GraphQL</title>
     <url>/2019/06/18/md/part/web/graphql/RPC%20vs%20REST%20vs%20GraphQL/</url>
     <content><![CDATA[<h3 id="RPC"><a href="#RPC" class="headerlink" title="RPC"></a>RPC</h3><p>它是Remote Procedure Call(远程过程调用)的简称。一般基于RPC协议所设计的接口，是基于网络采用客户端/服务端的模式完成调用接口的</p>
@@ -5631,6 +5971,51 @@
       </tags>
   </entry>
   <entry>
+    <title>graphql介绍</title>
+    <url>/2019/06/18/md/part/web/graphql/graphql%E4%BB%8B%E7%BB%8D/</url>
+    <content><![CDATA[<h3 id="Query-是查询入口-Mutation则是修改入口"><a href="#Query-是查询入口-Mutation则是修改入口" class="headerlink" title="Query 是查询入口,  Mutation则是修改入口"></a>Query 是查询入口,  Mutation则是修改入口</h3><ul>
+<li>root.graphqls 是graphql 服务入口定义</li>
+<li>scheme.graphqls 则是 query/mutation 具体的 scheme 定义字段、类型</li>
+</ul>
+<p>graphql 入口定义了, 但这只是一个描述, 我们需要实现 query/mutation中的描述(必须全部实现)</p>
+<p>schema 一样像我的目录中的一样 AuthorResolver 这是对schema中的描述的实现</p>
+<blockquote>
+<p>query/mutation和普通的schema 一样, 只是它们是 graphql服务的入口, resolver实现描述遵循:</p>
+</blockquote>
+<ul>
+<li>method <code>name</code>(*args)</li>
+<li>method is<code>Name</code>(*args) 仅支持 return boolean</li>
+<li>method get<code>Name</code>(*args)</li>
+<li>method getField<code>Name</code>(*args)</li>
+</ul>
+<p>这是种实现, 当提供了resolver时优先使用, 其次是 class this.get<code>Name</code>方法</p>
+<p>返回参数类型不一致，或者没有返回，需在resolver中添加</p>
+<p>在GraphQL中，我们通过预先定义一张<code>Schema</code>和声明一些<code>Type</code>来达到上面提及的效果，我们需要知道：</p>
+<ul>
+<li>对于数据模型的抽象是通过Type来描述的</li>
+<li>对于接口获取数据的逻辑是通过Schema来描述的</li>
+</ul>
+<h3 id="Type"><a href="#Type" class="headerlink" title="Type"></a>Type</h3><p>对于数据模型的抽象是通过Type来描述的，每一个Type有若干Field组成，每个Field又分别指向某个Type。</p>
+<p>GraphQL的Type简单可以分为两种，一种叫做<code>Scalar Type(标量类型)</code>，另一种叫做<code>Object Type(对象类型)</code>。</p>
+]]></content>
+      <tags>
+        <tag>graphql</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>阿里云oss缩略图</title>
+    <url>/2019/06/18/md/tool/oss/</url>
+    <content><![CDATA[<h4 id="OSS是使用通过URL尾部的参数指定图片的缩放大小"><a href="#OSS是使用通过URL尾部的参数指定图片的缩放大小" class="headerlink" title="OSS是使用通过URL尾部的参数指定图片的缩放大小"></a>OSS是使用通过URL尾部的参数指定图片的缩放大小</h4><p>图片路径后面拼接如下路径：<br>?x-oss-process=image/[处理类型],x_100,y_50[宽高等参数]</p>
+<p>?x-oss-process=image/resize,m_fill,h_高度,w_宽度,limit_0</p>
+<p>示例：</p>
+<p>原图：<br><a href="http://qunxianghui-upload.oss-cn-hangzhou.aliyuncs.com/upload/image/20180829/84cb48ea3923c827481787b8877f9260.jpeg" target="_blank" rel="noopener">http://qunxianghui-upload.oss-cn-hangzhou.aliyuncs.com/upload/image/20180829/84cb48ea3923c827481787b8877f9260.jpeg</a></p>
+<p>缩略图：（注意：复制下面链接到浏览器中访问，直接点击可能后面参数带不过去）<br><a href="http://qunxianghui-upload.oss-cn-hangzhou.aliyuncs.com/upload/image/20180829/84cb48ea3923c827481787b8877f9260.jpeg?x-oss-process=image/resize,m_fill,h_100,w_200" target="_blank" rel="noopener">http://qunxianghui-upload.oss-cn-hangzhou.aliyuncs.com/upload/image/20180829/84cb48ea3923c827481787b8877f9260.jpeg?x-oss-process=image/resize,m_fill,h_100,w_200</a></p>
+]]></content>
+      <tags>
+        <tag>other</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>MapStruct</title>
     <url>/2019/06/18/md/tool/MapStruct/</url>
     <content><![CDATA[<h3 id="MapStruct-一个-Java-实体映射工具"><a href="#MapStruct-一个-Java-实体映射工具" class="headerlink" title="MapStruct 一个 Java 实体映射工具"></a>MapStruct 一个 Java 实体映射工具</h3><p>一个成熟的工程中，尤其是现在的分布式系统中，应用与应用之间，还有单独的应用细分模块之后，DO 一般不会让外部依赖，对象与对象之间的互相转换，就需要有一个专门用来解决转换问题的工具</p>
@@ -5648,16 +6033,20 @@
       </tags>
   </entry>
   <entry>
-    <title>阿里云oss缩略图</title>
-    <url>/2019/06/18/md/tool/oss/</url>
-    <content><![CDATA[<h4 id="OSS是使用通过URL尾部的参数指定图片的缩放大小"><a href="#OSS是使用通过URL尾部的参数指定图片的缩放大小" class="headerlink" title="OSS是使用通过URL尾部的参数指定图片的缩放大小"></a>OSS是使用通过URL尾部的参数指定图片的缩放大小</h4><p>图片路径后面拼接如下路径：<br>?x-oss-process=image/[处理类型],x_100,y_50[宽高等参数]</p>
-<p>?x-oss-process=image/resize,m_fill,h_高度,w_宽度,limit_0</p>
-<p>示例：</p>
-<p>原图：<br><a href="http://qunxianghui-upload.oss-cn-hangzhou.aliyuncs.com/upload/image/20180829/84cb48ea3923c827481787b8877f9260.jpeg" target="_blank" rel="noopener">http://qunxianghui-upload.oss-cn-hangzhou.aliyuncs.com/upload/image/20180829/84cb48ea3923c827481787b8877f9260.jpeg</a></p>
-<p>缩略图：（注意：复制下面链接到浏览器中访问，直接点击可能后面参数带不过去）<br><a href="http://qunxianghui-upload.oss-cn-hangzhou.aliyuncs.com/upload/image/20180829/84cb48ea3923c827481787b8877f9260.jpeg?x-oss-process=image/resize,m_fill,h_100,w_200" target="_blank" rel="noopener">http://qunxianghui-upload.oss-cn-hangzhou.aliyuncs.com/upload/image/20180829/84cb48ea3923c827481787b8877f9260.jpeg?x-oss-process=image/resize,m_fill,h_100,w_200</a></p>
+    <title>spring事务</title>
+    <url>/2019/06/18/md/part/spring/spring-trac/</url>
+    <content><![CDATA[<h3 id="Spring声明式事务七种传播行为"><a href="#Spring声明式事务七种传播行为" class="headerlink" title="Spring声明式事务七种传播行为"></a>Spring声明式事务七种传播行为</h3><ul>
+<li>REQUIRES_NEW：不管是否存在事务，该方法总会为自己发起一个新的事务。如果方法已经运行在一个事务中，则原有事务挂起，新的事务被创建。  </li>
+<li>NESTED：如果一个活动的事务存在，则运行在一个嵌套的事务中。如果没有活动事务，则按REQUIRED属性执行。它使用了一个单独的事务，这个事务拥有多个可以回滚的保存点。内部事务的回滚不会对外部事务造成影响。它只对<code>DataSourceTransactionManager</code>事务管理器起效。</li>
+<li>REQUIRED：业务方法需要在一个事务中运行，如果方法运行时，已处在一个事务中，那么就加入该事务，否则自己创建一个新的事务。<strong>这是spring默认的传播行为</strong>。</li>
+<li>MANDATORY：该方法只能在一个已经存在的事务中执行，业务方法不能发起自己的事务。如果在没有事务的环境下被调用，容器抛出异常。</li>
+<li>SUPPORTS：该方法在某个事务范围内被调用，则方法成为该事务的一部分。如果方法在该事务范围外被调用，该方法就在没有事务的环境下执行。</li>
+<li>NOT_SUPPORTED：声明方法不需要事务。如果方法没有关联到一个事务，容器不会为他开启事务，如果方法在一个事务中被调用，该事务会被挂起，调用结束后，原先的事务会恢复执行。</li>
+<li>NEVER：该方法绝对不能在事务范围内执行。如果在就抛异常。只有该方法没有关联到任何事务，才正常执行。</li>
+</ul>
 ]]></content>
       <tags>
-        <tag>other</tag>
+        <tag>spring</tag>
       </tags>
   </entry>
   <entry>
@@ -5674,59 +6063,10 @@
       </tags>
   </entry>
   <entry>
-    <title>spring事务</title>
-    <url>/2019/06/18/md/part/spring/spring%E4%BA%8B%E5%8A%A1/</url>
-    <content><![CDATA[<h3 id="Spring声明式事务七种传播行为"><a href="#Spring声明式事务七种传播行为" class="headerlink" title="Spring声明式事务七种传播行为"></a>Spring声明式事务七种传播行为</h3><ul>
-<li>REQUIRES_NEW：不管是否存在事务，该方法总会为自己发起一个新的事务。如果方法已经运行在一个事务中，则原有事务挂起，新的事务被创建。  </li>
-<li>NESTED：如果一个活动的事务存在，则运行在一个嵌套的事务中。如果没有活动事务，则按REQUIRED属性执行。它使用了一个单独的事务，这个事务拥有多个可以回滚的保存点。内部事务的回滚不会对外部事务造成影响。它只对<code>DataSourceTransactionManager</code>事务管理器起效。</li>
-<li>REQUIRED：业务方法需要在一个事务中运行，如果方法运行时，已处在一个事务中，那么就加入该事务，否则自己创建一个新的事务。<strong>这是spring默认的传播行为</strong>。</li>
-<li>MANDATORY：该方法只能在一个已经存在的事务中执行，业务方法不能发起自己的事务。如果在没有事务的环境下被调用，容器抛出异常。</li>
-<li>SUPPORTS：该方法在某个事务范围内被调用，则方法成为该事务的一部分。如果方法在该事务范围外被调用，该方法就在没有事务的环境下执行。</li>
-<li>NOT_SUPPORTED：声明方法不需要事务。如果方法没有关联到一个事务，容器不会为他开启事务，如果方法在一个事务中被调用，该事务会被挂起，调用结束后，原先的事务会恢复执行。</li>
-<li>NEVER：该方法绝对不能在事务范围内执行。如果在就抛异常。只有该方法没有关联到任何事务，才正常执行。</li>
-</ul>
-]]></content>
-      <tags>
-        <tag>spring</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>spring boot 运行方式</title>
-    <url>/2019/06/18/md/part/spring/springBoot/</url>
-    <content><![CDATA[<h4 id="springboot-运行"><a href="#springboot-运行" class="headerlink" title="springboot 运行"></a>springboot 运行</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> jar方式运行   -D 参数必须在jar前面指定</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">java -jar -Dserver.port=8081 spring-boot-test-service-0.0.1-SNAPSHOT.jar</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> spring-boot plugin 运行</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">mvn spring-boot:run -Dspring-boot.run.arguments='--spring.profiles.active=pro'</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> </span></span></pre></td></tr><tr><td class="code"><pre><span class="line">mvn spring-boot:run -Dspring-boot.run.profiles=pro</span></pre></td></tr></table></figure>
-
-
-
-<h4 id="springboot中的配置文件server-context-path不起作用"><a href="#springboot中的配置文件server-context-path不起作用" class="headerlink" title="springboot中的配置文件server.context-path不起作用"></a>springboot中的配置文件server.context-path不起作用</h4><p>因为spring boot版本问题导致的！！现在用的比较新的版本在2.0以上！以前是1.0-2.0之间的.server.context-path=/XXXXX</p>
-<figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="meta">server.servlet.context-path</span>=<span class="string">/XXXXX  # 2.0以上</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">server.context-path</span>=<span class="string">/XXXXX          #  2.0以下</span></span></pre></td></tr></table></figure>
-
-
-
-<hr>
-<h4 id="springboot无法完成变量从pom到-properties文件自动替换的问题"><a href="#springboot无法完成变量从pom到-properties文件自动替换的问题" class="headerlink" title="springboot无法完成变量从pom到.properties文件自动替换的问题"></a>springboot无法完成变量从pom到.properties文件自动替换的问题</h4><p>我在maven的pom文件中进行了多环境变量配置，引用了maven-resources-plugin，在application.properties文件中通过以下配置指定不同环境下的配置文件，</p>
-<figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="meta">spring.profiles.active</span> = <span class="string">$&#123;profiles.active&#125;</span></span></pre></td></tr></table></figure>
-
-<p>但是${profiles.active}无法从pom文件中获取变量值替换</p>
-<blockquote>
-<p>由于<code>${}</code>方式会被maven处理。如果你pom继承了<code>spring-boot-starter-parent</code>，Spring<br>Boot已经将maven-resources-plugins默认的<code>${}</code>方式改为了<code>@@</code>方式，如<code>@name@</code></p>
-</blockquote>
-<p>如果还想继续使用${}占位符方式，只需要在pom文件中加上下面配置即可：</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>maven-resources-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="tag">&lt;<span class="name">encoding</span>&gt;</span>utf-8<span class="tag">&lt;/<span class="name">encoding</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="tag">&lt;<span class="name">useDefaultDelimiters</span>&gt;</span>true<span class="tag">&lt;/<span class="name">useDefaultDelimiters</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span></pre></td></tr></table></figure>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">## tag.tagid，不能使用 #&#123;tag.tagid&#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">@Cacheable</span>(value = ARTICLES_CACHE_NAME, key = <span class="string">"'findArtileByTag'+#tag.tagId+#page+#limit+#status"</span>)</span></pre></td></tr></table></figure>
-
-
-
-<p>较新版的Spring Boot取消了@<code>SpringApplicationConfiguration</code>这个注解，用<code>@SpringBootTest</code>就可以了</p>
-]]></content>
-      <tags>
-        <tag>spring boot</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>eureka</title>
-    <url>/2019/06/18/md/part/microServices/spring%20cloud/eureka/</url>
-    <content><![CDATA[<p>Eureka注册中心的作用很大的程度是作用于<code>服务发现</code>和<code>服务心跳</code>，在多个注册中心的时候,依赖于zuul的负载均衡,保证异常的服务停止,正常的服务加载,保证服务的稳定性。</p>
+    <url>/2019/06/18/md/part/microServices/eureka/eureka/</url>
+    <content><![CDATA[<p>Eureka Server采用的是Peer to Peer对等通信。这是一种去中心化的架构，无master/slave区分，每一个Peer都是对等的。<br>在这种架构中，节点通过彼此互相注册来提高可用性，每个节点需要添加一个或多个有效的serviceUrl指向其他节点。每个节点都可被视为其他节点的副本。</p>
+<p>Eureka注册中心的作用很大的程度是作用于<code>服务发现</code>和<code>服务心跳</code>，在多个注册中心的时候,依赖于zuul的负载均衡,保证异常的服务停止,正常的服务加载,保证服务的稳定性。</p>
 <p>Eureka能够通过心跳检查、客户端缓存等机制，确保了系统的高可用性。</p>
 <p>默认配置，Eureka Server在90s没有得到客户端的心跳，则注销该实例，同时Eureka 有自我保护机制（防止本身不可用，而干掉可用服务），通过在Eureka Server配置参数，<br>可启动保护机制它的工作原理是：当Eureka Server节点在短时间内丢失过多的客户端时（可能发送了网络故障），那么这个节点将进入自我保护模式，<br>不再注销任何微服务，当网络故障回复后，该节点会自动退出自我保护模式。</p>
 <p>Eureka VS Zookeeper</p>
@@ -5783,6 +6123,37 @@
       </tags>
   </entry>
   <entry>
+    <title>spring boot 运行方式</title>
+    <url>/2019/06/18/md/part/spring/springboot/spring-boot-test/</url>
+    <content><![CDATA[<h4 id="springboot-运行"><a href="#springboot-运行" class="headerlink" title="springboot 运行"></a>springboot 运行</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> jar方式运行   -D 参数必须在jar前面指定</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">java -jar -Dserver.port=8081 spring-boot-test-service-0.0.1-SNAPSHOT.jar</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> spring-boot plugin 运行</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">mvn spring-boot:run -Dspring-boot.run.arguments='--spring.profiles.active=pro'</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> </span></span></pre></td></tr><tr><td class="code"><pre><span class="line">mvn spring-boot:run -Dspring-boot.run.profiles=pro</span></pre></td></tr></table></figure>
+
+<h4 id="springboot中的配置文件server-context-path不起作用"><a href="#springboot中的配置文件server-context-path不起作用" class="headerlink" title="springboot中的配置文件server.context-path不起作用"></a>springboot中的配置文件server.context-path不起作用</h4><p>因为spring boot版本问题导致的！！现在用的比较新的版本在2.0以上！以前是1.0-2.0之间的.server.context-path=/XXXXX</p>
+<figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="meta">server.servlet.context-path</span>=<span class="string">/XXXXX  # 2.0以上</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">server.context-path</span>=<span class="string">/XXXXX          #  2.0以下</span></span></pre></td></tr></table></figure>
+<hr>
+<h4 id="springboot无法完成变量从pom到-properties文件自动替换的问题"><a href="#springboot无法完成变量从pom到-properties文件自动替换的问题" class="headerlink" title="springboot无法完成变量从pom到.properties文件自动替换的问题"></a>springboot无法完成变量从pom到.properties文件自动替换的问题</h4><p>我在maven的pom文件中进行了多环境变量配置，引用了maven-resources-plugin，在application.properties文件中通过以下配置指定不同环境下的配置文件，</p>
+<figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="meta">spring.profiles.active</span> = <span class="string">$&#123;profiles.active&#125;</span></span></pre></td></tr></table></figure>
+
+<p>但是${profiles.active}无法从pom文件中获取变量值替换</p>
+<blockquote>
+<p>由于<code>${}</code>方式会被maven处理。如果你pom继承了<code>spring-boot-starter-parent</code>，Spring<br>Boot已经将maven-resources-plugins默认的<code>${}</code>方式改为了<code>@@</code>方式，如<code>@name@</code></p>
+</blockquote>
+<p>spring:<br>  profiles:<br>    active: @spring.profile.active@</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">&#96;&#96;&#96;xml</span></pre></td></tr><tr><td class="code"><pre><span class="line">    &lt;properties&gt;</span></pre></td></tr><tr><td class="code"><pre><span class="line">        &lt;spring.profile.active&gt;sit&lt;&#x2F;spring.profile.active&gt;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    &lt;&#x2F;properties&gt;</span></pre></td></tr></table></figure>
+
+
+<p>如果还想继续使用${}占位符方式，只需要在pom文件中加上下面配置即可：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>maven-resources-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="tag">&lt;<span class="name">encoding</span>&gt;</span>utf-8<span class="tag">&lt;/<span class="name">encoding</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="tag">&lt;<span class="name">useDefaultDelimiters</span>&gt;</span>true<span class="tag">&lt;/<span class="name">useDefaultDelimiters</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"># #tag.tagid，不能使用 #&#123;tag.tagid&#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">@Cacheable</span>(value = ARTICLES_CACHE_NAME, key = <span class="string">"'findArtileByTag'+#tag.tagId+#page+#limit+#status"</span>)</span></pre></td></tr></table></figure>
+
+<p>较新版的Spring Boot取消了@<code>SpringApplicationConfiguration</code>这个注解，用<code>@SpringBootTest</code>就可以了</p>
+<h4 id="spring-boot全局排除jar"><a href="#spring-boot全局排除jar" class="headerlink" title="spring-boot全局排除jar"></a>spring-boot全局排除jar</h4><p>项目里使用了log4j2做日志处理，要排除掉Spring Boot 很多jar里边默认依赖的日志包spring-boot-starter-logging。一个一个写依赖排除也可以，<br>但是太繁琐了，经过尝试，只让它依赖个<code>spring-boot-starter-logging</code>的空壳，里边的东西全部排除掉即可。使用下边的方式就可以达到想要的效果。</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!--全局排除spring-boot-starter-logging内的所有依赖--&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">       <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">           <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">           <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-logging<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">           <span class="tag">&lt;<span class="name">exclusions</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">               <span class="tag">&lt;<span class="name">exclusion</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">                   <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>*<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">                   <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>*<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">               <span class="tag">&lt;/<span class="name">exclusion</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">           <span class="tag">&lt;/<span class="name">exclusions</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">       <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>spring boot</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>eq</title>
     <url>/2019/06/18/md/life/eq/</url>
     <content><![CDATA[<ul>
@@ -5792,6 +6163,9 @@
 </ul>
 <p>感受到对方的表情变化，并及时调整自己的说话思维方式，这才是正确的反馈</p>
 ]]></content>
+      <categories>
+        <category>人生感悟</category>
+      </categories>
       <tags>
         <tag>人生</tag>
       </tags>
@@ -5887,29 +6261,6 @@
       </tags>
   </entry>
   <entry>
-    <title>centos设置</title>
-    <url>/2019/06/18/md/part/system/linux/centos/</url>
-    <content><![CDATA[<h4 id="设置静态IP"><a href="#设置静态IP" class="headerlink" title="设置静态IP"></a>设置静态IP</h4><p>修改/etc/sysconfig/network-scripts/ifcfg-ens33  文件</p>
-<figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="attr">BOOTPROTO</span>=<span class="string">static</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="attr">IPADDR</span>=<span class="string">192.168.85.135</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="attr">GATEWAY</span>=<span class="string">192.168.85.2</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="attr">NETMASK</span>=<span class="string">255.255.255.0</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="attr">DNS1</span>=<span class="string">192.168.85.2</span></span></pre></td></tr></table></figure>
-<hr>
-<h4 id="Linux下查看网关方法："><a href="#Linux下查看网关方法：" class="headerlink" title="Linux下查看网关方法："></a>Linux下查看网关方法：</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">route -n</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">ip route show</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">第一行就是自己的默认网关</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">traceroute www.prudentwoo.com -s 100 </span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">netstat -r</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">more /etc/network/interfaces  #Debian/Ubuntu Linux</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">more /etc/sysconfig/network-scripts/ifcfg-eth0 #Red Hat</span></pre></td></tr></table></figure>
-<hr>
-<h4 id="无法访问外网"><a href="#无法访问外网" class="headerlink" title="无法访问外网"></a>无法访问外网</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">修改文件   /etc/sysconfig/network-scripts/ifcfg-ens33 </span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">ONBOOT=no改为yes，确认BOOTPROTO=dhcp</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">然后重启网络服务</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">systemctl restart network</span></pre></td></tr></table></figure>
-<hr>
-<h4 id="如果报未找到ifconfig命令"><a href="#如果报未找到ifconfig命令" class="headerlink" title="如果报未找到ifconfig命令"></a>如果报未找到ifconfig命令</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">安装net-tools</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">yum install net-tools  -y</span></pre></td></tr></table></figure>
-
-
-<h4 id="Centos-7-更改为中国时区和时间同步"><a href="#Centos-7-更改为中国时区和时间同步" class="headerlink" title="Centos 7 更改为中国时区和时间同步"></a>Centos 7 更改为中国时区和时间同步</h4><h5 id="SSH-登录-VPS，执行-date-可以获取-VPS-当前时间，如：Tue-Sep-4-11-50-16-CST-2018"><a href="#SSH-登录-VPS，执行-date-可以获取-VPS-当前时间，如：Tue-Sep-4-11-50-16-CST-2018" class="headerlink" title="SSH 登录 VPS，执行 date 可以获取 VPS 当前时间，如：Tue Sep 4 11:50:16 CST 2018"></a>SSH 登录 VPS，执行 date 可以获取 VPS 当前时间，如：Tue Sep 4 11:50:16 CST 2018</h5><p>执行命令更改为中国上海时区：</p>
-<p>cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime</p>
-<h5 id="提示-cp-overwrite-‘-etc-localtime’-时，输入-y-按回车确认即可。"><a href="#提示-cp-overwrite-‘-etc-localtime’-时，输入-y-按回车确认即可。" class="headerlink" title="提示 cp: overwrite ‘/etc/localtime’? 时，输入 y 按回车确认即可。"></a>提示 cp: overwrite ‘/etc/localtime’? 时，输入 y 按回车确认即可。</h5><p>cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime<br>cp: overwrite ‘/etc/localtime’? y</p>
-<h5 id="设置时间自动同步"><a href="#设置时间自动同步" class="headerlink" title="设置时间自动同步"></a>设置时间自动同步</h5><p>yum install -y ntp<br>ntpdate us.pool.ntp.org</p>
-<h5 id="设置完成后执行命令检查一下当前时间是否与当地时间一致即可："><a href="#设置完成后执行命令检查一下当前时间是否与当地时间一致即可：" class="headerlink" title="设置完成后执行命令检查一下当前时间是否与当地时间一致即可："></a>设置完成后执行命令检查一下当前时间是否与当地时间一致即可：</h5><p>date</p>
-]]></content>
-      <tags>
-        <tag>linux</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>shell</title>
     <url>/2019/06/18/md/part/system/linux/shell/</url>
     <content><![CDATA[<p>单引号字符串的限制：</p>
@@ -5917,6 +6268,20 @@
 <li>单引号里的任何字符都会原样输出，单引号字符串中的变量是无效的；</li>
 <li>单引号字串中不能出现单独一个的单引号（对单引号使用转义符后也不行），但可成对出现，作为字符串拼接使用。</li>
 </ul>
+]]></content>
+      <tags>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>peerDNS</title>
+    <url>/2019/06/18/md/part/system/linux/peerDNS/</url>
+    <content><![CDATA[<p>先认识一下这三个配置文件：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">/etc/hosts #：这个是最早的 hostname 对应 IP 的存档；</span></pre></td></tr><tr><td class="code"><pre><span class="line">/etc/resolv.conf #：当需要解析域名时，读取该文件获得DNS 服务器 IP；</span></pre></td></tr><tr><td class="code"><pre><span class="line">/etc/nsswitch.conf#：这个档案『决定』先使用 /etc/hosts 还是 /etc/resolv.conf 的设定！</span></pre></td></tr></table></figure>
+
+<p>当电脑要访问一个域名时，要将域名翻译成IP地址。<br> 这个过程通常会先访问/etc/hosts，看本地是否有对应的hostname – IP记录。<br> 如果没有就去查询DNS服务器，通过/etc/resolv.conf 得到dns服务器地址。</p>
+<p>当在eth接口启用DHCP后，本地resolv.conf文件将被修改，resolv.conf文件中的DNS地址将被改为从DHCP获取到的地址。这种从DHCP获得的DNS即是Peer DNS。</p>
+<p>启用DHCP后即便修改/etc/resolv.conf，不久又恢复成原样。如何解决这个问题？此时，你得要在 /etc/sysconfig/network-scripts/ifcfg-eth0 等相关档案内，增加一行：『PEERDNS=no』，然后重新启动网络即可。</p>
 ]]></content>
       <tags>
         <tag>linux</tag>
@@ -5954,14 +6319,23 @@
       </tags>
   </entry>
   <entry>
-    <title>peerDNS</title>
-    <url>/2019/06/18/md/part/system/linux/peerDNS/</url>
-    <content><![CDATA[<p>先认识一下这三个配置文件：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">/etc/hosts #：这个是最早的 hostname 对应 IP 的存档；</span></pre></td></tr><tr><td class="code"><pre><span class="line">/etc/resolv.conf #：当需要解析域名时，读取该文件获得DNS 服务器 IP；</span></pre></td></tr><tr><td class="code"><pre><span class="line">/etc/nsswitch.conf#：这个档案『决定』先使用 /etc/hosts 还是 /etc/resolv.conf 的设定！</span></pre></td></tr></table></figure>
+    <title>centos设置</title>
+    <url>/2019/06/18/md/part/system/linux/centos/</url>
+    <content><![CDATA[<h4 id="设置静态IP"><a href="#设置静态IP" class="headerlink" title="设置静态IP"></a>设置静态IP</h4><p>修改/etc/sysconfig/network-scripts/ifcfg-ens33  文件</p>
+<figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="attr">BOOTPROTO</span>=<span class="string">static</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="attr">IPADDR</span>=<span class="string">192.168.85.135</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="attr">GATEWAY</span>=<span class="string">192.168.85.2</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="attr">NETMASK</span>=<span class="string">255.255.255.0</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="attr">DNS1</span>=<span class="string">192.168.85.2</span></span></pre></td></tr></table></figure>
+<hr>
+<h4 id="Linux下查看网关方法："><a href="#Linux下查看网关方法：" class="headerlink" title="Linux下查看网关方法："></a>Linux下查看网关方法：</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">route -n</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">ip route show</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">第一行就是自己的默认网关</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">traceroute www.prudentwoo.com -s 100 </span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">netstat -r</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">more /etc/network/interfaces  #Debian/Ubuntu Linux</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">more /etc/sysconfig/network-scripts/ifcfg-eth0 #Red Hat</span></pre></td></tr></table></figure>
+<hr>
+<h4 id="无法访问外网"><a href="#无法访问外网" class="headerlink" title="无法访问外网"></a>无法访问外网</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">修改文件   /etc/sysconfig/network-scripts/ifcfg-ens33 </span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">ONBOOT=no改为yes，确认BOOTPROTO=dhcp</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">然后重启网络服务</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">systemctl restart network</span></pre></td></tr></table></figure>
+<hr>
+<h4 id="如果报未找到ifconfig命令"><a href="#如果报未找到ifconfig命令" class="headerlink" title="如果报未找到ifconfig命令"></a>如果报未找到ifconfig命令</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">安装net-tools</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">yum install net-tools  -y</span></pre></td></tr></table></figure>
 
-<p>当电脑要访问一个域名时，要将域名翻译成IP地址。<br> 这个过程通常会先访问/etc/hosts，看本地是否有对应的hostname – IP记录。<br> 如果没有就去查询DNS服务器，通过/etc/resolv.conf 得到dns服务器地址。</p>
-<p>当在eth接口启用DHCP后，本地resolv.conf文件将被修改，resolv.conf文件中的DNS地址将被改为从DHCP获取到的地址。这种从DHCP获得的DNS即是Peer DNS。</p>
-<p>启用DHCP后即便修改/etc/resolv.conf，不久又恢复成原样。如何解决这个问题？此时，你得要在 /etc/sysconfig/network-scripts/ifcfg-eth0 等相关档案内，增加一行：『PEERDNS=no』，然后重新启动网络即可。</p>
+
+<h4 id="Centos-7-更改为中国时区和时间同步"><a href="#Centos-7-更改为中国时区和时间同步" class="headerlink" title="Centos 7 更改为中国时区和时间同步"></a>Centos 7 更改为中国时区和时间同步</h4><h5 id="SSH-登录-VPS，执行-date-可以获取-VPS-当前时间，如：Tue-Sep-4-11-50-16-CST-2018"><a href="#SSH-登录-VPS，执行-date-可以获取-VPS-当前时间，如：Tue-Sep-4-11-50-16-CST-2018" class="headerlink" title="SSH 登录 VPS，执行 date 可以获取 VPS 当前时间，如：Tue Sep 4 11:50:16 CST 2018"></a>SSH 登录 VPS，执行 date 可以获取 VPS 当前时间，如：Tue Sep 4 11:50:16 CST 2018</h5><p>执行命令更改为中国上海时区：</p>
+<p>cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime</p>
+<h5 id="提示-cp-overwrite-‘-etc-localtime’-时，输入-y-按回车确认即可。"><a href="#提示-cp-overwrite-‘-etc-localtime’-时，输入-y-按回车确认即可。" class="headerlink" title="提示 cp: overwrite ‘/etc/localtime’? 时，输入 y 按回车确认即可。"></a>提示 cp: overwrite ‘/etc/localtime’? 时，输入 y 按回车确认即可。</h5><p>cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime<br>cp: overwrite ‘/etc/localtime’? y</p>
+<h5 id="设置时间自动同步"><a href="#设置时间自动同步" class="headerlink" title="设置时间自动同步"></a>设置时间自动同步</h5><p>yum install -y ntp<br>ntpdate us.pool.ntp.org</p>
+<h5 id="设置完成后执行命令检查一下当前时间是否与当地时间一致即可："><a href="#设置完成后执行命令检查一下当前时间是否与当地时间一致即可：" class="headerlink" title="设置完成后执行命令检查一下当前时间是否与当地时间一致即可："></a>设置完成后执行命令检查一下当前时间是否与当地时间一致即可：</h5><p>date</p>
 ]]></content>
       <tags>
         <tag>linux</tag>
@@ -6163,6 +6537,18 @@
       </tags>
   </entry>
   <entry>
+    <title>docker运行mariadb</title>
+    <url>/2019/06/18/md/part/docker/mariadb/</url>
+    <content><![CDATA[<h4 id="运行容器"><a href="#运行容器" class="headerlink" title="运行容器"></a>运行容器</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker run  --privileged --name mariadb   -d --restart=always -e TIMEZONE=Asis/Shanghai -e MYSQL_ROOT_PASSWORD=Admin123# -e SERVER_ID=1 -v /docker/mariadb/dbdata:/var/lib/mysql  -p 3306:3306  mariadb:10.4.5 --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">参数说明:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">--privileged 赋予容器扩展权限(root)</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">设置--restart=always 参数的时候， 设置了此参数容器退出了会自动重启， 宿主机重启了容器也能自动重启           </span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">-d后台运行 </span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">TIMEZONE 设置时区</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">MYSQL_ROOT_PASSWORD 设置root密码</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">-v  /opt/data/mariadb/dbdata:/var/lib/mysql:/var/lib/mysql  将mariadb里面的目录（/var/lib/mysql）挂载到宿主机里面</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci 设置 utf-8字符集和排序规则</span></span></pre></td></tr></table></figure>
+
+
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">--创建用户</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">USER</span> sonar <span class="keyword">IDENTIFIED</span> <span class="keyword">BY</span> <span class="string">'sonar'</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">--授权</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">GRANT</span> <span class="keyword">ALL</span> <span class="keyword">ON</span> *.* <span class="keyword">TO</span> <span class="string">'sonar@localhost'</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">GRANT</span> <span class="keyword">ALL</span> <span class="keyword">PRIVILEGES</span> <span class="keyword">ON</span> *.* <span class="keyword">TO</span> <span class="string">'root'</span>@<span class="string">'%'</span><span class="keyword">IDENTIFIED</span> <span class="keyword">BY</span> <span class="string">'Admin123#'</span> <span class="keyword">WITH</span> <span class="keyword">GRANT</span> <span class="keyword">OPTION</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">grant</span> <span class="keyword">all</span> <span class="keyword">privileges</span> <span class="keyword">on</span> *.* <span class="keyword">to</span> sonar <span class="keyword">identified</span> <span class="keyword">by</span> <span class="string">'sonar'</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">FLUSH</span> <span class="keyword">PRIVILEGES</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">-- mariadb 开启远程连接权限</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">grant</span> <span class="keyword">all</span> <span class="keyword">privileges</span> <span class="keyword">on</span> *.* <span class="keyword">to</span> root@<span class="string">"%"</span> <span class="keyword">identified</span> <span class="keyword">by</span> <span class="string">"Admin123#"</span>;  </span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">FLUSH</span> <span class="keyword">PRIVILEGES</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">--指定编码创建db</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">DATABASE</span> <span class="keyword">IF</span> <span class="keyword">NOT</span> <span class="keyword">EXISTS</span> sonar <span class="keyword">DEFAULT</span> <span class="keyword">CHARSET</span> utf8mb4 <span class="keyword">COLLATE</span> utf8mb4_general_ci;</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">--备份数据</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">mysqldump -uroot -p <span class="comment">--all-database &gt; bk.sql</span></span></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>docker</tag>
+        <tag>db</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>docker常用命令</title>
     <url>/2019/06/18/md/part/docker/docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
     <content><![CDATA[<p><code>Docker</code> 是一个开源的轻量级容器管理<code>引擎</code>，可以轻松的为任<br>何应用创建一个轻量级的、可移植的、自给自足的容器</p>
@@ -6188,18 +6574,6 @@
 ]]></content>
       <tags>
         <tag>docker</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>docker运行mariadb</title>
-    <url>/2019/06/18/md/part/docker/mariadb/</url>
-    <content><![CDATA[<h4 id="运行容器"><a href="#运行容器" class="headerlink" title="运行容器"></a>运行容器</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker run  --privileged --name mariadb   -d --restart=always -e TIMEZONE=Asis/Shanghai -e MYSQL_ROOT_PASSWORD=Admin123# -e SERVER_ID=1 -v /docker/mariadb/dbdata:/var/lib/mysql  -p 3306:3306  mariadb:10.4.5 --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">参数说明:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">--privileged 赋予容器扩展权限(root)</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">设置--restart=always 参数的时候， 设置了此参数容器退出了会自动重启， 宿主机重启了容器也能自动重启           </span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">-d后台运行 </span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">TIMEZONE 设置时区</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">MYSQL_ROOT_PASSWORD 设置root密码</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">-v  /opt/data/mariadb/dbdata:/var/lib/mysql:/var/lib/mysql  将mariadb里面的目录（/var/lib/mysql）挂载到宿主机里面</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci 设置 utf-8字符集和排序规则</span></span></pre></td></tr></table></figure>
-
-
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">--创建用户</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">USER</span> sonar <span class="keyword">IDENTIFIED</span> <span class="keyword">BY</span> <span class="string">'sonar'</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">--授权</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">GRANT</span> <span class="keyword">ALL</span> <span class="keyword">ON</span> *.* <span class="keyword">TO</span> <span class="string">'sonar@localhost'</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">GRANT</span> <span class="keyword">ALL</span> <span class="keyword">PRIVILEGES</span> <span class="keyword">ON</span> *.* <span class="keyword">TO</span> <span class="string">'root'</span>@<span class="string">'%'</span><span class="keyword">IDENTIFIED</span> <span class="keyword">BY</span> <span class="string">'Admin123#'</span> <span class="keyword">WITH</span> <span class="keyword">GRANT</span> <span class="keyword">OPTION</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">grant</span> <span class="keyword">all</span> <span class="keyword">privileges</span> <span class="keyword">on</span> *.* <span class="keyword">to</span> sonar <span class="keyword">identified</span> <span class="keyword">by</span> <span class="string">'sonar'</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">FLUSH</span> <span class="keyword">PRIVILEGES</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">-- mariadb 开启远程连接权限</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">grant</span> <span class="keyword">all</span> <span class="keyword">privileges</span> <span class="keyword">on</span> *.* <span class="keyword">to</span> root@<span class="string">"%"</span> <span class="keyword">identified</span> <span class="keyword">by</span> <span class="string">"Admin123#"</span>;  </span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">FLUSH</span> <span class="keyword">PRIVILEGES</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">--指定编码创建db</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">DATABASE</span> <span class="keyword">IF</span> <span class="keyword">NOT</span> <span class="keyword">EXISTS</span> sonar <span class="keyword">DEFAULT</span> <span class="keyword">CHARSET</span> utf8mb4 <span class="keyword">COLLATE</span> utf8mb4_general_ci;</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">--备份数据</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">mysqldump -uroot -p <span class="comment">--all-database &gt; bk.sql</span></span></pre></td></tr></table></figure>]]></content>
-      <tags>
-        <tag>docker</tag>
-        <tag>db</tag>
       </tags>
   </entry>
   <entry>
@@ -6239,11 +6613,13 @@
 <li><p>想要获取自增主键id，应该通过对象的getId()方法，而并不是insert的返回值，insert的返回值表示的是影响行数</p>
 </li>
 <li><p>在mapper.xml中：useGeneratedKeys=”true”、keyProperty=”id”，这两个属性的作用：</p>
+<ul>
+<li>共同决定了sql执行后，会将主键封装到id属性上；</li>
+<li>自增主键封装到了对象的id属性上了，那么想要获取，直接调用对象的getId()方法就可以了</li>
+</ul>
 </li>
 </ol>
-<pre><code>- 共同决定了sql执行后，会将主键封装到id属性上；
-
-- 自增主键封装到了对象的id属性上了，那么想要获取，直接调用对象的getId()方法就可以了</code></pre>]]></content>
+]]></content>
       <tags>
         <tag>mybatis</tag>
       </tags>
@@ -6297,6 +6673,10 @@
 <li>并行化：使用更多的线程和硬件资源；</li>
 <li>异步化：基于现有的资源来提高执行效率。</li>
 </ol>
+<p>将输入转化为输出的过程中，处理速度小于输入速度的状态称为Backpressure<br>通常处理这种状态的策略有以下三种：</p>
+<p>Buffer：将输入暂时保存下来</p>
+<p>Drop：丢弃掉输入</p>
+<p>Control：由消费者来控制生产者的速度</p>
 ]]></content>
       <tags>
         <tag>响应式编程</tag>
@@ -6318,10 +6698,7 @@
   <entry>
     <title>测试相关</title>
     <url>/2019/06/18/md/other/%E6%B5%8B%E8%AF%95/</url>
-    <content><![CDATA[<p>把数据把某种逻辑来分类: 把一张表拆成多张有一样的字段但是不同种类的表</p>
-<p>把数据按字段分，也就是竖着分表: 把一些不经常改的数据放在一个表里，经常改的数据放在另外多个表里。把一张表变成1对1的关系</p>
-<p>平均分表: 通过主键ID的范围来分表。</p>
-<h4 id="测试分类"><a href="#测试分类" class="headerlink" title="测试分类"></a>测试分类</h4><p>冒烟测试;<br>    冒烟测试就是先保证系统能跑的起来，不至于让测试工作做到一半突然出现错误导致业务中断。目的就是先通过最基本的测试</p>
+    <content><![CDATA[<h4 id="测试分类"><a href="#测试分类" class="headerlink" title="测试分类"></a>测试分类</h4><p>冒烟测试;<br>    冒烟测试就是先保证系统能跑的起来，不至于让测试工作做到一半突然出现错误导致业务中断。目的就是先通过最基本的测试</p>
 <p>猴子测试:<br>    它针对的不是功能点，而是业务流程,就是说，你把自己看成白痴，随便乱点，没有任何主观想法参与进来，让一些想不到的操作呈现出错误来</p>
 <p>数据库来说吧， 数据做了分区， 一致性怎么保证啊？   选择分布式事务非常麻烦， 有时候不得不选择最终一致性来妥协</p>
 <p>迅速定位问题:</p>
@@ -6377,6 +6754,22 @@
       </tags>
   </entry>
   <entry>
+    <title>consul介绍</title>
+    <url>/2019/06/18/md/part/microServices/consul/</url>
+    <content><![CDATA[<p>consul是分布式的、高可用、横向扩展的（CP）。consul提供的一些关键特性：</p>
+<ul>
+<li>service discovery：consul通过DNS或者HTTP接口使服务注册和服务发现变的很容易，一些外部服务，例如saas提供的也可以一样注册。</li>
+<li>health checking：健康检测使consul可以快速的告警在集群中的操作。和服务发现的集成，可以防止服务转发到故障的服务上面。</li>
+<li>key/value storage：一个用来存储动态配置的系统。提供简单的HTTP接口，可以在任何地方操作。</li>
+<li>multi-datacenter：无需复杂的配置，即可支持任意数量的区域。</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>微服务</tag>
+        <tag>consul</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>docker运行redis</title>
     <url>/2019/06/18/md/part/docker/redis/</url>
     <content><![CDATA[<h4 id="运行容器"><a href="#运行容器" class="headerlink" title="运行容器"></a>运行容器</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker run  --privileged  --name redis -v /docker/redis/data:/data  -p  6379:6379 -d redis:5.0.5  redis-server --appendonly yes</span></pre></td></tr></table></figure>
@@ -6391,22 +6784,6 @@
       <tags>
         <tag>docker</tag>
         <tag>redis</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>consul介绍</title>
-    <url>/2019/06/18/md/part/microServices/consul/</url>
-    <content><![CDATA[<p>consul是分布式的、高可用、横向扩展的（CP）。consul提供的一些关键特性：</p>
-<ul>
-<li>service discovery：consul通过DNS或者HTTP接口使服务注册和服务发现变的很容易，一些外部服务，例如saas提供的也可以一样注册。</li>
-<li>health checking：健康检测使consul可以快速的告警在集群中的操作。和服务发现的集成，可以防止服务转发到故障的服务上面。</li>
-<li>key/value storage：一个用来存储动态配置的系统。提供简单的HTTP接口，可以在任何地方操作。</li>
-<li>multi-datacenter：无需复杂的配置，即可支持任意数量的区域。</li>
-</ul>
-]]></content>
-      <tags>
-        <tag>微服务</tag>
-        <tag>consul</tag>
       </tags>
   </entry>
   <entry>
@@ -6455,6 +6832,21 @@
 ]]></content>
       <tags>
         <tag>nginx</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>IK分词使用</title>
+    <url>/2018/03/27/md/part/mid/es/es-example/</url>
+    <content><![CDATA[<p>curl -XPOST <a href="http://192.168.85.143:9200/index/_mapping" target="_blank" rel="noopener">http://192.168.85.143:9200/index/_mapping</a> -H ‘Content-Type:application/json’ -d’<br>{<br>        “properties”: {<br>            “content”: {<br>                “type”: “text”,<br>                “analyzer”: “ik_max_word”,<br>                “search_analyzer”: “ik_smart”<br>            }<br>        }</p>
+<p>}’</p>
+<p>curl -XPOST <a href="http://192.168.85.143:9200/index/_create/1" target="_blank" rel="noopener">http://192.168.85.143:9200/index/_create/1</a> -H ‘Content-Type:application/json’ -d’<br>{“content”:”美国留给伊拉克的是个烂摊子吗”}’</p>
+<p>curl -XPOST <a href="http://192.168.85.143:9200/index/_create/2" target="_blank" rel="noopener">http://192.168.85.143:9200/index/_create/2</a> -H ‘Content-Type:application/json’ -d’<br>{“content”:”公安部：各地校车将享最高路权”}<br>‘<br>curl -XPOST <a href="http://192.168.85.143:9200/index/_create/3" target="_blank" rel="noopener">http://192.168.85.143:9200/index/_create/3</a> -H ‘Content-Type:application/json’ -d’<br>{“content”:”中韩渔警冲突调查：韩警平均每天扣1艘中国渔船”}<br>‘<br>curl -XPOST <a href="http://192.168.85.143:9200/index/_create/4" target="_blank" rel="noopener">http://192.168.85.143:9200/index/_create/4</a> -H ‘Content-Type:application/json’ -d’<br>{“content”:”中国驻洛杉矶领事馆遭亚裔男子枪击 嫌犯已自首”}<br>‘</p>
+<p>‘<br>curl -XPOST <a href="http://192.168.85.143:9200/index/_create/5" target="_blank" rel="noopener">http://192.168.85.143:9200/index/_create/5</a> -H ‘Content-Type:application/json’ -d’<br>{“content”:”我是中国人”}’</p>
+<p>curl -XPOST <a href="http://192.168.85.143:9200/index/_search?pretty" target="_blank" rel="noopener">http://192.168.85.143:9200/index/_search?pretty</a>  -H ‘Content-Type:application/json’ -d’<br>{<br>    “query” : { “match” : { “content” : “中国” }},<br>    “highlight” : {<br>        “pre_tags” : [“<tag1>“, “<tag2>“],<br>        “post_tags” : [“</tag1>“, “</tag2>“],<br>        “fields” : {<br>            “content” : {}<br>        }<br>    }<br>}<br>‘</p>
+<p>curl -XPOST <a href="http://192.168.85.143:9200/index/_search?pretty" target="_blank" rel="noopener">http://192.168.85.143:9200/index/_search?pretty</a>  -H ‘Content-Type:application/json’ -d’<br>{<br>    “query” : { “match” : { “content” : “渔船” }},<br>    “highlight” : {<br>        “pre_tags” : [“<tag1>“, “<tag2>“],<br>        “post_tags” : [“</tag1>“, “</tag2>“],<br>        “fields” : {<br>            “content” : {}<br>        }<br>    }<br>}<br>‘</p>
+]]></content>
+      <tags>
+        <tag>es</tag>
       </tags>
   </entry>
 </search>

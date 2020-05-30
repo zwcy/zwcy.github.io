@@ -47,15 +47,15 @@
   };
 </script>
 
-  <meta name="description" content="JVM内存调优使用JDK提供的内存查看工具，比如JConsole和Java VisualVM。  首先需要注意的是在对JVM内存调优的时候不能只看操作系统级别Java进程所占用的内存，这个数值不能准确的反应堆内存的真实占用情况，因为GC过后这个值是不会变化的，因此内存调优的时候要更多地使用JDK提供的内存查看工具，比如JConsole和Java VisualVM。 对JVM内存的系统级的调优主要的">
+  <meta name="description" content="JVM内存调优使用JDK提供的内存查看工具，比如JConsole和Java VisualVM。  首先需要注意的是在对JVM内存调优的时候不能只看操作系统级别Java进程所占用的内存，这个数值不能准确的反应堆内存的真实占用情况，因为GC过后这个值是不会变化的，因此内存调优的时候要更多地使用JDK提供的内存查看工具，比如JConsole和Java VisualVM。  对JVM内存的系统级的调优主要">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JVM内存调优">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;03&#x2F;29&#x2F;md&#x2F;jdk&#x2F;jvm&#x2F;gc-opt&#x2F;index.html">
 <meta property="og:site_name" content="小灰灰的博客">
-<meta property="og:description" content="JVM内存调优使用JDK提供的内存查看工具，比如JConsole和Java VisualVM。  首先需要注意的是在对JVM内存调优的时候不能只看操作系统级别Java进程所占用的内存，这个数值不能准确的反应堆内存的真实占用情况，因为GC过后这个值是不会变化的，因此内存调优的时候要更多地使用JDK提供的内存查看工具，比如JConsole和Java VisualVM。 对JVM内存的系统级的调优主要的">
+<meta property="og:description" content="JVM内存调优使用JDK提供的内存查看工具，比如JConsole和Java VisualVM。  首先需要注意的是在对JVM内存调优的时候不能只看操作系统级别Java进程所占用的内存，这个数值不能准确的反应堆内存的真实占用情况，因为GC过后这个值是不会变化的，因此内存调优的时候要更多地使用JDK提供的内存查看工具，比如JConsole和Java VisualVM。  对JVM内存的系统级的调优主要">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-03-29T02:31:15.000Z">
-<meta property="article:modified_time" content="2020-03-29T02:31:16.182Z">
+<meta property="article:modified_time" content="2020-04-24T15:20:01.793Z">
 <meta property="article:author" content="mqiy">
 <meta property="article:tag" content="jvm">
 <meta name="twitter:card" content="summary">
@@ -142,7 +142,7 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">52</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">54</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
@@ -152,7 +152,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">219</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">243</span></a>
 
   </li>
         <li class="menu-item menu-item-relate">
@@ -273,23 +273,25 @@
       
         <p>JVM内存调优<br>使用JDK提供的内存查看工具，比如JConsole和Java VisualVM。</p>
 <p> 首先需要注意的是在对JVM内存调优的时候不能只看操作系统级别Java进程所占用的内存，这个数值不能准确的反应堆内存的真实占用情况，因为GC过后这个值是不会变化的，因此内存调优的时候要更多地使用JDK提供的内存查看工具，比如JConsole和Java VisualVM。</p>
-<pre><code>对JVM内存的系统级的调优主要的目的是减少GC的频率和Full GC的次数，过多的GC和Full GC是会占用很多的系统资源（主要是CPU），影响系统的吞吐量。特别要关注Full GC，因为它会对整个堆进行整理，导致Full GC一般由于以下几种情况：</code></pre><p>旧生代空间不足<br>    调优时尽量让对象在新生代GC时被回收、让对象在新生代多存活一段时间和不要创建过大的对象及数组避免直接在旧生代创建对象 </p>
-<p>Pemanet Generation空间不足<br>    增大Perm Gen空间，避免太多静态对象 </p>
-<pre><code>统计得到的GC后晋升到旧生代的平均大小大于旧生代剩余空间
-控制好新生代和旧生代的比例 </code></pre><p>System.gc()被显示调用<br>    垃圾回收不要手动触发，尽量依靠JVM自身的机制 </p>
-<pre><code>调优手段主要是通过控制堆内存的各个部分的比例和GC策略来实现，下面来看看各部分比例不良设置会导致什么后果</code></pre><p>1）新生代设置过小</p>
-<pre><code>一是新生代GC次数非常频繁，增大系统消耗；二是导致大对象直接进入旧生代，占据了旧生代剩余空间，诱发Full GC</code></pre><p>2）新生代设置过大</p>
-<pre><code>一是新生代设置过大会导致旧生代过小（堆总量一定），从而诱发Full GC；二是新生代GC耗时大幅度增加
+<p> 对JVM内存的系统级的调优主要的目的是减少GC的频率和Full GC的次数，过多的GC和Full GC是会占用很多的系统资源（主要是CPU），影响系统的吞吐量。特别要关注Full GC，因为它会对整个堆进行整理，</p>
+<h3 id="导致Full-GC一般由于以下几种情况："><a href="#导致Full-GC一般由于以下几种情况：" class="headerlink" title="导致Full GC一般由于以下几种情况："></a>导致Full GC一般由于以下几种情况：</h3><p>旧生代空间不足<br>    调优时尽量让对象在新生代GC时被回收、让对象在新生代多存活一段时间和不要创建过大的对象及数组避免直接在旧生代创建对象 </p>
+<p>Pemanet Generation空间不足<br>增大Perm Gen空间，避免太多静态对象<br>统计得到的GC后晋升到旧生代的平均大小大于旧生代剩余空间<br>控制好新生代和旧生代的比例 </p>
+<p>System.gc()被显示调用<br>    垃圾回收不要手动触发，尽量依靠JVM自身的机制 </p>
+<h3 id="调优手段主要是通过控制堆内存的各个部分的比例和GC策略来实现，下面来看看各部分比例不良设置会导致什么后果"><a href="#调优手段主要是通过控制堆内存的各个部分的比例和GC策略来实现，下面来看看各部分比例不良设置会导致什么后果" class="headerlink" title="调优手段主要是通过控制堆内存的各个部分的比例和GC策略来实现，下面来看看各部分比例不良设置会导致什么后果"></a>调优手段主要是通过控制堆内存的各个部分的比例和GC策略来实现，下面来看看各部分比例不良设置会导致什么后果</h3><p>1）新生代设置过小</p>
+<p>一是新生代GC次数非常频繁，增大系统消耗；二是导致大对象直接进入旧生代，占据了旧生代剩余空间，诱发Full GC</p>
+<p>2）新生代设置过大</p>
+<p>一是新生代设置过大会导致旧生代过小（堆总量一定），从而诱发Full GC；二是新生代GC耗时大幅度增加</p>
+<p>一般说来新生代占整个堆1/3比较合适</p>
+<p>3）Survivor设置过小<br>导致对象从eden直接到达旧生代，降低了在新生代的存活时间</p>
+<p>4）Survivor设置过大<br>导致eden过小，增加了GC频率</p>
+<blockquote>
+<p>通过-XX:MaxTenuringThreshold=n来控制新生代存活时间，尽量让对象在新生代被回收</p>
+</blockquote>
+<h3 id="由内存管理和垃圾回收可知新生代和旧生代都有多种GC策略和组合搭配，选择这些策略对于我们这些开发人员是个难题，JVM提供两种较为简单的GC策略的设置方式"><a href="#由内存管理和垃圾回收可知新生代和旧生代都有多种GC策略和组合搭配，选择这些策略对于我们这些开发人员是个难题，JVM提供两种较为简单的GC策略的设置方式" class="headerlink" title="由内存管理和垃圾回收可知新生代和旧生代都有多种GC策略和组合搭配，选择这些策略对于我们这些开发人员是个难题，JVM提供两种较为简单的GC策略的设置方式"></a>由内存管理和垃圾回收可知新生代和旧生代都有多种GC策略和组合搭配，选择这些策略对于我们这些开发人员是个难题，JVM提供两种较为简单的GC策略的设置方式</h3><ul>
+<li>1）吞吐量优先<br>  JVM以吞吐量为指标，自行选择相应的GC策略及控制新生代与旧生代的大小比例，来达到吞吐量指标。这个值可由-XX:GCTimeRatio=n来设置</li>
+<li>2）暂停时间优先<br>  JVM以暂停时间为指标，自行选择相应的GC策略及控制新生代与旧生代的大小比例，尽量保证每次GC造成的应用停止时间都在指定的数值范围内完成。这个值可由-XX:MaxGCPauseRatio=n来设置</li>
+</ul>
 
-一般说来新生代占整个堆1/3比较合适</code></pre><p>3）Survivor设置过小</p>
-<pre><code>导致对象从eden直接到达旧生代，降低了在新生代的存活时间</code></pre><p>4）Survivor设置过大</p>
-<pre><code>导致eden过小，增加了GC频率
-
-另外，通过-XX:MaxTenuringThreshold=n来控制新生代存活时间，尽量让对象在新生代被回收
-
-由内存管理和垃圾回收可知新生代和旧生代都有多种GC策略和组合搭配，选择这些策略对于我们这些开发人员是个难题，JVM提供两种较为简单的GC策略的设置方式</code></pre><p>1）吞吐量优先</p>
-<pre><code>JVM以吞吐量为指标，自行选择相应的GC策略及控制新生代与旧生代的大小比例，来达到吞吐量指标。这个值可由-XX:GCTimeRatio=n来设置</code></pre><p>2）暂停时间优先</p>
-<pre><code>JVM以暂停时间为指标，自行选择相应的GC策略及控制新生代与旧生代的大小比例，尽量保证每次GC造成的应用停止时间都在指定的数值范围内完成。这个值可由-XX:MaxGCPauseRatio=n来设置</code></pre>
     </div>
 
     
@@ -312,8 +314,8 @@
       <i class="fa fa-chevron-left"></i> netty
     </a></div>
       <div class="post-nav-item">
-    <a href="/2020/03/28/md/jdk/equal-hashCode/" rel="next" title="equal与hashcode ">
-      equal与hashcode  <i class="fa fa-chevron-right"></i>
+    <a href="/2020/03/29/md/jdk/jvm/jvm-date/" rel="next" title="JVM内存调优">
+      JVM内存调优 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -374,6 +376,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#导致Full-GC一般由于以下几种情况："><span class="nav-number">1.</span> <span class="nav-text">导致Full GC一般由于以下几种情况：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#调优手段主要是通过控制堆内存的各个部分的比例和GC策略来实现，下面来看看各部分比例不良设置会导致什么后果"><span class="nav-number">2.</span> <span class="nav-text">调优手段主要是通过控制堆内存的各个部分的比例和GC策略来实现，下面来看看各部分比例不良设置会导致什么后果</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#由内存管理和垃圾回收可知新生代和旧生代都有多种GC策略和组合搭配，选择这些策略对于我们这些开发人员是个难题，JVM提供两种较为简单的GC策略的设置方式"><span class="nav-number">3.</span> <span class="nav-text">由内存管理和垃圾回收可知新生代和旧生代都有多种GC策略和组合搭配，选择这些策略对于我们这些开发人员是个难题，JVM提供两种较为简单的GC策略的设置方式</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -387,7 +390,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">219</span>
+          <span class="site-state-item-count">243</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -400,7 +403,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">52</span>
+        <span class="site-state-item-count">54</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -434,12 +437,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">256k</span>
+    <span title="站点总字数">264k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">3:52</span>
+    <span title="站点阅读时长">4:01</span>
 </div>
 
         

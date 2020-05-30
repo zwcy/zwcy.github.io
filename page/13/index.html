@@ -140,7 +140,7 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">52</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">54</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
@@ -150,7 +150,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">219</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">243</span></a>
 
   </li>
         <li class="menu-item menu-item-relate">
@@ -211,7 +211,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/22/md/develop/SRE/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/30/md/part/redis/redis-backup/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -225,7 +225,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2019/08/22/md/develop/SRE/" class="post-title-link" itemprop="url">SRE</a>
+            <a href="/2019/10/30/md/part/redis/redis-backup/" class="post-title-link" itemprop="url">redis持久化</a>
         </h1>
 
         <div class="post-meta">
@@ -235,7 +235,7 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2019-08-22 10:27 10:27:49" itemprop="dateCreated datePublished" datetime="2019-08-22T10:27:49+08:00">2019-08-22 10:27</time>
+              <time title="创建时间：2019-10-30 18:10 18:10:10" itemprop="dateCreated datePublished" datetime="2019-10-30T18:10:10+08:00">2019-10-30 18:10</time>
             </span>
 
           <br>
@@ -244,7 +244,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>245</span>
+              <span>228</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -263,26 +263,87 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>SRE是指Site Reliability Engineer (网站可靠性工程师)。他是软件工程师和系统管理员的结合，一个SRE工程师基本上需要掌握很多<br>知识：<code>算法</code>，数据结构，<code>编程能力</code>，<code>网络编程</code>，<code>分布式系统</code>，<code>可扩展架构</code>，故障排除。</p>
-<p>，DevOps 可能缺乏 SRE 在一些专业领域的技能： </p>
+          <p>RDB：　 redis 主进程只需要 fork 一个子进程，让子进程执行磁盘 IO 操作来进行 RDB 持久化</p>
+<p>优点：<br>    数据快照，适合做冷备<br>    对性能影响小<br>    回复快<br>缺点：<br>    丢失少量数据<br>    数据量过大，影响服务提供</p>
+<p>AOF：　AOF 机制对每条写入命令作为日志，以 append-only 的模式写入一个日志文件中，在 redis 重启的时候，可以通过回放 AOF 日志中的写入指令来重新构建整个数据集。<br>优点：<br>    数据不丢失（1s fsync）<br>    可读方式记录，适合恢复<br>缺点：<br>    文件大<br>    QPS相对低<br>    发年bug,数据未恢复一致</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/30/md/part/redis/redis-build/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="mqiy">
+      <meta itemprop="description" content="永远为下个月离职做好准备">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小灰灰的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/10/30/md/part/redis/redis-build/" class="post-title-link" itemprop="url">redis模型模式</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-10-30 18:10 18:10:10" itemprop="dateCreated datePublished" datetime="2019-10-30T18:10:10+08:00">2019-10-30 18:10</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>247</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>####　sentinel模式</p>
+<h4 id="cluster模式"><a href="#cluster模式" class="headerlink" title="cluster模式"></a>cluster模式</h4><p>cluster可以说是sentinel和主从模式的结合体，通过cluster可以实现主从和master重选功能，<br>这种模式适合<code>数据量巨大</code>的缓存要求</p>
+<p>不足：</p>
 <ul>
-<li><p>计算机体系结构能力；</p>
-</li>
-<li><p>高吞吐高并发优化能力；</p>
-</li>
-<li><p>可扩展系统设计能力；</p>
-</li>
-<li><p>复杂系统设计能力；</p>
-</li>
-<li><p>业务系统排查能力。 </p>
-</li>
-</ul>
-<p>两者都需要软实力，但是 SRE 面临复杂度更高，挑战更大，要求也更高：</p>
-<ul>
-<li>分析问题、解决问题能力</li>
-<li>战胜困难决心</li>
-<li>面对挑战热情</li>
-<li>自驱学习</li>
+<li>一般涉及多个key的操作会不支持，取两个set的并集，且两个set在不同的Redis实例上面（当然也是能实现的，只是Redis不会直接支持这么做）。</li>
+<li>涉及多个key的事务将不能使用</li>
+<li>使用分区时,数据处理更加复杂,例如你必须处理多个RDB / AOF文件,你需要备份你的数据并聚合多个实例和主机的持久性文件。</li>
 </ul>
 
       
@@ -303,7 +364,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/22/md/interview/%E6%9E%B6%E6%9E%84%E5%B8%882/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/30/md/part/redis/redis-keyhot/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -317,7 +378,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2019/08/22/md/interview/%E6%9E%B6%E6%9E%84%E5%B8%882/" class="post-title-link" itemprop="url">架构师职位相关(二)</a>
+            <a href="/2019/10/30/md/part/redis/redis-keyhot/" class="post-title-link" itemprop="url">redis热key</a>
         </h1>
 
         <div class="post-meta">
@@ -327,7 +388,7 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2019-08-22 10:00 10:00:48" itemprop="dateCreated datePublished" datetime="2019-08-22T10:00:48+08:00">2019-08-22 10:00</time>
+              <time title="创建时间：2019-10-30 18:10 18:10:10" itemprop="dateCreated datePublished" datetime="2019-10-30T18:10:10+08:00">2019-10-30 18:10</time>
             </span>
 
           <br>
@@ -336,7 +397,171 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.8k</span>
+              <span>420</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h4 id=""><a href="#" class="headerlink" title=""></a></h4><p>怎么发现热key<br>方法一:凭借业务经验，进行预估哪些是热key</p>
+<p>其实这个方法还是挺有可行性的。比如某商品在做秒杀，那这个商品的key就可以判断出是热key。缺点很明显，并非所有业务都能预估出哪些key是热key。</p>
+<p>方法二:在客户端进行收集</p>
+<p>这个方式就是在操作redis之前，加入一行代码进行数据统计。</p>
+<p>方法三:在Proxy层做收集 </p>
+<p>方法四:用redis自带命令</p>
+<p>(1)monitor命令，该命令可以实时抓取出redis服务器接收到的命令，然后写代码统计出热key是啥。当然，也有现成的分析工具可以给你使用，比如redis-faina。但是该命令在高并发的条件下，有内存增暴增的隐患，还会降低redis的性能。</p>
+<p>(2)hotkeys参数，redis 4.0.3提供了redis-cli的热点key发现功能，执行redis-cli时加上–hotkeys选项即可。但是该参数在执行的时候，如果key比较多，执行起来比较慢。</p>
+<p>####解决方法：</p>
+<ul>
+<li>利用二级缓存</li>
+<li>备份热key</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/30/md/part/redis/redis-sential/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="mqiy">
+      <meta itemprop="description" content="永远为下个月离职做好准备">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小灰灰的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/10/30/md/part/redis/redis-sential/" class="post-title-link" itemprop="url">redis哨兵</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-10-30 18:10 18:10:10" itemprop="dateCreated datePublished" datetime="2019-10-30T18:10:10+08:00">2019-10-30 18:10</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>384</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="安装-redis"><a href="#安装-redis" class="headerlink" title="安装 redis"></a>安装 redis</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 下载,编译</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">wget http://download.redis.io/releases/redis-5.0.7.tar.gz</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">tar xzf redis-5.0.7.tar.gz</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">cd redis-5.0.7</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">make</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> </span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">cp src/redis-server /usr/bin/</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">cp src/redis-cli /usr/bin/</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 开启服务器</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">src/redis-server</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 开启客户端</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line">src/redis-cli</span></pre></td></tr></table></figure>
+
+
+<h3 id="安装问题"><a href="#安装问题" class="headerlink" title="安装问题"></a>安装问题</h3><h4 id="cc-command-not-found"><a href="#cc-command-not-found" class="headerlink" title="cc: command not found"></a>cc: command not found</h4><p>安装<code>gcc</code></p>
+<p>yum install -y gcc</p>
+<h4 id="jemalloc-jemalloc-h-No-such-file-or-directory"><a href="#jemalloc-jemalloc-h-No-such-file-or-directory" class="headerlink" title="jemalloc/jemalloc.h: No such file or directory"></a>jemalloc/jemalloc.h: No such file or directory</h4><p>原因是jemalloc重载了Linux下的ANSI C的malloc和free函数。解决办法：make时添加参数。</p>
+<blockquote>
+<p>make MALLOC=libc</p>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/30/md/part/redis/subject_redis/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="mqiy">
+      <meta itemprop="description" content="永远为下个月离职做好准备">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小灰灰的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/10/30/md/part/redis/subject_redis/" class="post-title-link" itemprop="url">redis篇特点</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-10-30 18:10 18:10:10" itemprop="dateCreated datePublished" datetime="2019-10-30T18:10:10+08:00">2019-10-30 18:10</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.9k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -355,83 +580,116 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="商汤科技招聘–术架构师-技术经理-35k-45k"><a href="#商汤科技招聘–术架构师-技术经理-35k-45k" class="headerlink" title="商汤科技招聘–术架构师/技术经理(35k-45k)"></a>商汤科技招聘–术架构师/技术经理(35k-45k)</h3><h5 id="岗位职责："><a href="#岗位职责：" class="headerlink" title="岗位职责："></a>岗位职责：</h5><ul>
-<li>根据公司业务规划，开展城市视觉智慧赋能产品架构相关设计与研发工作；</li>
-<li>参与构建高性能，高可用，可扩展的分布式人工智能平台产品；</li>
-<li>负责产品架构设计，影响产品路线图，构建智慧城市及AI+行业领域具有竞争力的智能化产品；</li>
-<li>支撑AI产品、项目交付团队，完成产品对行业用户的赋能；</li>
-<li>负责大中型项目的系统架构和概要设计，参与核心模块的代码编写，保证架构的落地交付；</li>
-<li>深刻理解需求，对项目中的总体设计、模块设计进行确定、审查和把关；</li>
-<li>决定项目中的关键问题和技术难题，丰富技术库；</li>
-<li>参与售前阶段的产品白皮书、设计方案书、投标书、测试报告、实施方案等设计文档、POC等</li>
+          <h2 id="redis篇"><a href="#redis篇" class="headerlink" title="redis篇"></a>redis篇</h2><ul>
+<li>第一章节 redis介绍</li>
+<li>第二章节 redis集群策略</li>
+<li>第三章节 redis高级特性</li>
 </ul>
-<h5 id="任职要求："><a href="#任职要求：" class="headerlink" title="任职要求："></a>任职要求：</h5><ul>
-<li>8年以上java开发，5年以上架构设计经验，3年以上项目开发团队管理经验, 有SaaS或者PaaS架构设计以及相关JAVA开源技术方案者优先。有微服务架构、分布式架构、持续构建架构经验者优先。</li>
-<li>有BPM, RuleEngine等的开发和架构设计经验者优先；有开放平台&amp;API设计经验。</li>
-<li>精通Java编程，熟练使用Spring framework(Spring Boot\SpringMVC\Spring Cloud\Spring Data\Spring Batch等), Javascript, JQuery；</li>
-<li>精通高并发下的架构设计和高负载Web应用的关键技术，如容灾备份、负载均衡、集群、横向及纵向扩展。以及主流开源Web框架、消息系统，缓存系统，关系数据库系统，Linux操作系统。</li>
-<li>熟悉PostgreSQL/MySQL/MongoDB/Cassandra数据库的管理、配置、使用等。</li>
-<li>熟悉Tomcat/JBoss的管理、配置、使用等。 </li>
-<li>有elastic search/solr开发经验者优先。</li>
-<li>有 Hadoop/HBase/Spark/Flink/Storm经验者优先</li>
-<li>熟悉Docker与K8S者优先</li>
-<li>工作积极努力，客观务实，具有良好的沟通、团队协作、工作计划和创新的能力。</li>
-<li>软件工程，计算机科学，计算机工程，自动化，数学等相关专业本科及以上学历，技术优秀者学历可以放宽。</li>
+<h2 id="第一章节"><a href="#第一章节" class="headerlink" title="第一章节"></a>第一章节</h2><ul>
+<li>redis介绍<ul>
+<li>1.1 redis 特性</li>
+<li>1.2 redis 数据类型</li>
+<li>1.3 redis 应用场景</li>
+<li>1.4 redis Java客户端</li>
 </ul>
-<hr>
-<h3 id="平安健康保险–-0921GK-架构师-30k-50k"><a href="#平安健康保险–-0921GK-架构师-30k-50k" class="headerlink" title="平安健康保险– 0921GK-架构师(30k-50k)"></a>平安健康保险– 0921GK-架构师(30k-50k)</h3><h5 id="工作职责"><a href="#工作职责" class="headerlink" title="工作职责"></a>工作职责</h5><ul>
-<li><p>负责核心系统架构改造，优化，设计方案,开源项目的二次开发，达到项目自定义需求，编写系统相关的技术接口和规范文档 </p>
-</li>
-<li><p>与运维合作，共同制定一些监控指标以及告警工具 </p>
-</li>
-<li><p>负责业务核心代码的开发指导，新技术的引进及培训，参与公司的系统规划、功能模块规划、切分系统功能模块 </p>
-</li>
-<li><p>负责理解和设计非功能性系统需求，包括软件的可维护性、性能、复用性、可靠性、有效性和可测试性等。 </p>
-</li>
-<li><p>组织协调技术研究和攻关工作，组织及带领公司内部员工研究与项目相关的新技术 </p>
 </li>
 </ul>
-<h5 id="任职要求"><a href="#任职要求" class="headerlink" title="任职要求"></a>任职要求</h5><ul>
-<li><p><code>35岁</code>以下计算机相关专业，本科及以上学历 </p>
-</li>
-<li><p>6年以上开发经验，4年以上平台架构设计经验，2年以上中大型系统设施实施经验 。至少研究过1个以上系统类开源产品的架构和源代码。 </p>
-</li>
-<li><p>领导过5人以上的技术研发团队，良好的架构设计和技术指导能力，精通JAVA及相关技术，深入了解java开发工具及主流开发框架，具有扎实的技术功底，熟悉主流技术架构 </p>
-</li>
-<li><p>精通Mysql/MongoDB数据库，熟悉Linux、REST架构、TCP/IP协议，精通面向对象的分析和设计技术，包括设计模式、UML建模等，有设计通用框架及模块的能力 </p>
-</li>
-<li><p>熟悉RPC，异步、多线程、分布式、缓存、负载均衡、消息队列等技术的设计和应用 </p>
-</li>
-<li><p>具有大型分布式系统的平台架构设计能力，有各协议层设计和实现经验者优先 </p>
-</li>
-<li><p>诚恳、踏实，对技术和工作充满热情，有强烈的责任心、主动性和团队合作精神</p>
+<h2 id="1-1-redis特性"><a href="#1-1-redis特性" class="headerlink" title="1.1 redis特性"></a>1.1 redis特性</h2><ul>
+<li>单核单线程 没有线程安全问题</li>
+<li>性能高 IO多路复用 内存操作</li>
+<li>支持多种持久化方案</li>
+<li>支持弱事务 不支持Rollback</li>
+<li>支持排序 分页 模糊搜索功能</li>
+<li>支持队列订阅发布</li>
+</ul>
+<h2 id="1-2-redis-数据类型"><a href="#1-2-redis-数据类型" class="headerlink" title="1.2 redis 数据类型"></a>1.2 redis 数据类型</h2><ul>
+<li>String类型 字符串类型 4.0版本后增加json的schema</li>
+<li>hash类型 即可支持kkv模型</li>
+<li>List类型 支持排序 支持队列命令 可用于简单的消息队列</li>
+<li>Set类型 数据唯一类型 类似list</li>
+<li>Sorted set类型 类似set/list 可通过score参数来自动排序</li>
+</ul>
+<h2 id="1-3-redis-应用场景"><a href="#1-3-redis-应用场景" class="headerlink" title="1.3 redis 应用场景"></a>1.3 redis 应用场景</h2><ul>
+<li>各类别缓存方案 页面 业务 数据 </li>
+<li>实时计数器 统计仪表 排行榜</li>
+<li>分布式锁 开关</li>
+<li>消息队列 发布/订阅</li>
+<li>session存储</li>
+<li>支持分页 模糊查询</li>
+<li>搜索倒排的缓存</li>
+</ul>
+<h2 id="1-4-redis-Java客户端"><a href="#1-4-redis-Java客户端" class="headerlink" title="1.4 redis Java客户端"></a>1.4 redis Java客户端</h2><ul>
+<li>Redisson 提供分布式相关操作服务 支持延迟队列</li>
+<li>Jedis 多线程下 有线程安全问题 提供了基础操作</li>
+<li>lettuce 高级Redis客户端 线程安全 springboot2.0集成支持</li>
+</ul>
+<h2 id="第二章节"><a href="#第二章节" class="headerlink" title="第二章节"></a>第二章节</h2><ul>
+<li>redis集群策略<ul>
+<li>2.1 redis 主从复制</li>
+<li>2.2 redis 哨兵模式</li>
+<li>2.2 redis 自带的集群模式</li>
+</ul>
 </li>
 </ul>
-<h3 id="喜马拉雅–Java技术经理-架构师（26k-40k）"><a href="#喜马拉雅–Java技术经理-架构师（26k-40k）" class="headerlink" title="喜马拉雅–Java技术经理/架构师（26k-40k）"></a>喜马拉雅–Java技术经理/架构师（26k-40k）</h3><h5 id="岗位职责"><a href="#岗位职责" class="headerlink" title="岗位职责"></a>岗位职责</h5><ul>
-<li><p>主导平台的后台架构设计与开发，搭建平台基础设施；</p>
-</li>
-<li><p>研究新的技术方案，调整服务端开发策略和技术架构，使之适应业务平台日益增长的需求。</p>
+<h2 id="2-1-redis-主从复制"><a href="#2-1-redis-主从复制" class="headerlink" title="2.1 redis 主从复制"></a>2.1 redis 主从复制</h2><ul>
+<li>主数据库(master) 从数据库(slave) master可以进行读写操作 当读写操作导致数据变化时会自动将数据同步salve</li>
+<li>机制初始化 slave发送SYNC命令 master接收到SYNC 将保存的快照文件(rdb)和缓存的命令发送给slave</li>
+<li>复制初始化后 master每次接收到的写命令都会同步发送给slave 保证主从数据一致性</li>
+<li>此方法不可保证高可用 或需要手动或程序来做主从切换等 但可以做到读写分离</li>
+</ul>
+<h2 id="2-2-redis-哨兵模式"><a href="#2-2-redis-哨兵模式" class="headerlink" title="2.2 redis 哨兵模式"></a>2.2 redis 哨兵模式</h2><ul>
+<li>基于主从模式下的监控模式 </li>
+<li>哨兵通过发送命令来监控master/slave是否正常运行</li>
+<li>master出现故障时 开启选举自动将slave转化为master</li>
+<li>多哨兵配置的时候 哨兵之间也会自动监控</li>
+<li>多个哨兵可以监控同一个redis</li>
+<li>基于异步复制 脑裂切换有数据丢失情况</li>
+</ul>
+<h2 id="2-3-redis-自带集群模式"><a href="#2-3-redis-自带集群模式" class="headerlink" title="2.3 redis 自带集群模式"></a>2.3 redis 自带集群模式</h2><ul>
+<li>多master节点 通过hash算法落点到具体的slot master节点上</li>
+<li>此集群模式 一般用于三主三从架构</li>
+<li>slave节点用于备份master节点数据 </li>
+<li>当master节点发生故障时 自动切换到slave节点</li>
+<li>基于异步复制 主从切换有数据丢失情况</li>
+</ul>
+<h2 id="第三章节"><a href="#第三章节" class="headerlink" title="第三章节"></a>第三章节</h2><ul>
+<li>redis高级特性<ul>
+<li>3.1 redis 持久化</li>
+<li>3.2 redis 淘汰机制</li>
+<li>3.3 redis 穿透雪崩场景</li>
+</ul>
 </li>
 </ul>
-<h5 id="任职要求-1"><a href="#任职要求-1" class="headerlink" title="任职要求"></a>任职要求</h5><ul>
-<li><p>至少3年以上大规模分布式系统应用架构设计与研发经验，精通Java技术栈相关技术；</p>
-</li>
-<li><p>3年以上大型数据库如MySQL使用经验，具备分布式数据库如TDDL, TIDB等；</p>
-</li>
-<li><p>精通unix/linux操作系统；</p>
-</li>
-<li><p>精通分布式计算平台如storm， spark， flink等</p>
-</li>
-<li><p>精通缓存，如redis， pika， codis等；</p>
-</li>
-<li><p>精通分布式存储，如HDFS,Parquet,HBase；</p>
-</li>
-<li><p>有移动互联网架构如移动网关，应用性能管理，可视化埋点， ABTest，微服务化等经验者优先；</p>
-</li>
-<li><p>对开源技术有浓厚兴趣，有源代码阅读习惯；</p>
-</li>
-<li><p>具备良好的识别和设计通用框架及模块的能力。</p>
-</li>
+<h2 id="3-1-redis-持久化"><a href="#3-1-redis-持久化" class="headerlink" title="3.1 redis 持久化"></a>3.1 redis 持久化</h2><ul>
+<li>redis 支持两种持久化方式 rdb aof</li>
+<li>rdb 存储简单 便于备份 启动效率高 性能高 fork子进程来同步</li>
+<li>rdb 同步由于由子进程来同步 无法做到实时同步</li>
+<li>aof 存储为日志操作形式记录 数据安全性高 有同步策略 更高数据完整性跟一致性</li>
+<li>aof 由于同步策略(每秒同步 每修改同步 不同步) aof在运行效率上往往会慢于rdb 且文件大于rdb</li>
+<li>aof文件会越来越大 数据恢复也会越来越慢 所以rdb在恢复数据时的速度比aof要快</li>
+</ul>
+<h2 id="3-2-1-redis-淘汰机制"><a href="#3-2-1-redis-淘汰机制" class="headerlink" title="3.2.1 redis 淘汰机制"></a>3.2.1 redis 淘汰机制</h2><ul>
+<li>内存的淘汰机制的初衷是为了更好地使用内存 用一定的缓存miss来换取内存的使用效率</li>
+<li>在key无限增加的情况下 已无法达到过期失效 超过增加的极端情况</li>
+<li>redis自带对key的几种淘汰机制 当然也可以自己通过程序或lua编写淘汰机制</li>
+<li>设置参数 maxmemory <byte> maxmemory-policy 策略 即可使用淘汰机制</li>
+</ul>
+<h2 id="3-2-2-redis-淘汰机制"><a href="#3-2-2-redis-淘汰机制" class="headerlink" title="3.2.2 redis 淘汰机制"></a>3.2.2 redis 淘汰机制</h2><ul>
+<li>noeviction 当内存使用达到阈值的时候 所有引起申请内存的命令会报错</li>
+<li>allkeys-lru 在主键空间中 优先移除最近未使用的key</li>
+<li>volatile-lru 在设置了过期时间的键空间中 优先移除最近未使用的key</li>
+<li>allkeys-random 在主键空间中 随机移除某个key</li>
+<li>volatile-random 在设置了过期时间的键空间中 随机移除某个key</li>
+<li>volatile-ttl 在设置了过期时间的键空间中 具有更早过期时间的key优先移除</li>
+</ul>
+<h2 id="3-3-redis-穿透雪崩场景"><a href="#3-3-redis-穿透雪崩场景" class="headerlink" title="3.3 redis 穿透雪崩场景"></a>3.3 redis 穿透雪崩场景</h2><ul>
+<li>有超时缓存 可采用双重加锁方式 让一个请求执行数据库操作并加入缓存 后续请求获得缓存 </li>
+<li>尽可能使用无超时缓存 使用redis 自带的淘汰机制</li>
+<li>无超时缓存 使用定时任务 刷新移除缓存</li>
+<li>利用各类缓存 如页面 数据库缓存 二级缓存</li>
+<li>在redis前加进程缓存 消减redis使用率 通过redis watch机制保证缓存一致性</li>
+<li>布隆过滤器 或自定义过滤器 如bitmap hash值占位</li>
+<li>空key情况(避免全局扫) 设置默认值或上级缓存或使用过滤器</li>
 </ul>
 
       
@@ -452,7 +710,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/22/md/interview/%E6%9E%B6%E6%9E%84%E5%B8%88/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/30/md/tool/hexo-next/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -466,7 +724,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2019/08/22/md/interview/%E6%9E%B6%E6%9E%84%E5%B8%88/" class="post-title-link" itemprop="url">架构师职位相关(一)</a>
+            <a href="/2019/10/30/md/tool/hexo-next/" class="post-title-link" itemprop="url">hexo个人博客搭建</a>
         </h1>
 
         <div class="post-meta">
@@ -476,7 +734,294 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2019-08-22 10:00 10:00:47" itemprop="dateCreated datePublished" datetime="2019-08-22T10:00:47+08:00">2019-08-22 10:00</time>
+              <time title="创建时间：2019-10-30 17:48 17:48:12" itemprop="dateCreated datePublished" datetime="2019-10-30T17:48:12+08:00">2019-10-30 17:48</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>2.7k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h3><h4 id="开启本地搜索"><a href="#开启本地搜索" class="headerlink" title="开启本地搜索"></a>开启本地搜索</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-searchdb --save</span></pre></td></tr></table></figure>
+<hr>
+<h4 id="添加点击爱心效果"><a href="#添加点击爱心效果" class="headerlink" title="添加点击爱心效果"></a>添加点击爱心效果</h4><p>1、创建js文件<br>在<code>/themes/next/source/js/src</code>下新建文件 clicklove.js ，接着把该链接下的代码拷贝粘贴到 clicklove.js 文件中</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">!<span class="function"><span class="keyword">function</span>(<span class="params">e,t,a</span>)</span>&#123;<span class="function"><span class="keyword">function</span> <span class="title">n</span>(<span class="params"></span>)</span>&#123;c(<span class="string">".heart&#123;width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);&#125;.heart:after,.heart:before&#123;content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: fixed;&#125;.heart:after&#123;top: -5px;&#125;.heart:before&#123;left: -5px;&#125;"</span>),o(),r()&#125;<span class="function"><span class="keyword">function</span> <span class="title">r</span>(<span class="params"></span>)</span>&#123;<span class="keyword">for</span>(<span class="keyword">var</span> e=<span class="number">0</span>;e&lt;d.length;e++)d[e].alpha&lt;=<span class="number">0</span>?(t.body.removeChild(d[e].el),d.splice(e,<span class="number">1</span>)):(d[e].y--,d[e].scale+=<span class="number">.004</span>,d[e].alpha-=<span class="number">.013</span>,d[e].el.style.cssText=<span class="string">"left:"</span>+d[e].x+<span class="string">"px;top:"</span>+d[e].y+<span class="string">"px;opacity:"</span>+d[e].alpha+<span class="string">";transform:scale("</span>+d[e].scale+<span class="string">","</span>+d[e].scale+<span class="string">") rotate(45deg);background:"</span>+d[e].color+<span class="string">";z-index:99999"</span>);requestAnimationFrame(r)&#125;<span class="function"><span class="keyword">function</span> <span class="title">o</span>(<span class="params"></span>)</span>&#123;<span class="keyword">var</span> t=<span class="string">"function"</span>==<span class="keyword">typeof</span> e.onclick&amp;&amp;e.onclick;e.onclick=<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;t&amp;&amp;t(),i(e)&#125;&#125;<span class="function"><span class="keyword">function</span> <span class="title">i</span>(<span class="params">e</span>)</span>&#123;<span class="keyword">var</span> a=t.createElement(<span class="string">"div"</span>);a.className=<span class="string">"heart"</span>,d.push(&#123;<span class="attr">el</span>:a,<span class="attr">x</span>:e.clientX<span class="number">-5</span>,<span class="attr">y</span>:e.clientY<span class="number">-5</span>,<span class="attr">scale</span>:<span class="number">1</span>,<span class="attr">alpha</span>:<span class="number">1</span>,<span class="attr">color</span>:s()&#125;),t.body.appendChild(a)&#125;<span class="function"><span class="keyword">function</span> <span class="title">c</span>(<span class="params">e</span>)</span>&#123;<span class="keyword">var</span> a=t.createElement(<span class="string">"style"</span>);a.type=<span class="string">"text/css"</span>;<span class="keyword">try</span>&#123;a.appendChild(t.createTextNode(e))&#125;<span class="keyword">catch</span>(t)&#123;a.styleSheet.cssText=e&#125;t.getElementsByTagName(<span class="string">"head"</span>)[<span class="number">0</span>].appendChild(a)&#125;<span class="function"><span class="keyword">function</span> <span class="title">s</span>(<span class="params"></span>)</span>&#123;<span class="keyword">return</span><span class="string">"rgb("</span>+~~(<span class="number">255</span>*<span class="built_in">Math</span>.random())+<span class="string">","</span>+~~(<span class="number">255</span>*<span class="built_in">Math</span>.random())+<span class="string">","</span>+~~(<span class="number">255</span>*<span class="built_in">Math</span>.random())+<span class="string">")"</span>&#125;<span class="keyword">var</span> d=[];e.requestAnimationFrame=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="keyword">return</span> e.requestAnimationFrame||e.webkitRequestAnimationFrame||e.mozRequestAnimationFrame||e.oRequestAnimationFrame||e.msRequestAnimationFrame||<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;setTimeout(e,<span class="number">1e3</span>/<span class="number">60</span>)&#125;&#125;(),n()&#125;(<span class="built_in">window</span>,<span class="built_in">document</span>);</span></pre></td></tr></table></figure>
+
+
+<p>2、修改_layout.swig<br>在<code>\themes\next\layout\_layout.swig</code>文件末尾添加：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">&lt;!-- 页面点击小红心 --&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"/js/src/clicklove.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span></pre></td></tr></table></figure>
+<hr>
+<h4 id="优化文章内链接文本样式"><a href="#优化文章内链接文本样式" class="headerlink" title="优化文章内链接文本样式"></a>优化文章内链接文本样式</h4><p>在<code>next\source\css\_common\components\post\post.styl</code>在末尾添加如下css样式</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">// 文章内链接文本样式</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.post-body</span> <span class="selector-tag">p</span> <span class="selector-tag">a</span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">  <span class="attribute">color</span>: <span class="number">#0593d3</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">  <span class="attribute">border-bottom</span>: none;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">  <span class="attribute">border-bottom</span>: <span class="number">1px</span> solid <span class="number">#0593d3</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">  &amp;:hover &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">    <span class="selector-tag">color</span>: <span class="selector-id">#fc6423</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">    <span class="selector-tag">border-bottom</span>: <span class="selector-tag">none</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">    <span class="selector-tag">border-bottom</span>: 1<span class="selector-tag">px</span> <span class="selector-tag">solid</span> <span class="selector-id">#fc6423</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">  &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+<hr>
+<h4 id="显示文章的字数与阅读时长"><a href="#显示文章的字数与阅读时长" class="headerlink" title="显示文章的字数与阅读时长"></a>显示文章的字数与阅读时长</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">npm install hexo-symbols-count-time --save</span></pre></td></tr></table></figure>
+
+<hr>
+<h4 id="发布到github"><a href="#发布到github" class="headerlink" title="发布到github"></a>发布到github</h4><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">  <span class="attr">repo:</span> <span class="string">git@github.com:zwcy/blog.git</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span></pre></td></tr></table></figure>
+
+
+<hr>
+<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>java-code-tip</p>
+<h4 id="hexo-d后-ERROR-Deployer-not-found-git"><a href="#hexo-d后-ERROR-Deployer-not-found-git" class="headerlink" title="hexo d后 ERROR Deployer not found: git"></a>hexo d后 ERROR Deployer not found: git</h4><p>安装<code>hexo-deployer-git</code>插件</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">npm install --save hexo-deployer-git</span></pre></td></tr></table></figure>
+
+<h4 id="背景动画Canvas-nest-true设置无效的解决方案"><a href="#背景动画Canvas-nest-true设置无效的解决方案" class="headerlink" title="背景动画Canvas_nest: true设置无效的解决方案"></a>背景动画Canvas_nest: true设置无效的解决方案</h4><p>下载<code>canvas-nest</code>插件</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">进入next主题</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">cd themes/next</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> git <span class="built_in">clone</span> canvas-nest</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">git clone https://github.com/theme-next/theme-next-canvas-nest source/lib/canvas-nest</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 进入 thems/next/_config.yml文件下修改 canvas_nest: <span class="literal">true</span></span></span></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/30/md/part/distributed/dubbo-problem/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="mqiy">
+      <meta itemprop="description" content="永远为下个月离职做好准备">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小灰灰的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/10/30/md/part/distributed/dubbo-problem/" class="post-title-link" itemprop="url">dubbo问题</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-10-30 16:29 16:29:46" itemprop="dateCreated datePublished" datetime="2019-10-30T16:29:46+08:00">2019-10-30 16:29</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>196</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="Dubbo注册中心挂掉之后，是否还可以继续通信？"><a href="#Dubbo注册中心挂掉之后，是否还可以继续通信？" class="headerlink" title="Dubbo注册中心挂掉之后，是否还可以继续通信？"></a>Dubbo注册中心挂掉之后，是否还可以继续通信？</h3><p>  可以的，启动dubbo时，消费者会从zk拉取注册的生产者的地址接口等数据，缓存在本地。每次调用时，按照本地存储的地址进行调用</p>
+<ul>
+<li>注册中心对等集群，任意一台宕掉后，会自动切换到另一台</li>
+<li>注册中心全部宕掉，服务提供者和消费者仍可以通过本地缓存通讯</li>
+<li>服务提供者无状态，任一台 宕机后，不影响使用</li>
+<li>服务提供者全部宕机，服务消费者会无法使用，并无限次重连等待服务者恢复</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/28/md/jdk/jvm/memoryBarrier/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="mqiy">
+      <meta itemprop="description" content="永远为下个月离职做好准备">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小灰灰的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/10/28/md/jdk/jvm/memoryBarrier/" class="post-title-link" itemprop="url">内存屏障</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-10-28 16:46 16:46:25" itemprop="dateCreated datePublished" datetime="2019-10-28T16:46:25+08:00">2019-10-28 16:46</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.7k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><strong>内存屏障（Memory barrier）</strong></p>
+<h4 id="为什么会有内存屏障"><a href="#为什么会有内存屏障" class="headerlink" title="为什么会有内存屏障"></a>为什么会有内存屏障</h4><ul>
+<li>每个CPU都会有自己的缓存（有的甚至L1,L2,L3），缓存的目的就是为了提高性能，避免每次都要向内存取。但是这样的弊端也很明显：不能实时的和内存发生信息交换，分在不同CPU执行的不同线程对同一个变量的缓存值不同。</li>
+<li>用volatile关键字修饰变量可以解决上述问题，那么volatile是如何做到这一点的呢？那就是内存屏障，内存屏障是硬件层的概念，不同的硬件平台实现内存屏障的手段并不是一样，java通过屏蔽这些差异，统一由jvm来生成内存屏障的指令。 </li>
+</ul>
+<h4 id="内存屏障是什么"><a href="#内存屏障是什么" class="headerlink" title="内存屏障是什么"></a>内存屏障是什么</h4><p>硬件层的内存屏障分为两种：<code>Load Barrier</code> 和 <code>Store Barrier</code>即读屏障和写屏障。<br>内存屏障有两个作用：  </p>
+<blockquote>
+<p>阻止屏障两侧的指令重排序；  </p>
+</blockquote>
+<blockquote>
+<p>强制把写缓冲区/高速缓存中的脏数据等写回主内存，让缓存中相应的数据失效。  </p>
+</blockquote>
+<ul>
+<li>对于Load Barrier来说，在指令前插入Load Barrier，可以让高速缓存中的数据失效，强制从新从主内存加载数据；</li>
+<li>对于Store Barrier来说，在指令后插入Store Barrier，能让写入缓存中的最新数据更新写入主内存，让其他线程可见。  </li>
+</ul>
+<h4 id="java内存屏障"><a href="#java内存屏障" class="headerlink" title="java内存屏障"></a>java内存屏障</h4><p>java的内存屏障通常所谓的四种即LoadLoad,StoreStore,LoadStore,StoreLoad实际上也是上述两种的组合，完成一系列的屏障和数据同步功能。</p>
+<ul>
+<li>LoadLoad屏障：对于这样的语句Load1; LoadLoad; Load2，在Load2及后续读取操作要读取的数据被访问前，保证Load1要读取的数据被读取完毕。</li>
+<li>StoreStore屏障：对于这样的语句Store1; StoreStore; Store2，在Store2及后续写入操作执行前，保证Store1的写入操作对其它处理器可见。</li>
+<li>LoadStore屏障：对于这样的语句Load1; LoadStore; Store2，在Store2及后续写入操作被刷出前，保证Load1要读取的数据被读取完毕。</li>
+<li>StoreLoad屏障：对于这样的语句Store1; StoreLoad; Load2，在Load2及后续所有读取操作执行前，保证Store1的写入对所有处理器可见。它的开销是四种屏障中最大的。在大多数处理器的实现中，这个屏障是个万能屏障，兼具其它三种内存屏障的功能  </li>
+</ul>
+<h4 id="volatile语义中的内存屏障"><a href="#volatile语义中的内存屏障" class="headerlink" title="volatile语义中的内存屏障"></a>volatile语义中的内存屏障</h4><p>volatile的内存屏障策略非常严格保守，非常悲观且毫无安全感的心态：<br>在每个volatile写操作前插入StoreStore屏障，在写操作后插入StoreLoad屏障；<br>在每个volatile读操作前插入LoadLoad屏障，在读操作后插入LoadStore屏障；</p>
+<blockquote>
+<p>由于内存屏障的作用，避免了volatile变量和其它指令重排序、线程之间实现了通信，使得volatile表现出了锁的特性。 </p>
+</blockquote>
+<h4 id="final语义中的内存屏障"><a href="#final语义中的内存屏障" class="headerlink" title="final语义中的内存屏障"></a>final语义中的内存屏障</h4><p>对于final域，编译器和CPU会遵循两个排序规则：</p>
+<blockquote>
+<p> 新建对象过程中，构造体中对final域的初始化写入和这个对象赋值给其他引用变量，这两个操作不能重排序；（废话嘛）  </p>
+</blockquote>
+<blockquote>
+<p>初次读包含final域的对象引用和读取这个final域，这两个操作不能重排序；（晦涩，意思就是先赋值引用，再调用final值） </p>
+</blockquote>
+<p>总之上面规则的意思可以这样理解，必需保证一个对象的所有final域被写入完毕后才能引用和读取。这也是内存屏障的起的作用：</p>
+<ul>
+<li>写final域：在编译器写final域完毕，构造体结束之前，会插入一个StoreStore屏障，保证前面的对final写入对其他线程/CPU可见，并阻止重排序。</li>
+<li>读final域：在上述规则2中，两步操作不能重排序的机理就是在读final域前插入了LoadLoad屏障。<br>X86处理器中，由于CPU不会对写-写操作进行重排序，所以StoreStore屏障会被省略；而X86也不会对逻辑上有先后依赖关系的操作进行重排序，所以LoadLoad也会变省略。  </li>
+</ul>
+<blockquote>
+<p>volatile和final都使用了内存屏障，只不过volatile有两个保障点，可见性和有序性，可见性是通过缓存锁以及缓存一致性协议控制，有序性是内存屏障来保证。</p>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/28/md/jdk/mulThread/AtomicInteger%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="mqiy">
+      <meta itemprop="description" content="永远为下个月离职做好准备">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小灰灰的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/10/28/md/jdk/mulThread/AtomicInteger%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8/" class="post-title-link" itemprop="url">AtomicInteger线程安全</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-10-28 16:00 16:00:00" itemprop="dateCreated datePublished" datetime="2019-10-28T16:00:00+08:00">2019-10-28 16:00</time>
             </span>
 
           <br>
@@ -504,83 +1049,13 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="拼多多–稳定性架构师-SRE-30k-60k"><a href="#拼多多–稳定性架构师-SRE-30k-60k" class="headerlink" title="拼多多–稳定性架构师(SRE)(30k-60k )"></a>拼多多–稳定性架构师(SRE)(30k-60k )</h3><h5 id="职位描述："><a href="#职位描述：" class="headerlink" title="职位描述："></a>职位描述：</h5><p>作为基础平台团队的一员，在拼多多，你每天将：</p>
-<p>在社交电商领域排名第一的新兴独角兽公司中切身感受公司和个人同时高速成长的感觉；</p>
-<p>在充满创造力和活力的年轻团队中，技术驱动业务，改变互联网电商行业；</p>
-<p>为十亿级用户的电商平台提供稳定性保障支撑，规划技术方向，优化基础架构，打造强一致高可用的技术架构；</p>
-<h5 id="岗位职责："><a href="#岗位职责：" class="headerlink" title="岗位职责："></a>岗位职责：</h5><ul>
-<li><p>对公司技术平台的稳定性负责，通过质量管理、过程管理、架构优化等手段不断提升系统稳定性；</p>
-</li>
-<li><p>建设全链路压测平台、容量评估和调度平台、稳定性模拟平台、可视化架构平台等来提升系统稳定性；</p>
-</li>
-<li><p>负责技术难点的攻坚，推动公司级的架构优化项目，指导并培训工程师，提升团队整体技术能力；</p>
-</li>
-<li><p>具有强烈的目标感、良好的服务意识和自我驱动力。</p>
-</li>
-</ul>
-<h5 id="任职要求："><a href="#任职要求：" class="headerlink" title="任职要求："></a>任职要求：</h5><ul>
-<li>计算机相关专业本科及以上学历；</li>
-<li>开发功底扎实，熟悉Java/Golang/C/C++单种或多种开发语言，对高并发高可用系统有深刻理解和实践经验；</li>
-<li>熟悉大型互联网平台的架构，熟悉微服务框架、分布式组件、常见的存储组件并有丰富实践经验；</li>
-<li>有容量调度管理、稳定性压测、架构优化、活动保障、混沌工程实践者优先；</li>
-</ul>
-<hr>
-<h3 id="万向区块链技术中心招聘-后端架构师-30k-45k"><a href="#万向区块链技术中心招聘-后端架构师-30k-45k" class="headerlink" title="万向区块链技术中心招聘 后端架构师 (30k-45k)"></a>万向区块链技术中心招聘 后端架构师 (30k-45k)</h3><h5 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h5><ul>
-<li><p>5年以上开发经验</p>
-</li>
-<li><p>本科以上学历，计算机/软件相关专业优先</p>
-</li>
-<li><p>具备团队技术领导经验</p>
-</li>
-</ul>
-<h5 id="要求"><a href="#要求" class="headerlink" title="要求"></a>要求</h5><ul>
-<li><p>工作积极主动、耐心细心，能承受一定的工作压力，有很好的学习能力及强烈的责任心和团队合作的精神</p>
-</li>
-<li><p>态度良好，不排斥提携后进者</p>
-</li>
-<li><p>编程方向：精通Java或等面向对象语言，理解AOP（面向切面编程）等设计</p>
-</li>
-<li><p>主流开发框架：精通Tomcat、Nigix等常用应用容器部署与优化；精通Spring系列框架，熟悉Hibernate、MyBatis等技术；精通主流关系型数据库、NoSQL数据库应用，熟悉分布式缓存、数据持久化技术</p>
-</li>
-<li><p>参与过大型系统设计及开发</p>
-</li>
-<li><p>精通主流设计模式、泛型、数据结构及主要排序算法</p>
-</li>
-<li><p>对技术系统具有热诚，领导并主动积极参与及主持技术项目</p>
-</li>
-</ul>
-<h5 id="职责"><a href="#职责" class="headerlink" title="职责"></a>职责</h5><ul>
-<li><p>承担领导交付的任务</p>
-</li>
-<li><p>负责带领工程小组针对需求进行设计及开发，并在技术上有所要求，推动技术演进</p>
-</li>
-<li><p>研究及追踪技术演进，并带领小组进行技术尝试</p>
-</li>
-<li><p>参与管理各项技术框架及设计，推进开发项目完成</p>
-</li>
-</ul>
-<hr>
-<h3 id="爱回收招聘-业务架构师-30k-50k"><a href="#爱回收招聘-业务架构师-30k-50k" class="headerlink" title="爱回收招聘 业务架构师(30k-50k)"></a>爱回收招聘 业务架构师(30k-50k)</h3><h5 id="岗位职责：-1"><a href="#岗位职责：-1" class="headerlink" title="岗位职责："></a>岗位职责：</h5><ul>
-<li><p>负责明确服务边界，参与技术评审；</p>
-</li>
-<li><p>建立业务线内中台与前台系统的协同机制</p>
-</li>
-<li><p>抽象和沉淀业务中台，避免重复建设；</p>
-</li>
-<li><p>建立业务线技术团队和集团技术中台的协同机制。</p>
-</li>
-</ul>
-<h5 id="任职要求：-1"><a href="#任职要求：-1" class="headerlink" title="任职要求："></a>任职要求：</h5><ul>
-<li><p>5年以上服务端开发经验，丰富的微服务架构能力；</p>
-</li>
-<li><p>熟悉领域驱动设计等主流建模方法，具备优秀的业务建模能力；</p>
-</li>
-<li><p>精通电商/O2O某一领域，并成功完成平台化建设；</p>
-</li>
-<li><p>丰富的项目管理经验，具备跨部门协调沟通能力；</p>
-</li>
-</ul>
-
+          <p>最近面试被问到一个问题，AtomicInteger如何保证线程安全？我查阅了资料 发现还可以引申到 乐观锁/悲观锁的概念，觉得值得一记。</p>
+<p>众所周知，JDK提供了AtomicInteger保证对数字的操作是线程安全的，线程安全我首先想到了synchronized和Lock,但是这种方式又有一个名字，叫做互斥锁，一次只能有一个持有锁的线程进入，再加上还有不同线程争夺锁这个机制，效率比较低，所以又称“悲观锁”。</p>
+<p>但是相应的有了乐观锁的概念，他的思路就是，它不加锁去完成某项操作，如果因为冲突失败就重试，直到成功为止。这种说的比较抽象，我们直接拿AtomicInteger源码举例，因为AtomicInteger保证线程安全就是因为使用了乐观锁。</p>
+<p>Unsafe 是做一些Java语言不允许但是又十分有用的事情，具体的实现都是native方法，AtomicInteger里调用的 Unsafe 方法 基于的是CPU 的 CAS指令来实现的。所以基于 CAS 的操作可认为是无阻塞的，一个线程的失败或挂起不会引起其它线程也失败或挂起。并且由于 CAS 操作是 CPU 原语，所以性能比较好。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="comment"> * Atomically increments by one the current value.</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="comment"> * <span class="doctag">@return</span> the previous value</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="comment"> */</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">int</span> <span class="title">getAndIncrement</span><span class="params">()</span> </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">return</span> unsafe.getAndAddInt(<span class="keyword">this</span>, valueOffset, <span class="number">1</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+<p>CAS就是Compare and Swap的意思，比较并操作。很多的cpu直接支持CAS指令。CAS是项乐观锁技术，当多个线程尝试使用CAS同时更新同一个变量时，只有其中一个线程能更新变量的值，而其它线程都失败，失败的线程并不会被挂起，而是被告知这次竞争中失败，并可以再次尝试。CAS有3个操作数，内存值V，旧的预期值A，要修改的新值B。当且仅当预期值A和内存值V相同时，将内存值V修改为B，否则什么都不做。 从代码上我们可以看到do while语句，从而证实当更新出现冲突时，即失败时，它还会尝试更新。符合乐观锁的思想。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">int</span> <span class="title">getAndAddInt</span><span class="params">(Object var1, <span class="keyword">long</span> var2, <span class="keyword">int</span> var4)</span> </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">int</span> var5;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">do</span> &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">            var5 = <span class="keyword">this</span>.getIntVolatile(var1, var2);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">        &#125; <span class="keyword">while</span>(!<span class="keyword">this</span>.compareAndSwapInt(var1, var2, var5, var5 + var4));</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">return</span> var5;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
       
     </div>
 
@@ -599,7 +1074,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/21/md/part/project/%E6%95%8F%E6%8D%B7%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/25/md/other/input/commonWord/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -613,7 +1088,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2019/08/21/md/part/project/%E6%95%8F%E6%8D%B7%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/" class="post-title-link" itemprop="url">敏捷</a>
+            <a href="/2019/10/25/md/other/input/commonWord/" class="post-title-link" itemprop="url">五笔输入常用500字</a>
         </h1>
 
         <div class="post-meta">
@@ -623,7 +1098,7 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2019-08-21 19:54 19:54:59" itemprop="dateCreated datePublished" datetime="2019-08-21T19:54:59+08:00">2019-08-21 19:54</time>
+              <time title="创建时间：2019-10-25 16:05 16:05:33" itemprop="dateCreated datePublished" datetime="2019-10-25T16:05:33+08:00">2019-10-25 16:05</time>
             </span>
 
           <br>
@@ -632,7 +1107,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>83</span>
+              <span>500</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -651,483 +1126,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>敏捷项目管理的项目流程制度上的管理可以看作是对一套完善的项目管理流程制度的裁剪，只不过这个裁剪的尺度比较大，<br>从而也对敏捷项目团队成员的适应性，自主性提出了较高的要求。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/21/md/part/mid/es/es-run/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="mqiy">
-      <meta itemprop="description" content="永远为下个月离职做好准备">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小灰灰的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/08/21/md/part/mid/es/es-run/" class="post-title-link" itemprop="url">es搭建</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-08-21 16:38 16:38:50" itemprop="dateCreated datePublished" datetime="2019-08-21T16:38:50+08:00">2019-08-21 16:38</time>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1.6k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h4 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h4><h4 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h4><p> <a href="https://www.elastic.co/products/elasticsearch" target="_blank" rel="noopener">https://www.elastic.co/products/elasticsearch</a></p>
-<p><a href="https://github.com/elastic/elasticsearch" target="_blank" rel="noopener">https://github.com/elastic/elasticsearch</a></p>
-<h4 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h4><p>执行bin文件夹中的elasticsearch.bat ，查看  <a href="http://localhost:9200" target="_blank" rel="noopener">http://localhost:9200</a></p>
-<h4 id="安装ik中文分词器"><a href="#安装ik中文分词器" class="headerlink" title="安装ik中文分词器"></a>安装ik中文分词器</h4><p><a href="https://github.com/medcl/elasticsearch-analysis-ik/releases" target="_blank" rel="noopener">https://github.com/medcl/elasticsearch-analysis-ik/releases</a></p>
-<ul>
-<li>选择和已经下载的elasticsearch版本兼容的ik。</li>
-<li>解压后复制elasticsearch/plugins/ik(ik文件夹新创建)目录下</li>
-<li>重新运行elasticsearch.bat</li>
-</ul>
-<p><a href="https://blog.csdn.net/u010391342/article/details/82117389" target="_blank" rel="noopener">https://blog.csdn.net/u010391342/article/details/82117389</a></p>
-<h3 id="集群elasticsearch-yml相关配置如下"><a href="#集群elasticsearch-yml相关配置如下" class="headerlink" title="集群elasticsearch.yml相关配置如下"></a>集群<code>elasticsearch.yml</code>相关配置如下</h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="string">----------------------------------</span> <span class="string">Cluster</span> <span class="string">-----------------------------------</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="attr">cluster.name:</span> <span class="string">mqiy-es</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="comment">#</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># ------------------------------------ Node ------------------------------------</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="attr">node.name:</span> <span class="string">node-1</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># ---------------------------------- Network -----------------------------------</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"><span class="attr">network.host:</span> <span class="number">192.168</span><span class="number">.85</span><span class="number">.141</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"><span class="attr">http.port:</span> <span class="number">9200</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># --------------------------------- Discovery ----------------------------------</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line"><span class="attr">discovery.seed_hosts:</span> <span class="string">["192.168.85.142",</span> <span class="string">"192.168.85.143"</span><span class="string">]</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line"><span class="attr">cluster.initial_master_nodes:</span> <span class="string">["node-1",</span> <span class="string">"node-2"</span><span class="string">,"node-3"]</span></span></pre></td></tr></table></figure>
-
-<h4 id="查看集群状态"><a href="#查看集群状态" class="headerlink" title="查看集群状态"></a>查看集群状态</h4><blockquote>
-<p><a href="http://192.168.85.141:9200/_cat/health?v" target="_blank" rel="noopener">http://192.168.85.141:9200/_cat/health?v</a>      查看集群的健康状态<br><a href="http://192.168.85.141:9200/_cat/indices?v" target="_blank" rel="noopener">http://192.168.85.141:9200/_cat/indices?v</a>     查看集群的索引数<br><a href="http://192.168.85.141:9200/_cat/allocation?v" target="_blank" rel="noopener">http://192.168.85.141:9200/_cat/allocation?v</a>  查看集群所在磁盘的分配状况<br><a href="http://192.168.85.141:9200/_cat/nodes?v" target="_blank" rel="noopener">http://192.168.85.141:9200/_cat/nodes?v</a>       查看集群的节点<br><a href="http://192.168.85.141:9200/_cat" target="_blank" rel="noopener">http://192.168.85.141:9200/_cat</a>               查看集群信息目录(包含上面的)</p>
-</blockquote>
-<p>v 表示带title</p>
-<h3 id="启动过程报错"><a href="#启动过程报错" class="headerlink" title="启动过程报错"></a>启动过程报错</h3><h4 id="max-virtual-memory-areas-vm-max-map-count-65530-is-too-low-increase-to-at-least-262144"><a href="#max-virtual-memory-areas-vm-max-map-count-65530-is-too-low-increase-to-at-least-262144" class="headerlink" title="max virtual memory areas vm.max_map_count [65530] is too low, increase to at least [262144]"></a>max virtual memory areas vm.max_map_count [65530] is too low, increase to at least [262144]</h4><p>添加配置 /etc/sysctl.conf (永久性修改)</p>
-<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># elasticsearch config start</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="meta">vm.max_map_count</span>=<span class="string">262144</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># elasticsearch config end</span></span></pre></td></tr></table></figure>
-
-<blockquote>
-<p>sysctl -p</p>
-</blockquote>
-<h4 id="max-file-descriptors-4096-for-elasticsearch-process-is-too-low-increase-to-at-least-65535"><a href="#max-file-descriptors-4096-for-elasticsearch-process-is-too-low-increase-to-at-least-65535" class="headerlink" title="max file descriptors [4096] for elasticsearch process is too low, increase to at least [65535]"></a>max file descriptors [4096] for elasticsearch process is too low, increase to at least [65535]</h4><p>添加配置 /etc/security/limits.conf  (永久性修改)　</p>
-<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># elasticsearch config start</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="meta">*</span> <span class="string">soft nofile 65536</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="meta">*</span> <span class="string">hard nofile 131072</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="meta">*</span> <span class="string">soft nproc 2048</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="meta">*</span> <span class="string">hard nproc 4096</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># elasticsearch config end</span></span></pre></td></tr></table></figure>
-<blockquote>
-<p>其中<code>*</code> 号不能省略，不需要重启</p>
-</blockquote>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/20/md/part/spring/springboot/spring-boot%E5%85%A8%E5%B1%80%E6%8E%92%E9%99%A4jar/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="mqiy">
-      <meta itemprop="description" content="永远为下个月离职做好准备">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小灰灰的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/08/20/md/part/spring/springboot/spring-boot%E5%85%A8%E5%B1%80%E6%8E%92%E9%99%A4jar/" class="post-title-link" itemprop="url">spring-boot全局排除jar</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-08-20 17:38 17:38:42" itemprop="dateCreated datePublished" datetime="2019-08-20T17:38:42+08:00">2019-08-20 17:38</time>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>529</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>项目里使用了log4j2做日志处理，要排除掉Spring Boot 很多jar里边默认依赖的日志包spring-boot-starter-logging。一个一个写依赖排除也可以，<br>但是太繁琐了，经过尝试，只让它依赖个<code>spring-boot-starter-logging</code>的空壳，里边的东西全部排除掉即可。使用下边的方式就可以达到想要的效果。</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--全局排除spring-boot-starter-logging内的所有依赖--&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">       <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">           <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">           <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-logging<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">           <span class="tag">&lt;<span class="name">exclusions</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">               <span class="tag">&lt;<span class="name">exclusion</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">                   <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>*<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">                   <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>*<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">               <span class="tag">&lt;/<span class="name">exclusion</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">           <span class="tag">&lt;/<span class="name">exclusions</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">       <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span></pre></td></tr></table></figure>
-
-
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/20/md/plan/%E6%97%85%E6%B8%B8%E8%AE%A1%E5%88%92/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="mqiy">
-      <meta itemprop="description" content="永远为下个月离职做好准备">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小灰灰的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/08/20/md/plan/%E6%97%85%E6%B8%B8%E8%AE%A1%E5%88%92/" class="post-title-link" itemprop="url">旅游计划</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-08-20 16:44 16:44:58" itemprop="dateCreated datePublished" datetime="2019-08-20T16:44:58+08:00">2019-08-20 16:44</time>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>13</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>苏州待玩的地方：<br>钮家巷<br>旺山  </p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/20/md/plan/%E5%87%8F%E8%82%A5%E8%AE%A1%E5%88%92/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="mqiy">
-      <meta itemprop="description" content="永远为下个月离职做好准备">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小灰灰的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/08/20/md/plan/%E5%87%8F%E8%82%A5%E8%AE%A1%E5%88%92/" class="post-title-link" itemprop="url">减肥计划</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-08-20 16:42 16:42:47" itemprop="dateCreated datePublished" datetime="2019-08-20T16:42:47+08:00">2019-08-20 16:42</time>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>121</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>买个苹果本，为期二个月（2019-10-21)：要求 </p>
-<ul>
-<li>减肥到63KG</li>
-<li>戒小说</li>
-<li>戒HB</li>
-<li>每周一本书</li>
-</ul>
-<p>跑步(20m)<br>深蹲(10m)<br>HITT全身(15M)<br>腹肌撕裂初(9m)</p>
-<p>or<br>骑单车(30m)<br>HITT全身(15M)<br>HIIT核心燃烧(25m)<br>腹肌撕裂初(9m)</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/20/md/%E9%AB%98%E5%8F%AF%E7%94%A8/Redis%E9%AB%98%E5%8F%AF%E7%94%A8/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="mqiy">
-      <meta itemprop="description" content="永远为下个月离职做好准备">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小灰灰的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/08/20/md/%E9%AB%98%E5%8F%AF%E7%94%A8/Redis%E9%AB%98%E5%8F%AF%E7%94%A8/" class="post-title-link" itemprop="url">Redis高可用</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-08-20 16:37 16:37:00" itemprop="dateCreated datePublished" datetime="2019-08-20T16:37:00+08:00">2019-08-20 16:37</time>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>85</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Redis<code>高可用</code>（High Availability）两种实现方式</p>
-<ul>
-<li>主从复制数据。</li>
-<li>哨兵模式</li>
-</ul>
-<blockquote>
-<p>网上给Redis加锁的机制都是利用Redis的setnx自身的方法去加锁,且防止死锁</p>
-</blockquote>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/20/md/part/mq/mq/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="mqiy">
-      <meta itemprop="description" content="永远为下个月离职做好准备">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小灰灰的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/08/20/md/part/mq/mq/" class="post-title-link" itemprop="url">mq设计</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-08-20 16:33 16:33:35" itemprop="dateCreated datePublished" datetime="2019-08-20T16:33:35+08:00">2019-08-20 16:33</time>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>58</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>主题，发布订阅模式下的消息统一汇集地，不同生产者向topic发送消息，由MQ服务器分发到不同的订阅者，实现消息的广播</p>
+          <p>的一是了不在有个人这上中大为来我到出要以时和地们得可下对生也子就过能他会多发说而于自之用年行家方后作成开面事好小心前所道法如进着同经分定都然与本还其当起动已两点从问里主实天高去现长此三将无国全文理明日些看只公等十意正外想间把情者没重相那向知因样学应又手但信关使种见力名二处门并口么先位头回话很再由身入内第平被给次别几月真立新通少机打水果最部何安接报声才体今合性西你放表目加常做己老四件解路更走比总金管光工结提任东原便美及教难世至气神山数利书代直色场变记张必受交非服化求风度太万各算边王什快许连五活思该步海指物则女或完马强言条特命感清带认保望转传儿制干计民白住字它义车像反象题却流且即深近形取往系量论告息让决未花收满每华业南觉电空眼听远师元请容她军士百办语期北林识半夫客战院城候单音台死视领失司亲始极双令改功程爱德复切随李员离轻观青足落叫根怎持精送众影八首包准兴红达早尽故房引火站似找备调断设格消拉照布友整术石展紧据终周式举飞片虽易运笑云建谈界务写钱商乐推注越千微若约英集示呢待坐议乎留称品志黑存六造低江念产刻节尔吃势依图共曾响底装具喜严九况跟罗须显热病证刚治绝群市阳确究久除闻答段官政类黄武七支费父统</p>
 
       
     </div>
@@ -1147,7 +1146,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/12/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><span class="page-number current">13</span><a class="page-number" href="/page/14/">14</a><span class="space">&hellip;</span><a class="page-number" href="/page/22/">22</a><a class="extend next" rel="next" href="/page/14/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/12/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><span class="page-number current">13</span><a class="page-number" href="/page/14/">14</a><span class="space">&hellip;</span><a class="page-number" href="/page/25/">25</a><a class="extend next" rel="next" href="/page/14/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1213,7 +1212,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">219</span>
+          <span class="site-state-item-count">243</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1226,7 +1225,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">52</span>
+        <span class="site-state-item-count">54</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -1260,12 +1259,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">256k</span>
+    <span title="站点总字数">264k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">3:52</span>
+    <span title="站点阅读时长">4:01</span>
 </div>
 
         

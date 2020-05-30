@@ -47,15 +47,15 @@
   };
 </script>
 
-  <meta name="description" content="响应式编程核心特征 变化传递(propagation of change) 基于数据流(data stream) 声明式(declarative)  响应式流 异步非阻塞 流量控制   (ps Java Stream是一种同步API)  阻塞造成的性能损失，我们通常有两种思路来解决  并行化：使用更多的线程和硬件资源； 异步化：基于现有的资源来提高执行效率。">
+  <meta name="description" content="响应式编程核心特征 变化传递(propagation of change) 基于数据流(data stream) 声明式(declarative)  响应式流 异步非阻塞 流量控制   (ps Java Stream是一种同步API)  阻塞造成的性能损失，我们通常有两种思路来解决  并行化：使用更多的线程和硬件资源； 异步化：基于现有的资源来提高执行效率。  将输入转化为输出的过程中，处理速度小">
 <meta property="og:type" content="article">
 <meta property="og:title" content="响应式编程">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;06&#x2F;18&#x2F;md&#x2F;other&#x2F;Reactive%20Programming&#x2F;index.html">
 <meta property="og:site_name" content="小灰灰的博客">
-<meta property="og:description" content="响应式编程核心特征 变化传递(propagation of change) 基于数据流(data stream) 声明式(declarative)  响应式流 异步非阻塞 流量控制   (ps Java Stream是一种同步API)  阻塞造成的性能损失，我们通常有两种思路来解决  并行化：使用更多的线程和硬件资源； 异步化：基于现有的资源来提高执行效率。">
+<meta property="og:description" content="响应式编程核心特征 变化传递(propagation of change) 基于数据流(data stream) 声明式(declarative)  响应式流 异步非阻塞 流量控制   (ps Java Stream是一种同步API)  阻塞造成的性能损失，我们通常有两种思路来解决  并行化：使用更多的线程和硬件资源； 异步化：基于现有的资源来提高执行效率。  将输入转化为输出的过程中，处理速度小">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2019-06-18T06:13:10.000Z">
-<meta property="article:modified_time" content="2019-10-30T09:52:03.185Z">
+<meta property="article:modified_time" content="2020-04-24T15:20:01.803Z">
 <meta property="article:author" content="mqiy">
 <meta property="article:tag" content="响应式编程">
 <meta name="twitter:card" content="summary">
@@ -142,7 +142,7 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">52</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">54</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
@@ -152,7 +152,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">219</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">243</span></a>
 
   </li>
         <li class="menu-item menu-item-relate">
@@ -252,7 +252,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>160</span>
+              <span>264</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -288,6 +288,10 @@
 <li>并行化：使用更多的线程和硬件资源；</li>
 <li>异步化：基于现有的资源来提高执行效率。</li>
 </ol>
+<p>将输入转化为输出的过程中，处理速度小于输入速度的状态称为Backpressure<br>通常处理这种状态的策略有以下三种：</p>
+<p>Buffer：将输入暂时保存下来</p>
+<p>Drop：丢弃掉输入</p>
+<p>Control：由消费者来控制生产者的速度</p>
 
     </div>
 
@@ -387,7 +391,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">219</span>
+          <span class="site-state-item-count">243</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -400,7 +404,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">52</span>
+        <span class="site-state-item-count">54</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -434,12 +438,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">256k</span>
+    <span title="站点总字数">264k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">3:52</span>
+    <span title="站点阅读时长">4:01</span>
 </div>
 
         

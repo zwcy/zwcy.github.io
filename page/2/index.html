@@ -140,7 +140,7 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">52</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">54</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
@@ -150,7 +150,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">219</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">243</span></a>
 
   </li>
         <li class="menu-item menu-item-relate">
@@ -211,7 +211,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/27/md/part/db/db-index/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/23/md/part/web/http/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -225,7 +225,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2020/03/27/md/part/db/db-index/" class="post-title-link" itemprop="url">db分库分表</a>
+            <a href="/2020/04/23/md/part/web/http/" class="post-title-link" itemprop="url">三次握手</a>
         </h1>
 
         <div class="post-meta">
@@ -235,7 +235,7 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2020-03-27 17:03 17:03:10" itemprop="dateCreated datePublished" datetime="2020-03-27T17:03:10+08:00">2020-03-27 17:03</time>
+              <time title="创建时间：2020-04-23 11:10 11:10:35" itemprop="dateCreated datePublished" datetime="2020-04-23T11:10:35+08:00">2020-04-23 11:10</time>
             </span>
 
           <br>
@@ -244,7 +244,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>321</span>
+              <span>18</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -263,12 +263,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>Mysql如何为表字段添加索引？？？<br>1.添加PRIMARY KEY（主键索引）</p>
-<p>ALTER TABLE <code>table_name</code> ADD PRIMARY KEY ( <code>column</code> )<br>2.添加UNIQUE(唯一索引)</p>
-<p>ALTER TABLE <code>table_name</code> ADD UNIQUE ( <code>column</code> )<br>3.添加INDEX(普通索引)</p>
-<p>ALTER TABLE <code>table_name</code> ADD INDEX index_name ( <code>column</code> )<br>4.添加FULLTEXT(全文索引)</p>
-<p>ALTER TABLE <code>table_name</code> ADD FULLTEXT ( <code>column</code>)<br>5.添加多列索引</p>
-<p>ALTER TABLE <code>table_name</code> ADD INDEX index_name ( <code>column1</code>, <code>column2</code>, <code>column3</code> )</p>
+          <p>双方都需要确认对方收到了自己的序列号</p>
 
       
     </div>
@@ -288,7 +283,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/27/md/part/db/db-op/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/23/md/jdk/thread-pool/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -302,7 +297,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2020/03/27/md/part/db/db-op/" class="post-title-link" itemprop="url">mysql优化</a>
+            <a href="/2020/04/23/md/jdk/thread-pool/" class="post-title-link" itemprop="url">线程池</a>
         </h1>
 
         <div class="post-meta">
@@ -312,7 +307,7 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2020-03-27 17:03 17:03:10" itemprop="dateCreated datePublished" datetime="2020-03-27T17:03:10+08:00">2020-03-27 17:03</time>
+              <time title="创建时间：2020-04-23 11:01 11:01:46" itemprop="dateCreated datePublished" datetime="2020-04-23T11:01:46+08:00">2020-04-23 11:01</time>
             </span>
 
           <br>
@@ -321,7 +316,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.1k</span>
+              <span>637</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -340,13 +335,18 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>建索引的几大原则</p>
-<p>1、最左前缀匹配原则，非常重要的原则，mysql会一直向右匹配直到遇到范围查询(&gt;、&lt;、between、like)就停止匹配，比如a = 1 and b = 2 and c &gt; 3 and d = 4 如果建立(a,b,c,d)顺序的索引，d是用不到索引的，如果建立(a,b,d,c)的索引则都可以用到，a,b,d的顺序可以任意调整。</p>
-<p>2、=和in可以乱序，比如a = 1 and b = 2 and c = 3 建立(a,b,c)索引可以任意顺序，mysql的查询优化器会帮你优化成索引可以识别的形式</p>
-<p>3、尽量选择区分度高的列作为索引,区分度的公式是count(distinct col)/count(*)，表示字段不重复的比例，比例越大我们扫描的记录数越少，唯一键的区分度是1，而一些状态、性别字段可能在大数据面前区分度就是0，那可能有人会问，这个比例有什么经验值吗？使用场景不同，这个值也很难确定，一般需要join的字段我们都要求是0.1以上，即平均1条扫描10条记录</p>
-<p>4、索引列不能参与计算，保持列“干净”，比如from_unixtime(create_time) = ’2014-05-29’就不能使用到索引，原因很简单，b+树中存的都是数据表中的字段值，但进行检索时，需要把所有元素都应用函数才能比较，显然成本太大。所以语句应该写成create_time = unix_timestamp(’2014-05-29’);</p>
-<p>5、尽量的扩展索引，不要新建索引。比如表中已经有a的索引，现在要加(a,b)的索引，那么只需要修改原来的索引即可。</p>
-<p>使用索引的注意事项？<br>在经常需要搜索的列上，可以加快搜索的速度；<br>在经常使用在WHERE子句中的列上面创建索引，加快条件的判断速度。<br>在经常需要排序的列上创 建索引，因为索引已经排序，这样查询可以利用索引的排序，加快排序查询时间；<br>对于中到大型表索引都是非常有效的，但是特大型表的话维护开销会很大，不适合建索引<br>在经常用在连接的列上，这 些列主要是一些外键，可以加快连接的速度；<br>避免 where 子句中对宇段施加函数，这会造成无法命中索引。<br>在使用InnoDB时使用与业务无关的自增主键作为主键，即使用逻辑主键，而不要使用业务主键。<br>将打算加索引的列设置为 NOT NULL ，否则将导致引擎放弃使用索引而进行全表扫描<br>删除长期未使用的索引，不用的索引的存在会造成不必要的性能损耗 MySQL 5.7 可以通过查询 sys 库的 chema_unused_indexes 视图来查询哪些索引从未被使用<br>在使用 limit offset 查询缓慢时，可以借助索引来提高性能</p>
+          <p>1、线程池的学与思；<br>2、使用线程池的好与不好；<br>3、为什么阿里开发手册建议自定义线程池；<br>4、自定义线程池的最佳实践；</p>
+<p>线程池类型与应用场景：<br>      1）CachedPool<br>      2）FixedThreadPool<br>      3）ScheduledPool<br>      4）WorkStealingPool<br>      5）ForkJoinPool</p>
+<p>线程池类型</p>
+<p>newCachedThreadPool<br>newFixedThreadPool<br>newSingleThreadExecutor</p>
+<p>newScheduleThreadPool<br>newSingleThreadScheduledExecutor</p>
+<p>Java提供的四种线程池的好处：</p>
+<ul>
+<li>重用存在的线程，减少对象创建、消亡的开销，性能佳。</li>
+<li>可有效控制最大并发线程数，提高系统资源的使用率，同时避免过多资源竞争，避免堵塞。</li>
+<li>提供定时执行、定期执行、单线程、并发数控制等功能。</li>
+</ul>
+<h3 id="饱和策略"><a href="#饱和策略" class="headerlink" title="饱和策略"></a>饱和策略</h3><p>当你提交任务时，线程队列已经满了，这时会发生什么？<br>ThreadPoolExecutor.AbortPolicy:丢弃任务并抛出RejectedExecutionException异常。注：默认策略！！！！！！<br>ThreadPoolExecutor.DiscardPolicy：也是丢弃任务，但是不抛出异常。<br>ThreadPoolExecutor.DiscardOldestPolicy：丢弃队列最前面的任务，然后重新尝试执行任务（重复此过程）<br>ThreadPoolExecutor.CallerRunsPolicy：由调用线程处理该任务</p>
 
       
     </div>
@@ -366,7 +366,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/27/md/part/redis/redis-backup/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/23/md/jdk/mulThread/cas/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -380,7 +380,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2020/03/27/md/part/redis/redis-backup/" class="post-title-link" itemprop="url">redis持久化</a>
+            <a href="/2020/04/23/md/jdk/mulThread/cas/" class="post-title-link" itemprop="url">cas</a>
         </h1>
 
         <div class="post-meta">
@@ -390,7 +390,7 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2020-03-27 15:34 15:34:43" itemprop="dateCreated datePublished" datetime="2020-03-27T15:34:43+08:00">2020-03-27 15:34</time>
+              <time title="创建时间：2020-04-23 10:59 10:59:35" itemprop="dateCreated datePublished" datetime="2020-04-23T10:59:35+08:00">2020-04-23 10:59</time>
             </span>
 
           <br>
@@ -399,7 +399,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>228</span>
+              <span>218</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -418,9 +418,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>RDB：　 redis 主进程只需要 fork 一个子进程，让子进程执行磁盘 IO 操作来进行 RDB 持久化</p>
-<p>优点：<br>    数据快照，适合做冷备<br>    对性能影响小<br>    回复快<br>缺点：<br>    丢失少量数据<br>    数据量过大，影响服务提供</p>
-<p>AOF：　AOF 机制对每条写入命令作为日志，以 append-only 的模式写入一个日志文件中，在 redis 重启的时候，可以通过回放 AOF 日志中的写入指令来重新构建整个数据集。<br>优点：<br>    数据不丢失（1s fsync）<br>    可读方式记录，适合恢复<br>缺点：<br>    文件大<br>    QPS相对低<br>    发年bug,数据未恢复一致</p>
+          <p>CAS的全称为Compare-And-Swap ,它是一条CPU并发原语。它的功能是判断内存某个位置的值是否为预期值,如果是则更新为新的值,这个过程是原子的。<br>CAS 操作包含三个操作数 —— 内存位置（V）、预期原值（A）和新值(B)。 如果内存位置的值与预期原值相匹配，那么处理器会自动将该位置值更新为新值 。否则，处理器不做任何操作。</p>
+<p>CAS操作都是通过sun包下Unsafe类实现，而Unsafe类中的方法都是native方法，由JVM本地实现</p>
 
       
     </div>
@@ -440,7 +439,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/27/md/part/mq/kafka-mq-problem/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/23/md/part/spring/springboot/spring-boot/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -454,7 +453,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2020/03/27/md/part/mq/kafka-mq-problem/" class="post-title-link" itemprop="url">kafka中常规问题</a>
+            <a href="/2020/04/23/md/part/spring/springboot/spring-boot/" class="post-title-link" itemprop="url">spring boot</a>
         </h1>
 
         <div class="post-meta">
@@ -464,7 +463,7 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2020-03-27 14:03 14:03:56" itemprop="dateCreated datePublished" datetime="2020-03-27T14:03:56+08:00">2020-03-27 14:03</time>
+              <time title="创建时间：2020-04-23 10:58 10:58:33" itemprop="dateCreated datePublished" datetime="2020-04-23T10:58:33+08:00">2020-04-23 10:58</time>
             </span>
 
           <br>
@@ -473,7 +472,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>54</span>
+              <span>176</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -492,82 +491,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h4 id="如何保证高可用"><a href="#如何保证高可用" class="headerlink" title="如何保证高可用"></a>如何保证高可用</h4><h4 id="如何保证消息可靠性"><a href="#如何保证消息可靠性" class="headerlink" title="如何保证消息可靠性"></a>如何保证消息可靠性</h4><h4 id="如何保证消息顺序性"><a href="#如何保证消息顺序性" class="headerlink" title="如何保证消息顺序性"></a>如何保证消息顺序性</h4><h4 id="如何避免消息重复消费"><a href="#如何避免消息重复消费" class="headerlink" title="如何避免消息重复消费"></a>如何避免消息重复消费</h4><h4 id="如何解决消息队列的延时以及过期失效问题"><a href="#如何解决消息队列的延时以及过期失效问题" class="headerlink" title="如何解决消息队列的延时以及过期失效问题"></a>如何解决消息队列的延时以及过期失效问题</h4>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/27/md/part/nosql/mongodb/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="mqiy">
-      <meta itemprop="description" content="永远为下个月离职做好准备">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小灰灰的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/03/27/md/part/nosql/mongodb/" class="post-title-link" itemprop="url">mongoDB使用</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-03-27 13:59 13:59:49" itemprop="dateCreated datePublished" datetime="2020-03-27T13:59:49+08:00">2020-03-27 13:59</time>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>303</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>db.createUser({ user: ‘root’, pwd: ‘Admin123#’, roles: [ { role: “root”, db: “admin” } ] });</p>
-<p>db.auth(‘root’,’Admin123#’);</p>
-<p>db.createUser({ user: ‘hdh’, pwd: ‘Admin123#’, roles: [ { role: “readWrite”, db: “hdh” } ] });</p>
-<p>sc delete MongoDB</p>
-<p>mongod –dbpath=D:\Doc\MongoDb\data  –logpath=D:\Doc\MongoDb\logs\MongoDB.log –install –serviceName “MongoDB”</p>
+          <h4 id="Spring-Boot的核心思想就是约定大于配置"><a href="#Spring-Boot的核心思想就是约定大于配置" class="headerlink" title="Spring Boot的核心思想就是约定大于配置"></a>Spring Boot的核心思想就是约定大于配置</h4><p>其设计目的是用来简化新Spring应用的初始搭建以及开发过程。该框架使用了特定的方式来进行配置，从而使开发人员不再需要定义样板化的配置.它默认配置了很多框架的使用方式</p>
+<h4 id="指定端口号方式"><a href="#指定端口号方式" class="headerlink" title="指定端口号方式"></a>指定端口号方式</h4><p>mvn spring-boot:run -Dspring-boot.run.arguments=–server.port=8085</p>
 
       
     </div>
@@ -587,7 +512,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/27/md/part/db/db-share/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/08/md/interview/my/conrrent/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -601,7 +526,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2020/03/27/md/part/db/db-share/" class="post-title-link" itemprop="url">db分库分表</a>
+            <a href="/2020/04/08/md/interview/my/conrrent/" class="post-title-link" itemprop="url">并发一</a>
         </h1>
 
         <div class="post-meta">
@@ -611,321 +536,7 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2020-03-27 13:03 13:03:14" itemprop="dateCreated datePublished" datetime="2020-03-27T13:03:14+08:00">2020-03-27 13:03</time>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>123</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>单库最多支撑到并发 2000，健康的单库并发值保持在每秒 1000 左右</p>
-<p>harding-jdbc(client ) VS  Mycat(proxy )</p>
-<p>分库：提高并发</p>
-<p>分表：查询优化</p>
-<p>  水平拆分（某字段range[热点问题],hash[扩容难]）<br>  垂直拆分(热点与非热点)</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/27/md/part/project/project-story/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="mqiy">
-      <meta itemprop="description" content="永远为下个月离职做好准备">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小灰灰的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/03/27/md/part/project/project-story/" class="post-title-link" itemprop="url">用户故事</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-03-27 12:37 12:37:15" itemprop="dateCreated datePublished" datetime="2020-03-27T12:37:15+08:00">2020-03-27 12:37</time>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>104</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>需求获取<br>成本估算<br>项目进度安排<br>进展程度监测</p>
-<p>smart 用户故事</p>
-<p>确定性（Specific）,可评估(Measurable),可实现(Achievable),相关性(Relevant),时间限制(Timeboxed)</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/27/md/part/mid/es/es-example/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="mqiy">
-      <meta itemprop="description" content="永远为下个月离职做好准备">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小灰灰的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/03/27/md/part/mid/es/es-example/" class="post-title-link" itemprop="url">IK分词使用</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-03-27 12:34 12:34:36" itemprop="dateCreated datePublished" datetime="2020-03-27T12:34:36+08:00">2020-03-27 12:34</time>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1.2k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>curl -XPOST <a href="http://192.168.85.143:9200/index/_mapping" target="_blank" rel="noopener">http://192.168.85.143:9200/index/_mapping</a> -H ‘Content-Type:application/json’ -d’<br>{<br>        “properties”: {<br>            “content”: {<br>                “type”: “text”,<br>                “analyzer”: “ik_max_word”,<br>                “search_analyzer”: “ik_smart”<br>            }<br>        }</p>
-<p>}’</p>
-<p>curl -XPOST <a href="http://192.168.85.143:9200/index/_create/1" target="_blank" rel="noopener">http://192.168.85.143:9200/index/_create/1</a> -H ‘Content-Type:application/json’ -d’<br>{“content”:”美国留给伊拉克的是个烂摊子吗”}’</p>
-<p>curl -XPOST <a href="http://192.168.85.143:9200/index/_create/2" target="_blank" rel="noopener">http://192.168.85.143:9200/index/_create/2</a> -H ‘Content-Type:application/json’ -d’<br>{“content”:”公安部：各地校车将享最高路权”}<br>‘<br>curl -XPOST <a href="http://192.168.85.143:9200/index/_create/3" target="_blank" rel="noopener">http://192.168.85.143:9200/index/_create/3</a> -H ‘Content-Type:application/json’ -d’<br>{“content”:”中韩渔警冲突调查：韩警平均每天扣1艘中国渔船”}<br>‘<br>curl -XPOST <a href="http://192.168.85.143:9200/index/_create/4" target="_blank" rel="noopener">http://192.168.85.143:9200/index/_create/4</a> -H ‘Content-Type:application/json’ -d’<br>{“content”:”中国驻洛杉矶领事馆遭亚裔男子枪击 嫌犯已自首”}<br>‘</p>
-<p>‘<br>curl -XPOST <a href="http://192.168.85.143:9200/index/_create/5" target="_blank" rel="noopener">http://192.168.85.143:9200/index/_create/5</a> -H ‘Content-Type:application/json’ -d’<br>{“content”:”我是中国人”}’</p>
-<p>curl -XPOST <a href="http://192.168.85.143:9200/index/_search?pretty" target="_blank" rel="noopener">http://192.168.85.143:9200/index/_search?pretty</a>  -H ‘Content-Type:application/json’ -d’<br>{<br>    “query” : { “match” : { “content” : “中国” }},<br>    “highlight” : {<br>        “pre_tags” : [“<tag1>“, “<tag2>“],<br>        “post_tags” : [“</tag1>“, “</tag2>“],<br>        “fields” : {<br>            “content” : {}<br>        }<br>    }<br>}<br>‘</p>
-<p>curl -XPOST <a href="http://192.168.85.143:9200/index/_search?pretty" target="_blank" rel="noopener">http://192.168.85.143:9200/index/_search?pretty</a>  -H ‘Content-Type:application/json’ -d’<br>{<br>    “query” : { “match” : { “content” : “渔船” }},<br>    “highlight” : {<br>        “pre_tags” : [“<tag1>“, “<tag2>“],<br>        “post_tags” : [“</tag1>“, “</tag2>“],<br>        “fields” : {<br>            “content” : {}<br>        }<br>    }<br>}<br>‘</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/27/md/other/reactor/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="mqiy">
-      <meta itemprop="description" content="永远为下个月离职做好准备">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小灰灰的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/03/27/md/other/reactor/" class="post-title-link" itemprop="url">响应式编程</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-03-27 12:29 12:29:40" itemprop="dateCreated datePublished" datetime="2020-03-27T12:29:40+08:00">2020-03-27 12:29</time>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>104</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>将输入转化为输出的过程中，处理速度小于输入速度的状态称为Backpressure<br>通常处理这种状态的策略有以下三种：</p>
-<p>Buffer：将输入暂时保存下来</p>
-<p>Drop：丢弃掉输入</p>
-<p>Control：由消费者来控制生产者的速度</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/27/md/life/work/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="mqiy">
-      <meta itemprop="description" content="永远为下个月离职做好准备">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小灰灰的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/03/27/md/life/work/" class="post-title-link" itemprop="url">工作建议</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-03-27 12:27 12:27:07" itemprop="dateCreated datePublished" datetime="2020-03-27T12:27:07+08:00">2020-03-27 12:27</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E4%BA%BA%E7%94%9F%E6%84%9F%E6%82%9F/" itemprop="url" rel="index">
-                    <span itemprop="name">人生感悟</span>
-                  </a>
-                </span>
+              <time title="创建时间：2020-04-08 11:03 11:03:31" itemprop="dateCreated datePublished" datetime="2020-04-08T11:03:31+08:00">2020-04-08 11:03</time>
             </span>
 
           <br>
@@ -953,7 +564,408 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>1、不要把同事当朋友，要当盟友。<br>2、不要和同事说过多自己的隐私。<br>3、公司组织的比赛一定要参加！一定要参加！一定要参加！<br>4、保持微笑，不要喜怒无常。<br>5、投资比工作重要，不学习理财投资不买房的若干年后都后悔了。<br>6、尽量别得罪人，三十年河东三十年河西<br>7、不要瞧不起你领导，他能是你的领导，一定有你能学习的地方。<br>8、你可以有理想，但是时刻记住你的理想跟别人没啥关系。<br>9、不要相信公司的奉献精神，他们不想要你的时候可快了。<br>10、保持运动，和你是不是忙没有关系。<br>11、偷奸耍滑可以耍了的一时，但是总要露馅。<br>12、什么30天教你做达人，一个月教你赚100万的攻略都是骗人的，厚积薄发才是真理。<br>13、学习是为你自己。人与人之间的差距是逐步拉开的。<br>14、大部分的工作只看结果，不看过程。很多事情努力了没做到和没做是一样的。<br>15、不要浪费时间在不值得浪费的人身上，自己的时间很宝贵。<br>16、学会站在老板或者公司的角度去思考问题。格局很重要。<br>17、在成人的社交礼仪里，没有爽快的答应就是拒绝。<br>18、抱怨只会显得一个人特别无能。<br>19、不要矫情，除非你是牛人，否则的话，永远提醒自己，人才市场有成千上万的人随时可以取代你顶替这个职位。<br>20、加班这种事情不可避免，忍不了就辞职，走不了就忍着！<br>21、无论多么信任的人，别过多袒露你的过去。为你自己好。<br>22、尽量不要向同事借钱，一般人家都会很反感，除非你们成为了真正的朋友。<br>23、不要为了工作牺牲身体和家庭。<br>24、闷不吭声地埋头苦干，并不一定能够给你带来想要的认可。要学会向领导、上司汇报工作进度。<br>25、低调做人，高调做事。<br>26、老板经营的是他的事业，你经营的是你的人生，所以混不得。<br>27、不要放弃每一个可以请教的机会，不论这个人你是否喜欢，职位是否比你高。<br>28、觉得是垃圾社交，不想参加就不要去，好好把握下班后自由的时间，别为了迎合别人浪费自己时间。<br>29、画饼的领导千千万，谁当领导不画饼？但画了饼连糖都不给吃的公司趁早走，不要回头。<br>30、不要夸夸而谈，这只会让人发现你的浅薄，对于不懂得事情，要懂得闭上嘴巴。<br>31、一定要去大城市，那里才有更多出路和机会。<br>32、我们年轻的时候是得吃苦，但是我们不随便吃苦。<br>33、不要太安逸，现在哪里还有什么稳定工作。<br>34、和公司谈钱时，少讲感情，尽量不讲，拿能力和业绩说话。<br>35、不管你这个工作做的有多差，都不要否定自己。你一定要相信，你还是很优秀。</p>
+          <h3 id="Synchronized和ReentrantLock的区别"><a href="#Synchronized和ReentrantLock的区别" class="headerlink" title="Synchronized和ReentrantLock的区别"></a>Synchronized和ReentrantLock的区别</h3><p>Synchronized和ReentrantLock的区别</p>
+<ul>
+<li>synchronized既可以修饰方法，也可以修饰代码块。 </li>
+<li>等待可中断。synchronized中等待线程不能中断，一直等;ReentrantLock不是</li>
+<li>公平锁。synchronized的锁是非公平锁，ReentrantLock默认情况下也是非公平锁，可以设置为公平锁。</li>
+<li>锁绑定多个条件。ReentrantLock可以同时绑定多个Condition对象，只需多次调用newCondition方法即可;synchronized中，锁对象的wait()和notify()或notifyAll()方法可以实现一个隐含的条件。但如果要和多于一个的条件关联的时候，就不得不额外添加一个锁。</li>
+<li>性能。JDK 1.5中，synchronized还有很大的优化余地。JDK 1.6 中加入了很多针对锁的优化措施，synchronized与ReentrantLock性能方面基本持平。虚拟机在未来的改进中更偏向于原生的synchronized。</li>
+</ul>
+<p>补充：关于synchronized关键字<br>1.Java中每个对象都有一个锁（lock）或者叫做监视器（monitor）。<br>2.ReentrantLock和synchronized持有的对象监视器不同。<br>3.如果某个synchronized方法是static的，那么当线程方法改方法时，它锁的并不是synchronized方法所在的对象，而是synchronized方法所在对象所对应的Class对象，因为Java中不管一个类有多少对象，这些对象会对应唯一一个Class对象。因此当线程分别访问同一个类的两个对象的两个static，synchronized方法时，是顺序执行的，亦即一个线程先执行，完毕之后，另一个才开始执行。<br>4.synchronized 方法是一种粗粒度的并发控制，某一时刻，只能有一个线程执行synchronized方法；synchronized块则是一种细粒度的并发控制。只会将块中代码同步，位于方法内，synchronized块之外的代码是可以被多个线程同时访问的。<br>5.synchronized关键字经过编译之后，会在同步块的前后分别形成monitorenter和monitorexit两个字节码指令，操作对象均为锁的计数器。<br>6.相同点：都是可重入的。可重入值的是同一个线程多次试图获取它所占的锁，请求会成功。当释放的时候，直到冲入次数清零，锁才释放。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/08/md/interview/my/jvm/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="mqiy">
+      <meta itemprop="description" content="永远为下个月离职做好准备">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小灰灰的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/04/08/md/interview/my/jvm/" class="post-title-link" itemprop="url">jvm</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-08 11:03 11:03:31" itemprop="dateCreated datePublished" datetime="2020-04-08T11:03:31+08:00">2020-04-08 11:03</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>346</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="类加载机制"><a href="#类加载机制" class="headerlink" title="类加载机制"></a>类加载机制</h3><p>JVM的类加载是通过ClassLoader及其子类来完成的</p>
+<p>BootstrapClassLoader(c++编写，加载java核心库 java.*,开发者无法直接获取到启动类加载器的引用)<br>ExtensionClassLoader<br>AppClassLoader（系统类加载器）<br>CustomClassLoader（用户自定义类加载器）</p>
+<p>双亲委托机制：</p>
+<p>自底向上检查类是否已加载；其二，自顶向下尝试加载类。</p>
+<p>作用：</p>
+<ul>
+<li>防止重复加载同一个.class</li>
+<li>保证核心.class不能被篡改</li>
+</ul>
+<p>类的生命周期：<br>加载、连接、初始化、使用、卸载<br>其中连接分为：<br>校验（符合JVM的要求），准备(静态变量，常量赋值)，解析（符号引用-&gt; 直接引用）</p>
+<p>初始化：执行没有static修饰的赋值语句和执行语句，为静态变量赋程序设定的初值</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/07/md/part/mq/mq/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="mqiy">
+      <meta itemprop="description" content="永远为下个月离职做好准备">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小灰灰的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/04/07/md/part/mq/mq/" class="post-title-link" itemprop="url">mq设计</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-07 16:20 16:20:32" itemprop="dateCreated datePublished" datetime="2020-04-07T16:20:32+08:00">2020-04-07 16:20</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>58</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>主题，发布订阅模式下的消息统一汇集地，不同生产者向topic发送消息，由MQ服务器分发到不同的订阅者，实现消息的广播</p>
+<p><img src="https://www.mqiy.xyz/image/mq/rocketmq-role.png" alt="rocketmq-role.png"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/03/md/part/microServices/gateway/gateway-vs-zuul/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="mqiy">
+      <meta itemprop="description" content="永远为下个月离职做好准备">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小灰灰的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/04/03/md/part/microServices/gateway/gateway-vs-zuul/" class="post-title-link" itemprop="url">Zuul VS Gateway</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-03 17:58 17:58:53" itemprop="dateCreated datePublished" datetime="2020-04-03T17:58:53+08:00">2020-04-03 17:58</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>321</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>Zuul is built on servlet 2.5 (works with 3.x), using blocking APIs. It doesn’t support any long lived connections, like websockets.</p>
+<p>Gateway is built on Spring Framework 5, Project Reactor and Spring Boot 2 using non-blocking APIs. Websockets are supported and it’s a much better developer experience since it’s tightly integrated with Spring.</p>
+<p>difference between gateway and zuul</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/02/md/part/distributed/distributed-use/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="mqiy">
+      <meta itemprop="description" content="永远为下个月离职做好准备">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小灰灰的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/04/02/md/part/distributed/distributed-use/" class="post-title-link" itemprop="url">高并发、分布式学习</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-02 19:45 19:45:04" itemprop="dateCreated datePublished" datetime="2020-04-02T19:45:04+08:00">2020-04-02 19:45</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>456</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>微服务如何拆分？<br>微服务如何选型、组合与落地？<br>微服务治理场景及方法有哪些？<br>流控、负载、容错级别、链路追踪参数等都有哪些调整策略？<br>需求、性能、数据一致性方面都需要注意那些设计细节？</p>
+<p>1.微服务架构如何拆分<br>2.微服务架构应用场合<br>3.微服务架构与Docker容器化<br>4.微服务架构如何达到99.999%的高可用<br>5.微服务架构性能怎么满足千亿次请求调用<br>6.微服务架构开源框架对比（Spring Boot , Spring Cloud , Dubbo等）</p>
+<h3 id="Dubbo-微服务之负载均衡算法原理分析"><a href="#Dubbo-微服务之负载均衡算法原理分析" class="headerlink" title="Dubbo 微服务之负载均衡算法原理分析"></a>Dubbo 微服务之负载均衡算法原理分析</h3><ol>
+<li>如何理解集群与微服务的关系</li>
+<li>负载均衡有哪些业务场景</li>
+<li>分析几种负载均衡的异同点</li>
+</ol>
+<p>Dubbo微服务之服务治理算法原理分析</p>
+<ol>
+<li>微服务治理运作核心原理</li>
+<li>微服务治理手段与场景</li>
+<li>微服务服务降级、容错、限流工作机制等流程</li>
+</ol>
+<p>深入认识分布式事务</p>
+<p>1、事务的基本概念（ ACID ）<br>2、理解分布式事务的应用场景及面临的问题<br>3、认识分布式事务事务模型<br>4、演示 LCN 框架分布式事务管理<br>5、分布式事务解决方案（ Atomikos、LCN、TCC、MQ ）<br>6、CAP 定理 &amp; Base 理论及柔性事务</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/02/md/part/mid/es/es-vs-solr/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="mqiy">
+      <meta itemprop="description" content="永远为下个月离职做好准备">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小灰灰的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/04/02/md/part/mid/es/es-vs-solr/" class="post-title-link" itemprop="url">Elasticsearch与Solr的比较</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-02 19:39 19:39:25" itemprop="dateCreated datePublished" datetime="2020-04-02T19:39:25+08:00">2020-04-02 19:39</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>266</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><em>Elasticsearch与Solr的比较</em></p>
+<h4 id="Search-Fesh-Index-While-Idle"><a href="#Search-Fesh-Index-While-Idle" class="headerlink" title="Search Fesh Index While Idle"></a>Search Fesh Index While Idle</h4><p>当单纯的对已有数据进行搜索时，Solr更快。</p>
+<h4 id="search-fresh-index-while-indexing"><a href="#search-fresh-index-while-indexing" class="headerlink" title="search_fresh_index_while_indexing"></a>search_fresh_index_while_indexing</h4><ul>
+<li>当实时建立索引时, Solr会产生io阻塞，查询性能较差, Elasticsearch具有明显的优势。</li>
+<li>随着数据量的增加，Solr的搜索效率会变得更低，而Elasticsearch却没有明显的变化。</li>
+</ul>
+<p>综上所述，Solr的架构不适合实时搜索的应用。<br>Solr 是传统搜索应用的有力解决方案，但 Elasticsearch 更适用于新兴的实时搜索应用。</p>
 
       
     </div>
@@ -973,7 +985,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/22/">22</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/25/">25</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1039,7 +1051,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">219</span>
+          <span class="site-state-item-count">243</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1052,7 +1064,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">52</span>
+        <span class="site-state-item-count">54</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -1086,12 +1098,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">256k</span>
+    <span title="站点总字数">264k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">3:52</span>
+    <span title="站点阅读时长">4:01</span>
 </div>
 
         

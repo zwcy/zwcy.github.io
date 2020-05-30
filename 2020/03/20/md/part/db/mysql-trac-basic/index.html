@@ -47,15 +47,15 @@
   };
 </script>
 
-  <meta name="description" content="深入理解mysql的事务隔离级别和底层实现原理 一、ACID特性持久性，我们就不讲了，易懂。1、原子性在同一个事务内部的一组操作必须全部执行成功（或者全部失败）。为了保证事务操作的原子性，必须实现基于日志的REDO&#x2F;UNDO机制：将所有对数据的更新操作都写入日志，如果一个事务中的一部分操作已经成功，但以后的操作，由于断电&#x2F;系统崩溃&#x2F;其它的软硬件错误而无法继续，则通过回溯日志，将已经执行成功的操作撤">
+  <meta name="description" content="一、ACID特性持久性，我们就不讲了，易懂。 1、原子性在同一个事务内部的一组操作必须全部执行成功（或者全部失败）。为了保证事务操作的原子性，必须实现基于日志的REDO&#x2F;UNDO机制：将所有对数据的更新操作都写入日志，如果一个事务中的一部分操作已经成功，但以后的操作，由于断电&#x2F;系统崩溃&#x2F;其它的软硬件错误而无法继续，则通过回溯日志，将已经执行成功的操作撤销，从而达到“全部操作失败”的目的。 最常见的">
 <meta property="og:type" content="article">
 <meta property="og:title" content="深入理解mysql的事务隔离级别和底层实现原理">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;03&#x2F;20&#x2F;md&#x2F;part&#x2F;db&#x2F;mysql-trac-basic&#x2F;index.html">
 <meta property="og:site_name" content="小灰灰的博客">
-<meta property="og:description" content="深入理解mysql的事务隔离级别和底层实现原理 一、ACID特性持久性，我们就不讲了，易懂。1、原子性在同一个事务内部的一组操作必须全部执行成功（或者全部失败）。为了保证事务操作的原子性，必须实现基于日志的REDO&#x2F;UNDO机制：将所有对数据的更新操作都写入日志，如果一个事务中的一部分操作已经成功，但以后的操作，由于断电&#x2F;系统崩溃&#x2F;其它的软硬件错误而无法继续，则通过回溯日志，将已经执行成功的操作撤">
+<meta property="og:description" content="一、ACID特性持久性，我们就不讲了，易懂。 1、原子性在同一个事务内部的一组操作必须全部执行成功（或者全部失败）。为了保证事务操作的原子性，必须实现基于日志的REDO&#x2F;UNDO机制：将所有对数据的更新操作都写入日志，如果一个事务中的一部分操作已经成功，但以后的操作，由于断电&#x2F;系统崩溃&#x2F;其它的软硬件错误而无法继续，则通过回溯日志，将已经执行成功的操作撤销，从而达到“全部操作失败”的目的。 最常见的">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-03-20T03:28:31.000Z">
-<meta property="article:modified_time" content="2020-03-27T11:32:20.348Z">
+<meta property="article:modified_time" content="2020-04-24T15:20:01.807Z">
 <meta property="article:author" content="mqiy">
 <meta property="article:tag" content="mysql">
 <meta name="twitter:card" content="summary">
@@ -142,7 +142,7 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">52</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">54</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
@@ -152,7 +152,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">219</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">243</span></a>
 
   </li>
         <li class="menu-item menu-item-relate">
@@ -271,13 +271,24 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><strong>深入理解mysql的事务隔离级别和底层实现原理</strong></p>
-<h3 id="一、ACID特性"><a href="#一、ACID特性" class="headerlink" title="一、ACID特性"></a>一、ACID特性</h3><p>持久性，我们就不讲了，易懂。1、原子性<br>在同一个事务内部的一组操作必须全部执行成功（或者全部失败）。<br>为了保证事务操作的原子性，必须实现基于日志的REDO/UNDO机制：将所有对数据的更新操作都写入日志，如果一个事务中的一部分操作已经成功，但以后的操作，由于断电/系统崩溃/其它的软硬件错误而无法继续，则通过回溯日志，将已经执行成功的操作撤销，从而达到“全部操作失败”的目的。 最常见的场景是，数据库系统崩溃后重启，此时数据库处于不一致的状态，必须先执行一个crash recovery的过程：读取日志进行REDO（重演将所有已经执行成功但尚未写入到磁盘的操作，保证持久性），再对所有到崩溃时尚未成功提交的事务进行UNDO（撤销所有执行了一部分但尚未提交的操作，保证原子性）。crash recovery结束后，数据库恢复到一致性状态，可以继续被使用。<br>某个应用在执行转帐的数据库操作时，必须在同一个事务内部调用对帐户A和帐户B的操作，才能保证数据的一致性。<br>但是，原子性并不能完全保证一致性。在多个事务并行进行的情况下，即使保证了每一个事务的原子性，仍然可能导致数据不一致的结果。 例如，事务1需要将100元转入帐号A：先读取帐号A的值，然后在这个值上加上100。但是，在这两个操作之间，另一个事务2修改了帐号A的值，为它增加了100元。那么最后的结果应该是A增加了200元。但事实上，事务1最终完成后，帐号A只增加了100元，因为事务2的修改结果被事务1覆盖掉了。<br>简而言之，就是：原子性仅能够保证单个事务的一致性。就像redis一样，也只能保证单操作的线程安全，并不能保证多操作下的线程安全。2、一致性<br>按照我个人的理解，在事务处理的ACID属性中，一致性是最基本的属性，其它的三个属性都为了保证一致性而存在的。<br>我们举个反例来理解下一致性概念。例如：从帐户A转一笔钱到帐户B上，如果帐户A上的钱减少了，而帐户B上的钱却没有增加，那么我们认为此时数据处于不一致的状态。<br>为了保证并发情况下的一致性，引入了隔离性，即保证每一个事务能够看到的数据总是一致的，就好象其它并发事务并不存在一样。3、隔离性<br>数据库四种隔离级别，以及常见的几种读异常，大家应该都是耳熟能详的，但数据库底层是怎么实现隔离性的呢？都采用了哪些技术呢？ 主要有两个技术：MVCC(多版本并发控制)和锁。<br>（1）MVCC(多版本并发控制)<br>多版本并发控制，顾名思义，在并发访问的时候，数据存在版本的概念，可以有效地提升数据库并发能力，常见的数据库如MySQL、MS SQL Server、IBM DB2、Hbase、MongoDB等等都在使用。<br>简单讲，如果没有MVCC，当想要读取的数据被其他事务用排它锁锁住时，只能互斥等待；而这时MVCC可以通过提供历史版本从而实现读取被锁的数据的历史版本，从而避免了互斥等待。<br>InnoDB采用的MVCC实现方式是：在需要时，通过undo日志构造出历史版本。<br>（2）锁</p>
-<p>1) 锁的分类<br>Shared Locks(共享锁/S锁)<br>若事务T对数据对象A加上S锁，则事务T只能读A；其他事务只能再对A加S锁，而不能加X锁，直到T释放A上的S锁。这就保证了其他事务可以读A，但在T释放A上的S锁之前不能对A做任何修改。<br>Exclusive Locks(排它锁/X锁)<br>若事务T对数据对象A加上X锁，则只允许T读取和修改A，其它任何事务都不能再对A加任何类型的锁，直到T释放A上的锁。它防止任何其它事务获取资源上的锁，直到在事务的末尾将资源上的原始锁释放为止。在更新操作(INSERT、UPDATE 或 DELETE)过程中始终应用排它锁。<br>注意：排他锁会阻止其它事务再对其锁定的数据加读或写的锁，但是不加锁的就没办法控制了。<br>Record Locks(行锁)<br>行锁，顾名思义，是加在索引行(对！是索引行！不是数据行！)上的锁。比如select * from user where id=1 and id=10 for update，就会在id=1和id=10的索引行上加Record Lock。<br>Gap Locks(间隙锁)<br>间隙锁，它会锁住两个索引之间的区域。比如select * from user where id&gt;1 and id&lt;10 for update，就会在id为(1,10)的索引区间上加Gap Lock。<br>Next-Key Locks(间隙锁)<br>也叫间隙锁，它是Record Lock + Gap Lock形成的一个闭区间锁。比如select * from user where id&gt;=1 and id&lt;=10 for update，就会在id为[1,10]的索引闭区间上加Next-Key Lock。<br>这样组合起来就有，行级共享锁，表级共享锁，行级排它锁，表级排它锁。<br>2) 什么时候会加锁？<br>在数据库增删改查四种操作中，insert、delete和update都是会加排它锁(Exclusive Locks)的，而select只有显式声明才会加锁:<br>select: 即最常用的查询，是不加任何锁的<br>select … lock in share mode: 会加共享锁(Shared Locks)<br>select … for update: 会加排它锁<br>3) 四种隔离级别<br>不同的隔离级别是在数据可靠性和并发性之间的均衡取舍，隔离级别越高，对应的并发性能越差，数据越安全可靠。<br>READ UNCOMMITTED<br>顾名思义，事务之间可以读取彼此未提交的数据。机智如你会记得，在前文有说到所有写操作都会加排它锁，那还怎么读未提交呢？<br>机智如你，前面我们介绍排它锁的时候，有这种说明： 排他锁会阻止其它事务再对其锁定的数据加读或写的锁，但是对不加锁的读就不起作用了。<br>READ UNCOMMITTED隔离级别下, 读不会加任何锁。而写会加排他锁，并到事务结束之后释放。<br>实例1：<br>查-写：查并没有阻止写，表明查肯定并没有加锁，要不写肯定就阻塞了。写很明显，会加排它锁的。<br>实例2： 写-写：阻塞，表明，写会加排它锁。<br>READ COMMITTED<br>顾名思义，事务之间可以读取彼此已提交的数据。<br>InnoDB在该隔离级别(READ COMMITTED)写数据时，使用排它锁, 读取数据不加锁而是使用了MVCC机制。<br>因此，在读已提交的级别下，都会通过MVCC获取当前数据的最新快照，不加任何锁，也无视任何锁(因为历史数据是构造出来的，身上不可能有锁)。<br>但是，该级别下还是遗留了不可重复读和幻读问题： MVCC版本的生成时机: 是每次select时。这就意味着，如果我们在事务A中执行多次的select，在每次select之间有其他事务更新了我们读取的数据并提交了，那就出现了不可重复读，即：重复读时，会出现数据不一致问题，后面我们会讲解超支现象，就是这种引起的。<br>REPEATABLE READ<br>READ COMMITTED级别不同的是MVCC版本的生成时机，即：一次事务中只在第一次select时生成版本，后续的查询都是在这个版本上进行，从而实现了可重复读。<br>但是因为MVCC的快照只对读操作有效，对写操作无效，举例说明会更清晰一点： 事务A依次执行如下3条sql，事务B在语句1和2之间，插入10条age=20的记录，事务A就幻读了。</p>
-<ol>
-<li>select count(1) from user where age=20;</li>
-</ol>
-<p>– return 0: 当前没有age=20的<br>2. update user set name=test where age=20;<br>– Affects 10 rows: 因为事务B刚写入10条age=20的记录，而写操作是不受MVCC影响，能看到最新数据的，<br>– 所以更新成功，而一旦操作成功，这些被操作的数据就会对当前事务可见<br>3. select count(1) from user where age=20;<br>– return 10: 出现幻读<br>REPEATABLE READ级别，可以防止大部分的幻读，但像前边举例读-写-读的情况，使用不加锁的select依然会幻读。<br>SERIALISABLE<br>大杀器，该级别下，会自动将所有普通select转化为select … lock in share mode执行，即针对同一数据的所有读写都变成互斥的了，可靠性大大提高，并发性大大降低。<br>读-写，写-写均互斥。<br>4）总结：几类读异常<br>读-写-读，引起的异常</p>
+        <h3 id="一、ACID特性"><a href="#一、ACID特性" class="headerlink" title="一、ACID特性"></a>一、ACID特性</h3><p>持久性，我们就不讲了，易懂。</p>
+<h4 id="1、原子性"><a href="#1、原子性" class="headerlink" title="1、原子性"></a>1、原子性</h4><p>在同一个事务内部的一组操作必须全部执行成功（或者全部失败）。<br>为了保证事务操作的原子性，必须实现基于日志的REDO/UNDO机制：将所有对数据的更新操作都写入日志，如果一个事务中的一部分操作已经成功，但以后的操作，由于断电/系统崩溃/其它的软硬件错误而无法继续，则通过回溯日志，将已经执行成功的操作撤销，从而达到“全部操作失败”的目的。 最常见的场景是，数据库系统崩溃后重启，此时数据库处于不一致的状态，必须先执行一个crash recovery的过程：读取日志进行REDO（重演将所有已经执行成功但尚未写入到磁盘的操作，保证持久性），再对所有到崩溃时尚未成功提交的事务进行UNDO（撤销所有执行了一部分但尚未提交的操作，保证原子性）。crash recovery结束后，数据库恢复到一致性状态，可以继续被使用。<br>某个应用在执行转帐的数据库操作时，必须在同一个事务内部调用对帐户A和帐户B的操作，才能保证数据的一致性。<br>但是，原子性并不能完全保证一致性。在多个事务并行进行的情况下，即使保证了每一个事务的原子性，仍然可能导致数据不一致的结果。 例如，事务1需要将100元转入帐号A：先读取帐号A的值，然后在这个值上加上100。但是，在这两个操作之间，另一个事务2修改了帐号A的值，为它增加了100元。那么最后的结果应该是A增加了200元。但事实上，事务1最终完成后，帐号A只增加了100元，因为事务2的修改结果被事务1覆盖掉了。<br>简而言之，就是：原子性仅能够保证单个事务的一致性。就像redis一样，也只能保证单操作的线程安全，并不能保证多操作下的线程安全。</p>
+<h4 id="2、一致性"><a href="#2、一致性" class="headerlink" title="2、一致性"></a>2、一致性</h4><p>按照我个人的理解，在事务处理的ACID属性中，一致性是最基本的属性，其它的三个属性都为了保证一致性而存在的。<br>我们举个反例来理解下一致性概念。例如：从帐户A转一笔钱到帐户B上，如果帐户A上的钱减少了，而帐户B上的钱却没有增加，那么我们认为此时数据处于不一致的状态。<br>为了保证并发情况下的一致性，引入了隔离性，即保证每一个事务能够看到的数据总是一致的，就好象其它并发事务并不存在一样。</p>
+<h4 id="3、隔离性"><a href="#3、隔离性" class="headerlink" title="3、隔离性"></a>3、隔离性</h4><p>数据库四种隔离级别，以及常见的几种读异常，大家应该都是耳熟能详的，但数据库底层是怎么实现隔离性的呢？都采用了哪些技术呢？ 主要有两个技术：MVCC(多版本并发控制)和锁。</p>
+<h4 id="（1）MVCC-多版本并发控制"><a href="#（1）MVCC-多版本并发控制" class="headerlink" title="（1）MVCC(多版本并发控制)"></a>（1）MVCC(多版本并发控制)</h4><p>多版本并发控制，顾名思义，在并发访问的时候，数据存在版本的概念，可以有效地提升数据库并发能力，常见的数据库如MySQL、MS SQL Server、IBM DB2、Hbase、MongoDB等等都在使用。<br>简单讲，如果没有MVCC，当想要读取的数据被其他事务用排它锁锁住时，只能互斥等待；而这时MVCC可以通过提供历史版本从而实现读取被锁的数据的历史版本，从而避免了互斥等待。<br>InnoDB采用的MVCC实现方式是：在需要时，通过undo日志构造出历史版本。</p>
+<h4 id="（2）锁"><a href="#（2）锁" class="headerlink" title="（2）锁"></a>（2）锁</h4><h5 id="1-锁的分类"><a href="#1-锁的分类" class="headerlink" title="1) 锁的分类"></a>1) 锁的分类</h5><ul>
+<li>Shared Locks(共享锁/S锁)<br>若事务T对数据对象A加上S锁，则事务T只能读A；其他事务只能再对A加S锁，而不能加X锁，直到T释放A上的S锁。这就保证了其他事务可以读A，但在T释放A上的S锁之前不能对A做任何修改。</li>
+<li>Exclusive Locks(排它锁/X锁)<br>若事务T对数据对象A加上X锁，则只允许T读取和修改A，其它任何事务都不能再对A加任何类型的锁，直到T释放A上的锁。它防止任何其它事务获取资源上的锁，直到在事务的末尾将资源上的原始锁释放为止。在更新操作(INSERT、UPDATE 或 DELETE)过程中始终应用排它锁。<br>注意：排他锁会阻止其它事务再对其锁定的数据加读或写的锁，但是不加锁的就没办法控制了。</li>
+<li>Record Locks(行锁)<br>行锁，顾名思义，是加在索引行(对！是索引行！不是数据行！)上的锁。比如select * from user where id=1 and id=10 for update，就会在id=1和id=10的索引行上加Record Lock。</li>
+<li>Gap Locks(间隙锁)<br>间隙锁，它会锁住两个索引之间的区域。比如select * from user where id&gt;1 and id&lt;10 for update，就会在id为(1,10)的索引区间上加Gap Lock。</li>
+<li>Next-Key Locks(间隙锁)<br>也叫间隙锁，它是Record Lock + Gap Lock形成的一个闭区间锁。比如select * from user where id&gt;=1 and id&lt;=10 for update，就会在id为[1,10]的索引闭区间上加Next-Key Lock。<br>这样组合起来就有，行级共享锁，表级共享锁，行级排它锁，表级排它锁。</li>
+</ul>
+<h5 id="2-什么时候会加锁？"><a href="#2-什么时候会加锁？" class="headerlink" title="2) 什么时候会加锁？"></a>2) 什么时候会加锁？</h5><p>在数据库增删改查四种操作中，insert、delete和update都是会加排它锁(Exclusive Locks)的，而select只有显式声明才会加锁:<br>select: 即最常用的查询，是不加任何锁的<br>select … lock in share mode: 会加共享锁(Shared Locks)<br>select … for update: 会加排它锁</p>
+<h5 id="3-四种隔离级别"><a href="#3-四种隔离级别" class="headerlink" title="3) 四种隔离级别"></a>3) 四种隔离级别</h5><p>不同的隔离级别是在数据可靠性和并发性之间的均衡取舍，隔离级别越高，对应的并发性能越差，数据越安全可靠。<br><strong>READ UNCOMMITTED</strong><br>顾名思义，事务之间可以读取彼此未提交的数据。机智如你会记得，在前文有说到所有写操作都会加排它锁，那还怎么读未提交呢？<br>机智如你，前面我们介绍排它锁的时候，有这种说明： 排他锁会阻止其它事务再对其锁定的数据加读或写的锁，但是对不加锁的读就不起作用了。<br>READ UNCOMMITTED隔离级别下, 读不会加任何锁。而写会加排他锁，并到事务结束之后释放。<br>实例1：<br>查-写：查并没有阻止写，表明查肯定并没有加锁，要不写肯定就阻塞了。写很明显，会加排它锁的。<br>实例2： 写-写：阻塞，表明，写会加排它锁。<br><strong>READ COMMITTED</strong><br>顾名思义，事务之间可以读取彼此已提交的数据。<br>InnoDB在该隔离级别(READ COMMITTED)写数据时，使用排它锁, 读取数据不加锁而是使用了MVCC机制。<br>因此，在读已提交的级别下，都会通过MVCC获取当前数据的最新快照，不加任何锁，也无视任何锁(因为历史数据是构造出来的，身上不可能有锁)。<br>但是，该级别下还是遗留了不可重复读和幻读问题： MVCC版本的生成时机: 是每次select时。这就意味着，如果我们在事务A中执行多次的select，在每次select之间有其他事务更新了我们读取的数据并提交了，那就出现了不可重复读，即：重复读时，会出现数据不一致问题，后面我们会讲解超支现象，就是这种引起的。<br><strong>REPEATABLE READ</strong><br>READ COMMITTED级别不同的是MVCC版本的生成时机，即：一次事务中只在第一次select时生成版本，后续的查询都是在这个版本上进行，从而实现了可重复读。<br>但是因为MVCC的快照只对读操作有效，对写操作无效，举例说明会更清晰一点： 事务A依次执行如下3条sql，事务B在语句1和2之间，插入10条age=20的记录，事务A就幻读了。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">1. <span class="keyword">select</span> <span class="keyword">count</span>(<span class="number">1</span>) <span class="keyword">from</span> <span class="keyword">user</span> <span class="keyword">where</span> age=<span class="number">20</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="comment">-- return 0: 当前没有age=20的</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">2. <span class="keyword">update</span> <span class="keyword">user</span> <span class="keyword">set</span> <span class="keyword">name</span>=<span class="keyword">test</span> <span class="keyword">where</span> age=<span class="number">20</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="comment">-- Affects 10 rows: 因为事务B刚写入10条age=20的记录，而写操作是不受MVCC影响，能看到最新数据的，</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 所以更新成功，而一旦操作成功，这些被操作的数据就会对当前事务可见</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">3. <span class="keyword">select</span> <span class="keyword">count</span>(<span class="number">1</span>) <span class="keyword">from</span> <span class="keyword">user</span> <span class="keyword">where</span> age=<span class="number">20</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"><span class="comment">-- return 10: 出现幻读</span></span></pre></td></tr></table></figure>
+
+<p>REPEATABLE READ级别，可以防止大部分的幻读，但像前边举例读-写-读的情况，使用不加锁的select依然会幻读。<br><strong>SERIALISABLE</strong><br>大杀器，该级别下，会自动将所有普通select转化为select … lock in share mode执行，即针对同一数据的所有读写都变成互斥的了，可靠性大大提高，并发性大大降低。<br>读-写，写-写均互斥。</p>
+<h5 id="4）总结：几类读异常"><a href="#4）总结：几类读异常" class="headerlink" title="4）总结：几类读异常*"></a>4）总结：几类读异常*</h5><p>读-写-读，引起的异常</p>
 <p>脏读：读取了脏数据(不存在的数据)。 事务一读 事务二写(未提交) 事务二读(脏数据) 事务二回滚</p>
 <p>不可重复读：既可以读取修改的数据，也可以读取新增的数据(幻读)。 事务一读 事务二写(更新已提交) 事务二读(数据不一致，不可重复读)</p>
 <p>幻读：仅可以读取新增的数据，但是无法读取修改的数据； 事务一读 事务二写(新增已提交) 事务二读(数据不一致，幻读)</p>
@@ -367,7 +378,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、ACID特性"><span class="nav-number">1.</span> <span class="nav-text">一、ACID特性</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、ACID特性"><span class="nav-number">1.</span> <span class="nav-text">一、ACID特性</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、原子性"><span class="nav-number">1.1.</span> <span class="nav-text">1、原子性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、一致性"><span class="nav-number">1.2.</span> <span class="nav-text">2、一致性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、隔离性"><span class="nav-number">1.3.</span> <span class="nav-text">3、隔离性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#（1）MVCC-多版本并发控制"><span class="nav-number">1.4.</span> <span class="nav-text">（1）MVCC(多版本并发控制)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#（2）锁"><span class="nav-number">1.5.</span> <span class="nav-text">（2）锁</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-锁的分类"><span class="nav-number">1.5.1.</span> <span class="nav-text">1) 锁的分类</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-什么时候会加锁？"><span class="nav-number">1.5.2.</span> <span class="nav-text">2) 什么时候会加锁？</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-四种隔离级别"><span class="nav-number">1.5.3.</span> <span class="nav-text">3) 四种隔离级别</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4）总结：几类读异常"><span class="nav-number">1.5.4.</span> <span class="nav-text">4）总结：几类读异常*</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -381,7 +392,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">219</span>
+          <span class="site-state-item-count">243</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -394,7 +405,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">52</span>
+        <span class="site-state-item-count">54</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -428,12 +439,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">256k</span>
+    <span title="站点总字数">264k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">3:52</span>
+    <span title="站点阅读时长">4:01</span>
 </div>
 
         

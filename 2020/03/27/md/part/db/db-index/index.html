@@ -47,15 +47,15 @@
   };
 </script>
 
-  <meta name="description" content="Mysql如何为表字段添加索引？？？1.添加PRIMARY KEY（主键索引） ALTER TABLE table_name ADD PRIMARY KEY ( column )2.添加UNIQUE(唯一索引) ALTER TABLE table_name ADD UNIQUE ( column )3.添加INDEX(普通索引) ALTER TABLE table_name ADD INDEX i">
+  <meta name="description" content="MyISAM VS  Innodb   内容 MyISAM Innodb    叶子节点存放数据 数据记录的地址 完整的数据记录   索引与数据文件 合一 分索引文件，数据文件        索引：创建数量限制： 单表不超过5个(浪费空间，更新变慢) 区分度低的字段，例如性别，不要建索引。(离散度太低，导致扫描行数过多) 频繁更新的值，不要作为主键或者索引。(——页分裂) 不建议用无序的值（例如身">
 <meta property="og:type" content="article">
-<meta property="og:title" content="db分库分表">
+<meta property="og:title" content="Mysql索引">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;03&#x2F;27&#x2F;md&#x2F;part&#x2F;db&#x2F;db-index&#x2F;index.html">
 <meta property="og:site_name" content="小灰灰的博客">
-<meta property="og:description" content="Mysql如何为表字段添加索引？？？1.添加PRIMARY KEY（主键索引） ALTER TABLE table_name ADD PRIMARY KEY ( column )2.添加UNIQUE(唯一索引) ALTER TABLE table_name ADD UNIQUE ( column )3.添加INDEX(普通索引) ALTER TABLE table_name ADD INDEX i">
+<meta property="og:description" content="MyISAM VS  Innodb   内容 MyISAM Innodb    叶子节点存放数据 数据记录的地址 完整的数据记录   索引与数据文件 合一 分索引文件，数据文件        索引：创建数量限制： 单表不超过5个(浪费空间，更新变慢) 区分度低的字段，例如性别，不要建索引。(离散度太低，导致扫描行数过多) 频繁更新的值，不要作为主键或者索引。(——页分裂) 不建议用无序的值（例如身">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-03-27T09:03:10.000Z">
-<meta property="article:modified_time" content="2020-03-27T11:32:20.342Z">
+<meta property="article:modified_time" content="2020-04-24T15:20:01.804Z">
 <meta property="article:author" content="mqiy">
 <meta property="article:tag" content="db">
 <meta name="twitter:card" content="summary">
@@ -72,7 +72,7 @@
   };
 </script>
 
-  <title>db分库分表 | 小灰灰的博客</title>
+  <title>Mysql索引 | 小灰灰的博客</title>
   
 
 
@@ -142,7 +142,7 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">52</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">54</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
@@ -152,7 +152,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">219</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">243</span></a>
 
   </li>
         <li class="menu-item menu-item-relate">
@@ -226,7 +226,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          db分库分表
+          Mysql索引
         </h1>
 
         <div class="post-meta">
@@ -252,7 +252,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>321</span>
+              <span>947</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -271,7 +271,68 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>Mysql如何为表字段添加索引？？？<br>1.添加PRIMARY KEY（主键索引）</p>
+        <h3 id="MyISAM-VS-Innodb"><a href="#MyISAM-VS-Innodb" class="headerlink" title="MyISAM VS  Innodb"></a>MyISAM VS  Innodb</h3><table>
+<thead>
+<tr>
+<th>内容</th>
+<th>MyISAM</th>
+<th>Innodb</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>叶子节点存放数据</td>
+<td>数据记录的地址</td>
+<td>完整的数据记录</td>
+</tr>
+<tr>
+<td>索引与数据文件</td>
+<td>合一</td>
+<td>分索引文件，数据文件</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="索引："><a href="#索引：" class="headerlink" title="索引："></a>索引：</h3><h4 id="创建数量限制："><a href="#创建数量限制：" class="headerlink" title="创建数量限制："></a>创建数量限制：</h4><ul>
+<li>单表不超过5个(浪费空间，更新变慢)</li>
+<li>区分度低的字段，例如性别，不要建索引。(离散度太低，导致扫描行数过多)</li>
+<li>频繁更新的值，不要作为主键或者索引。(——页分裂)</li>
+<li>不建议用无序的值（例如身份证、UUID ）作为索引</li>
+</ul>
+<h4 id="加索引字段"><a href="#加索引字段" class="headerlink" title="加索引字段"></a>加索引字段</h4><ul>
+<li>在用于 where 判断 order 排序和 join 的（on）字段上创建索引</li>
+</ul>
+<h4 id="创建组合索引的顺序："><a href="#创建组合索引的顺序：" class="headerlink" title="创建组合索引的顺序："></a>创建组合索引的顺序：</h4><ul>
+<li>区分度最高的放在联合索引的最左侧（区分度=列中不同值的数量/列的总行数）</li>
+<li>尽量把字段长度小的列放在联合索引的最左侧（因为字段长度越小，一页能存储的数据量越大，IO 性能也就越好）</li>
+<li>使用最频繁的列放到联合索引的左侧（这样可以比较少的建立一些索引）</li>
+</ul>
+<h3 id="列"><a href="#列" class="headerlink" title="列"></a>列</h3><ul>
+<li>尽可能把所有列定义为 NOT NULL</li>
+<li>单表记录数量控制在500万以内</li>
+<li>尽量做到冷热数据分离,减小表的宽度</li>
+<li>禁止在数据库中存储图片,文件等大的二进制数据</li>
+<li>不建议使用过长的字段作为主键</li>
+</ul>
+<h3 id="外键"><a href="#外键" class="headerlink" title="外键"></a>外键</h3><p>会影响父表和子表的写操作从而降低性能</p>
+<blockquote>
+<p>表与表之间的关联键上建立索引</p>
+</blockquote>
+<h4 id="过长的字段，使用前缀匹配方式创建索引"><a href="#过长的字段，使用前缀匹配方式创建索引" class="headerlink" title="过长的字段，使用前缀匹配方式创建索引"></a>过长的字段，使用前缀匹配方式创建索引</h4><h3 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h3><p>原则</p>
+<ul>
+<li>最左前缀匹配原则</li>
+<li>索引列不能参与计算</li>
+<li>关联查询表，建议不超过 5 个</li>
+</ul>
+<h4 id="具体查询"><a href="#具体查询" class="headerlink" title="具体查询"></a>具体查询</h4><ul>
+<li>在明显不会有重复值时使用 UNION ALL 而不是 UNION</li>
+<li>少使用子查询（原因：子查询的结果集无法使用索引）</li>
+</ul>
+<p>or-&gt; in</p>
+<p>优化：<br>充分利用已有索引，尽可能的扩展索引<br>覆盖索引(不需要回表)<br>范围查询放在最右边</p>
+<h3 id="Mysql如何为表字段添加索引？？？"><a href="#Mysql如何为表字段添加索引？？？" class="headerlink" title="Mysql如何为表字段添加索引？？？"></a>Mysql如何为表字段添加索引？？？</h3><p>1.添加PRIMARY KEY（主键索引）</p>
 <p>ALTER TABLE <code>table_name</code> ADD PRIMARY KEY ( <code>column</code> )<br>2.添加UNIQUE(唯一索引)</p>
 <p>ALTER TABLE <code>table_name</code> ADD UNIQUE ( <code>column</code> )<br>3.添加INDEX(普通索引)</p>
 <p>ALTER TABLE <code>table_name</code> ADD INDEX index_name ( <code>column</code> )<br>4.添加FULLTEXT(全文索引)</p>
@@ -296,12 +357,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/03/28/md/part/web/http/tcp-key/" rel="prev" title="粘包与拆包">
+    <a href="/2020/03/28/md/part/web/http/packet/" rel="prev" title="粘包与拆包">
       <i class="fa fa-chevron-left"></i> 粘包与拆包
     </a></div>
       <div class="post-nav-item">
-    <a href="/2020/03/27/md/part/db/db-op/" rel="next" title="mysql优化">
-      mysql优化 <i class="fa fa-chevron-right"></i>
+    <a href="/2020/03/27/md/part/mq/kafka-mq-problem/" rel="next" title="kafka中常规问题">
+      kafka中常规问题 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -362,6 +423,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#MyISAM-VS-Innodb"><span class="nav-number">1.</span> <span class="nav-text">MyISAM VS  Innodb</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#索引："><span class="nav-number">2.</span> <span class="nav-text">索引：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#创建数量限制："><span class="nav-number">2.1.</span> <span class="nav-text">创建数量限制：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#加索引字段"><span class="nav-number">2.2.</span> <span class="nav-text">加索引字段</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建组合索引的顺序："><span class="nav-number">2.3.</span> <span class="nav-text">创建组合索引的顺序：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#列"><span class="nav-number">3.</span> <span class="nav-text">列</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#外键"><span class="nav-number">4.</span> <span class="nav-text">外键</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#过长的字段，使用前缀匹配方式创建索引"><span class="nav-number">4.1.</span> <span class="nav-text">过长的字段，使用前缀匹配方式创建索引</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查询"><span class="nav-number">5.</span> <span class="nav-text">查询</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#具体查询"><span class="nav-number">5.1.</span> <span class="nav-text">具体查询</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Mysql如何为表字段添加索引？？？"><span class="nav-number">6.</span> <span class="nav-text">Mysql如何为表字段添加索引？？？</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -375,7 +437,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">219</span>
+          <span class="site-state-item-count">243</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -388,7 +450,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">52</span>
+        <span class="site-state-item-count">54</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -422,12 +484,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">256k</span>
+    <span title="站点总字数">264k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">3:52</span>
+    <span title="站点阅读时长">4:01</span>
 </div>
 
         
