@@ -140,7 +140,7 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">54</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">53</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
@@ -150,7 +150,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">243</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">237</span></a>
 
   </li>
         <li class="menu-item menu-item-relate">
@@ -269,6 +269,82 @@
 <li>消息头+消息体，消息头中一般会包含消息体的长度，消息类型等信息，消息体为实际数据体。</li>
 <li>特殊字符（如：回车符）作为消息数据的结尾，以实现消息数据的分段。</li>
 <li>复杂的应用层协议，这种方式使用的相对较少，耦合了网络层与应用层。 上面的四种方式目的都是为了将数据在流中精确分开以便进一步解析处理，在自定义的协议中，第二种方式用的比较多，因为它更能满足定制化协议开发需求，比如自定义Netty协议时可以将具体数据报文放入消息体，消息头中根据需要放入其他变量（如：消息类型，此处可以具体对应到维护netty长链接的心跳消息、客户端请求消息、服务端处理结果消息等）</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/28/md/part/web/http/dns-find/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="mqiy">
+      <meta itemprop="description" content="永远为下个月离职做好准备">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小灰灰的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/03/28/md/part/web/http/dns-find/" class="post-title-link" itemprop="url">DNS使用的是TCP协议还是UDP协议简析?</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-03-28 10:27 10:27:40" itemprop="dateCreated datePublished" datetime="2020-03-28T10:27:40+08:00">2020-03-28 10:27</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>353</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="DNS使用的是TCP协议还是UDP协议简析"><a href="#DNS使用的是TCP协议还是UDP协议简析" class="headerlink" title="DNS使用的是TCP协议还是UDP协议简析?"></a>DNS使用的是TCP协议还是UDP协议简析?</h3><p>dns同时占用tcp和udp的53端口！<br>区域传复送时使用TCP，主要有一下两点考虑：</p>
+<ul>
+<li>1.辅域名服务器会定时（一般时3小时）向主域名服务器进行查询以便了制解数据是否有变动。如有变动，则会执行一次区域传送，进行数据同步。区域传送将使用TCP而不是UDP，因为数据同步传送的数据量比一个请求和应答的百数据量要多得多。</li>
+<li>2.TCP是一种可靠的连接，保证了数据的准确性。<br>域名解析时使用UDP协议：<br>客户端向DNS服务器查询域名，一般返回的度内容都不超过512字节，用UDP传输即可。不用经过TCP三次握手，这样DNS服务器负载更低，响应更快。虽然从理论上说，问客户端也可以指定向DNS服务器查询的时候使用TCP，但事答实上，很多DNS服务器进行配置的时候，仅支持UDP查询包。</li>
 </ul>
 
       
@@ -1074,97 +1150,11 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/27/md/jdk/jvm/gc-scene/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="mqiy">
-      <meta itemprop="description" content="永远为下个月离职做好准备">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小灰灰的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/03/27/md/jdk/jvm/gc-scene/" class="post-title-link" itemprop="url">触发MinorGC与FullGC情景</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-03-27 09:36 09:36:40" itemprop="dateCreated datePublished" datetime="2020-03-27T09:36:40+08:00">2020-03-27 09:36</time>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>648</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h4 id="触发MinorGC-Young-GC"><a href="#触发MinorGC-Young-GC" class="headerlink" title="触发MinorGC(Young GC)"></a>触发MinorGC(Young GC)</h4><p>​    虚拟机在进行minorGC之前会判断老年代最大的可用连续空间是否大于新生代的所有对象总空间</p>
-<ul>
-<li><p>如果大于的话，直接执行minorGC</p>
-</li>
-<li><p>如果小于，判断是否开启HandlerPromotionFailure，没有开启直接FullGC</p>
-</li>
-<li><p>如果开启了HanlerPromotionFailure, JVM会判断老年代的最大连续内存空间是否大于历次晋升的大小，如果小于直接执行FullGC</p>
-</li>
-<li><p>如果大于的话，执行minorGC</p>
-</li>
-</ul>
-<h4 id="触发FullGC"><a href="#触发FullGC" class="headerlink" title="触发FullGC"></a>触发FullGC</h4><h5 id="老年代空间不足"><a href="#老年代空间不足" class="headerlink" title="老年代空间不足"></a>老年代空间不足</h5><p>​     如果创建一个大对象，Eden区域当中放不下这个大对象，会直接保存在老年代当中，如果老年代空间也不足，就会触发Full GC。为了避免这种情况，最好就是不要创建太大的对象。</p>
-<h5 id="持久代空间不足"><a href="#持久代空间不足" class="headerlink" title="持久代空间不足"></a>持久代空间不足</h5><p>​    如果有持久代空间的话，系统当中需要加载的类，调用的方法很多，同时持久代当中没有足够的空间，就出触发一次Full GC</p>
-<h5 id="YGC出现promotion-failure"><a href="#YGC出现promotion-failure" class="headerlink" title="YGC出现promotion failure"></a>YGC出现promotion failure</h5><p>​    promotion failure发生在Young GC, 如果Survivor区当中存活对象的年龄达到了设定值，会就将Survivor区当中的对象拷贝到老年代，如果老年代的空间不足，就会发生promotion failure， 接下去就会发生Full GC.</p>
-<h5 id="统计YGC发生时晋升到老年代的平均总大小大于老年代的空闲空间"><a href="#统计YGC发生时晋升到老年代的平均总大小大于老年代的空闲空间" class="headerlink" title="统计YGC发生时晋升到老年代的平均总大小大于老年代的空闲空间"></a>统计YGC发生时晋升到老年代的平均总大小大于老年代的空闲空间</h5><p>​      在发生YGC是会判断，是否安全，这里的安全指的是，当前老年代空间可以容纳YGC晋升的对象的平均大小，如果不安全，就不会执行YGC,转而执行Full GC。</p>
-<h5 id="显示调用System-gc"><a href="#显示调用System-gc" class="headerlink" title="显示调用System.gc"></a>显示调用System.gc</h5>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/25/">25</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/24/">24</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1230,7 +1220,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">243</span>
+          <span class="site-state-item-count">237</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1243,7 +1233,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">54</span>
+        <span class="site-state-item-count">53</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -1277,12 +1267,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">264k</span>
+    <span title="站点总字数">226k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">4:01</span>
+    <span title="站点阅读时长">3:26</span>
 </div>
 
         

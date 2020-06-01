@@ -140,7 +140,7 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">54</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">53</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
@@ -150,7 +150,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">243</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">237</span></a>
 
   </li>
         <li class="menu-item menu-item-relate">
@@ -207,271 +207,6 @@
             
 
   <div class="posts-expand">
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/jdk/jvm/jvm%E5%86%85%E5%AD%98%E5%8A%A0%E8%BD%BD%E5%92%8Cgc/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="mqiy">
-      <meta itemprop="description" content="永远为下个月离职做好准备">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小灰灰的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/06/18/md/jdk/jvm/jvm%E5%86%85%E5%AD%98%E5%8A%A0%E8%BD%BD%E5%92%8Cgc/" class="post-title-link" itemprop="url">jvm内存加载和gc</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-06-18 15:27 15:27:31" itemprop="dateCreated datePublished" datetime="2019-06-18T15:27:31+08:00">2019-06-18 15:27</time>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1.3k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>jvm比较重要的内存区域<br><code>方法区</code>：在java的虚拟机中有一块专门用来存放已经加载的类信息、常量、静态变量以及方法代码的内存区域，叫做方法区。<br><code>常量池</code>：常量池是方法区的一部分，主要用来存放常量和类中的符号引用等信息。<br><code>堆区</code>：用于存放类的对象实例。<br><code>栈区</code>：也叫java虚拟机栈，是由一个一个的栈帧组成的后进先出的栈式结构，栈桢中存放方法运行时产生的局部变量、方法出口等信息。当调用一个方法时，虚拟机栈中就会创建一个栈帧存放这些数据，当方法调用完成时，栈帧消失，如果方法中调用了其他方法，则继续在栈顶创建新的栈桢。<br>除了以上四个内存区域之外，jvm中的运行时内存区域还包括<code>本地方法栈</code>和<code>程序计数器</code></p>
-<p>1）堆</p>
-<p>所有通过new创建的对象的内存都在堆中分配，堆的大小可以通过-Xmx和-Xms来控制。<br>堆被划分为<code>新生代</code>和<code>旧生代</code>，新生代又被进一步划分为<code>Eden</code>和<code>Survivor</code>区，最后Survivor由From Space和To Space组成</p>
-<p><code>新生代</code>。新建的对象都是用新生代分配内存，Eden空间不足的时候，会把存活的对象转移到Survivor中，<br>新生代大小可以由-Xmn来控制，也可以用-XX:SurvivorRatio来控制Eden和Survivor的比例</p>
-<p><code>旧生代</code>。在年轻代中经历了N次垃圾回收后仍然存活的对象，就会被放到年老代中。因此，可以认为年老代中存放的都是一些生命周期较长的对象。</p>
-<p><code>持久代</code>。已经取消，JDK8 HotSpot JVM现在使用了本地内存来存储类元数据，被称为Metaspace。</p>
-<p>2）栈<br>每个线程执行每个方法的时候都会在栈中申请一个栈帧，每个栈帧包括局部变量区和操作数栈，用于存放此次方法调用过程中的临时变量、参数和中间结果。</p>
-<p>3）本地方法栈<br>用于支持native方法的执行，存储了每个native方法调用的状态</p>
-<p>4）方法区<br>存放了要加载的类信息、静态变量、final类型的常量、属性和方法信息。</p>
-<h3 id="基本回收算法"><a href="#基本回收算法" class="headerlink" title="基本回收算法"></a>基本回收算法</h3><h4 id="1-复制（Copying）"><a href="#1-复制（Copying）" class="headerlink" title="1. 复制（Copying）"></a>1. 复制（Copying）</h4><p>此算法把内存空间划为两个相等的区域，每次只使用其中一个区域。垃圾回收时，遍历当前使用区域，把正在使用中的对象复制到另外一个区域中。次算法每次只处理正在使用中的对象，因此复制成本比较小，同时复制过去以后还能进行相应的内存整理，不过出现“碎片”问题。当然，此算法的缺点也是很明显的，就是需要两倍内存空间。 </p>
-<h4 id="2-标记-清除（Mark-Sweep）"><a href="#2-标记-清除（Mark-Sweep）" class="headerlink" title="2. 标记-清除（Mark-Sweep）"></a>2. 标记-清除（Mark-Sweep）</h4><p>此算法执行分两阶段。第一阶段从引用根节点开始标记所有被引用的对象，第二阶段遍历整个堆，把未标记的对象清除。此算法需要暂停整个应用，同时，会产生内存碎片。 </p>
-<h4 id="3-标记-整理（Mark-Compact）"><a href="#3-标记-整理（Mark-Compact）" class="headerlink" title="3. 标记-整理（Mark-Compact）"></a>3. 标记-整理（Mark-Compact）</h4><p>此算法结合了 “标记-清除”和“复制”两个算法的优点。也是分两阶段，第一阶段从根节点开始标记所有被引用对象，第二阶段遍历整个堆，把清除未标记对象并且把存活对象 “压缩”到堆的其中一块，按顺序排放。此算法避免了“标记-清除”的碎片问题，同时也避免了“复制”算法的空间问题。 </p>
-<h4 id="4-分代（Generational-Collecting）"><a href="#4-分代（Generational-Collecting）" class="headerlink" title="4. 分代（Generational Collecting）"></a>4. 分代（Generational Collecting）</h4><p>垃圾收集器<br>串行GC（Serial GC）、并行回收GC（Parallel Scavenge）和并发回收GC（ParNew）</p>
-<p>GC有两种类型：<code>Scavenge GC</code>和<code>Full GC</code>。<br>JVM分别对新生代和旧生代采用不同的垃圾回收机制</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/jdk/mulThread/%E5%A4%9A%E7%BA%BF%E7%A8%8B/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="mqiy">
-      <meta itemprop="description" content="永远为下个月离职做好准备">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小灰灰的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/06/18/md/jdk/mulThread/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" class="post-title-link" itemprop="url">多线程概要</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-06-18 15:27 15:27:31" itemprop="dateCreated datePublished" datetime="2019-06-18T15:27:31+08:00">2019-06-18 15:27</time>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>2.5k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>多线程只有一个目的：更好的利用cpu的资源</p>
-<ul>
-<li><p>并行：多个cpu实例或者多台机器同时执行一段处理逻辑，是真正的同时。</p>
-</li>
-<li><p>并发：通过cpu调度算法，让用户看上去同时执行，实际上从cpu操作层面不是真正的同时。</p>
-</li>
-<li><p>线程安全：经常用来描绘一段代码。指在并发的情况之下，该代码经过多线程使用，线程的调度顺序不影响任何结果。</p>
-</li>
-<li><p>同步：Java中的同步指的是通过人为的控制和调度，保证共享资源的多线程访问成为线程安全，来保证结果的准确。如简单加入@synchronized关键字。</p>
-</li>
-</ul>
-<p><strong>阻塞(Blocked)</strong>：</p>
-<ol>
-<li>调用join()和sleep()方法，sleep()时间结束或被打断，join()中断,IO完成都会回到Runnable状态，等待JVM的调度。</li>
-<li>调用wait()，使该线程处于等待池(wait blocked pool),直到notify()/notifyAll()，线程被唤醒被放到锁定池(lock blocked pool )，释放同步锁使线程回到可运行状态（Runnable）</li>
-<li>对Running状态的线程加同步锁(Synchronized)使其进入(lock blocked pool ),同步锁被释放进入可运行状态(Runnable)。</li>
-</ol>
-<p>Thread类中的yield方法可以让一个running状态的线程转入runnable。</p>
-<ul>
-<li>yield()应该做的是让当前运行线程回到可运行状态，以允许具有相同优先级的其他线程获得运行机会，可能无效，又选择了让步的线程。</li>
-<li>join()在一个线程中调用other.join(),将等待other执行完后才继续本线程。</li>
-<li>interrupted方法其本质只是设置该线程的中断标志，真正实现线程的中断原理是：开发人员根据中断标志的具体值，来决定如何退出线程。</li>
-<li>stop方法会中断一个正在运行的线程</li>
-</ul>
-<p>synchronized, wait, notify 是任何对象都具有的同步工具<br>monitor 在synchronized 范围内，监视器发挥作用<br>wait/notify必须存在于synchronized块，这三个关键字针对的是同一个监视器，意味着wait之后，其他线程可以进入同步块执行。</p>
-<p><code>volatile 多线程的内存模型</code>：<br>main memory（主存）、working memory（线程栈）<br>在处理数据时，线程会把值从主存load到本地栈，完成操作后再save回去(volatile关键词的作用：每次针对该变量的操作都激发一次load and save)。</p>
-<h3 id="多线程包-java-util-concurrent"><a href="#多线程包-java-util-concurrent" class="headerlink" title="多线程包:java.util.concurrent"></a>多线程包:java.util.concurrent</h3><p><code>ThreadLocal类</code>，每个使用该变量的线程提供独立的变量副本，常用于用户登录控制，如记录session信息<br>每个Thread都持有一个TreadLocalMap类型的变量</p>
-<p><code>原子类</code>（AtomicInteger、AtomicBoolean……）等同于synchronized，AtomicInteger.compareAndSet(int expect,int update)可实现乐观锁   </p>
-<h4 id="Lock类"><a href="#Lock类" class="headerlink" title="Lock类"></a>Lock类</h4><p>ReentrantLock<br>ReentrantReadWriteLock.ReadLock<br>ReentrantReadWriteLock.WriteLock<br>lock 阻塞式, trylock 无阻塞式, lockInterruptily 可打断式， 还有trylock的带超时时间版本<br>r.lock()或r.lockInterruptibly()<br>r.unlock()<br>ReentrantReadWriteLock，写写，写读互斥；读读不互斥。可以实现并发读的高效线程安全代码</p>
-<h4 id="容器类"><a href="#容器类" class="headerlink" title="容器类"></a>容器类</h4><p>BlockingQueue 这个queue是单向队列，特别适用于先进先出策略的一些应用场景，BlockingQueue在队列的基础上添加了多线程协作的功能，提供了阻塞接口put和take，带超时功能的阻塞接口offer和poll。put会在队列满的时候阻塞，直到有空间时被唤醒；take在队列空的时候阻塞，直到有东西拿的时候才被唤醒。用于生产者-消费者模型尤其好用，堪称神器<br>常见的阻塞队列有：<br><code>ArrayListBlockingQueue</code><br><code>LinkedListBlockingQueue</code><br><code>DelayQueue</code><br><code>SynchronousQueue</code><br><code>ConcurrentHashMap</code>  </p>
-<p>高效的线程安全哈希map。请对比hashTable , concurrentHashMap, HashMap</p>
-<p><strong>HashMap</strong><br>put(key, value)存储对象到HashMap中，使用get(key)从HashMap中获取对象<br>put()方法传递键和值时，我们先对键调用hashCode()方法，返回的hashCode用于找到bucket位置来储存Entry对象<br>HashMap是在bucket中储存键对象和值对象</p>
-<h4 id="线程池管理类ThreadPoolExecutor"><a href="#线程池管理类ThreadPoolExecutor" class="headerlink" title="线程池管理类ThreadPoolExecutor"></a>线程池管理类ThreadPoolExecutor</h4><p>corePoolSize:池内线程初始值与最小值，就算是空闲状态，也会保持该数量线程。<br>maximumPoolSize:线程最大值，线程的增长始终不会超过该值。<br>keepAliveTime：当池内线程数高于corePoolSize时，经过多少时间多余的空闲线程才会被回收。回收前处于wait状态<br>unit：时间单位，可以使用TimeUnit的实例，如TimeUnit.MILLISECONDS。<br>workQueue:待入任务（Runnable）的等待场所，该参数主要影响调度策略，如公平与否，是否产生饿(starving)  。<br>threadFactory:线程工厂类，有默认实现，如果有自定义的需要则需要自己实现ThreadFactory接口并作为参数传入。   </p>
-<p>有一个内存区域是jvm虚拟机栈，每一个线程运行时都有一个线程栈，线程栈保存了线程运行时候变量值信息。当线程访问某一个对象时候值的时候，首先通过对象的引用找到对应在堆内存的变量的值，然后把堆内存变量的具体值load到线程本地内存中，建立一个变量副本，之后线程就不再和对象在堆内存变量值有任何关系，而是直接修改副本变量的值，在修改完之后的某一个时刻（线程退出之前），自动把线程变量副本的值回写到对象在堆中变量。这样在堆中的对象的值就产生变化了。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/part/microServices/Sidecar/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="mqiy">
-      <meta itemprop="description" content="永远为下个月离职做好准备">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小灰灰的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/06/18/md/part/microServices/Sidecar/" class="post-title-link" itemprop="url">Sidecar模式：下一代微服务架构的关键</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-06-18 15:27 15:27:31" itemprop="dateCreated datePublished" datetime="2019-06-18T15:27:31+08:00">2019-06-18 15:27</time>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>350</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="Sidecar模式：下一代微服务架构的关键"><a href="#Sidecar模式：下一代微服务架构的关键" class="headerlink" title="Sidecar模式：下一代微服务架构的关键"></a>Sidecar模式：下一代微服务架构的关键</h1><h2 id="什么是Sidecar模式？"><a href="#什么是Sidecar模式？" class="headerlink" title="什么是Sidecar模式？"></a>什么是Sidecar模式？</h2><p>Sidecar模式是一种将应用功能从应用本身剥离出来作为单独进程的方式。该模式允许我们向应用无侵入添加多种功能，避免了为满足第三方组件需求而向应用添加额外的配置代码。</p>
-<p>就像边车加装在摩托车上一样，在软件架构中，sidecar附加到主应用，或者叫父应用上，以扩展/增强功能特性，同时Sidecar与主应用是松耦合的。</p>
-<p>举个例子，假设现在有6个相互通信的微服务，每个微服务都需要具有可观察性、监控、日志记录、配置、断路器等功能，而所有这些功能都是在微服务中使用一些第三方库实现的。</p>
-<p>这样一组服务的实际情况可能会非常复杂，增加了应用的整体复杂性，尤其是当每个微服务用不同的语言编写、使用不同的基于.net、Java、Python等语言的第三方库</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
         
   
   
@@ -640,6 +375,184 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/part/db/db/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="mqiy">
+      <meta itemprop="description" content="永远为下个月离职做好准备">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小灰灰的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/06/18/md/part/db/db/" class="post-title-link" itemprop="url">db</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-06-18 15:03 15:03:36" itemprop="dateCreated datePublished" datetime="2019-06-18T15:03:36+08:00">2019-06-18 15:03</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>455</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="为什么数据库可以没有外键？"><a href="#为什么数据库可以没有外键？" class="headerlink" title="为什么数据库可以没有外键？"></a>为什么数据库可以没有外键？</h3><ul>
+<li>性能，影响插入、更新和删除操作的性能。数据库需要检查它是否违反数据完整性</li>
+<li>传统数据，许多数据库在设计时需要存储来自旧数据库和遗留数据，这些数据可能对数据质量和完整性没有那么严格</li>
+<li>全表重新加载</li>
+</ul>
+<h3 id="规范"><a href="#规范" class="headerlink" title="规范"></a>规范</h3><p>【强制】业务上具有唯一特性的字段，即使是组合字段，也必须建成唯一索引。</p>
+<p>【强制】超过三个表禁止 join。需要 join 的字段，数据类型保持绝对一致；多表关联查询时，<br>保证被关联的字段需要有索引。</p>
+<p>【强制】不要使用 count(列名)或 count(常量)来替代 count(<em>)，count(</em>)就是 SQL92 定义的<br>标准统计行数的语法，跟数据库无关，跟 NULL 和非 NULL 无关。<br>说明：count(*)会统计值为 NULL 的行，而 count(列名)不会统计此列为 NULL 值的行。</p>
+<p>使用 IS NULL()来判断是否为 NULL 值。注意：NULL 与任何值的直接比较都为 NULL。</p>
+<p>单表行数超过 500 万行或者单表容量超过 2GB，才推荐进行分库分表。</p>
+<p>MySQL的基本存储结构是页(记录都存在页里边)：<br>各页：双向链表<br>页内数据：单向链表</p>
+<p><img src="https://www.mqiy.xyz/image/db/mysql-lock.png" alt="mysql-lock.png"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/part/db/maria/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="mqiy">
+      <meta itemprop="description" content="永远为下个月离职做好准备">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小灰灰的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/06/18/md/part/db/maria/" class="post-title-link" itemprop="url">mariadb</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-06-18 15:03 15:03:36" itemprop="dateCreated datePublished" datetime="2019-06-18T15:03:36+08:00">2019-06-18 15:03</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>432</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="maven-配置"><a href="#maven-配置" class="headerlink" title="maven 配置"></a>maven 配置</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.mariadb.jdbc<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mariadb-java-client<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.4.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span></pre></td></tr></table></figure>
+
+<h3 id="jdbc设置"><a href="#jdbc设置" class="headerlink" title="jdbc设置"></a>jdbc设置</h3><table>
+<thead>
+<tr>
+<th>字段</th>
+<th>值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>driver-class-name</td>
+<td>org.mariadb.jdbc.Driver</td>
+</tr>
+<tr>
+<td>url</td>
+<td>jdbc:mariadb://localhost:3306/test</td>
+</tr>
+</tbody></table>
+<hr>
+<h3 id="Linux下MySQL表名不区分大小写的设置方法"><a href="#Linux下MySQL表名不区分大小写的设置方法" class="headerlink" title="Linux下MySQL表名不区分大小写的设置方法"></a>Linux下MySQL表名不区分大小写的设置方法</h3><ol>
+<li>用root登录，打开并修改 /etc/my.cnf；在[mysqld]节点下，加入一行： lower_case_table_names=1。</li>
+<li>重启mysql服务</li>
+</ol>
+<p>[^]: lower_case_table_names=1 参数缺省地在 Windows 中这个选项为 1 ，在 Unix 中为 0</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/part/db/mysql-tool/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -785,7 +698,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/part/db/maria/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/part/system/linux/linux-install-mariadb/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -799,185 +712,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2019/06/18/md/part/db/maria/" class="post-title-link" itemprop="url">mariadb</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-06-18 15:03 15:03:36" itemprop="dateCreated datePublished" datetime="2019-06-18T15:03:36+08:00">2019-06-18 15:03</time>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>432</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="maven-配置"><a href="#maven-配置" class="headerlink" title="maven 配置"></a>maven 配置</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.mariadb.jdbc<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mariadb-java-client<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.4.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span></pre></td></tr></table></figure>
-
-<h3 id="jdbc设置"><a href="#jdbc设置" class="headerlink" title="jdbc设置"></a>jdbc设置</h3><table>
-<thead>
-<tr>
-<th>字段</th>
-<th>值</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>driver-class-name</td>
-<td>org.mariadb.jdbc.Driver</td>
-</tr>
-<tr>
-<td>url</td>
-<td>jdbc:mariadb://localhost:3306/test</td>
-</tr>
-</tbody></table>
-<hr>
-<h3 id="Linux下MySQL表名不区分大小写的设置方法"><a href="#Linux下MySQL表名不区分大小写的设置方法" class="headerlink" title="Linux下MySQL表名不区分大小写的设置方法"></a>Linux下MySQL表名不区分大小写的设置方法</h3><ol>
-<li>用root登录，打开并修改 /etc/my.cnf；在[mysqld]节点下，加入一行： lower_case_table_names=1。</li>
-<li>重启mysql服务</li>
-</ol>
-<p>[^]: lower_case_table_names=1 参数缺省地在 Windows 中这个选项为 1 ，在 Unix 中为 0</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/part/db/db/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="mqiy">
-      <meta itemprop="description" content="永远为下个月离职做好准备">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小灰灰的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/06/18/md/part/db/db/" class="post-title-link" itemprop="url">db</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-06-18 15:03 15:03:36" itemprop="dateCreated datePublished" datetime="2019-06-18T15:03:36+08:00">2019-06-18 15:03</time>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>455</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="为什么数据库可以没有外键？"><a href="#为什么数据库可以没有外键？" class="headerlink" title="为什么数据库可以没有外键？"></a>为什么数据库可以没有外键？</h3><ul>
-<li>性能，影响插入、更新和删除操作的性能。数据库需要检查它是否违反数据完整性</li>
-<li>传统数据，许多数据库在设计时需要存储来自旧数据库和遗留数据，这些数据可能对数据质量和完整性没有那么严格</li>
-<li>全表重新加载</li>
-</ul>
-<h3 id="规范"><a href="#规范" class="headerlink" title="规范"></a>规范</h3><p>【强制】业务上具有唯一特性的字段，即使是组合字段，也必须建成唯一索引。</p>
-<p>【强制】超过三个表禁止 join。需要 join 的字段，数据类型保持绝对一致；多表关联查询时，<br>保证被关联的字段需要有索引。</p>
-<p>【强制】不要使用 count(列名)或 count(常量)来替代 count(<em>)，count(</em>)就是 SQL92 定义的<br>标准统计行数的语法，跟数据库无关，跟 NULL 和非 NULL 无关。<br>说明：count(*)会统计值为 NULL 的行，而 count(列名)不会统计此列为 NULL 值的行。</p>
-<p>使用 IS NULL()来判断是否为 NULL 值。注意：NULL 与任何值的直接比较都为 NULL。</p>
-<p>单表行数超过 500 万行或者单表容量超过 2GB，才推荐进行分库分表。</p>
-<p>MySQL的基本存储结构是页(记录都存在页里边)：<br>各页：双向链表<br>页内数据：单向链表</p>
-<p><img src="https://www.mqiy.xyz/image/db/mysql-lock.png" alt="mysql-lock.png"></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/part/system/linux/linux%20%E5%AE%89%E8%A3%85mariadb/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="mqiy">
-      <meta itemprop="description" content="永远为下个月离职做好准备">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小灰灰的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/06/18/md/part/system/linux/linux%20%E5%AE%89%E8%A3%85mariadb/" class="post-title-link" itemprop="url">linux安装mariadb</a>
+            <a href="/2019/06/18/md/part/system/linux/linux-install-mariadb/" class="post-title-link" itemprop="url">linux安装mariadb</a>
         </h1>
 
         <div class="post-meta">
@@ -1039,7 +774,6 @@
 <p>文件/etc/my.cnf.d/client.cnf</p>
 <p>在[client]中添加</p>
 <figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">default-character-set</span>=<span class="string">utf8mb4</span></span></pre></td></tr></table></figure>
-
 <hr>
 <p>文件/etc/my.cnf.d/mysql-clients.cnf</p>
 <p>在[mysql]中添加</p>
@@ -1055,9 +789,238 @@
 
 
 
-<p>修改DB的默认编码：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">DATABASE</span> XX_db <span class="built_in">CHARACTER</span> <span class="keyword">SET</span> utf8mb4;</span></pre></td></tr></table></figure>
+<h4 id="修改DB的默认编码："><a href="#修改DB的默认编码：" class="headerlink" title="修改DB的默认编码："></a>修改DB的默认编码：</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">DATABASE</span> XX_db <span class="built_in">CHARACTER</span> <span class="keyword">SET</span> utf8mb4;</span></pre></td></tr></table></figure>
 
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/other/need%20attention/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="mqiy">
+      <meta itemprop="description" content="永远为下个月离职做好准备">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小灰灰的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/06/18/md/other/need%20attention/" class="post-title-link" itemprop="url">need attention</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-06-18 14:52 14:52:10" itemprop="dateCreated datePublished" datetime="2019-06-18T14:52:10+08:00">2019-06-18 14:52</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>66</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h4 id="定义接口不规范"><a href="#定义接口不规范" class="headerlink" title="定义接口不规范"></a>定义接口不规范</h4><ul>
+<li>hagendaza项目，定义一个HdOrderManager接口，没有继承基类<code>BaseManager</code>，无法实现<code>读写分离</code></li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/tool/MapStruct/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="mqiy">
+      <meta itemprop="description" content="永远为下个月离职做好准备">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小灰灰的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/06/18/md/tool/MapStruct/" class="post-title-link" itemprop="url">MapStruct</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-06-18 14:38 14:38:10" itemprop="dateCreated datePublished" datetime="2019-06-18T14:38:10+08:00">2019-06-18 14:38</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.1k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="MapStruct-一个-Java-实体映射工具"><a href="#MapStruct-一个-Java-实体映射工具" class="headerlink" title="MapStruct 一个 Java 实体映射工具"></a>MapStruct 一个 Java 实体映射工具</h3><p>一个成熟的工程中，尤其是现在的分布式系统中，应用与应用之间，还有单独的应用细分模块之后，DO 一般不会让外部依赖，对象与对象之间的互相转换，就需要有一个专门用来解决转换问题的工具</p>
+<h3 id="maven-依赖"><a href="#maven-依赖" class="headerlink" title="maven 依赖"></a>maven 依赖</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">properties</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">mapstruct.version</span>&gt;</span>1.2.0.Final<span class="tag">&lt;/<span class="name">mapstruct.version</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">      <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.mapstruct<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">      <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mapstruct-jdk8<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">      <span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;mapstruct.version&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">      <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.mapstruct<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">      <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mapstruct-processor<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">      <span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;mapstruct.version&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span></pre></td></tr></table></figure>
+
+
+
+
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">@Mapper</span>(componentModel = <span class="string">"spring"</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">PesonMapper</span> </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">   <span class="function"><span class="keyword">public</span> PersonModel <span class="title">mapEighteen</span><span class="params">( Person entity)</span> </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">	  <span class="keyword">if</span> (entity.getName.equals(<span class="number">18</span>)) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">		   <span class="keyword">return</span> map(entity);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">      &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">   &#125;;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">	</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">   <span class="meta">@Mapping</span>(target = <span class="string">"personName"</span>, source = <span class="string">"name"</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">   <span class="meta">@Mapping</span>(target = <span class="string">"hand"</span>,  ignore = <span class="keyword">true</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">   <span class="function"><span class="keyword">protected</span> <span class="keyword">abstract</span> PersonModel <span class="title">map</span><span class="params">( Person entity)</span></span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">   <span class="keyword">protected</span> <span class="keyword">abstract</span>  List&lt;PersonModel &gt; map(List&lt; Person&gt; entity);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/tool/oss/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="mqiy">
+      <meta itemprop="description" content="永远为下个月离职做好准备">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小灰灰的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/06/18/md/tool/oss/" class="post-title-link" itemprop="url">阿里云oss缩略图</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-06-18 14:38 14:38:10" itemprop="dateCreated datePublished" datetime="2019-06-18T14:38:10+08:00">2019-06-18 14:38</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>452</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h4 id="OSS是使用通过URL尾部的参数指定图片的缩放大小"><a href="#OSS是使用通过URL尾部的参数指定图片的缩放大小" class="headerlink" title="OSS是使用通过URL尾部的参数指定图片的缩放大小"></a>OSS是使用通过URL尾部的参数指定图片的缩放大小</h4><p>图片路径后面拼接如下路径：<br>?x-oss-process=image/[处理类型],x_100,y_50[宽高等参数]</p>
+<p>?x-oss-process=image/resize,m_fill,h_高度,w_宽度,limit_0</p>
+<p>示例：</p>
+<p>原图：<br><a href="http://qunxianghui-upload.oss-cn-hangzhou.aliyuncs.com/upload/image/20180829/84cb48ea3923c827481787b8877f9260.jpeg" target="_blank" rel="noopener">http://qunxianghui-upload.oss-cn-hangzhou.aliyuncs.com/upload/image/20180829/84cb48ea3923c827481787b8877f9260.jpeg</a></p>
+<p>缩略图：（注意：复制下面链接到浏览器中访问，直接点击可能后面参数带不过去）<br><a href="http://qunxianghui-upload.oss-cn-hangzhou.aliyuncs.com/upload/image/20180829/84cb48ea3923c827481787b8877f9260.jpeg?x-oss-process=image/resize,m_fill,h_100,w_200" target="_blank" rel="noopener">http://qunxianghui-upload.oss-cn-hangzhou.aliyuncs.com/upload/image/20180829/84cb48ea3923c827481787b8877f9260.jpeg?x-oss-process=image/resize,m_fill,h_100,w_200</a></p>
 
       
     </div>
@@ -1077,7 +1040,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/19/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/19/">19</a><span class="page-number current">20</span><a class="page-number" href="/page/21/">21</a><span class="space">&hellip;</span><a class="page-number" href="/page/25/">25</a><a class="extend next" rel="next" href="/page/21/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/19/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/19/">19</a><span class="page-number current">20</span><a class="page-number" href="/page/21/">21</a><span class="space">&hellip;</span><a class="page-number" href="/page/24/">24</a><a class="extend next" rel="next" href="/page/21/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1143,7 +1106,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">243</span>
+          <span class="site-state-item-count">237</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1156,7 +1119,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">54</span>
+        <span class="site-state-item-count">53</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -1190,12 +1153,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">264k</span>
+    <span title="站点总字数">226k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">4:01</span>
+    <span title="站点阅读时长">3:26</span>
 </div>
 
         

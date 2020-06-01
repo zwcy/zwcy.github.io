@@ -140,7 +140,7 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">54</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">53</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
@@ -150,7 +150,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">243</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">237</span></a>
 
   </li>
         <li class="menu-item menu-item-relate">
@@ -285,7 +285,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/30/md/part/redis/redis-build/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/30/md/part/redis/redis-build-model/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -299,7 +299,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2019/10/30/md/part/redis/redis-build/" class="post-title-link" itemprop="url">redis模型模式</a>
+            <a href="/2019/10/30/md/part/redis/redis-build-model/" class="post-title-link" itemprop="url">redis模型模式</a>
         </h1>
 
         <div class="post-meta">
@@ -528,7 +528,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/30/md/part/redis/subject_redis/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/30/md/part/redis/subject-redis/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -542,7 +542,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2019/10/30/md/part/redis/subject_redis/" class="post-title-link" itemprop="url">redis篇特点</a>
+            <a href="/2019/10/30/md/part/redis/subject-redis/" class="post-title-link" itemprop="url">redis篇特点</a>
         </h1>
 
         <div class="post-meta">
@@ -594,7 +594,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="1-1-redis特性"><a href="#1-1-redis特性" class="headerlink" title="1.1 redis特性"></a>1.1 redis特性</h2><ul>
+<h3 id="1-1-redis特性"><a href="#1-1-redis特性" class="headerlink" title="1.1 redis特性"></a>1.1 redis特性</h3><ul>
 <li>单核单线程 没有线程安全问题</li>
 <li>性能高 IO多路复用 内存操作</li>
 <li>支持多种持久化方案</li>
@@ -602,14 +602,14 @@
 <li>支持排序 分页 模糊搜索功能</li>
 <li>支持队列订阅发布</li>
 </ul>
-<h2 id="1-2-redis-数据类型"><a href="#1-2-redis-数据类型" class="headerlink" title="1.2 redis 数据类型"></a>1.2 redis 数据类型</h2><ul>
+<h3 id="1-2-redis-数据类型"><a href="#1-2-redis-数据类型" class="headerlink" title="1.2 redis 数据类型"></a>1.2 redis 数据类型</h3><ul>
 <li>String类型 字符串类型 4.0版本后增加json的schema</li>
 <li>hash类型 即可支持kkv模型</li>
 <li>List类型 支持排序 支持队列命令 可用于简单的消息队列</li>
 <li>Set类型 数据唯一类型 类似list</li>
 <li>Sorted set类型 类似set/list 可通过score参数来自动排序</li>
 </ul>
-<h2 id="1-3-redis-应用场景"><a href="#1-3-redis-应用场景" class="headerlink" title="1.3 redis 应用场景"></a>1.3 redis 应用场景</h2><ul>
+<h3 id="1-3-redis-应用场景"><a href="#1-3-redis-应用场景" class="headerlink" title="1.3 redis 应用场景"></a>1.3 redis 应用场景</h3><ul>
 <li>各类别缓存方案 页面 业务 数据 </li>
 <li>实时计数器 统计仪表 排行榜</li>
 <li>分布式锁 开关</li>
@@ -631,13 +631,13 @@
 </ul>
 </li>
 </ul>
-<h2 id="2-1-redis-主从复制"><a href="#2-1-redis-主从复制" class="headerlink" title="2.1 redis 主从复制"></a>2.1 redis 主从复制</h2><ul>
+<h3 id="2-1-redis-主从复制"><a href="#2-1-redis-主从复制" class="headerlink" title="2.1 redis 主从复制"></a>2.1 redis 主从复制</h3><ul>
 <li>主数据库(master) 从数据库(slave) master可以进行读写操作 当读写操作导致数据变化时会自动将数据同步salve</li>
 <li>机制初始化 slave发送SYNC命令 master接收到SYNC 将保存的快照文件(rdb)和缓存的命令发送给slave</li>
 <li>复制初始化后 master每次接收到的写命令都会同步发送给slave 保证主从数据一致性</li>
 <li>此方法不可保证高可用 或需要手动或程序来做主从切换等 但可以做到读写分离</li>
 </ul>
-<h2 id="2-2-redis-哨兵模式"><a href="#2-2-redis-哨兵模式" class="headerlink" title="2.2 redis 哨兵模式"></a>2.2 redis 哨兵模式</h2><ul>
+<h3 id="2-2-redis-哨兵模式"><a href="#2-2-redis-哨兵模式" class="headerlink" title="2.2 redis 哨兵模式"></a>2.2 redis 哨兵模式</h3><ul>
 <li>基于主从模式下的监控模式 </li>
 <li>哨兵通过发送命令来监控master/slave是否正常运行</li>
 <li>master出现故障时 开启选举自动将slave转化为master</li>
@@ -645,7 +645,7 @@
 <li>多个哨兵可以监控同一个redis</li>
 <li>基于异步复制 脑裂切换有数据丢失情况</li>
 </ul>
-<h2 id="2-3-redis-自带集群模式"><a href="#2-3-redis-自带集群模式" class="headerlink" title="2.3 redis 自带集群模式"></a>2.3 redis 自带集群模式</h2><ul>
+<h3 id="2-3-redis-自带集群模式"><a href="#2-3-redis-自带集群模式" class="headerlink" title="2.3 redis 自带集群模式"></a>2.3 redis 自带集群模式</h3><ul>
 <li>多master节点 通过hash算法落点到具体的slot master节点上</li>
 <li>此集群模式 一般用于三主三从架构</li>
 <li>slave节点用于备份master节点数据 </li>
@@ -660,7 +660,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="3-1-redis-持久化"><a href="#3-1-redis-持久化" class="headerlink" title="3.1 redis 持久化"></a>3.1 redis 持久化</h2><ul>
+<h3 id="3-1-redis-持久化"><a href="#3-1-redis-持久化" class="headerlink" title="3.1 redis 持久化"></a>3.1 redis 持久化</h3><ul>
 <li>redis 支持两种持久化方式 rdb aof</li>
 <li>rdb 存储简单 便于备份 启动效率高 性能高 fork子进程来同步</li>
 <li>rdb 同步由于由子进程来同步 无法做到实时同步</li>
@@ -668,13 +668,13 @@
 <li>aof 由于同步策略(每秒同步 每修改同步 不同步) aof在运行效率上往往会慢于rdb 且文件大于rdb</li>
 <li>aof文件会越来越大 数据恢复也会越来越慢 所以rdb在恢复数据时的速度比aof要快</li>
 </ul>
-<h2 id="3-2-1-redis-淘汰机制"><a href="#3-2-1-redis-淘汰机制" class="headerlink" title="3.2.1 redis 淘汰机制"></a>3.2.1 redis 淘汰机制</h2><ul>
+<h3 id="3-2-1-redis-淘汰机制"><a href="#3-2-1-redis-淘汰机制" class="headerlink" title="3.2.1 redis 淘汰机制"></a>3.2.1 redis 淘汰机制</h3><ul>
 <li>内存的淘汰机制的初衷是为了更好地使用内存 用一定的缓存miss来换取内存的使用效率</li>
 <li>在key无限增加的情况下 已无法达到过期失效 超过增加的极端情况</li>
 <li>redis自带对key的几种淘汰机制 当然也可以自己通过程序或lua编写淘汰机制</li>
 <li>设置参数 maxmemory <byte> maxmemory-policy 策略 即可使用淘汰机制</li>
 </ul>
-<h2 id="3-2-2-redis-淘汰机制"><a href="#3-2-2-redis-淘汰机制" class="headerlink" title="3.2.2 redis 淘汰机制"></a>3.2.2 redis 淘汰机制</h2><ul>
+<h3 id="3-2-2-redis-淘汰机制"><a href="#3-2-2-redis-淘汰机制" class="headerlink" title="3.2.2 redis 淘汰机制"></a>3.2.2 redis 淘汰机制</h3><ul>
 <li>noeviction 当内存使用达到阈值的时候 所有引起申请内存的命令会报错</li>
 <li>allkeys-lru 在主键空间中 优先移除最近未使用的key</li>
 <li>volatile-lru 在设置了过期时间的键空间中 优先移除最近未使用的key</li>
@@ -682,7 +682,7 @@
 <li>volatile-random 在设置了过期时间的键空间中 随机移除某个key</li>
 <li>volatile-ttl 在设置了过期时间的键空间中 具有更早过期时间的key优先移除</li>
 </ul>
-<h2 id="3-3-redis-穿透雪崩场景"><a href="#3-3-redis-穿透雪崩场景" class="headerlink" title="3.3 redis 穿透雪崩场景"></a>3.3 redis 穿透雪崩场景</h2><ul>
+<h3 id="3-3-redis-穿透雪崩场景"><a href="#3-3-redis-穿透雪崩场景" class="headerlink" title="3.3 redis 穿透雪崩场景"></a>3.3 redis 穿透雪崩场景</h3><ul>
 <li>有超时缓存 可采用双重加锁方式 让一个请求执行数据库操作并加入缓存 后续请求获得缓存 </li>
 <li>尽可能使用无超时缓存 使用redis 自带的淘汰机制</li>
 <li>无超时缓存 使用定时任务 刷新移除缓存</li>
@@ -1146,7 +1146,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/12/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><span class="page-number current">13</span><a class="page-number" href="/page/14/">14</a><span class="space">&hellip;</span><a class="page-number" href="/page/25/">25</a><a class="extend next" rel="next" href="/page/14/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/12/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><span class="page-number current">13</span><a class="page-number" href="/page/14/">14</a><span class="space">&hellip;</span><a class="page-number" href="/page/24/">24</a><a class="extend next" rel="next" href="/page/14/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1212,7 +1212,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">243</span>
+          <span class="site-state-item-count">237</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1225,7 +1225,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">54</span>
+        <span class="site-state-item-count">53</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -1259,12 +1259,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">264k</span>
+    <span title="站点总字数">226k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">4:01</span>
+    <span title="站点阅读时长">3:26</span>
 </div>
 
         
