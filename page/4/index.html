@@ -140,17 +140,17 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">53</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">56</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类<span class="badge">5</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类<span class="badge">6</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">237</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">245</span></a>
 
   </li>
         <li class="menu-item menu-item-relate">
@@ -207,6 +207,331 @@
             
 
   <div class="posts-expand">
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/30/md/part/system/netty/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="mqiy">
+      <meta itemprop="description" content="永远为下个月离职做好准备">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小灰灰的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/03/30/md/part/system/netty/" class="post-title-link" itemprop="url">netty</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-03-30 13:51 13:51:45" itemprop="dateCreated datePublished" datetime="2020-03-30T13:51:45+08:00">2020-03-30 13:51</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>310</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>netty通过Reactor模型基于多路复用器接收并处理用户请求（能讲就多讲一点），内部实现了两个线程池，boss线程池和work线程池，其中boss线程池的线程负责处理请求的accept事件，当接收到accept事件的请求时，把对应的socket封装到一个NioSocketChannel中，并交给work线程池，其中work线程池负责请求的read和write事件</p>
+<p>Netty为什么传输快: 使用ByteBuf在堆外进行，零拷贝</p>
+<p>netty是由JBOSS提供的一个java开源框架。<br>netty提供异步的、事件驱动的网络应用程序框架和工具，用以快速开发高性能、高可靠性的网络服务器和客户端程序。</p>
+<p>netty：异步非阻塞开源框架</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/29/md/jdk/jvm/gc-opt/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="mqiy">
+      <meta itemprop="description" content="永远为下个月离职做好准备">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小灰灰的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/03/29/md/jdk/jvm/gc-opt/" class="post-title-link" itemprop="url">JVM内存调优</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-03-29 10:31 10:31:15" itemprop="dateCreated datePublished" datetime="2020-03-29T10:31:15+08:00">2020-03-29 10:31</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.1k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>JVM内存调优<br>使用JDK提供的内存查看工具，比如JConsole和Java VisualVM。</p>
+<p> 首先需要注意的是在对JVM内存调优的时候不能只看操作系统级别Java进程所占用的内存，这个数值不能准确的反应堆内存的真实占用情况，因为GC过后这个值是不会变化的，因此内存调优的时候要更多地使用JDK提供的内存查看工具，比如JConsole和Java VisualVM。</p>
+<p> 对JVM内存的系统级的调优主要的目的是减少GC的频率和Full GC的次数，过多的GC和Full GC是会占用很多的系统资源（主要是CPU），影响系统的吞吐量。特别要关注Full GC，因为它会对整个堆进行整理，</p>
+<h3 id="导致Full-GC一般由于以下几种情况："><a href="#导致Full-GC一般由于以下几种情况：" class="headerlink" title="导致Full GC一般由于以下几种情况："></a>导致Full GC一般由于以下几种情况：</h3><p>旧生代空间不足<br>    调优时尽量让对象在新生代GC时被回收、让对象在新生代多存活一段时间和不要创建过大的对象及数组避免直接在旧生代创建对象 </p>
+<p>Pemanet Generation空间不足<br>增大Perm Gen空间，避免太多静态对象<br>统计得到的GC后晋升到旧生代的平均大小大于旧生代剩余空间<br>控制好新生代和旧生代的比例 </p>
+<p>System.gc()被显示调用<br>    垃圾回收不要手动触发，尽量依靠JVM自身的机制 </p>
+<h3 id="调优手段主要是通过控制堆内存的各个部分的比例和GC策略来实现，下面来看看各部分比例不良设置会导致什么后果"><a href="#调优手段主要是通过控制堆内存的各个部分的比例和GC策略来实现，下面来看看各部分比例不良设置会导致什么后果" class="headerlink" title="调优手段主要是通过控制堆内存的各个部分的比例和GC策略来实现，下面来看看各部分比例不良设置会导致什么后果"></a>调优手段主要是通过控制堆内存的各个部分的比例和GC策略来实现，下面来看看各部分比例不良设置会导致什么后果</h3><p>1）新生代设置过小</p>
+<p>一是新生代GC次数非常频繁，增大系统消耗；二是导致大对象直接进入旧生代，占据了旧生代剩余空间，诱发Full GC</p>
+<p>2）新生代设置过大</p>
+<p>一是新生代设置过大会导致旧生代过小（堆总量一定），从而诱发Full GC；二是新生代GC耗时大幅度增加</p>
+<p>一般说来新生代占整个堆1/3比较合适</p>
+<p>3）Survivor设置过小<br>导致对象从eden直接到达旧生代，降低了在新生代的存活时间</p>
+<p>4）Survivor设置过大<br>导致eden过小，增加了GC频率</p>
+<blockquote>
+<p>通过-XX:MaxTenuringThreshold=n来控制新生代存活时间，尽量让对象在新生代被回收</p>
+</blockquote>
+<h3 id="由内存管理和垃圾回收可知新生代和旧生代都有多种GC策略和组合搭配，选择这些策略对于我们这些开发人员是个难题，JVM提供两种较为简单的GC策略的设置方式"><a href="#由内存管理和垃圾回收可知新生代和旧生代都有多种GC策略和组合搭配，选择这些策略对于我们这些开发人员是个难题，JVM提供两种较为简单的GC策略的设置方式" class="headerlink" title="由内存管理和垃圾回收可知新生代和旧生代都有多种GC策略和组合搭配，选择这些策略对于我们这些开发人员是个难题，JVM提供两种较为简单的GC策略的设置方式"></a>由内存管理和垃圾回收可知新生代和旧生代都有多种GC策略和组合搭配，选择这些策略对于我们这些开发人员是个难题，JVM提供两种较为简单的GC策略的设置方式</h3><ul>
+<li>1）吞吐量优先<br>  JVM以吞吐量为指标，自行选择相应的GC策略及控制新生代与旧生代的大小比例，来达到吞吐量指标。这个值可由-XX:GCTimeRatio=n来设置</li>
+<li>2）暂停时间优先<br>  JVM以暂停时间为指标，自行选择相应的GC策略及控制新生代与旧生代的大小比例，尽量保证每次GC造成的应用停止时间都在指定的数值范围内完成。这个值可由-XX:MaxGCPauseRatio=n来设置</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/29/md/jdk/jvm/jvm-date/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="mqiy">
+      <meta itemprop="description" content="永远为下个月离职做好准备">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小灰灰的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/03/29/md/jdk/jvm/jvm-date/" class="post-title-link" itemprop="url">JVM内存调优</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-03-29 10:31 10:31:15" itemprop="dateCreated datePublished" datetime="2020-03-29T10:31:15+08:00">2020-03-29 10:31</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>104</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>HotSpot 1.7中，使用永久代来实现方法区，</p>
+<p>方法区和“PermGen space”又有着本质的区别。前者是JVM的规范，而后者则是JVM规范的一种实现(HotSpot)</p>
+<p>元空间</p>
+<p>方法区存储类信息、常量、静态变量</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/28/md/jdk/equal-hashCode/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="mqiy">
+      <meta itemprop="description" content="永远为下个月离职做好准备">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小灰灰的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/03/28/md/jdk/equal-hashCode/" class="post-title-link" itemprop="url">equal与hashcode </a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-03-28 10:27 10:27:40" itemprop="dateCreated datePublished" datetime="2020-03-28T10:27:40+08:00">2020-03-28 10:27</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.6k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="一、equal-和-hashcode-作用和区别？"><a href="#一、equal-和-hashcode-作用和区别？" class="headerlink" title="一、equal 和 hashcode 作用和区别？"></a>一、equal 和 hashcode 作用和区别？</h3><p>答：首先，我们要明白hashCode()和equals（）方法的作用是什么，然后才能说他的区别，说了区别之后在说明使用的时候需要注意的地方，这样的回答思路基本是OK的。<br>一、hahsCode()和equals()的作用是什么？<br>hahsCode()和equals()的作用其实是一样的，目的都是为了再java里面比较两个对象是否相等一致<br>二、hahsCode()和equals()的区别是什么？<br>我们可以从两个角度分别介绍他们的区别：一个是性能，一个是可靠性。他们的主要区别体现在这里<br>1.equals()既然已经实现比较两个对象的功能了，为什么还需要hashCode()呢？<br>因为重写的equals()里一般比较的较为全面和复杂(它会对这个对象内所以成员变量一一进行比较)，这样效率很低，而通过hashCode()对比，则只要生成一个hash值就能比较了，效率很高</p>
+<h3 id="二-那hashCode的效率这么高，为啥还要用equals-呢？"><a href="#二-那hashCode的效率这么高，为啥还要用equals-呢？" class="headerlink" title="二.那hashCode的效率这么高，为啥还要用equals()呢？"></a>二.那hashCode的效率这么高，为啥还要用equals()呢？</h3><p>因为hashCode()并不是完全可靠，非常有可能的情况是，两个完全不同的对象的hash值却是一样的。<br>所以会有下面三个重要的结论：</p>
+<ul>
+<li>equals()相等的两个对象他们的hashCode()肯定相等，即equals()绝对可靠。</li>
+<li>hahsCode()相同的两个对象，它们的equals()不一定相同。即用hashCode()比较相同的时候不靠谱</li>
+<li>hashCode()不同的两个对象，他们的那么equals()肯定不同。即用hashCode()比较不同的时候肯定靠谱</li>
+</ul>
+<h3 id="三、hashCode-和equals使用的注意事项"><a href="#三、hashCode-和equals使用的注意事项" class="headerlink" title="三、hashCode()和equals使用的注意事项"></a>三、hashCode()和equals使用的注意事项</h3><ul>
+<li>对于需要大量并且快速的对比的话如果都用equals()去做显然效率太低，所以解决方案为：每当需要比较的时候，首先用hahsCode（）去对比，而如果hashCode()不一样，则两个对象肯定不一样，此时就没有必要再用equals()比较了；如果hashCode()相同，则这两个对象有可能相同，这时候再去比较这两个对象的equals()，如若equals()也相同，则表示这两个真的相同的，这样既大大提高了效率，又保证了准确性。</li>
+<li>事实上，我们平时用的集合框架中的hashMap、hashSet,hashTable 中对key的比较就是使用上述这种方法。</li>
+<li>而Obejct默认的equals和HashCode方法返回的是对象的地址相关信息。所以当我们通过new关键字创建了两个内容相同的对象，虽然他们的内容相同，但是他们在内存中分配的地址不同，导致它们的hashCode()不同，这肯定不是我们想要的。所以当我们要将某个类应用到集合中去的时候，就必须重写equals()方法和hashCode()方法。</li>
+</ul>
+<h3 id="四、扩展"><a href="#四、扩展" class="headerlink" title="四、扩展"></a>四、扩展</h3><p>1.阿里巴巴开发规约明确规定：<br>*.只要重写了equals()方法，就必须重写hashCode()方法<br>*.因为Set存储的是不重复的对象，依据hashCode和equals进行判断，所以Set存储的对象必须重写这两个方法<br>*.如果对象定义为Map的健，那么就必须重写equals()方法和hashCode()方法<br>*.String重写了equals()方法和hashCode()方法，所以我们可以非常愉快的时候String对象作为key<br>2.是不是每个对象都要重写这两个方法，到底什么时候重写？<br>*.事实上一般情况下，我们并不需要重写这两个方法，只有该类被应用到集合框架中去的时候，才应该重写。<br>3.我能不能值重写equals()方法，不重写hashCode()方法？<br>*.如果重写了equals()方法，比如说基于对象的内容实现的，而保留了hashCode()的实现不改变，那么最终出现的情况很可能是，两个对象明明是“相等的”，但是hashCode()却不一样，这不是宝宝想要的</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
         
   
   
@@ -722,439 +1047,11 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/27/md/part/project/project-story/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="mqiy">
-      <meta itemprop="description" content="永远为下个月离职做好准备">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小灰灰的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/03/27/md/part/project/project-story/" class="post-title-link" itemprop="url">用户故事</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-03-27 12:37 12:37:15" itemprop="dateCreated datePublished" datetime="2020-03-27T12:37:15+08:00">2020-03-27 12:37</time>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>104</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>需求获取<br>成本估算<br>项目进度安排<br>进展程度监测</p>
-<p>smart 用户故事</p>
-<p>确定性（Specific）,可评估(Measurable),可实现(Achievable),相关性(Relevant),时间限制(Timeboxed)</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/27/md/part/mid/zookeeper/zk-main/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="mqiy">
-      <meta itemprop="description" content="永远为下个月离职做好准备">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小灰灰的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/03/27/md/part/mid/zookeeper/zk-main/" class="post-title-link" itemprop="url">zookeeper主要概念</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-03-27 11:34 11:34:53" itemprop="dateCreated datePublished" datetime="2020-03-27T11:34:53+08:00">2020-03-27 11:34</time>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>39</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>5.Zookeeper做了什么？</p>
-<ul>
-<li>命名服务   </li>
-<li>配置管理   </li>
-<li>集群管理   </li>
-<li>分布式锁  </li>
-<li>队列管理</li>
-</ul>
-<p> 是CP</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/27/md/part/mid/zookeeper/zk-outline/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="mqiy">
-      <meta itemprop="description" content="永远为下个月离职做好准备">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小灰灰的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/03/27/md/part/mid/zookeeper/zk-outline/" class="post-title-link" itemprop="url">zookeeper主要概念</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-03-27 11:34 11:34:53" itemprop="dateCreated datePublished" datetime="2020-03-27T11:34:53+08:00">2020-03-27 11:34</time>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>72</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>如果zookeeper正在选主，或者Zookeeper集群中半数以上机器不可用，那么将无法获得数据。所以说，Zookeeper不能保证服务可用性</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/27/md/jdk/jvm/gc-collector/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="mqiy">
-      <meta itemprop="description" content="永远为下个月离职做好准备">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小灰灰的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/03/27/md/jdk/jvm/gc-collector/" class="post-title-link" itemprop="url">垃圾收集器</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-03-27 09:39 09:39:49" itemprop="dateCreated datePublished" datetime="2020-03-27T09:39:49+08:00">2020-03-27 09:39</time>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1.4k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="垃圾收集器"><a href="#垃圾收集器" class="headerlink" title="垃圾收集器"></a>垃圾收集器</h3><p><img src="https://www.mqiy.xyz/image/jvm/gc-colloctor.png" alt="gc-colloctor.png"></p>
-<h4 id="Serial收集器"><a href="#Serial收集器" class="headerlink" title="Serial收集器"></a>Serial收集器</h4><ul>
-<li>新生代</li>
-<li>使用复制算法</li>
-<li>单线程</li>
-<li>简单而高效（就单CPU）,适用于Client模式</li>
-<li>Stop The World</li>
-</ul>
-<h4 id="Serial-old-收集器"><a href="#Serial-old-收集器" class="headerlink" title="Serial old 收集器"></a>Serial old 收集器</h4><ul>
-<li>老年代</li>
-<li>使用标记-整理算法</li>
-<li>其他同Serial收集器 </li>
-<li>在JDK1.5 以及之前版本（Parallel Old诞生以前）中与Parallel Scavenge收集器搭配使用。</li>
-<li>作为CMS收集器的后备预案，在并发收集发生Concurrent Mode Failure时使用。</li>
-</ul>
-<h4 id="ParNew-收集器"><a href="#ParNew-收集器" class="headerlink" title="ParNew 收集器"></a>ParNew 收集器</h4><ul>
-<li>Serial收集器的多线程版本</li>
-<li>默认开启的收集线程数与CPU的数量相同</li>
-<li>与cms配合工作</li>
-<li>其他同Serial收集器 </li>
-</ul>
-<h4 id="Parallel-Scavenge-收集器"><a href="#Parallel-Scavenge-收集器" class="headerlink" title="Parallel Scavenge 收集器"></a>Parallel Scavenge 收集器</h4><ul>
-<li>新生代</li>
-<li>复制算法</li>
-<li>并行的多线程</li>
-<li>达到一个可控制的吞吐量（Throughput），适合后台运算而不需要太多交互的任务（VS cms关注时间）</li>
-<li>GC自适应的调节策略(GC Ergonomics)</li>
-</ul>
-<h4 id="Parallel-Old收集器"><a href="#Parallel-Old收集器" class="headerlink" title="Parallel Old收集器"></a>Parallel Old收集器</h4><ul>
-<li>老年代</li>
-<li>多线程</li>
-<li>“标记-整理”算法</li>
-<li>JDK 1.6新提供</li>
-</ul>
-<h4 id="CMS收集器"><a href="#CMS收集器" class="headerlink" title="CMS收集器"></a>CMS收集器</h4><ul>
-<li>老年代</li>
-<li>标记-清除算法</li>
-<li>并发收集、低停顿</li>
-</ul>
-<h5 id="工作流程"><a href="#工作流程" class="headerlink" title="工作流程"></a>工作流程</h5><p>初始标记（initial mark）-&gt; 并发标记（concurrent mark）-&gt;重新标记（remark）-&gt; 并发清除（concurrent sweep）</p>
-<ul>
-<li>过程中耗时最长的并发标记和并发清除,用户线程均可执行</li>
-<li>初始标记与重新标记需要”stop the world”</li>
-</ul>
-<h5 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h5><ul>
-<li>占用cpu</li>
-<li>产生浮动垃圾</li>
-<li>标记-清除算法产生空间碎片</li>
-</ul>
-<p>重新标记（Remark） 的作用在于：<br>之前在并发标记时，因为是 GC 和用户程序是并发执行的，可能导致一部分已经标记为 从 GC Roots 不可达 的对象，因为用户程序的（并发）运行，又可达 了，Remark 的作用就是将这部分对象又标记为 可达对象。</p>
-<p>至于 <code>浮动垃圾</code>，因为 CMS 在 并发标记 时是并发的，GC 线程和用户线程并发执行，这个过程当然可能会因为线程的交替执行而导致新产生的垃圾（即浮动垃圾）没有被标记到；而 重新标记 的作用只是修改之前 并发标记 所获得的不可达对象，所以是没有办法处理 “浮动垃圾” 的。</p>
-<p>remark过程标记活着的对象，从GCRoot的可达性判断对象活着，但无法标记“死亡”的对象。<br>如果在初始标记阶段被标记为活着，并发运行过程中“死亡”，remark过程无法纠正，因此变为浮动垃圾，需等待下次gc的到来。</p>
-<h4 id="G1收集器"><a href="#G1收集器" class="headerlink" title="G1收集器"></a>G1收集器</h4><ul>
-<li>并行与并发</li>
-<li>分代收集</li>
-<li>空间整合</li>
-<li>可预测的停顿</li>
-</ul>
-<p><em>工作流程</em></p>
-<p>初始标记（Initial Marking） -&gt; 并发标记（Concurrent Marking）-&gt; 最终标记（Final Marking） -&gt; 筛选回收（Live Data Counting and Evacuation） </p>
-<blockquote>
-<p>并发阶段，用户线程可执行，其他均”stop the world”</p>
-</blockquote>
-<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><table>
-<thead>
-<tr>
-<th>收集器</th>
-<th>线程</th>
-<th>区域</th>
-<th>算法</th>
-<th>目标</th>
-<th>适用场景</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>Serial</strong></td>
-<td>串行</td>
-<td>新生代</td>
-<td>复制</td>
-<td>响应速度优先</td>
-<td>单CPU下Client模式</td>
-</tr>
-<tr>
-<td><strong>Serial Old</strong></td>
-<td>串行</td>
-<td>老年代</td>
-<td>标记-整理</td>
-<td>响应速度优先</td>
-<td>单CPU下Client模式，cms后备</td>
-</tr>
-<tr>
-<td><strong>ParNew</strong></td>
-<td>并行</td>
-<td>新生代</td>
-<td>复制</td>
-<td>响应速度优先</td>
-<td>多CPU下Server模式，配合cms</td>
-</tr>
-<tr>
-<td><strong>Parallel Scavenge</strong></td>
-<td>并行</td>
-<td>新生代</td>
-<td>复制</td>
-<td>吞吐量优先</td>
-<td>后台运算少交互</td>
-</tr>
-<tr>
-<td><strong>Parallel Old</strong></td>
-<td>并行</td>
-<td>老年代</td>
-<td>标记-整理</td>
-<td>吞吐量优先</td>
-<td>后台运算少交互</td>
-</tr>
-<tr>
-<td><strong>CMS</strong></td>
-<td>并发</td>
-<td>老年代</td>
-<td>标记-清除</td>
-<td>响应速度优先</td>
-<td>互联网站或B/S</td>
-</tr>
-<tr>
-<td><strong>G1</strong></td>
-<td>并发</td>
-<td>both</td>
-<td>标记-整理+复制</td>
-<td>响应速度优先</td>
-<td>服务端,将替代cms</td>
-</tr>
-</tbody></table>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/24/">24</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/25/">25</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1220,20 +1117,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">237</span>
+          <span class="site-state-item-count">245</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">53</span>
+        <span class="site-state-item-count">56</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -1267,7 +1164,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">226k</span>
+    <span title="站点总字数">227k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>

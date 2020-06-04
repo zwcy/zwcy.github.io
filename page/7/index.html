@@ -140,17 +140,17 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">53</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">56</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类<span class="badge">5</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类<span class="badge">6</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">237</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">245</span></a>
 
   </li>
         <li class="menu-item menu-item-relate">
@@ -207,6 +207,351 @@
             
 
   <div class="posts-expand">
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/25/md/jdk/mulThread/juc/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="mqiy">
+      <meta itemprop="description" content="永远为下个月离职做好准备">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小灰灰的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/02/25/md/jdk/mulThread/juc/" class="post-title-link" itemprop="url">JUC基本概念</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-02-25 18:05 18:05:48" itemprop="dateCreated datePublished" datetime="2020-02-25T18:05:48+08:00">2020-02-25 18:05</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="1，tools（工具类）：又叫信号量三组工具类，包含有"><a href="#1，tools（工具类）：又叫信号量三组工具类，包含有" class="headerlink" title="1，tools（工具类）：又叫信号量三组工具类，包含有"></a>1，tools（工具类）：又叫信号量三组工具类，包含有</h3><p>1）<code>CountDownLatch</code>（闭锁） 是一个同步辅助类，在完成一组正在其他线程中执行的操作之前，它允许一个或多个线程一直等待<br>2）<code>CyclicBarrier</code>（栅栏） 之所以叫barrier，是因为是一个同步辅助类，允许一组线程互相等待，直到到达某个公共屏障点 ，并且在释放等待线程后可以重用。<br>3）<code>Semaphore</code>（信号量） 是一个计数信号量，它的本质是一个“共享锁“。信号量维护了一个信号量许可集。线程可以通过调用                                                                                        acquire()来获取信号量的许可；当信号量中有可用的许可时，线程能获取该许可；否则线程必须等待，                                                                                  直到有可用的许可为止。 线程可以通过release()来释放它所持有的信号量许可。</p>
+<h3 id="2，executor-执行者-：是Java里面线程池的顶级接口，但它只是一个执行线程的工具，真正的线程池接口是ExecutorService，里面包含的类有："><a href="#2，executor-执行者-：是Java里面线程池的顶级接口，但它只是一个执行线程的工具，真正的线程池接口是ExecutorService，里面包含的类有：" class="headerlink" title="2，executor(执行者)：是Java里面线程池的顶级接口，但它只是一个执行线程的工具，真正的线程池接口是ExecutorService，里面包含的类有："></a>2，executor(执行者)：是Java里面线程池的顶级接口，但它只是一个执行线程的工具，真正的线程池接口是ExecutorService，里面包含的类有：</h3><p>1）<code>ScheduledExecutorService</code>  解决那些需要任务重复执行的问题<br>2）<code>ScheduledThreadPoolExecutor</code>   周期性任务调度的类实现</p>
+<h3 id="3，atomic-原子性包-：是JDK提供的一组原子操作类，"><a href="#3，atomic-原子性包-：是JDK提供的一组原子操作类，" class="headerlink" title="3，atomic(原子性包)：是JDK提供的一组原子操作类，"></a>3，atomic(原子性包)：是JDK提供的一组原子操作类，</h3><p>包含有AtomicBoolean、AtomicInteger、AtomicIntegerArray等原子变量类，他们的实现原理大多是持有它们各自的对应的类型变量value，而且被volatile关键字修饰了。这样来保证每次一个线程要使用它都会拿到最新的值。</p>
+<h3 id="4，locks（锁包）：是JDK提供的锁机制，相比synchronized关键字来进行同步锁，功能更加强大，它为锁提供了一个框架，该框架允许更灵活地。包含的实现类有：-使用锁"><a href="#4，locks（锁包）：是JDK提供的锁机制，相比synchronized关键字来进行同步锁，功能更加强大，它为锁提供了一个框架，该框架允许更灵活地。包含的实现类有：-使用锁" class="headerlink" title="4，locks（锁包）：是JDK提供的锁机制，相比synchronized关键字来进行同步锁，功能更加强大，它为锁提供了一个框架，该框架允许更灵活地。包含的实现类有：                                              使用锁"></a>4，locks（锁包）：是JDK提供的锁机制，相比synchronized关键字来进行同步锁，功能更加强大，它为锁提供了一个框架，该框架允许更灵活地。包含的实现类有：                                              使用锁</h3><p>1）<code>ReentrantLock</code>   它是独占锁，是指只能被独自占领，即同一个时间点只能被一个线程锁获取到的锁。<br>2）<code>ReentrantReadWriteLock</code>   它包括子类ReadLock和WriteLock。ReadLock是共享锁，而WriteLock是独占锁。<br>3）<code>LockSupport</code> 它具备阻塞线程和解除阻塞线程的功能，并且不会引发死锁。</p>
+<h3 id="5，collections-集合类-：主要是提供线程安全的集合，"><a href="#5，collections-集合类-：主要是提供线程安全的集合，" class="headerlink" title="5，collections(集合类)：主要是提供线程安全的集合，"></a>5，collections(集合类)：主要是提供线程安全的集合，</h3><p>1）ArrayList对应的高并发类是CopyOnWriteArrayList，<br>2）HashSet对应的高并发类是 CopyOnWriteArraySet，<br>3）HashMap对应的高并发类是ConcurrentHashMap等等</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/24/md/part/microServices/spring%20cloud/spring%20cloud%20version/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="mqiy">
+      <meta itemprop="description" content="永远为下个月离职做好准备">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小灰灰的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/02/24/md/part/microServices/spring%20cloud/spring%20cloud%20version/" class="post-title-link" itemprop="url">Spring Cloud 和 Spring Boot对应版本</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-02-24 17:27 17:27:46" itemprop="dateCreated datePublished" datetime="2020-02-24T17:27:46+08:00">2020-02-24 17:27</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>127</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>Spring Cloud 和 Spring Boot 兼容性请见正文表格：</p>
+<table>
+<thead>
+<tr>
+<th align="left">Spring Cloud Train</th>
+<th align="left">Spring Boot Version</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">Hoxton</td>
+<td align="left">2.2.x</td>
+</tr>
+<tr>
+<td align="left">Greenwich</td>
+<td align="left">2.1.x</td>
+</tr>
+<tr>
+<td align="left">Finchley</td>
+<td align="left">2.0.x</td>
+</tr>
+<tr>
+<td align="left">Edgware</td>
+<td align="left">1.5.x</td>
+</tr>
+<tr>
+<td align="left">Dalston</td>
+<td align="left">1.5.x</td>
+</tr>
+</tbody></table>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/26/md/develop/dev-line/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="mqiy">
+      <meta itemprop="description" content="永远为下个月离职做好准备">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小灰灰的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/12/26/md/develop/dev-line/" class="post-title-link" itemprop="url">知识清单，从开发到架构师！</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-12-26 15:11 15:11:04" itemprop="dateCreated datePublished" datetime="2019-12-26T15:11:04+08:00">2019-12-26 15:11</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/develop/" itemprop="url" rel="index">
+                    <span itemprop="name">develop</span>
+                  </a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>554</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="常见模式与框架"><a href="#常见模式与框架" class="headerlink" title="常见模式与框架"></a>常见模式与框架</h3><p>设计模式<br>开发框架：比如 Spring, SpringMVC, Mybatis</p>
+<h3 id="工程化与工具"><a href="#工程化与工具" class="headerlink" title="工程化与工具"></a>工程化与工具</h3><p>软件开发流程&amp;规范<br>Git<br>敏捷开发<br>Docker</p>
+<h3 id="分布式架构"><a href="#分布式架构" class="headerlink" title="分布式架构"></a>分布式架构</h3><p>分布式架构设计原则<br>负载均衡，高可用<br>RPC，消息队列<br>分布式存储<br>高性能NIO框架<br>分布式缓存<br>分布式消息中间件</p>
+<h3 id="微服务架构"><a href="#微服务架构" class="headerlink" title="微服务架构"></a>微服务架构</h3><p>Spring Cloud<br>Spring Boot<br>Dubbo<br>Service Mesh</p>
+<h3 id="数据库分库分表"><a href="#数据库分库分表" class="headerlink" title="数据库分库分表"></a>数据库分库分表</h3><p>MySQL<br>MyCat<br>Sharding-JDBC</p>
+<h3 id="性能优化"><a href="#性能优化" class="headerlink" title="性能优化"></a>性能优化</h3><p>应用层：JVM 结构 &amp; 调优<br>web 服务器层：tomcat 等服务器结构 &amp; 调优<br>存储层：MySQL 结构 &amp; sql 优化，搜索引擎结构 &amp; 查询优化</p>
+<h3 id="底层知识"><a href="#底层知识" class="headerlink" title="底层知识"></a>底层知识</h3><p>对 JDK 的包结构，模块深入学习功能&amp;使用场景<br>围绕数据结构&amp;性能优化学习组织<br>对于 Java 开发来讲，JDK 几乎就是最底层和基础的知识了。对 JVM, MySQL等非 Java 程序了解结构，原理，调优基本就差不多了。但是 JDK 是要深入了解掌握的。</p>
+<h3 id="从开发到架构师"><a href="#从开发到架构师" class="headerlink" title="从开发到架构师"></a>从开发到架构师</h3><p>从单体技术 -&gt; 分布式，微服务<br>局部 -&gt; 整体<br>简单 -&gt; 深入</p>
+<p>架构师是一个更宏观的角色，单体系统的时候，单体系统划分、设计功能模块的也是架构师。随着分布式的兴起，架构师需要从分布式角度看整体系统，而到了微服务时代，架构师又要关注微服务，docker 等技术。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/19/md/jdk/mulThread/progress-change/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="mqiy">
+      <meta itemprop="description" content="永远为下个月离职做好准备">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小灰灰的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/12/19/md/jdk/mulThread/progress-change/" class="post-title-link" itemprop="url">线程的切换</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-12-19 18:11 18:11:14" itemprop="dateCreated datePublished" datetime="2019-12-19T18:11:14+08:00">2019-12-19 18:11</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>22</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h4 id="进程切换"><a href="#进程切换" class="headerlink" title="进程切换"></a>进程切换</h4><ul>
+<li>指令切换</li>
+<li>映射表切换</li>
+</ul>
+<h4 id="线程切换"><a href="#线程切换" class="headerlink" title="线程切换"></a>线程切换</h4><ul>
+<li>仅指令切换</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
         
   
   
@@ -872,357 +1217,11 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/12/md/develop/base/data-structure/binary-search-tree/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="mqiy">
-      <meta itemprop="description" content="永远为下个月离职做好准备">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小灰灰的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/12/12/md/develop/base/data-structure/binary-search-tree/" class="post-title-link" itemprop="url">二叉查找树</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-12-12 15:01 15:01:12" itemprop="dateCreated datePublished" datetime="2019-12-12T15:01:12+08:00">2019-12-12 15:01</time>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>71</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h4 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h4><ul>
-<li>1、左子树上所有的节点的值均小于或等于他的根节点的值</li>
-<li>2、右子数上所有的节点的值均大于或等于他的根节点的值</li>
-<li>3、左右子树也一定分别为二叉排序树</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/12/md/develop/base/al/time-complexity/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="mqiy">
-      <meta itemprop="description" content="永远为下个月离职做好准备">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小灰灰的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/12/12/md/develop/base/al/time-complexity/" class="post-title-link" itemprop="url">o(1), o(n), o(logn), o(nlogn)</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-12-12 14:07 14:07:53" itemprop="dateCreated datePublished" datetime="2019-12-12T14:07:53+08:00">2019-12-12 14:07</time>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>592</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>在描述算法复杂度时,经常用到<code>o(1), o(n), o(logn), o(nlogn)</code>来表示对应算法的<code>时间复杂度</code>, 这里进行归纳一下它们代表的含义:<br>这是算法的时空复杂度的表示。不仅仅用于表示时间复杂度，也用于表示空间复杂度。<br>O后面的括号中有一个函数，指明某个算法的耗时/耗空间与数据增长量之间的关系。其中的n代表输入数据的量。 </p>
-<ul>
-<li>O(n)，就代表数据量增大几倍，耗时也增大几倍。比如常见的遍历算法。 </li>
-<li>O(n^2)，就代表数据量增大n倍时，耗时增大n的平方倍，这是比线性更高的时间复杂度。比如冒泡排序，就是典型的O(n^2)的算法，对n个数排序，需要扫描n×n次。 </li>
-<li>O(logn)，当数据增大n倍时，耗时增大logn倍（这里的log是以2为底的，比如，当数据增大256倍时，耗时只增大8倍，是比线性还要低的时间复杂度）。二分查找就是O(logn)的算法，每找一次排除一半的可能，256个数据中查找只要找8次就可以找到目标。 </li>
-<li>O(nlogn)同理，就是n乘以logn，当数据增大256倍时，耗时增大256*8=2048倍。这个复杂度高于线性低于平方。归并排序就是O(nlogn)的时间复杂度。 </li>
-<li>O(1)就是最低的时空复杂度了，也就是耗时/耗空间与输入数据大小无关，无论输入数据增大多少倍，耗时/耗空间都不变。 哈希算法就是典型的O(1)时间复杂度，无论数据规模多大，都可以在一次计算后找到目标（不考虑冲突的话）</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/11/md/other/clothes-size/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="mqiy">
-      <meta itemprop="description" content="永远为下个月离职做好准备">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小灰灰的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/12/11/md/other/clothes-size/" class="post-title-link" itemprop="url">穿衣尺码</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-12-11 10:42 10:42:11" itemprop="dateCreated datePublished" datetime="2019-12-11T10:42:11+08:00">2019-12-11 10:42</time>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>31</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="卫衣尺码"><a href="#卫衣尺码" class="headerlink" title="卫衣尺码"></a>卫衣尺码</h3><table>
-<thead>
-<tr>
-<th>尺码</th>
-<th>衣长</th>
-<th>肩宽</th>
-<th>胸围</th>
-<th>袖长</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>170/92A/M</td>
-<td>68</td>
-<td>46</td>
-<td>56</td>
-<td>61</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/10/md/problem/work/19-12/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="mqiy">
-      <meta itemprop="description" content="永远为下个月离职做好准备">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小灰灰的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/12/10/md/problem/work/19-12/" class="post-title-link" itemprop="url">2019年12月日志</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-12-10 19:16 19:16:20" itemprop="dateCreated datePublished" datetime="2019-12-10T19:16:20+08:00">2019-12-10 19:16</time>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>572</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="战网第三方登录时，请求的参数误写成json格式，当作body传入"><a href="#战网第三方登录时，请求的参数误写成json格式，当作body传入" class="headerlink" title="战网第三方登录时，请求的参数误写成json格式，当作body传入"></a>战网第三方登录时，请求的参数误写成json格式，当作body传入</h3><blockquote>
-<p> 应该拼接到url后面</p>
-</blockquote>
-<h3 id="战网第三方登录时，提示“无效的grant-type或无效的回调地址“"><a href="#战网第三方登录时，提示“无效的grant-type或无效的回调地址“" class="headerlink" title="战网第三方登录时，提示“无效的grant_type或无效的回调地址“"></a>战网第三方登录时，提示“无效的grant_type或无效的回调地址“</h3><blockquote>
-<p>在战网管理平台把回调地址与授权地址配置反了</p>
-</blockquote>
-<h4 id="restTemplate有并发问题-200ms内，连接返回错乱"><a href="#restTemplate有并发问题-200ms内，连接返回错乱" class="headerlink" title="restTemplate有并发问题  200ms内，连接返回错乱"></a>restTemplate有并发问题  200ms内，连接返回错乱</h4><h4 id="支付宝支付成功后，redirect出错"><a href="#支付宝支付成功后，redirect出错" class="headerlink" title="支付宝支付成功后，redirect出错"></a>支付宝支付成功后，redirect出错</h4><p>显示最终回调地址为<code>http://casaba-commerce-mall-sandbox.cloud.bz/casaba-mall/trade/sendRedirectUrl/philips-lighting-uat.baozun.com/pay.html?orderNo=119120518391148212</code><br>而真正服务器地址为: <code>casaba-commerce-mall-sandbox.cloud.bz</code></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">response.redirect(<span class="string">'philips-lighting-uat.baozun.com/pay.html?orderNo=119120518391148212'</span>);</span></pre></td></tr></table></figure>
-<blockquote>
-<p>重定向地址没有带协议，导致默认把当前mapper url拼接在前面</p>
-</blockquote>
-<p><code>反思</code></p>
-<ul>
-<li>为何当前mapping url的域名是错误的，是一个不存在的域名，导致排查困难</li>
-<li>有其他正常的项目，没有去对比数据</li>
-<li>redirect 没有搞清楚使用</li>
-</ul>
-<h3 id="网页微信第三方登录-回调路径的域名必须与微信商户后台授权域名一致"><a href="#网页微信第三方登录-回调路径的域名必须与微信商户后台授权域名一致" class="headerlink" title="网页微信第三方登录  回调路径的域名必须与微信商户后台授权域名一致"></a>网页微信第三方登录  回调路径的域名必须与微信商户后台授权域名一致</h3>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/6/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/24/">24</a><a class="extend next" rel="next" href="/page/8/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/6/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/25/">25</a><a class="extend next" rel="next" href="/page/8/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1288,20 +1287,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">237</span>
+          <span class="site-state-item-count">245</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">53</span>
+        <span class="site-state-item-count">56</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -1335,7 +1334,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">226k</span>
+    <span title="站点总字数">227k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>

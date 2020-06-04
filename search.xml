@@ -31,6 +31,39 @@
       </tags>
   </entry>
   <entry>
+    <title>油腻中年男子</title>
+    <url>/2020/06/04/md/life/best-practice/idot-portly-feature/</url>
+    <content><![CDATA[<p>01.肚子凸起，大腹便便<br>02.整天干吹牛<br>03.停止学习<br>04.一脸色相，整天讲黄段子<br>05.成天叨叨过去的事<br>06.动不动以长辈状教育晚辈<br>07.经常性地求人帮忙<br>08.不修边幅，邋邋遢遢<br>09.亳无激情，没有了半点朝气<br>10.一身奴性，卑躬屈膝<br>11.浑身透着虚伪<br>12.总幻想自己是女人眼中迷人的碾人士</p>
+]]></content>
+      <categories>
+        <category>人生感悟</category>
+      </categories>
+      <tags>
+        <tag>人生</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>极简生活攻略</title>
+    <url>/2020/06/04/md/life/best-practice/simple-life/</url>
+    <content><![CDATA[<ul>
+<li>简单穿衣，不花哨</li>
+<li>控制购买欲，不乱买</li>
+<li>一旦是必用品，就买最好的，并充分使用</li>
+<li>每天只专注做一件事，努力做到最好</li>
+<li>抽出时间独处</li>
+<li>享受慢节奏</li>
+<li>远离无效社交</li>
+<li>做自己喜欢做的事儿</li>
+</ul>
+]]></content>
+      <categories>
+        <category>人生感悟</category>
+      </categories>
+      <tags>
+        <tag>人生</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>做一个精致的男性</title>
     <url>/2020/06/01/md/life/being-well/</url>
     <content><![CDATA[<p>1戒掉传统手艺<br>2尽量不要熬夜，真的会猝死<br>3养成习惯，早睡早起<br>4永远做两件不会过时的事情：读书，健身<br>5别做添狗，舔到最后真的一无所有，即使得到，也是短暂的<br>6二十多岁的年纪，赚钱才是第一位。当你有了钱，自然什么都会有，包括，爱情，亲情。不相信的，大多是还不愿意面对现实的人</p>
@@ -40,6 +73,32 @@
       </categories>
       <tags>
         <tag>人生</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>关于聚餐</title>
+    <url>/2020/06/01/md/life/diet/being-well/</url>
+    <content><![CDATA[<blockquote>
+<p>千万戒掉,去一次,半个月费了,真的!</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>计划</category>
+      </categories>
+      <tags>
+        <tag>减肥</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>各肉类脂肪含量</title>
+    <url>/2020/06/01/md/life/diet/meat-fat-num/</url>
+    <content><![CDATA[<p>1 猪肉:脂肪含量29%<br>2 羊肉:脂肪含量24%<br>3 牛肉:脂肪含量12%<br>4 鸭肉:脂肪含量7.5%<br>5 鸡肉:脂肪含量6%<br>6 鱼肉:脂肪含量1.5%<br>7 兔肉:脂肪含量0.4%</p>
+]]></content>
+      <categories>
+        <category>计划</category>
+      </categories>
+      <tags>
+        <tag>减肥</tag>
       </tags>
   </entry>
   <entry>
@@ -196,6 +255,23 @@
       </tags>
   </entry>
   <entry>
+    <title>并发一</title>
+    <url>/2020/04/08/md/interview/my/conrrent/</url>
+    <content><![CDATA[<h3 id="Synchronized和ReentrantLock的区别"><a href="#Synchronized和ReentrantLock的区别" class="headerlink" title="Synchronized和ReentrantLock的区别"></a>Synchronized和ReentrantLock的区别</h3><p>Synchronized和ReentrantLock的区别</p>
+<ul>
+<li>synchronized既可以修饰方法，也可以修饰代码块。 </li>
+<li>等待可中断。synchronized中等待线程不能中断，一直等;ReentrantLock不是</li>
+<li>公平锁。synchronized的锁是非公平锁，ReentrantLock默认情况下也是非公平锁，可以设置为公平锁。</li>
+<li>锁绑定多个条件。ReentrantLock可以同时绑定多个Condition对象，只需多次调用newCondition方法即可;synchronized中，锁对象的wait()和notify()或notifyAll()方法可以实现一个隐含的条件。但如果要和多于一个的条件关联的时候，就不得不额外添加一个锁。</li>
+<li>性能。JDK 1.5中，synchronized还有很大的优化余地。JDK 1.6 中加入了很多针对锁的优化措施，synchronized与ReentrantLock性能方面基本持平。虚拟机在未来的改进中更偏向于原生的synchronized。</li>
+</ul>
+<p>补充：关于synchronized关键字<br>1.Java中每个对象都有一个锁（lock）或者叫做监视器（monitor）。<br>2.ReentrantLock和synchronized持有的对象监视器不同。<br>3.如果某个synchronized方法是static的，那么当线程方法改方法时，它锁的并不是synchronized方法所在的对象，而是synchronized方法所在对象所对应的Class对象，因为Java中不管一个类有多少对象，这些对象会对应唯一一个Class对象。因此当线程分别访问同一个类的两个对象的两个static，synchronized方法时，是顺序执行的，亦即一个线程先执行，完毕之后，另一个才开始执行。<br>4.synchronized 方法是一种粗粒度的并发控制，某一时刻，只能有一个线程执行synchronized方法；synchronized块则是一种细粒度的并发控制。只会将块中代码同步，位于方法内，synchronized块之外的代码是可以被多个线程同时访问的。<br>5.synchronized关键字经过编译之后，会在同步块的前后分别形成monitorenter和monitorexit两个字节码指令，操作对象均为锁的计数器。<br>6.相同点：都是可重入的。可重入值的是同一个线程多次试图获取它所占的锁，请求会成功。当释放的时候，直到冲入次数清零，锁才释放。</p>
+]]></content>
+      <tags>
+        <tag>interview</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>jvm</title>
     <url>/2020/04/08/md/interview/my/jvm/</url>
     <content><![CDATA[<h3 id="类加载机制"><a href="#类加载机制" class="headerlink" title="类加载机制"></a>类加载机制</h3><p>JVM的类加载是通过ClassLoader及其子类来完成的</p>
@@ -209,23 +285,6 @@
 </ul>
 <p>类的生命周期：<br>加载、连接、初始化、使用、卸载<br>其中连接分为：<br>校验（符合JVM的要求），准备(静态变量，常量赋值)，解析（符号引用-&gt; 直接引用）</p>
 <p>初始化：执行没有static修饰的赋值语句和执行语句，为静态变量赋程序设定的初值</p>
-]]></content>
-      <tags>
-        <tag>interview</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>并发一</title>
-    <url>/2020/04/08/md/interview/my/conrrent/</url>
-    <content><![CDATA[<h3 id="Synchronized和ReentrantLock的区别"><a href="#Synchronized和ReentrantLock的区别" class="headerlink" title="Synchronized和ReentrantLock的区别"></a>Synchronized和ReentrantLock的区别</h3><p>Synchronized和ReentrantLock的区别</p>
-<ul>
-<li>synchronized既可以修饰方法，也可以修饰代码块。 </li>
-<li>等待可中断。synchronized中等待线程不能中断，一直等;ReentrantLock不是</li>
-<li>公平锁。synchronized的锁是非公平锁，ReentrantLock默认情况下也是非公平锁，可以设置为公平锁。</li>
-<li>锁绑定多个条件。ReentrantLock可以同时绑定多个Condition对象，只需多次调用newCondition方法即可;synchronized中，锁对象的wait()和notify()或notifyAll()方法可以实现一个隐含的条件。但如果要和多于一个的条件关联的时候，就不得不额外添加一个锁。</li>
-<li>性能。JDK 1.5中，synchronized还有很大的优化余地。JDK 1.6 中加入了很多针对锁的优化措施，synchronized与ReentrantLock性能方面基本持平。虚拟机在未来的改进中更偏向于原生的synchronized。</li>
-</ul>
-<p>补充：关于synchronized关键字<br>1.Java中每个对象都有一个锁（lock）或者叫做监视器（monitor）。<br>2.ReentrantLock和synchronized持有的对象监视器不同。<br>3.如果某个synchronized方法是static的，那么当线程方法改方法时，它锁的并不是synchronized方法所在的对象，而是synchronized方法所在对象所对应的Class对象，因为Java中不管一个类有多少对象，这些对象会对应唯一一个Class对象。因此当线程分别访问同一个类的两个对象的两个static，synchronized方法时，是顺序执行的，亦即一个线程先执行，完毕之后，另一个才开始执行。<br>4.synchronized 方法是一种粗粒度的并发控制，某一时刻，只能有一个线程执行synchronized方法；synchronized块则是一种细粒度的并发控制。只会将块中代码同步，位于方法内，synchronized块之外的代码是可以被多个线程同时访问的。<br>5.synchronized关键字经过编译之后，会在同步块的前后分别形成monitorenter和monitorexit两个字节码指令，操作对象均为锁的计数器。<br>6.相同点：都是可重入的。可重入值的是同一个线程多次试图获取它所占的锁，请求会成功。当释放的时候，直到冲入次数清零，锁才释放。</p>
 ]]></content>
       <tags>
         <tag>interview</tag>
@@ -1084,16 +1143,6 @@
       </tags>
   </entry>
   <entry>
-    <title>rocketmq 测试</title>
-    <url>/2020/02/27/md/part/mq/rocketmq-test/</url>
-    <content><![CDATA[<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">nohup sh bin/mqnamesrv &amp;</span></pre></td></tr><tr><td class="code"><pre><span class="line">tail -f ~/logs/rocketmqlogs/namesrv.log</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">nohup sh mqbroker -n localhost:9876 -c conf/broker.conf &amp;</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">nohup sh bin/mqbroker -n localhost:9876 -c conf/broker.conf  autoCreateTopicEnable=true  &amp;</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"> tail -f ~/logs/rocketmqlogs/broker.log </span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"> export NAMESRV_ADDR=localhost:9876</span></pre></td></tr><tr><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">关闭rocketmq</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">sh bin/mqshutdown broker</span></pre></td></tr><tr><td class="code"><pre><span class="line">sh bin/mqshutdown namesrv</span></pre></td></tr></table></figure>
-
-]]></content>
-      <tags>
-        <tag>RocketMQ</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Broker集群配置</title>
     <url>/2020/02/27/md/part/mq/rocketmq/</url>
     <content><![CDATA[<h4 id="单个-Master"><a href="#单个-Master" class="headerlink" title="单个 Master"></a>单个 Master</h4><p>   这种方式风险较大，一旦Broker 重启或者宕机时，会导致整个服务不可用，不建议线上环境使用。</p>
@@ -1110,6 +1159,16 @@
 <li>优点：数据与服务都无单点，Master宕机情况下，消息无延迟，服务可用性与数据可用性都非常高</li>
 <li>缺点：性能比异步复制模式略低，大约低 10%左右，发送单个消息的 RT 会略高。目前主宕机后，备机不能自动切换为主机，后续会支持自动切换功能。</li>
 </ul>
+]]></content>
+      <tags>
+        <tag>RocketMQ</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>rocketmq 测试</title>
+    <url>/2020/02/27/md/part/mq/rocketmq-test/</url>
+    <content><![CDATA[<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">nohup sh bin/mqnamesrv &amp;</span></pre></td></tr><tr><td class="code"><pre><span class="line">tail -f ~/logs/rocketmqlogs/namesrv.log</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">nohup sh mqbroker -n localhost:9876 -c conf/broker.conf &amp;</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">nohup sh bin/mqbroker -n localhost:9876 -c conf/broker.conf  autoCreateTopicEnable=true  &amp;</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"> tail -f ~/logs/rocketmqlogs/broker.log </span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"> export NAMESRV_ADDR=localhost:9876</span></pre></td></tr><tr><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">关闭rocketmq</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">sh bin/mqshutdown broker</span></pre></td></tr><tr><td class="code"><pre><span class="line">sh bin/mqshutdown namesrv</span></pre></td></tr></table></figure>
+
 ]]></content>
       <tags>
         <tag>RocketMQ</tag>
@@ -1952,6 +2011,20 @@
       </tags>
   </entry>
   <entry>
+    <title>只言片语-002</title>
+    <url>/2019/11/22/md/life/part-aphorism-two/</url>
+    <content><![CDATA[<h4 id="2020-06-04"><a href="#2020-06-04" class="headerlink" title="2020-06-04"></a>2020-06-04</h4><ul>
+<li>到了那个时候,随着年龄的增加,他可能会变得越来越颓废,也越来越蹉跎,直到最后被岁月磨平了棱角,让年华腐蚀了心气,心甘情愿变成了社会中无数麻木群体里的一员</li>
+<li>保持专注,保持热情;不记初心,方得始终</li>
+<li>熔炉台词：我们一路奋战，不是为了改变这个世界，而是为了不让这个世界不改变我们</li>
+<li>《团长》郝兽医一句话：”年纪轻轻的你就跟人比烂？”</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>人生</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>只言片语-001</title>
     <url>/2019/11/22/md/life/part-aphorism-one/</url>
     <content><![CDATA[<blockquote>
@@ -2249,9 +2322,54 @@
       </tags>
   </entry>
   <entry>
+    <title>撩妹</title>
+    <url>/2019/11/06/md/life/flirt/pua/</url>
+    <content><![CDATA[<h3 id="男票需做到"><a href="#男票需做到" class="headerlink" title="男票需做到"></a>男票需做到</h3><p>1、记得你的生日；</p>
+<p>2、手机保持畅通让你能够联系得到他；</p>
+<p>3、在乎你穿的暖不暖，有没有按时吃饭；</p>
+<p>4、和他微信聊天时，态度积极，不会敷衍了事或总是隔很久才回复；</p>
+<p>5、对你大方从不吝啬；</p>
+<p>6、不嫌弃你；</p>
+<p>7、一有时间就会抽空陪着你；</p>
+<p>8、带你见过他最要好的朋友，甚至是家长；</p>
+<p>9、憧憬你们的未来，计划里一定有你；</p>
+<p>10、当你生病时，他会担心不已，亲自照顾你。</p>
+]]></content>
+      <categories>
+        <category>人生感悟</category>
+      </categories>
+      <tags>
+        <tag>人生</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>男生找不到女朋友,90%的原因都这里</title>
+    <url>/2019/11/06/md/life/flirt/why-alone/</url>
+    <content><![CDATA[<p>1,总是当老好人<br>2,眼高手低<br>3,总是迎合女生的脚<br>4,总是表白<br>5,总是心眼好,但是说话不会拐弯抹角,容易好心办错事<br>6,总是见到女生,就没有话题聊,显得尴尬</p>
+]]></content>
+      <categories>
+        <category>人生感悟</category>
+      </categories>
+      <tags>
+        <tag>男女</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>失败者的十大特点</title>
-    <url>/2019/11/06/md/life/failure/</url>
+    <url>/2019/11/06/md/life/best-practice/failure/</url>
     <content><![CDATA[<p><strong>失败者的十大特点：</strong><br>一、脸皮薄<br>二、清高<br>三、懒惰<br>四、不喜欢学习<br>五、没情商<br>六、不舍得吃亏<br>七、不爱社交<br>八、不愿意求助他人<br>九、没有目标<br>十、胆小，不敢拼</p>
+]]></content>
+      <categories>
+        <category>人生感悟</category>
+      </categories>
+      <tags>
+        <tag>人生</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>一个男人永远不要做的事</title>
+    <url>/2019/11/06/md/life/best-practice/never-done/</url>
+    <content><![CDATA[<p>1.跟知己上床<br>2.和情人结婚<br>3.把同事当朋友<br>4.喜怒哀乐都挂在脸上<br>5.期待没有<em>经济基础<em>的爱情<br>6指望前女友</em>回心转意</em><br>7久病床前无孝子是正确的<br>8旧情复燃的结果,就是重蹈覆辙<br>9人际关系的核心不是你多好,而是你的实力有多强.</p>
 ]]></content>
       <categories>
         <category>人生感悟</category>
@@ -2274,7 +2392,7 @@
   </entry>
   <entry>
     <title>几条也许有用的生活建议</title>
-    <url>/2019/11/06/md/life/sevel-lift-advice/</url>
+    <url>/2019/11/06/md/life/best-practice/sevel-lift-advice/</url>
     <content><![CDATA[<p>1、坚持锻炼</p>
 <p>你不一定非要去健身房撸铁，也不用非要去报瑜伽班，只要能保持一周3-4天的锻炼就可以，锻炼的方式有很多种，建议最好可以选择跑步，一开始可以从一公里、两公里慢慢坚持，设立目标，不必追求速度，慢跑即可，渐渐你会发现坚持十公里也不是多困难的事情。</p>
 <p>2、阅读</p>
@@ -2307,7 +2425,7 @@
   </entry>
   <entry>
     <title>程序员，活得是本事：30 岁后的 20 条人生建议</title>
-    <url>/2019/11/06/md/life/thirty-year-advice/</url>
+    <url>/2019/11/06/md/life/best-practice/thirty-year-advice/</url>
     <content><![CDATA[<p>一个程序员看待职业的方式，决定了他能走多远。</p>
 <p>有的人把职业当游戏，不论 buff 还是 bug 都要闯过去；有的人把职业当对手，不是一心想赢，只是不想输；有的人，活得是造型；有的人，活得是人设；程序员，活得是本事。</p>
 <p>今天，我们采访了 10 多位程序员，并将他们的经验整理成这篇《程序员的 20 条职业感悟》。请查阅。</p>
@@ -2354,7 +2472,7 @@
   </entry>
   <entry>
     <title>你之所以感到不快乐，其实是因为你还不够自私</title>
-    <url>/2019/11/06/md/life/need-self/</url>
+    <url>/2019/11/06/md/life/thinking/need-self/</url>
     <content><![CDATA[<p>人是自然的产物，所有对于人性的研究自然要从人与自然说起。</p>
 <p>达尔文的生物进化论、社会心理学、生物学、生理学等多个领域的研究都一致表明：</p>
 <p>人类的本性不仅仅存在生理需求还存在情感需求，情感需求即快乐以及痛苦的情绪表达。</p>
@@ -2386,7 +2504,7 @@
   </entry>
   <entry>
     <title>你骨子里的自卑，源自于这4个坏习惯</title>
-    <url>/2019/11/06/md/life/four-bad-habbit/</url>
+    <url>/2019/11/06/md/life/best-practice/four-bad-habbit/</url>
     <content><![CDATA[<p>人的大脑是一个神奇的存在，因为当身体都发育完全时，它却仍在发育。大脑的发育就是大脑各条神经元连接的过程，而脑发育不单单是自我完成的，更是要接受外部的刺激，共同完成的，所以说最具有可塑性的部位就是我们的大脑了。</p>
 <p>大脑不但支配我们的行为和动作，还作用于我们的心理、认知、知觉、个性和情绪等等。一个人想要有美好的梦想，就需要一步步努力实现，在这个过程中，还需要克服很多心理固有的负面而错误的情绪和认知习惯，我们要探讨的这4个习惯是我们前行道路上面的绊脚石，人们需要一步一步除去，否则会发生恶性循环，造成自卑情结。</p>
 <p>心理学家：你骨子里的自卑，源自于这4个坏习惯</p>
@@ -2920,8 +3038,20 @@
       </tags>
   </entry>
   <entry>
+    <title>做好这10点让你越来越自律</title>
+    <url>/2019/11/06/md/life/best-practice/make-autonomy/</url>
+    <content><![CDATA[<p>1,关闭朋友圈,卸载所有游戏<br>2,蹲马桶不要超过5分钟<br>3,手机响5秒再接<br>4,想发火先忍耐10秒钟<br>5,每天锻炼30分钟以上<br>6,坚决不带手机上床<br>7,睡前泡脚20分钟<br>8,睡前阅读半个小时<br>9,每天都有总结的好习惯<br>10,趁年轻,一定要尽早提高自控力,这会改变你的一年</p>
+]]></content>
+      <categories>
+        <category>人生感悟</category>
+      </categories>
+      <tags>
+        <tag>人生</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>一些值得长期坚持下去的好习惯！</title>
-    <url>/2019/11/06/md/life/well-habbit/</url>
+    <url>/2019/11/06/md/life/best-practice/well-habbit/</url>
     <content><![CDATA[<p>1、早起空腹一杯温水，雷打不动。每天晚上用快壶烧一壶开水，倒在水杯里晾凉，第二天早起再烧开水，兑在凉水里面，直接就可以喝一大杯。<br>2、每天解决一个实在忍受不了的问题。比如更换昏暗的灯泡，比如专门治疗拖延症，慢慢的生活就会变成你想要的样子。<br>3、坚持锻炼身体。瑜伽、跑步、哑铃等，不到万不得已，不要间断。<br>4、坚持腹式呼吸。开会可以练，坐车可以练，随时随地练。你呼吸的长度就是你生命的长度。<br>5、坚持睡前泡脚。一年四季，泡脚都很舒服，可以让人很放松。<br>6、再晚再累也要护肤，男女都一样。护肤是一项你付出多少就会得到多少回报的事情，不要偷懒。<br>7、勤换洗衣服。健康的身体，就应该搭配干净衣服，保持身体内外洁净。<br>8、认真刷牙，最好买电动牙刷，并不是电动牙刷比普通牙刷刷的干净，而是因为电动牙刷有时间限制，不会偷工减料。<br>9、睡觉前一个小时看书。学习需要静心，知识需要源源不断的汲取，每天进步一点点就好。<br>10、睡前转动眼球，可以有效地放松眼部肌肉，缓解眼睛干涩酸胀，坚持下来会让眼睛更有神。而且眼睛放松了，人体就放松了三分之二，睡觉很香。<br>11、保持床单、枕巾清洁，既可以减少皮肤问题。<br>12、勤晒被子，勤通风，阳光的味道会让人幸福感爆棚。<br>13、洗头发，不要相信头发越洗越爱出油，一天下来头发吸收很多灰尘，洗干净了才会对头皮健康有益。<br>14、多吃水果，番茄、猕猴桃等富含维生素C的水果，真的会变白。而且多吃水果真的可以预防和治疗口腔溃疡。<br>15、早起拉伸，睡前拉伸，坐办公室久了要起来拉伸一下，尤其对人的体态非常友好！<br>16、坚持写日记，写下自己的所有心事，肆无忌惮，想写啥写啥，和自己对话，慢慢会人变得更了解自己，更平和，也可以防止自己和别人抱怨。<br>17、多给家里人打电话，你不知道你的电话会让父母有多开心。而且每天给家里打电话，会让自己不孤单，被爱包围。得到足够的爱，可以让我更自信，也更有能力爱别人。<br>18、学会放下，原谅自己。谁都难免会为自己的行为后悔，不要揪着不放，原谅自己，让自己轻松一点。</p>
 ]]></content>
       <categories>
@@ -3573,7 +3703,7 @@
   </entry>
   <entry>
     <title>面试题目</title>
-    <url>/2019/10/30/md/interview/friend-face/</url>
+    <url>/2019/10/30/md/interview/friend-interview/</url>
     <content><![CDATA[<h3 id="one"><a href="#one" class="headerlink" title="one"></a>one</h3><ul>
 <li>说说ThreadLocal如何保证线程安全</li>
 <li>ZAB 与 PAXOS</li>
@@ -3607,22 +3737,6 @@
     <content><![CDATA[<p>RDB：　 redis 主进程只需要 fork 一个子进程，让子进程执行磁盘 IO 操作来进行 RDB 持久化</p>
 <p>优点：<br>    数据快照，适合做冷备<br>    对性能影响小<br>    回复快<br>缺点：<br>    丢失少量数据<br>    数据量过大，影响服务提供</p>
 <p>AOF：　AOF 机制对每条写入命令作为日志，以 append-only 的模式写入一个日志文件中，在 redis 重启的时候，可以通过回放 AOF 日志中的写入指令来重新构建整个数据集。<br>优点：<br>    数据不丢失（1s fsync）<br>    可读方式记录，适合恢复<br>缺点：<br>    文件大<br>    QPS相对低<br>    发年bug,数据未恢复一致</p>
-]]></content>
-      <tags>
-        <tag>redis</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>redis模型模式</title>
-    <url>/2019/10/30/md/part/redis/redis-build-model/</url>
-    <content><![CDATA[<p>####　sentinel模式</p>
-<h4 id="cluster模式"><a href="#cluster模式" class="headerlink" title="cluster模式"></a>cluster模式</h4><p>cluster可以说是sentinel和主从模式的结合体，通过cluster可以实现主从和master重选功能，<br>这种模式适合<code>数据量巨大</code>的缓存要求</p>
-<p>不足：</p>
-<ul>
-<li>一般涉及多个key的操作会不支持，取两个set的并集，且两个set在不同的Redis实例上面（当然也是能实现的，只是Redis不会直接支持这么做）。</li>
-<li>涉及多个key的事务将不能使用</li>
-<li>使用分区时,数据处理更加复杂,例如你必须处理多个RDB / AOF文件,你需要备份你的数据并聚合多个实例和主机的持久性文件。</li>
-</ul>
 ]]></content>
       <tags>
         <tag>redis</tag>
@@ -3779,6 +3893,22 @@
 <li>在redis前加进程缓存 消减redis使用率 通过redis watch机制保证缓存一致性</li>
 <li>布隆过滤器 或自定义过滤器 如bitmap hash值占位</li>
 <li>空key情况(避免全局扫) 设置默认值或上级缓存或使用过滤器</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>redis</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>redis模型模式</title>
+    <url>/2019/10/30/md/part/redis/redis-build-model/</url>
+    <content><![CDATA[<p>####　sentinel模式</p>
+<h4 id="cluster模式"><a href="#cluster模式" class="headerlink" title="cluster模式"></a>cluster模式</h4><p>cluster可以说是sentinel和主从模式的结合体，通过cluster可以实现主从和master重选功能，<br>这种模式适合<code>数据量巨大</code>的缓存要求</p>
+<p>不足：</p>
+<ul>
+<li>一般涉及多个key的操作会不支持，取两个set的并集，且两个set在不同的Redis实例上面（当然也是能实现的，只是Redis不会直接支持这么做）。</li>
+<li>涉及多个key的事务将不能使用</li>
+<li>使用分区时,数据处理更加复杂,例如你必须处理多个RDB / AOF文件,你需要备份你的数据并聚合多个实例和主机的持久性文件。</li>
 </ul>
 ]]></content>
       <tags>
@@ -4300,8 +4430,20 @@
       </tags>
   </entry>
   <entry>
+    <title>工作建议</title>
+    <url>/2019/09/18/md/life/work/</url>
+    <content><![CDATA[<p>1、不要把同事当朋友，要当盟友。<br>2、不要和同事说过多自己的隐私。<br>3、公司组织的比赛一定要参加！一定要参加！一定要参加！<br>4、保持微笑，不要喜怒无常。<br>5、投资比工作重要，不学习理财投资不买房的若干年后都后悔了。<br>6、尽量别得罪人，三十年河东三十年河西<br>7、不要瞧不起你领导，他能是你的领导，一定有你能学习的地方。<br>8、你可以有理想，但是时刻记住你的理想跟别人没啥关系。<br>9、不要相信公司的奉献精神，他们不想要你的时候可快了。<br>10、保持运动，和你是不是忙没有关系。<br>11、偷奸耍滑可以耍了的一时，但是总要露馅。<br>12、什么30天教你做达人，一个月教你赚100万的攻略都是骗人的，厚积薄发才是真理。<br>13、学习是为你自己。人与人之间的差距是逐步拉开的。<br>14、大部分的工作只看结果，不看过程。很多事情努力了没做到和没做是一样的。<br>15、不要浪费时间在不值得浪费的人身上，自己的时间很宝贵。<br>16、学会站在老板或者公司的角度去思考问题。格局很重要。<br>17、在成人的社交礼仪里，没有爽快的答应就是拒绝。<br>18、抱怨只会显得一个人特别无能。<br>19、不要矫情，除非你是牛人，否则的话，永远提醒自己，人才市场有成千上万的人随时可以取代你顶替这个职位。<br>20、加班这种事情不可避免，忍不了就辞职，走不了就忍着！<br>21、无论多么信任的人，别过多袒露你的过去。为你自己好。<br>22、尽量不要向同事借钱，一般人家都会很反感，除非你们成为了真正的朋友。<br>23、不要为了工作牺牲身体和家庭。<br>24、闷不吭声地埋头苦干，并不一定能够给你带来想要的认可。要学会向领导、上司汇报工作进度。<br>25、低调做人，高调做事。<br>26、老板经营的是他的事业，你经营的是你的人生，所以混不得。<br>27、不要放弃每一个可以请教的机会，不论这个人你是否喜欢，职位是否比你高。<br>28、觉得是垃圾社交，不想参加就不要去，好好把握下班后自由的时间，别为了迎合别人浪费自己时间。<br>29、画饼的领导千千万，谁当领导不画饼？但画了饼连糖都不给吃的公司趁早走，不要回头。<br>30、不要夸夸而谈，这只会让人发现你的浅薄，对于不懂得事情，要懂得闭上嘴巴。<br>31、一定要去大城市，那里才有更多出路和机会。<br>32、我们年轻的时候是得吃苦，但是我们不随便吃苦。<br>33、不要太安逸，现在哪里还有什么稳定工作。<br>34、和公司谈钱时，少讲感情，尽量不讲，拿能力和业绩说话。<br>35、不管你这个工作做的有多差，都不要否定自己。你一定要相信，你还是很优秀。</p>
+]]></content>
+      <categories>
+        <category>人生感悟</category>
+      </categories>
+      <tags>
+        <tag>人生</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>不做老好人，你的善良必须要有锋芒</title>
-    <url>/2019/09/18/md/life/%E4%B8%8D%E5%81%9A%E8%80%81%E5%A5%BD%E4%BA%BA%EF%BC%8C%E4%BD%A0%E7%9A%84%E5%96%84%E8%89%AF%E5%BF%85%E9%A1%BB%E8%A6%81%E6%9C%89%E9%94%8B%E8%8A%92/</url>
+    <url>/2019/09/18/md/life/thinking/%E4%B8%8D%E5%81%9A%E8%80%81%E5%A5%BD%E4%BA%BA%EF%BC%8C%E4%BD%A0%E7%9A%84%E5%96%84%E8%89%AF%E5%BF%85%E9%A1%BB%E8%A6%81%E6%9C%89%E9%94%8B%E8%8A%92/</url>
     <content><![CDATA[<p>  有一些耋好人，为了周围人的喜欢和认可，不懂拒绝别人，却让自己活得很累，可是别人也不会真的感激你，你为别人付出的时候，别人却不会为你付出，在这样一种不对等的关系中，所以就会产生出让人失望的情绪。很多人不明白，为什么自己替别人做了很多，却得不到应有的回报和尊重呢？而且还会因为稍有一点不满意，别人还会记恨。其实，这其中主要的原因就是因为你太喜欢帮助别人了。</p>
 <p>  老好人也称为“利他主义者。事实上，利他主义者是用自己的行为在对自己进行操纵——并没有人要求他们这么做！他们的过度付出是造成这种”做了好事却得不到尊重“的情形的元凶。  </p>
 <p>  好人我们都喜欢，但一旦你被别人当成”老好人“，那么你的付出就只会给自己带来无尽的麻烦了。因为，老好人往往给人一种懦弱、没主见的印象。总是表现得很无私，面对别人的种种请求，不管能不能做到，都会硬着头皮允诺，甚至有时候会不惜牺牲自己的利益来帮助他人。</p>
@@ -4314,18 +4456,6 @@
       </categories>
       <tags>
         <tag>性格</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>工作建议</title>
-    <url>/2019/09/18/md/life/work/</url>
-    <content><![CDATA[<p>1、不要把同事当朋友，要当盟友。<br>2、不要和同事说过多自己的隐私。<br>3、公司组织的比赛一定要参加！一定要参加！一定要参加！<br>4、保持微笑，不要喜怒无常。<br>5、投资比工作重要，不学习理财投资不买房的若干年后都后悔了。<br>6、尽量别得罪人，三十年河东三十年河西<br>7、不要瞧不起你领导，他能是你的领导，一定有你能学习的地方。<br>8、你可以有理想，但是时刻记住你的理想跟别人没啥关系。<br>9、不要相信公司的奉献精神，他们不想要你的时候可快了。<br>10、保持运动，和你是不是忙没有关系。<br>11、偷奸耍滑可以耍了的一时，但是总要露馅。<br>12、什么30天教你做达人，一个月教你赚100万的攻略都是骗人的，厚积薄发才是真理。<br>13、学习是为你自己。人与人之间的差距是逐步拉开的。<br>14、大部分的工作只看结果，不看过程。很多事情努力了没做到和没做是一样的。<br>15、不要浪费时间在不值得浪费的人身上，自己的时间很宝贵。<br>16、学会站在老板或者公司的角度去思考问题。格局很重要。<br>17、在成人的社交礼仪里，没有爽快的答应就是拒绝。<br>18、抱怨只会显得一个人特别无能。<br>19、不要矫情，除非你是牛人，否则的话，永远提醒自己，人才市场有成千上万的人随时可以取代你顶替这个职位。<br>20、加班这种事情不可避免，忍不了就辞职，走不了就忍着！<br>21、无论多么信任的人，别过多袒露你的过去。为你自己好。<br>22、尽量不要向同事借钱，一般人家都会很反感，除非你们成为了真正的朋友。<br>23、不要为了工作牺牲身体和家庭。<br>24、闷不吭声地埋头苦干，并不一定能够给你带来想要的认可。要学会向领导、上司汇报工作进度。<br>25、低调做人，高调做事。<br>26、老板经营的是他的事业，你经营的是你的人生，所以混不得。<br>27、不要放弃每一个可以请教的机会，不论这个人你是否喜欢，职位是否比你高。<br>28、觉得是垃圾社交，不想参加就不要去，好好把握下班后自由的时间，别为了迎合别人浪费自己时间。<br>29、画饼的领导千千万，谁当领导不画饼？但画了饼连糖都不给吃的公司趁早走，不要回头。<br>30、不要夸夸而谈，这只会让人发现你的浅薄，对于不懂得事情，要懂得闭上嘴巴。<br>31、一定要去大城市，那里才有更多出路和机会。<br>32、我们年轻的时候是得吃苦，但是我们不随便吃苦。<br>33、不要太安逸，现在哪里还有什么稳定工作。<br>34、和公司谈钱时，少讲感情，尽量不讲，拿能力和业绩说话。<br>35、不管你这个工作做的有多差，都不要否定自己。你一定要相信，你还是很优秀。</p>
-]]></content>
-      <categories>
-        <category>人生感悟</category>
-      </categories>
-      <tags>
-        <tag>人生</tag>
       </tags>
   </entry>
   <entry>
@@ -4439,7 +4569,7 @@
   </entry>
   <entry>
     <title>架构师职位相关(二)</title>
-    <url>/2019/08/22/md/interview/%E6%9E%B6%E6%9E%84%E5%B8%882/</url>
+    <url>/2019/08/22/md/interview/sa-require-02/</url>
     <content><![CDATA[<h3 id="商汤科技招聘–术架构师-技术经理-35k-45k"><a href="#商汤科技招聘–术架构师-技术经理-35k-45k" class="headerlink" title="商汤科技招聘–术架构师/技术经理(35k-45k)"></a>商汤科技招聘–术架构师/技术经理(35k-45k)</h3><h5 id="岗位职责："><a href="#岗位职责：" class="headerlink" title="岗位职责："></a>岗位职责：</h5><ul>
 <li>根据公司业务规划，开展城市视觉智慧赋能产品架构相关设计与研发工作；</li>
 <li>参与构建高性能，高可用，可扩展的分布式人工智能平台产品；</li>
@@ -4525,7 +4655,7 @@
   </entry>
   <entry>
     <title>架构师职位相关(一)</title>
-    <url>/2019/08/22/md/interview/%E6%9E%B6%E6%9E%84%E5%B8%88/</url>
+    <url>/2019/08/22/md/interview/sa-require-01/</url>
     <content><![CDATA[<h3 id="拼多多–稳定性架构师-SRE-30k-60k"><a href="#拼多多–稳定性架构师-SRE-30k-60k" class="headerlink" title="拼多多–稳定性架构师(SRE)(30k-60k )"></a>拼多多–稳定性架构师(SRE)(30k-60k )</h3><h5 id="职位描述："><a href="#职位描述：" class="headerlink" title="职位描述："></a>职位描述：</h5><p>作为基础平台团队的一员，在拼多多，你每天将：</p>
 <p>在社交电商领域排名第一的新兴独角兽公司中切身感受公司和个人同时高速成长的感觉；</p>
 <p>在充满创造力和活力的年轻团队中，技术驱动业务，改变互联网电商行业；</p>
@@ -4853,6 +4983,19 @@
       </tags>
   </entry>
   <entry>
+    <title>Springboot</title>
+    <url>/2019/07/11/md/problem/spring-boot/</url>
+    <content><![CDATA[<h3 id="Springboot-Filter中注入bean-无效为null"><a href="#Springboot-Filter中注入bean-无效为null" class="headerlink" title="Springboot Filter中注入bean 无效为null"></a>Springboot Filter中注入bean 无效为null</h3><p>问题原因：</p>
+<p>Web应用的启动顺序是：Lisenter-&gt;Fliter-&gt;Servlet,  应用程序上下文， 初始化 Fliter的时候，还没有初始化Servlert，所有没有进入DispacterServlet的初始化，故在Fliter中使用注解注入bean为空；</p>
+<p>解决办法：</p>
+<p>添加初始化bean配置，手动创建对象new</p>
+]]></content>
+      <tags>
+        <tag>problem</tag>
+        <tag>spring boot</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>mybatis相关问题</title>
     <url>/2019/07/11/md/problem/mybatis/</url>
     <content><![CDATA[<h3 id="mybatis报错-Specified-class-is-an-interface"><a href="#mybatis报错-Specified-class-is-an-interface" class="headerlink" title="mybatis报错 Specified class is an interface"></a>mybatis报错 Specified class is an interface</h3><h4 id="1-错误原因"><a href="#1-错误原因" class="headerlink" title="1.错误原因"></a>1.错误原因</h4><p>Caused by: org.springframework.beans.factory.BeanCreationException: </p>
@@ -4866,19 +5009,6 @@
       <tags>
         <tag>problem</tag>
         <tag>mybatis</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Springboot</title>
-    <url>/2019/07/11/md/problem/spring-boot/</url>
-    <content><![CDATA[<h3 id="Springboot-Filter中注入bean-无效为null"><a href="#Springboot-Filter中注入bean-无效为null" class="headerlink" title="Springboot Filter中注入bean 无效为null"></a>Springboot Filter中注入bean 无效为null</h3><p>问题原因：</p>
-<p>Web应用的启动顺序是：Lisenter-&gt;Fliter-&gt;Servlet,  应用程序上下文， 初始化 Fliter的时候，还没有初始化Servlert，所有没有进入DispacterServlet的初始化，故在Fliter中使用注解注入bean为空；</p>
-<p>解决办法：</p>
-<p>添加初始化bean配置，手动创建对象new</p>
-]]></content>
-      <tags>
-        <tag>problem</tag>
-        <tag>spring boot</tag>
       </tags>
   </entry>
   <entry>
@@ -5017,7 +5147,7 @@
   </entry>
   <entry>
     <title>这就是人生</title>
-    <url>/2019/06/21/md/life/%E8%BF%99%E5%B0%B1%E6%98%AF%E4%BA%BA%E7%94%9F/</url>
+    <url>/2019/06/21/md/life/thinking/%E8%BF%99%E5%B0%B1%E6%98%AF%E4%BA%BA%E7%94%9F/</url>
     <content><![CDATA[<p>孤独是人生的常态，一定要拥有真正喜欢的兴趣爱好，这样才能支持你渡过无数个漫漫长夜和无数个孤独的时候，读书则是成本最低的兴趣爱好。很多人看起来什么都感兴趣，啥都能参与一定点但都不深入，这种人是最孤独的，因为他根本不知道自己想要什么，喜欢什么。</p>
 <p>绝大部分焦虑不过是脑子勤奋（想的太多）和身体懒惰之间的矛盾，自视甚高是人之常情，但一般要等到人到中年才能明白。20岁：我一定行——40岁：我本可以——60岁：我真的不行哎，是大部分人的人生轨迹。</p>
 <p>一个人行不行可能早就注定了，比如家庭，比如言行举止，比如不经意间的流露……比如知乎的提问，大部分人都不懂得先问是不是再问为什么，大部分人都来懒的出奇，对自己不负责任，问的很随便，不说任何前提，不说任何自己情况，比如太多人问什么专业好、XX专业有没有前景、550分能读什么学校……只有这几个字，惜墨如金守口如瓶的，这些人将来基本上都会庸庸碌碌一辈子。因为思考意识具有决定性作用，跟年龄关系不大，如果你跟顶级中学的高中生聊过天 ，会发现她们比很多大学生有思想有见识，问问题的时候会把个人和家庭情况、问题背景、愿景交待的很清楚。</p>
@@ -5095,21 +5225,6 @@
       </tags>
   </entry>
   <entry>
-    <title>微服务健康检查</title>
-    <url>/2019/06/21/md/part/microServices/spring%20cloud/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E5%81%A5%E5%BA%B7%E6%A3%80%E6%9F%A5/</url>
-    <content><![CDATA[<h4 id="健康检查"><a href="#健康检查" class="headerlink" title="健康检查"></a>健康检查</h4><figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="comment">#开启健康检查（需要spring-boot-starter-actuator依赖）</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">eureka.client.healthcheck.enabled</span>=<span class="string">true</span></span></pre></td></tr></table></figure>
-
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment">#应用信息 /actuator/info</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="attr">info:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">  <span class="attr">app:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="attr">name:</span> <span class="string">@project.name@</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="attr">description:</span> <span class="string">@project.description@</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="attr">version:</span> <span class="string">@project.version@</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="attr">encoding:</span> <span class="string">@project.build.sourceEncoding@</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="attr">java:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">      <span class="attr">version:</span> <span class="string">@java.version@</span></span></pre></td></tr></table></figure>
-
-
-
-
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-actuator<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span></pre></td></tr></table></figure>]]></content>
-      <tags>
-        <tag>spring cloud</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>spring cloud gateway 入门</title>
     <url>/2019/06/21/md/part/microServices/spring%20cloud/spring%20cloud%20gateway%20%E5%85%A5%E9%97%A8/</url>
     <content><![CDATA[<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.cloud<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-cloud-starter-gateway<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="comment">&lt;!-- 集成eureka --&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="comment">&lt;!--&lt;dependency&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">        &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">        &lt;artifactId&gt;spring-cloud-starter-netflix-eureka-client&lt;/artifactId&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">    &lt;/dependency&gt;--&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span></pre></td></tr></table></figure>
@@ -5127,6 +5242,21 @@
 <li>StripPrefix 去掉转发根据路径web</li>
 </ul>
 ]]></content>
+      <tags>
+        <tag>spring cloud</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>微服务健康检查</title>
+    <url>/2019/06/21/md/part/microServices/spring%20cloud/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E5%81%A5%E5%BA%B7%E6%A3%80%E6%9F%A5/</url>
+    <content><![CDATA[<h4 id="健康检查"><a href="#健康检查" class="headerlink" title="健康检查"></a>健康检查</h4><figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="comment">#开启健康检查（需要spring-boot-starter-actuator依赖）</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">eureka.client.healthcheck.enabled</span>=<span class="string">true</span></span></pre></td></tr></table></figure>
+
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment">#应用信息 /actuator/info</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="attr">info:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">  <span class="attr">app:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="attr">name:</span> <span class="string">@project.name@</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="attr">description:</span> <span class="string">@project.description@</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="attr">version:</span> <span class="string">@project.version@</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="attr">encoding:</span> <span class="string">@project.build.sourceEncoding@</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="attr">java:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">      <span class="attr">version:</span> <span class="string">@java.version@</span></span></pre></td></tr></table></figure>
+
+
+
+
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-actuator<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span></pre></td></tr></table></figure>]]></content>
       <tags>
         <tag>spring cloud</tag>
       </tags>
@@ -5275,7 +5405,7 @@
   </entry>
   <entry>
     <title>支付流程</title>
-    <url>/2019/06/18/md/interview/%E6%94%AF%E4%BB%98%E6%B5%81%E7%A8%8B/</url>
+    <url>/2019/06/18/md/busin/pay-flow/</url>
     <content><![CDATA[<ol>
 <li>获取支付交易流水号</li>
 <li>生成签名，拼成交易链接</li>
@@ -5284,7 +5414,7 @@
 </ol>
 ]]></content>
       <tags>
-        <tag>interview</tag>
+        <tag>业务</tag>
       </tags>
   </entry>
   <entry>
@@ -5353,70 +5483,6 @@
       </tags>
   </entry>
   <entry>
-    <title>多线程概要</title>
-    <url>/2019/06/18/md/jdk/mulThread/%E5%A4%9A%E7%BA%BF%E7%A8%8B/</url>
-    <content><![CDATA[<p>多线程只有一个目的：更好的利用cpu的资源</p>
-<ul>
-<li><p>并行：多个cpu实例或者多台机器同时执行一段处理逻辑，是真正的同时。</p>
-</li>
-<li><p>并发：通过cpu调度算法，让用户看上去同时执行，实际上从cpu操作层面不是真正的同时。</p>
-</li>
-<li><p>线程安全：经常用来描绘一段代码。指在并发的情况之下，该代码经过多线程使用，线程的调度顺序不影响任何结果。</p>
-</li>
-<li><p>同步：Java中的同步指的是通过人为的控制和调度，保证共享资源的多线程访问成为线程安全，来保证结果的准确。如简单加入@synchronized关键字。</p>
-</li>
-</ul>
-<p><strong>阻塞(Blocked)</strong>：</p>
-<ol>
-<li>调用join()和sleep()方法，sleep()时间结束或被打断，join()中断,IO完成都会回到Runnable状态，等待JVM的调度。</li>
-<li>调用wait()，使该线程处于等待池(wait blocked pool),直到notify()/notifyAll()，线程被唤醒被放到锁定池(lock blocked pool )，释放同步锁使线程回到可运行状态（Runnable）</li>
-<li>对Running状态的线程加同步锁(Synchronized)使其进入(lock blocked pool ),同步锁被释放进入可运行状态(Runnable)。</li>
-</ol>
-<p>Thread类中的yield方法可以让一个running状态的线程转入runnable。</p>
-<ul>
-<li>yield()应该做的是让当前运行线程回到可运行状态，以允许具有相同优先级的其他线程获得运行机会，可能无效，又选择了让步的线程。</li>
-<li>join()在一个线程中调用other.join(),将等待other执行完后才继续本线程。</li>
-<li>interrupted方法其本质只是设置该线程的中断标志，真正实现线程的中断原理是：开发人员根据中断标志的具体值，来决定如何退出线程。</li>
-<li>stop方法会中断一个正在运行的线程</li>
-</ul>
-<p>synchronized, wait, notify 是任何对象都具有的同步工具<br>monitor 在synchronized 范围内，监视器发挥作用<br>wait/notify必须存在于synchronized块，这三个关键字针对的是同一个监视器，意味着wait之后，其他线程可以进入同步块执行。</p>
-<p><code>volatile 多线程的内存模型</code>：<br>main memory（主存）、working memory（线程栈）<br>在处理数据时，线程会把值从主存load到本地栈，完成操作后再save回去(volatile关键词的作用：每次针对该变量的操作都激发一次load and save)。</p>
-<h3 id="多线程包-java-util-concurrent"><a href="#多线程包-java-util-concurrent" class="headerlink" title="多线程包:java.util.concurrent"></a>多线程包:java.util.concurrent</h3><p><code>ThreadLocal类</code>，每个使用该变量的线程提供独立的变量副本，常用于用户登录控制，如记录session信息<br>每个Thread都持有一个TreadLocalMap类型的变量</p>
-<p><code>原子类</code>（AtomicInteger、AtomicBoolean……）等同于synchronized，AtomicInteger.compareAndSet(int expect,int update)可实现乐观锁   </p>
-<h4 id="Lock类"><a href="#Lock类" class="headerlink" title="Lock类"></a>Lock类</h4><p>ReentrantLock<br>ReentrantReadWriteLock.ReadLock<br>ReentrantReadWriteLock.WriteLock<br>lock 阻塞式, trylock 无阻塞式, lockInterruptily 可打断式， 还有trylock的带超时时间版本<br>r.lock()或r.lockInterruptibly()<br>r.unlock()<br>ReentrantReadWriteLock，写写，写读互斥；读读不互斥。可以实现并发读的高效线程安全代码</p>
-<h4 id="容器类"><a href="#容器类" class="headerlink" title="容器类"></a>容器类</h4><p>BlockingQueue 这个queue是单向队列，特别适用于先进先出策略的一些应用场景，BlockingQueue在队列的基础上添加了多线程协作的功能，提供了阻塞接口put和take，带超时功能的阻塞接口offer和poll。put会在队列满的时候阻塞，直到有空间时被唤醒；take在队列空的时候阻塞，直到有东西拿的时候才被唤醒。用于生产者-消费者模型尤其好用，堪称神器<br>常见的阻塞队列有：<br><code>ArrayListBlockingQueue</code><br><code>LinkedListBlockingQueue</code><br><code>DelayQueue</code><br><code>SynchronousQueue</code><br><code>ConcurrentHashMap</code>  </p>
-<p>高效的线程安全哈希map。请对比hashTable , concurrentHashMap, HashMap</p>
-<p><strong>HashMap</strong><br>put(key, value)存储对象到HashMap中，使用get(key)从HashMap中获取对象<br>put()方法传递键和值时，我们先对键调用hashCode()方法，返回的hashCode用于找到bucket位置来储存Entry对象<br>HashMap是在bucket中储存键对象和值对象</p>
-<h4 id="线程池管理类ThreadPoolExecutor"><a href="#线程池管理类ThreadPoolExecutor" class="headerlink" title="线程池管理类ThreadPoolExecutor"></a>线程池管理类ThreadPoolExecutor</h4><p>corePoolSize:池内线程初始值与最小值，就算是空闲状态，也会保持该数量线程。<br>maximumPoolSize:线程最大值，线程的增长始终不会超过该值。<br>keepAliveTime：当池内线程数高于corePoolSize时，经过多少时间多余的空闲线程才会被回收。回收前处于wait状态<br>unit：时间单位，可以使用TimeUnit的实例，如TimeUnit.MILLISECONDS。<br>workQueue:待入任务（Runnable）的等待场所，该参数主要影响调度策略，如公平与否，是否产生饿(starving)  。<br>threadFactory:线程工厂类，有默认实现，如果有自定义的需要则需要自己实现ThreadFactory接口并作为参数传入。   </p>
-<p>有一个内存区域是jvm虚拟机栈，每一个线程运行时都有一个线程栈，线程栈保存了线程运行时候变量值信息。当线程访问某一个对象时候值的时候，首先通过对象的引用找到对应在堆内存的变量的值，然后把堆内存变量的具体值load到线程本地内存中，建立一个变量副本，之后线程就不再和对象在堆内存变量值有任何关系，而是直接修改副本变量的值，在修改完之后的某一个时刻（线程退出之前），自动把线程变量副本的值回写到对象在堆中变量。这样在堆中的对象的值就产生变化了。</p>
-]]></content>
-      <tags>
-        <tag>多线程</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>jvm内存加载和gc</title>
-    <url>/2019/06/18/md/jdk/jvm/jvm%E5%86%85%E5%AD%98%E5%8A%A0%E8%BD%BD%E5%92%8Cgc/</url>
-    <content><![CDATA[<p>jvm比较重要的内存区域<br><code>方法区</code>：在java的虚拟机中有一块专门用来存放已经加载的类信息、常量、静态变量以及方法代码的内存区域，叫做方法区。<br><code>常量池</code>：常量池是方法区的一部分，主要用来存放常量和类中的符号引用等信息。<br><code>堆区</code>：用于存放类的对象实例。<br><code>栈区</code>：也叫java虚拟机栈，是由一个一个的栈帧组成的后进先出的栈式结构，栈桢中存放方法运行时产生的局部变量、方法出口等信息。当调用一个方法时，虚拟机栈中就会创建一个栈帧存放这些数据，当方法调用完成时，栈帧消失，如果方法中调用了其他方法，则继续在栈顶创建新的栈桢。<br>除了以上四个内存区域之外，jvm中的运行时内存区域还包括<code>本地方法栈</code>和<code>程序计数器</code></p>
-<p>1）堆</p>
-<p>所有通过new创建的对象的内存都在堆中分配，堆的大小可以通过-Xmx和-Xms来控制。<br>堆被划分为<code>新生代</code>和<code>旧生代</code>，新生代又被进一步划分为<code>Eden</code>和<code>Survivor</code>区，最后Survivor由From Space和To Space组成</p>
-<p><code>新生代</code>。新建的对象都是用新生代分配内存，Eden空间不足的时候，会把存活的对象转移到Survivor中，<br>新生代大小可以由-Xmn来控制，也可以用-XX:SurvivorRatio来控制Eden和Survivor的比例</p>
-<p><code>旧生代</code>。在年轻代中经历了N次垃圾回收后仍然存活的对象，就会被放到年老代中。因此，可以认为年老代中存放的都是一些生命周期较长的对象。</p>
-<p><code>持久代</code>。已经取消，JDK8 HotSpot JVM现在使用了本地内存来存储类元数据，被称为Metaspace。</p>
-<p>2）栈<br>每个线程执行每个方法的时候都会在栈中申请一个栈帧，每个栈帧包括局部变量区和操作数栈，用于存放此次方法调用过程中的临时变量、参数和中间结果。</p>
-<p>3）本地方法栈<br>用于支持native方法的执行，存储了每个native方法调用的状态</p>
-<p>4）方法区<br>存放了要加载的类信息、静态变量、final类型的常量、属性和方法信息。</p>
-<h3 id="基本回收算法"><a href="#基本回收算法" class="headerlink" title="基本回收算法"></a>基本回收算法</h3><h4 id="1-复制（Copying）"><a href="#1-复制（Copying）" class="headerlink" title="1. 复制（Copying）"></a>1. 复制（Copying）</h4><p>此算法把内存空间划为两个相等的区域，每次只使用其中一个区域。垃圾回收时，遍历当前使用区域，把正在使用中的对象复制到另外一个区域中。次算法每次只处理正在使用中的对象，因此复制成本比较小，同时复制过去以后还能进行相应的内存整理，不过出现“碎片”问题。当然，此算法的缺点也是很明显的，就是需要两倍内存空间。 </p>
-<h4 id="2-标记-清除（Mark-Sweep）"><a href="#2-标记-清除（Mark-Sweep）" class="headerlink" title="2. 标记-清除（Mark-Sweep）"></a>2. 标记-清除（Mark-Sweep）</h4><p>此算法执行分两阶段。第一阶段从引用根节点开始标记所有被引用的对象，第二阶段遍历整个堆，把未标记的对象清除。此算法需要暂停整个应用，同时，会产生内存碎片。 </p>
-<h4 id="3-标记-整理（Mark-Compact）"><a href="#3-标记-整理（Mark-Compact）" class="headerlink" title="3. 标记-整理（Mark-Compact）"></a>3. 标记-整理（Mark-Compact）</h4><p>此算法结合了 “标记-清除”和“复制”两个算法的优点。也是分两阶段，第一阶段从根节点开始标记所有被引用对象，第二阶段遍历整个堆，把清除未标记对象并且把存活对象 “压缩”到堆的其中一块，按顺序排放。此算法避免了“标记-清除”的碎片问题，同时也避免了“复制”算法的空间问题。 </p>
-<h4 id="4-分代（Generational-Collecting）"><a href="#4-分代（Generational-Collecting）" class="headerlink" title="4. 分代（Generational Collecting）"></a>4. 分代（Generational Collecting）</h4><p>垃圾收集器<br>串行GC（Serial GC）、并行回收GC（Parallel Scavenge）和并发回收GC（ParNew）</p>
-<p>GC有两种类型：<code>Scavenge GC</code>和<code>Full GC</code>。<br>JVM分别对新生代和旧生代采用不同的垃圾回收机制</p>
-]]></content>
-      <tags>
-        <tag>jvm</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>jvm编译类加载和执行</title>
     <url>/2019/06/18/md/jdk/jvm/jvm%E7%BC%96%E8%AF%91%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%92%8C%E6%89%A7%E8%A1%8C/</url>
     <content><![CDATA[<p>JVM是Java Virtual Machine（Java虚拟机），Java虚拟机是实现跨平台这一特点的关键。</p>
@@ -5456,6 +5522,70 @@
 ]]></content>
       <tags>
         <tag>jvm</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>jvm内存加载和gc</title>
+    <url>/2019/06/18/md/jdk/jvm/jvm%E5%86%85%E5%AD%98%E5%8A%A0%E8%BD%BD%E5%92%8Cgc/</url>
+    <content><![CDATA[<p>jvm比较重要的内存区域<br><code>方法区</code>：在java的虚拟机中有一块专门用来存放已经加载的类信息、常量、静态变量以及方法代码的内存区域，叫做方法区。<br><code>常量池</code>：常量池是方法区的一部分，主要用来存放常量和类中的符号引用等信息。<br><code>堆区</code>：用于存放类的对象实例。<br><code>栈区</code>：也叫java虚拟机栈，是由一个一个的栈帧组成的后进先出的栈式结构，栈桢中存放方法运行时产生的局部变量、方法出口等信息。当调用一个方法时，虚拟机栈中就会创建一个栈帧存放这些数据，当方法调用完成时，栈帧消失，如果方法中调用了其他方法，则继续在栈顶创建新的栈桢。<br>除了以上四个内存区域之外，jvm中的运行时内存区域还包括<code>本地方法栈</code>和<code>程序计数器</code></p>
+<p>1）堆</p>
+<p>所有通过new创建的对象的内存都在堆中分配，堆的大小可以通过-Xmx和-Xms来控制。<br>堆被划分为<code>新生代</code>和<code>旧生代</code>，新生代又被进一步划分为<code>Eden</code>和<code>Survivor</code>区，最后Survivor由From Space和To Space组成</p>
+<p><code>新生代</code>。新建的对象都是用新生代分配内存，Eden空间不足的时候，会把存活的对象转移到Survivor中，<br>新生代大小可以由-Xmn来控制，也可以用-XX:SurvivorRatio来控制Eden和Survivor的比例</p>
+<p><code>旧生代</code>。在年轻代中经历了N次垃圾回收后仍然存活的对象，就会被放到年老代中。因此，可以认为年老代中存放的都是一些生命周期较长的对象。</p>
+<p><code>持久代</code>。已经取消，JDK8 HotSpot JVM现在使用了本地内存来存储类元数据，被称为Metaspace。</p>
+<p>2）栈<br>每个线程执行每个方法的时候都会在栈中申请一个栈帧，每个栈帧包括局部变量区和操作数栈，用于存放此次方法调用过程中的临时变量、参数和中间结果。</p>
+<p>3）本地方法栈<br>用于支持native方法的执行，存储了每个native方法调用的状态</p>
+<p>4）方法区<br>存放了要加载的类信息、静态变量、final类型的常量、属性和方法信息。</p>
+<h3 id="基本回收算法"><a href="#基本回收算法" class="headerlink" title="基本回收算法"></a>基本回收算法</h3><h4 id="1-复制（Copying）"><a href="#1-复制（Copying）" class="headerlink" title="1. 复制（Copying）"></a>1. 复制（Copying）</h4><p>此算法把内存空间划为两个相等的区域，每次只使用其中一个区域。垃圾回收时，遍历当前使用区域，把正在使用中的对象复制到另外一个区域中。次算法每次只处理正在使用中的对象，因此复制成本比较小，同时复制过去以后还能进行相应的内存整理，不过出现“碎片”问题。当然，此算法的缺点也是很明显的，就是需要两倍内存空间。 </p>
+<h4 id="2-标记-清除（Mark-Sweep）"><a href="#2-标记-清除（Mark-Sweep）" class="headerlink" title="2. 标记-清除（Mark-Sweep）"></a>2. 标记-清除（Mark-Sweep）</h4><p>此算法执行分两阶段。第一阶段从引用根节点开始标记所有被引用的对象，第二阶段遍历整个堆，把未标记的对象清除。此算法需要暂停整个应用，同时，会产生内存碎片。 </p>
+<h4 id="3-标记-整理（Mark-Compact）"><a href="#3-标记-整理（Mark-Compact）" class="headerlink" title="3. 标记-整理（Mark-Compact）"></a>3. 标记-整理（Mark-Compact）</h4><p>此算法结合了 “标记-清除”和“复制”两个算法的优点。也是分两阶段，第一阶段从根节点开始标记所有被引用对象，第二阶段遍历整个堆，把清除未标记对象并且把存活对象 “压缩”到堆的其中一块，按顺序排放。此算法避免了“标记-清除”的碎片问题，同时也避免了“复制”算法的空间问题。 </p>
+<h4 id="4-分代（Generational-Collecting）"><a href="#4-分代（Generational-Collecting）" class="headerlink" title="4. 分代（Generational Collecting）"></a>4. 分代（Generational Collecting）</h4><p>垃圾收集器<br>串行GC（Serial GC）、并行回收GC（Parallel Scavenge）和并发回收GC（ParNew）</p>
+<p>GC有两种类型：<code>Scavenge GC</code>和<code>Full GC</code>。<br>JVM分别对新生代和旧生代采用不同的垃圾回收机制</p>
+]]></content>
+      <tags>
+        <tag>jvm</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>多线程概要</title>
+    <url>/2019/06/18/md/jdk/mulThread/%E5%A4%9A%E7%BA%BF%E7%A8%8B/</url>
+    <content><![CDATA[<p>多线程只有一个目的：更好的利用cpu的资源</p>
+<ul>
+<li><p>并行：多个cpu实例或者多台机器同时执行一段处理逻辑，是真正的同时。</p>
+</li>
+<li><p>并发：通过cpu调度算法，让用户看上去同时执行，实际上从cpu操作层面不是真正的同时。</p>
+</li>
+<li><p>线程安全：经常用来描绘一段代码。指在并发的情况之下，该代码经过多线程使用，线程的调度顺序不影响任何结果。</p>
+</li>
+<li><p>同步：Java中的同步指的是通过人为的控制和调度，保证共享资源的多线程访问成为线程安全，来保证结果的准确。如简单加入@synchronized关键字。</p>
+</li>
+</ul>
+<p><strong>阻塞(Blocked)</strong>：</p>
+<ol>
+<li>调用join()和sleep()方法，sleep()时间结束或被打断，join()中断,IO完成都会回到Runnable状态，等待JVM的调度。</li>
+<li>调用wait()，使该线程处于等待池(wait blocked pool),直到notify()/notifyAll()，线程被唤醒被放到锁定池(lock blocked pool )，释放同步锁使线程回到可运行状态（Runnable）</li>
+<li>对Running状态的线程加同步锁(Synchronized)使其进入(lock blocked pool ),同步锁被释放进入可运行状态(Runnable)。</li>
+</ol>
+<p>Thread类中的yield方法可以让一个running状态的线程转入runnable。</p>
+<ul>
+<li>yield()应该做的是让当前运行线程回到可运行状态，以允许具有相同优先级的其他线程获得运行机会，可能无效，又选择了让步的线程。</li>
+<li>join()在一个线程中调用other.join(),将等待other执行完后才继续本线程。</li>
+<li>interrupted方法其本质只是设置该线程的中断标志，真正实现线程的中断原理是：开发人员根据中断标志的具体值，来决定如何退出线程。</li>
+<li>stop方法会中断一个正在运行的线程</li>
+</ul>
+<p>synchronized, wait, notify 是任何对象都具有的同步工具<br>monitor 在synchronized 范围内，监视器发挥作用<br>wait/notify必须存在于synchronized块，这三个关键字针对的是同一个监视器，意味着wait之后，其他线程可以进入同步块执行。</p>
+<p><code>volatile 多线程的内存模型</code>：<br>main memory（主存）、working memory（线程栈）<br>在处理数据时，线程会把值从主存load到本地栈，完成操作后再save回去(volatile关键词的作用：每次针对该变量的操作都激发一次load and save)。</p>
+<h3 id="多线程包-java-util-concurrent"><a href="#多线程包-java-util-concurrent" class="headerlink" title="多线程包:java.util.concurrent"></a>多线程包:java.util.concurrent</h3><p><code>ThreadLocal类</code>，每个使用该变量的线程提供独立的变量副本，常用于用户登录控制，如记录session信息<br>每个Thread都持有一个TreadLocalMap类型的变量</p>
+<p><code>原子类</code>（AtomicInteger、AtomicBoolean……）等同于synchronized，AtomicInteger.compareAndSet(int expect,int update)可实现乐观锁   </p>
+<h4 id="Lock类"><a href="#Lock类" class="headerlink" title="Lock类"></a>Lock类</h4><p>ReentrantLock<br>ReentrantReadWriteLock.ReadLock<br>ReentrantReadWriteLock.WriteLock<br>lock 阻塞式, trylock 无阻塞式, lockInterruptily 可打断式， 还有trylock的带超时时间版本<br>r.lock()或r.lockInterruptibly()<br>r.unlock()<br>ReentrantReadWriteLock，写写，写读互斥；读读不互斥。可以实现并发读的高效线程安全代码</p>
+<h4 id="容器类"><a href="#容器类" class="headerlink" title="容器类"></a>容器类</h4><p>BlockingQueue 这个queue是单向队列，特别适用于先进先出策略的一些应用场景，BlockingQueue在队列的基础上添加了多线程协作的功能，提供了阻塞接口put和take，带超时功能的阻塞接口offer和poll。put会在队列满的时候阻塞，直到有空间时被唤醒；take在队列空的时候阻塞，直到有东西拿的时候才被唤醒。用于生产者-消费者模型尤其好用，堪称神器<br>常见的阻塞队列有：<br><code>ArrayListBlockingQueue</code><br><code>LinkedListBlockingQueue</code><br><code>DelayQueue</code><br><code>SynchronousQueue</code><br><code>ConcurrentHashMap</code>  </p>
+<p>高效的线程安全哈希map。请对比hashTable , concurrentHashMap, HashMap</p>
+<p><strong>HashMap</strong><br>put(key, value)存储对象到HashMap中，使用get(key)从HashMap中获取对象<br>put()方法传递键和值时，我们先对键调用hashCode()方法，返回的hashCode用于找到bucket位置来储存Entry对象<br>HashMap是在bucket中储存键对象和值对象</p>
+<h4 id="线程池管理类ThreadPoolExecutor"><a href="#线程池管理类ThreadPoolExecutor" class="headerlink" title="线程池管理类ThreadPoolExecutor"></a>线程池管理类ThreadPoolExecutor</h4><p>corePoolSize:池内线程初始值与最小值，就算是空闲状态，也会保持该数量线程。<br>maximumPoolSize:线程最大值，线程的增长始终不会超过该值。<br>keepAliveTime：当池内线程数高于corePoolSize时，经过多少时间多余的空闲线程才会被回收。回收前处于wait状态<br>unit：时间单位，可以使用TimeUnit的实例，如TimeUnit.MILLISECONDS。<br>workQueue:待入任务（Runnable）的等待场所，该参数主要影响调度策略，如公平与否，是否产生饿(starving)  。<br>threadFactory:线程工厂类，有默认实现，如果有自定义的需要则需要自己实现ThreadFactory接口并作为参数传入。   </p>
+<p>有一个内存区域是jvm虚拟机栈，每一个线程运行时都有一个线程栈，线程栈保存了线程运行时候变量值信息。当线程访问某一个对象时候值的时候，首先通过对象的引用找到对应在堆内存的变量的值，然后把堆内存变量的具体值load到线程本地内存中，建立一个变量副本，之后线程就不再和对象在堆内存变量值有任何关系，而是直接修改副本变量的值，在修改完之后的某一个时刻（线程退出之前），自动把线程变量副本的值回写到对象在堆中变量。这样在堆中的对象的值就产生变化了。</p>
+]]></content>
+      <tags>
+        <tag>多线程</tag>
       </tags>
   </entry>
   <entry>
@@ -5564,17 +5694,7 @@
     <title>MYSQL explanin命令</title>
     <url>/2019/06/18/md/part/db/mysql-tool/</url>
     <content><![CDATA[<p>sql  explanin命令</p>
-]]></content>
-      <tags>
-        <tag>db</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>常用sql</title>
-    <url>/2019/06/18/md/part/db/sql/</url>
-    <content><![CDATA[<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 备份数据库 mayday</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">mysqldump -uroot -pAdmin123# mayday  &gt; bk.sql</span></pre></td></tr></table></figure>
-
-]]></content>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 备份数据库 mayday</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">mysqldump -uroot -pAdmin123# mayday  &gt; bk.sql</span></pre></td></tr></table></figure>]]></content>
       <tags>
         <tag>db</tag>
       </tags>
@@ -5809,8 +5929,23 @@
       </tags>
   </entry>
   <entry>
+    <title>缩写</title>
+    <url>/2019/06/18/md/other/%E7%BC%A9%E5%86%99/</url>
+    <content><![CDATA[<h1 id="UAT-SIT-QAS-DEV-PET"><a href="#UAT-SIT-QAS-DEV-PET" class="headerlink" title="UAT SIT QAS DEV PET"></a>UAT SIT QAS DEV PET</h1><ul>
+<li><code>SIT</code>: System Integrate Test的缩写，即系统整合测试 </li>
+<li><code>QAS</code>: Quality Assurance system　质量保证 </li>
+<li><code>DEV</code>: Development 开发 </li>
+<li><code>PET</code>: Performance Evaluation Test　性能测试</li>
+</ul>
+<p><strong>QPS</strong>：<code>Queries Per Second</code>意思是“每秒查询率”，是一台服务器每秒能够相应的查询次数，是对一个特定的查询服务器在规定时间内所处理流量多少的衡量标准。<br><strong>TPS</strong>：是<code>TransactionsPerSecond</code>的缩写，也就是事务数/秒。它是软件测试结果的测量单位。一个事务是指一个客户机向服务器发送请求然后服务器做出反应的过程。客户机在发送请时开始计时，收到服务器响应后结束计时，以此来计算使用的时间和完成的事务个数。</p>
+]]></content>
+      <tags>
+        <tag>other</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>适应社会而磨平棱角吗</title>
-    <url>/2019/06/18/md/life/%E9%80%82%E5%BA%94%E7%A4%BE%E4%BC%9A%E8%80%8C%E7%A3%A8%E5%B9%B3%E6%A3%B1%E8%A7%92%E5%90%97/</url>
+    <url>/2019/06/18/md/life/thinking/%E9%80%82%E5%BA%94%E7%A4%BE%E4%BC%9A%E8%80%8C%E7%A3%A8%E5%B9%B3%E6%A3%B1%E8%A7%92%E5%90%97/</url>
     <content><![CDATA[<h4 id="如果成长就是向世界妥协，你愿意为了适应社会而磨平棱角吗？"><a href="#如果成长就是向世界妥协，你愿意为了适应社会而磨平棱角吗？" class="headerlink" title="如果成长就是向世界妥协，你愿意为了适应社会而磨平棱角吗？"></a>如果成长就是向世界妥协，你愿意为了适应社会而磨平棱角吗？</h4><p>我也曾经以为我在妥协，后来发现我只是自说自话地感动自己罢了，就像你长大了明白你是两性生殖产生的，而不是像小时候妈妈告诉你，你是路边上捡来的。</p>
 <p>这叫妥协吗……？</p>
 <p>简单的来讲，套用逼乎模版，我可以说：（太长不看版）</p>
@@ -5884,21 +6019,6 @@
       </tags>
   </entry>
   <entry>
-    <title>缩写</title>
-    <url>/2019/06/18/md/other/%E7%BC%A9%E5%86%99/</url>
-    <content><![CDATA[<h1 id="UAT-SIT-QAS-DEV-PET"><a href="#UAT-SIT-QAS-DEV-PET" class="headerlink" title="UAT SIT QAS DEV PET"></a>UAT SIT QAS DEV PET</h1><ul>
-<li><code>SIT</code>: System Integrate Test的缩写，即系统整合测试 </li>
-<li><code>QAS</code>: Quality Assurance system　质量保证 </li>
-<li><code>DEV</code>: Development 开发 </li>
-<li><code>PET</code>: Performance Evaluation Test　性能测试</li>
-</ul>
-<p><strong>QPS</strong>：<code>Queries Per Second</code>意思是“每秒查询率”，是一台服务器每秒能够相应的查询次数，是对一个特定的查询服务器在规定时间内所处理流量多少的衡量标准。<br><strong>TPS</strong>：是<code>TransactionsPerSecond</code>的缩写，也就是事务数/秒。它是软件测试结果的测量单位。一个事务是指一个客户机向服务器发送请求然后服务器做出反应的过程。客户机在发送请时开始计时，收到服务器响应后结束计时，以此来计算使用的时间和完成的事务个数。</p>
-]]></content>
-      <tags>
-        <tag>other</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>centos设置</title>
     <url>/2019/06/18/md/part/system/linux/centos/</url>
     <content><![CDATA[<h4 id="设置静态IP"><a href="#设置静态IP" class="headerlink" title="设置静态IP"></a>设置静态IP</h4><p>修改/etc/sysconfig/network-scripts/ifcfg-ens33  文件</p>
@@ -5917,6 +6037,19 @@
 <h4 id="vmware-centos网络不通"><a href="#vmware-centos网络不通" class="headerlink" title="vmware centos网络不通"></a>vmware centos网络不通</h4><p>编辑 /etc/sysconfig/network-scripts/ifcfg-ensXXXX</p>
 <figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="comment">#修改如下值</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="attr">BOOTPROTO</span>=<span class="string">dhcp</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="attr">ONBOOT</span>=<span class="string">yes</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">#重启网络服务</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="attr">service</span> <span class="string">network restart</span></span></pre></td></tr></table></figure>
 
+]]></content>
+      <tags>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>shell</title>
+    <url>/2019/06/18/md/part/system/linux/shell/</url>
+    <content><![CDATA[<p>单引号字符串的限制：</p>
+<ul>
+<li>单引号里的任何字符都会原样输出，单引号字符串中的变量是无效的；</li>
+<li>单引号字串中不能出现单独一个的单引号（对单引号使用转义符后也不行），但可成对出现，作为字符串拼接使用。</li>
+</ul>
 ]]></content>
       <tags>
         <tag>linux</tag>
@@ -5956,19 +6089,6 @@
 <p>当电脑要访问一个域名时，要将域名翻译成IP地址。<br> 这个过程通常会先访问/etc/hosts，看本地是否有对应的hostname – IP记录。<br> 如果没有就去查询DNS服务器，通过/etc/resolv.conf 得到dns服务器地址。</p>
 <p>当在eth接口启用DHCP后，本地resolv.conf文件将被修改，resolv.conf文件中的DNS地址将被改为从DHCP获取到的地址。这种从DHCP获得的DNS即是Peer DNS。</p>
 <p>启用DHCP后即便修改/etc/resolv.conf，不久又恢复成原样。如何解决这个问题？此时，你得要在 /etc/sysconfig/network-scripts/ifcfg-eth0 等相关档案内，增加一行：『PEERDNS=no』，然后重新启动网络即可。</p>
-]]></content>
-      <tags>
-        <tag>linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>shell</title>
-    <url>/2019/06/18/md/part/system/linux/shell/</url>
-    <content><![CDATA[<p>单引号字符串的限制：</p>
-<ul>
-<li>单引号里的任何字符都会原样输出，单引号字符串中的变量是无效的；</li>
-<li>单引号字串中不能出现单独一个的单引号（对单引号使用转义符后也不行），但可成对出现，作为字符串拼接使用。</li>
-</ul>
 ]]></content>
       <tags>
         <tag>linux</tag>
@@ -6261,18 +6381,12 @@
     <title>面试</title>
     <url>/2019/06/18/md/interview/interview/</url>
     <content><![CDATA[<h3 id="如何提高求职时的谈判能力？"><a href="#如何提高求职时的谈判能力？" class="headerlink" title="如何提高求职时的谈判能力？"></a>如何提高求职时的谈判能力？</h3><ol>
-<li><p>记住你不是在展示编程技巧或者漂亮的脸蛋，而是在推销某种商业需求（增加收入或降低成本）的解决方案。</p>
-</li>
-<li><p>面试时，要有自信，要平等的对话。你的对手可能也在做同样的事情。你要的是一个互利的录用合同，不要每次对方提出要求，你都说 Yes。</p>
-</li>
-<li><p>雇主可能会问”你的上一份工资是多少”，他们其实在说”给我一个理由，压低你的报酬”。你要想好如何适当地回答这个问题。</p>
-</li>
-<li><p>要讨价还价。这里不仅仅指钱，还指其它你关心的方面。如果你无法要求更高的薪水，那就试着要求更多的假期。</p>
-</li>
-<li><p>在对方决定录用你以后，才开始讨论薪水。因为那时，他们已经在你身上，投入了大量的时间和金钱。这个时候他们说“不行，我们不能成交”会浪费很大的成本，他们会觉得一些小问题已经不值得再纠缠了，比如每年的工资增加几千元。</p>
-</li>
-<li><p>多读书吧。很多人写过谈判方面的书。我喜欢《Getting To Yes | 谈判力》这本书。有一点令人不解的是，就整个职业生涯而言，谈判技巧值得每年花费数千美元，但工程师们却认为针对这学习方面很疯狂，他们宁愿去学习感兴趣技术的细枝末节。</p>
-</li>
+<li>记住你不是在展示编程技巧或者漂亮的脸蛋，而是在推销某种商业需求（增加收入或降低成本）的解决方案。</li>
+<li>面试时，要有自信，要平等的对话。你的对手可能也在做同样的事情。你要的是一个互利的录用合同，不要每次对方提出要求，你都说 Yes。</li>
+<li>雇主可能会问”你的上一份工资是多少”，他们其实在说”给我一个理由，压低你的报酬”。你要想好如何适当地回答这个问题。</li>
+<li>要讨价还价。这里不仅仅指钱，还指其它你关心的方面。如果你无法要求更高的薪水，那就试着要求更多的假期。</li>
+<li>在对方决定录用你以后，才开始讨论薪水。因为那时，他们已经在你身上，投入了大量的时间和金钱。这个时候他们说“不行，我们不能成交”会浪费很大的成本，他们会觉得一些小问题已经不值得再纠缠了，比如每年的工资增加几千元。</li>
+<li>多读书吧。很多人写过谈判方面的书。我喜欢《Getting To Yes | 谈判力》这本书。有一点令人不解的是，就整个职业生涯而言，谈判技巧值得每年花费数千美元，但工程师们却认为针对这学习方面很疯狂，他们宁愿去学习感兴趣技术的细枝末节。</li>
 </ol>
 <h3 id="面试时一定要问清楚这4点"><a href="#面试时一定要问清楚这4点" class="headerlink" title="面试时一定要问清楚这4点"></a>面试时一定要问清楚这4点</h3><ul>
 <li>试用期的工资及时间</li>
@@ -6280,6 +6394,9 @@
 <li>工作时间和加班时间计算</li>
 <li>培训和晋升机制</li>
 </ul>
+<h3 id="怼"><a href="#怼" class="headerlink" title="怼"></a>怼</h3><blockquote>
+<p>面试会：贵公司的核心竞争性是什么，业务壁垒是什么,然后面试官没词儿了</p>
+</blockquote>
 <p>spring的事务传播机制<br>springmvc参数绑定原理<br>mybatis的分页原理 limit</p>
 ]]></content>
       <tags>
