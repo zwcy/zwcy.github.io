@@ -47,20 +47,20 @@
   };
 </script>
 
-  <meta name="description" content="jvm比较重要的内存区域方法区：在java的虚拟机中有一块专门用来存放已经加载的类信息、常量、静态变量以及方法代码的内存区域，叫做方法区。常量池：常量池是方法区的一部分，主要用来存放常量和类中的符号引用等信息。堆区：用于存放类的对象实例。栈区：也叫java虚拟机栈，是由一个一个的栈帧组成的后进先出的栈式结构，栈桢中存放方法运行时产生的局部变量、方法出口等信息。当调用一个方法时，虚拟机栈中就会创建一">
+  <meta name="description" content="这个话题能增进情侣之间的感情 1聊一聊初次见面的印象2什么时候开始喜欢对方3聊聊双方的爱情观4分享童年往事5制定爱情规则6分享兴趣爱好7聊一聊在一起之后一定要做的事情8聊聊共同的未来规划">
 <meta property="og:type" content="article">
-<meta property="og:title" content="jvm内存加载和gc">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;06&#x2F;18&#x2F;md&#x2F;jdk&#x2F;jvm&#x2F;jvm%E5%86%85%E5%AD%98%E5%8A%A0%E8%BD%BD%E5%92%8Cgc&#x2F;index.html">
+<meta property="og:title" content="增进情侣之间的感情">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;16&#x2F;md&#x2F;life&#x2F;flirt&#x2F;increate-yours&#x2F;index.html">
 <meta property="og:site_name" content="小灰灰的博客">
-<meta property="og:description" content="jvm比较重要的内存区域方法区：在java的虚拟机中有一块专门用来存放已经加载的类信息、常量、静态变量以及方法代码的内存区域，叫做方法区。常量池：常量池是方法区的一部分，主要用来存放常量和类中的符号引用等信息。堆区：用于存放类的对象实例。栈区：也叫java虚拟机栈，是由一个一个的栈帧组成的后进先出的栈式结构，栈桢中存放方法运行时产生的局部变量、方法出口等信息。当调用一个方法时，虚拟机栈中就会创建一">
+<meta property="og:description" content="这个话题能增进情侣之间的感情 1聊一聊初次见面的印象2什么时候开始喜欢对方3聊聊双方的爱情观4分享童年往事5制定爱情规则6分享兴趣爱好7聊一聊在一起之后一定要做的事情8聊聊共同的未来规划">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2019-06-18T07:27:31.000Z">
-<meta property="article:modified_time" content="2020-03-29T02:32:16.188Z">
+<meta property="article:published_time" content="2020-05-16T00:23:13.000Z">
+<meta property="article:modified_time" content="2020-05-16T00:23:14.003Z">
 <meta property="article:author" content="mqiy">
-<meta property="article:tag" content="jvm">
+<meta property="article:tag" content="other">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/2019/06/18/md/jdk/jvm/jvm%E5%86%85%E5%AD%98%E5%8A%A0%E8%BD%BD%E5%92%8Cgc/">
+<link rel="canonical" href="http://yoursite.com/2020/05/16/md/life/flirt/increate-yours/">
 
 
 <script id="page-configurations">
@@ -72,7 +72,7 @@
   };
 </script>
 
-  <title>jvm内存加载和gc | 小灰灰的博客</title>
+  <title>增进情侣之间的感情 | 小灰灰的博客</title>
   
 
 
@@ -142,7 +142,7 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">56</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">55</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
@@ -152,7 +152,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">245</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">249</span></a>
 
   </li>
         <li class="menu-item menu-item-relate">
@@ -213,7 +213,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/jdk/jvm/jvm%E5%86%85%E5%AD%98%E5%8A%A0%E8%BD%BD%E5%92%8Cgc/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/16/md/life/flirt/increate-yours/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -226,7 +226,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          jvm内存加载和gc
+          增进情侣之间的感情
         </h1>
 
         <div class="post-meta">
@@ -236,7 +236,7 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2019-06-18 15:27 15:27:31" itemprop="dateCreated datePublished" datetime="2019-06-18T15:27:31+08:00">2019-06-18 15:27</time>
+              <time title="创建时间：2020-05-16 08:23 08:23:13" itemprop="dateCreated datePublished" datetime="2020-05-16T08:23:13+08:00">2020-05-16 08:23</time>
             </span>
 
           
@@ -252,7 +252,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.3k</span>
+              <span>92</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -271,20 +271,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>jvm比较重要的内存区域<br><code>方法区</code>：在java的虚拟机中有一块专门用来存放已经加载的类信息、常量、静态变量以及方法代码的内存区域，叫做方法区。<br><code>常量池</code>：常量池是方法区的一部分，主要用来存放常量和类中的符号引用等信息。<br><code>堆区</code>：用于存放类的对象实例。<br><code>栈区</code>：也叫java虚拟机栈，是由一个一个的栈帧组成的后进先出的栈式结构，栈桢中存放方法运行时产生的局部变量、方法出口等信息。当调用一个方法时，虚拟机栈中就会创建一个栈帧存放这些数据，当方法调用完成时，栈帧消失，如果方法中调用了其他方法，则继续在栈顶创建新的栈桢。<br>除了以上四个内存区域之外，jvm中的运行时内存区域还包括<code>本地方法栈</code>和<code>程序计数器</code></p>
-<p>1）堆</p>
-<p>所有通过new创建的对象的内存都在堆中分配，堆的大小可以通过-Xmx和-Xms来控制。<br>堆被划分为<code>新生代</code>和<code>旧生代</code>，新生代又被进一步划分为<code>Eden</code>和<code>Survivor</code>区，最后Survivor由From Space和To Space组成</p>
-<p><code>新生代</code>。新建的对象都是用新生代分配内存，Eden空间不足的时候，会把存活的对象转移到Survivor中，<br>新生代大小可以由-Xmn来控制，也可以用-XX:SurvivorRatio来控制Eden和Survivor的比例</p>
-<p><code>旧生代</code>。在年轻代中经历了N次垃圾回收后仍然存活的对象，就会被放到年老代中。因此，可以认为年老代中存放的都是一些生命周期较长的对象。</p>
-<p><code>持久代</code>。已经取消，JDK8 HotSpot JVM现在使用了本地内存来存储类元数据，被称为Metaspace。</p>
-<p>2）栈<br>每个线程执行每个方法的时候都会在栈中申请一个栈帧，每个栈帧包括局部变量区和操作数栈，用于存放此次方法调用过程中的临时变量、参数和中间结果。</p>
-<p>3）本地方法栈<br>用于支持native方法的执行，存储了每个native方法调用的状态</p>
-<p>4）方法区<br>存放了要加载的类信息、静态变量、final类型的常量、属性和方法信息。</p>
-<h3 id="基本回收算法"><a href="#基本回收算法" class="headerlink" title="基本回收算法"></a>基本回收算法</h3><h4 id="1-复制（Copying）"><a href="#1-复制（Copying）" class="headerlink" title="1. 复制（Copying）"></a>1. 复制（Copying）</h4><p>此算法把内存空间划为两个相等的区域，每次只使用其中一个区域。垃圾回收时，遍历当前使用区域，把正在使用中的对象复制到另外一个区域中。次算法每次只处理正在使用中的对象，因此复制成本比较小，同时复制过去以后还能进行相应的内存整理，不过出现“碎片”问题。当然，此算法的缺点也是很明显的，就是需要两倍内存空间。 </p>
-<h4 id="2-标记-清除（Mark-Sweep）"><a href="#2-标记-清除（Mark-Sweep）" class="headerlink" title="2. 标记-清除（Mark-Sweep）"></a>2. 标记-清除（Mark-Sweep）</h4><p>此算法执行分两阶段。第一阶段从引用根节点开始标记所有被引用的对象，第二阶段遍历整个堆，把未标记的对象清除。此算法需要暂停整个应用，同时，会产生内存碎片。 </p>
-<h4 id="3-标记-整理（Mark-Compact）"><a href="#3-标记-整理（Mark-Compact）" class="headerlink" title="3. 标记-整理（Mark-Compact）"></a>3. 标记-整理（Mark-Compact）</h4><p>此算法结合了 “标记-清除”和“复制”两个算法的优点。也是分两阶段，第一阶段从根节点开始标记所有被引用对象，第二阶段遍历整个堆，把清除未标记对象并且把存活对象 “压缩”到堆的其中一块，按顺序排放。此算法避免了“标记-清除”的碎片问题，同时也避免了“复制”算法的空间问题。 </p>
-<h4 id="4-分代（Generational-Collecting）"><a href="#4-分代（Generational-Collecting）" class="headerlink" title="4. 分代（Generational Collecting）"></a>4. 分代（Generational Collecting）</h4><p>垃圾收集器<br>串行GC（Serial GC）、并行回收GC（Parallel Scavenge）和并发回收GC（ParNew）</p>
-<p>GC有两种类型：<code>Scavenge GC</code>和<code>Full GC</code>。<br>JVM分别对新生代和旧生代采用不同的垃圾回收机制</p>
+        <p>这个话题能增进情侣之间的感情</p>
+<p>1聊一聊初次见面的印象<br>2什么时候开始喜欢对方<br>3聊聊双方的爱情观<br>4分享童年往事<br>5制定爱情规则<br>6分享兴趣爱好<br>7聊一聊在一起之后一定要做的事情<br>8聊聊共同的未来规划</p>
 
     </div>
 
@@ -295,7 +283,7 @@
       <footer class="post-footer">
           
           <div class="post-tags">
-              <a href="/tags/jvm/" rel="tag"><i class="fa fa-tag"></i> jvm</a>
+              <a href="/tags/other/" rel="tag"><i class="fa fa-tag"></i> other</a>
           </div>
 
         
@@ -304,12 +292,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2019/06/18/md/jdk/jvm/jvm%E7%BC%96%E8%AF%91%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%92%8C%E6%89%A7%E8%A1%8C/" rel="prev" title="jvm编译类加载和执行">
-      <i class="fa fa-chevron-left"></i> jvm编译类加载和执行
+    <a href="/2020/05/17/md/other/good-eq/" rel="prev" title="成年人高情商的20个表现">
+      <i class="fa fa-chevron-left"></i> 成年人高情商的20个表现
     </a></div>
       <div class="post-nav-item">
-    <a href="/2019/06/18/md/jdk/mulThread/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" rel="next" title="多线程概要">
-      多线程概要 <i class="fa fa-chevron-right"></i>
+    <a href="/2020/05/16/md/life/flirt/chat-not-well/" rel="next" title="为何和女生聊不嗨">
+      为何和女生聊不嗨 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -370,7 +358,6 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本回收算法"><span class="nav-number">1.</span> <span class="nav-text">基本回收算法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-复制（Copying）"><span class="nav-number">1.1.</span> <span class="nav-text">1. 复制（Copying）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-标记-清除（Mark-Sweep）"><span class="nav-number">1.2.</span> <span class="nav-text">2. 标记-清除（Mark-Sweep）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-标记-整理（Mark-Compact）"><span class="nav-number">1.3.</span> <span class="nav-text">3. 标记-整理（Mark-Compact）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-分代（Generational-Collecting）"><span class="nav-number">1.4.</span> <span class="nav-text">4. 分代（Generational Collecting）</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -384,7 +371,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">245</span>
+          <span class="site-state-item-count">249</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -397,7 +384,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">56</span>
+        <span class="site-state-item-count">55</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -431,12 +418,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">227k</span>
+    <span title="站点总字数">235k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">3:26</span>
+    <span title="站点阅读时长">3:34</span>
 </div>
 
         
