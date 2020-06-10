@@ -1,6 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>每日必读</title>
+    <url>/2022/12/31/md/develop/read-every-day/</url>
+    <content><![CDATA[<h3 id="全球统计一生后悔的五件事："><a href="#全球统计一生后悔的五件事：" class="headerlink" title="全球统计一生后悔的五件事："></a>全球统计一生后悔的五件事：</h3><ul>
+<li>92%的人后悔年轻时努力不够一事无成  </li>
+<li>73%的人后悔没有好好珍惜身边的亲人  </li>
+<li>62%的人后悔跟错了人  </li>
+<li>63%的人后悔年轻时选错了职业  </li>
+<li>45%的人后悔没有善待自己身体  </li>
+</ul>
+<h3 id="永远为下周离职做准备"><a href="#永远为下周离职做准备" class="headerlink" title="永远为下周离职做准备"></a>永远为<code>下周离职</code>做准备</h3><h3 id="改变"><a href="#改变" class="headerlink" title="改变"></a>改变</h3><ul>
+<li>不断增值自己，拥有更多选择权</li>
+<li>互联网没有舒适圈，止步不前便是退步</li>
+<li>学习是面对竞争、度过中年危机的最好方法</li>
+</ul>
+<h3 id="被淘汰"><a href="#被淘汰" class="headerlink" title="被淘汰"></a>被淘汰</h3><p>不思进取、放弃基本技能的程序员在34~9岁会被淘汰,保持乐观的精神、积极学习才是我们每天都该做的</p>
+<h3 id="学习的态度"><a href="#学习的态度" class="headerlink" title="学习的态度"></a>学习的态度</h3><ul>
+<li>跟踪变化：新技术层出不穷并不可怕。坚持学习新技术，读书，读技术杂志，参加技术活动，与人交流。要多理解新词背后的所以然，把握技术大趋势，将新技术用 于产品开发要谨慎。</li>
+<li>懂得丢弃：老的套路和技术，该丢，就得丢。不要固步自封。</li>
+<li>打破砂锅问到底：不断追问，真正搞懂问题的本质。为什么？应该成为你的口头禅。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>develop</category>
+      </categories>
+      <tags>
+        <tag>develop</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>2020年计划</title>
     <url>/2020/12/31/md/plan/2020/</url>
     <content><![CDATA[<h3 id="一-改掉坏习惯"><a href="#一-改掉坏习惯" class="headerlink" title="一 改掉坏习惯"></a>一 改掉坏习惯</h3><ul>
@@ -23,6 +52,29 @@
       </tags>
   </entry>
   <entry>
+    <title>java程序员必须掌握20%知识点</title>
+    <url>/2020/11/07/md/develop/core-20/</url>
+    <content><![CDATA[<p>java程序员必须掌握20%知识点</p>
+<ul>
+<li>java基础，如集合类，IO，泛型等</li>
+<li>JVM底层知道，如类加载机制，GC，JVM内存结构等</li>
+<li>Java并发编程知识，如Java内存模型，并发包，线程池等。</li>
+<li>开发框架知识，如Spring,mybatis,docker,springboot,springmvc等</li>
+<li>分布式相关知识，如CAP理论，分式式锁，分布式事务，Zookeeper等</li>
+<li>其他基础知识，编程语言，网络方面，数据库，数据结构和算法。</li>
+<li>中间件相关知识，如Redis,RocketMQ,Kafka,Dubbo等</li>
+<li>服务器相关知识，如Tomcat,jetty,netty等</li>
+</ul>
+<p>以上是比较高频面试问题以及工作中需要用的知识，可能需要花费很长时间，这个过程注定是漫长且孤独的。</p>
+]]></content>
+      <categories>
+        <category>develop</category>
+      </categories>
+      <tags>
+        <tag>develop</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>技术学习网站</title>
     <url>/2020/08/20/md/README/</url>
     <content><![CDATA[<p>记录各种学习笔记(算法、Java、数据库、并发……)<br><a href="https://github.com/ZXZxin/ZXBlog" target="_blank" rel="noopener">https://github.com/ZXZxin/ZXBlog</a>  </p>
@@ -36,6 +88,140 @@
 ]]></content>
       <tags>
         <tag>tool</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>面试核心</title>
+    <url>/2020/06/10/md/interview/core/</url>
+    <content><![CDATA[<h3 id="高并发，调优"><a href="#高并发，调优" class="headerlink" title="高并发，调优"></a>高并发，调优</h3><p>在自己本地单机部署，测试环境里，去压测，每秒单机有500并发请求，去观察jvm的运行情况,这个时候它会不会存在<br>频繁gc的问题,你就去调休一下,你就可以基于这个压测的例子去说了.</p>
+<p>一定要结合你自己的业务,系统,接口,干什么 ,并发请求,jvm运行的情况,问题出在哪儿,如何调优,效果如何.</p>
+]]></content>
+      <tags>
+        <tag>interview</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>做事原则</title>
+    <url>/2020/06/10/md/life/thinking/how-do/</url>
+    <content><![CDATA[<p>做什么事件都要有一个度，不通一味去迎合别人而改变自己，超过了这个度，就是<br>没有原则。什么事情没有原则，只会带来不良后果，厕不会有什么好的结局。</p>
+]]></content>
+      <tags>
+        <tag>思考</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>胡思乱想</title>
+    <url>/2020/06/10/md/life/thinking/thinking-what/</url>
+    <content><![CDATA[<p>把时间花在该花的事件里面，<br>别每天矫情每到天想七想八的<br>你还能努力的时间不多了<br>别遇到点芝麻蒜皮的事就玻璃心<br>只要你真正奋斗起来<br>你就会发现自己原来很了不起</p>
+]]></content>
+      <tags>
+        <tag>思考</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>为什么对女生越好越难在一起</title>
+    <url>/2020/06/09/md/life/flirt/cannot-togather/</url>
+    <content><![CDATA[<h3 id="为什么对女生越好越难在一起"><a href="#为什么对女生越好越难在一起" class="headerlink" title="为什么对女生越好越难在一起"></a>为什么对女生越好越难在一起</h3><p>是付出的还不够多吗<br>是对她还不够好吗</p>
+<p>其实都不是<br>只因为人性本贱</p>
+<p>越是容易得到的东西<br>越是不会珍惜</p>
+<p>你对她越好<br>越是宠着她</p>
+<p>时间久了<br>她越不把你当回事儿<br>越觉得，理所当然</p>
+<p>作为男人<br>永远不要让你的一片真心<br>变成唾手可得的廉价付出</p>
+<p>先学会心疼自己<br>再去心疼别人</p>
+]]></content>
+      <tags>
+        <tag>flirt</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>有哪些你追了很多女生才明白的道理？</title>
+    <url>/2020/06/09/md/life/flirt/konw-what/</url>
+    <content><![CDATA[<p>1、你对对方好，不要认为对方一定要以同样的方式对你。</p>
+<p>（你的付出得不到回应是正常的，要放平心态，投资也不都是赚的，理性看待，因为你赢一次就够了）</p>
+<p>2、不要因为对方的一句话，或者没回你信息患得患失。</p>
+<p>（不要脑补过多的信息，她不回你就等着别在联系了，或者可以隔天继续联系）</p>
+<p>3、不要强制社交，二人之间关系是一步一步升级来的，开始不要说越级的话，以及越过你们现有关系的关心。</p>
+<p>（其中送贵重礼物和有寓意的礼物就是强制社交，而吃饭没有，早点睡觉，多穿点衣服都是越级聊天）</p>
+<p>4、追求的过程，自认为付出很多，自我感动在对方看来是最招人烦的，所以别付出太多，多投资自己。</p>
+<p>（这个是真的烦，因为别人真没让你去付出，既然付出了就要输的起，输不起的人别人同样看不起）</p>
+<p>5、不要暴露自己过多的需求感。</p>
+<p>（需求感太多，你的价值就没了，同时你的进攻还会让对方压力过大，压力大了对方就想逃离你）</p>
+<p>6、在语言和动作你感觉不到你在ta心中和别人有什么不一样之处，那就是不喜欢你，性格慢热等都是借口。</p>
+<p>（追求初期不喜欢你是正常的，不用过于沮丧，如果追了很久还是这样，那就换人吧）</p>
+<p>7、不要表白，不要表白，不要表白，表白是水到渠成后二人之间的契约，不是冲锋的号角。</p>
+<p>（你表白一个不喜欢你的人，或者你们的关系，还没到能够完全接受你的人，等于就是逼着对方拒绝你啊。确定关系在平时的肢体接触以及言语上，大致就已经确定关系了，表白只是盖章）</p>
+<p>8、远离和你价值观，生活习惯相差太大的人，哪怕就是在喜欢，也要快刀斩乱麻。</p>
+<p>（这个懂的人自然懂，喜欢如果没有价值观上的认同，这种喜欢一定是以悲剧结尾）</p>
+<p>9、你们有点暧昧后，三次约不出来基本可以放弃，不要相信任何借口。</p>
+<p>（愿意给你机会的，真有事也会想着下次补偿你，很难出现三次都约不出来的情况）</p>
+<p>10、时常审视一下你们之间的关系，如果你感觉自己有点舔狗的味道了，那么请先冷落对方几天，在决定还要不要追。</p>
+<p>（冷落对方，是为了重新找回自己的价值，同时冷落的几天，也是让你去掉喜欢对方的这个因素，从性格品行来看在决定要不要追）</p>
+<p>11、追求时不要把自己位置摆的太低，摆的越低越没有机会，尽量维持平等原则，对方是在找另一半，不是在找舔狗。</p>
+<p>（没有谁喜欢卑微的人，哪怕你原本价值不低，可能如果把自己摆的位置永远比对方低，那你在对方眼里价值就是不如对方，只能当只舔狗了）</p>
+<p>12、摸清对方段位这个很重要，追低段位和高段位是完全不一样的追法</p>
+<p>（低段位来说一般对对方好好就OK，高段位则比较复杂，如果对方高段位且是个比较善良的人，有时候则不需要那么多套路，死皮赖脸一些，对方不讨厌的方式真诚对对方好，也可以搞定，搞不定当在高手这吸取经验了，在日后的道路可以帮你避开绝大多数渣女）</p>
+<p>13、女人随着年龄的增长，和男人的从一而终（脸和身材）不同，女人的择偶需求是慢慢变化的，开始是长相，后面会向情绪价值倾斜，最后则是品质和稳定的生活。</p>
+<p>（这是天生的，是一种生理上的差异，主要因为男人的安全感更具有主动性，女人的安全感多数比较被动）</p>
+<p>14、送礼物不要瞎送，要送对方需要的，如没摸清楚那就别送，别傻逼逼的去问对方。没确定关系之前，不要送太贵重礼物，也别送太多礼物，一般来说最多三次。</p>
+<p>（求求你们刚追一个女生别在送花了，我都不想吐槽了，这万恶的电视剧和小说）</p>
+<p>15、没能力提升对方情绪价值，那就先压低对方情绪价值，之后在让对方情绪价值回到原来位置，效果其实差不多。</p>
+<p>（解释起来，就是先降低对方期待感，然后再给惊喜）</p>
+<p>16、高傲大多都是摆给自己不喜欢的人看的，自己喜欢的，瞬间变成乖巧的小猫咪。</p>
+<p>（和喜欢的人是高冷不起来的，因为喜欢人的认同，你会很开心，藏不住）</p>
+<p>17、爱情在一定程度上就是利益的结合，比你高阶层的女人，你如果连提高她们情绪价值的能力都没有，那就可以少做些白日梦了。</p>
+<p>（知道以前那些玩pua的为什么要五星级酒店，豪车游艇吗？因为价值或者树立一个高价值去骗，世俗上的价值差太多，又没有能力从为人的深度上去弥补，那就真的别做白日梦了）</p>
+<p>18、追不上就换一个，别当备胎，备胎的命运是很凄惨的，就算有那么几个幸运的备胎转正，对方也只是没得选了，将就而已。</p>
+<p>（为人在世请尊重自己，你自己如果都不尊重自己，你还想有人尊重你吗？）</p>
+<p>19、爱情中最难的不是追求，而是怎么稳定好一段长久的亲密关系，所以追求之前先考虑，自己有没有本事稳定长久的亲密关系，如果答案是否定的，建议换人。</p>
+<p>（稳定是真的比追求更难，尤其是一个和你不合拍的人，追求之前请一定看长远，考虑清楚，不然你的择偶成本会被无限放大）</p>
+<p>20、一段良性的恋情，从出发点开始一定不能有见不得人的勾当，且男女要互相付出。</p>
+<p>（长久亲密关系就跟建房子一样，追求的过程是打地基，男方的付出等同于一块块砖头，女方的付出是给墙加固的水泥，不正当的追求方式，等同于地基没打好，房子到了一定程度会轰然倒塌，只有男方一直付出，砖头累加到一定程度，没有水泥固定，墙一样会倒，如单女方付出，没有男方参与，墙砌不起来）</p>
+<p>21、一段追求的过程中，提高自己，增加自己的核心竞争力远比把时间花在对方身上，更有用更划算。</p>
+<p>（时间花对方身上一定程度上是降低在她眼里你的价值，而花在自己身上永远都是提高自己的价值，你觉得哪个更有用呢？）</p>
+<p>22、做好可能追不上的准备，别一定非谁不娶，只是暴露了你的幼稚和偏执。</p>
+<p>（追求和投资一样，赚钱了你开心要死，赔钱了你说对方骗子，让对方赔钱，你觉得别人怎么看你？）</p>
+<p>23、大多被追求者，都不喜欢追求者弄的人尽皆知。</p>
+<p>（人家对你没那么喜欢，或者人家压根就不喜欢你，你这种行为就是在变相的道德绑架，挺烦人的）</p>
+<p>24、展示高价值，不要一股脑显摆完，要循环渐进，最好能让对方感到惊喜和意外。</p>
+<p>（一股脑显摆是一个很low的行为，成了炫耀，炫耀是小孩子才做的，高价值只有顺其自然的展示，才能打破对方预期，达到你想要的效果，才没有那么低龄化）</p>
+<p>25、虽喜欢对方但必须有不可逾越底线。就是在喜欢的人，也不能让对方随意过线。</p>
+<p>（你没了底线，对方只会看不起你，你有底线说明你是一个有原则的人，才能赢得别人尊重）</p>
+<p>26、明确告诉你不喜欢你的，就别追了，越追越没希望，可以先断连，后提升自己，造成二次吸引，反而倒是可能性会大一些。</p>
+<p>（明确告诉你了，你的行为就是骚扰，还是那句话，你不尊重自己，体面都丢了，你以后拿什么再次站在她面前？）</p>
+<p>27、开始就用不光彩的手段，获得的爱情，那不叫爱情，因为首先你已经践踏了爱情，所以你也不配拥有爱情，详情请参考20条。</p>
+<p>（不光彩手段是一个定时炸弹，因为它突破了为人的道德底线，但凡有原则的人，只要知道了，都无法在接受你）</p>
+<p>28、追求对象请尽量是自己横向价值的，而并非纵向价值内的对象。</p>
+<p>（横向价值是同阶层不同职业，纵向价值是跨阶层）</p>
+<p>29、两性关系捡漏的情况一般只发生在校园，步入社会后基本不可能存在的。</p>
+<p>（因为只有校园会把不同阶层的人拉倒同一阶层）</p>
+<p>30、每一项能力都很平庸，远没有一项能力优秀，其它稍差有吸引力。</p>
+<p>（一项优秀的能力，就是你的才华，要相信才华在一定程度上可以让对方忽略掉，你的一些不太理想的地方）</p>
+<p>31、不是百分百确定对方也喜欢你，就别当众表白，这纯属于道德绑架，这种行为不但幼稚，还会让对方不舒服很难做人。</p>
+<p>（对于观众来说，观众大多想看一个圆满的结果，如果她拒绝，她就把自己天然树立在和观众敌对位置，而且观众对于她的不满，她是会在心里把这笔帐算在你身上的）</p>
+<p>32、在你为对方付出后，用技巧稍稍引导让对方为你付出一些，比一直为对方付出，更能加快追求的进程。</p>
+<p>（比如你请对方吃饭，吃完饭后让对方买个冰淇淋，或者你在帮对方进行体力上的劳动，就可以让对方给你倒杯水，要记住这些付出虽很小，但一定要让对方也有所付出，付出要有来有回，别光是你在那付出）</p>
+<p>33、决定追求目标后，记得先审视一下你和对方，收入、学历、长相、家庭、职业、情绪价值（情商）、或一个优于绝大多数人的特长、起码你得有一样优于对方吧，否则请放弃这个大胆的想法。</p>
+<p>（只有价值匹配，才不至于让人感觉很卑微，或者下意识在她面前流露出的卑微，而卑微是没有希望的）</p>
+<p>34、男人不要眼里只有恋爱，眼里只有恋爱的男人最终反而守护不了这份感情。</p>
+<p>（古代那些不爱江山爱美人的亡国之君，你好好数数有多少）</p>
+<p>35、恋爱知识懂得再多，也只是能帮你搞定阶层相差不大的对象，如要追求自己理想中的那个人，还是得提升内在的核心竞争力。</p>
+<p>（价值上差太多是追不上的，因为对方天然在心态和价值上，就甩你N条街，同时人家开着宝马，你骑个小破自行车，你告诉我怎么追？）</p>
+<p>36、当你决定追一个人，对方大概率是知道的，女生对于这方面更为敏感，只要人家不挑明，你就别挑明。</p>
+<p>（对方如果挑明了：你是在追我吗？</p>
+<p>你大可以回：那要看你给不给机会，我才能做出决定）</p>
+<p>女生处于废物测试心理有些会挑明，看你回答给你打分！</p>
+<p>37、别追的太紧，追的太紧会让对方特别没有安全感。</p>
+<p>（越是上门推销自己产品有多好的，你其实越怀疑对方产品质量）</p>
+<p>38、聊天要懂得升级，不然当你们无话可说时，就成了聊久凉。</p>
+<p>（一般来说一个星期必须升级，一个月不升级的基本可以不用追了）</p>
+<p>39、连续发两条以上的消息，对方如果不回就等等吧，别急着发第三条了。</p>
+<p>（还是那句话，尊重和体面）</p>
+<p>40、这一条是核心：</p>
+<p>追是小心翼翼照顾你的情绪对你好，撩则比较随心所欲，其定义大概是指，只对你一人，在一定程度上展示自己高价值，从而达到吸引你的目的。</p>
+<p>追和撩二者不属于一个层次，对于喜欢的对象要撩，不要追！</p>
+]]></content>
+      <tags>
+        <tag>flirt</tag>
       </tags>
   </entry>
   <entry>
@@ -258,7 +444,7 @@
 <p>1聊一聊初次见面的印象<br>2什么时候开始喜欢对方<br>3聊聊双方的爱情观<br>4分享童年往事<br>5制定爱情规则<br>6分享兴趣爱好<br>7聊一聊在一起之后一定要做的事情<br>8聊聊共同的未来规划</p>
 ]]></content>
       <tags>
-        <tag>other</tag>
+        <tag>flirt</tag>
       </tags>
   </entry>
   <entry>
@@ -281,7 +467,7 @@
 <p>和女生聊天，其实是考验一个人的积累和修炼，能够脱单的人必然有优秀之处，单身狗半天掐不出一个屁，那就要好好反省，自己有多偷懒。</p>
 ]]></content>
       <tags>
-        <tag>other</tag>
+        <tag>flirt</tag>
       </tags>
   </entry>
   <entry>
@@ -293,98 +479,48 @@
 <p>了解女生需求<br>把握氛围<br>不要让理性主导<br>周期不益拖超过2个月</p>
 ]]></content>
       <tags>
-        <tag>other</tag>
+        <tag>flirt</tag>
       </tags>
   </entry>
   <entry>
-    <title>有哪些你追了很多女生才明白的道理？s</title>
-    <url>/2020/05/16/md/life/flirt/konw-what/</url>
-    <content><![CDATA[<p>1、你对对方好，不要认为对方一定要以同样的方式对你。</p>
-<p>（你的付出得不到回应是正常的，要放平心态，投资也不都是赚的，理性看待，因为你赢一次就够了）</p>
-<p>2、不要因为对方的一句话，或者没回你信息患得患失。</p>
-<p>（不要脑补过多的信息，她不回你就等着别在联系了，或者可以隔天继续联系）</p>
-<p>3、不要强制社交，二人之间关系是一步一步升级来的，开始不要说越级的话，以及越过你们现有关系的关心。</p>
-<p>（其中送贵重礼物和有寓意的礼物就是强制社交，而吃饭没有，早点睡觉，多穿点衣服都是越级聊天）</p>
-<p>4、追求的过程，自认为付出很多，自我感动在对方看来是最招人烦的，所以别付出太多，多投资自己。</p>
-<p>（这个是真的烦，因为别人真没让你去付出，既然付出了就要输的起，输不起的人别人同样看不起）</p>
-<p>5、不要暴露自己过多的需求感。</p>
-<p>（需求感太多，你的价值就没了，同时你的进攻还会让对方压力过大，压力大了对方就想逃离你）</p>
-<p>6、在语言和动作你感觉不到你在ta心中和别人有什么不一样之处，那就是不喜欢你，性格慢热等都是借口。</p>
-<p>（追求初期不喜欢你是正常的，不用过于沮丧，如果追了很久还是这样，那就换人吧）</p>
-<p>7、不要表白，不要表白，不要表白，表白是水到渠成后二人之间的契约，不是冲锋的号角。</p>
-<p>（你表白一个不喜欢你的人，或者你们的关系，还没到能够完全接受你的人，等于就是逼着对方拒绝你啊。确定关系在平时的肢体接触以及言语上，大致就已经确定关系了，表白只是盖章）</p>
-<p>8、远离和你价值观，生活习惯相差太大的人，哪怕就是在喜欢，也要快刀斩乱麻。</p>
-<p>（这个懂的人自然懂，喜欢如果没有价值观上的认同，这种喜欢一定是以悲剧结尾）</p>
-<p>9、你们有点暧昧后，三次约不出来基本可以放弃，不要相信任何借口。</p>
-<p>（愿意给你机会的，真有事也会想着下次补偿你，很难出现三次都约不出来的情况）</p>
-<p>10、时常审视一下你们之间的关系，如果你感觉自己有点舔狗的味道了，那么请先冷落对方几天，在决定还要不要追。</p>
-<p>（冷落对方，是为了重新找回自己的价值，同时冷落的几天，也是让你去掉喜欢对方的这个因素，从性格品行来看在决定要不要追）</p>
-<p>11、追求时不要把自己位置摆的太低，摆的越低越没有机会，尽量维持平等原则，对方是在找另一半，不是在找舔狗。</p>
-<p>（没有谁喜欢卑微的人，哪怕你原本价值不低，可能如果把自己摆的位置永远比对方低，那你在对方眼里价值就是不如对方，只能当只舔狗了）</p>
-<p>12、摸清对方段位这个很重要，追低段位和高段位是完全不一样的追法</p>
-<p>（低段位来说一般对对方好好就OK，高段位则比较复杂，如果对方高段位且是个比较善良的人，有时候则不需要那么多套路，死皮赖脸一些，对方不讨厌的方式真诚对对方好，也可以搞定，搞不定当在高手这吸取经验了，在日后的道路可以帮你避开绝大多数渣女）</p>
-<p>13、女人随着年龄的增长，和男人的从一而终（脸和身材）不同，女人的择偶需求是慢慢变化的，开始是长相，后面会向情绪价值倾斜，最后则是品质和稳定的生活。</p>
-<p>（这是天生的，是一种生理上的差异，主要因为男人的安全感更具有主动性，女人的安全感多数比较被动）</p>
-<p>14、送礼物不要瞎送，要送对方需要的，如没摸清楚那就别送，别傻逼逼的去问对方。没确定关系之前，不要送太贵重礼物，也别送太多礼物，一般来说最多三次。</p>
-<p>（求求你们刚追一个女生别在送花了，我都不想吐槽了，这万恶的电视剧和小说）</p>
-<p>15、没能力提升对方情绪价值，那就先压低对方情绪价值，之后在让对方情绪价值回到原来位置，效果其实差不多。</p>
-<p>（解释起来，就是先降低对方期待感，然后再给惊喜）</p>
-<p>16、高傲大多都是摆给自己不喜欢的人看的，自己喜欢的，瞬间变成乖巧的小猫咪。</p>
-<p>（和喜欢的人是高冷不起来的，因为喜欢人的认同，你会很开心，藏不住）</p>
-<p>17、爱情在一定程度上就是利益的结合，比你高阶层的女人，你如果连提高她们情绪价值的能力都没有，那就可以少做些白日梦了。</p>
-<p>（知道以前那些玩pua的为什么要五星级酒店，豪车游艇吗？因为价值或者树立一个高价值去骗，世俗上的价值差太多，又没有能力从为人的深度上去弥补，那就真的别做白日梦了）</p>
-<p>18、追不上就换一个，别当备胎，备胎的命运是很凄惨的，就算有那么几个幸运的备胎转正，对方也只是没得选了，将就而已。</p>
-<p>（为人在世请尊重自己，你自己如果都不尊重自己，你还想有人尊重你吗？）</p>
-<p>19、爱情中最难的不是追求，而是怎么稳定好一段长久的亲密关系，所以追求之前先考虑，自己有没有本事稳定长久的亲密关系，如果答案是否定的，建议换人。</p>
-<p>（稳定是真的比追求更难，尤其是一个和你不合拍的人，追求之前请一定看长远，考虑清楚，不然你的择偶成本会被无限放大）</p>
-<p>20、一段良性的恋情，从出发点开始一定不能有见不得人的勾当，且男女要互相付出。</p>
-<p>（长久亲密关系就跟建房子一样，追求的过程是打地基，男方的付出等同于一块块砖头，女方的付出是给墙加固的水泥，不正当的追求方式，等同于地基没打好，房子到了一定程度会轰然倒塌，只有男方一直付出，砖头累加到一定程度，没有水泥固定，墙一样会倒，如单女方付出，没有男方参与，墙砌不起来）</p>
-<p>21、一段追求的过程中，提高自己，增加自己的核心竞争力远比把时间花在对方身上，更有用更划算。</p>
-<p>（时间花对方身上一定程度上是降低在她眼里你的价值，而花在自己身上永远都是提高自己的价值，你觉得哪个更有用呢？）</p>
-<p>22、做好可能追不上的准备，别一定非谁不娶，只是暴露了你的幼稚和偏执。</p>
-<p>（追求和投资一样，赚钱了你开心要死，赔钱了你说对方骗子，让对方赔钱，你觉得别人怎么看你？）</p>
-<p>23、大多被追求者，都不喜欢追求者弄的人尽皆知。</p>
-<p>（人家对你没那么喜欢，或者人家压根就不喜欢你，你这种行为就是在变相的道德绑架，挺烦人的）</p>
-<p>24、展示高价值，不要一股脑显摆完，要循环渐进，最好能让对方感到惊喜和意外。</p>
-<p>（一股脑显摆是一个很low的行为，成了炫耀，炫耀是小孩子才做的，高价值只有顺其自然的展示，才能打破对方预期，达到你想要的效果，才没有那么低龄化）</p>
-<p>25、虽喜欢对方但必须有不可逾越底线。就是在喜欢的人，也不能让对方随意过线。</p>
-<p>（你没了底线，对方只会看不起你，你有底线说明你是一个有原则的人，才能赢得别人尊重）</p>
-<p>26、明确告诉你不喜欢你的，就别追了，越追越没希望，可以先断连，后提升自己，造成二次吸引，反而倒是可能性会大一些。</p>
-<p>（明确告诉你了，你的行为就是骚扰，还是那句话，你不尊重自己，体面都丢了，你以后拿什么再次站在她面前？）</p>
-<p>27、开始就用不光彩的手段，获得的爱情，那不叫爱情，因为首先你已经践踏了爱情，所以你也不配拥有爱情，详情请参考20条。</p>
-<p>（不光彩手段是一个定时炸弹，因为它突破了为人的道德底线，但凡有原则的人，只要知道了，都无法在接受你）</p>
-<p>28、追求对象请尽量是自己横向价值的，而并非纵向价值内的对象。</p>
-<p>（横向价值是同阶层不同职业，纵向价值是跨阶层）</p>
-<p>29、两性关系捡漏的情况一般只发生在校园，步入社会后基本不可能存在的。</p>
-<p>（因为只有校园会把不同阶层的人拉倒同一阶层）</p>
-<p>30、每一项能力都很平庸，远没有一项能力优秀，其它稍差有吸引力。</p>
-<p>（一项优秀的能力，就是你的才华，要相信才华在一定程度上可以让对方忽略掉，你的一些不太理想的地方）</p>
-<p>31、不是百分百确定对方也喜欢你，就别当众表白，这纯属于道德绑架，这种行为不但幼稚，还会让对方不舒服很难做人。</p>
-<p>（对于观众来说，观众大多想看一个圆满的结果，如果她拒绝，她就把自己天然树立在和观众敌对位置，而且观众对于她的不满，她是会在心里把这笔帐算在你身上的）</p>
-<p>32、在你为对方付出后，用技巧稍稍引导让对方为你付出一些，比一直为对方付出，更能加快追求的进程。</p>
-<p>（比如你请对方吃饭，吃完饭后让对方买个冰淇淋，或者你在帮对方进行体力上的劳动，就可以让对方给你倒杯水，要记住这些付出虽很小，但一定要让对方也有所付出，付出要有来有回，别光是你在那付出）</p>
-<p>33、决定追求目标后，记得先审视一下你和对方，收入、学历、长相、家庭、职业、情绪价值（情商）、或一个优于绝大多数人的特长、起码你得有一样优于对方吧，否则请放弃这个大胆的想法。</p>
-<p>（只有价值匹配，才不至于让人感觉很卑微，或者下意识在她面前流露出的卑微，而卑微是没有希望的）</p>
-<p>34、男人不要眼里只有恋爱，眼里只有恋爱的男人最终反而守护不了这份感情。</p>
-<p>（古代那些不爱江山爱美人的亡国之君，你好好数数有多少）</p>
-<p>35、恋爱知识懂得再多，也只是能帮你搞定阶层相差不大的对象，如要追求自己理想中的那个人，还是得提升内在的核心竞争力。</p>
-<p>（价值上差太多是追不上的，因为对方天然在心态和价值上，就甩你N条街，同时人家开着宝马，你骑个小破自行车，你告诉我怎么追？）</p>
-<p>36、当你决定追一个人，对方大概率是知道的，女生对于这方面更为敏感，只要人家不挑明，你就别挑明。</p>
-<p>（对方如果挑明了：你是在追我吗？</p>
-<p>你大可以回：那要看你给不给机会，我才能做出决定）</p>
-<p>女生处于废物测试心理有些会挑明，看你回答给你打分！</p>
-<p>37、别追的太紧，追的太紧会让对方特别没有安全感。</p>
-<p>（越是上门推销自己产品有多好的，你其实越怀疑对方产品质量）</p>
-<p>38、聊天要懂得升级，不然当你们无话可说时，就成了聊久凉。</p>
-<p>（一般来说一个星期必须升级，一个月不升级的基本可以不用追了）</p>
-<p>39、连续发两条以上的消息，对方如果不回就等等吧，别急着发第三条了。</p>
-<p>（还是那句话，尊重和体面）</p>
-<p>40、这一条是核心：</p>
-<p>追是小心翼翼照顾你的情绪对你好，撩则比较随心所欲，其定义大概是指，只对你一人，在一定程度上展示自己高价值，从而达到吸引你的目的。</p>
-<p>追和撩二者不属于一个层次，对于喜欢的对象要撩，不要追！</p>
+    <title>搭讪</title>
+    <url>/2020/05/16/md/life/flirt/flirt-begin/</url>
+    <content><![CDATA[<p>第二,第一印象包括的仅仅是外形，衣着，举止和谈吐<br>第三,只是结识和吸引，因为第一印象只能做到这些。真正的相知相爱靠的是内在和缘分，不是”学”和”术”所能操控的。<br>第四,一定要随性和随意，反之，为了认识在星巴克工作的妹子，一周去喝七次咖啡，最后生人变成了熟乡，过多的”设计”，<br>也不是我心目中的搭讪</p>
 ]]></content>
       <tags>
-        <tag>other</tag>
+        <tag>flirt</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>为什么遇到喜欢的人总是在开始的时候相处的特别愉快，慢慢的就会的特别无趣？</title>
+    <url>/2020/05/16/md/life/flirt/live-with-half/</url>
+    <content><![CDATA[<h4 id="为什么遇到喜欢的人总是在开始的时候相处的特别愉快，慢慢的就会的特别无趣？"><a href="#为什么遇到喜欢的人总是在开始的时候相处的特别愉快，慢慢的就会的特别无趣？" class="headerlink" title="为什么遇到喜欢的人总是在开始的时候相处的特别愉快，慢慢的就会的特别无趣？"></a>为什么遇到喜欢的人总是在开始的时候相处的特别愉快，慢慢的就会的特别无趣？</h4><p>《亲密关系》将人们的亲密关系分为四个阶段：绚丽，幻灭，内省和启示</p>
+<p>当你遇到喜欢的人，刚开始的时候处于”绚丽”阶段，相处甜蜜，特别愉快，恨不得每分每秒都黏在一起;<br>但是时间长了，慢慢地都亦成得特别无趣，这就到了”幻灭”的阶段，如果我们都懂得内省和启示，那我们的这段亲密关系<br>还能维护或者好转，如果不能，那就面临着彼此分离的结局</p>
+]]></content>
+      <tags>
+        <tag>flirt</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>第一次跟女生约会，不要让女生觉得你是胆小鬼</title>
+    <url>/2020/05/16/md/life/flirt/date-frist/</url>
+    <content><![CDATA[<p>第一次跟女生约会，怎么快速接近关系？<br>1,约女生吃饭，能被你单独约出来的一般不讨厌你<br>2,饭后看电影，刚开始小声聊天，贴近她耳朵的那种<br>3,半小时后可以试着闻下她头发，夸赞她身上香<br>4,用你的肩去碰她的肩，轻微搂一下，胆子要大，强势一点，一般不会拒绝<br>5,一小时后去拉她的手，顺势拉她靠近你的怀里<br>6,感觉电影快结束了，或者气氛到了，把她脸扳一下，直接吻上去，一定要快，亲的时间不要太长（提前吃颗糖，别把口臭把妹子吓到）<br>7,最后切忌不要立马提出做女朋友的事，回去正常微信聊天，隔天再提在一起的想法（让她内心忐忑一晚上）</p>
+]]></content>
+      <tags>
+        <tag>flirt</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>撩</title>
+    <url>/2020/05/16/md/life/flirt/part-aphorism/</url>
+    <content><![CDATA[<p>###世人皆污</p>
+<ul>
+<li>污的有套路叫撩妹，</li>
+<li>污得太单纯叫耍流氓</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>flirt</tag>
       </tags>
   </entry>
   <entry>
@@ -410,7 +546,7 @@
 <h5 id="4，在女生有情绪的时候，不要跟女生讲道理，不要想着如何解决问题？"><a href="#4，在女生有情绪的时候，不要跟女生讲道理，不要想着如何解决问题？" class="headerlink" title="4，在女生有情绪的时候，不要跟女生讲道理，不要想着如何解决问题？"></a>4，在女生有情绪的时候，不要跟女生讲道理，不要想着如何解决问题？</h5><p>当一个女生有情绪的时候，你跟她讲任何事情，她都不会听得进去。<br>所以，在女生生气的时候，男生最应该做的是：先安抚好女生的情绪，然后，再去想解决办法。</p>
 ]]></content>
       <tags>
-        <tag>other</tag>
+        <tag>flirt</tag>
       </tags>
   </entry>
   <entry>
@@ -862,15 +998,6 @@
   </entry>
   <entry>
     <title>zookeeper主要概念</title>
-    <url>/2020/03/27/md/part/mid/zookeeper/zk-outline/</url>
-    <content><![CDATA[<p>如果zookeeper正在选主，或者Zookeeper集群中半数以上机器不可用，那么将无法获得数据。所以说，Zookeeper不能保证服务可用性</p>
-]]></content>
-      <tags>
-        <tag>zookeeper</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>zookeeper主要概念</title>
     <url>/2020/03/27/md/part/mid/zookeeper/zk-main/</url>
     <content><![CDATA[<p>5.Zookeeper做了什么？</p>
 <ul>
@@ -881,6 +1008,15 @@
 <li>队列管理</li>
 </ul>
 <p> 是CP</p>
+]]></content>
+      <tags>
+        <tag>zookeeper</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>zookeeper主要概念</title>
+    <url>/2020/03/27/md/part/mid/zookeeper/zk-outline/</url>
+    <content><![CDATA[<p>如果zookeeper正在选主，或者Zookeeper集群中半数以上机器不可用，那么将无法获得数据。所以说，Zookeeper不能保证服务可用性</p>
 ]]></content>
       <tags>
         <tag>zookeeper</tag>
@@ -1387,19 +1523,6 @@
       </tags>
   </entry>
   <entry>
-    <title>rocketmq主要概念</title>
-    <url>/2020/02/27/md/part/mq/rockemq-concept/</url>
-    <content><![CDATA[<h3 id="主要概念"><a href="#主要概念" class="headerlink" title="主要概念"></a>主要概念</h3><p>1.NameServer<br>可以理解为是消息队列的协调者，Broker向它注册路由信息，同时Client向其获取路由信息，如果使用过Zookeeper，就比较容易理解了，但是功能比Zookeeper弱；<br>NameServer本身是没有状态的，并且多个NameServer直接并没有通信，可以横向扩展多台，Broker会和每一台NameServer建立长连接；</p>
-<p>2.Broker<br>Broker是RocketMQ的核心，提供了消息的接收，存储，拉取等功能，一般都需要保证Broker的高可用，所以会配置Broker Slave，当Master挂掉之后，Consumer然后可以消费Slave；<br>Broker分为Master和Slave，一个Master可以对应多个Slave，Master与Slave的对应关系通过指定相同的BrokerName，不同的BrokerId来定义，BrokerId为0表示Master，非0表示Slave；</p>
-<p>3.Producer<br>消息队列的生产者，需要与NameServer建立连接，从NameServer获取Topic路由信息，并向提供Topic服务的Broker Master建立连接；Producer无状态，看集群部署；</p>
-<p>4.Consumer<br>消息队列的消费者，同样与NameServer建立连接，从NameServer获取Topic路由信息，并向提供Topic服务的Broker Master，Slave建立连接；</p>
-<p>5.Topic和Message Queue<br>在介绍完以上4个角色以后，还需要重点介绍一下上面提到的Topic和Message Queue；字面意思就是主题，用来区分不同类型的消息，发送和接收消息前都需要先创建Topic，针对Topic来发送和接收消息，为了提高性能和吞吐量，引入了Message Queue，一个Topic可以设置一个或多个Message Queue，有点类似kafka的分区(Partition)，这样消息就可以并行往各个Message Queue发送消息，消费者也可以并行的从多个Message Queue读取消息；</p>
-]]></content>
-      <tags>
-        <tag>RocketMQ</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>rocketmq 测试</title>
     <url>/2020/02/27/md/part/mq/rocketmq-test/</url>
     <content><![CDATA[<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">nohup sh bin/mqnamesrv &amp;</span></pre></td></tr><tr><td class="code"><pre><span class="line">tail -f ~/logs/rocketmqlogs/namesrv.log</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">nohup sh mqbroker -n localhost:9876 -c conf/broker.conf &amp;</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">nohup sh bin/mqbroker -n localhost:9876 -c conf/broker.conf  autoCreateTopicEnable=true  &amp;</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"> tail -f ~/logs/rocketmqlogs/broker.log </span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"> export NAMESRV_ADDR=localhost:9876</span></pre></td></tr><tr><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">关闭rocketmq</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">sh bin/mqshutdown broker</span></pre></td></tr><tr><td class="code"><pre><span class="line">sh bin/mqshutdown namesrv</span></pre></td></tr></table></figure>
@@ -1426,6 +1549,19 @@
 <li>优点：数据与服务都无单点，Master宕机情况下，消息无延迟，服务可用性与数据可用性都非常高</li>
 <li>缺点：性能比异步复制模式略低，大约低 10%左右，发送单个消息的 RT 会略高。目前主宕机后，备机不能自动切换为主机，后续会支持自动切换功能。</li>
 </ul>
+]]></content>
+      <tags>
+        <tag>RocketMQ</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>rocketmq主要概念</title>
+    <url>/2020/02/27/md/part/mq/rockemq-concept/</url>
+    <content><![CDATA[<h3 id="主要概念"><a href="#主要概念" class="headerlink" title="主要概念"></a>主要概念</h3><p>1.NameServer<br>可以理解为是消息队列的协调者，Broker向它注册路由信息，同时Client向其获取路由信息，如果使用过Zookeeper，就比较容易理解了，但是功能比Zookeeper弱；<br>NameServer本身是没有状态的，并且多个NameServer直接并没有通信，可以横向扩展多台，Broker会和每一台NameServer建立长连接；</p>
+<p>2.Broker<br>Broker是RocketMQ的核心，提供了消息的接收，存储，拉取等功能，一般都需要保证Broker的高可用，所以会配置Broker Slave，当Master挂掉之后，Consumer然后可以消费Slave；<br>Broker分为Master和Slave，一个Master可以对应多个Slave，Master与Slave的对应关系通过指定相同的BrokerName，不同的BrokerId来定义，BrokerId为0表示Master，非0表示Slave；</p>
+<p>3.Producer<br>消息队列的生产者，需要与NameServer建立连接，从NameServer获取Topic路由信息，并向提供Topic服务的Broker Master建立连接；Producer无状态，看集群部署；</p>
+<p>4.Consumer<br>消息队列的消费者，同样与NameServer建立连接，从NameServer获取Topic路由信息，并向提供Topic服务的Broker Master，Slave建立连接；</p>
+<p>5.Topic和Message Queue<br>在介绍完以上4个角色以后，还需要重点介绍一下上面提到的Topic和Message Queue；字面意思就是主题，用来区分不同类型的消息，发送和接收消息前都需要先创建Topic，针对Topic来发送和接收消息，为了提高性能和吞吐量，引入了Message Queue，一个Topic可以设置一个或多个Message Queue，有点类似kafka的分区(Partition)，这样消息就可以并行往各个Message Queue发送消息，消费者也可以并行的从多个Message Queue读取消息；</p>
 ]]></content>
       <tags>
         <tag>RocketMQ</tag>
@@ -1587,7 +1723,9 @@
   <entry>
     <title>驾驶相关</title>
     <url>/2019/12/13/md/other/driver-itec/</url>
-    <content><![CDATA[<h3 id="车开关"><a href="#车开关" class="headerlink" title="车开关"></a>车开关</h3><p><img src="https://www.mqiy.xyz/image/other/car-lock-info.jpg" alt=""></p>
+    <content><![CDATA[<h3 id="迈锐宝XL远程启动："><a href="#迈锐宝XL远程启动：" class="headerlink" title="迈锐宝XL远程启动："></a>迈锐宝XL远程启动：</h3><p>先按锁车键，再按启动键</p>
+<h3 id="寻车"><a href="#寻车" class="headerlink" title="寻车"></a>寻车</h3><p>按动到车反馈方便寻车有两个音量，响车后还放声音,会一直响，松开后再按几秒才会关掉。</p>
+<h3 id="车开关"><a href="#车开关" class="headerlink" title="车开关"></a>车开关</h3><p><img src="https://www.mqiy.xyz/image/other/car-lock-info.jpg" alt=""></p>
 <ul>
 <li><code>LOOK</code> 是拔出钥匙位置，同时方向盘锁死；</li>
 <li><code>ACC</code>是车内电气开启，可以听收音机等等；</li>
@@ -1599,6 +1737,23 @@
 <p>正踩刹车斜踩油门</p>
 <p>判断安全车距</p>
 <p>安全车距一般跟认得反应时间有关系。教大家一个比较通俗的方法，一般时速多少公里每小时，则安全距离为多少米，例如高速行车速度100km/h，则安全距离为100米，并平时利用高速的距离指示牌训练自己对于距离的把控。</p>
+<h3 id="停车技巧"><a href="#停车技巧" class="headerlink" title="停车技巧"></a>停车技巧</h3><h4 id="一字停车位"><a href="#一字停车位" class="headerlink" title="一字停车位"></a>一字停车位</h4><ul>
+<li>自己的车停在前车左侧50cm左右的地方</li>
+<li>自己车的右后视镜对准旁车B柱</li>
+<li>倒车开始前，先在原地向内侧打足方向，然后再开始缓慢倒车</li>
+<li>观察到驾驶的车辆和旁车呈45度夹角时，往左打满轮继续倒车。</li>
+<li>待进入车位后，调正车头，回正车轮就行了- </li>
+</ul>
+<p>车左右距50cm  ,右后视镜对准旁车B柱<br>向内侧打足方向–&gt;  两车 45度  另一方向打满  —&gt; OK</p>
+<h4 id="斜线停车位"><a href="#斜线停车位" class="headerlink" title="斜线停车位"></a>斜线停车位</h4><ul>
+<li>车开至后视镜对准车位边线时，向外侧打满轮前行</li>
+<li>车身开至与车位成一条直线时，回正车轮开始直线倒车。</li>
+</ul>
+<h4 id="非字车位"><a href="#非字车位" class="headerlink" title="非字车位"></a>非字车位</h4><ul>
+<li>横向距离保持在1.5米左右</li>
+<li>驾驶员刚好与这个车位的车辆在同一平行线</li>
+<li>将车辆往左打满方向，然后倒车入位</li>
+</ul>
 ]]></content>
       <tags>
         <tag>other</tag>
@@ -2231,32 +2386,8 @@
       </tags>
   </entry>
   <entry>
-    <title>每日必读</title>
-    <url>/2019/11/22/md/develop/read-every-day/</url>
-    <content><![CDATA[<h3 id="全球统计一生后悔的五件事："><a href="#全球统计一生后悔的五件事：" class="headerlink" title="全球统计一生后悔的五件事："></a>全球统计一生后悔的五件事：</h3><ul>
-<li>92%的人后悔年轻时努力不够一事无成  </li>
-<li>73%的人后悔没有好好珍惜身边的亲人  </li>
-<li>62%的人后悔跟错了人  </li>
-<li>63%的人后悔年轻时选错了职业  </li>
-<li>45%的人后悔没有善待自己身体  </li>
-</ul>
-<h3 id="永远为下周离职做准备"><a href="#永远为下周离职做准备" class="headerlink" title="永远为下周离职做准备"></a>永远为<code>下周离职</code>做准备</h3><h3 id="改变"><a href="#改变" class="headerlink" title="改变"></a>改变</h3><ul>
-<li>不断增值自己，拥有更多选择权</li>
-<li>互联网没有舒适圈，止步不前便是退步</li>
-<li>学习是面对竞争、度过中年危机的最好方法</li>
-</ul>
-<h3 id="被淘汰"><a href="#被淘汰" class="headerlink" title="被淘汰"></a>被淘汰</h3><p>不思进取、放弃基本技能的程序员在34~9岁会被淘汰,保持乐观的精神、积极学习才是我们每天都该做的</p>
-]]></content>
-      <categories>
-        <category>develop</category>
-      </categories>
-      <tags>
-        <tag>develop</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>只言片语-002</title>
-    <url>/2019/11/22/md/life/part-aphorism-two/</url>
+    <url>/2019/11/22/md/life/part-aphorism/part-aphorism-two/</url>
     <content><![CDATA[<h4 id="2020-06-04"><a href="#2020-06-04" class="headerlink" title="2020-06-04"></a>2020-06-04</h4><ul>
 <li>到了那个时候,随着年龄的增加,他可能会变得越来越颓废,也越来越蹉跎,直到最后被岁月磨平了棱角,让年华腐蚀了心气,心甘情愿变成了社会中无数麻木群体里的一员</li>
 <li>保持专注,保持热情;不记初心,方得始终</li>
@@ -2270,7 +2401,7 @@
   </entry>
   <entry>
     <title>只言片语-001</title>
-    <url>/2019/11/22/md/life/part-aphorism-one/</url>
+    <url>/2019/11/22/md/life/part-aphorism/part-aphorism-one/</url>
     <content><![CDATA[<blockquote>
 <p>希望你经历过人生坎坷与挫折后，依然能够保持赤字之心，积极乐观，自信坦荡。</p>
 </blockquote>
@@ -2315,6 +2446,20 @@
       </tags>
   </entry>
   <entry>
+    <title>只言片语-001</title>
+    <url>/2019/11/22/md/life/part-aphorism/part-aphorism-three/</url>
+    <content><![CDATA[<blockquote>
+<p>只要你不觉得尴尬，那尴尬的就是别人</p>
+</blockquote>
+<blockquote>
+<p>所谓的人生就是，哭给自己听，笑给别人看</p>
+</blockquote>
+]]></content>
+      <tags>
+        <tag>人生</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>五笔字</title>
     <url>/2019/11/14/md/other/input/messWord/</url>
     <content><![CDATA[<table>
@@ -2347,8 +2492,8 @@
 <tr>
 <td>离</td>
 <td>辣椒</td>
-<td></td>
-<td></td>
+<td>贼</td>
+<td>残</td>
 <td></td>
 <td></td>
 </tr>
@@ -2583,7 +2728,7 @@
         <category>人生感悟</category>
       </categories>
       <tags>
-        <tag>人生</tag>
+        <tag>flirt</tag>
       </tags>
   </entry>
   <entry>
@@ -2595,7 +2740,7 @@
         <category>人生感悟</category>
       </categories>
       <tags>
-        <tag>男女</tag>
+        <tag>flirt</tag>
       </tags>
   </entry>
   <entry>
@@ -3960,38 +4105,6 @@
       </tags>
   </entry>
   <entry>
-    <title>缓存问题</title>
-    <url>/2019/10/30/md/part/redis/cache-problem/</url>
-    <content><![CDATA[<h3 id="大量缓存同一时间失效会引起缓存的雪崩"><a href="#大量缓存同一时间失效会引起缓存的雪崩" class="headerlink" title="大量缓存同一时间失效会引起缓存的雪崩"></a>大量缓存同一时间失效会引起缓存的雪崩</h3><p>Redis<code>高可用</code>（High Availability）两种实现方式</p>
-<ul>
-<li>主从复制数据。</li>
-<li>哨兵模式</li>
-</ul>
-<blockquote>
-<p>网上给Redis加锁的机制都是利用Redis的setnx自身的方法去加锁,且防止死锁</p>
-</blockquote>
-]]></content>
-      <tags>
-        <tag>redis</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>redis模型模式</title>
-    <url>/2019/10/30/md/part/redis/redis-build-model/</url>
-    <content><![CDATA[<p>####　sentinel模式</p>
-<h4 id="cluster模式"><a href="#cluster模式" class="headerlink" title="cluster模式"></a>cluster模式</h4><p>cluster可以说是sentinel和主从模式的结合体，通过cluster可以实现主从和master重选功能，<br>这种模式适合<code>数据量巨大</code>的缓存要求</p>
-<p>不足：</p>
-<ul>
-<li>一般涉及多个key的操作会不支持，取两个set的并集，且两个set在不同的Redis实例上面（当然也是能实现的，只是Redis不会直接支持这么做）。</li>
-<li>涉及多个key的事务将不能使用</li>
-<li>使用分区时,数据处理更加复杂,例如你必须处理多个RDB / AOF文件,你需要备份你的数据并聚合多个实例和主机的持久性文件。</li>
-</ul>
-]]></content>
-      <tags>
-        <tag>redis</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>redis持久化</title>
     <url>/2019/10/30/md/part/redis/redis-backup/</url>
     <content><![CDATA[<p>RDB：　 redis 主进程只需要 fork 一个子进程，让子进程执行磁盘 IO 操作来进行 RDB 持久化</p>
@@ -4003,21 +4116,16 @@
       </tags>
   </entry>
   <entry>
-    <title>redis热key</title>
-    <url>/2019/10/30/md/part/redis/redis-keyhot/</url>
-    <content><![CDATA[<h4 id=""><a href="#" class="headerlink" title=""></a></h4><p>怎么发现热key<br>方法一:凭借业务经验，进行预估哪些是热key</p>
-<p>其实这个方法还是挺有可行性的。比如某商品在做秒杀，那这个商品的key就可以判断出是热key。缺点很明显，并非所有业务都能预估出哪些key是热key。</p>
-<p>方法二:在客户端进行收集</p>
-<p>这个方式就是在操作redis之前，加入一行代码进行数据统计。</p>
-<p>方法三:在Proxy层做收集 </p>
-<p>方法四:用redis自带命令</p>
-<p>(1)monitor命令，该命令可以实时抓取出redis服务器接收到的命令，然后写代码统计出热key是啥。当然，也有现成的分析工具可以给你使用，比如redis-faina。但是该命令在高并发的条件下，有内存增暴增的隐患，还会降低redis的性能。</p>
-<p>(2)hotkeys参数，redis 4.0.3提供了redis-cli的热点key发现功能，执行redis-cli时加上–hotkeys选项即可。但是该参数在执行的时候，如果key比较多，执行起来比较慢。</p>
-<p>####解决方法：</p>
+    <title>缓存问题</title>
+    <url>/2019/10/30/md/part/redis/cache-problem/</url>
+    <content><![CDATA[<h3 id="大量缓存同一时间失效会引起缓存的雪崩"><a href="#大量缓存同一时间失效会引起缓存的雪崩" class="headerlink" title="大量缓存同一时间失效会引起缓存的雪崩"></a>大量缓存同一时间失效会引起缓存的雪崩</h3><p>Redis<code>高可用</code>（High Availability）两种实现方式</p>
 <ul>
-<li>利用二级缓存</li>
-<li>备份热key</li>
+<li>主从复制数据。</li>
+<li>哨兵模式</li>
 </ul>
+<blockquote>
+<p>网上给Redis加锁的机制都是利用Redis的setnx自身的方法去加锁,且防止死锁</p>
+</blockquote>
 ]]></content>
       <tags>
         <tag>redis</tag>
@@ -4153,6 +4261,43 @@
 <li>在redis前加进程缓存 消减redis使用率 通过redis watch机制保证缓存一致性</li>
 <li>布隆过滤器 或自定义过滤器 如bitmap hash值占位</li>
 <li>空key情况(避免全局扫) 设置默认值或上级缓存或使用过滤器</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>redis</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>redis热key</title>
+    <url>/2019/10/30/md/part/redis/redis-keyhot/</url>
+    <content><![CDATA[<h4 id=""><a href="#" class="headerlink" title=""></a></h4><p>怎么发现热key<br>方法一:凭借业务经验，进行预估哪些是热key</p>
+<p>其实这个方法还是挺有可行性的。比如某商品在做秒杀，那这个商品的key就可以判断出是热key。缺点很明显，并非所有业务都能预估出哪些key是热key。</p>
+<p>方法二:在客户端进行收集</p>
+<p>这个方式就是在操作redis之前，加入一行代码进行数据统计。</p>
+<p>方法三:在Proxy层做收集 </p>
+<p>方法四:用redis自带命令</p>
+<p>(1)monitor命令，该命令可以实时抓取出redis服务器接收到的命令，然后写代码统计出热key是啥。当然，也有现成的分析工具可以给你使用，比如redis-faina。但是该命令在高并发的条件下，有内存增暴增的隐患，还会降低redis的性能。</p>
+<p>(2)hotkeys参数，redis 4.0.3提供了redis-cli的热点key发现功能，执行redis-cli时加上–hotkeys选项即可。但是该参数在执行的时候，如果key比较多，执行起来比较慢。</p>
+<p>####解决方法：</p>
+<ul>
+<li>利用二级缓存</li>
+<li>备份热key</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>redis</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>redis模型模式</title>
+    <url>/2019/10/30/md/part/redis/redis-build-model/</url>
+    <content><![CDATA[<p>####　sentinel模式</p>
+<h4 id="cluster模式"><a href="#cluster模式" class="headerlink" title="cluster模式"></a>cluster模式</h4><p>cluster可以说是sentinel和主从模式的结合体，通过cluster可以实现主从和master重选功能，<br>这种模式适合<code>数据量巨大</code>的缓存要求</p>
+<p>不足：</p>
+<ul>
+<li>一般涉及多个key的操作会不支持，取两个set的并集，且两个set在不同的Redis实例上面（当然也是能实现的，只是Redis不会直接支持这么做）。</li>
+<li>涉及多个key的事务将不能使用</li>
+<li>使用分区时,数据处理更加复杂,例如你必须处理多个RDB / AOF文件,你需要备份你的数据并聚合多个实例和主机的持久性文件。</li>
 </ul>
 ]]></content>
       <tags>
@@ -5255,6 +5400,19 @@
       </tags>
   </entry>
   <entry>
+    <title>Springboot</title>
+    <url>/2019/07/11/md/problem/spring-boot/</url>
+    <content><![CDATA[<h3 id="Springboot-Filter中注入bean-无效为null"><a href="#Springboot-Filter中注入bean-无效为null" class="headerlink" title="Springboot Filter中注入bean 无效为null"></a>Springboot Filter中注入bean 无效为null</h3><p>问题原因：</p>
+<p>Web应用的启动顺序是：Lisenter-&gt;Fliter-&gt;Servlet,  应用程序上下文， 初始化 Fliter的时候，还没有初始化Servlert，所有没有进入DispacterServlet的初始化，故在Fliter中使用注解注入bean为空；</p>
+<p>解决办法：</p>
+<p>添加初始化bean配置，手动创建对象new</p>
+]]></content>
+      <tags>
+        <tag>problem</tag>
+        <tag>spring boot</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>mybatis相关问题</title>
     <url>/2019/07/11/md/problem/mybatis/</url>
     <content><![CDATA[<h3 id="mybatis报错-Specified-class-is-an-interface"><a href="#mybatis报错-Specified-class-is-an-interface" class="headerlink" title="mybatis报错 Specified class is an interface"></a>mybatis报错 Specified class is an interface</h3><h4 id="1-错误原因"><a href="#1-错误原因" class="headerlink" title="1.错误原因"></a>1.错误原因</h4><p>Caused by: org.springframework.beans.factory.BeanCreationException: </p>
@@ -5268,19 +5426,6 @@
       <tags>
         <tag>problem</tag>
         <tag>mybatis</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Springboot</title>
-    <url>/2019/07/11/md/problem/spring-boot/</url>
-    <content><![CDATA[<h3 id="Springboot-Filter中注入bean-无效为null"><a href="#Springboot-Filter中注入bean-无效为null" class="headerlink" title="Springboot Filter中注入bean 无效为null"></a>Springboot Filter中注入bean 无效为null</h3><p>问题原因：</p>
-<p>Web应用的启动顺序是：Lisenter-&gt;Fliter-&gt;Servlet,  应用程序上下文， 初始化 Fliter的时候，还没有初始化Servlert，所有没有进入DispacterServlet的初始化，故在Fliter中使用注解注入bean为空；</p>
-<p>解决办法：</p>
-<p>添加初始化bean配置，手动创建对象new</p>
-]]></content>
-      <tags>
-        <tag>problem</tag>
-        <tag>spring boot</tag>
       </tags>
   </entry>
   <entry>
@@ -5757,28 +5902,6 @@
       </tags>
   </entry>
   <entry>
-    <title>jvm内存加载和gc</title>
-    <url>/2019/06/18/md/jdk/jvm/jvm-and-gc/</url>
-    <content><![CDATA[<p>jvm比较重要的内存区域<br><code>方法区</code>：在java的虚拟机中有一块专门用来存放已经加载的类信息、常量、静态变量以及方法代码的内存区域，叫做方法区。<br><code>常量池</code>：常量池是方法区的一部分，主要用来存放常量和类中的符号引用等信息。<br><code>堆区</code>：用于存放类的对象实例。<br><code>栈区</code>：也叫java虚拟机栈，是由一个一个的栈帧组成的后进先出的栈式结构，栈桢中存放方法运行时产生的局部变量、方法出口等信息。当调用一个方法时，虚拟机栈中就会创建一个栈帧存放这些数据，当方法调用完成时，栈帧消失，如果方法中调用了其他方法，则继续在栈顶创建新的栈桢。<br>除了以上四个内存区域之外，jvm中的运行时内存区域还包括<code>本地方法栈</code>和<code>程序计数器</code></p>
-<p>1）堆</p>
-<p>所有通过new创建的对象的内存都在堆中分配，堆的大小可以通过-Xmx和-Xms来控制。<br>堆被划分为<code>新生代</code>和<code>旧生代</code>，新生代又被进一步划分为<code>Eden</code>和<code>Survivor</code>区，最后Survivor由From Space和To Space组成</p>
-<p><code>新生代</code>。新建的对象都是用新生代分配内存，Eden空间不足的时候，会把存活的对象转移到Survivor中，<br>新生代大小可以由-Xmn来控制，也可以用-XX:SurvivorRatio来控制Eden和Survivor的比例</p>
-<p><code>旧生代</code>。在年轻代中经历了N次垃圾回收后仍然存活的对象，就会被放到年老代中。因此，可以认为年老代中存放的都是一些生命周期较长的对象。</p>
-<p><code>持久代</code>。已经取消，JDK8 HotSpot JVM现在使用了本地内存来存储类元数据，被称为Metaspace。</p>
-<p>2）栈<br>每个线程执行每个方法的时候都会在栈中申请一个栈帧，每个栈帧包括局部变量区和操作数栈，用于存放此次方法调用过程中的临时变量、参数和中间结果。</p>
-<p>3）本地方法栈<br>用于支持native方法的执行，存储了每个native方法调用的状态</p>
-<p>4）方法区<br>存放了要加载的类信息、静态变量、final类型的常量、属性和方法信息。</p>
-<h3 id="基本回收算法"><a href="#基本回收算法" class="headerlink" title="基本回收算法"></a>基本回收算法</h3><h4 id="1-复制（Copying）"><a href="#1-复制（Copying）" class="headerlink" title="1. 复制（Copying）"></a>1. 复制（Copying）</h4><p>此算法把内存空间划为两个相等的区域，每次只使用其中一个区域。垃圾回收时，遍历当前使用区域，把正在使用中的对象复制到另外一个区域中。次算法每次只处理正在使用中的对象，因此复制成本比较小，同时复制过去以后还能进行相应的内存整理，不过出现“碎片”问题。当然，此算法的缺点也是很明显的，就是需要两倍内存空间。 </p>
-<h4 id="2-标记-清除（Mark-Sweep）"><a href="#2-标记-清除（Mark-Sweep）" class="headerlink" title="2. 标记-清除（Mark-Sweep）"></a>2. 标记-清除（Mark-Sweep）</h4><p>此算法执行分两阶段。第一阶段从引用根节点开始标记所有被引用的对象，第二阶段遍历整个堆，把未标记的对象清除。此算法需要暂停整个应用，同时，会产生内存碎片。 </p>
-<h4 id="3-标记-整理（Mark-Compact）"><a href="#3-标记-整理（Mark-Compact）" class="headerlink" title="3. 标记-整理（Mark-Compact）"></a>3. 标记-整理（Mark-Compact）</h4><p>此算法结合了 “标记-清除”和“复制”两个算法的优点。也是分两阶段，第一阶段从根节点开始标记所有被引用对象，第二阶段遍历整个堆，把清除未标记对象并且把存活对象 “压缩”到堆的其中一块，按顺序排放。此算法避免了“标记-清除”的碎片问题，同时也避免了“复制”算法的空间问题。 </p>
-<h4 id="4-分代（Generational-Collecting）"><a href="#4-分代（Generational-Collecting）" class="headerlink" title="4. 分代（Generational Collecting）"></a>4. 分代（Generational Collecting）</h4><p>垃圾收集器<br>串行GC（Serial GC）、并行回收GC（Parallel Scavenge）和并发回收GC（ParNew）</p>
-<p>GC有两种类型：<code>Scavenge GC</code>和<code>Full GC</code>。<br>JVM分别对新生代和旧生代采用不同的垃圾回收机制</p>
-]]></content>
-      <tags>
-        <tag>jvm</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>jvm编译类加载和执行</title>
     <url>/2019/06/18/md/jdk/jvm/jvm%E7%BC%96%E8%AF%91%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%92%8C%E6%89%A7%E8%A1%8C/</url>
     <content><![CDATA[<p>JVM是Java Virtual Machine（Java虚拟机），Java虚拟机是实现跨平台这一特点的关键。</p>
@@ -5815,6 +5938,28 @@
 <h4 id="执行过程"><a href="#执行过程" class="headerlink" title="执行过程"></a>执行过程</h4><h5 id="执行过程简介"><a href="#执行过程简介" class="headerlink" title="执行过程简介"></a>执行过程简介</h5><p>当编译和连接一个C++程序时，所获得的可执行二进制文件只能在指定的硬件平台和操作系统上运行，因为这个二进制文件包含了对目标处理器的机器语言。而Java编译器把Java源文件的指令翻译成字节码，这种字节码就是Java虚拟机的“机器语言”。<br>与普通程序不同的是，Java程序（class文件）并不是本地的可执行程序。当运行Java程序时，首先运行JVM（Java虚拟机），然后再把Java class加载到JVM里头运行，负责加载Java class的这部分就叫做Class Loader。</p>
 <h5 id="JVM中的ClassLoader"><a href="#JVM中的ClassLoader" class="headerlink" title="JVM中的ClassLoader"></a>JVM中的ClassLoader</h5><p>JVM本身包含了一个ClassLoader称为<code>BootstrapClassLoader</code>，和JVM一样，BootstrapClassLoader是用本地代码实现的，它负责加载核心JavaClass（即所有java.<em>开头的类）。另外JVM还会提供两个ClassLoader，它们都是用Java语言编写的，由BootstrapClassLoader加载；其中<code>ExtensionClassLoader</code>负责加载扩展的Javaclass（例如所有javax.</em>开头的类和存放在JRE的ext目录下的类）<code>ApplicationClassLoader</code>负责加载应用程序自身的类。<br>当运行一个程序的时候，JVM启动，运行bootstrapclassloader，该ClassLoader加载java核心API（ExtClassLoader和AppClassLoader也在此时被加载），然后调用ExtClassLoader加载扩展API，最后AppClassLoader加载CLASSPATH目录下定义的Class，这就是一个程序最基本的加载流程。</p>
 <h5 id="执行ClassLoader例子"><a href="#执行ClassLoader例子" class="headerlink" title="执行ClassLoader例子"></a>执行ClassLoader例子</h5><p>什么时候JVM会使用ClassLoader加载一个类呢？当你使用java去执行一个类，JVM使用ApplicationClassLoader加载这个类；然后如果类A引用了类B，不管是直接引用还是用Class.forName()引用，JVM就会找到加载类A的ClassLoader，并用这个ClassLoader来加载类B。JVM按照运行时的有效执行语句，来决定是否需要装载新类，从而装载尽可能少的类，这一点和编译类是不相同的。</p>
+]]></content>
+      <tags>
+        <tag>jvm</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>jvm内存加载和gc</title>
+    <url>/2019/06/18/md/jdk/jvm/jvm-and-gc/</url>
+    <content><![CDATA[<p>jvm比较重要的内存区域<br><code>方法区</code>：在java的虚拟机中有一块专门用来存放已经加载的类信息、常量、静态变量以及方法代码的内存区域，叫做方法区。<br><code>常量池</code>：常量池是方法区的一部分，主要用来存放常量和类中的符号引用等信息。<br><code>堆区</code>：用于存放类的对象实例。<br><code>栈区</code>：也叫java虚拟机栈，是由一个一个的栈帧组成的后进先出的栈式结构，栈桢中存放方法运行时产生的局部变量、方法出口等信息。当调用一个方法时，虚拟机栈中就会创建一个栈帧存放这些数据，当方法调用完成时，栈帧消失，如果方法中调用了其他方法，则继续在栈顶创建新的栈桢。<br>除了以上四个内存区域之外，jvm中的运行时内存区域还包括<code>本地方法栈</code>和<code>程序计数器</code></p>
+<p>1）堆</p>
+<p>所有通过new创建的对象的内存都在堆中分配，堆的大小可以通过-Xmx和-Xms来控制。<br>堆被划分为<code>新生代</code>和<code>旧生代</code>，新生代又被进一步划分为<code>Eden</code>和<code>Survivor</code>区，最后Survivor由From Space和To Space组成</p>
+<p><code>新生代</code>。新建的对象都是用新生代分配内存，Eden空间不足的时候，会把存活的对象转移到Survivor中，<br>新生代大小可以由-Xmn来控制，也可以用-XX:SurvivorRatio来控制Eden和Survivor的比例</p>
+<p><code>旧生代</code>。在年轻代中经历了N次垃圾回收后仍然存活的对象，就会被放到年老代中。因此，可以认为年老代中存放的都是一些生命周期较长的对象。</p>
+<p><code>持久代</code>。已经取消，JDK8 HotSpot JVM现在使用了本地内存来存储类元数据，被称为Metaspace。</p>
+<p>2）栈<br>每个线程执行每个方法的时候都会在栈中申请一个栈帧，每个栈帧包括局部变量区和操作数栈，用于存放此次方法调用过程中的临时变量、参数和中间结果。</p>
+<p>3）本地方法栈<br>用于支持native方法的执行，存储了每个native方法调用的状态</p>
+<p>4）方法区<br>存放了要加载的类信息、静态变量、final类型的常量、属性和方法信息。</p>
+<h3 id="基本回收算法"><a href="#基本回收算法" class="headerlink" title="基本回收算法"></a>基本回收算法</h3><h4 id="1-复制（Copying）"><a href="#1-复制（Copying）" class="headerlink" title="1. 复制（Copying）"></a>1. 复制（Copying）</h4><p>此算法把内存空间划为两个相等的区域，每次只使用其中一个区域。垃圾回收时，遍历当前使用区域，把正在使用中的对象复制到另外一个区域中。次算法每次只处理正在使用中的对象，因此复制成本比较小，同时复制过去以后还能进行相应的内存整理，不过出现“碎片”问题。当然，此算法的缺点也是很明显的，就是需要两倍内存空间。 </p>
+<h4 id="2-标记-清除（Mark-Sweep）"><a href="#2-标记-清除（Mark-Sweep）" class="headerlink" title="2. 标记-清除（Mark-Sweep）"></a>2. 标记-清除（Mark-Sweep）</h4><p>此算法执行分两阶段。第一阶段从引用根节点开始标记所有被引用的对象，第二阶段遍历整个堆，把未标记的对象清除。此算法需要暂停整个应用，同时，会产生内存碎片。 </p>
+<h4 id="3-标记-整理（Mark-Compact）"><a href="#3-标记-整理（Mark-Compact）" class="headerlink" title="3. 标记-整理（Mark-Compact）"></a>3. 标记-整理（Mark-Compact）</h4><p>此算法结合了 “标记-清除”和“复制”两个算法的优点。也是分两阶段，第一阶段从根节点开始标记所有被引用对象，第二阶段遍历整个堆，把清除未标记对象并且把存活对象 “压缩”到堆的其中一块，按顺序排放。此算法避免了“标记-清除”的碎片问题，同时也避免了“复制”算法的空间问题。 </p>
+<h4 id="4-分代（Generational-Collecting）"><a href="#4-分代（Generational-Collecting）" class="headerlink" title="4. 分代（Generational Collecting）"></a>4. 分代（Generational Collecting）</h4><p>垃圾收集器<br>串行GC（Serial GC）、并行回收GC（Parallel Scavenge）和并发回收GC（ParNew）</p>
+<p>GC有两种类型：<code>Scavenge GC</code>和<code>Full GC</code>。<br>JVM分别对新生代和旧生代采用不同的垃圾回收机制</p>
 ]]></content>
       <tags>
         <tag>jvm</tag>
@@ -6342,6 +6487,19 @@
       </tags>
   </entry>
   <entry>
+    <title>shell</title>
+    <url>/2019/06/18/md/part/system/linux/shell/</url>
+    <content><![CDATA[<p>单引号字符串的限制：</p>
+<ul>
+<li>单引号里的任何字符都会原样输出，单引号字符串中的变量是无效的；</li>
+<li>单引号字串中不能出现单独一个的单引号（对单引号使用转义符后也不行），但可成对出现，作为字符串拼接使用。</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>peerDNS</title>
     <url>/2019/06/18/md/part/system/linux/peer-dns/</url>
     <content><![CDATA[<p>先认识一下这三个配置文件：</p>
@@ -6356,24 +6514,19 @@
       </tags>
   </entry>
   <entry>
-    <title>shell</title>
-    <url>/2019/06/18/md/part/system/linux/shell/</url>
-    <content><![CDATA[<p>单引号字符串的限制：</p>
-<ul>
-<li>单引号里的任何字符都会原样输出，单引号字符串中的变量是无效的；</li>
-<li>单引号字串中不能出现单独一个的单引号（对单引号使用转义符后也不行），但可成对出现，作为字符串拼接使用。</li>
-</ul>
-]]></content>
-      <tags>
-        <tag>linux</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>java</title>
     <url>/2019/06/18/md/jdk/java/</url>
     <content><![CDATA[<h4 id="集合排序"><a href="#集合排序" class="headerlink" title="集合排序"></a>集合排序</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 默认是升序</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">Collections.sort;</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">// 降序</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">Arrays.sort(strArray, Collections.reverseOrder());</span></pre></td></tr></table></figure>
 
 ]]></content>
+      <tags>
+        <tag>jdk</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>file</title>
+    <url>/2019/06/18/md/jdk/jdk%20File/</url>
+    <content><![CDATA[<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">File file = <span class="keyword">new</span> File()</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">//文件名，包含后缀，但不包含路径 </span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">//   /root/11.jpg   则显示 11.jpg  </span></span></pre></td></tr><tr><td class="code"><pre><span class="line">file.getName()</span></pre></td></tr><tr><td class="code"><pre><span class="line">    </span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">// 文件路径  完整的绝对路径</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">//   /root/11.jpg   则显示 /root/11.jpg</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">file.getPath()</span></pre></td></tr><tr><td class="code"><pre><span class="line">    </span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">// 重命名   newPath新目标文件绝对路径    </span></span></pre></td></tr><tr><td class="code"><pre><span class="line">file.renameTo(<span class="keyword">new</span> File(newPath));</span></pre></td></tr></table></figure>]]></content>
       <tags>
         <tag>jdk</tag>
       </tags>
@@ -6398,14 +6551,6 @@
 <p>thenAccept接收上一阶段的输出作为本阶段的输入 　　</p>
 <p>thenRun根本不关心前一阶段的输出，根本不不关心前一阶段的计算结果，因为它不需要输入参数</p>
 ]]></content>
-      <tags>
-        <tag>jdk</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>file</title>
-    <url>/2019/06/18/md/jdk/jdk%20File/</url>
-    <content><![CDATA[<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">File file = <span class="keyword">new</span> File()</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">//文件名，包含后缀，但不包含路径 </span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">//   /root/11.jpg   则显示 11.jpg  </span></span></pre></td></tr><tr><td class="code"><pre><span class="line">file.getName()</span></pre></td></tr><tr><td class="code"><pre><span class="line">    </span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">// 文件路径  完整的绝对路径</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">//   /root/11.jpg   则显示 /root/11.jpg</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">file.getPath()</span></pre></td></tr><tr><td class="code"><pre><span class="line">    </span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">// 重命名   newPath新目标文件绝对路径    </span></span></pre></td></tr><tr><td class="code"><pre><span class="line">file.renameTo(<span class="keyword">new</span> File(newPath));</span></pre></td></tr></table></figure>]]></content>
       <tags>
         <tag>jdk</tag>
       </tags>
@@ -6543,34 +6688,6 @@
       </tags>
   </entry>
   <entry>
-    <title>docker常用命令</title>
-    <url>/2019/06/18/md/part/docker/docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
-    <content><![CDATA[<p><code>Docker</code> 是一个开源的轻量级容器管理<code>引擎</code>，可以轻松的为任<br>何应用创建一个轻量级的、可移植的、自给自足的容器</p>
-<ul>
-<li>简化程序</li>
-<li>避免选择恐惧症</li>
-<li>节省开支</li>
-</ul>
-<h4 id="创建镜像"><a href="#创建镜像" class="headerlink" title="创建镜像"></a><strong>创建镜像</strong></h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"> docker commit -m " add hdh.log file" -a="hdh"  48f1dac1ceb9  mqiy/ubuntu:v0.01</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> -m:提交的描述信息</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> -a:指定镜像作者</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 48f1dac1ceb9：容器ID</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> mqiy/ubuntu:v0.01:指定要创建的目标镜像名   v0.01 tag</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 执行新建镜像</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"> docker run -t -i mqiy/ubuntu:v0.01</span></pre></td></tr></table></figure>
-
-<h4 id="启动容器"><a href="#启动容器" class="headerlink" title="启动容器"></a>启动容器</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker run ubuntu:15.10   --name hdh0.01  /bin/echo "Hello world"</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> docker: Docker 的二进制执行文件。</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> run:与前面的 docker 组合来运行一个容器。</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> ubuntu:15.10指定要运行的镜像，Docker首先从本地主机上查找镜像是否存在，如果不存在，Docker 就会从镜像仓库Docker Hub  下载公</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 共镜像</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> /bin/<span class="built_in">echo</span> <span class="string">"Hello world"</span>: 在启动的容器里执行的命令</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 以上命令完整的意思：Docker 以 ubuntu15.10 镜像创建一个新容器，然后在容器里执行 bin/<span class="built_in">echo</span> <span class="string">"Hello world"</span>，然后输出结果。</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> -d 开启Daemon模式</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> --name hdh0.01 容器名称</span></span></pre></td></tr></table></figure>
-
-<h5 id="运行交互式的容器"><a href="#运行交互式的容器" class="headerlink" title="运行交互式的容器"></a>运行交互式的容器</h5><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker run -i -t ubuntu:15.10 /bin/bash</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> -t:在新容器内指定一个伪终端或终端。</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> -i:允许你对容器内的标准输入 (STDIN) 进行交互。</span></span></pre></td></tr></table></figure>
-
-<h5 id="启动容器（后台模式）"><a href="#启动容器（后台模式）" class="headerlink" title="启动容器（后台模式）"></a>启动容器（后台模式）</h5><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker run -d ubuntu:15.10 /bin/sh -c "while true; do echo hello world; sleep 1; done"</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> -d 开启Daemon模式</span></span></pre></td></tr></table></figure>
-
-<h4 id="关闭容器"><a href="#关闭容器" class="headerlink" title="关闭容器"></a>关闭容器</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker stop contain_id | name</span></pre></td></tr></table></figure>
-
-
-<h4 id="docker查看日志"><a href="#docker查看日志" class="headerlink" title="docker查看日志"></a>docker查看日志</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker logs -f -t --since="2018-03-31" --tail=100 elastic_raman</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> –since : 此参数指定了输出日志开始日期，即只输出指定日期之后的日志。 </span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> -f : 表示查看实时日志 </span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">　-t : 查看日志产生的日期 </span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> -tail=200 : 查看最后的200条日志。 </span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> sleepy_snyder 容器的名称，并不是镜像的名字</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> ps </span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">：执行docker ps命令可以看到docker容器列表，NAMES即为容器名，而不是image</span></span></pre></td></tr></table></figure>
-<h4 id="删除容器"><a href="#删除容器" class="headerlink" title="删除容器"></a>删除容器</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker container ls -a</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">docker container rm   XX  #   XX 为CONTAINER ID or NAMES</span></pre></td></tr></table></figure>
-
-]]></content>
-      <tags>
-        <tag>docker</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>docker挂载目录</title>
     <url>/2019/06/18/md/part/docker/docker%E7%9B%AE%E5%BD%95/</url>
     <content><![CDATA[<h4 id="关于Docker目录挂载的总结"><a href="#关于Docker目录挂载的总结" class="headerlink" title="关于Docker目录挂载的总结"></a>关于Docker目录挂载的总结</h4><ul>
@@ -6601,6 +6718,34 @@
       <tags>
         <tag>docker</tag>
         <tag>db</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>docker常用命令</title>
+    <url>/2019/06/18/md/part/docker/docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
+    <content><![CDATA[<p><code>Docker</code> 是一个开源的轻量级容器管理<code>引擎</code>，可以轻松的为任<br>何应用创建一个轻量级的、可移植的、自给自足的容器</p>
+<ul>
+<li>简化程序</li>
+<li>避免选择恐惧症</li>
+<li>节省开支</li>
+</ul>
+<h4 id="创建镜像"><a href="#创建镜像" class="headerlink" title="创建镜像"></a><strong>创建镜像</strong></h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"> docker commit -m " add hdh.log file" -a="hdh"  48f1dac1ceb9  mqiy/ubuntu:v0.01</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> -m:提交的描述信息</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> -a:指定镜像作者</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 48f1dac1ceb9：容器ID</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> mqiy/ubuntu:v0.01:指定要创建的目标镜像名   v0.01 tag</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 执行新建镜像</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"> docker run -t -i mqiy/ubuntu:v0.01</span></pre></td></tr></table></figure>
+
+<h4 id="启动容器"><a href="#启动容器" class="headerlink" title="启动容器"></a>启动容器</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker run ubuntu:15.10   --name hdh0.01  /bin/echo "Hello world"</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> docker: Docker 的二进制执行文件。</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> run:与前面的 docker 组合来运行一个容器。</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> ubuntu:15.10指定要运行的镜像，Docker首先从本地主机上查找镜像是否存在，如果不存在，Docker 就会从镜像仓库Docker Hub  下载公</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 共镜像</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> /bin/<span class="built_in">echo</span> <span class="string">"Hello world"</span>: 在启动的容器里执行的命令</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 以上命令完整的意思：Docker 以 ubuntu15.10 镜像创建一个新容器，然后在容器里执行 bin/<span class="built_in">echo</span> <span class="string">"Hello world"</span>，然后输出结果。</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> -d 开启Daemon模式</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> --name hdh0.01 容器名称</span></span></pre></td></tr></table></figure>
+
+<h5 id="运行交互式的容器"><a href="#运行交互式的容器" class="headerlink" title="运行交互式的容器"></a>运行交互式的容器</h5><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker run -i -t ubuntu:15.10 /bin/bash</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> -t:在新容器内指定一个伪终端或终端。</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> -i:允许你对容器内的标准输入 (STDIN) 进行交互。</span></span></pre></td></tr></table></figure>
+
+<h5 id="启动容器（后台模式）"><a href="#启动容器（后台模式）" class="headerlink" title="启动容器（后台模式）"></a>启动容器（后台模式）</h5><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker run -d ubuntu:15.10 /bin/sh -c "while true; do echo hello world; sleep 1; done"</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> -d 开启Daemon模式</span></span></pre></td></tr></table></figure>
+
+<h4 id="关闭容器"><a href="#关闭容器" class="headerlink" title="关闭容器"></a>关闭容器</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker stop contain_id | name</span></pre></td></tr></table></figure>
+
+
+<h4 id="docker查看日志"><a href="#docker查看日志" class="headerlink" title="docker查看日志"></a>docker查看日志</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker logs -f -t --since="2018-03-31" --tail=100 elastic_raman</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> –since : 此参数指定了输出日志开始日期，即只输出指定日期之后的日志。 </span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> -f : 表示查看实时日志 </span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">　-t : 查看日志产生的日期 </span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> -tail=200 : 查看最后的200条日志。 </span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> sleepy_snyder 容器的名称，并不是镜像的名字</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> ps </span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">：执行docker ps命令可以看到docker容器列表，NAMES即为容器名，而不是image</span></span></pre></td></tr></table></figure>
+<h4 id="删除容器"><a href="#删除容器" class="headerlink" title="删除容器"></a>删除容器</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker container ls -a</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">docker container rm   XX  #   XX 为CONTAINER ID or NAMES</span></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>docker</tag>
       </tags>
   </entry>
   <entry>
@@ -6669,7 +6814,7 @@
 <li>培训和晋升机制</li>
 </ul>
 <h3 id="怼"><a href="#怼" class="headerlink" title="怼"></a>怼</h3><blockquote>
-<p>面试会：贵公司的核心竞争性是什么，业务壁垒是什么,然后面试官没词儿了</p>
+<p>面试会：贵公司的核心竞争性是什么，业务壁垒是什么,然后面试官没词儿了<br> HR说啥时候回复时，即使时间不适合也不应该提出异议</p>
 </blockquote>
 <p>spring的事务传播机制<br>springmvc参数绑定原理<br>mybatis的分页原理 limit</p>
 ]]></content>

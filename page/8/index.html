@@ -150,7 +150,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">249</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">259</span></a>
 
   </li>
         <li class="menu-item menu-item-relate">
@@ -211,7 +211,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/13/md/life/thinking/mature-three/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/27/md/part/mq/rocketmq-test/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -225,7 +225,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2019/12/13/md/life/thinking/mature-three/" class="post-title-link" itemprop="url">关于成熟三</a>
+            <a href="/2020/02/27/md/part/mq/rocketmq-test/" class="post-title-link" itemprop="url">rocketmq 测试</a>
         </h1>
 
         <div class="post-meta">
@@ -235,7 +235,7 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2019-12-13 12:11 12:11:55" itemprop="dateCreated datePublished" datetime="2019-12-13T12:11:55+08:00">2019-12-13 12:11</time>
+              <time title="创建时间：2020-02-27 15:46 15:46:21" itemprop="dateCreated datePublished" datetime="2020-02-27T15:46:21+08:00">2020-02-27 15:46</time>
             </span>
 
           <br>
@@ -244,7 +244,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>534</span>
+              <span>352</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -263,20 +263,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>1.主动，想事儿，操心。不会什么都不想，都无所谓，等着，拖着。然后让另一半去做。  </p>
-<p>2.不搞情绪。就事论事，而不是感情用事。</p>
-<p>3.知道自己能力的边界，对自己的优点缺点性格有清晰的认知，不会头脑发热被人忽悠。</p>
-<p>4.学会和现实妥协而不是为了无意义的完美主义反复纠结。</p>
-<p>5.知道什么是真实的生活，什么是自己的幻想，不会放下已经拥有的，去追求不切实际的一些东西。</p>
-<p>6.对身边的人常常心怀愧疚，觉得自己做的还不够（哪怕外人眼中已经做的很好了）。因为心怀愧疚，所以心怀感恩，不会去嫌弃别人。事实上，越是自己不怎么样的人越喜欢嫌弃别人。</p>
-<p>7.不会为过去耿耿于怀，也不会为明天的不确定而神经兮兮。做好自己的分内事，其他随缘。</p>
-<p>8.为了照顾别人的感受，有些话宁肯说谎也坚决不说。</p>
-<p>9.能够面对真实的残酷，能够道歉，反省自己。不纠缠，不会因为心痛丧失自己的原则。</p>
-<p>10.对未来有规划，平日有努力奋斗的目标。而不是夸夸其谈，炫耀自己知道的多，炫耀自己口才好，能说会道。</p>
-<p>11.不羞涩，放下自己的面子，去处理难堪的事，去见难堪的人，去说难堪的话。</p>
-<p>12.做人有底线，有原则。越界的事坚决不做。</p>
-<p>13.不去看不起别人，也不去谄媚别人。知道打铁还需自身硬，自己就是最强的人脉。</p>
-<p>14.不会为了事业牺牲家庭，会平衡生活与工作。</p>
+          <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">nohup sh bin/mqnamesrv &amp;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">tail -f ~/logs/rocketmqlogs/namesrv.log</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">nohup sh mqbroker -n localhost:9876 -c conf/broker.conf &amp;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">nohup sh bin/mqbroker -n localhost:9876 -c conf/broker.conf  autoCreateTopicEnable=true  &amp;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line"> tail -f ~/logs/rocketmqlogs/broker.log </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line"> export NAMESRV_ADDR=localhost:9876</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">关闭rocketmq</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">sh bin/mqshutdown broker</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line">sh bin/mqshutdown namesrv</span></pre></td></tr></table></figure>
+
 
       
     </div>
@@ -296,7 +284,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/13/md/life/current-status/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/27/md/part/mq/rocketmq/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -310,7 +298,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2019/12/13/md/life/current-status/" class="post-title-link" itemprop="url">间歇性踌躇满志，持续性混吃等死</a>
+            <a href="/2020/02/27/md/part/mq/rocketmq/" class="post-title-link" itemprop="url">Broker集群配置</a>
         </h1>
 
         <div class="post-meta">
@@ -320,18 +308,7 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2019-12-13 12:11 12:11:14" itemprop="dateCreated datePublished" datetime="2019-12-13T12:11:14+08:00">2019-12-13 12:11</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E4%BA%BA%E7%94%9F%E6%84%9F%E6%82%9F/" itemprop="url" rel="index">
-                    <span itemprop="name">人生感悟</span>
-                  </a>
-                </span>
+              <time title="创建时间：2020-02-27 15:46 15:46:21" itemprop="dateCreated datePublished" datetime="2020-02-27T15:46:21+08:00">2020-02-27 15:46</time>
             </span>
 
           <br>
@@ -340,272 +317,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>3.1k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>3 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>前年，我从130斤减到104斤，这不算苗条的身材来之不易，我十分珍惜。</p>
-<p>朋友问我秘诀，不过是迈开腿管住嘴，合理运动健康饮食。</p>
-<p>可很多人一听要忌口就放弃追问。</p>
-<p>我的同事COCO郑重其事地上门取经，我热情分享运动安排以及饮食菜单。</p>
-<p>一周后，我好意问她餐食如何？她说晚上涮完重庆火锅，现在捧着薯片追剧。至于计划中的运动，早就抛到九霄云外。</p>
-<p>后来，COCO几次试图减肥，都很快以失败告终。</p>
-<p>COCO说：</p>
-<blockquote>
-<p>我就是那种开始劲头十足，后期恒心不足的人。你说要至少坚持一个月，觉得做不到就放弃了。说到底，COCO是患上“间歇性努力症”。</p>
-</blockquote>
-<p>她无法持久地专注于一件有价值却很艰辛的事，而习惯于在突破的零界点前退却。</p>
-<p>古语有云：有志者立长志，无志者常立志。</p>
-<p>如果你也和COCO一样面临同样的难题，你应该好好想想，为什么你会陷入“间歇性踌躇满志，持续性混吃等死”的矛盾循环？</p>
-<p>为什么你总是“间歇性踌躇满志，持续性混吃等死”？<br>为什么你总是“间歇性踌躇满志，持续性混吃等死”？<br>在我看来，患上“间歇性努力症”主要有下面三种原因。</p>
-<h3 id="认知力不足"><a href="#认知力不足" class="headerlink" title="认知力不足"></a>认知力不足</h3><p>最近非常流行一句话：“道理我都懂，就是做不到”。</p>
-<p>听起来很沮丧，那请问，你真是懂这个“道理”吗？</p>
-<p>在我看来，真正的懂只有一个标准，那就是按照特定的“道理”去执行。</p>
-<p>如果你真的懂了，肯定能看到这件事背后的“好处”和可观的“收益”，且这个“好处”和“收益”正是你想要的。当你口口声声称自己懂了，却没有去坚持践行，只能说你根本没弄懂这件事的价值。</p>
-<p>老是间歇性努力的人，根子还是在认知层面上出现偏差。</p>
-<p>你没弄清楚你的行为和你想要结果之间的关联性，也不清楚持续付出的真正作用，更不明白在既定情况下该如何坚持。</p>
-<p>所以你只有不断重复既有地目标，而无法将目标转化为切实的实施步骤。</p>
-<p>哲学家孙正聿教授在《哲学通论》里说：熟知非真知。说的就是这个道理，认知力不足，导致我们陷入常立志的怪圈。</p>
-<h3 id="高估自己的执行力"><a href="#高估自己的执行力" class="headerlink" title="高估自己的执行力"></a>高估自己的执行力</h3><p>后台曾经有粉丝向我请教写作技巧。我便把这几年整理的心得一条条告诉她。</p>
-<p>她听完直摇头：“这么复杂，我没时间学。”</p>
-<p>我说：“想学写作，就不能懒，笔头勤快才能出好文章。”</p>
-<p>她立马点头说：“对啊，我就是太懒了。如果我努力一点点，肯定也能成名。”</p>
-<p>其实，真正阻碍她成长的，并不是懒惰，而恰恰事那种“努力一点点，就能成功”的意识。</p>
-<p>有的人总以为不用多费时间和精力就能改变现状，其实根本不然。</p>
-<p>每一个小小成功的背后都是日积月累的付出，每一口蜜糖都需要用苦涩的汗水去换取。</p>
-<p>而高估自己能力的人，不论做什么，定会陷入一而再再而衰三而竭的困局，最后不了了之。</p>
-<p>因为他们对困难认识不足，对自己又过于自信，一旦遇到挫折，不会反省自己，而只会抱怨不公。</p>
-<p>这不是懒，而是能力配不上梦想。</p>
-<p>如同龟兔赛跑中的兔子，自以为是，跑到半路就躺下来庆功。</p>
-<h3 id="执迷于宏大的目标"><a href="#执迷于宏大的目标" class="headerlink" title="执迷于宏大的目标"></a>执迷于宏大的目标</h3><p>一个过于依赖目标导向的人往往无法持续地付出。</p>
-<p>罗马不是一天造成的，梦想再美好，最重要的仍是切实可行的方法、步骤和阶段成果。</p>
-<p>比如减肥，我们身体堆集的脂肪块不是一蹴而就，我们不可能指望一夜之间塑造完美身材。</p>
-<p>变苗条只是一个大目标，为达这个目标，一定会有几个关键性结果。比如一周瘦2斤，每天有氧运动40分钟无氧运动10分钟，每日肉类控制在100克，三餐谷物不超过400克等。</p>
-<p>文友柳一一曾分享过一个故事。</p>
-<p>作家斯蒂芬·盖斯想要减肥。他最开始按计划做30分钟俯卧撑，发现根本做不到。</p>
-<p>直到有一次，盖斯心想，管它呢，随便做一个也好啊。当做完第一个，他觉得很轻松呀，于是就继续做第二个，第三个。</p>
-<p>2013年一整年，他都只要求自己每天做一个。</p>
-<p>结果是，每次做起来自然不只一个。因为目标被清晰地分解，他能够持续获得满足感。</p>
-<p>所以，只有将目标具体到可见的阶段结果，才有执行的可能。</p>
-<p>如果一味盯着大梦想，不知将阶段性结果作为执行驱动力，那肯定会陷入间歇性努力的怪圈。</p>
-<p>为什么你总是“间歇性踌躇满志，持续性混吃等死”？<br>为什么你总是“间歇性踌躇满志，持续性混吃等死”？<br>明白这些原因，也就不难找到破解的方法。</p>
-<h4 id="首先，别关注你不能改变的事"><a href="#首先，别关注你不能改变的事" class="headerlink" title="首先，别关注你不能改变的事"></a>首先，别关注你不能改变的事</h4><p>古希腊哲学中的斯多葛派（Stoicism）提出过控制二分法：生活中，有些事情是你能够控制的，有些事情你是控制不了的。</p>
-<p>具体到执行面，就是拿出勇气做你能改变的事，将目标从“外部目标”转化为“内部目标”。</p>
-<p>拿减肥来说，不要考虑脂肪这个你无法掌握的累赘，安心做你能控制的事，丢开垃圾食品、放下手中高热量饮品、迈开腿动起来等。再远大的目标，也都从卑微小事开始。</p>
-<p>谁都想干大事，不愿在小事上浪费精力，但我们是没办法做“不知道该怎么做”的事，更没办法让自己为“不能改变的事”奋斗。好比你想登天，就算你在原地跳出大窟窿也不可能真的上天。</p>
-<p>当我们为能控制的小事不断努力，能力会逐渐增长；随着能力增长，我们能改变的事情就越来越多。如此循环，目标就越来越近。</p>
-<h4 id="其次，分解任务，设定阶段奖励"><a href="#其次，分解任务，设定阶段奖励" class="headerlink" title="其次，分解任务，设定阶段奖励"></a>其次，分解任务，设定阶段奖励</h4><p>如果一件事的完成周期过长、过程较复杂，很容易让人望而生畏，分解是必不可少的手段。</p>
-<p>分解的最大好处是很容易将阶段性结果提取出来，还可以减少失败风险。</p>
-<p>先从简单部分着手。我们大脑的特性是，对于简单而明确的指令，愿意立刻去干，且取得进展的成就感让我们更容易坚持。</p>
-<p>OKR工作法则说：任务里困难的部分往往是衡量目标是否实现的关键结果。</p>
-<p>面对复杂模糊的指令，大脑的本能是调头跑掉。</p>
-<p>不幸的是，生活和工作中80%以上的任务都是复杂的。</p>
-<p>既然躲不掉，只能冲上去跟它拼了！在这个阶段，调动我们所有资源和能力，与之死磕。</p>
-<h4 id="同时，给自己设定阶段性奖励：当完成某事，奖励某物。若完成的快感本身不能缓解奋斗的辛苦时，奖励不失为一种好刺激。"><a href="#同时，给自己设定阶段性奖励：当完成某事，奖励某物。若完成的快感本身不能缓解奋斗的辛苦时，奖励不失为一种好刺激。" class="headerlink" title="同时，给自己设定阶段性奖励：当完成某事，奖励某物。若完成的快感本身不能缓解奋斗的辛苦时，奖励不失为一种好刺激。"></a>同时，给自己设定阶段性奖励：当完成某事，奖励某物。若完成的快感本身不能缓解奋斗的辛苦时，奖励不失为一种好刺激。</h4><p>我曾在减肥坚持不下去的时候，用少量的甜点奖励自己。</p>
-<p>开始吃起来心安理得，后来边吃边自责，因为深知掉下来的肉全是汗水，之后锻炼更努力。这个道理之前听别人说过，但自己切身感受才更明白。</p>
-<p>《管理的实践》中说：并不是有了工作才有目标，而是有了目标才能确定工作。</p>
-<p>我们先在目标这个终点插上旗贴，再分解成适合自己的不同路线，一个个攻克它。</p>
-<h4 id="最后，设想未完成的后果"><a href="#最后，设想未完成的后果" class="headerlink" title="最后，设想未完成的后果"></a>最后，设想未完成的后果</h4><p>任何事情都有后果，判定它是否严重取决于个人。</p>
-<p>有些写作平台规定签约作者每个月要过稿2篇，若未完成，下个月复活必须完成4篇。</p>
-<p>正是有这样的压力，才会让作者们去克服懒惰的天性，不断精益求精。</p>
-<p>你想，每次打开电脑，淘宝、微信、抖音，哪个不比写稿轻松？</p>
-<p>可是一到月底，有的人就如热锅上的蚂蚱： 2篇都过不了，写4篇更完不成。</p>
-<p>这般一想，还是努力看书，持续地输出优质内容，才能有机会让读者粉丝看到自己的作品。</p>
-<p>再比如职场的朋友，多想想，如果年底KPI不过关，后果是：晋升机会拱手让人、年底加薪无望、连累上司没脸。所以还是赶紧工作，提升效率吧。</p>
-<p>《自控力》里说：</p>
-<blockquote>
-<p>当我们打算做某件事情或学习某项技能时，我们的本能会拖延、会效率低下。除了在大脑中演绎失败的各种结果，还可以设想身边人的反应。试想，如果你真的失败了，身边人反应只有两种，亲者惋惜、仇者正中下怀。</p>
-</blockquote>
-<p>多想想身边人的反应，让自己先被绑架，你就有动力坚持。</p>
-<p>为什么你总是“间歇性踌躇满志，持续性混吃等死”？<br>为什么你总是“间歇性踌躇满志，持续性混吃等死”？<br>有句笑谈说：人和猪的区别在于，画一个圈给猪，猪会走出那个圈；画一个圈给人，人却将自己永远锁在圈内。</p>
-<p>这样的人，好比井底之蛙。</p>
-<p>青蛙没有走出井底，没见过外面世界，至少快乐满足，它以为世界就如此。</p>
-<p>间歇性努力的人，是曾经跳出井底又跌落原点的青蛙。他知道身后是万丈深渊，也明白前面天空辽阔，就是不愿付出代价挣脱，只好假装没见过外面的世界。</p>
-<p>真的不会后悔吗？当我们老去，最痛苦的事情不是失败，而是我本可以。</p>
-<p>为了让曾经的苦难配得上自己的梦想，我们可以一步一步由易到难给自己设定目标付诸实践。</p>
-<p>理想总是越想越美，生活却是越做越明。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/13/md/life/thinking/mature-two/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="mqiy">
-      <meta itemprop="description" content="永远为下个月离职做好准备">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小灰灰的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/12/13/md/life/thinking/mature-two/" class="post-title-link" itemprop="url">关于成熟二</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-12-13 12:11 12:11:14" itemprop="dateCreated datePublished" datetime="2019-12-13T12:11:14+08:00">2019-12-13 12:11</time>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>2.3k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>气场和气质绝非一朝一夕炼成，但是好在我们可以观察那些有气场者的一言一行，求上得中地模仿下来，应该也不会差到哪里。</p>
-<p>你和什么人请教，和什么人学习，你也会成为什么人。</p>
-<p>关于成熟，以下部分，男女共用。</p>
-<h4 id="1-不容触碰的界限感"><a href="#1-不容触碰的界限感" class="headerlink" title="1. 不容触碰的界限感"></a>1. 不容触碰的界限感</h4><p>大部分人从小都被灌输了一个及其愚蠢的概念——“多个朋友多条路，少个仇人少堵墙。”</p>
-<p>且不论前一句话把人情的交换看的太过便利，今天主要说后半句话——不要怕你得罪人就会碰壁，你身边90%的人你都得罪的起。</p>
-<p>他们能做的最多也就是恶心恶心你，动动手指头就能碾碎你的大佬没时间伺候你，没必要仅仅因为怕得罪人就不停地低姿态，不停地让步。</p>
-<p>意识到大部分人你都惹得起，就不会不停地为了所谓的“维护形象”而委曲求全，就不会不断地允许对方触碰你的界限，哪个国家不是在边界线上筑高墙拉电网让别国知道不该你进的地方别乱逛？</p>
-<p>让别人知道你是一个有界限感的人是一切良好关系的基础——有诚意想当你朋友的人 ，都知道尊重是入场券。</p>
-<p>当然，大部分人的界限设置的一塌糊涂自己都不清楚是什么，居然还会认为“和我走的近的人无论怎么做都行”——不行，真的不行，界限就是除自己之外都是外人，神来杀神佛来杀佛，谁说话都不好使。</p>
-<p>你去观察那些有威严的大哥大姐们，即使你再是他们的心腹，再对他们忠心耿耿，你们再推心置腹，只要你自以为是的去碰那个他们明示过你别靠近的线，他们也会瞬间拉下脸来问你：</p>
-<p>“是不是给你脸给多了，让你觉得你可以没规矩了？”</p>
-<h4 id="2-极强的克制力"><a href="#2-极强的克制力" class="headerlink" title="2. 极强的克制力"></a>2. 极强的克制力</h4><p>社会十大俗气：腰有十文钱必振衣作响；每与人言必谈及贵戚；遇美人必急索登床；见到问路之人必作傲睨之态；与朋友相聚便喋喋高吟其酸腐诗文；头已花白却喜唱艳曲；施人一小惠便广布于众；与人交谈便借刁言以逞才；借人之债时其脸如丐，被人索偿时则其态如王；见人常多蜜语而背地却常揭人短处。</p>
-<p>十大俗气中至少有七八条是缺乏克制力：炫耀感，色心，虚荣，骄傲……普通人一旦有了资本都恨不得把自己的三瓜两枣直接写在脸上；甚至不惜伪造虚假的经历，就为了刷那一点可怜的存在感。</p>
-<p>饭桌上油腻的男人分三类：灌小姑娘酒的；逼着小姑娘唱歌脱鞋跳舞的；为了加个小姑娘微信可劲吹牛逼的。</p>
-<p>如果你尚且年轻，且容你张狂或者喜欢上那些张狂的愣头青，毕竟年轻人犯错上帝都会原谅。</p>
-<p>但是这些人如果没有克制力，不知道在人前收起来自己的欲望和好胜心，不知道自己沾沾自喜的每一句话都伤了别人的自尊，不明白自己信口胡说的每一个成绩都在把自己往被扒皮石锤的路上推，迟早有一天会有人来告诉他什么叫谦虚，什么叫夹着尾巴做人。</p>
-<p>拥有极强克制力不仅仅意味着素养高，还以为着一件事——那些别人吹牛逼的事，他早就经历过，体验过了，当初他玩的时候这群张八二五的小孩子还不知道在哪呢。</p>
-<p>只有吃饱的人，才会开始注意自己的吃相，才会宁可少夹几筷子也不愿意给别人留下自己吃相难看的印象。</p>
-<h4 id="3-坚定的目标和主次分明的态度"><a href="#3-坚定的目标和主次分明的态度" class="headerlink" title="3.坚定的目标和主次分明的态度"></a>3.坚定的目标和主次分明的态度</h4><p>爱情很宝贵，很美好，但是把爱情当成一生追求目标的人，其实挺没出息的。</p>
-<p>因为动不动就想着遇到更好的人的人们往往忽略了一个事：在没实现自我价值，你自己都不算活明白的前提下，遇到对的人你也留不住。</p>
-<p>况且是谁给你的勇气和自信让你觉得更好的人会闯入你的生命之中？</p>
-<p>物以类聚，人以群分，人和人之间分圈子的。圈子和圈子之间有着界限分明的壁垒。</p>
-<p>因此聪明人都知道，想要嫁给白马王子就得先让自己进入皇室得到认可；而不是苦哈哈的恳求老天开眼让白马王子微服私访来到自己的一亩三分地。</p>
-<p>有着坚定的目标，把实现人生的价值列为自己的目标，专心的为自己的目标前行——你要知道，财富，爱情还有尊重都是实现自我价值的附属品罢了。</p>
-<h4 id="4-说一不二的决绝态度"><a href="#4-说一不二的决绝态度" class="headerlink" title="4.说一不二的决绝态度"></a>4.说一不二的决绝态度</h4><p>我开过一个玩笑：其实百分之七十的情感问题，都能用一句无脑的“分手下一位”来解决。</p>
-<p>但是你们做不到啊，她明明就是一个榨取你价值的吸血鬼，你却还把她视若珍宝；他明明就是一个天诛地灭的妈宝男，你还当他孝顺。人最擅长逆向合理化，你对他的感情渐渐由最初的纠结，变得为他开脱，甚至最后说服自己自己也就找个这样的了。</p>
-<p>早就该扔得东西死活不扔，一边攥在手里一遍自我麻痹说这个东西有纪念意义，这种人叫囤积癖。</p>
-<p>而早就该分手，却舍不得自己投资的时间精力情感，傻乎乎的指望浪子回头的人，叫情感囤积癖。</p>
-<p>他们到了最后，被人拖下水，自己搭进去不说，也被折磨的早就没了当初的吸引力。</p>
-<h4 id="5-“敢要”的底气"><a href="#5-“敢要”的底气" class="headerlink" title="5.“敢要”的底气"></a>5.“敢要”的底气</h4><p><code>敢要，一定要敢要</code>。</p>
-<p>我们从小到大被教育的，真的太客气了，客气到连基本的保护自己应得的东西都不会了。</p>
-<p>我们长大之后，又太有绅士风度，太独立太女权了，都不知道让对方适当的为我们付出了。</p>
-<p>凭什么你为他做什么也乐意啊？你妈知道平时在家洗个碗都闹情绪的你在外面这么好说话吗？</p>
-<p>凭什么你就喜欢给她花钱，她收礼物收的心安理得啊？你爹妈知道你这么大方，从你工作后没沾上一点光的老两口会不会被你气出病来？</p>
-<p>我说过，人一定要知道自己几斤几两，不是你的东西，你看都不要看。</p>
-<p>但是我也说过，人也应该有自己的底气，不是我的我不要，我应得的绝对不和你客气。</p>
-<hr>
-<p>以上这些话，看似颠覆，看似攻击性强，但殊不知人都是缺乏安全感的——他们理所应当的，会倾向于那些看起来有强硬生存价值，能够保护自己的人。</p>
-<p>而我们现在所推崇的物质条件，内涵，甚至是外貌，都不过是这种气质的附属品——会所里最不缺的就是嫩的掐得出水的小姑娘，但是这些人一开口说话你就觉得哪里不对。</p>
-<p>而修炼这种气质，总需要日复一日的坚持，甚至拒绝一些曾经你看起来重要无比的人情，减少一些油腻无意义的社交。</p>
-<p>肯定有人不愿意的，肯定有人说太累了，也肯定有人说这不实际。</p>
-<p>没有关系，知乎上每天都有不停地问题和答案明明白白的告诉你怎么成为更好的人，怎么让自己更受人尊重。但是人世间，总要有人住高堂有人住阴沟——人各有志，有的人追求的东西更贵罢了。</p>
-<p>大家各走各的窄门好了。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/13/md/life/thinking/thinking-mature/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="mqiy">
-      <meta itemprop="description" content="永远为下个月离职做好准备">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小灰灰的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/12/13/md/life/thinking/thinking-mature/" class="post-title-link" itemprop="url">男人心智成熟的表现有哪些？</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-12-13 12:07 12:07:01" itemprop="dateCreated datePublished" datetime="2019-12-13T12:07:01+08:00">2019-12-13 12:07</time>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>980</span>
+              <span>651</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -624,193 +336,19 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>1、放弃了无效社交,也放弃了一些人.</p>
-<p>2、知道不搭配锋芒的善良就是懦弱.</p>
-<p>3、知道人生的标准不在别人手中,只在自己手中,不会活在别人的想法和评价里.</p>
-<p>4、会合理维护自己的立场,懂得合理拒绝,不怕麻烦别人.</p>
-<p>5、在价值上,把自己当一回事,在面子上,能把自己不当一回事.</p>
-<p>6、自律且懂得保持让自己精力旺盛,知道任何事情到最后都是个人的坚持.</p>
-<p>7、注意力很少再放到无目的娱乐消费上,而是找到了自己的方向开始为之奋斗,会放下不舍的事物,尽管曾经喜欢.</p>
-<p>8、看待事物不再是绝对的对错,而是多方维度求解懂得拿捏分寸,但做决定又非常果断.</p>
-<p>9、不轻易交浅言深,知道每个人都有每个人的难处,不再夸夸其谈,而是选择平静听人诉说</p>
-<p>10、内方外圆,既能圆滑应对外在人际关系,又能守护内心真正的善良.</p>
-<p>11、知道选择必须要放弃，放弃就会有痛苦，痛苦才会有撕裂般疼痛，才会长肌肉变得更加强大，而变坏只需要什么都不做就可以了。</p>
-<p>12、从对谁都善良，到选择对谁善良。</p>
-<p>13、对自我和现实的残酷有清醒的认知</p>
-<p>14、对事物的态度不再抱有太高的期待,能坦然面对,很少再去抱怨不公.</p>
-<p>15、能认清分开扮演社会、公司、制度赋予给我们被动的角色,完成附加给我们要遵守的规范和准则. 又能给自己重新定义一个自己,在自己的准则里活出自己的模样.</p>
-<hr>
-<p>2019.11.5更新</p>
-<p>16、知世故而不世故，沉稳而不失活泼，</p>
-<p>17、从杀死了自己内心的小孩那一刻变得冷血残暴,是豺狼. 后来内心的小男孩涅槃重生的那一刻,变成了仁慈的狮子.</p>
-<p>18、你知道有些喜欢啊,只能默默放在心里,不一定需要去拥有.</p>
-<p>19、如果你讨厌的人骂你,那你一定是做对了什么.</p>
-<hr>
-<p>2019.11.11更新</p>
-<p>20、感情是靠吸引过来的,而不是做舔狗做来的,你能舔别人也能做舔.表白从来都是胜利的宣言,而不是冲锋的号角.</p>
-<p>21、所谓少年感，不是无知而无畏，而是有知仍无畏。</p>
-<p>22、“人的崩溃是悄无声息的,失望攒多后，真正的离开是不动声色的。”</p>
-<p>降低期待值，强大自己的内心，靠自己。<br>23、想问题的第一时间是去了解别人的诉求,追求的是双赢,而不是展示自己很厉害.</p>
-<hr>
-<p>2019.11.12更新</p>
-<p>24、保持谦卑之心,每个人都有你能学习的地方.</p>
-<p>25、学会自嘲.</p>
-<p>26、对己能驾驭人性,对人能顺应其人性</p>
-<p>27、以上观点,不一定正确,所以不要盲目相信,人无完人,观点肯定是有错误的.最重要的锻炼独立思考能力,有质疑的能力,对事不对人.</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/12/md/develop/base/data-structure/binary-search-tree/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="mqiy">
-      <meta itemprop="description" content="永远为下个月离职做好准备">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小灰灰的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/12/12/md/develop/base/data-structure/binary-search-tree/" class="post-title-link" itemprop="url">二叉查找树</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-12-12 15:01 15:01:12" itemprop="dateCreated datePublished" datetime="2019-12-12T15:01:12+08:00">2019-12-12 15:01</time>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>71</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h4 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h4><ul>
-<li>1、左子树上所有的节点的值均小于或等于他的根节点的值</li>
-<li>2、右子数上所有的节点的值均大于或等于他的根节点的值</li>
-<li>3、左右子树也一定分别为二叉排序树</li>
+          <h4 id="单个-Master"><a href="#单个-Master" class="headerlink" title="单个 Master"></a>单个 Master</h4><p>   这种方式风险较大，一旦Broker 重启或者宕机时，会导致整个服务不可用，不建议线上环境使用。</p>
+<h4 id="多-Master-模式-一个集群无-Slave，全是-Master，例如-2-个-Master-或者-3-个-Master"><a href="#多-Master-模式-一个集群无-Slave，全是-Master，例如-2-个-Master-或者-3-个-Master" class="headerlink" title="多 Master 模式   一个集群无 Slave，全是 Master，例如 2 个 Master 或者 3 个 Master"></a>多 Master 模式   一个集群无 Slave，全是 Master，例如 2 个 Master 或者 3 个 Master</h4><ul>
+<li>优点：配置简单，单个Master 宕机或重启维护对应用无影响，在磁盘配置为 RAID10 时，即使机器宕机不可恢复情况下，由与 RAID10 磁盘非常可靠，消息也不会丢（异步刷盘丢失少量消息，同步刷盘一条不丢）。性能最高。</li>
+<li>缺点：单台机器宕机期间，这台机器上未被消费的消息在机器恢复之前不可订阅，消息实时性会受到受到影响。</li>
 </ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/12/md/develop/base/al/time-complexity/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="mqiy">
-      <meta itemprop="description" content="永远为下个月离职做好准备">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小灰灰的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/12/12/md/develop/base/al/time-complexity/" class="post-title-link" itemprop="url">o(1), o(n), o(logn), o(nlogn)</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-12-12 14:07 14:07:53" itemprop="dateCreated datePublished" datetime="2019-12-12T14:07:53+08:00">2019-12-12 14:07</time>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>592</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>在描述算法复杂度时,经常用到<code>o(1), o(n), o(logn), o(nlogn)</code>来表示对应算法的<code>时间复杂度</code>, 这里进行归纳一下它们代表的含义:<br>这是算法的时空复杂度的表示。不仅仅用于表示时间复杂度，也用于表示空间复杂度。<br>O后面的括号中有一个函数，指明某个算法的耗时/耗空间与数据增长量之间的关系。其中的n代表输入数据的量。 </p>
+<h4 id="多-Master-多-Slave-模式，异步复制"><a href="#多-Master-多-Slave-模式，异步复制" class="headerlink" title="多 Master 多 Slave 模式，异步复制"></a>多 Master 多 Slave 模式，异步复制</h4><h2 id="每个-Master-配置一个-Slave，有多对Master-Slave，HA-采用异步复制方式，主备有短暂消息延迟，毫秒级。"><a href="#每个-Master-配置一个-Slave，有多对Master-Slave，HA-采用异步复制方式，主备有短暂消息延迟，毫秒级。" class="headerlink" title=" 每个 Master 配置一个 Slave，有多对Master-Slave，HA 采用异步复制方式，主备有短暂消息延迟，毫秒级。"></a> 每个 Master 配置一个 Slave，有多对Master-Slave，HA 采用异步复制方式，主备有<code>短暂消息延迟</code>，毫秒级。</h2><p>优点：即使磁盘损坏，消息丢失的非常少，且消息实时性不会受影响，因为 Master 宕机后，消费者仍然可以从 Slave 消费，此过程对应用透明。不需要人工干预。性能同多 Master 模式几乎一样。</p>
 <ul>
-<li>O(n)，就代表数据量增大几倍，耗时也增大几倍。比如常见的遍历算法。 </li>
-<li>O(n^2)，就代表数据量增大n倍时，耗时增大n的平方倍，这是比线性更高的时间复杂度。比如冒泡排序，就是典型的O(n^2)的算法，对n个数排序，需要扫描n×n次。 </li>
-<li>O(logn)，当数据增大n倍时，耗时增大logn倍（这里的log是以2为底的，比如，当数据增大256倍时，耗时只增大8倍，是比线性还要低的时间复杂度）。二分查找就是O(logn)的算法，每找一次排除一半的可能，256个数据中查找只要找8次就可以找到目标。 </li>
-<li>O(nlogn)同理，就是n乘以logn，当数据增大256倍时，耗时增大256*8=2048倍。这个复杂度高于线性低于平方。归并排序就是O(nlogn)的时间复杂度。 </li>
-<li>O(1)就是最低的时空复杂度了，也就是耗时/耗空间与输入数据大小无关，无论输入数据增大多少倍，耗时/耗空间都不变。 哈希算法就是典型的O(1)时间复杂度，无论数据规模多大，都可以在一次计算后找到目标（不考虑冲突的话）</li>
+<li>缺点：Master 宕机，磁盘损坏情况，会丢失少量消息。</li>
+</ul>
+<h4 id="多-Master-多-Slave-模式，同步双写"><a href="#多-Master-多-Slave-模式，同步双写" class="headerlink" title="多 Master 多 Slave 模式，同步双写"></a>多 Master 多 Slave 模式，同步双写</h4><p> 每个 Master 配置一个 Slave，有多对Master-Slave，HA 采用同步双写方式，主备都写成功，向应用返回成功。</p>
+<ul>
+<li>优点：数据与服务都无单点，Master宕机情况下，消息无延迟，服务可用性与数据可用性都非常高</li>
+<li>缺点：性能比异步复制模式略低，大约低 10%左右，发送单个消息的 RT 会略高。目前主宕机后，备机不能自动切换为主机，后续会支持自动切换功能。</li>
 </ul>
 
       
@@ -831,7 +369,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/11/md/other/clothes-size/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/27/md/part/mq/rockemq-concept/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -845,7 +383,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2019/12/11/md/other/clothes-size/" class="post-title-link" itemprop="url">穿衣尺码</a>
+            <a href="/2020/02/27/md/part/mq/rockemq-concept/" class="post-title-link" itemprop="url">rocketmq主要概念</a>
         </h1>
 
         <div class="post-meta">
@@ -855,7 +393,7 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2019-12-11 10:42 10:42:11" itemprop="dateCreated datePublished" datetime="2019-12-11T10:42:11+08:00">2019-12-11 10:42</time>
+              <time title="创建时间：2020-02-27 15:46 15:46:21" itemprop="dateCreated datePublished" datetime="2020-02-27T15:46:21+08:00">2020-02-27 15:46</time>
             </span>
 
           <br>
@@ -864,7 +402,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>31</span>
+              <span>875</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -883,36 +421,262 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="卫衣尺码"><a href="#卫衣尺码" class="headerlink" title="卫衣尺码"></a>卫衣尺码</h3><table>
+          <h3 id="主要概念"><a href="#主要概念" class="headerlink" title="主要概念"></a>主要概念</h3><p>1.NameServer<br>可以理解为是消息队列的协调者，Broker向它注册路由信息，同时Client向其获取路由信息，如果使用过Zookeeper，就比较容易理解了，但是功能比Zookeeper弱；<br>NameServer本身是没有状态的，并且多个NameServer直接并没有通信，可以横向扩展多台，Broker会和每一台NameServer建立长连接；</p>
+<p>2.Broker<br>Broker是RocketMQ的核心，提供了消息的接收，存储，拉取等功能，一般都需要保证Broker的高可用，所以会配置Broker Slave，当Master挂掉之后，Consumer然后可以消费Slave；<br>Broker分为Master和Slave，一个Master可以对应多个Slave，Master与Slave的对应关系通过指定相同的BrokerName，不同的BrokerId来定义，BrokerId为0表示Master，非0表示Slave；</p>
+<p>3.Producer<br>消息队列的生产者，需要与NameServer建立连接，从NameServer获取Topic路由信息，并向提供Topic服务的Broker Master建立连接；Producer无状态，看集群部署；</p>
+<p>4.Consumer<br>消息队列的消费者，同样与NameServer建立连接，从NameServer获取Topic路由信息，并向提供Topic服务的Broker Master，Slave建立连接；</p>
+<p>5.Topic和Message Queue<br>在介绍完以上4个角色以后，还需要重点介绍一下上面提到的Topic和Message Queue；字面意思就是主题，用来区分不同类型的消息，发送和接收消息前都需要先创建Topic，针对Topic来发送和接收消息，为了提高性能和吞吐量，引入了Message Queue，一个Topic可以设置一个或多个Message Queue，有点类似kafka的分区(Partition)，这样消息就可以并行往各个Message Queue发送消息，消费者也可以并行的从多个Message Queue读取消息；</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/27/md/plan/lean-template/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="mqiy">
+      <meta itemprop="description" content="永远为下个月离职做好准备">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小灰灰的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/02/27/md/plan/lean-template/" class="post-title-link" itemprop="url">学习模板</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-02-27 15:09 15:09:00" itemprop="dateCreated datePublished" datetime="2020-02-27T15:09:00+08:00">2020-02-27 15:09</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>19</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="学习模板"><a href="#学习模板" class="headerlink" title="学习模板"></a>学习模板</h3><ul>
+<li>主要概念</li>
+<li>主要流程</li>
+<li>常规问题</li>
+<li>关键点</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/25/md/jdk/mulThread/juc/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="mqiy">
+      <meta itemprop="description" content="永远为下个月离职做好准备">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小灰灰的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/02/25/md/jdk/mulThread/juc/" class="post-title-link" itemprop="url">JUC基本概念</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-02-25 18:05 18:05:48" itemprop="dateCreated datePublished" datetime="2020-02-25T18:05:48+08:00">2020-02-25 18:05</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="1，tools（工具类）：又叫信号量三组工具类，包含有"><a href="#1，tools（工具类）：又叫信号量三组工具类，包含有" class="headerlink" title="1，tools（工具类）：又叫信号量三组工具类，包含有"></a>1，tools（工具类）：又叫信号量三组工具类，包含有</h3><p>1）<code>CountDownLatch</code>（闭锁） 是一个同步辅助类，在完成一组正在其他线程中执行的操作之前，它允许一个或多个线程一直等待<br>2）<code>CyclicBarrier</code>（栅栏） 之所以叫barrier，是因为是一个同步辅助类，允许一组线程互相等待，直到到达某个公共屏障点 ，并且在释放等待线程后可以重用。<br>3）<code>Semaphore</code>（信号量） 是一个计数信号量，它的本质是一个“共享锁“。信号量维护了一个信号量许可集。线程可以通过调用                                                                                        acquire()来获取信号量的许可；当信号量中有可用的许可时，线程能获取该许可；否则线程必须等待，                                                                                  直到有可用的许可为止。 线程可以通过release()来释放它所持有的信号量许可。</p>
+<h3 id="2，executor-执行者-：是Java里面线程池的顶级接口，但它只是一个执行线程的工具，真正的线程池接口是ExecutorService，里面包含的类有："><a href="#2，executor-执行者-：是Java里面线程池的顶级接口，但它只是一个执行线程的工具，真正的线程池接口是ExecutorService，里面包含的类有：" class="headerlink" title="2，executor(执行者)：是Java里面线程池的顶级接口，但它只是一个执行线程的工具，真正的线程池接口是ExecutorService，里面包含的类有："></a>2，executor(执行者)：是Java里面线程池的顶级接口，但它只是一个执行线程的工具，真正的线程池接口是ExecutorService，里面包含的类有：</h3><p>1）<code>ScheduledExecutorService</code>  解决那些需要任务重复执行的问题<br>2）<code>ScheduledThreadPoolExecutor</code>   周期性任务调度的类实现</p>
+<h3 id="3，atomic-原子性包-：是JDK提供的一组原子操作类，"><a href="#3，atomic-原子性包-：是JDK提供的一组原子操作类，" class="headerlink" title="3，atomic(原子性包)：是JDK提供的一组原子操作类，"></a>3，atomic(原子性包)：是JDK提供的一组原子操作类，</h3><p>包含有AtomicBoolean、AtomicInteger、AtomicIntegerArray等原子变量类，他们的实现原理大多是持有它们各自的对应的类型变量value，而且被volatile关键字修饰了。这样来保证每次一个线程要使用它都会拿到最新的值。</p>
+<h3 id="4，locks（锁包）：是JDK提供的锁机制，相比synchronized关键字来进行同步锁，功能更加强大，它为锁提供了一个框架，该框架允许更灵活地。包含的实现类有：-使用锁"><a href="#4，locks（锁包）：是JDK提供的锁机制，相比synchronized关键字来进行同步锁，功能更加强大，它为锁提供了一个框架，该框架允许更灵活地。包含的实现类有：-使用锁" class="headerlink" title="4，locks（锁包）：是JDK提供的锁机制，相比synchronized关键字来进行同步锁，功能更加强大，它为锁提供了一个框架，该框架允许更灵活地。包含的实现类有：                                              使用锁"></a>4，locks（锁包）：是JDK提供的锁机制，相比synchronized关键字来进行同步锁，功能更加强大，它为锁提供了一个框架，该框架允许更灵活地。包含的实现类有：                                              使用锁</h3><p>1）<code>ReentrantLock</code>   它是独占锁，是指只能被独自占领，即同一个时间点只能被一个线程锁获取到的锁。<br>2）<code>ReentrantReadWriteLock</code>   它包括子类ReadLock和WriteLock。ReadLock是共享锁，而WriteLock是独占锁。<br>3）<code>LockSupport</code> 它具备阻塞线程和解除阻塞线程的功能，并且不会引发死锁。</p>
+<h3 id="5，collections-集合类-：主要是提供线程安全的集合，"><a href="#5，collections-集合类-：主要是提供线程安全的集合，" class="headerlink" title="5，collections(集合类)：主要是提供线程安全的集合，"></a>5，collections(集合类)：主要是提供线程安全的集合，</h3><p>1）ArrayList对应的高并发类是CopyOnWriteArrayList，<br>2）HashSet对应的高并发类是 CopyOnWriteArraySet，<br>3）HashMap对应的高并发类是ConcurrentHashMap等等</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/24/md/part/microServices/spring%20cloud/spring%20cloud%20version/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="mqiy">
+      <meta itemprop="description" content="永远为下个月离职做好准备">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小灰灰的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/02/24/md/part/microServices/spring%20cloud/spring%20cloud%20version/" class="post-title-link" itemprop="url">Spring Cloud 和 Spring Boot对应版本</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-02-24 17:27 17:27:46" itemprop="dateCreated datePublished" datetime="2020-02-24T17:27:46+08:00">2020-02-24 17:27</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>127</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>Spring Cloud 和 Spring Boot 兼容性请见正文表格：</p>
+<table>
 <thead>
 <tr>
-<th>尺码</th>
-<th>衣长</th>
-<th>肩宽</th>
-<th>胸围</th>
-<th>袖长</th>
+<th align="left">Spring Cloud Train</th>
+<th align="left">Spring Boot Version</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>170/92A/M</td>
-<td>68</td>
-<td>46</td>
-<td>56</td>
-<td>61</td>
+<td align="left">Hoxton</td>
+<td align="left">2.2.x</td>
 </tr>
 <tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td align="left">Greenwich</td>
+<td align="left">2.1.x</td>
 </tr>
 <tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td align="left">Finchley</td>
+<td align="left">2.0.x</td>
+</tr>
+<tr>
+<td align="left">Edgware</td>
+<td align="left">1.5.x</td>
+</tr>
+<tr>
+<td align="left">Dalston</td>
+<td align="left">1.5.x</td>
 </tr>
 </tbody></table>
 
@@ -934,7 +698,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/10/md/problem/work/19-12/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/26/md/develop/dev-line/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -948,7 +712,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2019/12/10/md/problem/work/19-12/" class="post-title-link" itemprop="url">2019年12月日志</a>
+            <a href="/2019/12/26/md/develop/dev-line/" class="post-title-link" itemprop="url">知识清单，从开发到架构师！</a>
         </h1>
 
         <div class="post-meta">
@@ -958,7 +722,18 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2019-12-10 19:16 19:16:20" itemprop="dateCreated datePublished" datetime="2019-12-10T19:16:20+08:00">2019-12-10 19:16</time>
+              <time title="创建时间：2019-12-26 15:11 15:11:04" itemprop="dateCreated datePublished" datetime="2019-12-26T15:11:04+08:00">2019-12-26 15:11</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/develop/" itemprop="url" rel="index">
+                    <span itemprop="name">develop</span>
+                  </a>
+                </span>
             </span>
 
           <br>
@@ -967,7 +742,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>572</span>
+              <span>554</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -986,24 +761,16 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="战网第三方登录时，请求的参数误写成json格式，当作body传入"><a href="#战网第三方登录时，请求的参数误写成json格式，当作body传入" class="headerlink" title="战网第三方登录时，请求的参数误写成json格式，当作body传入"></a>战网第三方登录时，请求的参数误写成json格式，当作body传入</h3><blockquote>
-<p> 应该拼接到url后面</p>
-</blockquote>
-<h3 id="战网第三方登录时，提示“无效的grant-type或无效的回调地址“"><a href="#战网第三方登录时，提示“无效的grant-type或无效的回调地址“" class="headerlink" title="战网第三方登录时，提示“无效的grant_type或无效的回调地址“"></a>战网第三方登录时，提示“无效的grant_type或无效的回调地址“</h3><blockquote>
-<p>在战网管理平台把回调地址与授权地址配置反了</p>
-</blockquote>
-<h4 id="restTemplate有并发问题-200ms内，连接返回错乱"><a href="#restTemplate有并发问题-200ms内，连接返回错乱" class="headerlink" title="restTemplate有并发问题  200ms内，连接返回错乱"></a>restTemplate有并发问题  200ms内，连接返回错乱</h4><h4 id="支付宝支付成功后，redirect出错"><a href="#支付宝支付成功后，redirect出错" class="headerlink" title="支付宝支付成功后，redirect出错"></a>支付宝支付成功后，redirect出错</h4><p>显示最终回调地址为<code>http://casaba-commerce-mall-sandbox.cloud.bz/casaba-mall/trade/sendRedirectUrl/philips-lighting-uat.baozun.com/pay.html?orderNo=119120518391148212</code><br>而真正服务器地址为: <code>casaba-commerce-mall-sandbox.cloud.bz</code></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">response.redirect(<span class="string">'philips-lighting-uat.baozun.com/pay.html?orderNo=119120518391148212'</span>);</span></pre></td></tr></table></figure>
-<blockquote>
-<p>重定向地址没有带协议，导致默认把当前mapper url拼接在前面</p>
-</blockquote>
-<p><code>反思</code></p>
-<ul>
-<li>为何当前mapping url的域名是错误的，是一个不存在的域名，导致排查困难</li>
-<li>有其他正常的项目，没有去对比数据</li>
-<li>redirect 没有搞清楚使用</li>
-</ul>
-<h3 id="网页微信第三方登录-回调路径的域名必须与微信商户后台授权域名一致"><a href="#网页微信第三方登录-回调路径的域名必须与微信商户后台授权域名一致" class="headerlink" title="网页微信第三方登录  回调路径的域名必须与微信商户后台授权域名一致"></a>网页微信第三方登录  回调路径的域名必须与微信商户后台授权域名一致</h3>
+          <h3 id="常见模式与框架"><a href="#常见模式与框架" class="headerlink" title="常见模式与框架"></a>常见模式与框架</h3><p>设计模式<br>开发框架：比如 Spring, SpringMVC, Mybatis</p>
+<h3 id="工程化与工具"><a href="#工程化与工具" class="headerlink" title="工程化与工具"></a>工程化与工具</h3><p>软件开发流程&amp;规范<br>Git<br>敏捷开发<br>Docker</p>
+<h3 id="分布式架构"><a href="#分布式架构" class="headerlink" title="分布式架构"></a>分布式架构</h3><p>分布式架构设计原则<br>负载均衡，高可用<br>RPC，消息队列<br>分布式存储<br>高性能NIO框架<br>分布式缓存<br>分布式消息中间件</p>
+<h3 id="微服务架构"><a href="#微服务架构" class="headerlink" title="微服务架构"></a>微服务架构</h3><p>Spring Cloud<br>Spring Boot<br>Dubbo<br>Service Mesh</p>
+<h3 id="数据库分库分表"><a href="#数据库分库分表" class="headerlink" title="数据库分库分表"></a>数据库分库分表</h3><p>MySQL<br>MyCat<br>Sharding-JDBC</p>
+<h3 id="性能优化"><a href="#性能优化" class="headerlink" title="性能优化"></a>性能优化</h3><p>应用层：JVM 结构 &amp; 调优<br>web 服务器层：tomcat 等服务器结构 &amp; 调优<br>存储层：MySQL 结构 &amp; sql 优化，搜索引擎结构 &amp; 查询优化</p>
+<h3 id="底层知识"><a href="#底层知识" class="headerlink" title="底层知识"></a>底层知识</h3><p>对 JDK 的包结构，模块深入学习功能&amp;使用场景<br>围绕数据结构&amp;性能优化学习组织<br>对于 Java 开发来讲，JDK 几乎就是最底层和基础的知识了。对 JVM, MySQL等非 Java 程序了解结构，原理，调优基本就差不多了。但是 JDK 是要深入了解掌握的。</p>
+<h3 id="从开发到架构师"><a href="#从开发到架构师" class="headerlink" title="从开发到架构师"></a>从开发到架构师</h3><p>从单体技术 -&gt; 分布式，微服务<br>局部 -&gt; 整体<br>简单 -&gt; 深入</p>
+<p>架构师是一个更宏观的角色，单体系统的时候，单体系统划分、设计功能模块的也是架构师。随着分布式的兴起，架构师需要从分布式角度看整体系统，而到了微服务时代，架构师又要关注微服务，docker 等技术。</p>
+
       
     </div>
 
@@ -1022,7 +789,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/06/md/develop/base/al/paxos/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/19/md/jdk/mulThread/progress-change/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -1036,7 +803,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2019/12/06/md/develop/base/al/paxos/" class="post-title-link" itemprop="url">paxos</a>
+            <a href="/2019/12/19/md/jdk/mulThread/progress-change/" class="post-title-link" itemprop="url">线程的切换</a>
         </h1>
 
         <div class="post-meta">
@@ -1046,7 +813,7 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2019-12-06 11:24 11:24:13" itemprop="dateCreated datePublished" datetime="2019-12-06T11:24:13+08:00">2019-12-06 11:24</time>
+              <time title="创建时间：2019-12-19 18:11 18:11:14" itemprop="dateCreated datePublished" datetime="2019-12-19T18:11:14+08:00">2019-12-19 18:11</time>
             </span>
 
           <br>
@@ -1055,7 +822,85 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>3.2k</span>
+              <span>22</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h4 id="进程切换"><a href="#进程切换" class="headerlink" title="进程切换"></a>进程切换</h4><ul>
+<li>指令切换</li>
+<li>映射表切换</li>
+</ul>
+<h4 id="线程切换"><a href="#线程切换" class="headerlink" title="线程切换"></a>线程切换</h4><ul>
+<li>仅指令切换</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/19/md/jdk/mulThread/syn-opti/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="mqiy">
+      <meta itemprop="description" content="永远为下个月离职做好准备">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小灰灰的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/12/19/md/jdk/mulThread/syn-opti/" class="post-title-link" itemprop="url">java中锁的优化 -- JVM对synchronized的优化</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-12-19 13:52 13:52:55" itemprop="dateCreated datePublished" datetime="2019-12-19T13:52:55+08:00">2019-12-19 13:52</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>3k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -1074,54 +919,52 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h4 id="1、Paxos算法的应用"><a href="#1、Paxos算法的应用" class="headerlink" title="1、Paxos算法的应用"></a>1、Paxos算法的应用</h4><p>Paxos算法及变种算法在分布式系统中应用广泛。<br>基于Paxos算法的变种有：ZAB、Raft<br>    • Zookeeper 中的ZAB协议也是Paxos算法的变种。Zookeeper通过ZAB协议实现数据一致性，以提供数据一致性。<br>    • Nutanix 中通过Paxos算法实施元数据在各节点的强一致性。</p>
-<h4 id="2、什么是Paxos算法"><a href="#2、什么是Paxos算法" class="headerlink" title="2、什么是Paxos算法"></a>2、什么是Paxos算法</h4><p>Paxos算法解决的问题是在一个可能发生消息可能会延迟、丢失、重复的分布式系统中如何就<code>某个值达成一致</code>，保证不论发生以上任何异常，都不会破坏决议的一致性。这 个“值”可能是一个数据的某，也可能是一条LOG等；根据不同的应用环境这个“值”也不同。<br>一个典型的场景:在一个分布式数据库系统中，如果各节点的初始状态一致，每个节点都执行相同的操作序列，那么他们最后能得到一个一致的状态。为保证每个节点执行相同的命令序列，需要在每一条指令上执行一个“一致性算法”以保证每个节点看到的指令一致。</p>
-<h4 id="3、Paxos算法的原理"><a href="#3、Paxos算法的原理" class="headerlink" title="3、Paxos算法的原理"></a>3、Paxos算法的原理</h4><p>例如：公司商定年会举办的地点，每个人都可以提出建议。在现实环境中我们可以在一个会议室共同讨论或在微信群中讨论（基于内存共享方式）；但在基于消息传递的分布式环境中每个人只能通过手机短信与其它人通过。如何在这种会延迟、丢失的环境中确定一个年会举办地点；</p>
-<p>Paxos算法是这样解决这个问题：</p>
+          <h3 id="1）锁消除"><a href="#1）锁消除" class="headerlink" title="1）锁消除"></a>1）锁消除</h3><p>概念：JVM在JIT编译(即时编译)时，通过对运行上下文的扫描，去除掉那些不可能发生共享资源竞争的锁，从而节省了线程请求这些锁的时间。</p>
+<p><strong>举例</strong>：<br>        StringBuffer的append方法是一个同步方法，如果StringBuffer类型的变量是一个局部变量，则该变量就不会被其它线程所使用，即对局部变量的操作是不会发生线程不安全的问题。<br>        在这种情景下，JVM会在JIT编译时自动将append方法上的锁去掉。</p>
+<h3 id="2）锁粗化"><a href="#2）锁粗化" class="headerlink" title="2）锁粗化"></a>2）锁粗化</h3><p>概念：将多个连续的加锁、解锁操作连接在一起，扩展成一个范围更大的锁，即将加锁的粒度放大。</p>
+<p><strong>举例</strong>：在for循环里的加锁/解锁操作，一般需要放到for循环外。</p>
+<h3 id="3）使用偏向锁和轻量级锁"><a href="#3）使用偏向锁和轻量级锁" class="headerlink" title="3）使用偏向锁和轻量级锁"></a>3）使用偏向锁和轻量级锁</h3><p>说明：</p>
 <ul>
-<li>1、每个人都可以提出建议、同意建议、接受建议</li>
-<li>2、少数服从多数。只要建议被多数人同意即可确定该建议。</li>
+<li>1)java6为了减少获取锁和释放锁带来的性能消耗，引入了偏向锁和轻量级锁。</li>
+<li>2)锁一共有4种状态，级别从低到高依次是：无锁状态、偏向锁、轻量级锁、重量级锁。</li>
+<li>3)锁的状态会随着竞争情况逐渐升级，并且只可以升级而不能降级。</li>
 </ul>
-<p>于是确定以下讨论方式：</p>
-<ul>
-<li>1、只有被提出来的建议才能被大家同意。</li>
-<li>2、最终只能确定一个建议</li>
-<li>3、如果某个人认为大家同意了某 个建议，那么这个建议必须真的是被大家同意的</li>
-</ul>
-<h4 id="算法推论"><a href="#算法推论" class="headerlink" title="算法推论"></a>算法推论</h4><h5 id="情况一：如果只有一个人提出建议怎么办？"><a href="#情况一：如果只有一个人提出建议怎么办？" class="headerlink" title="情况一：如果只有一个人提出建议怎么办？"></a>情况一：如果只有一个人提出建议怎么办？</h5><p>如果只有一个建议被提出来那么大家必须同这个建议，因为如果不同意这个建议就无法确定一个年会举办地点。<br>所以得出这样的结论：<br>P1:<code>每一个人必须同意他收到的第一个建议</code><br>基于这样的结论会出现以下问题：<br><img src="https://www.mqiy.xyz/image/algorithm/paxos-example-01.jpg" alt=""><br>张三给王五发短信说：我建议去上海举办年会！<br>王五给李四发短信说：我建议去广州举办年会！<br>李四给张三发短信说：我建议去北京举办年会！</p>
-<p>根据P1：每个人必须同意他收到的第一个建议，那么张三、李四、王五最终获得的信息是不一致的。</p>
-<p>所以再次规定：一个提议必须被大多数人同意才能生效。<br>那么说明一个人可以同时同意多个建议，如果一个人可以同时同意多个建议最终可能出现拜占庭将军问题导致最终结果不一致。（例如：张三同意到北京举办也同意到广州举办，那么李四将获得2票一票自己的，一票张三的。他会认为自己获得多数人支持所以就确定最终是到北京举办，同理王五也会同时获得2票，也认为大家最终决定到广州举办）；</p>
-<p>所以要避免出现这种问题，某个人只要同意的多个提议中的内容相同（公司举办的地址）就不会出现这种问题。<br><img src="https://www.mqiy.xyz/image/algorithm/paxos-example-02.jpg" alt=""><br>    最终协商结果是有2票是到同一个地方，这样就可以确认最终举办地！<br>    那么就会引出 这样的一个结论：<br>    P2:一旦同意某个建议，那么之后同意的建议中提议公司举办年会的地址必须一致。<br>    问题出来了：如何确定什么是“之前”，什么 是“之后”<br>    所以必须为提议分配一个编号，在提议之间建立一个全序关系。</p>
-<h5 id="情况二：-其他节点失联"><a href="#情况二：-其他节点失联" class="headerlink" title="情况二： 其他节点失联"></a>情况二： 其他节点失联</h5><p>当张三、李四、王五三个人确定最终到郑州举办年会后。赵六、孙七2人由于手机没电，没收到通知，当他们2人开机后赵六给孙七发短信提议到海南举办，这个提议是孙七开机后第一次收到的提议，根据P1原则，他必须同意他接收到的第一个提议，所以孙七同意到海南举行年会。但这样就会导致孙七与张三、李四、王五他们确定的举办地点不一致。</p>
-<p><img src="https://www.mqiy.xyz/image/algorithm/paxos-example-03.jpg" alt="">  </p>
-<p>为了避免出现以上问题。对P2进行具体说明：<br>P2a:<code>一旦一个提议被大家同意，那么之后的人再次同意的提议中的公司举办年会的地址必须一致</code>。<br>也就是说，孙七在开机后同意的第一个提议必须是“到郑州举办”才不会出现信息不一致的现象。但孙七开机后必须得接受第一个提议（P1原则），并且无法干涉提议中的内容（公司举办年会的地址）。所以最好的办法通过某种方式让赵六的提议中的内容与张三、李四同意的地址相同（到郑州举行）。这样孙七同意的第一个提议就是“到郑州举办”</p>
-<p>我们再次对P2a进行修改：<br>P2b:<code>一旦一个提议被大家同意，那么之后的人再次提议，提议中的公司举办年会的地址必须跟之前其它人同意的地址一致</code>。</p>
-<p>如何让刚开机的赵六提议的内容必须与张三、李四、王五讨论出来的一致（到郑州举行）？</p>
-<p>我们继续对P2b进行强化修改：<br>P2c:<code>如果有一个编号为N的提议具有V(提议的内容)，那么存在一个多数派，要么他们中所有人都没有同意编号小于N的任何提议，要么他们已经同意的所有编号小于N的提案中编号最大的那个提案具有V</code>。</p>
-<p>要满足P2c的要求，提议人在提议之前，首先要和多数人通信并获得他们进行的最后一次同意的提议。之后根据反馈的信息决定这次提议的内容，形成提议开始投票！</p>
-<p>所以整个投票决议分两个阶段：<br>1、准备阶段<br>    1、提议人选择一个编号N，并将准备信息发送给多数人。<br>    2、如果收信人收到准备消息后，如果提议的编号大于它已经回复的所有准备信息。那么收信人将自己上次接受的提议内容回复给提议人，并承诺不再回复小于N的提议。<br>2、同意阶段<br>    1、当一个提议人收到多数人反馈的信息后，就进入同意阶段。它要向反馈给它信息的人再次发送一个请同意该提议的请求。包含编号N和根据P2C决定的提议内容（如果回复中没有反馈他们已经接受过的提议内容，则可以自由决定提议内容）<br>    2、在不违背向其它人承诺的前提下，收到该提议请求后立即同意该请求。</p>
-<hr>
-<h4 id="举例说明一下："><a href="#举例说明一下：" class="headerlink" title="举例说明一下："></a>举例说明一下：</h4><p>假设：只有User1、User2、User3 三个人决定1+1等于几！</p>
-<h5 id="1、准备阶段"><a href="#1、准备阶段" class="headerlink" title="1、准备阶段"></a>1、准备阶段</h5><p><img src="https://www.mqiy.xyz/image/algorithm/paxos-example-04.jpg" alt="">     </p>
-<ul>
-<li><p>1、User1  提案编号为1 并发送给User2和User3。<br>  因User2 和User3 根据P2c它们并没有接受过小于编号为1的提案。所以它们可以接受该提议，并反馈给User1 不再接受小于编号1的提案。这时User1收到多数人的回复，将进入第2阶段。（如果收到的回复并不能形成多数人，那么将再次进入阶段1）</p>
+<h4 id="【偏向锁】"><a href="#【偏向锁】" class="headerlink" title="【偏向锁】"></a>【偏向锁】</h4><ul>
+<li><p>1)背景：大多数情况下，锁不仅不存在多线程竞争，而且总是由同一线程多次获得，为了让线程获得锁的代价更低而引入了偏向锁。</p>
 </li>
-<li><p>2、User2 提案编号为2  ；并发送给User1和User3。<br>  因User1第一次收到提案，并且根据P2C它并没有同意过小于编号为2的提议，所以它可以接受该提议。User3由于接受过User1编号为1的提案，但User2的提案编号2&gt;1所以User3也可以同意User2的提议，并反馈不再接受小于2的提议。User2也收到多数人的回复，将进行第2阶段。</p>
+<li><p>2)概念：核心思想就是锁会偏向第一个获取它的线程，如果在接下来的执行过程中没有其它的线程获取该锁，则持有偏向锁的线程永远不需要同步。</p>
 </li>
-<li><p>3、User3提案编号为3 ；并发送给user1 和user2 .<br>  因user1收到user3编号为3的提案&gt;user2编号为2的提案，所以接受user3的提案。<br>  因user2收到User3编号为3的提案&gt;user1 编号为1的提案，所以接受user3的提案。<br>  至些user3也收到多数人回复，将进行第2阶段。</p>
+<li><p>3)目的：偏向锁实际上是一种优化锁，其目的是为了减少数据在无竞争情况下的性能损耗。</p>
+</li>
+<li><p>4)原理：<br>1&gt;当一个线程访问同步块并获取锁时，会在对象头和栈帧中的锁记录里存储锁偏向的线程ID。<br>2&gt;以后该线程在进入和退出同步块时就不需要进行CAS操作来加锁和解锁，只需简单地判断一下对象头的Mark Word里是否存储着指向当前线程的偏向锁。</p>
+</li>
+<li><p>5)偏向锁的获取：<br>1&gt;访问Mark Word中偏向锁的标识位是否为1，如果是1，则确定为偏向锁。<br>说明：<br>  [1]如果偏向锁的标识位为0，说明此时是处于无锁状态，则当前线程通过CAS操作尝试获取偏向锁，如果获取锁成功，则将Mark Word中的偏向线程ID设置为当前线程ID；并且将偏向标识位设为1。<br>  [2]如果偏向锁的标识位不为1，也不为0(此时偏向锁的标识位没有值)，说明发生了竞争，偏向锁已经膨胀为轻量级锁，这时使用CAS操作尝试获得锁。</p>
+<p>2&gt;如果是偏向锁，则判断Mark Word中的偏向线程ID是否指向当前线程，如果偏向线程ID指向当前线程，则表明当前线程已经获取到了锁；</p>
+<p>3&gt;如果偏向线程ID并未指向当前线程，则通过CAS操作尝试获取偏向锁，如果获取锁成功，则将Mark Word中的偏向线程ID设置为当前线程ID；</p>
+<p>4&gt;如果CAS获取偏向锁失败，则表示有竞争。当到达全局安全点时(在这个时间点上没有正在执行的字节码)，获得偏向锁的线程被挂起，偏向锁升级为轻量级锁，然后被阻塞在安全点的线程继续往下执行同步代码。</p>
+</li>
+<li><p>6)偏向锁的释放：<br>1&gt;当其它的线程尝试获取偏向锁时，持有偏向锁的线程才会释放偏向锁。<br>2&gt;释放偏向锁需要等待全局安全点(在这个时间点上没有正在执行的字节码)。<br>3&gt;过程：</p>
+<pre><code>首先暂停拥有偏向锁的线程，然后检查持有偏向锁的线程是否活着，如果线程不处于活动状态，则将对象头设置成无锁状态，
+如果线程还活着，说明此时发生了竞争，则偏向锁升级为轻量级锁，然后刚刚被暂停的线程会继续往下执行同步代码。</code></pre></li>
+<li><p>7)优点：加锁和解锁不需要额外的消耗，和执行非同步方法相比仅存在纳秒级的差距</p>
+</li>
+<li><p>8)缺点：如果线程间存在锁竞争，锁撤销会带来额外的消耗。</p>
+</li>
+<li><p>9)说明：<br>1&gt;偏向锁默认在应用程序启动几秒钟之后才激活。<br>2&gt;可以通过设置 -XX:BiasedLockingStartupDelay=0 来关闭延迟。<br>3&gt;可以通过设置 -XX:-UseBiasedLocking=false 来关闭偏向锁，程序默认会进入轻量级锁状态。(如果应用程序里的锁大多情况下处于竞争状态，则应该将偏向锁关闭)</p>
 </li>
 </ul>
-<h5 id="2、提议阶段："><a href="#2、提议阶段：" class="headerlink" title="2、提议阶段："></a>2、提议阶段：</h5><ul>
-<li><p>1、user1 发送编号为1的提议，提议内容为：1+1=1；并发送给user2和User3 。<br>  由于user2已经声明不再接受小于3的提案，所以拒绝user1的提案。<br>  由于User3已经声明不再接受小于2的提案，所以同样拒绝User1的提案。<br>  User1提议被多数人拒绝，再次进入阶段1.</p>
-</li>
-<li><p>2、user2 发送编号为2的提议，提议内容为：1+1=2；并发送给User1和User3<br>  由于User1已经声明不再接受小于3的提案，所以拒绝user2的提议。<br>  由于User3已经声明不再接受小于2的提案，该提案编号=2所以user3同意User2的提议。<br>  但User2并没有获得多数人的同意，所以同样进行阶段1.</p>
-</li>
-<li><p>3、User3 发送编号为3的提议，提议内容为：1+1=3；并发送给User1和User2;<br>  由于user1声明不再接受小于3的提案，所以同意User3的提议。<br>  由于 user2声明不再接受小于3的提案，所以同意User3的提议。</p>
-</li>
+<h4 id="【轻量级锁】"><a href="#【轻量级锁】" class="headerlink" title="【轻量级锁】"></a>【轻量级锁】</h4><p>1)原理：<br> 1&gt;当使用轻量级锁(锁标识位为00)时，线程在执行同步块之前，JVM会先在当前线程的栈桢中创建用于存储锁记录的空间，并将对象头中的Mark Word复制到锁记录中(注:锁记录中的标识字段称为Displaced Mark Word)。</p>
+<p> 2&gt;将对象头中的MarkWord复制到栈桢中的锁记录中之后，虚拟机将尝试使用CAS将对象头中Mark Word替换为指向该线程虚拟机栈中锁记录的指针，此时如果没有线程占有锁或者没有线程竞争锁，则当前线程成功获取到锁，然后执行同步块中的代码。</p>
+<p> 3&gt;如果在获取到锁的线程执行同步代码的过程中，另一个线程也完成了栈桢中锁记录的创建，并且已经将对象头中的MarkWord复制到了自己的锁记录中，然后尝试使用CAS将对象头中的MarkWord修改为指向自己的锁记录的指针，但是由于之前获取到锁的线程已经将对象头中的MarkWord修改过了(并且现在还在执行同步体中的代码,即仍然持有着锁)，所以此时对象头中的MarkWord与当前线程锁记录中MarkWord的值不同，导致CAS操作失败，然后该线程就会不停地循环使用CAS操作试图将对象头中的MarkWord替换为自己锁记录中MarkWord的值，(当循环次数或循环时间达到上限时停止循环)如果在循环结束之前CAS操作成功，那么该线程就可以成功获取到锁，如果循环结束之后依然获取不到锁，则锁获取失败，对象头中的MarkWord会被修改为指向重量级锁的指针，然后这个获取锁失败的线程就会被挂起，阻塞了。</p>
+<p> 4&gt;当持有锁的那个线程执行完同步体之后，使用CAS操作将对象头中的MarkWord还原为最初的状态时(将对象头中指向锁记录的指针替换为Displaced Mark Word )，发现MarkWord已被修改为指向重量级锁的指针，因此CAS操作失败，该线程会释放锁并唤起阻塞等待的线程，开始新一轮夺锁之争，而此时，轻量级锁已经膨胀为重量级锁，所有竞争失败的线程都会阻塞，而不是自旋。</p>
+<p> 自旋锁：<br>     1)所谓自旋锁，就是让没有获得锁的进程自己运行一段时间自循环(默认开启)，但是不挂起线程。<br>     2)自旋的代价就是该线程会一直占用处理器如果锁占用的时间很短，自旋等待的效果很好，反之，自旋锁会消耗大量处理器资源。<br>     3)因此，自旋的等待时间必须有一定限度，超过限度还没有获得锁，就要挂起线程。  </p>
+<p> 优点：在没有多线程竞争的前提下，减少传统的重量级锁带来的性能损耗。<br> 缺点：竞争的线程如果始终得不到锁，自旋会消耗cpu。<br> 应用：追求响应时间，同步块执行速度非常快。  </p>
+<h4 id="【重量级锁】"><a href="#【重量级锁】" class="headerlink" title="【重量级锁】"></a>【重量级锁】</h4><ul>
+<li>说明：<br>  1)java6之前的synchronized属于重量级锁，效率低下，因为monitor是依赖操作系统的Mutex Lock(互斥量)来实现的。<br>  2)多线程竞争锁时，会引起线程的上下文切换(即在cpu分配的时间片还没有用完的情况下进行了上下文切换)。<br>  3)操作系统实现线程的上下文切换需要从用户态转换到核心态，这个状态之间的转换需要相对较长的时间，时间成本相对较高。<br>  4)在互斥状态下，没有得到锁的线程会被挂起阻塞，而挂起线程和恢复线程的操作都需要从用户态转入内核态中完成。</li>
+<li>优点：线程竞争不使用自旋，不会消耗cpu。</li>
+<li>缺点：线程阻塞，响应时间缓慢。</li>
+<li>应用：追求吞吐量，同步块执行速度较长</li>
 </ul>
-<p>至此最终User3可以获得多数人的同意。  </p>
-<hr>
-<h4 id="4、Paxos算法图解："><a href="#4、Paxos算法图解：" class="headerlink" title="4、Paxos算法图解："></a>4、Paxos算法图解：</h4><p><img src="https://www.mqiy.xyz/image/algorithm/paxos.png" alt="Paxos算法图"></p>
 
       
     </div>
@@ -1141,7 +984,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/06/md/develop/base/al/Byzantine-failures/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/13/md/other/driver-itec/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -1155,7 +998,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2019/12/06/md/develop/base/al/Byzantine-failures/" class="post-title-link" itemprop="url">拜占庭将军问题</a>
+            <a href="/2019/12/13/md/other/driver-itec/" class="post-title-link" itemprop="url">驾驶相关</a>
         </h1>
 
         <div class="post-meta">
@@ -1165,7 +1008,7 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2019-12-06 10:26 10:26:39" itemprop="dateCreated datePublished" datetime="2019-12-06T10:26:39+08:00">2019-12-06 10:26</time>
+              <time title="创建时间：2019-12-13 18:09 18:09:58" itemprop="dateCreated datePublished" datetime="2019-12-13T18:09:58+08:00">2019-12-13 18:09</time>
             </span>
 
           <br>
@@ -1174,7 +1017,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>52</span>
+              <span>581</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -1193,7 +1036,37 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>拜占庭将军问题（Byzantine failures）的本质：如何让众多完全<code>平等的节点针对某一状态达成共识</code></p>
+          <h3 id="迈锐宝XL远程启动："><a href="#迈锐宝XL远程启动：" class="headerlink" title="迈锐宝XL远程启动："></a>迈锐宝XL远程启动：</h3><p>先按锁车键，再按启动键</p>
+<h3 id="寻车"><a href="#寻车" class="headerlink" title="寻车"></a>寻车</h3><p>按动到车反馈方便寻车有两个音量，响车后还放声音,会一直响，松开后再按几秒才会关掉。</p>
+<h3 id="车开关"><a href="#车开关" class="headerlink" title="车开关"></a>车开关</h3><p><img src="https://www.mqiy.xyz/image/other/car-lock-info.jpg" alt=""></p>
+<ul>
+<li><code>LOOK</code> 是拔出钥匙位置，同时方向盘锁死；</li>
+<li><code>ACC</code>是车内电气开启，可以听收音机等等；</li>
+<li><code>ON</code> 是全车电源开启，及启动后返回位置；</li>
+<li><code>START</code>为启动位置，钥匙拧到此处是启动发动机</li>
+</ul>
+<p>黄金三秒原则：</p>
+<p>一般高速行车时，视线不要离开前方超过三秒以上，超过三秒则危险系数指数上升</p>
+<p>正踩刹车斜踩油门</p>
+<p>判断安全车距</p>
+<p>安全车距一般跟认得反应时间有关系。教大家一个比较通俗的方法，一般时速多少公里每小时，则安全距离为多少米，例如高速行车速度100km/h，则安全距离为100米，并平时利用高速的距离指示牌训练自己对于距离的把控。</p>
+<h3 id="停车技巧"><a href="#停车技巧" class="headerlink" title="停车技巧"></a>停车技巧</h3><h4 id="一字停车位"><a href="#一字停车位" class="headerlink" title="一字停车位"></a>一字停车位</h4><ul>
+<li>自己的车停在前车左侧50cm左右的地方</li>
+<li>自己车的右后视镜对准旁车B柱</li>
+<li>倒车开始前，先在原地向内侧打足方向，然后再开始缓慢倒车</li>
+<li>观察到驾驶的车辆和旁车呈45度夹角时，往左打满轮继续倒车。</li>
+<li>待进入车位后，调正车头，回正车轮就行了- </li>
+</ul>
+<p>车左右距50cm  ,右后视镜对准旁车B柱<br>向内侧打足方向–&gt;  两车 45度  另一方向打满  —&gt; OK</p>
+<h4 id="斜线停车位"><a href="#斜线停车位" class="headerlink" title="斜线停车位"></a>斜线停车位</h4><ul>
+<li>车开至后视镜对准车位边线时，向外侧打满轮前行</li>
+<li>车身开至与车位成一条直线时，回正车轮开始直线倒车。</li>
+</ul>
+<h4 id="非字车位"><a href="#非字车位" class="headerlink" title="非字车位"></a>非字车位</h4><ul>
+<li>横向距离保持在1.5米左右</li>
+<li>驾驶员刚好与这个车位的车辆在同一平行线</li>
+<li>将车辆往左打满方向，然后倒车入位</li>
+</ul>
 
       
     </div>
@@ -1213,7 +1086,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/7/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/25/">25</a><a class="extend next" rel="next" href="/page/9/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/7/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/26/">26</a><a class="extend next" rel="next" href="/page/9/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1279,7 +1152,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">249</span>
+          <span class="site-state-item-count">259</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1326,12 +1199,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">235k</span>
+    <span title="站点总字数">237k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">3:34</span>
+    <span title="站点阅读时长">3:36</span>
 </div>
 
         
