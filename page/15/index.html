@@ -394,6 +394,85 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/30/md/part/redis/cache-problem/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="mqiy">
+      <meta itemprop="description" content="永远为下个月离职做好准备">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小灰灰的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/10/30/md/part/redis/cache-problem/" class="post-title-link" itemprop="url">缓存问题</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-10-30 18:10 18:10:10" itemprop="dateCreated datePublished" datetime="2019-10-30T18:10:10+08:00">2019-10-30 18:10</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>103</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="大量缓存同一时间失效会引起缓存的雪崩"><a href="#大量缓存同一时间失效会引起缓存的雪崩" class="headerlink" title="大量缓存同一时间失效会引起缓存的雪崩"></a>大量缓存同一时间失效会引起缓存的雪崩</h3><p>Redis<code>高可用</code>（High Availability）两种实现方式</p>
+<ul>
+<li>主从复制数据。</li>
+<li>哨兵模式</li>
+</ul>
+<blockquote>
+<p>网上给Redis加锁的机制都是利用Redis的setnx自身的方法去加锁,且防止死锁</p>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/30/md/part/redis/redis-backup/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -468,7 +547,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/30/md/part/redis/cache-problem/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/30/md/part/redis/redis-build-model/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -482,7 +561,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2019/10/30/md/part/redis/cache-problem/" class="post-title-link" itemprop="url">缓存问题</a>
+            <a href="/2019/10/30/md/part/redis/redis-build-model/" class="post-title-link" itemprop="url">redis模型模式</a>
         </h1>
 
         <div class="post-meta">
@@ -501,7 +580,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>103</span>
+              <span>247</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -520,14 +599,98 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="大量缓存同一时间失效会引起缓存的雪崩"><a href="#大量缓存同一时间失效会引起缓存的雪崩" class="headerlink" title="大量缓存同一时间失效会引起缓存的雪崩"></a>大量缓存同一时间失效会引起缓存的雪崩</h3><p>Redis<code>高可用</code>（High Availability）两种实现方式</p>
+          <p>####　sentinel模式</p>
+<h4 id="cluster模式"><a href="#cluster模式" class="headerlink" title="cluster模式"></a>cluster模式</h4><p>cluster可以说是sentinel和主从模式的结合体，通过cluster可以实现主从和master重选功能，<br>这种模式适合<code>数据量巨大</code>的缓存要求</p>
+<p>不足：</p>
 <ul>
-<li>主从复制数据。</li>
-<li>哨兵模式</li>
+<li>一般涉及多个key的操作会不支持，取两个set的并集，且两个set在不同的Redis实例上面（当然也是能实现的，只是Redis不会直接支持这么做）。</li>
+<li>涉及多个key的事务将不能使用</li>
+<li>使用分区时,数据处理更加复杂,例如你必须处理多个RDB / AOF文件,你需要备份你的数据并聚合多个实例和主机的持久性文件。</li>
 </ul>
-<blockquote>
-<p>网上给Redis加锁的机制都是利用Redis的setnx自身的方法去加锁,且防止死锁</p>
-</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/30/md/part/redis/redis-keyhot/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="mqiy">
+      <meta itemprop="description" content="永远为下个月离职做好准备">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小灰灰的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/10/30/md/part/redis/redis-keyhot/" class="post-title-link" itemprop="url">redis热key</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-10-30 18:10 18:10:10" itemprop="dateCreated datePublished" datetime="2019-10-30T18:10:10+08:00">2019-10-30 18:10</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>420</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h4 id=""><a href="#" class="headerlink" title=""></a></h4><p>怎么发现热key<br>方法一:凭借业务经验，进行预估哪些是热key</p>
+<p>其实这个方法还是挺有可行性的。比如某商品在做秒杀，那这个商品的key就可以判断出是热key。缺点很明显，并非所有业务都能预估出哪些key是热key。</p>
+<p>方法二:在客户端进行收集</p>
+<p>这个方式就是在操作redis之前，加入一行代码进行数据统计。</p>
+<p>方法三:在Proxy层做收集 </p>
+<p>方法四:用redis自带命令</p>
+<p>(1)monitor命令，该命令可以实时抓取出redis服务器接收到的命令，然后写代码统计出热key是啥。当然，也有现成的分析工具可以给你使用，比如redis-faina。但是该命令在高并发的条件下，有内存增暴增的隐患，还会降低redis的性能。</p>
+<p>(2)hotkeys参数，redis 4.0.3提供了redis-cli的热点key发现功能，执行redis-cli时加上–hotkeys选项即可。但是该参数在执行的时候，如果key比较多，执行起来比较慢。</p>
+<p>####解决方法：</p>
+<ul>
+<li>利用二级缓存</li>
+<li>备份热key</li>
+</ul>
 
       
     </div>
@@ -789,169 +952,6 @@
 <li>在redis前加进程缓存 消减redis使用率 通过redis watch机制保证缓存一致性</li>
 <li>布隆过滤器 或自定义过滤器 如bitmap hash值占位</li>
 <li>空key情况(避免全局扫) 设置默认值或上级缓存或使用过滤器</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/30/md/part/redis/redis-keyhot/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="mqiy">
-      <meta itemprop="description" content="永远为下个月离职做好准备">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小灰灰的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/10/30/md/part/redis/redis-keyhot/" class="post-title-link" itemprop="url">redis热key</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-10-30 18:10 18:10:10" itemprop="dateCreated datePublished" datetime="2019-10-30T18:10:10+08:00">2019-10-30 18:10</time>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>420</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h4 id=""><a href="#" class="headerlink" title=""></a></h4><p>怎么发现热key<br>方法一:凭借业务经验，进行预估哪些是热key</p>
-<p>其实这个方法还是挺有可行性的。比如某商品在做秒杀，那这个商品的key就可以判断出是热key。缺点很明显，并非所有业务都能预估出哪些key是热key。</p>
-<p>方法二:在客户端进行收集</p>
-<p>这个方式就是在操作redis之前，加入一行代码进行数据统计。</p>
-<p>方法三:在Proxy层做收集 </p>
-<p>方法四:用redis自带命令</p>
-<p>(1)monitor命令，该命令可以实时抓取出redis服务器接收到的命令，然后写代码统计出热key是啥。当然，也有现成的分析工具可以给你使用，比如redis-faina。但是该命令在高并发的条件下，有内存增暴增的隐患，还会降低redis的性能。</p>
-<p>(2)hotkeys参数，redis 4.0.3提供了redis-cli的热点key发现功能，执行redis-cli时加上–hotkeys选项即可。但是该参数在执行的时候，如果key比较多，执行起来比较慢。</p>
-<p>####解决方法：</p>
-<ul>
-<li>利用二级缓存</li>
-<li>备份热key</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/30/md/part/redis/redis-build-model/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="mqiy">
-      <meta itemprop="description" content="永远为下个月离职做好准备">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小灰灰的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/10/30/md/part/redis/redis-build-model/" class="post-title-link" itemprop="url">redis模型模式</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-10-30 18:10 18:10:10" itemprop="dateCreated datePublished" datetime="2019-10-30T18:10:10+08:00">2019-10-30 18:10</time>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>247</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>####　sentinel模式</p>
-<h4 id="cluster模式"><a href="#cluster模式" class="headerlink" title="cluster模式"></a>cluster模式</h4><p>cluster可以说是sentinel和主从模式的结合体，通过cluster可以实现主从和master重选功能，<br>这种模式适合<code>数据量巨大</code>的缓存要求</p>
-<p>不足：</p>
-<ul>
-<li>一般涉及多个key的操作会不支持，取两个set的并集，且两个set在不同的Redis实例上面（当然也是能实现的，只是Redis不会直接支持这么做）。</li>
-<li>涉及多个key的事务将不能使用</li>
-<li>使用分区时,数据处理更加复杂,例如你必须处理多个RDB / AOF文件,你需要备份你的数据并聚合多个实例和主机的持久性文件。</li>
 </ul>
 
       
