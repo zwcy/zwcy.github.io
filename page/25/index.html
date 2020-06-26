@@ -140,7 +140,7 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">55</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">56</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
@@ -150,7 +150,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">259</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">261</span></a>
 
   </li>
         <li class="menu-item menu-item-relate">
@@ -207,6 +207,244 @@
             
 
   <div class="posts-expand">
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/jdk/jvm/jvm-cfg/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="mqiy">
+      <meta itemprop="description" content="永远为下个月离职做好准备">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小灰灰的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/06/18/md/jdk/jvm/jvm-cfg/" class="post-title-link" itemprop="url">jvm参数</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-06-18 14:28 14:28:10" itemprop="dateCreated datePublished" datetime="2019-06-18T14:28:10+08:00">2019-06-18 14:28</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.5k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="Java-堆内存开关"><a href="#Java-堆内存开关" class="headerlink" title="Java 堆内存开关"></a>Java 堆内存开关</h3><table>
+<thead>
+<tr>
+<th align="center">VM 开关</th>
+<th align="left">VM 开关描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">-Xms</td>
+<td align="left">设置JVM启动时堆的初始化大小。</td>
+</tr>
+<tr>
+<td align="center">-Xmx</td>
+<td align="left">设置堆最大值。</td>
+</tr>
+<tr>
+<td align="center">-Xmn</td>
+<td align="left">设置年轻代的空间大小，剩下的为老年代的空间大小。</td>
+</tr>
+<tr>
+<td align="center">-XX:PermGen</td>
+<td align="left">设置永久代内存的初始化大小。</td>
+</tr>
+<tr>
+<td align="center">-XX:MaxPermGen</td>
+<td align="left">设置永久代的最大值。</td>
+</tr>
+<tr>
+<td align="center">-XX:SurvivorRatio</td>
+<td align="left">提供Eden区和survivor区的空间比例。比如，如果年轻代的大小为10m并且VM开关是-XX:SurvivorRatio=2，那么将会保留5m内存给Eden区和每个Survivor区分配2.5m内存。默认比例是8。</td>
+</tr>
+<tr>
+<td align="center">-XX:NewRatio</td>
+<td align="left">提供年老代和年轻代的比例大小。默认值是2。</td>
+</tr>
+</tbody></table>
+<h3 id="最后汇总一下JVM常见配置"><a href="#最后汇总一下JVM常见配置" class="headerlink" title="最后汇总一下JVM常见配置"></a>最后汇总一下JVM常见配置</h3><h3 id="堆设置"><a href="#堆设置" class="headerlink" title="堆设置"></a>堆设置</h3><p>-Xms:初始堆大小   </p>
+<p>-Xmx:最大堆大小   </p>
+<p>-XX:NewSize=n:设置年轻代大小</p>
+<p>-XX:NewRatio=n:设置年轻代和年老代的比值。如:为3，表示年轻代与年老代比值为1：3，年轻代占整个年轻代年老代和的1/4</p>
+<p>-XX:SurvivorRatio=n:年轻代中Eden区与两个Survivor区的比值。注意Survivor区有两个。如：3，表示Eden：Survivor=3：2，一个Survivor区占整个年轻代的1/5</p>
+<p>-XX:MaxPermSize=n:设置持久代大小</p>
+<h4 id="收集器设置"><a href="#收集器设置" class="headerlink" title="收集器设置"></a>收集器设置</h4><p>-XX:+UseSerialGC:设置串行收集器</p>
+<p>-XX:+UseParallelGC:设置并行收集器</p>
+<p>-XX:+UseParalledlOldGC:设置并行年老代收集器</p>
+<p>-XX:+UseConcMarkSweepGC:设置并发收集器</p>
+<h4 id="垃圾回收统计信息"><a href="#垃圾回收统计信息" class="headerlink" title="垃圾回收统计信息"></a>垃圾回收统计信息</h4><p>-XX:+PrintGC  </p>
+<p>-XX:+PrintGCDetails  </p>
+<p>-XX:+PrintGCTimeStamps  </p>
+<p>-Xloggc:filename</p>
+<h4 id="并行收集器设置"><a href="#并行收集器设置" class="headerlink" title="并行收集器设置"></a>并行收集器设置</h4><p>-XX:ParallelGCThreads=n:设置并行收集器收集时使用的CPU数。并行收集线程数。</p>
+<p>-XX:MaxGCPauseMillis=n:设置并行收集最大暂停时间</p>
+<p>-XX:GCTimeRatio=n:设置垃圾回收时间占程序运行时间的百分比。公式为1/(1+n)</p>
+<h4 id="并发收集器设置"><a href="#并发收集器设置" class="headerlink" title="并发收集器设置"></a>并发收集器设置</h4><p>-XX:+CMSIncrementalMode:设置为增量模式。适用于单CPU情况。</p>
+<p>-XX:ParallelGCThreads=n:设置并发收集器年轻代收集方式为并行收集时，使用的CPU数。并行收集线程数。</p>
+<h3 id="Tomcat运行jvm参数"><a href="#Tomcat运行jvm参数" class="headerlink" title="Tomcat运行jvm参数"></a>Tomcat运行jvm参数</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">-Xms256m -Xmx512m -XX:MaxNewSize=256m -XX:MaxPermSize=256m</span></pre></td></tr></table></figure>
+
+<h3 id="jdk版本变更中jvm内存结构变化"><a href="#jdk版本变更中jvm内存结构变化" class="headerlink" title="jdk版本变更中jvm内存结构变化"></a>jdk版本变更中jvm内存结构变化</h3><p>永久代的工作从JDK 1.7就开始了。JDK 1.7中，存储在永久代的部分数据就已经转移到Java Heap或者Native Heap。但永久代仍存在于JDK 1.7中，并没有完全移除，<br>符号引用(Symbols)转移到了native heap；<br>字面量(interned strings)转移到了Java heap；<br>类的静态变量(class statics)转移到了Java heap。</p>
+<p><em>Java8之后的变化：</em></p>
+<ul>
+<li>移除了永久代（PermGen），替换为元空间（Metaspace）；</li>
+<li>永久代中的 class metadata 转移到了 native memory（本地内存，而不是虚拟机）；</li>
+<li>永久代中的 interned Strings 和 class static variables 转移到了 Java heap；</li>
+<li>永久代参数 （PermSize MaxPermSize） -&gt; 元空间参数（MetaspaceSize MaxMetaspaceSize）</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/part/project/%E9%AB%98%E5%B9%B6%E5%8F%91/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="mqiy">
+      <meta itemprop="description" content="永远为下个月离职做好准备">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小灰灰的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/06/18/md/part/project/%E9%AB%98%E5%B9%B6%E5%8F%91/" class="post-title-link" itemprop="url">高并发</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-06-18 14:28 14:28:10" itemprop="dateCreated datePublished" datetime="2019-06-18T14:28:10+08:00">2019-06-18 14:28</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>542</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="首先要了解高并发的的瓶颈在哪里？"><a href="#首先要了解高并发的的瓶颈在哪里？" class="headerlink" title="首先要了解高并发的的瓶颈在哪里？"></a>首先要了解高并发的的瓶颈在哪里？</h2><h3 id="前端性能优化技术"><a href="#前端性能优化技术" class="headerlink" title="前端性能优化技术"></a>前端性能优化技术</h3><ol>
+<li><p>前端负载均衡: DNS，CDN</p>
+</li>
+<li><p>减少前端链接数: 把js打成一个文件，把css也打成一个文件，把图标也打成一个文件，用css分块展示。把链接数减到最低。</p>
+</li>
+<li><p>减少网页大小增加带宽:尽量少用图片</p>
+</li>
+<li><p>前端页面静态化: 静态化一些不常变的页面和数据</p>
+</li>
+<li><p>优化查询: redis缓存</p>
+</li>
+</ol>
+<hr>
+<h3 id="后端性能优化技术"><a href="#后端性能优化技术" class="headerlink" title="后端性能优化技术"></a>后端性能优化技术</h3><ol>
+<li><p>数据冗余: 减少表连接这样的开销比较大的操作，优化sql语句</p>
+</li>
+<li><p>数据镜像: 把一台数据库的负载均分到多台上，同时又保证了数据一致性(Oracle的SCN)。最重要的是，这样还可以有高可用性，一台废了，还有另一台在服务</p>
+</li>
+<li><p>数据分区</p>
+<ul>
+<li>把数据把某种逻辑来分类: 把一张表拆成多张有一样的字段但是不同种类的表</li>
+<li>把数据按字段分，也就是竖着分表: 把一些不经常改的数据放在一个表里，经常改的数据放在另外多个表里。把一张表变成1对1的关系</li>
+<li>平均分表: 通过主键ID的范围来分表。</li>
+<li>同一数据分区: 把同一商品的库存值分到不同的服务器上，然后负载均衡</li>
+</ul>
+</li>
+<li><p>后端系统负载均衡: 需要一个任务分配系统，其还能监控各个服务器的负载情况。</p>
+</li>
+<li><p>异步、 throttle 和 批量处理: 把一堆基本相同的请求批量处理,大家同时购买同一个商品，没有必要你买一个我就写一次数据库，完全可以收集到一定数量的请求，一次操作一个是作业量，另一个是timeout</p>
+</li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
         
   
   
@@ -865,179 +1103,11 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/other/Reactive%20Programming/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="mqiy">
-      <meta itemprop="description" content="永远为下个月离职做好准备">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小灰灰的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/06/18/md/other/Reactive%20Programming/" class="post-title-link" itemprop="url">响应式编程</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-06-18 14:13 14:13:10" itemprop="dateCreated datePublished" datetime="2019-06-18T14:13:10+08:00">2019-06-18 14:13</time>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>264</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h4 id="响应式编程核心特征"><a href="#响应式编程核心特征" class="headerlink" title="响应式编程核心特征"></a>响应式编程核心特征</h4><ul>
-<li>变化传递(propagation of change)</li>
-<li>基于数据流(data stream)</li>
-<li>声明式(declarative)</li>
-</ul>
-<h4 id="响应式流"><a href="#响应式流" class="headerlink" title="响应式流"></a>响应式流</h4><ul>
-<li>异步非阻塞</li>
-<li>流量控制</li>
-</ul>
-<blockquote>
-<p>(ps Java Stream是一种同步API)</p>
-</blockquote>
-<p>阻塞造成的性能损失，我们通常有两种思路来解决</p>
-<ol>
-<li>并行化：使用更多的线程和硬件资源；</li>
-<li>异步化：基于现有的资源来提高执行效率。</li>
-</ol>
-<p>将输入转化为输出的过程中，处理速度小于输入速度的状态称为Backpressure<br>通常处理这种状态的策略有以下三种：</p>
-<p>Buffer：将输入暂时保存下来</p>
-<p>Drop：丢弃掉输入</p>
-<p>Control：由消费者来控制生产者的速度</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/other/encrypt/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="mqiy">
-      <meta itemprop="description" content="永远为下个月离职做好准备">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小灰灰的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/06/18/md/other/encrypt/" class="post-title-link" itemprop="url">公钥与私钥</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-06-18 14:13 14:13:10" itemprop="dateCreated datePublished" datetime="2019-06-18T14:13:10+08:00">2019-06-18 14:13</time>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>44</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>公钥与私钥使用，在大部分情况下</p>
-<ul>
-<li>我们使用公钥加密、私钥解密，</li>
-<li><code>签名</code>却是使用私钥加密，公钥解密</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/24/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/24/">24</a><span class="page-number current">25</span><a class="page-number" href="/page/26/">26</a><a class="extend next" rel="next" href="/page/26/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/24/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/24/">24</a><span class="page-number current">25</span><a class="page-number" href="/page/26/">26</a><a class="page-number" href="/page/27/">27</a><a class="extend next" rel="next" href="/page/26/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1103,7 +1173,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">259</span>
+          <span class="site-state-item-count">261</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1116,7 +1186,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">55</span>
+        <span class="site-state-item-count">56</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

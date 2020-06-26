@@ -52,10 +52,9 @@
       </tags>
   </entry>
   <entry>
-    <title>java程序员必须掌握二八知识点</title>
+    <title>java程序员必须掌握20&amp;#37知识点</title>
     <url>/2020/11/07/md/develop/core-20/</url>
-    <content><![CDATA[<p>java程序员必须掌握20%知识点</p>
-<ul>
+    <content><![CDATA[<ul>
 <li>java基础，如集合类，IO，泛型等</li>
 <li>JVM底层知道，如类加载机制，GC，JVM内存结构等</li>
 <li>Java并发编程知识，如Java内存模型，并发包，线程池等。</li>
@@ -88,6 +87,28 @@
 ]]></content>
       <tags>
         <tag>tool</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>撩妹各时段</title>
+    <url>/2020/06/26/md/life/flirt/prcess-flirt/</url>
+    <content><![CDATA[<p>1<del>2个月,热恋期<br>2</del>3个月 吵架期<br>3<del>6个月 无话题期<br>6</del>10个月 高度分手期<br>10<del>12个月 赢了<br>1</del>2年依赖期<br>2<del>3年 各忙各 互不打扰<br>3</del>4年 心里装着对方<br>4~5年 可以领本了</p>
+<p>异地恋的兄弟们,记住一句老话,熬过这段恋情,你们将是一辈子.</p>
+]]></content>
+      <tags>
+        <tag>flirt</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>vue问题</title>
+    <url>/2020/06/16/md/part/web/js/vue-problem/</url>
+    <content><![CDATA[<h4 id="vue中toFixed获取小数点后两位"><a href="#vue中toFixed获取小数点后两位" class="headerlink" title="vue中toFixed获取小数点后两位"></a>vue中toFixed获取小数点后两位</h4><p>错误提示: .toFixed is not a function<br><strong>解决办法</strong>：</p>
+<blockquote>
+<p>Number(_this.group_cash).toFixed(2)</p>
+</blockquote>
+]]></content>
+      <tags>
+        <tag>vue</tag>
       </tags>
   </entry>
   <entry>
@@ -403,11 +424,9 @@
       </tags>
   </entry>
   <entry>
-    <title>关于聚餐</title>
-    <url>/2020/06/01/md/life/diet/being-well/</url>
-    <content><![CDATA[<blockquote>
-<p>千万戒掉,去一次,半个月费了,真的!</p>
-</blockquote>
+    <title>各肉类脂肪含量</title>
+    <url>/2020/06/01/md/life/diet/meat-fat-num/</url>
+    <content><![CDATA[<p>1 猪肉:脂肪含量29%<br>2 羊肉:脂肪含量24%<br>3 牛肉:脂肪含量12%<br>4 鸭肉:脂肪含量7.5%<br>5 鸡肉:脂肪含量6%<br>6 鱼肉:脂肪含量1.5%<br>7 兔肉:脂肪含量0.4%</p>
 ]]></content>
       <categories>
         <category>计划</category>
@@ -417,9 +436,11 @@
       </tags>
   </entry>
   <entry>
-    <title>各肉类脂肪含量</title>
-    <url>/2020/06/01/md/life/diet/meat-fat-num/</url>
-    <content><![CDATA[<p>1 猪肉:脂肪含量29%<br>2 羊肉:脂肪含量24%<br>3 牛肉:脂肪含量12%<br>4 鸭肉:脂肪含量7.5%<br>5 鸡肉:脂肪含量6%<br>6 鱼肉:脂肪含量1.5%<br>7 兔肉:脂肪含量0.4%</p>
+    <title>关于聚餐</title>
+    <url>/2020/06/01/md/life/diet/being-well/</url>
+    <content><![CDATA[<blockquote>
+<p>千万戒掉,去一次,半个月费了,真的!</p>
+</blockquote>
 ]]></content>
       <categories>
         <category>计划</category>
@@ -441,7 +462,16 @@
     <title>增进情侣之间的感情</title>
     <url>/2020/05/16/md/life/flirt/increate-yours/</url>
     <content><![CDATA[<p>这个话题能增进情侣之间的感情</p>
-<p>1聊一聊初次见面的印象<br>2什么时候开始喜欢对方<br>3聊聊双方的爱情观<br>4分享童年往事<br>5制定爱情规则<br>6分享兴趣爱好<br>7聊一聊在一起之后一定要做的事情<br>8聊聊共同的未来规划</p>
+<ul>
+<li>1聊一聊初次见面的印象</li>
+<li>2什么时候开始喜欢对方</li>
+<li>3聊聊双方的爱情观</li>
+<li>4分享童年往事</li>
+<li>5制定爱情规则</li>
+<li>6分享兴趣爱好</li>
+<li>7聊一聊在一起之后一定要做的事情</li>
+<li>8聊聊共同的未来规划</li>
+</ul>
 ]]></content>
       <tags>
         <tag>flirt</tag>
@@ -504,7 +534,16 @@
   <entry>
     <title>第一次跟女生约会，不要让女生觉得你是胆小鬼</title>
     <url>/2020/05/16/md/life/flirt/date-frist/</url>
-    <content><![CDATA[<p>第一次跟女生约会，怎么快速接近关系？<br>1,约女生吃饭，能被你单独约出来的一般不讨厌你<br>2,饭后看电影，刚开始小声聊天，贴近她耳朵的那种<br>3,半小时后可以试着闻下她头发，夸赞她身上香<br>4,用你的肩去碰她的肩，轻微搂一下，胆子要大，强势一点，一般不会拒绝<br>5,一小时后去拉她的手，顺势拉她靠近你的怀里<br>6,感觉电影快结束了，或者气氛到了，把她脸扳一下，直接吻上去，一定要快，亲的时间不要太长（提前吃颗糖，别把口臭把妹子吓到）<br>7,最后切忌不要立马提出做女朋友的事，回去正常微信聊天，隔天再提在一起的想法（让她内心忐忑一晚上）</p>
+    <content><![CDATA[<p>第一次跟女生约会，怎么快速接近关系？</p>
+<ul>
+<li>1,约女生吃饭，能被你单独约出来的一般不讨厌你</li>
+<li>2,饭后看电影，刚开始小声聊天，贴近她耳朵的那种</li>
+<li>3,半小时后可以试着闻下她头发，夸赞她身上香</li>
+<li>4,用你的肩去碰她的肩，轻微搂一下，胆子要大，强势一点，一般不会拒绝</li>
+<li>5,一小时后去拉她的手，顺势拉她靠近你的怀里</li>
+<li>6,感觉电影快结束了，或者气氛到了，把她脸扳一下，直接吻上去，一定要快，亲的时间不要太长（提前吃颗糖，别把口臭把妹子吓到）</li>
+<li>7,最后切忌不要立马提出做女朋友的事，回去正常微信聊天，隔天再提在一起的想法（让她内心忐忑一晚上）</li>
+</ul>
 ]]></content>
       <tags>
         <tag>flirt</tag>
@@ -2713,16 +2752,18 @@
   <entry>
     <title>撩妹</title>
     <url>/2019/11/06/md/life/flirt/pua/</url>
-    <content><![CDATA[<h3 id="男票需做到"><a href="#男票需做到" class="headerlink" title="男票需做到"></a>男票需做到</h3><p>1、记得你的生日；</p>
-<p>2、手机保持畅通让你能够联系得到他；</p>
-<p>3、在乎你穿的暖不暖，有没有按时吃饭；</p>
-<p>4、和他微信聊天时，态度积极，不会敷衍了事或总是隔很久才回复；</p>
-<p>5、对你大方从不吝啬；</p>
-<p>6、不嫌弃你；</p>
-<p>7、一有时间就会抽空陪着你；</p>
-<p>8、带你见过他最要好的朋友，甚至是家长；</p>
-<p>9、憧憬你们的未来，计划里一定有你；</p>
-<p>10、当你生病时，他会担心不已，亲自照顾你。</p>
+    <content><![CDATA[<h3 id="男票需做到"><a href="#男票需做到" class="headerlink" title="男票需做到"></a>男票需做到</h3><ul>
+<li>1、记得你的生日；</li>
+<li>2、手机保持畅通让你能够联系得到他；</li>
+<li>3、在乎你穿的暖不暖，有没有按时吃饭；</li>
+<li>4、和他微信聊天时，态度积极，不会敷衍了事或总是隔很久才回复；</li>
+<li>5、对你大方从不吝啬；</li>
+<li>6、不嫌弃你；</li>
+<li>7、一有时间就会抽空陪着你；</li>
+<li>8、带你见过他最要好的朋友，甚至是家长；</li>
+<li>9、憧憬你们的未来，计划里一定有你；</li>
+<li>10、当你生病时，他会担心不已，亲自照顾你。</li>
+</ul>
 ]]></content>
       <categories>
         <category>人生感悟</category>
@@ -2734,7 +2775,14 @@
   <entry>
     <title>男生找不到女朋友,90%的原因都这里</title>
     <url>/2019/11/06/md/life/flirt/why-alone/</url>
-    <content><![CDATA[<p>1,总是当老好人<br>2,眼高手低<br>3,总是迎合女生的脚<br>4,总是表白<br>5,总是心眼好,但是说话不会拐弯抹角,容易好心办错事<br>6,总是见到女生,就没有话题聊,显得尴尬</p>
+    <content><![CDATA[<ul>
+<li>1,总是当老好人</li>
+<li>2,眼高手低</li>
+<li>3,总是迎合女生的脚</li>
+<li>4,总是表白</li>
+<li>5,总是心眼好,但是说话不会拐弯抹角,容易好心办错事</li>
+<li>6,总是见到女生,就没有话题聊,显得尴尬</li>
+</ul>
 ]]></content>
       <categories>
         <category>人生感悟</category>
@@ -5400,19 +5448,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Springboot</title>
-    <url>/2019/07/11/md/problem/spring-boot/</url>
-    <content><![CDATA[<h3 id="Springboot-Filter中注入bean-无效为null"><a href="#Springboot-Filter中注入bean-无效为null" class="headerlink" title="Springboot Filter中注入bean 无效为null"></a>Springboot Filter中注入bean 无效为null</h3><p>问题原因：</p>
-<p>Web应用的启动顺序是：Lisenter-&gt;Fliter-&gt;Servlet,  应用程序上下文， 初始化 Fliter的时候，还没有初始化Servlert，所有没有进入DispacterServlet的初始化，故在Fliter中使用注解注入bean为空；</p>
-<p>解决办法：</p>
-<p>添加初始化bean配置，手动创建对象new</p>
-]]></content>
-      <tags>
-        <tag>problem</tag>
-        <tag>spring boot</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>mybatis相关问题</title>
     <url>/2019/07/11/md/problem/mybatis/</url>
     <content><![CDATA[<h3 id="mybatis报错-Specified-class-is-an-interface"><a href="#mybatis报错-Specified-class-is-an-interface" class="headerlink" title="mybatis报错 Specified class is an interface"></a>mybatis报错 Specified class is an interface</h3><h4 id="1-错误原因"><a href="#1-错误原因" class="headerlink" title="1.错误原因"></a>1.错误原因</h4><p>Caused by: org.springframework.beans.factory.BeanCreationException: </p>
@@ -5426,6 +5461,19 @@
       <tags>
         <tag>problem</tag>
         <tag>mybatis</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Springboot</title>
+    <url>/2019/07/11/md/problem/spring-boot/</url>
+    <content><![CDATA[<h3 id="Springboot-Filter中注入bean-无效为null"><a href="#Springboot-Filter中注入bean-无效为null" class="headerlink" title="Springboot Filter中注入bean 无效为null"></a>Springboot Filter中注入bean 无效为null</h3><p>问题原因：</p>
+<p>Web应用的启动顺序是：Lisenter-&gt;Fliter-&gt;Servlet,  应用程序上下文， 初始化 Fliter的时候，还没有初始化Servlert，所有没有进入DispacterServlet的初始化，故在Fliter中使用注解注入bean为空；</p>
+<p>解决办法：</p>
+<p>添加初始化bean配置，手动创建对象new</p>
+]]></content>
+      <tags>
+        <tag>problem</tag>
+        <tag>spring boot</tag>
       </tags>
   </entry>
   <entry>
@@ -5492,6 +5540,40 @@
       </tags>
   </entry>
   <entry>
+    <title>情商50则</title>
+    <url>/2019/06/21/md/life/%E6%83%85%E5%95%8650%E5%88%99/</url>
+    <content><![CDATA[<p>1，话别说太满，人别熟太快。<br>3，不要把别人想得太坏，也不要把别人想得太好，都是凡人。<br>2，别人自嘲可以，但你千万别附和<br>4，可以嘲笑你的朋友，但不能嘲笑他喜欢的东西。  </p>
+<h2 id="34，自嘲是最高境界，而不是嘲笑别人。"><a href="#34，自嘲是最高境界，而不是嘲笑别人。" class="headerlink" title="34，自嘲是最高境界，而不是嘲笑别人。  "></a>34，自嘲是最高境界，而不是嘲笑别人。  </h2><p>6，刚开始和对方不熟悉的时候，聊到晚上十点多对方发来消息就别回复了，第二天早晨再回复，这样又可以聊一天。<br>7，把“随便”改成“听你的”。<br>23，把“听明白了吗”换成“我说明白了吗”。<br>5，把每一句“我不会”都改成“我可以学”<br>把“谢谢”改成“谢谢你” 并微笑看着对方的眼睛    </p>
+<hr>
+<p>8，别人骂你你要听，别人夸你你别信。<br>9，请道歉而不是取笑别人开不起玩笑，你以为谁没有底线只不过还没到底而已。<br>10，聊天时别人发微笑，你不知道怎么回的话，就回，你笑得真好看。<br>11，能用表情包解决的就不要说脏话！<br>12，恰到好处的装逼，适可而止的套路。  </p>
+<p>13，如果一个人不理你，有可能是对方的问题；如果大家都不理你，那你就要考虑自身问题了。 </p>
+<hr>
+<p>14，人前不应该说的话，背后也别说。<br>27，不要在公众场合揭别人的短处，让别人难堪。<br>35，请不要随意出卖一个朋友的隐私来取悦另一个不熟的朋友。<br>46，不要人后捅刀子嘴别贱。  </p>
+<hr>
+<p>15，在最愤怒时忍住最伤人对方的那句话。<br>17，不要把负能量带给身边的人。<br>18，不要吝啬你的赞美和表达爱意的语言。<br>40，越是亲近的人越要用心对待，一句随意的话会伤害她。<br>42，千万不要为了恋爱而淡了身边所有人。<br>21，真的不必把太多人请进生命里，太多热情总是不被珍惜。  </p>
+<hr>
+<p>16，如果没有十足的把握和必要，就不要轻易说假话。<br>19，女孩子永远抗拒不了陪她通宵聊天的人。<br>20，刻薄嘴欠和幽默是两回事；口无遮拦和坦率是两回事；没有教养和随性是两回事；轻重不分和耿直是两回事。  </p>
+<hr>
+<p>22，如果遇到了傻Ⅹ，不要与他争论，而且要同意他的一切观点，把他培养成大傻Ⅹ。<br>24，不能侮辱别人的idol，谨记！<br>47，践踏别人的梦想等同于谋杀。  </p>
+<hr>
+<p>25，在拒绝这件事上，越简单越好，明明是别人需求自己帮忙，解释半天变成自己亏欠了别人的感觉，帮得上，想帮就帮，帮不上，就拒绝。人际交往，简单明了有时最恰当，懂得拒绝，才可以洒脱不纠结。<br>33，学会拒绝，没人会感激你的善良，他们只会得寸进尺。  </p>
+<hr>
+<p>26，逢人只说三分话，未可全抛一片心。<br>29，看透不说透，还是好朋友。<br>39，最印象的一句话，“交友不必言尽，言尽则无友”  </p>
+<hr>
+<p>28，社交没那么容易，每个人都有他的手机。<br>30，当你往上爬的时候对别人好一点，因为你走下坡路的时候会遇到他们。</p>
+<hr>
+<p>31，颜值要高，脾气要好，原则要有。<br>36，有分寸的信任，有理由的怀疑。<br>37，把身材练好，把妆化好。<br>41，修得豆腐嘴，藏得刀子心。<br>43，清醒时做事，糊涂时读书，大怒时睡觉，独处时思考。  </p>
+<hr>
+<p>32，该叫阿姨的叫姐，该叫姐的叫美女该叫美女的叫妹子。<br>38，不会讲话时别瞎说沉默微笑更好。<br>44，永远不要听信别人口中的他。<br>45，女生之间的嫉妒心太可怕，不要公开说这个女生比那个好看。<br>48，常与同好争高下，不共傻瓜论短长。——出自《欢乐颂》  </p>
+]]></content>
+      <categories>
+        <category>人生感悟</category>
+      </categories>
+      <tags>
+        <tag>人生</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>生活中有哪些残忍的真相</title>
     <url>/2019/06/21/md/life/%E7%94%9F%E6%B4%BB%E4%B8%AD%E6%9C%89%E5%93%AA%E4%BA%9B%E6%AE%8B%E5%BF%8D%E7%9A%84%E7%9C%9F%E7%9B%B8/</url>
     <content><![CDATA[<p>1、如果你八岁，十八岁，二十八岁都没有漂亮起来，那这辈子大概率就没法好看了（男生同理）</p>
@@ -5522,40 +5604,6 @@
 <p>罗曼罗兰那句耳熟能详的话作为结尾：There is only one heroism in the world: to see the world as it is and to love it.</p>
 <p>我写的这个答案的确很扎心，但是这并不是本意，扎心只是一瞬的感触，剩下的时间里依然过好每一天，才是大部分人的选择，我想看过我答案的人，并不会因为这些答案扎心就放弃继续生活了吧。</p>
 <p>我写的解其实也都是大多数人知道的道理，只是知道和做到，不是一回事，像我自己，扎心的真相都是我亲身经历，但是我也在努力践行我自己的英雄主义，与大家共勉。</p>
-]]></content>
-      <categories>
-        <category>人生感悟</category>
-      </categories>
-      <tags>
-        <tag>人生</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>情商50则</title>
-    <url>/2019/06/21/md/life/%E6%83%85%E5%95%8650%E5%88%99/</url>
-    <content><![CDATA[<p>1，话别说太满，人别熟太快。<br>3，不要把别人想得太坏，也不要把别人想得太好，都是凡人。<br>2，别人自嘲可以，但你千万别附和<br>4，可以嘲笑你的朋友，但不能嘲笑他喜欢的东西。  </p>
-<h2 id="34，自嘲是最高境界，而不是嘲笑别人。"><a href="#34，自嘲是最高境界，而不是嘲笑别人。" class="headerlink" title="34，自嘲是最高境界，而不是嘲笑别人。  "></a>34，自嘲是最高境界，而不是嘲笑别人。  </h2><p>6，刚开始和对方不熟悉的时候，聊到晚上十点多对方发来消息就别回复了，第二天早晨再回复，这样又可以聊一天。<br>7，把“随便”改成“听你的”。<br>23，把“听明白了吗”换成“我说明白了吗”。<br>5，把每一句“我不会”都改成“我可以学”<br>把“谢谢”改成“谢谢你” 并微笑看着对方的眼睛    </p>
-<hr>
-<p>8，别人骂你你要听，别人夸你你别信。<br>9，请道歉而不是取笑别人开不起玩笑，你以为谁没有底线只不过还没到底而已。<br>10，聊天时别人发微笑，你不知道怎么回的话，就回，你笑得真好看。<br>11，能用表情包解决的就不要说脏话！<br>12，恰到好处的装逼，适可而止的套路。  </p>
-<p>13，如果一个人不理你，有可能是对方的问题；如果大家都不理你，那你就要考虑自身问题了。 </p>
-<hr>
-<p>14，人前不应该说的话，背后也别说。<br>27，不要在公众场合揭别人的短处，让别人难堪。<br>35，请不要随意出卖一个朋友的隐私来取悦另一个不熟的朋友。<br>46，不要人后捅刀子嘴别贱。  </p>
-<hr>
-<p>15，在最愤怒时忍住最伤人对方的那句话。<br>17，不要把负能量带给身边的人。<br>18，不要吝啬你的赞美和表达爱意的语言。<br>40，越是亲近的人越要用心对待，一句随意的话会伤害她。<br>42，千万不要为了恋爱而淡了身边所有人。<br>21，真的不必把太多人请进生命里，太多热情总是不被珍惜。  </p>
-<hr>
-<p>16，如果没有十足的把握和必要，就不要轻易说假话。<br>19，女孩子永远抗拒不了陪她通宵聊天的人。<br>20，刻薄嘴欠和幽默是两回事；口无遮拦和坦率是两回事；没有教养和随性是两回事；轻重不分和耿直是两回事。  </p>
-<hr>
-<p>22，如果遇到了傻Ⅹ，不要与他争论，而且要同意他的一切观点，把他培养成大傻Ⅹ。<br>24，不能侮辱别人的idol，谨记！<br>47，践踏别人的梦想等同于谋杀。  </p>
-<hr>
-<p>25，在拒绝这件事上，越简单越好，明明是别人需求自己帮忙，解释半天变成自己亏欠了别人的感觉，帮得上，想帮就帮，帮不上，就拒绝。人际交往，简单明了有时最恰当，懂得拒绝，才可以洒脱不纠结。<br>33，学会拒绝，没人会感激你的善良，他们只会得寸进尺。  </p>
-<hr>
-<p>26，逢人只说三分话，未可全抛一片心。<br>29，看透不说透，还是好朋友。<br>39，最印象的一句话，“交友不必言尽，言尽则无友”  </p>
-<hr>
-<p>28，社交没那么容易，每个人都有他的手机。<br>30，当你往上爬的时候对别人好一点，因为你走下坡路的时候会遇到他们。</p>
-<hr>
-<p>31，颜值要高，脾气要好，原则要有。<br>36，有分寸的信任，有理由的怀疑。<br>37，把身材练好，把妆化好。<br>41，修得豆腐嘴，藏得刀子心。<br>43，清醒时做事，糊涂时读书，大怒时睡觉，独处时思考。  </p>
-<hr>
-<p>32，该叫阿姨的叫姐，该叫姐的叫美女该叫美女的叫妹子。<br>38，不会讲话时别瞎说沉默微笑更好。<br>44，永远不要听信别人口中的他。<br>45，女生之间的嫉妒心太可怕，不要公开说这个女生比那个好看。<br>48，常与同好争高下，不共傻瓜论短长。——出自《欢乐颂》  </p>
 ]]></content>
       <categories>
         <category>人生感悟</category>
@@ -5644,21 +5692,6 @@
       </tags>
   </entry>
   <entry>
-    <title>微服务健康检查</title>
-    <url>/2019/06/21/md/part/microServices/spring%20cloud/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E5%81%A5%E5%BA%B7%E6%A3%80%E6%9F%A5/</url>
-    <content><![CDATA[<h4 id="健康检查"><a href="#健康检查" class="headerlink" title="健康检查"></a>健康检查</h4><figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="comment">#开启健康检查（需要spring-boot-starter-actuator依赖）</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">eureka.client.healthcheck.enabled</span>=<span class="string">true</span></span></pre></td></tr></table></figure>
-
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment">#应用信息 /actuator/info</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="attr">info:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">  <span class="attr">app:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="attr">name:</span> <span class="string">@project.name@</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="attr">description:</span> <span class="string">@project.description@</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="attr">version:</span> <span class="string">@project.version@</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="attr">encoding:</span> <span class="string">@project.build.sourceEncoding@</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="attr">java:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">      <span class="attr">version:</span> <span class="string">@java.version@</span></span></pre></td></tr></table></figure>
-
-
-
-
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-actuator<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span></pre></td></tr></table></figure>]]></content>
-      <tags>
-        <tag>spring cloud</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>spring cloud gateway 入门</title>
     <url>/2019/06/21/md/part/microServices/spring%20cloud/spring%20cloud%20gateway%20%E5%85%A5%E9%97%A8/</url>
     <content><![CDATA[<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.cloud<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-cloud-starter-gateway<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="comment">&lt;!-- 集成eureka --&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="comment">&lt;!--&lt;dependency&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">        &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">        &lt;artifactId&gt;spring-cloud-starter-netflix-eureka-client&lt;/artifactId&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">    &lt;/dependency&gt;--&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span></pre></td></tr></table></figure>
@@ -5676,6 +5709,21 @@
 <li>StripPrefix 去掉转发根据路径web</li>
 </ul>
 ]]></content>
+      <tags>
+        <tag>spring cloud</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>微服务健康检查</title>
+    <url>/2019/06/21/md/part/microServices/spring%20cloud/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E5%81%A5%E5%BA%B7%E6%A3%80%E6%9F%A5/</url>
+    <content><![CDATA[<h4 id="健康检查"><a href="#健康检查" class="headerlink" title="健康检查"></a>健康检查</h4><figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="comment">#开启健康检查（需要spring-boot-starter-actuator依赖）</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">eureka.client.healthcheck.enabled</span>=<span class="string">true</span></span></pre></td></tr></table></figure>
+
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment">#应用信息 /actuator/info</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="attr">info:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">  <span class="attr">app:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="attr">name:</span> <span class="string">@project.name@</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="attr">description:</span> <span class="string">@project.description@</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="attr">version:</span> <span class="string">@project.version@</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="attr">encoding:</span> <span class="string">@project.build.sourceEncoding@</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="attr">java:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">      <span class="attr">version:</span> <span class="string">@java.version@</span></span></pre></td></tr></table></figure>
+
+
+
+
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-actuator<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span></pre></td></tr></table></figure>]]></content>
       <tags>
         <tag>spring cloud</tag>
       </tags>
@@ -6058,6 +6106,26 @@
       </tags>
   </entry>
   <entry>
+    <title>db</title>
+    <url>/2019/06/18/md/part/db/db/</url>
+    <content><![CDATA[<h3 id="为什么数据库可以没有外键？"><a href="#为什么数据库可以没有外键？" class="headerlink" title="为什么数据库可以没有外键？"></a>为什么数据库可以没有外键？</h3><ul>
+<li>性能，影响插入、更新和删除操作的性能。数据库需要检查它是否违反数据完整性</li>
+<li>传统数据，许多数据库在设计时需要存储来自旧数据库和遗留数据，这些数据可能对数据质量和完整性没有那么严格</li>
+<li>全表重新加载</li>
+</ul>
+<h3 id="规范"><a href="#规范" class="headerlink" title="规范"></a>规范</h3><p>【强制】业务上具有唯一特性的字段，即使是组合字段，也必须建成唯一索引。</p>
+<p>【强制】超过三个表禁止 join。需要 join 的字段，数据类型保持绝对一致；多表关联查询时，<br>保证被关联的字段需要有索引。</p>
+<p>【强制】不要使用 count(列名)或 count(常量)来替代 count(<em>)，count(</em>)就是 SQL92 定义的<br>标准统计行数的语法，跟数据库无关，跟 NULL 和非 NULL 无关。<br>说明：count(*)会统计值为 NULL 的行，而 count(列名)不会统计此列为 NULL 值的行。</p>
+<p>使用 IS NULL()来判断是否为 NULL 值。注意：NULL 与任何值的直接比较都为 NULL。</p>
+<p>单表行数超过 500 万行或者单表容量超过 2GB，才推荐进行分库分表。</p>
+<p>MySQL的基本存储结构是页(记录都存在页里边)：<br>各页：双向链表<br>页内数据：单向链表</p>
+<p><img src="https://www.mqiy.xyz/image/db/mysql-lock.png" alt="mysql-lock.png"></p>
+]]></content>
+      <tags>
+        <tag>db</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>mariadb</title>
     <url>/2019/06/18/md/part/db/maria/</url>
     <content><![CDATA[<h3 id="maven-配置"><a href="#maven-配置" class="headerlink" title="maven 配置"></a>maven 配置</h3><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.mariadb.jdbc<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mariadb-java-client<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.4.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span></pre></td></tr></table></figure>
@@ -6094,26 +6162,6 @@
     <url>/2019/06/18/md/part/db/mysql-tool/</url>
     <content><![CDATA[<p>sql  explanin命令</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 备份数据库 mayday</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">mysqldump -uroot -pAdmin123# mayday  &gt; bk.sql</span></pre></td></tr></table></figure>]]></content>
-      <tags>
-        <tag>db</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>db</title>
-    <url>/2019/06/18/md/part/db/db/</url>
-    <content><![CDATA[<h3 id="为什么数据库可以没有外键？"><a href="#为什么数据库可以没有外键？" class="headerlink" title="为什么数据库可以没有外键？"></a>为什么数据库可以没有外键？</h3><ul>
-<li>性能，影响插入、更新和删除操作的性能。数据库需要检查它是否违反数据完整性</li>
-<li>传统数据，许多数据库在设计时需要存储来自旧数据库和遗留数据，这些数据可能对数据质量和完整性没有那么严格</li>
-<li>全表重新加载</li>
-</ul>
-<h3 id="规范"><a href="#规范" class="headerlink" title="规范"></a>规范</h3><p>【强制】业务上具有唯一特性的字段，即使是组合字段，也必须建成唯一索引。</p>
-<p>【强制】超过三个表禁止 join。需要 join 的字段，数据类型保持绝对一致；多表关联查询时，<br>保证被关联的字段需要有索引。</p>
-<p>【强制】不要使用 count(列名)或 count(常量)来替代 count(<em>)，count(</em>)就是 SQL92 定义的<br>标准统计行数的语法，跟数据库无关，跟 NULL 和非 NULL 无关。<br>说明：count(*)会统计值为 NULL 的行，而 count(列名)不会统计此列为 NULL 值的行。</p>
-<p>使用 IS NULL()来判断是否为 NULL 值。注意：NULL 与任何值的直接比较都为 NULL。</p>
-<p>单表行数超过 500 万行或者单表容量超过 2GB，才推荐进行分库分表。</p>
-<p>MySQL的基本存储结构是页(记录都存在页里边)：<br>各页：双向链表<br>页内数据：单向链表</p>
-<p><img src="https://www.mqiy.xyz/image/db/mysql-lock.png" alt="mysql-lock.png"></p>
-]]></content>
       <tags>
         <tag>db</tag>
       </tags>
@@ -6258,20 +6306,6 @@
       </tags>
   </entry>
   <entry>
-    <title>endPoint</title>
-    <url>/2019/06/18/md/part/spring/springboot/endPoint/</url>
-    <content><![CDATA[<h3 id="Endpoint"><a href="#Endpoint" class="headerlink" title="Endpoint"></a>Endpoint</h3><p>SpringBoot的Endpoint主要是用来监控应用服务的运行状况，并集成在Mvc中提供查看接口</p>
-<hr>
-<h3 id="内置Endpoint"><a href="#内置Endpoint" class="headerlink" title="内置Endpoint"></a>内置Endpoint</h3><ul>
-<li>HealthEndpoint 监控dist和db的状态</li>
-<li>MetricsEndpoint 监控内存与gc的状况</li>
-</ul>
-]]></content>
-      <tags>
-        <tag>spring boot</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>spring cloud各组件介绍</title>
     <url>/2019/06/18/md/part/microServices/spring%20cloud/spring%20Cloud%E4%BB%8B%E7%BB%8D/</url>
     <content><![CDATA[<h3 id="主要组成如下："><a href="#主要组成如下：" class="headerlink" title="主要组成如下："></a>主要组成如下：</h3><p>　　服务发现——Netflix Eureka                      服务调用——Netflix Feign<br>　　熔断器——Netflix Hystrix                          服务网关——Netflix Zuul<br>　　分布式配置——Spring Cloud Config         消息总线 —— Spring Cloud Bus</p>
@@ -6297,6 +6331,20 @@
       <tags>
         <tag>spring cloud</tag>
         <tag>微服务</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>endPoint</title>
+    <url>/2019/06/18/md/part/spring/springboot/endPoint/</url>
+    <content><![CDATA[<h3 id="Endpoint"><a href="#Endpoint" class="headerlink" title="Endpoint"></a>Endpoint</h3><p>SpringBoot的Endpoint主要是用来监控应用服务的运行状况，并集成在Mvc中提供查看接口</p>
+<hr>
+<h3 id="内置Endpoint"><a href="#内置Endpoint" class="headerlink" title="内置Endpoint"></a>内置Endpoint</h3><ul>
+<li>HealthEndpoint 监控dist和db的状态</li>
+<li>MetricsEndpoint 监控内存与gc的状况</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>spring boot</tag>
       </tags>
   </entry>
   <entry>
@@ -6487,19 +6535,6 @@
       </tags>
   </entry>
   <entry>
-    <title>shell</title>
-    <url>/2019/06/18/md/part/system/linux/shell/</url>
-    <content><![CDATA[<p>单引号字符串的限制：</p>
-<ul>
-<li>单引号里的任何字符都会原样输出，单引号字符串中的变量是无效的；</li>
-<li>单引号字串中不能出现单独一个的单引号（对单引号使用转义符后也不行），但可成对出现，作为字符串拼接使用。</li>
-</ul>
-]]></content>
-      <tags>
-        <tag>linux</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>peerDNS</title>
     <url>/2019/06/18/md/part/system/linux/peer-dns/</url>
     <content><![CDATA[<p>先认识一下这三个配置文件：</p>
@@ -6514,19 +6549,24 @@
       </tags>
   </entry>
   <entry>
+    <title>shell</title>
+    <url>/2019/06/18/md/part/system/linux/shell/</url>
+    <content><![CDATA[<p>单引号字符串的限制：</p>
+<ul>
+<li>单引号里的任何字符都会原样输出，单引号字符串中的变量是无效的；</li>
+<li>单引号字串中不能出现单独一个的单引号（对单引号使用转义符后也不行），但可成对出现，作为字符串拼接使用。</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>java</title>
     <url>/2019/06/18/md/jdk/java/</url>
     <content><![CDATA[<h4 id="集合排序"><a href="#集合排序" class="headerlink" title="集合排序"></a>集合排序</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 默认是升序</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">Collections.sort;</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">// 降序</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">Arrays.sort(strArray, Collections.reverseOrder());</span></pre></td></tr></table></figure>
 
 ]]></content>
-      <tags>
-        <tag>jdk</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>file</title>
-    <url>/2019/06/18/md/jdk/jdk%20File/</url>
-    <content><![CDATA[<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">File file = <span class="keyword">new</span> File()</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">//文件名，包含后缀，但不包含路径 </span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">//   /root/11.jpg   则显示 11.jpg  </span></span></pre></td></tr><tr><td class="code"><pre><span class="line">file.getName()</span></pre></td></tr><tr><td class="code"><pre><span class="line">    </span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">// 文件路径  完整的绝对路径</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">//   /root/11.jpg   则显示 /root/11.jpg</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">file.getPath()</span></pre></td></tr><tr><td class="code"><pre><span class="line">    </span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">// 重命名   newPath新目标文件绝对路径    </span></span></pre></td></tr><tr><td class="code"><pre><span class="line">file.renameTo(<span class="keyword">new</span> File(newPath));</span></pre></td></tr></table></figure>]]></content>
       <tags>
         <tag>jdk</tag>
       </tags>
@@ -6551,6 +6591,14 @@
 <p>thenAccept接收上一阶段的输出作为本阶段的输入 　　</p>
 <p>thenRun根本不关心前一阶段的输出，根本不不关心前一阶段的计算结果，因为它不需要输入参数</p>
 ]]></content>
+      <tags>
+        <tag>jdk</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>file</title>
+    <url>/2019/06/18/md/jdk/jdk%20File/</url>
+    <content><![CDATA[<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">File file = <span class="keyword">new</span> File()</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">//文件名，包含后缀，但不包含路径 </span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">//   /root/11.jpg   则显示 11.jpg  </span></span></pre></td></tr><tr><td class="code"><pre><span class="line">file.getName()</span></pre></td></tr><tr><td class="code"><pre><span class="line">    </span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">// 文件路径  完整的绝对路径</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">//   /root/11.jpg   则显示 /root/11.jpg</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">file.getPath()</span></pre></td></tr><tr><td class="code"><pre><span class="line">    </span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">// 重命名   newPath新目标文件绝对路径    </span></span></pre></td></tr><tr><td class="code"><pre><span class="line">file.renameTo(<span class="keyword">new</span> File(newPath));</span></pre></td></tr></table></figure>]]></content>
       <tags>
         <tag>jdk</tag>
       </tags>

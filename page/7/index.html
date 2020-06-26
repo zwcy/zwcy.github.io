@@ -140,7 +140,7 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">55</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">56</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
@@ -150,7 +150,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">259</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">261</span></a>
 
   </li>
         <li class="menu-item menu-item-relate">
@@ -207,6 +207,178 @@
             
 
   <div class="posts-expand">
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/27/md/jdk/jvm/gc-scene/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="mqiy">
+      <meta itemprop="description" content="永远为下个月离职做好准备">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小灰灰的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/03/27/md/jdk/jvm/gc-scene/" class="post-title-link" itemprop="url">触发MinorGC与FullGC情景</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-03-27 09:36 09:36:40" itemprop="dateCreated datePublished" datetime="2020-03-27T09:36:40+08:00">2020-03-27 09:36</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>648</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h4 id="触发MinorGC-Young-GC"><a href="#触发MinorGC-Young-GC" class="headerlink" title="触发MinorGC(Young GC)"></a>触发MinorGC(Young GC)</h4><p>​    虚拟机在进行minorGC之前会判断老年代最大的可用连续空间是否大于新生代的所有对象总空间</p>
+<ul>
+<li><p>如果大于的话，直接执行minorGC</p>
+</li>
+<li><p>如果小于，判断是否开启HandlerPromotionFailure，没有开启直接FullGC</p>
+</li>
+<li><p>如果开启了HanlerPromotionFailure, JVM会判断老年代的最大连续内存空间是否大于历次晋升的大小，如果小于直接执行FullGC</p>
+</li>
+<li><p>如果大于的话，执行minorGC</p>
+</li>
+</ul>
+<h4 id="触发FullGC"><a href="#触发FullGC" class="headerlink" title="触发FullGC"></a>触发FullGC</h4><h5 id="老年代空间不足"><a href="#老年代空间不足" class="headerlink" title="老年代空间不足"></a>老年代空间不足</h5><p>​     如果创建一个大对象，Eden区域当中放不下这个大对象，会直接保存在老年代当中，如果老年代空间也不足，就会触发Full GC。为了避免这种情况，最好就是不要创建太大的对象。</p>
+<h5 id="持久代空间不足"><a href="#持久代空间不足" class="headerlink" title="持久代空间不足"></a>持久代空间不足</h5><p>​    如果有持久代空间的话，系统当中需要加载的类，调用的方法很多，同时持久代当中没有足够的空间，就出触发一次Full GC</p>
+<h5 id="YGC出现promotion-failure"><a href="#YGC出现promotion-failure" class="headerlink" title="YGC出现promotion failure"></a>YGC出现promotion failure</h5><p>​    promotion failure发生在Young GC, 如果Survivor区当中存活对象的年龄达到了设定值，会就将Survivor区当中的对象拷贝到老年代，如果老年代的空间不足，就会发生promotion failure， 接下去就会发生Full GC.</p>
+<h5 id="统计YGC发生时晋升到老年代的平均总大小大于老年代的空闲空间"><a href="#统计YGC发生时晋升到老年代的平均总大小大于老年代的空闲空间" class="headerlink" title="统计YGC发生时晋升到老年代的平均总大小大于老年代的空闲空间"></a>统计YGC发生时晋升到老年代的平均总大小大于老年代的空闲空间</h5><p>​      在发生YGC是会判断，是否安全，这里的安全指的是，当前老年代空间可以容纳YGC晋升的对象的平均大小，如果不安全，就不会执行YGC,转而执行Full GC。</p>
+<h5 id="显示调用System-gc"><a href="#显示调用System-gc" class="headerlink" title="显示调用System.gc"></a>显示调用System.gc</h5>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/27/md/part/system/io/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="mqiy">
+      <meta itemprop="description" content="永远为下个月离职做好准备">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小灰灰的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/03/27/md/part/system/io/" class="post-title-link" itemprop="url">IO模型</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-03-27 09:30 09:30:53" itemprop="dateCreated datePublished" datetime="2020-03-27T09:30:53+08:00">2020-03-27 09:30</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>684</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h4 id="非阻塞IO模型"><a href="#非阻塞IO模型" class="headerlink" title="非阻塞IO模型"></a>非阻塞IO模型</h4><h4 id="多路复用IO"><a href="#多路复用IO" class="headerlink" title="多路复用IO"></a>多路复用IO</h4><p>有一个线程不断去轮询多个socket的状态，只有当socket真正有读写事件时，才真正调用实际的IO读写操作</p>
+<p> 另外多路复用IO为何比非阻塞IO模型的效率高是因为在非阻塞IO中，不断地询问socket状态时通过用户线程去进行的，<br> 而在多路复用IO中，轮询每个socket状态是内核在进行的，这个效率要比用户线程要高的多</p>
+<h4 id="信号驱动IO"><a href="#信号驱动IO" class="headerlink" title="信号驱动IO"></a>信号驱动IO</h4><p> 当用户线程发起IO请求，会给对应的socket注册一个信号函数，然后用户线程会继续执行，当内核数据就绪时会发送一个信号给用户线程，用户线程接收到信号之后，便在信号函数中调用IO读写操作来进行实际的IO请求操作 </p>
+<h4 id="异步IO模型："><a href="#异步IO模型：" class="headerlink" title="异步IO模型："></a>异步IO模型：</h4><p>  最理想的IO模型，用户发起IO请求，内核会立刻返回成功标志，等数据拷贝到用户线程，内核发信号给用户线程表示READ操作完成</p>
+<blockquote>
+<p> VS  信号驱动模型还需要用户线程调实际的读写操作</p>
+</blockquote>
+<p>bio：同步阻塞<br>nio：同步非阻塞<br>bio：异步非阻塞</p>
+<p>一个IO操作其实分成了两个步骤：发起IO请求和实际的IO操作。<br>同步IO和异步IO的区别就在于第二个步骤是否阻塞，如果实际的IO读写阻塞请求进程，那么就是同步IO。<br>阻塞IO和非阻塞IO的区别在于第一步，发起IO请求是否会被阻塞，如果阻塞直到完成那么就是传统的阻塞IO，如果不阻塞，那么就是非阻塞IO。 </p>
+<ul>
+<li>同步阻塞：你到饭馆点餐，然后在那等着，还要一边喊：好了没啊！ </li>
+<li>同步非阻塞：在饭馆点完餐，就去遛狗了。不过溜一会儿，就回饭馆喊一声：好了没啊！ </li>
+<li>异步阻塞：遛狗的时候，接到饭馆电话，说饭做好了，让您亲自去拿。 </li>
+<li>异步非阻塞：饭馆打电话说，我们知道您的位置，一会给你送过来，安心遛狗就可以了。 </li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
         
   
   
@@ -984,179 +1156,11 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/27/md/part/mq/kafaka-key/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="mqiy">
-      <meta itemprop="description" content="永远为下个月离职做好准备">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小灰灰的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/02/27/md/part/mq/kafaka-key/" class="post-title-link" itemprop="url">kafka关键点</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-02-27 16:05 16:05:56" itemprop="dateCreated datePublished" datetime="2020-02-27T16:05:56+08:00">2020-02-27 16:05</time>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>862</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="如何保证消息队列的高可用？"><a href="#如何保证消息队列的高可用？" class="headerlink" title="如何保证消息队列的高可用？"></a>如何保证消息队列的高可用？</h3><p> replica（复制品）副本机制。每个 partition 的数据都会同步到其它机器上，形成自己的多个 replica 副本。broker宕机，存在leader partition ，则会从其他broker上该partition<br>　的follower 中，选举leader。</p>
-<h3 id="如何保证消息不被重复消费？或者说，如何保证消息消费的幂等性？"><a href="#如何保证消息不被重复消费？或者说，如何保证消息消费的幂等性？" class="headerlink" title="如何保证消息不被重复消费？或者说，如何保证消息消费的幂等性？"></a>如何保证消息不被重复消费？或者说，如何保证消息消费的幂等性？</h3><p>Kafka 使用offset记录消息者消费记录，消费者来保证幂等性</p>
-<ul>
-<li>写db时，用主键查，存在则更新；使用唯一约束</li>
-<li>写redis时，不用处理，天然幂等性</li>
-<li>其他使用全局唯一的 id </li>
-</ul>
-<blockquote>
-<p>需要为每个Consumer 指定一个Consumer Group，不同Group可读取相同消息；同一group内不同consumer 互斥，不会消费相同的消息，consumer 相关信息也在zk中维护</p>
-</blockquote>
-<blockquote>
-<p>broker.id 用来唯一标识每一个 broker，每个broker都有一个唯一的id值用来区分彼此。Kafka在启动时会在zookeeper中/brokers/ids路径下创建一个与当前broker的id为名称的虚节点，Kafka的健康状态检查就依赖于此节点。</p>
-</blockquote>
-<blockquote>
-<p>bootstrap-servers指的是目标集群的服务器地址，这个和broker-list功能是一样的，只不过我们在console producer要求用后者</p>
-</blockquote>
-<blockquote>
-<p>0.8以前的kafka，消费的进度(offset)是写在zk中的，所以consumer需要知道zk的地址。后来的版本都统一由broker管理，所以就用bootstrap-server了。</p>
-</blockquote>
-<h3 id="不会丢数据"><a href="#不会丢数据" class="headerlink" title="不会丢数据"></a>不会丢数据</h3><p>default.replication.factor=2  （副本数量，要求大于1）</p>
-<p>producer.type = sync (同步模式,sync:同步,异步:async)</p>
-<p>min.insync.replicas=2 ()</p>
-<p>broker.rack</p>
-<p>request.required.acks=1（值可设为 0, 1, -1/all, 其中 -1 和 all 等同）  producer 发消息到broker</p>
-<p>调用read函数，文件数据copy到内核缓冲区</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/27/md/tool/ppt/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="mqiy">
-      <meta itemprop="description" content="永远为下个月离职做好准备">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小灰灰的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/02/27/md/tool/ppt/" class="post-title-link" itemprop="url">PPT放映当前页快捷键是</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-02-27 16:02 16:02:54" itemprop="dateCreated datePublished" datetime="2020-02-27T16:02:54+08:00">2020-02-27 16:02</time>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>23</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><em>PPT当前页开始放映的快捷键是Shift+F5</em></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/6/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/26/">26</a><a class="extend next" rel="next" href="/page/8/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/6/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/27/">27</a><a class="extend next" rel="next" href="/page/8/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1222,7 +1226,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">259</span>
+          <span class="site-state-item-count">261</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1235,7 +1239,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">55</span>
+        <span class="site-state-item-count">56</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

@@ -140,7 +140,7 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">55</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">56</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
@@ -150,7 +150,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">259</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">261</span></a>
 
   </li>
         <li class="menu-item menu-item-relate">
@@ -207,6 +207,194 @@
             
 
   <div class="posts-expand">
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/21/md/part/db/trac-isolate/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="mqiy">
+      <meta itemprop="description" content="永远为下个月离职做好准备">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小灰灰的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/06/21/md/part/db/trac-isolate/" class="post-title-link" itemprop="url">事务的四种隔离级别</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-06-21 14:39 14:39:46" itemprop="dateCreated datePublished" datetime="2019-06-21T14:39:46+08:00">2019-06-21 14:39</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>440</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="事务的四种隔离级别"><a href="#事务的四种隔离级别" class="headerlink" title="事务的四种隔离级别"></a>事务的四种隔离级别</h3><table>
+<thead>
+<tr>
+<th></th>
+<th>脏读</th>
+<th>不可重复读</th>
+<th>幻读</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Read uncommitted</td>
+<td>X</td>
+<td>X</td>
+<td>X</td>
+</tr>
+<tr>
+<td>Read committed</td>
+<td>√</td>
+<td>X</td>
+<td>X</td>
+</tr>
+<tr>
+<td>Repeatable read</td>
+<td>√</td>
+<td>√</td>
+<td>X</td>
+</tr>
+<tr>
+<td>Serializable</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+</tr>
+</tbody></table>
+<ol>
+<li><p><strong>ISOLATION_READ_UNCOMMITTED</strong>：读未提交，这是事务最低的隔离级别，它充许令外一个事务可以看到这个事务未提交的数据。</p>
+<pre><code>这种隔离级别会产生脏读，不可重复读和幻像读。、</code></pre></li>
+<li><p><strong>ISOLATION_READ_COMMITTED</strong>：读已提交，保证一个事务修改的数据提交后才能被另外一个事务读取。另外一个事务不能读取该事务未提交的数据</p>
+</li>
+<li><p><strong>ISOLATION_REPEATABLE_READ</strong>：可重复读，这种事务隔离级别可以防止脏读，不可重复读。但是可能出现幻像读。</p>
+<pre><code>它除了保证一个事务不能读取另一个事务未提交的数据外，还保证了避免下面的情况产生(不可重复读)。</code></pre></li>
+<li><p><strong>ISOLATION_SERIALIZABLE</strong>：串行化，这是花费最高代价但是最可靠的事务隔离级别。事务被处理为<strong>顺序执行</strong>。</p>
+<pre><code>除了防止脏读，不可重复读外，还避免了幻像读。 </code></pre></li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/20/md/problem/web/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="mqiy">
+      <meta itemprop="description" content="永远为下个月离职做好准备">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小灰灰的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/06/20/md/problem/web/" class="post-title-link" itemprop="url">问题日志</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-06-20 16:51 16:51:43" itemprop="dateCreated datePublished" datetime="2019-06-20T16:51:43+08:00">2019-06-20 16:51</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>102</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="Invalid-character-found-in-method-name-HTTP-method-names-must-be-tokens-the-HTTP-protoco"><a href="#Invalid-character-found-in-method-name-HTTP-method-names-must-be-tokens-the-HTTP-protoco" class="headerlink" title="Invalid character found in method name. HTTP method names must be tokens|the HTTP protoco"></a>Invalid character found in method name. HTTP method names must be tokens|the HTTP protoco</h3><p><code>因为请求协议不对，需要统一成https或http请求</code></p>
+<hr>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
         
   
   
@@ -834,189 +1022,11 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/other/Filter%E4%B8%8EHandle/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="mqiy">
-      <meta itemprop="description" content="永远为下个月离职做好准备">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小灰灰的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/06/18/md/other/Filter%E4%B8%8EHandle/" class="post-title-link" itemprop="url">拦截器与Filter的区别</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-06-18 15:27 15:27:31" itemprop="dateCreated datePublished" datetime="2019-06-18T15:27:31+08:00">2019-06-18 15:27</time>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>295</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="拦截器与Filter的区别"><a href="#拦截器与Filter的区别" class="headerlink" title="拦截器与Filter的区别"></a>拦截器与Filter的区别</h3><ul>
-<li><p>相似之处：都是AOP编程思想的体现，都能实现权限检查与日志记录等</p>
-</li>
-<li><p>不同之处：</p>
-</li>
-</ul>
-<ol>
-<li><p>使用范围不同</p>
-<p>​    Filter是Servlet规范规定的，只能用于Web程序中</p>
-<p>​    拦截器既可用于Web程序，与可用于Application,Swing程序中</p>
-</li>
-<li><p>规范不同</p>
-<p>​    Filter是在Servlet规范定义的，是Servlet容器支持的.</p>
-<p>​    而拦截器是在Spring容器内，是Spring框架支持的</p>
-</li>
-<li><p>使用资源不同</p>
-<p>​    拦截器是Spring的一个组件，可以使用spring相关服务，如对象，事务，数据源</p>
-<p>​    而Filter不能</p>
-</li>
-<li><p>深度不同<br>​    Filter在Servlet前后启作用，拦截器则可以在方法前后，异常抛出前后</p>
-</li>
-</ol>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/md/jdk/jvm/jvm-and-gc/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="mqiy">
-      <meta itemprop="description" content="永远为下个月离职做好准备">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小灰灰的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/06/18/md/jdk/jvm/jvm-and-gc/" class="post-title-link" itemprop="url">jvm内存加载和gc</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-06-18 15:27 15:27:31" itemprop="dateCreated datePublished" datetime="2019-06-18T15:27:31+08:00">2019-06-18 15:27</time>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1.3k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>jvm比较重要的内存区域<br><code>方法区</code>：在java的虚拟机中有一块专门用来存放已经加载的类信息、常量、静态变量以及方法代码的内存区域，叫做方法区。<br><code>常量池</code>：常量池是方法区的一部分，主要用来存放常量和类中的符号引用等信息。<br><code>堆区</code>：用于存放类的对象实例。<br><code>栈区</code>：也叫java虚拟机栈，是由一个一个的栈帧组成的后进先出的栈式结构，栈桢中存放方法运行时产生的局部变量、方法出口等信息。当调用一个方法时，虚拟机栈中就会创建一个栈帧存放这些数据，当方法调用完成时，栈帧消失，如果方法中调用了其他方法，则继续在栈顶创建新的栈桢。<br>除了以上四个内存区域之外，jvm中的运行时内存区域还包括<code>本地方法栈</code>和<code>程序计数器</code></p>
-<p>1）堆</p>
-<p>所有通过new创建的对象的内存都在堆中分配，堆的大小可以通过-Xmx和-Xms来控制。<br>堆被划分为<code>新生代</code>和<code>旧生代</code>，新生代又被进一步划分为<code>Eden</code>和<code>Survivor</code>区，最后Survivor由From Space和To Space组成</p>
-<p><code>新生代</code>。新建的对象都是用新生代分配内存，Eden空间不足的时候，会把存活的对象转移到Survivor中，<br>新生代大小可以由-Xmn来控制，也可以用-XX:SurvivorRatio来控制Eden和Survivor的比例</p>
-<p><code>旧生代</code>。在年轻代中经历了N次垃圾回收后仍然存活的对象，就会被放到年老代中。因此，可以认为年老代中存放的都是一些生命周期较长的对象。</p>
-<p><code>持久代</code>。已经取消，JDK8 HotSpot JVM现在使用了本地内存来存储类元数据，被称为Metaspace。</p>
-<p>2）栈<br>每个线程执行每个方法的时候都会在栈中申请一个栈帧，每个栈帧包括局部变量区和操作数栈，用于存放此次方法调用过程中的临时变量、参数和中间结果。</p>
-<p>3）本地方法栈<br>用于支持native方法的执行，存储了每个native方法调用的状态</p>
-<p>4）方法区<br>存放了要加载的类信息、静态变量、final类型的常量、属性和方法信息。</p>
-<h3 id="基本回收算法"><a href="#基本回收算法" class="headerlink" title="基本回收算法"></a>基本回收算法</h3><h4 id="1-复制（Copying）"><a href="#1-复制（Copying）" class="headerlink" title="1. 复制（Copying）"></a>1. 复制（Copying）</h4><p>此算法把内存空间划为两个相等的区域，每次只使用其中一个区域。垃圾回收时，遍历当前使用区域，把正在使用中的对象复制到另外一个区域中。次算法每次只处理正在使用中的对象，因此复制成本比较小，同时复制过去以后还能进行相应的内存整理，不过出现“碎片”问题。当然，此算法的缺点也是很明显的，就是需要两倍内存空间。 </p>
-<h4 id="2-标记-清除（Mark-Sweep）"><a href="#2-标记-清除（Mark-Sweep）" class="headerlink" title="2. 标记-清除（Mark-Sweep）"></a>2. 标记-清除（Mark-Sweep）</h4><p>此算法执行分两阶段。第一阶段从引用根节点开始标记所有被引用的对象，第二阶段遍历整个堆，把未标记的对象清除。此算法需要暂停整个应用，同时，会产生内存碎片。 </p>
-<h4 id="3-标记-整理（Mark-Compact）"><a href="#3-标记-整理（Mark-Compact）" class="headerlink" title="3. 标记-整理（Mark-Compact）"></a>3. 标记-整理（Mark-Compact）</h4><p>此算法结合了 “标记-清除”和“复制”两个算法的优点。也是分两阶段，第一阶段从根节点开始标记所有被引用对象，第二阶段遍历整个堆，把清除未标记对象并且把存活对象 “压缩”到堆的其中一块，按顺序排放。此算法避免了“标记-清除”的碎片问题，同时也避免了“复制”算法的空间问题。 </p>
-<h4 id="4-分代（Generational-Collecting）"><a href="#4-分代（Generational-Collecting）" class="headerlink" title="4. 分代（Generational Collecting）"></a>4. 分代（Generational Collecting）</h4><p>垃圾收集器<br>串行GC（Serial GC）、并行回收GC（Parallel Scavenge）和并发回收GC（ParNew）</p>
-<p>GC有两种类型：<code>Scavenge GC</code>和<code>Full GC</code>。<br>JVM分别对新生代和旧生代采用不同的垃圾回收机制</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/20/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/20/">20</a><span class="page-number current">21</span><a class="page-number" href="/page/22/">22</a><span class="space">&hellip;</span><a class="page-number" href="/page/26/">26</a><a class="extend next" rel="next" href="/page/22/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/20/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/20/">20</a><span class="page-number current">21</span><a class="page-number" href="/page/22/">22</a><span class="space">&hellip;</span><a class="page-number" href="/page/27/">27</a><a class="extend next" rel="next" href="/page/22/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1082,7 +1092,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">259</span>
+          <span class="site-state-item-count">261</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1095,7 +1105,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">55</span>
+        <span class="site-state-item-count">56</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

@@ -1225,7 +1225,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #32a82b;
+  background: #ffd50e;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2616,4 +2616,28 @@ hr {
 }
 .sub-menu .menu-item {
   display: inline-block;
+}
+code {
+  color: #ff69b4;
+}
+.posts-expand .post-title-link {
+  color: #ff7f00;
+}
+h4 {
+  color: Purple;
+}
+span.exturl {
+  color: ForestGreen;
+}
+.post-tags a {
+  color: #f06;
+}
+.post-nav-item a {
+  color: #30f;
+}
+.post-title {
+  color: #7ccd7c;
+}
+.sidebar-toggle {
+  background-color: DeepPink;
 }
